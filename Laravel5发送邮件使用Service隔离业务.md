@@ -56,7 +56,7 @@ class EmailService
     }
 }
 ```
-
+> 将 `Mailer` 类注入到 `EmailService` 。
 
 
 
