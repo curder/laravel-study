@@ -5,7 +5,7 @@
 3. 将 service 注入到 controller。
 
 ### 编辑文件 **app/Services/EmailService.php**
-在Laravel项目根目录下新建文件夹`Services`
+在Laravel项目根目录下新建文件夹`Services`。
 ```php
 namespace App\Services;
 
