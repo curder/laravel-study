@@ -59,6 +59,7 @@ class EmailService
 > 1. 将 `Mailer` 类注入到 `EmailService` 。
 2. 将发送  `Email` 的业务逻辑写在 `send()` 。不是使用 `Mail facade` ，而是使用注入的 `$this->mail` 。
 
+### **app/Http/Controllers/UserController.php**
 
 
 
