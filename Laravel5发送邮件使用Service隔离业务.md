@@ -5,7 +5,19 @@
 3. 将 service 注入到 controller。
 
 ### 编写前的准备
+主要有两个配置文件:
+`config/mail.php` `.env` ，其中 **.env** 覆盖 `mail.php` 里的值，因此配置 `.env` 里的内容就可以了：
 
+~~~
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.qiye.163.com
+MAIL_PORT=25
+MAIL_USERNAME=账号
+MAIL_PASSWORD=密码
+MAIL_ENCRYPTION=null
+~~~
+
+照着上面这样配置。
 
 
 ### 编辑文件 **app/Services/EmailService.php**
