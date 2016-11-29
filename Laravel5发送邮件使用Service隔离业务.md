@@ -5,6 +5,7 @@
 3. 将 service 注入到 controller。
 
 ### 编辑文件 **app/Services/EmailService.php**
+
 ```php
 namespace App\Services;
 
