@@ -56,7 +56,8 @@ class EmailService
     }
 }
 ```
-> 将 `Mailer` 类注入到 `EmailService` 。
+> 1. 将 `Mailer` 类注入到 `EmailService` 。
+2. 将发送  `Email` 的商業邏輯寫在 `send()` 。不是使用Mail facade，而是使用注入的$this->mail。
 
 
 
