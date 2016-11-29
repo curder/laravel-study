@@ -65,7 +65,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use A\Services\EmailService;
+use App\Services\EmailService;
 
 class UserController extends Controller
 {
