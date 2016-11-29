@@ -92,8 +92,8 @@ class UserController extends Controller
     }
 }
 ```
-> 将依赖的 `EmailService` 注入到 `UserController`。
-
+> 1. 将依赖的 `EmailService` 注入到 `UserController` 。
+2. 從原本直接相依於 `Mail facade`，改成依赖注入的 `EmailService` 。
 
 
 
