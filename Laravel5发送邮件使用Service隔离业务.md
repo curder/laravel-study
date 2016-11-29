@@ -4,7 +4,7 @@
 2. 在 service 使用外部行为。
 3. 将 service 注入到 controller。
 
-**EmailService.php**
+**app/Services/EmailService.php**
 ```php
 namespace App\Services;
 
