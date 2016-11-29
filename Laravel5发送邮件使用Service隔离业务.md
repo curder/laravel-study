@@ -1,4 +1,4 @@
-## Laravel5发送邮件使用Service分割业务
+## Laravel5发送邮件使用Service分开业务
 
 1. 将外部行为注入到 service。
 2. 在 service 使用外部行为。
