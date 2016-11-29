@@ -27,7 +27,7 @@ class EmailService
     }
 
     /**
-     * 發送Email
+     * 发送Email
      * @param array $request
      */
     public function send(array $request)
