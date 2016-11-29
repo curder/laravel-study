@@ -92,7 +92,7 @@ class UserController extends Controller
     }
 }
 ```
-> 
+> 将依赖的 `EmailService` 注入到 `UserController`。
 
 
 
