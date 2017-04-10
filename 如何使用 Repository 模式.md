@@ -6,7 +6,7 @@
 
 Laravel 5.4.17
 
-### 资料库逻辑
+### 数据库逻辑
 
 在 CURD 中，CUR 比较稳定，但 Read 的部分则变化万千，大部分的数据库逻辑都在描述 Read 部分，若将数据库逻辑写在 Controller 或 Model 都不合适，会造成 Controller 或 Model 代码臃肿，如后难以维护。
 
