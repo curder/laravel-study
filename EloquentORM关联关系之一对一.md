@@ -282,11 +282,11 @@ $account->save();
 
 ```
 $account = \App\UserAccount::find(1);
-    $user = $account->user;
+$user = $account->user;
 
-    $user->email = 'new@test.com';
+$user->email = 'new@test.com';
 
-    $user->save();
+$user->save();
 ```
 
 
