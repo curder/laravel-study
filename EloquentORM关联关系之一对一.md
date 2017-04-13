@@ -112,65 +112,49 @@ class UserAccount extends Model
 ### 使用 tinker 填充数据
 修改 `/databases/factories/ModelFactory.php`，新增关联数据。
 ```
-
-```
-
-
-- 文件`<project>/database/seeds/UserSeeder.php`内容如下：
-```php
 <?php
-use Illuminate\Database\Seeder;
-class UserSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        DB::table('users')->insert([
-            'id'  => 1,
-            'name'=> 'admin',
-            'email'=>'admin@admin.com',
-            'password'=> Hash::make('aaaaaa'),
-            'created_at'=>date('Y-m-d H:i:s'),
-            'updated_at'=>date('Y-m-d H:i:s')
-        ]); // 写入超级管理员
-    }
-}
-```
 
-- 文件`<project>/database/seeds/UserAccountSeeder.php`内容如下：
-```php
-<?php
-use Illuminate\Database\Seeder;
-class UserAccountSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        DB::table('user_accounts')->insert([
-            'id'  => 1,
-            'user_id'=>1,
-            'qq'=> '123456',
-            'weixin'=> 'test',
-            'weibo'=> 'test',
-            'created_at'=>date('Y-m-d H:i:s'),
-            'updated_at'=>date('Y-m-d H:i:s')
-        ]);
-    }
-}
+/*
+|--------------------------------------------------------------------------
+| Model Factories
+|--------------------------------------------------------------------------
+|
+| Here you may define all of your model factories. Model factories give
+| you a convenient way to create models for testing and seeding your
+| database. Just tell the factory how a default model should look.
+|
+*/
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\User::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        'name' => $faker->name,
+        'email' => $faker->unique()->safeEmail,
+        'password' => $password ?: $password = bcrypt('secret'),
+        'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(App\UserAccount::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' => 1,
+        'qq' => $faker->numberBetween(100000, 999999999),
+        'wechat' => bcrypt('secret'),
+        'weibo' => bcrypt('secret')
+    ];
+});
 ```
 
 ### 执行上述迁移文件填充数据到数据库
 ```shell
-php artisan db:seed --class=UserSeeder
-php artisan db:seed --class=UserAccountSeeder
+php artisan tinker
+
+// 进入到交互界面执行
+namespace App
+factory(User::class,1)->create() // 随机生成一个用户信息
+factory(UserAccount::class,1)->create() // 随机生成一个用户关联信息
 ```
 
 ### 查看执行结果
