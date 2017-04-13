@@ -76,12 +76,8 @@ php artisan migrate
 ```
 
 ### 使用 tinker 填充数据
-```shell
-php artisan make:seed UserSeeder
-php artisan make:seed UserAccountSeeder
-```
+修改 `/databases/`
 
-### 修改seed填充文件
 - 文件`<project>/database/seeds/UserSeeder.php`内容如下：
 ```php
 <?php
