@@ -298,11 +298,11 @@ $user->save();
 另外，如果需要同步更新关联表的 `updated_at` 字段，请在模型中定义 `$touches` 属性，例如：
 ```
  /**
-     * 要触发的所有关联关系
-     *
-     * @var array
-     */
-    protected $touches = ['user'];
+ * 要触发的所有关联关系
+ *
+ * @var array
+ */
+ protected $touches = ['user'];
 ```
 
 
