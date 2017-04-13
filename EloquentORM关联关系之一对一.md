@@ -75,7 +75,7 @@ class CreateUserAccountsTable extends Migration
 php artisan migrate
 ```
 
-### 使用tinker填充数据
+### 使用 tinker 填充数据
 ```shell
 php artisan make:seed UserSeeder
 php artisan make:seed UserAccountSeeder
