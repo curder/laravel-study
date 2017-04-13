@@ -242,7 +242,7 @@ $user->account; // 获取用户关联信息
 
 ```php
 $account = UserAccount::find(3);
-->user;
+$account->user;
 dd($user);
 ```
 
