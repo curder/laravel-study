@@ -239,7 +239,7 @@ $user = \App\User::create([
 
 $account = new \App\UserAccount(['qq' => 'qq Number', 'wechat' => 'wechatNumber', 'weibo' => 'weiboNumber']); // 生成 UserAccount 对象
 
-    $user->account()->save($account); // 执行关联操作
+$user->account()->save($account); // 执行关联写入操作
 ```
 
 
