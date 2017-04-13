@@ -266,8 +266,16 @@ $account->user; // 通过关联信息获取用户信息
 
 ### 更新数据
 
+通过用户表 `users` 数据，更新关联 user_accounts
+```
+$user = \App\User::find(1);
+$account = $user->account;
 
+$account->qq = 'new qq';
+$account->wechat = 'new Wechat';
 
+$account->save();
+```
 
 
 
