@@ -269,7 +269,8 @@ $account = \App\UserAccount::find(1);
 $account->user->delete(); // 删除用户 users 表和 user_account 相关记录
 ```
 
-阮删除
+软删除
+
 
 
 ### 更新数据
