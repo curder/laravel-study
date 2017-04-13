@@ -5,7 +5,7 @@
 Laravel Version 5.4.18
 PHP Version 7.0.8
 
-数据操作之前请先配置好，数据库的一些连接信息。
+数据操作之前请先配置好，数据库的一些连接信息。例如下面使用mysql数据库，修改项目根目录下的 `.env` 文件内容
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
