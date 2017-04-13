@@ -76,7 +76,11 @@ php artisan migrate
 ```
 
 ### 使用 tinker 填充数据
-修改 `/databases/`
+修改 `/databases/factories/ModelFactory.php`，新增关联数据。
+```
+
+```
+
 
 - 文件`<project>/database/seeds/UserSeeder.php`内容如下：
 ```php
