@@ -232,7 +232,7 @@ class UserAccount extends Model
 ```php
 $user = User::find(1); // 获取用户表数据
 
-$user->account
+$user->account; // 获取用户关联信息
 dd($account);
 ```
 
