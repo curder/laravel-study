@@ -238,7 +238,8 @@ $user = User::find(1); // 获取用户表数据
 $user->account; // 获取用户关联信息
 ```
 
-### 通过账户关联用户
+通过用户关联信息获取用户信息
+
 ```php
 $user = UserAccount::find(1)->user;
 dd($user);
