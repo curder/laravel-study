@@ -267,7 +267,6 @@ $account->user; // 通过关联信息获取用户信息
 ```
 $account = \App\UserAccount::find(1);
 $account->user->delete(); // 删除用户 users 表和 user_account 相关记录
-
 ```
 
 
