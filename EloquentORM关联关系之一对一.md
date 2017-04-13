@@ -241,7 +241,7 @@ $account = new \App\UserAccount(['qq' => 'qq Number', 'wechat' => 'wechatNumber'
 
 $user->account()->save($account); // 执行关联写入操作
 ```
-
+> 也可以是我们使用 `find()` 方法查询出用户信息，再写入到关联表 `user_accounts`。
 
 
 ### 获取用户的账户信息
