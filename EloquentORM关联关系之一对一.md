@@ -228,7 +228,7 @@ class UserAccount extends Model
 
 ## 关联查询操作
 
-### 获取用户的账户
+### 获取用户的账户信息
 ```php
 $account = User::find(1)->account;
 dd($account);
