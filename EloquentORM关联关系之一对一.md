@@ -169,7 +169,7 @@ factory(UserAccount::class,1)->create() // 随机生成一个用户关联信息
 ![](image/screenshot_1492077196226.png)
 
 
-## 定义Elquent关联关系
+## 定义Eloquent关联关系
 
 文件保存在`<project>/app/User.php`和`<project>/app/UserAccount.php`。
 
