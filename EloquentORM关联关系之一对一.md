@@ -233,8 +233,6 @@ class UserAccount extends Model
 $user = User::find(1); // 获取用户表数据
 
 $user->account; // 获取用户关联信息
-
-dd($account);
 ```
 
 ### 通过账户关联用户
