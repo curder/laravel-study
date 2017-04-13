@@ -77,6 +77,10 @@ php artisan migrate
 ```
 
 > 执行上面的命令后数据库将生成四张表，
+> migrations
+> password_resets
+> user_accounts
+> users
 
 ### 使用 tinker 填充数据
 修改 `/databases/factories/ModelFactory.php`，新增关联数据。
