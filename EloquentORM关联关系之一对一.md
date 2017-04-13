@@ -241,7 +241,7 @@ $user->account; // 获取用户关联信息
 通过用户关联信息获取用户信息
 
 ```php
-$user = UserAccount::find(3);
+$account = UserAccount::find(3);
 ->user;
 dd($user);
 ```
