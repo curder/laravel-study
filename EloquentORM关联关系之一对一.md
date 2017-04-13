@@ -266,7 +266,8 @@ $account->user; // 通过关联信息获取用户信息
 
 ### 更新数据
 
-通过用户表 `users` 数据，更新关联 user_accounts
+通过用户表 `users` 数据，更新关联 `user_accounts`
+
 ```
 $user = \App\User::find(1);
 $account = $user->account;
@@ -277,6 +278,11 @@ $account->wechat = 'new Wechat';
 $account->save();
 ```
 
+通过 用户信息表 `user_accounts` 关联更新 `users` 数据表
+
+````
+
+```
 
 
 
