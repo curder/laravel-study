@@ -71,9 +71,12 @@ class CreateUserAccountsTable extends Migration
 
 
 ### 运行Artisan命令保存修改到数据库
+
 ```shell
 php artisan migrate
 ```
+
+> 执行上面的命令后数据库将生成四张表，
 
 ### 使用 tinker 填充数据
 修改 `/databases/factories/ModelFactory.php`，新增关联数据。
