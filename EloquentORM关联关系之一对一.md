@@ -281,7 +281,12 @@ $account->save();
 通过 用户信息表 `user_accounts` 关联更新 `users` 数据表
 
 ```
+$account = \App\UserAccount::find(1);
+    $user = $account->user;
 
+    $user->email = 'new@test.com';
+
+    $user->save();
 ```
 
 
