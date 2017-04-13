@@ -162,9 +162,9 @@ factory(UserAccount::class,1)->create() // 随机生成一个用户关联信息
 
 `users`表数据：
 
-![](http://yii.blog.webfsd.com/uploads/editor/old/2016-07-20/578f2667d087f.png)
+![](image/screenshot_1492077162810.png)
 
-`users_account`表：
+`users_accounts`表：
 
 ![](http://yii.blog.webfsd.com/uploads/editor/old/2016-07-20/578f266fb1568.png)
 
