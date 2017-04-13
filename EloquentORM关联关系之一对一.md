@@ -230,7 +230,7 @@ class UserAccount extends Model
 
 ### 获取用户的账户信息
 ```php
-$user = User::find(1);
+$user = User::find(1); // 获取用户表数据
 
 $user->account
 dd($account);
