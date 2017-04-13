@@ -195,9 +195,20 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 class UserAccount extends Model
 {
+
+... 
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function user()
     {
-        return $this->belongsTo('App\User');
+        /**
+         * User::class related 关联模型
+         * user_id ownerKey 当前表关联字段
+         * id relation 关联表字段
+         */
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }
 ```
