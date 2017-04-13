@@ -87,6 +87,8 @@ php artisan migrate
 php artisan make:model UserAccount
 ```
 
+并定义可填充的数据，即 $fillable 数组的值。
+
 
 ### 使用 tinker 填充数据
 修改 `/databases/factories/ModelFactory.php`，新增关联数据。
