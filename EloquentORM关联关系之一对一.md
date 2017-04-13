@@ -6,9 +6,13 @@ Laravel Version 5.4.18
 PHP Version 7.0.8
 
 数据操作之前请先配置好，数据库的一些连接信息。
-
 ```
-
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
 ```
 
 　　一对一是最简单的关联关系，表示表A和表B的记录一一对应。
