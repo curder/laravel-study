@@ -181,9 +181,19 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
+    
+... 
+   /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function account()
     {
-        return $this->hasOne('App\UserAccount');
+        /**
+         * UserAccount::class related 关联模型
+         * user_id foreignKey 当前表关联字段
+         * id localKey 关联表字段
+         */
+        return $this->hasOne(UserAccount::class, 'user_id', 'id');
     }
 }
 ```
