@@ -107,7 +107,6 @@ class UserAccount extends Model
      */
     protected $fillable = ['user_id', 'qq', 'wechat', 'weibo'];
 }
-
 ```
 
 ### 使用 tinker 填充数据
