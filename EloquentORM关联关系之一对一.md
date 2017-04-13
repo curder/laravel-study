@@ -231,11 +231,12 @@ class UserAccount extends Model
 ### 新增数据
 ```
 $user = \App\User::create([
-        'name' => 'curder',
-        'email' => 'curder@foxmail.com',
-        'password' => bcrypt('secret'),
-        'remember_token' => str_random(10),
-    ]);
+  'name' => 'curder',
+  'email' => 'curder@foxmail.com',
+  'password' => bcrypt('secret'),
+  'remember_token' => str_random(10),
+]); // 新增一个用户信息
+
 $account = new App\UserAccount(['qq' => 'qq Number', 'wechat' => 'wechatNumber', 'weibo' => 'weiboNumber']); // 生成 UserAccount 对象
 
     $user->account()->save($account); // 执行关联操作
