@@ -235,7 +235,7 @@ class UserAccount extends Model
 ```php
 $user = User::find(1); // 获取用户表数据
 
-$user->account; // 获取用户关联信息
+$user->account; // 通过用户信息获取用户关联信息
 ```
 
 通过用户关联信息获取用户信息
