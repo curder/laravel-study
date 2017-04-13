@@ -27,6 +27,7 @@ php artisan make:migration create_user_accounts_table --create=user_accounts
 
 
 ### 编辑生成的迁移文件
+
 `<project>/database/migrate/*_create_user_accounts_table.php`如下
 
 ```php
