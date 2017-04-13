@@ -169,12 +169,8 @@ factory(UserAccount::class,1)->create() // 随机生成一个用户关联信息
 ![](image/screenshot_1492077196226.png)
 
 
-## 生成模型并定义关联关系
-### 使用`artisan`命令生成模型
-```shell
-php artisan make:model User
-php artisan make:model UserAccount
-```
+## 定义Elquent关联关系
+
 文件保存在`<project>/app/User.php`和`<project>/app/UserAccount.php`。
 
 ### 定义关联关系
