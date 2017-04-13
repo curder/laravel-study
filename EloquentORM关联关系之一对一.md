@@ -84,7 +84,7 @@ php artisan migrate
 
 ### 使用artisan命令生成模型
 ```
-
+php artisan make:model UserAccount
 ```
 
 
