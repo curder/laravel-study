@@ -282,10 +282,9 @@ $account->save();
 
 ```
 $account = \App\UserAccount::find(1);
-$user = $account->user;
+$user = $account->user; // 获取到关联信息
 
 $user->email = 'new@test.com';
-
 $user->save();
 ```
 
