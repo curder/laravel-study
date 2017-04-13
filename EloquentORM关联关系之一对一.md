@@ -174,7 +174,7 @@ factory(UserAccount::class,1)->create() // 随机生成一个用户关联信息
 文件在`<project>/app/User.php`和`<project>/app/UserAccount.php`。
 
 ### 定义关联关系
-- 在`User`模型中定义与`UserAccount`模型的一对一对应关系：
+- 在 `User` 模型中定义与`UserAccount`模型的一对一对应关系：
 ```php
 <?php
 namespace App;
