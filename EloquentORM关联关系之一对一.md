@@ -245,6 +245,9 @@ $account = UserAccount::find(3); // 获取用户关联信息
 
 $account->user; // 通过关联信息获取用户信息
 ```
+
+### 关联删除
+
 ### 更新数据
 
 
