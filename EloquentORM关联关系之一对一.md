@@ -245,26 +245,4 @@ $account = UserAccount::find(3); // 获取用户关联信息
 
 $account->user; // 通过关联信息获取用户信息
 ```
-
-
-　　我们并没有在调用`belongsTo`的时候指定相应的外键信息，那么Eloquent模型底层是怎么判断`User`模型与`UserAccount`模型的对应关系的呢？
-
-　　默认情况下，Eloquent将调用`belongsTo`的关联方法名`user`作为关联关系`$relation`的值，并将`$relation.'_id'`作为默认外键名对应`users`表的`id`，如果表中没有相应列，又没有在定义关联关系的时候指定具体的外键，就会报错。
-
-　　那么又该如何在定义关联关系的时候指定外键呢？
-
-　　实际上在底层无论是`hasOne`方法还是`belongsTo`方法都可以接收额外参数，比如如果`user_accounts`中关联`users`的外键是`$foreign_key`，该外键对应`users`表中的列是`$local_key`，那么我们可以这样调用`hasOne`方法：
-
-```php
-$this->hasOne('App\Models\UserAccount',$foreign_key,$local_key);
-```
-
-调用`belongsTo`方法也是一样：
-
-```php
-$this->belongsTo('App\User',$foreign_key,$local_key);
-```
-
-　　此外，`belongsTo`还接收一个额外参数`$relation`，用于指定关联关系名称，其默认值为调用`belongsTo`的方法名，这里是`user`。
-
- [参考地址](http://laravelacademy.org/post/1095.html)
+### 更新数据
