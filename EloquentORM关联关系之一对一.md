@@ -201,7 +201,7 @@ class User extends Model
 }
 ```
 
-- 在 `UserAccount` 模型中定义与 `User` 的一对一关系：
+- 在 `UserAccount` 模型中定义与 `User` 的一对一关系
 ```php
 <?php
 namespace App;
