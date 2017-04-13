@@ -237,7 +237,7 @@ $user = \App\User::create([
   'remember_token' => str_random(10),
 ]); // 新增一个用户信息
 
-$account = new App\UserAccount(['qq' => 'qq Number', 'wechat' => 'wechatNumber', 'weibo' => 'weiboNumber']); // 生成 UserAccount 对象
+$account = new \App\UserAccount(['qq' => 'qq Number', 'wechat' => 'wechatNumber', 'weibo' => 'weiboNumber']); // 生成 UserAccount 对象
 
     $user->account()->save($account); // 执行关联操作
 ```
