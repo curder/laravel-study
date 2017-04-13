@@ -10,9 +10,9 @@ PHP Version 7.0.8
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=homestead
-DB_USERNAME=homestead
-DB_PASSWORD=secret
+DB_DATABASE=db_name
+DB_USERNAME=db_username
+DB_PASSWORD=db_password
 ```
 
 　　一对一是最简单的关联关系，表示表A和表B的记录一一对应。
