@@ -270,7 +270,7 @@ $account->user; // 通过关联信息获取用户信息
 
 ```
 $user = \App\User::find(1);
-$account = $user->account;
+$account = $user->account; // 获取到关联信息
 
 $account->qq = 'new qq';
 $account->wechat = 'new Wechat';
