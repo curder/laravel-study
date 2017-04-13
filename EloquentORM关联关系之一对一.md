@@ -166,7 +166,7 @@ factory(UserAccount::class,1)->create() // 随机生成一个用户关联信息
 
 `users_accounts`表：
 
-![](http://yii.blog.webfsd.com/uploads/editor/old/2016-07-20/578f266fb1568.png)
+![](image/screenshot_1492077196226.png)
 
 
 ## 生成模型并定义关联关系
