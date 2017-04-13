@@ -294,7 +294,7 @@ $user->email = 'new@test.com';
 $user->save();
 ```
 
-另外，如果需要同步更新关联表的 `updated_at` 字段，请在模型中定义 `$touches` 属性，例如，我们在 UserAccount 中定义如下关系：
+另外，如果需要同步更新关联表的 `updated_at` 字段，在模型中定义 `$touches` 属性，例如，我们在 UserAccount 中定义如下关系：
 ```
  /**
  * 要触发的所有关联关系
