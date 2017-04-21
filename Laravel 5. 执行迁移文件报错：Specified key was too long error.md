@@ -20,4 +20,8 @@ max key length is 767 bytes
 ```
  $table->string('email',30)->unique();
 ```
-也可以使用更加通用的办法来完成
+也可以使用更加通用的办法来完成。编辑 `AppServiceProvider.php` 文件的 `boot()` 方法。如下：
+
+```
+
+```
