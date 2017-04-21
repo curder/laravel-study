@@ -4,3 +4,4 @@
 * [如何使用Service模式](如何使用Service模式.md)
 * [如何使用Presenter模式](如何使用Presenter模式.md)
 * [EloquentORM关联关系之一对一](EloquentORM关联关系之一对一.md)
+* [Laravel 5.* 执行迁移文件报错：Specified key was too long error](Laravel 5. 执行迁移文件报错：Specified key was too long error.md)
