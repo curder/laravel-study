@@ -32,3 +32,5 @@ public function boot()
 ```
 
 相当于给予`varchar`默认的长度120。
+
+但是建议在数据库迁移文件中
