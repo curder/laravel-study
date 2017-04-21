@@ -27,8 +27,8 @@ use Illuminate\Support\Facades\Schema;
 
 public function boot()
 {
-    Schema::defaultStringLength(60);
+    Schema::defaultStringLength(120);
 }
 ```
 
-相当于给予`varchar`默认的长度60。
+相当于给予`varchar`默认的长度120。
