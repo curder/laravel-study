@@ -30,3 +30,5 @@ public function boot()
     Schema::defaultStringLength(60);
 }
 ```
+
+相当于给予`varchar`默认的长度60。
