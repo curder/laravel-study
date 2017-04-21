@@ -18,5 +18,5 @@ max key length is 767 bytes
 我们当然可以通过修改迁移文件来修改字段的长度，也可以通过修改迁移文件来解决这个问题。
 
 ```
- $table->string('email',191)->unique();
+ $table->string('email',30)->unique();
 ```
