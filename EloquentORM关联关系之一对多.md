@@ -237,7 +237,7 @@ $post = new \App\Post($request->all());
 
 
 
-> `create()` 方法接受属性数组、 创建模型，然后写入数据库，`save()` 和 `create()` 的不同之处在于 `save()` 接收整个 Eloquent 模型实例而 `create()` 接收原生 PHP 数组。
+> `create()` 方法接受属性数组、 创建模型，然后写入数据库，`save()` 和 `create()` 的不同之处在于 `save()` 接收整个 **Eloquent** 模型实例而 `create()` 接收原生 PHP 数组。
 
 
 ### 查询数据
