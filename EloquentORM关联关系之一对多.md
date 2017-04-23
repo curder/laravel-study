@@ -61,7 +61,7 @@ class CreatePostsTable extends Migration
             $table->string('title', 60);
             $table->text('body');
             $table->timestamps();
-            $table->timestamp('publish_at');
+            $table->timestamp('publish_at')->nullable();
         });
     }
 
