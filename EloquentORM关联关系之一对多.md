@@ -232,7 +232,7 @@ $post = new \App\Post($request->all());
 $posts = \Auth::user()->posts->toArray();
 
 
-// 查询当前用户的所有数据
+// 根据条件筛选查询当前用户的文字
 $posts = \Auth::user()->posts()->where('id','>',10)->get()->toArray();
 ```
 
