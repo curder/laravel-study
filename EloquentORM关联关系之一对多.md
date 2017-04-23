@@ -94,7 +94,7 @@ php artisan migrate
 > post
 > users
 
-### 填充数据
+### 定义关联关系和修改模型的 fillable 属性
 ```
 
 ```
