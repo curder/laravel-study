@@ -262,7 +262,7 @@ $post = \App\Post::with('user')->get()->toArray();
 
 ```
 $post = \App\User::find(1);
-$post->posts->delete(); // 删除用户 users 表和 user_account 相关记录
+$post->posts->delete(); // 删除用户 users 表和 posts 相关记录
 ```
 
 ### 更新数据
