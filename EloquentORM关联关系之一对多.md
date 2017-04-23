@@ -229,7 +229,7 @@ $post = new \App\Post($request->all());
 
 ```
  // 查询当前用户的所有数据
-    $posts = \Auth::user()->posts->toArray();
+$posts = \Auth::user()->posts->toArray();
 ```
 
 
