@@ -290,7 +290,7 @@ $account->qq = 'new qq';
 $account->wechat = 'new Wechat';
 $account->save();
 
-// 或者当用户登录时
+// 或者当用户登录时，直接通过关联关系进行更新数据
 \Auth::user()->account()->update(['qq' => 'new QQ', 'wechat' => 'new Wechat']);
 ```
 
