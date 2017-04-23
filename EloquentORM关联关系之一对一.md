@@ -82,7 +82,7 @@ class CreateUserAccountsTable extends Migration
 ```
 
 
-### 运行Artisan命令保存修改到数据库
+### 运行 php artisan 命令保存修改到数据库
 
 ```shell
 php artisan migrate
