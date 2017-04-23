@@ -226,7 +226,7 @@ $post = new \App\Post($request->all());
 ### 查询数据
 
 #### 查询用户发布的所有文章
-
+##### 单个获取
 ```
 // 查询当前用户的所有文章
 $posts = \Auth::user()->posts->toArray();
