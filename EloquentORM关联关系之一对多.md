@@ -137,14 +137,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
-$factory->define(App\UserAccount::class, function (Faker\Generator $faker) {
-    return [
-        'user_id' => 1,
-        'qq' => $faker->numberBetween(100000, 999999999),
-        'wechat' => bcrypt('secret'),
-        'weibo' => bcrypt('secret')
-    ];
-});
+
 $factory->define(App\Post::class, function (Faker\Generator $faker) {
     $user_ids = \App\User::pluck('id')->toArray();
     return [
