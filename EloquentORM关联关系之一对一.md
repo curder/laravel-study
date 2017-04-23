@@ -1,6 +1,6 @@
 # EloquentORM关联关系之一对一
 
-## 数据版本
+## 软件版本
 
 * Laravel Version 5.4.19
 
