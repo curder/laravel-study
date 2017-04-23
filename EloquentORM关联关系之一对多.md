@@ -239,7 +239,7 @@ $post = new \App\Post($request->all());
 \Auth::user()->posts()->create([
 	'title' => 'test title3',
 	'body' => 'test body3',
-	'publish_at' => null,
+	'published_at' => null,
 ]);
 ```
 
