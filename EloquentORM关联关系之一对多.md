@@ -240,7 +240,7 @@ $posts = \Auth::user()->posts()->where('id','>',10)->get()->toArray();
 #### 查询文章所属用户
 ```
 $post = \App\Post::find(1);
-    $user = $post->user->toArray();
+$user = $post->user->toArray();
 ```
 
 
