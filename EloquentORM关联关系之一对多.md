@@ -101,4 +101,5 @@ php artisan migrate
 
 ```
 
+`App\User` 模型关联关系；
 
