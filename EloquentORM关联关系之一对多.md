@@ -215,7 +215,7 @@ factory(Post::class,30)->create() // 生成30条 posts 表的测试数据
 $post = new \App\Post([
 	'title' => 'test title',
 	'body' => 'test body',
-	'publish_at' => null,
+	'published_at' => null,
 ]);
 \Auth::user()->posts()->save($post);
 
