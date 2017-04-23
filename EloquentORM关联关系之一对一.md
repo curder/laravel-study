@@ -155,7 +155,7 @@ $factory->define(App\UserAccount::class, function (Faker\Generator $faker) {
 ```shell
 php artisan tinker
 
-// 进入到交互界面执行
+// 进入到交互界面执行如下命令生成关联数据
 namespace App
 factory(User::class,1)->create() // 随机生成一个用户信息
 factory(UserAccount::class,1)->create() // 随机生成一个用户关联信息
