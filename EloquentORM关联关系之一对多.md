@@ -61,7 +61,7 @@ class CreatePostsTable extends Migration
             $table->string('title', 60);
             $table->text('body');
             $table->timestamps();
-            $table->timestamp('publish_at')->nullable();
+            $table->timestamp('published_at')->nullable();
              $table->foreign('user_id')
                       ->references('id')
                       ->on('users')
