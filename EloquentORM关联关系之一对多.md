@@ -112,6 +112,8 @@ php artisan migrate
 
 修改 `/databases/factories/ModelFactory.php`，新增关联数据。
 
+
+
 ```
 php artisan tinker
 
