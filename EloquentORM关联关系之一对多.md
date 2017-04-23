@@ -88,3 +88,8 @@ php artisan migrate
 > password_resets
 > post
 > users
+
+### 填充数据
+```
+
+```
