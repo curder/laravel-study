@@ -99,7 +99,7 @@ php artisan migrate
 php artisan make:model UserAccount
 ```
 
-并定义可填充的数据，即 $fillable 数组的值。
+并定义可填充的数据，即 `$fillable` 数组的值。
 ```
 <?php
 
