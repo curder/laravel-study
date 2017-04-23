@@ -27,7 +27,7 @@ DB_PASSWORD=db_password
 
 比如一个用户对应一个社交账号，在演示该关联关系之前我们先创建一个社交账号表 `user_accounts` （**假设用户表使用系统自带的**）
 
-## 生成迁移数据
+## 生成迁移文件
 
 ```shell
 php artisan make:migration create_user_accounts_table --create=user_accounts
