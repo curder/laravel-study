@@ -261,8 +261,8 @@ $post = \App\Post::with('user')->get()->toArray();
 在删除用户信息的时候可能会用上关联删除这种情况。
 
 ```
-$post = \App\User::find(1);
-$post->posts->delete(); // 删除用户 users 表和 posts 表中相关记录
+$user = \App\User::find(1);
+$user->posts->delete(); // 删除用户 users 表和 posts 表中相关记录
 ```
 
 ### 更新数据
