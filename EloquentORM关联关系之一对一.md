@@ -247,7 +247,10 @@ $account = new \App\UserAccount(['qq' => 'qq Number', 'wechat' => 'wechatNumber'
 $user->account()->save($account); // 执行关联写入操作
 ```
 > 也可以是我们使用 `find()` 方法获得用户信息（或者使用 `\Auth::id()`获得用户信息），再写入到关联表 `user_accounts`。
-
+```
+ $account = new \App\UserAccount(['qq' => 'another qq', 'wechat' => 'another wechat', 'weibo' => 'another weibo']); // 生成 UserAccount 对象
+    \Auth::user()->account()->save($account);
+```
 
 
 ### 查询数据
