@@ -283,7 +283,7 @@ $post = \App\Post::with('user')->get()->toArray();
 
 ### 关联删除
 
-在删除用户信息的时候可能会用上关联删除这种情况。
+删除某用户下的所有文章数据。
 
 ```
 $user = \App\User::find(1);
