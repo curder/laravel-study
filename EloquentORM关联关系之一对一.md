@@ -94,7 +94,7 @@ php artisan migrate
 > user_accounts
 > users
 
-### 使用artisan命令生成模型
+### 使用 php artisan 命令生成模型
 ```
 php artisan make:model UserAccount
 ```
