@@ -302,6 +302,6 @@ $user->save();
  */
  protected $touches = ['user'];
 ```
-将在更新 `user_accounts` 表中数据时，同步更新 `users` 表数据。
+在更新 `user_accounts` 表中数据时，同步更新 `users` 表数据。
 
 
