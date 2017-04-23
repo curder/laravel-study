@@ -245,6 +245,10 @@ $post = \App\Post::find(1); // 获取文章数据
 $user = $post->user->toArray(); // 获取文字所属用户
 ```
 
+列表获取
+```
+$post = \App\Post::with('user')->get()->toArray();
+```
 
 
 ### 关联删除
