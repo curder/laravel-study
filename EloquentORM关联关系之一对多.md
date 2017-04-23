@@ -224,8 +224,8 @@ $post = new \App\Post($request->all());
 \Auth::user->posts()->save($post));
 ```
 
+#### 使用 saveMany() 方法进行关联数据的新增
 ```
-
 // 如果需要保存多个关联模型，可以使用 `saveMany()` 方法，如下：
 \Auth::user()->posts()->saveMany([
 	new \App\Post(['title' => 'test title', 'body' => 'test body', 'publish_at' => null]),
