@@ -286,11 +286,12 @@ $account->user->delete(); // 删除用户 users 表和 user_account 相关记录
 ```
 $user = \App\User::find(1);
 $account = $user->account; // 获取到关联信息
-
 $account->qq = 'new qq';
 $account->wechat = 'new Wechat';
-
 $account->save();
+
+// 或者当用户登录时
+\Auth::user()->account()->save(['qq'=>'new QQ','wechat'=>'new Wechat']);
 ```
 
 通过 用户信息表 `user_accounts` 关联更新 `users` 数据表
