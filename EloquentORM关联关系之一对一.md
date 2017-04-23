@@ -6,11 +6,13 @@
 
 * PHP Version 7.0.8
 
-## 关键字
+## 关键字和数据表
 
 * `hasOne()`
 
 * `belongsTo()`
+
+* `users` 和 `user_accounts` 表
 
 数据操作之前请先配置好，数据库的一些连接信息。例如下面使用mysql数据库，修改项目根目录下的 `.env` 文件内容。
 
