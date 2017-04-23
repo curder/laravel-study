@@ -291,7 +291,7 @@ $account->wechat = 'new Wechat';
 $account->save();
 
 // 或者当用户登录时
-\Auth::user()->account()->save(['qq'=>'new QQ','wechat'=>'new Wechat']);
+\Auth::user()->account()->update(['qq' => 'new QQ', 'wechat' => 'new Wechat']);
 ```
 
 通过 用户信息表 `user_accounts` 关联更新 `users` 数据表
