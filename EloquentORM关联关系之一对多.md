@@ -77,3 +77,14 @@ class CreatePostsTable extends Migration
 }
 ```
 
+### 运行 php artisan 命令保存修改到数据库
+
+```shell
+php artisan migrate
+```
+
+> 执行上面的命令后数据库将生成四张表，
+> migrations
+> password_resets
+> post
+> users
