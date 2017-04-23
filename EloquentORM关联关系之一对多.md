@@ -95,6 +95,8 @@ php artisan migrate
 > users
 
 ### 定义关联关系和修改模型的 fillable 属性
+
+`App\Post` 模型
 ```
 
 ```
