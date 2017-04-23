@@ -209,7 +209,16 @@ factory(Post::class,30)->create() // 生成30条 posts 表的测试数据
 ### 新增数据
 常见的新增 `posts` 数据场景是用户发布一篇文章，如下:
 ```
+$post = new \App\Post([
+	'title' => 'test title',
+	'body' => 'test body',
+	'publish_at' => null,
+]);
+\Auth::user()->posts()->save($post);
 
+// 或者获取 \Request 对象传递的数据
+$post = new \App\Post($request->all());
+\Auth::user->posts()->save($post));
 ```
 
 
