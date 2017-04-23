@@ -258,6 +258,8 @@ $post = \App\Post::with('user')->get()->toArray();
 
 ### 关联删除
 
+
+
 ```
 $post = \App\Post::find(1);
 $post->user->delete(); // 删除用户 users 表和 user_account 相关记录
