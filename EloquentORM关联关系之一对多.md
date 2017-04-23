@@ -258,7 +258,7 @@ $post = \App\Post::with('user')->get()->toArray();
 
 ### 关联删除
 
-
+在删除用户的时候可能会用上关联删除这种情况。
 
 ```
 $post = \App\Post::find(1);
