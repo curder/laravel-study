@@ -216,7 +216,7 @@ $post = new \App\Post([
 ]);
 \Auth::user()->posts()->save($post);
 
-// 或者获取 \Request 对象传递的数据
+// 或者获取 \Request 对象传递的数据写入
 $post = new \App\Post($request->all());
 \Auth::user->posts()->save($post));
 ```
