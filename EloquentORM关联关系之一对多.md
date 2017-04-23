@@ -239,8 +239,8 @@ $posts = \Auth::user()->posts()->where('id','>',10)->get()->toArray();
 
 #### 查询文章所属用户
 ```
-$post = \App\Post::find(1);
-$user = $post->user->toArray();
+$post = \App\Post::find(1); // 获取文章数据
+$user = $post->user->toArray(); // 获取文字所属用户
 ```
 
 
