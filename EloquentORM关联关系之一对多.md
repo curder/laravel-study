@@ -227,6 +227,10 @@ $post = new \App\Post($request->all());
 
 #### 查询用户发布的所有文字
 
+```
+ // 查询当前用户的所有数据
+    $posts = \Auth::user()->posts->toArray();
+```
 
 
 #### 查询文章所属用户
