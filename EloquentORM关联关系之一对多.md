@@ -99,7 +99,26 @@ php artisan migrate
 `App\Post` 模型关联关系：
 
 ```
+<?php
 
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Post extends Model
+{
+    protected $fillable = ['title', 'user_id', 'body', 'publish_at'];
+
+    public function user()
+    {
+        /**
+         * User::class related 关联模型
+         * user_id ownerKey 当前表关联字段
+         * id relation 关联表字段
+         */
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+}
 ```
 
 `App\User` 模型关联关系；
