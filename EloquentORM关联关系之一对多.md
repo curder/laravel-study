@@ -238,7 +238,7 @@ $posts = \Auth::user()->posts()->where('id','>',10)->get()->toArray();
 
 ##### 获取用户列表并关联所属文章
 ```
-
+\App\User::with('posts')->get()->toArray();
 ```
 
 
