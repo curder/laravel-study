@@ -2,7 +2,7 @@
 
 ## 数据版本
 
-* Laravel Version 5.4.18
+* Laravel Version 5.4.19
 
 * PHP Version 7.0.8
 
