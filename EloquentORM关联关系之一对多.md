@@ -30,7 +30,7 @@ DB_PASSWORD=db_password
 ## 生成关联数据
 
 ```shell
-php artisan make:migration create_posts_table --create=user_accounts
+php artisan make:migration create_posts_table -m
 ```
 
 
