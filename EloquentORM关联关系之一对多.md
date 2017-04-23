@@ -228,8 +228,8 @@ $post = new \App\Post($request->all());
 ```
 // 如果需要保存多个关联模型，可以使用 `saveMany()` 方法，如下：
 \Auth::user()->posts()->saveMany([
-	new \App\Post(['title' => 'test title', 'body' => 'test body', 'publish_at' => null]),
-	new \App\Post(['title' => 'test title2', 'body' => 'test body2', 'publish_at' => null])
+	new \App\Post(['title' => 'test title', 'body' => 'test body', 'published_at' => null]),
+	new \App\Post(['title' => 'test title2', 'body' => 'test body2', 'published_at' => null])
 ]);
 ```
 
