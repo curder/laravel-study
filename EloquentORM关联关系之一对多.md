@@ -236,7 +236,11 @@ $post = new \App\Post($request->all());
 #### 使用 create() 方法进行关联数据的新增
 
 ```
-
+\Auth::user()->posts()->create([
+	'title' => 'test title3',
+	'body' => 'test body3',
+	'publish_at' => null,
+]);
 ```
 
 
