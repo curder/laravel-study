@@ -207,6 +207,8 @@ factory(Post::class,30)->create() // 生成30条 posts 表的测试数据
 ## 关联操作
 
 ### 新增数据
+
+#### 使用 save() 方法进行数据的新增
 常见的新增 `posts` 数据场景是用户发布一篇文章，如下:
 ```
 $post = new \App\Post([
