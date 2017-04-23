@@ -225,11 +225,15 @@ $post = new \App\Post($request->all());
 
 ### 查询数据
 
-#### 查询用户发布的所有文字
+#### 查询用户发布的所有文章
 
 ```
- // 查询当前用户的所有数据
+// 查询当前用户的所有文章
 $posts = \Auth::user()->posts->toArray();
+
+
+// 查询当前用户的所有数据
+$posts = \Auth::user()->posts()->where('id','>',10)->get()->toArray();
 ```
 
 
