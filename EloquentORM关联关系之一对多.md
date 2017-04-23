@@ -124,7 +124,45 @@ class Post extends Model
 `App\User` 模型关联关系；
 
 ```
+<?php
 
+namespace App;
+
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class User extends Authenticatable
+{
+    use Notifiable;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'email', 'password',
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+    public function posts()
+    {
+        /**
+         * Post::class related 关联模型
+         * user_id foreignKey 当前表关联字段
+         * id localKey 关联表字段
+         */
+        return $this->hasMany(Post::class, 'user_id', 'id');
+    }
+}
 ```
 
 ### 使用 tinker 填充数据
