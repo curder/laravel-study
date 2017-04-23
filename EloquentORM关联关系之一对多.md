@@ -158,4 +158,14 @@ factory(User::class,3)->create(); // 生成3个用户
 factory(Post::class,30)->create() //生成30条 posts 表的测试数据
 ```
 
+## 关联操作
 
+### 新增数据
+
+### 查询数据
+
+### 关联删除
+
+### 更新数据
+
+#### 通过关联 User 数据
