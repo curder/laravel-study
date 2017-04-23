@@ -219,20 +219,25 @@ $post = new \App\Post([
 ]);
 \Auth::user()->posts()->save($post);
 
-// 如果需要保存多个关联模型，可以使用 `saveMany()` 方法，如下：
-\Auth::user()->posts()->saveMany([
-	new \App\Post(['title' => 'test title', 'body' => 'test body', 'publish_at' => null]),
-	new \App\Post(['title' => 'test title2', 'body' => 'test body2', 'publish_at' => null])
-]);
-
-
 // 或者获取 \Request 对象传递的数据写入
 $post = new \App\Post($request->all());
 \Auth::user->posts()->save($post));
 ```
 
+```
+
+// 如果需要保存多个关联模型，可以使用 `saveMany()` 方法，如下：
+\Auth::user()->posts()->saveMany([
+	new \App\Post(['title' => 'test title', 'body' => 'test body', 'publish_at' => null]),
+	new \App\Post(['title' => 'test title2', 'body' => 'test body2', 'publish_at' => null])
+]);
+```
+
 #### 使用 create() 方法进行关联数据的新增
 
+
+
+> 
 
 ### 查询数据
 
