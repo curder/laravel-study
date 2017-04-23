@@ -53,7 +53,11 @@ class CreateUserAccountsTable extends Migration
             $table->string('wechat', 100)->nullable();
             $table->string('weibo', 100)->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('user_id')
+                      ->references('id')
+                      ->on('users')
+                      ->onUpdate('cascade')
+                      ->onDelete('cascade');
         });
     }
 
