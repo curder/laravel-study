@@ -37,6 +37,8 @@ php artisan make:model Post
 
 ### 编辑生成的迁移文件
 
+`<project>/database/migrate/*_create_posts_table.php`如下
+
 ```
 <?php
 
