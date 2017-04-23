@@ -279,7 +279,6 @@ $account->user->delete(); // 删除用户 users 表和 user_account 相关记录
 ```
 
 
-
 ### 更新数据
 
 通过用户表 `users` 数据，更新关联 `user_accounts`
