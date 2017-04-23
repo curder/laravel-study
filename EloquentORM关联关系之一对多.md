@@ -35,3 +35,7 @@ php artisan make:migration create_posts_table -m
 
 ### 编辑生成的迁移文件
 
+```
+
+```
+
