@@ -8,6 +8,6 @@
 
 ## 关键字
 
-* `hasOne()`
+* `hasMany()`
 
 * `belongsTo()`
