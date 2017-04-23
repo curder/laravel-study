@@ -233,6 +233,7 @@ class UserAccount extends Model
 ## 关联操作
 
 ### 新增数据
+同时新增 `users` 和 `user_accounts` 表数据
 ```
 $user = \App\User::create([
   'name' => 'curder',
