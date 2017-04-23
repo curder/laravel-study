@@ -30,7 +30,7 @@ DB_PASSWORD=db_password
 ## 生成迁移文件和模型
 
 ```shell
-php artisan make:migration create_posts_table -m
+php artisan make:migration create_posts_table --create=posts
 ```
 
 ### 编辑生成的迁移文件
