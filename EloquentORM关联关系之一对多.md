@@ -26,3 +26,12 @@ DB_PASSWORD=db_password
 一对多的关联关系，表示表A对应表B的N条记录，例如一个用户可以发表多条文章。
 
 我们定义关联关系，文章表 `posts` （**假设用户表使用系统自带的**）
+
+## 生成关联数据
+
+```shell
+php artisan make:migration create_user_accounts_table --create=user_accounts
+```
+
+
+
