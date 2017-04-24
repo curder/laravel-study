@@ -200,6 +200,21 @@ $user->roles()->attach($role_ids);
 // $user->roles()->attach([1 => ['attribute1' => 'value1'], 2, 3]);
 ```
 
+有时可能想要使用一个命令，在建立新模型数据的同时附加关联。可以使用 `save`方法达成目的：
+
+~~~
+$role = new Role(['name' => 'Editor']);
+
+\App\User::find(1)->roles()->save($role);
+~~~
+
+上面的例子里，新的 `Role` 模型对象会在储存的同时关联到 `user` 模型。也可以传入属性数组把数据加到关联数据库表：
+
+~~~
+\App\User::find(1)->roles()->save($role, ['field' => 'value']);
+~~~
+
+
 ### 查询数据
 
 查询用户所拥有的角色
