@@ -13,6 +13,13 @@
 * `morphTo()`
 
 * `morphMany()`
+*   `attach()`
+
+*   `detach()`
+
+*   `sync()`
+
+*   `toggle()`
 
 * `posts` 、`videos`、`comments` 和 `users` 表
 
