@@ -31,7 +31,9 @@ php artisan make:model RoleUser
 
 ### 编辑迁移文件
 
+```
 
+```
 
 ### 运行 php artisan 命令保存修改到数据库
 
