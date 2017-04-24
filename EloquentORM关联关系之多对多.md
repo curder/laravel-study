@@ -91,20 +91,6 @@ php artisan migrate
 在 `User` 模型中定义与 `Role` 模型的对应关系：
 
 ```
-namespace App;
-use Illuminate\Database\Eloquent\Model;
-class User extends Model
-{
-public function roles()
-{
-    return $this->belongsToMany('App\Role');
-}
-}
-```
-
-在 `Role` 模型中定义与 `User` 模型的关联对应关系：
-
-```
 public function roles()
 {
     /**
@@ -117,6 +103,14 @@ public function roles()
     return $this->belongsToMany('App\Role' , 'role_user' , 'user_id' , 'role_id' , 'roles');
 }
 ```
+
+在 `Role` 模型中定义与 `User` 模型的关联对应关系：
+
+```
+
+```
+
+
 
 
 ## 使用 tinker 填充数据
