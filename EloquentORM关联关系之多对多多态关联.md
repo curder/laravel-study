@@ -154,7 +154,7 @@ public function posts()
 return $this->morphedByMany('App\Post','taggable');
 }
 // 多对多多态关联
-public function vedios()
+public function videos()
 {
 return $this->morphedByMany('App\Video','taggable');
 }
