@@ -177,6 +177,10 @@ $posts = $country->posts;
 // 或者通过下面的关联关系
 $posts = \App\Country::with(array('user','posts'))->find(1);
 ```
+##### 查询国家下的用户
+```
+$posts = \App\Country::with(array('user'))->find(1);
+```
 
 
 #### 查询文章所属用户
