@@ -100,7 +100,7 @@ public function roles()
      * @param  string $relatedKey 关联模型的外键id，不填默认为 role_id
      * @param  string $relation   关联方法名 不填默认为roles
      */
-    return $this->belongsToMany('App\Role' , 'role_user' , 'user_id' , 'role_id' , 'roles');
+    return $this->belongsToMany('App\Role' , 'role_user' , 'user_id' , 'role_id' , 'roles')->;
 }
 ```
 
@@ -110,7 +110,7 @@ public function roles()
 
 ```
 
-
+>如果你想要中间表自动维护 `created_at` 和 `updated_at` 时间戳，可在定义关联方法时加上 `withTimestamps()` 方法
 
 
 ## 使用 tinker 填充数据
