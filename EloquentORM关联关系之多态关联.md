@@ -199,8 +199,40 @@ factory(Video::class,10)->create(); // 生成10条 videos 表的测试数据
 
 #### 添加评论
 
+  // 添加一个文章评论
+```
+$post = \App\Post::find(1);
+$comment = new \App\Comment(['content' => 'A new comment For Post 1.']);
+$post->comments()->save($comment); // 新增的 `comment` 模型中 `item_id` 和 `item_type` 字段会被自动设定
+```
 
+#### 添加多条文章评论
+```
+$comments = [
+    new \App\Comment(['content' => 'A new comment For Post 2.']) ,
+    new \App\Comment(['content' => 'Another comment For Post 2.']) ,
+    new \App\Comment(['content' => 'The latest comment For Post 2.'])
+];
+$post = \App\Post::find(2);
+$post->comments()->saveMany($comments);
+```
 
+##### 添加视频评论
+```
+$video = \App\Video::find(10);
+$comment = new \App\Comment(['content' => 'A new Comment For Video 10.']);
+$video->comments()->save($comment); //
+```
+##### 添加多条视频评论
+```
+$comments = [
+    new \App\Comment(['content' => 'A new comment For Video 5.']) ,
+    new \App\Comment(['content' => 'Another comment For Video 5.']) ,
+    new \App\Comment(['content' => 'The latest comment For Video 5.'])
+];
+$video = \App\Video::find(5);
+$video->comments()->saveMany($comments);
+```
 
 
 
