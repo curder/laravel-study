@@ -29,7 +29,7 @@
 php artisan make:migration create_roles_table --create=roles
 php artisan make:migration create_role_user_table --create=role_user
 
-php artisan make:model Post
+php artisan make:model 
 php artisan make:model Country
 ```
 
