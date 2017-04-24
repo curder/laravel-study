@@ -16,7 +16,19 @@
 
 * `posts` 、`countries` 和 `users` 表
 
+数据操作之前请先配置好，数据库的一些连接信息。例如下面使用mysql数据库，修改项目根目录下的 `.env` 文件内容。
 
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_name
+DB_USERNAME=db_username
+DB_PASSWORD=db_password
+```
+
+
+我们定义关联关系，文章表 `posts` 和 国家 `countries`（**假设用户表使用系统自带的**）
 
 
 
