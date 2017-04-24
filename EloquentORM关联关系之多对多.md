@@ -250,7 +250,7 @@ $role->users()->delete();
 $user = \App\User::find(1);
 $user->roles()->sync([1,2,4]);
 
-$user->roles()->sync([1 => ['expires' => true]]);
+$user->roles()->sync([1 => ['field' => 'value']]); // 加入其他字段的数据
 ```
 
 #### 把角色"同步"给用户
