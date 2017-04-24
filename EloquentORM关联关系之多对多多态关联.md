@@ -319,10 +319,10 @@ $videos->tags()->attach($tag->id);
 $post->tags()->attach($tag->id);
 ```
 
-删除关联
+#### 删除关联
 
 ```
-$tag->vedios()->detach($vedio->id);
+$tag->videos()->detach($vedio->id);
 
 $tag->posts()->detach($post->id);
 ```
