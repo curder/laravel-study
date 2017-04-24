@@ -100,7 +100,7 @@ public function roles()
      * @param  string $relatedKey 关联模型的外键id，不填默认为 role_id 规则为：Str::snake(class_basename($related)).'_'.$related->primaryKey
      * @param  string $relation   关联方法名 不填默认为roles
      */
-    return $this->belongsToMany('App\Role','role_user','user_id','role_id','roles')->withTimestamps();
+    return $this->belongsToMany('App\Role' , 'role_user' , 'user_id' , 'role_id' , 'roles')->withTimestamps();
 }
 ```
 
