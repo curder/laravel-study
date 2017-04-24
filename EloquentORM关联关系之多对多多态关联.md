@@ -262,6 +262,7 @@ $video->tags()->saveMany($tags);
 ### 删除数据
 
 ####  删除一篇文章下的所有标签
+
 ```
 $post = \App\Post::find(1);
 
@@ -274,7 +275,7 @@ $post->tags()->detach(); // 同步删除 toggables Table中的关联数据
 
 #### 查询一篇文章的标签
 
- ```
+```
 $post = \App\Post::find(2);
 $tags = $post->tags;
 ```
@@ -306,7 +307,7 @@ $posts = $tag->posts;
 #### `tags` 跟 `videos`, `posts` 做关联
 
 ```
-$tag->videos()->attach($vedio->id);
+$tag->videos()->attach($video->id);
 
 $tag->posts()->attach($post->id);
 ```
