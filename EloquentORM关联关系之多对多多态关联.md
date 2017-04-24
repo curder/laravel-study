@@ -299,6 +299,33 @@ $posts = $tag->posts;
 
 
 
+## 其他
+
+### 建立关联
+
+#### `tags` 跟 `videos`, `posts` 做关联
+
+```
+$tag->videos()->attach($vedio->id);
+
+$tag->posts()->attach($post->id);
+```
+
+####  `videos`, `posts` 跟 `tag` 做关联
+
+```
+$videos->tags()->attach($tag->id);
+
+$post->tags()->attach($tag->id);
+```
+
+删除关联
+
+```
+$tag->vedios()->detach($vedio->id);
+
+$tag->posts()->detach($post->id);
+```
 
 
 
