@@ -15,9 +15,10 @@
 * `morphToMany()`
 
 * `morphedByMany()`
+
 *   `attach()`
 
-*   `dettach()`
+*   `detach()`
 
 *   `sync()`
 
