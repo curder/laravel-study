@@ -170,6 +170,11 @@ factory(Post::class,30)->create() // 生成30条 posts 表的测试数据
 #### 根据国家查询数据
 ##### 查询国家下的用户和发布的文章
 ```
+// 查询国家下的所有文章数据
+$country = \App\Country::find(1);
+$posts = $country->posts;
+
+// 或者通过下面的关联关系
 $posts = \App\Country::with(array('user','posts'))->find(1);
 ```
 
