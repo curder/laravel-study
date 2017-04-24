@@ -26,7 +26,11 @@
 
 ## 生成迁移文件和模型
 
-
+```
+php artisan make:model  Post -m
+php artisan make:model Video -m
+php artisan make:model Common -m
+```
 
 
 
