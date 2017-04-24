@@ -268,9 +268,6 @@ $role->users()->sync([1]);
 > $user->roles()->updateExistingPivot($role_id,['created_at'=>'2019-04-24 06:08:22']);
 > ```
 
-
-[TOC]
-
 ### 一些方法
 
 #### `toggle`
