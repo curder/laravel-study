@@ -123,7 +123,7 @@ public function users()
      * @param  string $relation   关联方法名 不填默认为 users
      */
     return $this->belongsToMany(User::class , 'role_user' , 'role_id' , 'user_id' , 'users')
-                      ->withPivot(['created_at','updated_at']) // 中间表的字段
+                      ->withPivot(['created_at','updated_at']) // 中间表的字段，这里的中间表是 role_user
                       ->withTimestamps();
 }
 ```
