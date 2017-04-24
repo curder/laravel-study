@@ -98,7 +98,7 @@ php artisan migrate
 > user_accounts
 > users
 
-### x
+## 定义关联关系和修改模型的 fillable 属性
 
 并定义可填充的数据，即 `$fillable` 数组的值。
 ```
