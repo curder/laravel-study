@@ -117,11 +117,11 @@ php artisan migrate
 > 执行上面的命令后数据库将生成七张表，
 > migrations
 > password_resets
-> users
 > posts
-> videos
-> tags
 > taggables
+> tags
+> users
+> videos
 
 
 ## 定义关联关系和修改模型的 fillable 属性
