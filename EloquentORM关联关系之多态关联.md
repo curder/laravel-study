@@ -179,7 +179,16 @@ $factory->define(App\Video::class , function(Faker\Generator $faker){
 });
 ```
 
+使用 tinker 命令
 
+~~~
+php artisan tinker
+
+## 进入到 tinker 界面执行如下命令
+namespace App
+factory(User::class,5)->create(); // 生成5个用户
+factory(Role::class,4)->create() // 生成4条 role_user 表的测试数据
+~~~
 
 
 
