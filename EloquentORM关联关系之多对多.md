@@ -175,7 +175,7 @@ $roles = $user->roles;
 dd($roles->toArray());
 ```
 
-通过角色查询下属的所有用户
+查询角色下属的所有用户
 ```
 $role = \App\Role::find(2);
 $users = $role->users;
