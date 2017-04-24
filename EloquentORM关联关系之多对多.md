@@ -120,7 +120,7 @@ public function users()
 }
 ```
 
->如果你想要中间表自动维护 `created_at` 和 `updated_at` 时间戳，可在定义关联方法时加上 `withTimestamps()` 方法
+> 如果想要中间表自动维护 `created_at` 和 `updated_at` 时间戳，可在定义关联方法时加上 `withTimestamps()` 方法
 
 
 ## 使用 tinker 填充数据
