@@ -42,6 +42,13 @@ php artisan make:model Country
 ```
 
 ### 编辑迁移文件
+
+文件 `<project>/database/migrate/*_create_posts_table.php` 内容如下
+```
+
+```
+
+
 文件 `<project>/database/migrate/*_create_countries_table.php` 内容如下
 ```
 
