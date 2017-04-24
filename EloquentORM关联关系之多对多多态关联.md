@@ -15,6 +15,13 @@
 * `morphToMany()`
 
 * `morphedByMany()`
+*   `attach()`
+
+*   `dettach()`
+
+*   `sync()`
+
+*   `toggle()`
 
 * `posts` 、`videos` 、`tags`、`taggables` 和 `users` 表
 
