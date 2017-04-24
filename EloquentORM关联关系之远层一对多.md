@@ -89,6 +89,7 @@ php artisan migrate
 > password_resets
 > post
 > users
+> countries
 
 
 
