@@ -256,7 +256,17 @@ $commentable = \App\Comment::find(1)->commentable()->with('user')->first();
 
 ### 删除数据
 
+#### 删除一篇文章下的所有评论
+```
+$post = \App\Post::find(1);
+$post->comments()->delete();
+```
 
+#### 删除用户的评论
+```
+$user = \App\User::find(1);
+$user->comments()->delete();
+```
 
 
 ### 更新数据
