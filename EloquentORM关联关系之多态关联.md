@@ -141,8 +141,11 @@ php artisan migrate
 
 ## 使用 tinker 填充测试数据
 
+修改 `/databases/factories/ModelFactory.php`，修改关联数据。
 
+```
 
+```
 
 
 
