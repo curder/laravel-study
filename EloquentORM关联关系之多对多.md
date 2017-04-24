@@ -225,5 +225,6 @@ $user->roles()->detach();
 $role = \App\Role::find(2);
 $role->users()->delete();
 ```
+
 ### 更新数据
 
