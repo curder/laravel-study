@@ -151,12 +151,12 @@ public $timestamps = false;
 // 多对多多态关联
 public function posts()
 {
-return $this->morphedByMany('App\Post','taggable')->withTimpStamp();
+return $this->morphedByMany('App\Post','taggable')->withTimestamps();
 }
 // 多对多多态关联
 public function videos()
 {
-return $this->morphedByMany('App\Video','taggable');
+return $this->morphedByMany('App\Video','taggable')->withTimestamps();
 }
 ```
 
