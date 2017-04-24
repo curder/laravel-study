@@ -10,7 +10,7 @@
 
 ## 关键字和表
 
-* `hasOne()`
+* `morphTo()`
 
 * `hasMany()`
 
