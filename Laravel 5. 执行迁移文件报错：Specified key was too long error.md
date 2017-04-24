@@ -34,10 +34,11 @@ public function boot()
 相当于给予`varchar`默认的长度**120**。
 
 修改数据库的字符集
-如图，新版的Laravel 5.4 使用了 `utf8mb4` 和 `utf8mb4_unicode_ci` ，这个字符集支持 **emoji** , 我们将他改成：
+如图，新版的Laravel 5.4 使用了 `utf8mb4` 和 `utf8mb4_unicode_ci` ，这个字符集支持 **emoji** 
 
 ![](image/screenshot_1493026376620.png)
 
+我们将他改成：
 ```
 'charset' => 'utf8',
 'collation' => 'utf8_general_ci',
