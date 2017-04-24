@@ -285,6 +285,7 @@ $tags = $video->tags;
 
 
 #### 查询标签对应节点
+
 ```
 $tag = \App\Tag::find(1);
 $posts = $tag->posts;
