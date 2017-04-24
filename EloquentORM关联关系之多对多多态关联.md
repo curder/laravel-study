@@ -90,7 +90,11 @@ Schema::create('videos' , function(Blueprint $table){
 文件 `<project>/database/migrate/*_create_tags_table.php` 内容如下
 
 ```
-
+Schema::create('tags', function (Blueprint $table) {
+    $table->increments('id');
+    $table->string('name',20)->default('')->comment('标签名');
+    $table->timestamps();
+});
 ```
 
 
