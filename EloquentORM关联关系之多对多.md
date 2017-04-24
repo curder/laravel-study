@@ -30,7 +30,9 @@ php artisan make:model RoleUser
 ```
 
 ### 编辑迁移文件
-文件 <project>/database/migrate/*_create_users_table.php 内容如下
+
+文件 `<project>/database/migrate/*_create_users_table.php` 内容如下
+
 ```
 Schema::create('users', function (Blueprint $table) {
     $table->increments('id');
@@ -42,7 +44,11 @@ Schema::create('users', function (Blueprint $table) {
 });
 ```
 
+文件 `<project>/database/migrate/*_create_roles_table.php` 内容如下
 
+```
+
+```
 
 ### 运行 php artisan 命令保存修改到数据库
 
