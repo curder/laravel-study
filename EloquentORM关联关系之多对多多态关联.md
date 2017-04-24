@@ -10,13 +10,9 @@
 
 ## 关键字和表
 
-* `hasOne()`
+* `morphToMany()`
 
-* `hasMany()`
 
-* `belongsTo()`
-
-*  `hasManyThrough()`
 
 * `posts` 、`countries` 和 `users` 表
 
