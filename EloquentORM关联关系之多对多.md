@@ -75,7 +75,16 @@ Schema::create('role_user' , function(Blueprint $table){
 ```
 
 ### 运行 php artisan 命令保存修改到数据库
+~~~
+php artisan migrate
+~~~
 
+> 执行上面的命令后数据库将生成五张表，
+> migrations
+> password_resets
+> role_user
+> users
+> roles
 
 
 ## 定义关联关系和修改模型的 fillable 属性
