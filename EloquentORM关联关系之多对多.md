@@ -189,7 +189,9 @@ $role_id = 2;
 $user = \App\User::find(1);
 $user->roles()->attach($role_id);
 ```
+
 #### 将用户批量放入到角色
+
 ```
 $role_ids = [1,3,4];
 $user = \App\User::find(1);
