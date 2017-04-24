@@ -262,7 +262,7 @@ $post = \App\Post::find(1);
 $post->comments()->delete();
 ```
 
-#### 删除用户的评论
+#### 删除用户的所有评论
 ```
 $user = \App\User::find(1);
 $user->comments()->delete();
