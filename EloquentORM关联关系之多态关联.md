@@ -88,6 +88,7 @@ Schema::create('videos' , function(Blueprint $table){
 ```
 Schema::create('commons' , function(Blueprint $table){
     $table->increments('id');
+            $table->unsignedInteger('user_id');
     $table->unsignedInteger('item_id')->comment('评论所在表数据id');
     $table->string('item_type' , 60)->comment('评论所属模型');
     $table->text('content')->comment('评论内容');
