@@ -242,8 +242,6 @@ $comments = \App\Post::find(1)->with(['user','comments'])->first();
 $item = \App\Comment::find(21)->item()->with('user')->first();
 ```
 
-
-
 ### 删除数据
 
 
