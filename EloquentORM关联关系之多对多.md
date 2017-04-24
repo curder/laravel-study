@@ -277,7 +277,7 @@ $role->users()->sync([1]);
 
 顾名思义，如果表中存在则删除数据，如果表中不存在则新增数据
 ```
-$role_id = 2;
+$role_id = 2; // 入参 integer | array
 $user = \App\User::find(1);
 $user->roles()->toggle($role_id);
 ```
