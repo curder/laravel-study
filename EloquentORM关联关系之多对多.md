@@ -127,7 +127,7 @@ php artisan tinker
 ## 进入到 tinker 界面执行如下命令
 namespace App
 factory(User::class,4)->create(); // 生成4个用户
-factory(Post::class,30)->create() // 生成30条 posts 表的测试数据
+factory(Role::class,4)->create() // 生成30条 posts 表的测试数据
 ~~~
 
 
