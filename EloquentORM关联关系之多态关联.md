@@ -94,12 +94,23 @@ Schema::create('commons' , function(Blueprint $table){
     $table->string('item_type' , 60)->comment('评论所属模型');
     $table->text('content')->comment('评论内容');
     $table->timestamps();
-
-    $table->foreign('user_id')
-        ->references('id')
-        ->on('users')
-        ->onUpdate('cascade')
-        ->onDelete('cascade');
 });
 // 注意： 这里 `item_id` 和 `item_type`，字段前缀与模型的方法保持一些。比如这列使用 `item_` 那么定义的关联方法为 `item()`
 ```
+
+### 运行 php artisan 命令保存修改到数据库
+~~~
+php artisan migrate
+~~~
+
+> 执行上面的命令后数据库将生成五张表，
+> migrations
+> password_resets
+> users
+> 
+> role_user
+
+
+
+
+
