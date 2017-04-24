@@ -218,8 +218,8 @@ $post->comments()->save($comment); // 新增的 `comment` 模型中 `commentable
 $user_id = \Auth::user()->id;
 $comments = [
     new \App\Comment(['body' => 'A new comment For Post 2.' , 'user_id' => $user_id]) ,
-    new \App\Comment(['body' => 'Another comment For Post 2.', 'user_id' => $user_id]) ,
-    new \App\Comment(['body' => 'The latest comment For Post 2.', 'user_id' => $user_id])
+    new \App\Comment(['body' => 'Another comment For Post 2.' , 'user_id' => $user_id]) ,
+    new \App\Comment(['body' => 'The latest comment For Post 2.' , 'user_id' => $user_id])
 ];
 $post = \App\Post::find(2);
 $post->comments()->saveMany($comments);
