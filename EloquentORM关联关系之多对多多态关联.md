@@ -19,7 +19,14 @@
 * `posts` 、`countries` 和 `users` 表
 
 
+## 生成模型和迁移文件
 
+```
+php artisan make:model Post -m
+php artisan make:model Video -m
+php artisan make:model Tag -m
+php artisan make:model Taggable -m
+```
 
 
 
