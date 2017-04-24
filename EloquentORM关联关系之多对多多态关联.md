@@ -69,7 +69,21 @@ Schema::create('posts' , function(Blueprint $table){
 文件 `<project>/database/migrate/*_create_videos_table.php` 内容如下
 
 ```
+Schema::create('videos' , function(Blueprint $table){
+    $table->increments('id');
+    $table->unsignedInteger('user_id')->comment('用户id');
+    $table->string('title' , 30)->comment('标题');
+    $table->string('description' , 120)->comment('描述');
+    $table->text('body')->comment('内容');
+    $table->unsignedTinyInteger('status')->comment('数据状态');
+    $table->timestamps();
 
+    $table->foreign('user_id')
+        ->references('id')
+        ->on('users')
+        ->onUpdate('cascade')
+        ->onDelete('cascade');
+});
 ```
 
 
