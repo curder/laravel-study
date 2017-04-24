@@ -18,6 +18,8 @@
 
 * `sync()`
 
+* `toggle()`
+
 * `roles` 、`role_user` 和 `users` 表
 
 * `User` 、`Role` 和 `RoleUser` 模型
