@@ -119,29 +119,34 @@ public function posts()
 修改 `/databases/factories/ModelFactory.php`，新增关联数据。
 
 ```
-<?php
-
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\User::class , function(Faker\Generator $faker){
     static $password;
+    $country_ids = \App\Country::pluck('id')->toArray();
 
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
+        'name'           => $faker->name ,
+        'country_id'     => $faker->randomElement($country_ids) ,
+        'email'          => $faker->unique()->safeEmail ,
+        'password'       => $password ? : $password = bcrypt('secret') ,
+        'remember_token' => str_random(10) ,
     ];
 });
-
-$factory->define(App\Post::class, function (Faker\Generator $faker) {
+$factory->define(App\Post::class , function(Faker\Generator $faker){
     $user_ids = \App\User::pluck('id')->toArray();
+
     return [
-        'user_id' => $faker->randomElement($user_ids),
-        'title' => $faker->word,
-        'body' => $faker->text(),
+        'user_id' => $faker->randomElement($user_ids) ,
+        'title'   => $faker->word ,
+        'body'    => $faker->text() ,
     ];
 });
 
+$factory->define(App\Country::class , function(Faker\Generator $faker){
+    return [
+        'name'         => $faker->country ,
+        'display_name' => $faker->country ,
+    ];
+});
 ```
 
 ```
