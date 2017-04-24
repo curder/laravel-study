@@ -114,7 +114,7 @@ public function posts()
      * @param  string|null $secondKey
      * @param  string|null $localKey 不填默认为当前模型的主键
      */
-    return $this->hasManyThrough('App\Post' , 'App\User' , 'country_id' , 'user_id','id');
+    return $this->hasManyThrough('App\Post' , 'App\User' , 'country_id' , 'user_id', 'id');
 }
 ```
 
