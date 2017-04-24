@@ -99,6 +99,10 @@ php artisan migrate
 ```
 
 
+## 使用 tinker 填充数据
+
+修改 `/databases/factories/ModelFactory.php`，新增关联数据。
+
 
 
 
