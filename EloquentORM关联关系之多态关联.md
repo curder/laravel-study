@@ -29,7 +29,7 @@
 ```
 php artisan make:model  Post -m
 php artisan make:model Video -m
-php artisan make:model Commont -m
+php artisan make:model Comment -m
 ```
 
 ### 编辑迁移文件
@@ -85,7 +85,7 @@ Schema::create('videos' , function(Blueprint $table){
 });
 ```
 
-文件 `<project>/database/migrate/*_create_commonts_table.php` 内容如下
+文件 `<project>/database/migrate/*_create_comments_table.php` 内容如下
 
 ```
 Schema::create('commons' , function(Blueprint $table){
