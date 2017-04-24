@@ -167,6 +167,17 @@ factory(Role::class,4)->create() // 生成4条 role_user 表的测试数据
 
 ### 查询数据
 
+通过用户查询拥有的角色
+
+```
+$user = \App\User::find(1);
+$roles = $user->roles;
+dd($roles->toArray());
+```
+
+    // 通过角色查询下属的所有用户
+    $role = \App\Role::find(2);
+    $users = $role->users;
 
 ### 关联删除
 
