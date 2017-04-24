@@ -249,6 +249,8 @@ $role->users()->delete();
 ```
 $user = \App\User::find(1);
 $user->roles()->sync([1,2,4]);
+
+$user->roles()->sync([1 => ['expires' => true]]);
 ```
 
 #### 把角色"同步"给用户
