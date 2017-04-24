@@ -229,7 +229,7 @@ $post->comments()->saveMany($comments);
 ```
 $user_id = \Auth::user()->id;
 $video = \App\Video::find(10);
-$comment = new \App\Comment(['body' => 'A new Comment For Video 10.']);
+$comment = new \App\Comment(['body' => 'A new Comment For Video 10.', 'user_id' => $user_id]);
 $video->comments()->save($comment); //
 ```
 ##### 添加多条视频评论
