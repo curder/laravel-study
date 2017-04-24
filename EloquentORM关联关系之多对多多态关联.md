@@ -56,7 +56,6 @@ Schema::create('posts' , function(Blueprint $table){
     $table->timestamp('published_at')->nullable();
     $table->timestamps();
 
-
     $table->foreign('user_id')
         ->references('id')
         ->on('users')
