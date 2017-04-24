@@ -132,7 +132,7 @@ php artisan migrate
 
 ```
 
-在 `Common` 模型中的对应关系：
+在 `Comment` 模型中的对应关系：
 
 ```
 
