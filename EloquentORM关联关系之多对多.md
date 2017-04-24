@@ -198,7 +198,6 @@ $user = \App\User::find(1);
 $user->roles()->attach($role_ids);
 ```
 
-
 ### 查询数据
 
 查询用户所拥有的角色
