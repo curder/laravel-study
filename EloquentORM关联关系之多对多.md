@@ -122,7 +122,9 @@ public function users()
      * @param  string $relatedKey 关联模型的外键id，不填默认为 user_id 规则为：Str::snake(class_basename($related)).'_'.$related->primaryKey
      * @param  string $relation   关联方法名 不填默认为 users
      */
-    return $this->belongsToMany(User::class , 'role_user' , 'role_id' , 'user_id' , 'users')->withTimestamps();
+    return $this->belongsToMany(User::class , 'role_user' , 'role_id' , 'user_id' , 'users')
+                      ->withPivot(['created_at','updated_at']) // 中间表的字段
+                      ->withTimestamps();
 }
 ```
 
