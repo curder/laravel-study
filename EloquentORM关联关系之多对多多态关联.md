@@ -151,7 +151,7 @@ public $timestamps = false;
 // 多对多多态关联
 public function posts()
 {
-return $this->morphedByMany('App\Post','taggable');
+return $this->morphedByMany('App\Post','taggable')->withTimpStamp();
 }
 // 多对多多态关联
 public function videos()
