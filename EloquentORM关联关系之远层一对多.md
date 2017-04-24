@@ -14,7 +14,7 @@
 
 * `belongsTo()`
 
-* `posts` 和 `users` 表
+* `posts` 、`countries` 和 `users` 表
 
 
 
