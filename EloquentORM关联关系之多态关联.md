@@ -234,6 +234,7 @@ $video->comments()->save($comment); //
 ```
 ##### 添加多条视频评论
 ```
+$user_id = \Auth::user()->id;
 $comments = [
     new \App\Comment(['body' => 'A new comment For Video 5.', 'user_id' => $user_id]) ,
     new \App\Comment(['body' => 'Another comment For Video 5.', 'user_id' => $user_id]) ,
