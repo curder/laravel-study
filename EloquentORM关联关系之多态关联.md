@@ -236,7 +236,7 @@ $video->comments()->saveMany($comments);
 
 ```
 // 查询一篇文章下的评论和发布评论者
-$comments = \App\Post::find(1)->with(['user','comments'])->first();
+$comments = \App\Post::find(1)->with(['user' , 'comments'])->first();
 
 // 通过评论查询出数据和发布评论的用户信息
 $item = \App\Comment::find(21)->item()->with('user')->first();
