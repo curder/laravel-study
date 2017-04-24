@@ -144,7 +144,7 @@ public function tags()
 }
 ```
 
-在Tag模型中定义关联关系：
+在 `Tag` 模型中定义关联关系：
 
 ```
 public $timestamps = false;
