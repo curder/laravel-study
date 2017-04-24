@@ -34,3 +34,21 @@ php artisan make:model Taggable -m
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
