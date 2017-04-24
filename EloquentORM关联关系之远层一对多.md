@@ -110,7 +110,9 @@ public function posts()
 
 `App\User` 模型关联关系
 
+```
 
+```
 
 ### 使用 tinker 填充数据
 
