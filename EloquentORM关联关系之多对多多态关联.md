@@ -101,7 +101,13 @@ Schema::create('tags', function (Blueprint $table) {
 文件 `<project>/database/migrate/*_create_taggables_table.php` 内容如下
 
 ```
-
+Schema::create('taggables' , function(Blueprint $table){
+    $table->increments('id');
+    $table->unsignedInteger('taggable_id')->comment('数据id');
+    $table->string('taggable_type' , 40)->comment('关联模型');
+    $table->unsignedInteger('tag_id')->comment('标签id');
+    $table->timestamps();
+});
 ```
 
 ### 运行 php artisan 命令保存修改到数据库
