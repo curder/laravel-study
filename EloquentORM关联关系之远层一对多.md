@@ -41,7 +41,7 @@ php artisan make:model Post
 ```
 
 ### 编辑迁移文件
-文件 `<project>/database/migrate/*timestramp_create_countries_table.php` 内容如下
+文件 `<project>/database/migrate/*_create_countries_table.php` 内容如下
 ```
 
 ```
