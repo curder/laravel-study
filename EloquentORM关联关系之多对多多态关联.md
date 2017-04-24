@@ -16,7 +16,7 @@
 
 * `morphedByMany()`
 
-* `posts` 、`countries` 和 `users` 表
+* `posts` 、`videos` 、`tags`、`taggables` 和 `users` 表
 
 
 ## 生成模型和迁移文件
