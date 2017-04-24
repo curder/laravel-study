@@ -10,7 +10,6 @@
 
 ## 关键字和表
 
-
 * `belongsToMany()`
 
 * `roles` 、`role_user` 和 `users` 表
