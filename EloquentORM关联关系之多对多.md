@@ -258,12 +258,12 @@ $role->users()->sync([1]);
 
 > 如果在定义 `belongsToMany()` 关联关系的时候，我们想操作中间关联表的数据，那么可以定义 `with->withPivot($columns)` （参数填写中间表的字段）
 那么，我们可以在使用 `attach()` 方法的时候传入第二个参数进行数据的同步更新，例如：
-```
-dd($user->roles()->attach($role_id,['created_at'=>'2019-04-24 06:08:22']));
-```
-当然，如果单独需要更新中间表，这里指的是`role_user` 表的字段，可以使用 `updateExistingPivot()`，例如：
-```
-$role_id = 2;
-$user = \App\User::find(1);
-$user->roles()->updateExistingPivot($role_id,['created_at'=>'2019-04-24 06:08:22']);
-```
+> ```
+> dd($user->roles()->attach($role_id,['created_at'=>'2019-04-24 06:08:22']));
+> ```
+> 当然，如果单独需要更新中间表，这里指的是`role_user` 表的字段，可以使用 `updateExistingPivot()`，例如：
+> ```
+> $role_id = 2;
+> $user = \App\User::find(1);
+> $user->roles()->updateExistingPivot($role_id,['created_at'=>'2019-04-24 06:08:22']);
+> ```
