@@ -30,7 +30,7 @@ php artisan make:model RoleUser
 ```
 
 ### 编辑迁移文件
-
+文件 <project>/database/migrate/*_create_users_table.php 内容如下
 ```
 
 ```
