@@ -261,8 +261,12 @@ $video->tags()->saveMany($tags);
 
 ### 删除数据
 
+####  删除一篇文章下的所有标签
 ```
+$post = \App\Post::find(1);
 
+$post->tags()->delete();  // 删除tags Table 中的关联数据
+$post->tags()->detach(); // 同步删除 toggables Table中的关联数据
 ```
 
 
