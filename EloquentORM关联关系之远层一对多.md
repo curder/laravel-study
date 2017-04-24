@@ -262,7 +262,7 @@ $country = \App\Country::find(1);
 $country->posts()->delete(); // 关联删除 posts 表中country_id 为 1 的相关记录，此处country_id 为 1 通过用户表关联得出。
 ```
 
-
+> 相关的更多的关联删除操作，可以自行尝试。
 
 ### 更新数据
 
