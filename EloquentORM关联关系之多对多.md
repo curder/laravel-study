@@ -219,5 +219,11 @@ $user = \App\User::find(1);
 $user->roles()->detach();
 ```
 
+删除角色下的所有用户
+
+```
+$role = \App\Role::find(2);
+$role->users()->delete();
+```
 ### 更新数据
 
