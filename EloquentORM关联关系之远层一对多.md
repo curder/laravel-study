@@ -185,7 +185,10 @@ $posts = \App\Country::with(array('posts.user'))->find(1);
 ```
 
 
-#### 查询文章所属用户
+#### 查询文章所属国家信息
+```
+$posts = \App\Post::with(['user.country'])->get();
+```
 
 ##### 查询单个文章的关联用户信息
 
