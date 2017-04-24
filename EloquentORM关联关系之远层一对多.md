@@ -40,6 +40,7 @@ php artisan make:migration create_countries_table --create=countries
 php artisan make:model Post
 ```
 
+### 编辑迁移文件
 
 
 
