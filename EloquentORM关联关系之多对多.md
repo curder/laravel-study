@@ -61,7 +61,6 @@ Schema::create('roles', function (Blueprint $table) {
 
 ```
 Schema::create('role_user' , function(Blueprint $table){
-    $table->increments('id');
     $table->unsignedInteger('user_id')->comment('用户id，关联users表');
     $table->unsignedInteger('role_id')->comment('角色id，关联roles表');
 
