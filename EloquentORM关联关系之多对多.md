@@ -105,7 +105,17 @@ public function roles()
 在 `Role` 模型中定义与 `User` 模型的关联对应关系：
 
 ```
-
+public function roles()
+{
+    /**
+     * @param  string $related    关联关系
+     * @param  string $table      关联中间表 不填默认为 role_user
+     * @param  string $foreignKey 当前模型的外键id,不填默认为 user_id
+     * @param  string $relatedKey 关联模型的外键id，不填默认为 role_id
+     * @param  string $relation   关联方法名 不填默认为roles
+     */
+    return $this->belongsToMany('App\Role' , 'role_user' , 'user_id' , 'role_id' , 'roles');
+}
 ```
 
 
