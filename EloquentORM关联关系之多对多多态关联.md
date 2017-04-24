@@ -47,7 +47,22 @@ Schema::create('users' , function(Blueprint $table){
 文件 `<project>/database/migrate/*_create_posts_table.php` 内容如下
 
 ```
+Schema::create('posts' , function(Blueprint $table){
+    $table->increments('id');
+    $table->unsignedInteger('user_id');
+    $table->string('title' , 60);
+    $table->text('body');
+    $table->unsignedInteger('views')->comment('浏览数');
+    $table->timestamp('published_at')->nullable();
+    $table->timestamps();
 
+
+    $table->foreign('user_id')
+        ->references('id')
+        ->on('users')
+        ->onUpdate('cascade')
+        ->onDelete('cascade');
+});
 ```
 
 
