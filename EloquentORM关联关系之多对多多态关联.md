@@ -141,7 +141,18 @@ php artisan migrate
 在Tag模型中定义关联关系：
 
 ```
+public $timestamps = false;
 
+// 多对多多态关联
+public function posts()
+{
+return $this->morphedByMany('App\Post','taggable');
+}
+// 多对多多态关联
+public function vedios()
+{
+return $this->morphedByMany('App\Vedio','taggable');
+}
 ```
 
 
