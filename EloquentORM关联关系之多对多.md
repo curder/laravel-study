@@ -54,7 +54,19 @@ Schema::create('users', function (Blueprint $table) {
 文件 <project>/database/migrate/*_create_role_user_table.php 内容如下
 
 ```
+Schema::create('role_user' , function(Blueprint $table){
+    $table->increments('id');
+    $table->unsignedInteger('user_id')->comment('用户id，关联users表');
+    $table->unsignedInteger('role_id')->comment('角色id，关联roles表');
 
+    $table->foreign('user_id')->references('id')->on('users')
+        ->onUpdate('cascade')->onDelete('cascade');
+    $table->foreign('role_id')->references('id')->on('roles')
+        ->onUpdate('cascade')->onDelete('cascade');
+
+    $table->primary(['user_id' , 'role_id']);
+    $table->timestamps();
+});
 ```
 
 ### 运行 php artisan 命令保存修改到数据库
