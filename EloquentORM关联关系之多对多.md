@@ -27,7 +27,7 @@
 一种常见的关联关系是多对多，即表A的某条记录通过中间表 C 与表 B 的多条记录关联，反之亦然。比如一个用户有多种角色，反之一个角色对应多个用户。
  　　比如用户与角色组之间的关系，我们建立一个中间表 `role_user`，这个表关联用户表 `users` **(使用系统自带的users表)** 和 `roles` 表，如下
 
-## 生成迁移文件和模型
+## 生成模型和迁移文件
 
 ```
 php artisan make:migration create_roles_table --create=roles
