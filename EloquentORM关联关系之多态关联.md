@@ -234,7 +234,20 @@ $video = \App\Video::find(5);
 $video->comments()->saveMany($comments);
 ```
 
+### 查询数据
 
+```
+
+```
+
+
+
+### 删除数据
+
+
+
+
+### 更新数据
 
 
 
