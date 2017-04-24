@@ -255,7 +255,7 @@ $user = \App\User::find(1);
 $user->posts()->delete(); // 删除 posts 表中相关记录
 ```
 
-通过国家唉关联删除文章信息
+通过国家关联删除文章信息
 
 ```
 $country = \App\Country::find(1);
