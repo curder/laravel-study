@@ -37,7 +37,14 @@ php artisan make:model Common -m
 文件 `<project>/database/migrate/*_create_users_table.php` 内容如下
 
 ```
-
+Schema::create('users' , function(Blueprint $table){
+$table->increments('id');
+$table->string('name');
+$table->string('email' , 30)->unique();
+$table->string('password');
+$table->rememberToken();
+$table->timestamps();
+});
 ```
 
 文件 `<project>/database/migrate/*_create_posts_table.php` 内容如下
