@@ -241,3 +241,14 @@ $role->users()->delete();
 
 ### 更新数据
 
+#### 把用户"同步"到角色中
+```
+$user = \App\User::find(1);
+$user->roles()->sync([1,2,4]);
+```
+
+#### 把角色"同步"给用户
+```
+$role = \App\Role::find(3);
+$role->users()->sync([1]);
+```
