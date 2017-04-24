@@ -12,11 +12,9 @@
 
 * `morphTo()`
 
-* `hasMany()`
+* `morphMany()`
 
-* `belongsTo()`
 
-*  `hasManyThrough()`
 
 * `posts` 、`videos`、`comments` 和 `users` 表
 
