@@ -31,7 +31,7 @@ DB_PASSWORD=db_password
 
 我们定义关联关系，文章表 `posts` （**假设用户表使用系统自带的**）
 
-## 生成迁移文件和模型
+## 生成模型和迁移文件
 
 ```shell
 php artisan make:migration create_posts_table --create=posts
