@@ -96,9 +96,9 @@ php artisan migrate
 `App\Country` 模型中定义与 `App\Post` 模型的远层一对多关系
 ```
 public function posts()
-    {
-        return $this->hasManyThrough('App\Post','App\User');
-    }
+{
+	return $this->hasManyThrough('App\Post','App\User');
+}
 ```
 
 `App\Post` 模型关联关系：
