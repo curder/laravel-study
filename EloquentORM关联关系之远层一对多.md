@@ -44,7 +44,13 @@ php artisan make:model Country
 ### 编辑迁移文件
 文件 `<project>/database/migrate/*_create_users_table.php` 内容如下
 ```
-
+ $table->increments('id');
+            $table->string('name');
+            $table->unsignedInteger('country_id');
+            $table->string('email',30)->unique();
+            $table->string('password');
+            $table->rememberToken();
+            $table->timestamps();
 ```
 
 
