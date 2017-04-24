@@ -23,14 +23,17 @@ Laravel 5.4.17
 单一对应关系： 
 
 * hasOne
-
 * belongsTo
-
 * morphTo
-
 * morphOne
 
+多个对应关系指的是使用以下关键词定义的关联模型：
 
+* hasMany
+* belongsToMany
+* morphMany
+* morphToMany
+* morphedByMany
 
 > 因为 Eloquent 会根据数据库字段动态的产生 property 与 method等，若使用 [Laravel IDE Helper](https://github.com/barryvdh/laravel-ide-helper) ，会直接在Model加上 `@property` 与 `@method` 描述model的动态 proerty 与 method。 如下`app\User.php`中安装完`Laravel IDE Helper`后执行`php artisan ide-helper:models`后自动生成的内容：
 
