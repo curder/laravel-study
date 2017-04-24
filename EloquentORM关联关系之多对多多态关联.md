@@ -221,7 +221,8 @@ factory(Video::class,20)->create() // 生成20条 videos 表的测试数据
 ## 关联操作
 
 ### 新增数据
-// 添加一个文章标签
+#### 添加一个文章标签
+
 ```
 $tag = new \App\Tag(['name' => 'A Post Tag For 1.']);
 $post = \App\Post::find(1);
@@ -229,6 +230,7 @@ $post->tags()->save($tag); // 新增的 `tag` 模型中 `taggable_id` 和 `tagga
 ```
 
 ####  添加多个文章标签
+
 ```
 $tags = [
     new \App\Tag(['name' => 'A Post Tag For 2.']),
@@ -239,11 +241,16 @@ $post->tags()->saveMany($tags); // 新增的 `tag` 模型中 `taggable_id` 和 `
 ```
 
 #### 添加一个视频标签
+
 ```
 $tag = new \App\Tag(['name' => 'A Post Tag For 2.']);
 $video = \App\Video::find(2);
 $video->tags()->save($tag); // 新增的 `tag` 模型中 `taggable_id` 和 `taggable_type` 字段会被自动设定
-// 添加多个视频标签
+```
+
+#### 添加多个视频标签
+
+```
 $tags = [
     new \App\Tag(['name' => 'A Video Tag For 1.']),
     new \App\Tag(['name' => 'A Video Tag For 1.']),
@@ -251,6 +258,7 @@ $tags = [
 $video = \App\Video::find(1);
 $video->tags()->saveMany($tags);
 ```
+
 ### 删除数据
 
 
