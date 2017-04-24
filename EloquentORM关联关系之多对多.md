@@ -88,7 +88,20 @@ php artisan migrate
 
 
 ## 定义关联关系和修改模型的 fillable 属性
+在`User`模型中定义与`Role`模型的一对一对应关系：
 
+
+```
+namespace App;
+use Illuminate\Database\Eloquent\Model;
+class User extends Model
+{
+public function roles()
+{
+    return $this->belongsToMany('App\Role');
+}
+}
+```
 
 ## 使用 tinker 填充数据
 
