@@ -216,5 +216,8 @@ $user->roles()->detach($role_id);
 $user = \App\User::find(1);
 $user->roles()->detach();
 ```
+
+
+
 ### 更新数据
 
