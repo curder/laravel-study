@@ -166,7 +166,44 @@ return $this->morphedByMany('App\Video','taggable');
 修改 `/databases/factories/ModelFactory.php`，新增关联数据。
 
 ```
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\User::class, function (Faker\Generator $faker) {
+    static $password;
 
+    return [
+        'name' => $faker->name,
+        'email' => $faker->unique()->safeEmail,
+        'password' => $password ?: $password = bcrypt('secret'),
+        'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(App\Post::class, function (Faker\Generator $faker) {
+    $user_ids = \App\User::pluck('id')->toArray();
+    return [
+        'user_id' => $faker->randomElement($user_ids),
+        'title' => $faker->title,
+        'body' => $faker->text(),
+        'views' => $faker->numberBetween(0, 1000),
+    ];
+});
+
+$factory->define(App\Video::class, function (Faker\Generator $faker) {
+    $user_ids = \App\User::pluck('id')->toArray();
+    return [
+        'user_id' => $faker->randomElement($user_ids),
+        'title' => $faker->title,
+        'body' => $faker->text(),
+        'description' => $faker->title,
+        'status' => 1
+    ];
+});
+
+$factory->define(App\Tag::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->lastName,
+    ];
+});
 ```
 
 使用 tinker 命令
