@@ -1,0 +1,1 @@
+[Laravel ORM relationship 探討](http://labs.beyond.com.tw/blog/?p=605)
