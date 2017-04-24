@@ -30,7 +30,13 @@ DB_PASSWORD=db_password
 
 我们定义关联关系，文章表 `posts` 和 国家表 `countries`（**假设用户表使用系统自带的**）
 
+## 生成迁移文件和模型
 
+```shell
+php artisan make:migration create_posts_table --create=posts
+
+php artisan make:model Post
+```
 
 
 
