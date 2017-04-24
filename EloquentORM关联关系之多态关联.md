@@ -199,14 +199,14 @@ factory(Video::class,10)->create(); // 生成10条 videos 表的测试数据
 
 #### 添加评论
 
-  // 添加一个文章评论
+##### 添加一个文章评论
 ```
 $post = \App\Post::find(1);
 $comment = new \App\Comment(['content' => 'A new comment For Post 1.']);
 $post->comments()->save($comment); // 新增的 `comment` 模型中 `item_id` 和 `item_type` 字段会被自动设定
 ```
 
-#### 添加多条文章评论
+##### 添加多条文章评论
 ```
 $comments = [
     new \App\Comment(['content' => 'A new comment For Post 2.']) ,
