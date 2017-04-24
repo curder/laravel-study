@@ -226,4 +226,44 @@ $posts = \App\Country::with(array('posts.user'))->find(1);
 $posts = \App\Post::with(['user.country'])->get();
 ```
 
+##### 获取用户列表并关联所属文章
+```
+\App\User::with('posts')->get()->toArray();
+```
+
+
+#### 查询文章所属用户
+
+##### 查询单个文章的关联用户信息
+```
+$post = \App\Post::find(1); // 获取文章数据
+$user = $post->user->toArray(); // 获取文字所属用户
+```
+
+##### 文章列表关联用户信息
+```
+$post = \App\Post::with('user')->get()->toArray();
+```
+
+
+### 关联删除
+
+删除某用户下的所有文章数据。
+
+```
+$user = \App\User::find(1);
+$user->posts()->delete(); // 删除 posts 表中相关记录
+```
+
+### 更新数据
+
+
+
+
+
+#### 通过关联 User 数据
+
+
+
+
 
