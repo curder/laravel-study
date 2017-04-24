@@ -202,6 +202,19 @@ $users = $role->users;
 
 ### 关联删除
 
+将用户从角色中移除
 
+```
+$role_id = 1;
+$user = \App\User::find(1);
+$user->roles()->detach($role_id);
+```
+
+将用户从所有角色中移除
+
+```
+$user = \App\User::find(1);
+$user->roles()->detach();
+```
 ### 更新数据
 
