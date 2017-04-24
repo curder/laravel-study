@@ -257,3 +257,4 @@ $role->users()->sync([1]);
 
 
 > 如果在定义 `belongsToMany()` 关联关系的时候，我们想操作中间关联表的数据，那么可以定义 `with->withPivot($columns)` （参数填写中间表的字段）
+那么，我们可以在
