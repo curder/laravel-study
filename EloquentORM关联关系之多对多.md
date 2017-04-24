@@ -47,11 +47,17 @@ Schema::create('users', function (Blueprint $table) {
 文件 `<project>/database/migrate/*_create_roles_table.php` 内容如下
 
 ```
-
+Schema::create('roles', function (Blueprint $table) {
+    $table->increments('id')->comment('角色ID');
+    $table->string('name',20)->unique()->comment('角色英文名称');
+    $table->char('display_name',20)->nullable()->comment('角色中文名称');
+    $table->string('description',180)->nullable()->comment('角色简要描述');
+    $table->timestamps();
+});
 ```
 
 
-文件 <project>/database/migrate/*_create_role_user_table.php 内容如下
+文件 `<project>/database/migrate/*_create_role_user_table.php` 内容如下
 
 ```
 Schema::create('role_user' , function(Blueprint $table){
