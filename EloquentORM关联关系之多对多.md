@@ -118,8 +118,37 @@ public function roles()
 修改 `/databases/factories/ModelFactory.php`，新增关联数据。
 
 ~~~
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\User::class , function(Faker\Generator $faker){
+    static $password;
 
+    return [
+        'name'           => $faker->name ,
+        'email'          => $faker->unique()->safeEmail ,
+        'password'       => $password ? : $password = bcrypt('secret') ,
+        'remember_token' => str_random(10) ,
+    ];
+});
+
+$factory->define(App\Role::class , function(Faker\Generator $faker){
+    return [
+        'name'         => $faker->name ,
+        'display_name' => $faker->name ,
+        'description'  => $faker->text(150) ,
+    ];
+});
+$factory->define(App\RoleUser::class , function(Faker\Generator $faker){
+    $user_ids = \App\User::pluck('id')->toArray();
+    $role_ids = \App\User::pluck('id')->toArray();
+
+    return [
+        'user_id' => $faker->randomElement($user_ids) ,
+        'role_id' => $faker->randomElement($role_ids)
+    ];
+});
 ~~~
+
+使用 tinker 命令
 
 ~~~
 php artisan tinker
