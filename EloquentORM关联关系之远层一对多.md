@@ -93,6 +93,14 @@ php artisan migrate
 
 ### 定义关联关系和修改模型的 fillable 属性
 
+`App\Country` 模型中定义与 `App\Post` 模型的远层一对多关系
+```
+public function posts()
+    {
+        return $this->hasManyThrough('App\Post','App\User');
+    }
+```
+
 `App\Post` 模型关联关系：
 ```
 
