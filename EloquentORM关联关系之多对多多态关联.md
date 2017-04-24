@@ -14,7 +14,9 @@
 
 * `morphToMany()`
 
-* `morphedByMany`
+* `morphedByMany()`
+
+* 
 
 
 
