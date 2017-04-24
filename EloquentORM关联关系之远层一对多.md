@@ -256,10 +256,13 @@ $user->posts()->delete(); // 删除 posts 表中相关记录
 ```
 
 通过国家唉关联删除文章信息
+
 ```
 $country = \App\Country::find(1);
 $country->posts()->delete(); // 关联删除 posts 表中country_id 为 1 的相关记录，此处country_id 为 1 通过用户表关联得出。
 ```
+
+
 
 ### 更新数据
 
