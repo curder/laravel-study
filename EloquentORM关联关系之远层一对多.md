@@ -101,6 +101,8 @@ public function posts()
 }
 ```
 
+> 由此可见我们通过hasManyThrough方法来定义远层一对多关联。其中第一个参数是关联对象类名，第二个参数是中间对象类名。
+
 `App\Post` 模型关联关系：
 ```
 
