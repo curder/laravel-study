@@ -129,13 +129,19 @@ php artisan migrate
 在 `Post` 模型中定义关联关系：
 
 ```
-
+public function tags()
+{
+  return $this->morphToMany('App\Tag','taggable');
+}
 ```
 
 在 `Video` 模型中定义关联关系：
 
 ```
-
+public function tags()
+{
+  return $this->morphToMany('App\Tag','taggable');
+}
 ```
 
 在Tag模型中定义关联关系：
