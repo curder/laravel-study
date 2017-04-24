@@ -144,7 +144,39 @@ php artisan migrate
 修改 `/databases/factories/ModelFactory.php`，修改关联数据。
 
 ```
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\User::class , function(Faker\Generator $faker){
+    static $password;
 
+    return [
+        'name'           => $faker->name ,
+        'email'          => $faker->unique()->safeEmail ,
+        'password'       => $password ? : $password = bcrypt('secret') ,
+        'remember_token' => str_random(10) ,
+    ];
+});
+
+$factory->define(App\Post::class , function(Faker\Generator $faker){
+    $user_ids = \App\User::pluck('id')->toArray();
+
+    return [
+        'user_id'      => $faker->randomElement($user_ids) ,
+        'title'        => $faker->title ,
+        'body'         => $faker->paragraph ,
+        'published_at' => $faker->time('Y-m-d H:i:s') ,
+    ];
+});
+$factory->define(App\Video::class , function(Faker\Generator $faker){
+    $user_ids = \App\User::pluck('id')->toArray();
+
+    return [
+        'user_id'     => $faker->randomElement($user_ids) ,
+        'title'       => $faker->title ,
+        'description' => $faker->title ,
+        'content'     => $faker->paragraph ,
+        'status'      => 1
+    ];
+});
 ```
 
 
