@@ -108,6 +108,47 @@ public function posts()
 
 ```
 
+`App\User` 模型关联关系
 
+
+
+### 使用 tinker 填充数据
+
+修改 `/databases/factories/ModelFactory.php`，新增关联数据。
+
+```
+<?php
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\User::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        'name' => $faker->name,
+        'email' => $faker->unique()->safeEmail,
+        'password' => $password ?: $password = bcrypt('secret'),
+        'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(App\Post::class, function (Faker\Generator $faker) {
+    $user_ids = \App\User::pluck('id')->toArray();
+    return [
+        'user_id' => $faker->randomElement($user_ids),
+        'title' => $faker->word,
+        'body' => $faker->text(),
+    ];
+});
+
+```
+
+```
+php artisan tinker
+
+## 进入到 tinker 界面执行如下命令
+namespace App
+factory(User::class,3)->create(); // 生成3个用户
+factory(Post::class,30)->create() // 生成30条 posts 表的测试数据
+```
 
 
