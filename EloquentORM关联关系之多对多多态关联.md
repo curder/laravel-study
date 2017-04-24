@@ -86,5 +86,14 @@ php artisan migrate
 
 ```
 
+在 `Video` 模型中定义关联关系：
+
+```
+
+```
+
+
+
+
 
 
