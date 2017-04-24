@@ -181,6 +181,7 @@ $posts = \App\Country::with(array('user','posts'))->find(1);
 ```
 $posts = \App\Country::with(array('user'))->find(1);
 $posts = \App\Country::with(array('user.posts'))->find(1);
+$posts = \App\Country::with(array('posts.user'))->find(1);
 ```
 
 
