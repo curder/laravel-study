@@ -158,5 +158,14 @@ factory(Country::class,2)->create(); // 生成两个国家数据
 factory(User::class,3)->create(); // 生成3个用户
 factory(Post::class,30)->create() // 生成30条 posts 表的测试数据
 ```
+## 关联操作
+
+### 新增数据
+
+#### 使用 save() 方法进行关联数据的新增
 
 
+### 查询数据
+
+#### 查询用户发布的所有文章
+##### 获取单个用户的文章
