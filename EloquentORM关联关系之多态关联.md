@@ -104,12 +104,12 @@ php artisan migrate
 ~~~
 
 > 执行上面的命令后数据库将生成六张表，如下：
-> migrations
-> password_resets
-> users
-> commons
-> posts
-> videos
+> * migrations
+> * password_resets
+> * users
+> * commons
+> * posts
+> * videos
 
 
 
