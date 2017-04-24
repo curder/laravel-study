@@ -177,10 +177,10 @@ php artisan tinker
 ## 进入到 tinker 界面执行如下命令
 namespace App
 factory(User::class,4)->create(); // 生成4个用户
-factory(Post::class,20)->create() // 生成10条 posts 表的测试数据
-factory(Video::class,20)->create() // 生成10条 videos 表的测试数据
+factory(Post::class,20)->create() // 生成20条 posts 表的测试数据
+factory(Video::class,20)->create() // 生成20条 videos 表的测试数据
 
-factory(Tag::class,20)->create() // 生成10条 posts 表的测试数据
+factory(Tag::class,20)->create() // 生成20条 tags 表的测试数据
 ~~~
 
 ## 关联操作
