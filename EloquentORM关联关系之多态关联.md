@@ -235,9 +235,9 @@ $video->comments()->save($comment); //
 ##### 添加多条视频评论
 ```
 $comments = [
-    new \App\Comment(['body' => 'A new comment For Video 5.']) ,
-    new \App\Comment(['body' => 'Another comment For Video 5.']) ,
-    new \App\Comment(['body' => 'The latest comment For Video 5.'])
+    new \App\Comment(['body' => 'A new comment For Video 5.', 'user_id' => $user_id]) ,
+    new \App\Comment(['body' => 'Another comment For Video 5.', 'user_id' => $user_id]) ,
+    new \App\Comment(['body' => 'The latest comment For Video 5.', 'user_id' => $user_id])
 ];
 $video = \App\Video::find(5);
 $video->comments()->saveMany($comments);
