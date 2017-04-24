@@ -319,6 +319,7 @@ $videos->tags()->attach($tag->id);
 
 $post->tags()->attach($tag->id);
 ```
+
 > 将视频或者文字添加某个标签
 
 #### 删除关联
