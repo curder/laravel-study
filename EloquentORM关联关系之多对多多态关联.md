@@ -51,8 +51,8 @@ Schema::create('posts' , function(Blueprint $table){
     $table->increments('id');
     $table->unsignedInteger('user_id');
     $table->string('title' , 60);
-    $table->text('body');
     $table->unsignedInteger('views')->comment('浏览数');
+    $table->text('body');
     $table->timestamp('published_at')->nullable();
     $table->timestamps();
 
