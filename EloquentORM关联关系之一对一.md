@@ -98,10 +98,7 @@ php artisan migrate
 > user_accounts
 > users
 
-### 使用 php artisan 命令生成模型
-```
-php artisan make:model UserAccount
-```
+### x
 
 并定义可填充的数据，即 `$fillable` 数组的值。
 ```
