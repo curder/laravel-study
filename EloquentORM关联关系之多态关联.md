@@ -193,6 +193,11 @@ factory(Video::class,10)->create(); // 生成10条 videos 表的测试数据
 
 至此，上面的 `users` 、`posts` 和 `videos` 表数据都已填充完毕。
 
+## 关联操作
+
+### 新增数据
+
+#### 添加评论
 
 
 
