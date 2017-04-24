@@ -34,7 +34,7 @@ DB_PASSWORD=db_password
 ## 生成模型和迁移文件
 
 ```shell
-php artisan make:migration create_user_accounts_table --create=user_accounts
+php artisan make:model UserAccount -m
 ```
 
 
