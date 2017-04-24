@@ -113,6 +113,11 @@ php artisan migrate
 
 ## 定义关联关系和修改模型的 fillable 属性
 
+在 `User` 模型中的对应关系：
+
+```
+
+```
 
 
 
