@@ -196,6 +196,8 @@ $user->roles()->attach($role_id);
 $role_ids = [1,3,4];
 $user = \App\User::find(1);
 $user->roles()->attach($role_ids);
+
+// $user->roles()->attach([1 => ['attribute1' => 'value1'], 2, 3]);
 ```
 
 ### 查询数据
