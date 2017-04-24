@@ -41,7 +41,9 @@ php artisan make:model Post
 ```
 
 ### 编辑迁移文件
+```
 
+```
 
 
 
