@@ -103,7 +103,7 @@ Schema::create('commons' , function(Blueprint $table){
 php artisan migrate
 ~~~
 
-> 执行上面的命令后数据库将生成五张表，
+> 执行上面的命令后数据库将生成六张表，
 > migrations
 > password_resets
 > users
