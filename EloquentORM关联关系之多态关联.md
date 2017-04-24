@@ -20,7 +20,7 @@
 
 
 常见的多态关联就是评论，现在我们的内容类型包括文章和视频，用户既可以评论文章 ，也可以评论视频 。文章存在文章表 `posts`，视频存在视频表 `videos` ，评论存在评论表 `comments` ，某一条评论可能归属于某篇文章，也可能归属于某个视频。
-在评论表中添加一个 `item_id` 字段表示其归属节点 ID ，同时定义一个 `item_type` 字段表示其归属节点类型，比如 `App\Post` 或者 `App\Video` 。
+在评论表中添加一个 `commentable_id` 字段表示其归属节点 ID ，同时定义一个 `commentable_type` 字段表示其归属节点类型，比如 `App\Post` 或者 `App\Video` 。
 
 ## 生成模型和迁移文件
 
@@ -210,7 +210,7 @@ factory(Video::class,10)->create(); // 生成10条 videos 表的测试数据
 ```
 $post = \App\Post::find(1);
 $comment = new \App\Comment(['body' => 'A new comment For Post 1.']);
-$post->comments()->save($comment); // 新增的 `comment` 模型中 `item_id` 和 `item_type` 字段会被自动设定
+$post->comments()->save($comment); // 新增的 `comment` 模型中 `commentable_id` 和 `commentable_type` 字段会被自动设定
 ```
 
 ##### 添加多条文章评论
@@ -248,7 +248,7 @@ $video->comments()->saveMany($comments);
 $comments = \App\Post::find(1)->with(['user' , 'comments'])->first();
 
 // 通过评论查询出数据和发布评论的用户信息
-$item = \App\Comment::find(21)->item()->with('user')->first();
+$commentable = \App\Comment::find(21)->commentable()->with('user')->first();
 ```
 
 ### 删除数据
