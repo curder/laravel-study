@@ -88,18 +88,21 @@ Schema::create('videos' , function(Blueprint $table){
 ```
 Schema::create('commons' , function(Blueprint $table){
     $table->increments('id');
-            $table->unsignedInteger('user_id');
-    $table->unsignedInteger('item_id')->comment('评论所在表数据id');
-    $table->string('item_type' , 60)->comment('评论所属模型');
-    $table->text('content')->comment('评论内容');
+    $table->unsignedInteger('user_id');
+    $table->unsignedInteger('commentable_id')->comment('评论所在表数据id');
+    $table->string('commentable_type' , 60)->comment('评论所属模型');
+    $table->char(1)->notNull()->default('F')->comment('数据状态');
+    $table->text('body')->comment('评论内容');
+
     $table->timestamps();
+
     $table->foreign('user_id')
-              ->references('id')
-              ->on('users')
-              ->onUpdate('cascade')
-              ->onDelete('cascade');
+        ->references('id')
+        ->on('users')
+        ->onUpdate('cascade')
+        ->onDelete('cascade');
 });
-// 注意： 这里 `item_id` 和 `item_type`，字段前缀与模型的方法保持一些。比如这列使用 `item_` 那么定义的关联方法为 `item()`
+// 注意： 这里 `commentable_id` 和 `commentable_type`，字段前缀与模型的方法保持一些。比如这列使用 `commentable_` 那么定义的关联方法为 `commentable()`
 ```
 
 ### 运行 php artisan 命令保存修改到数据库
