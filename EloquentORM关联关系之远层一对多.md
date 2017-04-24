@@ -56,7 +56,17 @@ php artisan make:model Country
 
 文件 `<project>/database/migrate/*_create_posts_table.php` 内容如下
 ```
-
+ $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->string('title', 60);
+            $table->text('body');
+            $table->timestamps();
+            $table->timestamp('published_at')->nullable();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
 ```
 
 
