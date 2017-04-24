@@ -14,7 +14,7 @@
 
 * `attach()`
 
-* `dettach()`
+* `detach()`
 
 * `sync()`
 
