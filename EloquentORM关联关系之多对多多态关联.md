@@ -265,7 +265,7 @@ $video->tags()->saveMany($tags);
 ### 查询数据
 
 #### 查询一篇文章的标签
-    
+
  ```
 $post = \App\Post::find(2);
 $tags = $post->tags;
