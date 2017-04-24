@@ -115,7 +115,21 @@ public function roles()
 
 ## 使用 tinker 填充数据
 
+修改 `/databases/factories/ModelFactory.php`，新增关联数据。
 
+~~~
+
+~~~
+
+~~~
+php artisan tinker
+
+## 进入到 tinker 界面执行如下命令
+namespace App
+factory(Country::class,2)->create(); // 生成两个国家数据
+factory(User::class,3)->create(); // 生成3个用户
+factory(Post::class,30)->create() // 生成30条 posts 表的测试数据
+~~~
 
 
 ## 关联操作
