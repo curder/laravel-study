@@ -95,9 +95,26 @@ php artisan migrate
 
 `App\Country` 模型中定义与 `App\Post` 模型的远层一对多关系
 ```
+public function user()
+{
+    /**
+     * User::class related 关联模型
+     * country_id foreignKey 当前表关联字段
+     * id localKey 关联表字段
+     */
+    return $this->hasMany('App\User' , 'country_id' , 'id');
+}
+
 public function posts()
 {
-	return $this->hasManyThrough('App\Post','App\User','country_id','user_id');
+    /**
+     * @param  string      $related
+     * @param  string      $through
+     * @param  string|null $firstKey
+     * @param  string|null $secondKey
+     * @param  string|null $localKey 不填默认为当前模型的主键
+     */
+    return $this->hasManyThrough('App\Post' , 'App\User' , 'country_id' , 'user_id');
 }
 ```
 
@@ -121,7 +138,25 @@ public function user()
 `App\User` 模型关联关系
 
 ```
+public function posts()
+{
+    /**
+     * Post::class related 关联模型
+     * user_id foreignKey 当前表关联字段
+     * id localKey 关联表字段
+     */
+    return $this->hasMany(Post::class , 'user_id' , 'id');
+}
 
+public function country()
+{
+    /**
+     * Country::class related 关联模型
+     * id foreignKey 当前表关联字段
+     * country_id localKey 关联表字段
+     */
+    return $this->hasOne(Country::class , 'id' , 'country_id');
+}
 ```
 
 ### 使用 tinker 填充数据
