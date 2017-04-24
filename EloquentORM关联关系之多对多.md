@@ -182,7 +182,19 @@ factory(Role::class,4)->create() // 生成4条 role_user 表的测试数据
 
 ### 新增数据
 
+#### 将用户关联到角色
 
+```    
+$role_id = 2;
+$user = \App\User::find(1);
+$user->roles()->attach($role_id);
+```
+#### 将用户批量放入到角色
+```
+$role_ids = [1,3,4];
+$user = \App\User::find(1);
+$user->roles()->attach($role_ids);
+```
 
 
 ### 查询数据
