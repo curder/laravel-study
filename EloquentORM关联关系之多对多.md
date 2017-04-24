@@ -261,9 +261,9 @@ $role->users()->sync([1]);
 ```
 dd($user->roles()->attach($role_id,['created_at'=>'2019-04-24 06:08:22']));
 ```
-当然，如果单独需要更新中间表，这里指的是`role_user` 表的字段，可以使用 ``，例如：
+当然，如果单独需要更新中间表，这里指的是`role_user` 表的字段，可以使用 `updateExistingPivot()`，例如：
 ```
-  $role_id = 2;
-    $user = \App\User::find(1);
-    dd($user->roles()->updateExistingPivot($role_id,['created_at'=>'2019-04-24 06:08:22']));
+$role_id = 2;
+$user = \App\User::find(1);
+$user->roles()->updateExistingPivot($role_id,['created_at'=>'2019-04-24 06:08:22']);
 ```
