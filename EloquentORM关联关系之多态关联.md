@@ -191,6 +191,9 @@ factory(Post::class,10)->create() // 生成10条 posts 表的测试数据
 factory(Video::class,10)->create(); // 生成10条 videos 表的测试数据
 ~~~
 
+至此，上面的 `users` 、`posts` 和 `videos` 表数据都已填充完毕。
+
+
 
 
 
