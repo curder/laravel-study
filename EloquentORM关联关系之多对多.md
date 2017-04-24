@@ -82,9 +82,9 @@ php artisan migrate
 > 执行上面的命令后数据库将生成五张表，
 > migrations
 > password_resets
-> role_user
 > users
 > roles
+> role_user
 
 
 ## 定义关联关系和修改模型的 fillable 属性
