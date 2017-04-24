@@ -10,11 +10,13 @@
 
 ## 关键字和表
 
+* `hasOne()`
+
 * `hasMany()`
 
 * `belongsTo()`
 
-*  `hasManyThrough`
+*  `hasManyThrough()`
 
 * `posts` 、`countries` 和 `users` 表
 
