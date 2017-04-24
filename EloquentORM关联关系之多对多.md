@@ -107,7 +107,17 @@ public function roles()
 在 `Role` 模型中定义与 `User` 模型的关联对应关系：
 
 ```
-
+public function users()
+{
+    /**
+     * @param  string $related    关联关系
+     * @param  string $table      关联中间表 不填默认为 role_user 规则为：Str::snake(class_basename($related)). '_' . Str::snake(class_basename($this)) 并在数据拼接前使用 sort() 排序；
+     * @param  string $foreignKey 当前模型的外键id,不填默认为 role_id 规则为：Str::snake(class_basename($this)).'_'.$this->primaryKey;
+     * @param  string $relatedKey 关联模型的外键id，不填默认为 user_id 规则为：Str::snake(class_basename($related)).'_'.$related->primaryKey
+     * @param  string $relation   关联方法名 不填默认为 users
+     */
+    return $this->belongsToMany(User::class , 'role_user' , 'role_id' , 'user_id' , 'users')->withTimestamps();
+}
 ```
 
 >如果你想要中间表自动维护 `created_at` 和 `updated_at` 时间戳，可在定义关联方法时加上 `withTimestamps()` 方法
