@@ -248,12 +248,15 @@ $post = \App\Post::with('user')->get()->toArray();
 
 ### 关联删除
 
-删除某用户下的所有文章数据。
+通过用户关联删除文章信息
 
 ```
 $user = \App\User::find(1);
 $user->posts()->delete(); // 删除 posts 表中相关记录
+```
 
+通过国家唉关联删除文章信息
+```
 $country = \App\Country::find(1);
 $country->posts()->delete(); // 关联删除 posts 表中country_id 为 1 的相关记录，此处country_id 为 1 通过用户表关联得出。
 ```
