@@ -86,7 +86,7 @@ Schema::create('videos' , function(Blueprint $table){
 文件 `<project>/database/migrate/*_create_comments_table.php` 内容如下
 
 ```
-Schema::create('commons' , function(Blueprint $table){
+Schema::create('comments' , function(Blueprint $table){
     $table->increments('id');
     $table->unsignedInteger('user_id');
     $table->unsignedInteger('commentable_id')->comment('评论所在表数据id');
