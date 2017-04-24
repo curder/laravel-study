@@ -97,7 +97,7 @@ php artisan migrate
 ```
 public function posts()
 {
-	return $this->hasManyThrough('App\Post','App\User');
+	return $this->hasManyThrough('App\Post','App\User','country_id','user_id');
 }
 ```
 
