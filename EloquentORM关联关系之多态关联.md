@@ -235,7 +235,11 @@ $video->comments()->saveMany($comments);
 ### 查询数据
 
 ```
+// 查询一篇文章下的评论
+$comments = \App\Post::find(1)->with('comments')->first();
 
+// 通过评论关联数据
+$item = \App\Comment::find(21)->item;
 ```
 
 
