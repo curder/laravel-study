@@ -50,7 +50,19 @@ php artisan make:model Common -m
 文件 `<project>/database/migrate/*_create_posts_table.php` 内容如下
 
 ```
-
+Schema::create('posts', function (Blueprint $table) {
+    $table->increments('id');
+    $table->unsignedInteger('user_id');
+    $table->string('title', 60);
+    $table->text('body');
+    $table->timestamps();
+    $table->timestamp('published_at')->nullable();
+    $table->foreign('user_id')
+        ->references('id')
+        ->on('users')
+        ->onUpdate('cascade')
+        ->onDelete('cascade');
+});
 ```
 
 文件 `<project>/database/migrate/*_create_videos_table.php` 内容如下
