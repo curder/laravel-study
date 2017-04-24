@@ -147,3 +147,11 @@ php artisan migrate
 
 
 
+
+
+
+
+
+
+
+
