@@ -26,9 +26,8 @@
 ## 生成迁移文件和模型
 
 ```
-php artisan make:migration create_posts_table --create=posts
-
-php artisan make:migration create_countries_table --create=countries
+php artisan make:migration create_roles_table --create=roles
+php artisan make:migration create_role_user_table --create=role_user
 
 php artisan make:model Post
 php artisan make:model Country
