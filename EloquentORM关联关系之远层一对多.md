@@ -46,7 +46,7 @@ php artisan make:model Country
 ```
  $table->increments('id');
  $table->string('name');
- $table->unsignedInteger('country_id');
+ $table->unsignedInteger('country_id'); // 新增这个字段
  $table->string('email',30)->unique();
  $table->string('password');
  $table->rememberToken();
