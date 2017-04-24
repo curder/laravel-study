@@ -51,7 +51,7 @@ Schema::create('users', function (Blueprint $table) {
 ```
 
 
-文件 <project>/database/migrate/*_create_user_role_table.php 内容如下
+文件 <project>/database/migrate/*_create_role_user_table.php 内容如下
 
 ```
 
