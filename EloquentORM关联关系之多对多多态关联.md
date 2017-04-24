@@ -282,6 +282,14 @@ $video = \App\Video::find(1);
 $tags = $video->tags;
 ```
 
+
+
+#### 查询标签对应节点
+```
+$tag = \App\Tag::find(1);
+$posts = $tag->posts;
+```
+
 ### 编辑数据
 
 
