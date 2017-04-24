@@ -107,8 +107,9 @@ php artisan migrate
 > migrations
 > password_resets
 > users
-> 
-> role_user
+> commons
+> posts
+> videos
 
 
 
