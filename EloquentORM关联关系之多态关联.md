@@ -18,7 +18,7 @@
 
 *  `hasManyThrough()`
 
-* `posts` 、`countries` 和 `users` 表
+* `posts` 、`videos` 和 `users` 表
 
 
 常见的多态关联就是评论，现在我们的内容类型包括文章和视频，用户既可以评论文章 ，也可以评论视频 。文章存在文章表 `posts`，视频存在视频表 `videos` ，评论存在评论表 `comments` ，某一条评论可能归属于某篇文章，也可能归属于某个视频。
