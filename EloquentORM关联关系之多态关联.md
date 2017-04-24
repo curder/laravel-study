@@ -209,7 +209,7 @@ factory(Video::class,10)->create(); // 生成10条 videos 表的测试数据
 ##### 添加一个文章评论
 ```
 $post = \App\Post::find(1);
-$comment = new \App\Comment(['body' => 'A new comment For Post 1.']);
+$comment = new \App\Comment(['body' => 'A new comment For Post 1.' , 'user_id' => \Auth::user()->id]);
 $post->comments()->save($comment); // 新增的 `comment` 模型中 `commentable_id` 和 `commentable_type` 字段会被自动设定
 ```
 
