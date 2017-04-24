@@ -121,7 +121,15 @@ php artisan migrate
 在 `User` 模型中的对应关系：
 
 ```
-
+public function comments()
+{
+    /**
+     * Comment::class related 关联模型
+     * id foreignKey 关联表字段
+     * user_id localKey 当前表关联字段
+     */
+    return $this->hasMany(\App\Comment::class , 'user_id' , 'id');
+}
 ```
 
 在 `Post` 模型中的对应关系：
