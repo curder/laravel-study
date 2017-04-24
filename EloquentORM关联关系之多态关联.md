@@ -192,7 +192,48 @@ public function comments()
 在 `Comment` 模型中的对应关系：
 
 ```
+protected $fillable = ['user_id' , 'body'];
 
+
+public function commentable()
+{
+    /**
+     * @param  string $name 与数据库的 commentable 前缀保持一致,并且方法名要与之一致
+     * @param  string $type 与数据库的 commentable_type 字段保持一致
+     * @param  string $id   与数据库的 commentable_id 字段保持一致
+     */
+    return $this->morphTo('commentable' , 'commentable_type' , 'commentable_id');
+}
+
+public function user()
+{
+    /**
+     * User::class related 关联模型
+     * user_id ownerKey 当前表关联字段
+     * id relation 关联表字段
+     */
+    return $this->belongsTo('App\User' , 'user_id' , 'id');
+}
+
+public function post()
+{
+    /**
+     * Post::class related 关联模型
+     * commentable_id ownerKey 当前表关联字段
+     * id relation 关联表字段
+     */
+    return $this->belongsTo('App\Post' , 'commentable_id' , 'id');
+}
+
+public function video()
+{
+    /**
+     * Post::class related 关联模型
+     * commentable_id ownerKey 当前表关联字段
+     * id relation 关联表字段
+     */
+    return $this->belongsTo('App\Video', 'commentable_id' , 'id');
+}
 ```
 
 
