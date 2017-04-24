@@ -13,6 +13,7 @@
 * `belongsToMany()`
 
 * `roles` 、`role_user` 和 `users` 表
+
 * `User` 、`Role` 和 `RoleUser` 模型
 
 一种常见的关联关系是多对多，即表A的某条记录通过中间表 C 与表 B 的多条记录关联，反之亦然。比如一个用户有多种角色，反之一个角色对应多个用户。
