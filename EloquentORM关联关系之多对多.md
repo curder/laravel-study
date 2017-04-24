@@ -14,7 +14,7 @@
 
 * `hasMany()`
 
-* `belongsTo()`
+* `belongsToMany()`
 
 *  `hasManyThrough()`
 
