@@ -105,7 +105,17 @@ public function posts()
 
 `App\Post` 模型关联关系：
 ```
+protected $fillable = ['title' , 'user_id' , 'body' , 'published_at'];
 
+public function user()
+{
+    /**
+    * User::class related 关联模型
+    * user_id ownerKey 当前表关联字段
+    * id relation 关联表字段
+    */
+    return $this->belongsTo(User::class , 'user_id' , 'id');
+}
 ```
 
 `App\User` 模型关联关系
