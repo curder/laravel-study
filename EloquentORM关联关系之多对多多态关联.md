@@ -14,6 +14,8 @@
 
 * `morphToMany()`
 
+* `morphedByMany`
+
 
 
 * `posts` 、`countries` 和 `users` 表
