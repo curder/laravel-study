@@ -343,9 +343,9 @@ $comments = \App\Post::find(1)->with(['user' , 'comments'])->first();
 // 通过评论查询出数据和发布评论的用户信息
 $commentable = \App\Comment::find(1)->commentable()->with('user')->first();
 
-   // 查询标签对应节点
-    $tag = \App\Tag::find(1);
-    $posts = $tag->posts;
+// 查询标签对应节点
+$tag = \App\Tag::find(1);
+$posts = $tag->posts;
 ```
 
 
