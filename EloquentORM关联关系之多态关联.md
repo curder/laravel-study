@@ -135,7 +135,29 @@ public function comments()
 在 `Post` 模型中的对应关系：
 
 ```
+protected $fillable = ['user_id' , 'title' , 'body' , 'published_at'];
 
+public function user()
+{
+    /**
+     * User::class related 关联模型
+     * id foreignKey 表 User::table 的关联字段
+     * user_id localKey 关联表字段
+     */
+    return $this->hasOne(\App\User::class , 'id' , 'user_id');
+}
+
+public function comments()
+{
+    /**
+     * @param  string $related  关联模型
+     * @param  string $name     关联的名称，模型的方法名称
+     * @param  string $type     关联的字段type
+     * @param  string $id       关联的字段id
+     * @param  string $localKey 当前模型的主键id
+     */
+    return $this->morphMany(Comment::class , 'commentable' , 'commentable_type' , 'commentable_id' , 'id');
+}
 ```
 
 
