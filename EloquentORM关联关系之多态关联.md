@@ -68,11 +68,38 @@ Schema::create('posts', function (Blueprint $table) {
 文件 `<project>/database/migrate/*_create_videos_table.php` 内容如下
 
 ```
+Schema::create('videos' , function(Blueprint $table){
+    $table->increments('id');
+    $table->unsignedInteger('user_id')->comment('用户id');
+    $table->string('title' , 30)->comment('标题');
+    $table->string('description' , 120)->comment('描述');
+    $table->text('content')->comment('内容');
+    $table->unsignedTinyInteger('status')->comment('数据状态');
+    $table->timestamps();
 
+    $table->foreign('user_id')
+        ->references('id')
+        ->on('users')
+        ->onUpdate('cascade')
+        ->onDelete('cascade');
+});
 ```
 
 文件 `<project>/database/migrate/*_create_commons_table.php` 内容如下
 
 ```
+Schema::create('commons' , function(Blueprint $table){
+    $table->increments('id');
+    $table->unsignedInteger('item_id')->comment('评论所在表数据id');
+    $table->string('item_type' , 60)->comment('评论所属模型');
+    $table->text('content')->comment('评论内容');
+    $table->timestamps();
 
+    $table->foreign('user_id')
+        ->references('id')
+        ->on('users')
+        ->onUpdate('cascade')
+        ->onDelete('cascade');
+});
+// 注意： 这里 `item_id` 和 `item_type`，字段前缀与模型的方法保持一些。比如这列使用 `item_` 那么定义的关联方法为 `item()`
 ```
