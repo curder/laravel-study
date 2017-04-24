@@ -14,8 +14,6 @@
 
 * `morphMany()`
 
-
-
 * `posts` 、`videos`、`comments` 和 `users` 表
 
 
