@@ -102,6 +102,9 @@ public function roles()
 }
 ```
 
+在 `Role` 模型中定义与 `User` 模型的关联对应关系：
+
+
 ## 使用 tinker 填充数据
 
 
