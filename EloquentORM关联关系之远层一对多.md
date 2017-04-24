@@ -35,6 +35,8 @@ DB_PASSWORD=db_password
 ```shell
 php artisan make:migration create_posts_table --create=posts
 
+php artisan make:migration create_countries_table --create=countries
+
 php artisan make:model Post
 ```
 
