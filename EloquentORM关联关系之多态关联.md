@@ -251,7 +251,7 @@ $video->comments()->saveMany($comments);
 $comments = \App\Post::find(1)->with(['user' , 'comments'])->first();
 
 // 通过评论查询出数据和发布评论的用户信息
-$commentable = \App\Comment::find(21)->commentable()->with('user')->first();
+$commentable = \App\Comment::find(1)->commentable()->with('user')->first();
 ```
 
 ### 删除数据
