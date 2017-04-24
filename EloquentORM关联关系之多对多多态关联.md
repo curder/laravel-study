@@ -44,21 +44,24 @@ php artisan make:model Taggable -m
 ```
 
 
-文件 `<project>/database/migrate/*_create_users_table.php` 内容如下
+文件 `<project>/database/migrate/*_create_videos_table.php` 内容如下
+
+```
+
+```
 
 
+文件 `<project>/database/migrate/*_create_tags_table.php` 内容如下
+
+```
+
+```
 
 
+文件 `<project>/database/migrate/*_create_taggables_table.php` 内容如下
 
+```
 
-
-
-
-
-
-
-
-
-
+```
 
 
