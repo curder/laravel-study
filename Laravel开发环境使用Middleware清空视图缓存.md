@@ -6,5 +6,13 @@
 ```
 php artisan make:middleware FlushViewCache
 ```
+默认中间件生成在`app\Http\Middleware\FlushViewCache.php`。
+
+### 编写中间件
+
+```
+
+```
+
 
 
