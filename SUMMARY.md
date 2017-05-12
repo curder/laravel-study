@@ -10,3 +10,4 @@
 * [EloquentORM关联关系之多对多](EloquentORM关联关系之多对多.md)
 * [EloquentORM关联关系之多态关联](EloquentORM关联关系之多态关联.md)
 * [EloquentORM关联关系之多对多多态关联](EloquentORM关联关系之多对多多态关联.md)
+* [Laravel中使用andersao/l5-repository](Laravel中使用andersao-l5-repository.md)
