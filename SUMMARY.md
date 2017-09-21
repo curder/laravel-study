@@ -18,6 +18,7 @@
   * [except](/collections/except.md)
   * [filter](/collections/filter.md)
   * [first](/collections/first.md)
+  * [flatMap](/collections/flatMap.md)
   * [flatten](/collections/flatten.md)
   * [flip](/collections/flip.md)
   * [forget](/collections/forget.md)
