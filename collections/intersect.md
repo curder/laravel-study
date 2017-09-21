@@ -9,4 +9,4 @@ $intersect = $collection->intersect(['Desk', 'Chair', 'Bookcase']);
 
 $intersect->all(); // [0 => 'Desk', 2 => 'Chair']
 ```
-> 不改变原数组。
+> 不改变原数组或集合。
