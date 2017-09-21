@@ -17,8 +17,7 @@
         "-lunr",
         "-search",
         "search-pro",
-        "collapsible-menu",
-        "bibtex-indexed-cite"
+        "collapsible-menu"
     ],
 
     "pluginsConfig": {
