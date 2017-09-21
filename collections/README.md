@@ -46,7 +46,7 @@ $collection = collect([1, 2, 3]);
 | diffAssoc [详细](/collections/diffAssoc.md) | 基于键值对求差集 |
 | diffKeys [详细](/collections/diffKeys.md) | 基于键求差集 |
 | each [详细](/collections/each.md) | 迭代集合中的内容并将其传递到回调函数中 |
-| every |  |
+| every [详细](/every) | 可用于验证集合中每一个元素都通过给定的真实测试 |
 | except |  |
 | filter |  |
 | first |  |
