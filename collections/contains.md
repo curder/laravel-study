@@ -15,7 +15,7 @@ $collection->contains('New York'); // false
 
 ```
 $collection = collect([
-    ['product' => 'Desk', 'price' => 200],
+    ['product' => 'Desk', 'price' => 200], 
     ['product' => 'Chair', 'price' => 100],
 ]);
 
