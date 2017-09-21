@@ -10,7 +10,6 @@
     "plugins": [
         "-sharing",
         "sharing-plus",
-        "localized-footer",
         "include-codeblock",
         "ace",
         "quiz",
@@ -47,11 +46,6 @@
                 "weibo", "qq", "linkedin",
                 "qzone", "douban"
             ]
-        },
-
-        "localized-footer": {
-            "hline": true,
-            "filename": "./FOOTER.md"
         },
 
         "include-codeblock": {
