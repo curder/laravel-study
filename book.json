@@ -2,9 +2,7 @@
     "title": "Laravel学习",
     "author": "curder",
     "links": {
-        "sidebar": {
-            "Home": "https://github.com/curder"
-        }
+       
     },
 
     "plugins": [
