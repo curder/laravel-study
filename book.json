@@ -10,6 +10,7 @@
         "-sharing",
         "sharing-plus",
         "ace",
+        "-lunr",
         "-search",
         "search-pro",
         "collapsible-menu"
