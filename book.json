@@ -1,0 +1,56 @@
+{
+    "title": "Laravel学习",
+    "author": "curder",
+    "links": {
+        "sidebar": {
+            "Home": "https://github.com/curder"
+        }
+    },
+
+    "plugins": [
+        "-sharing",
+        "sharing-plus",
+        "include-codeblock",
+        "ace",
+        "-lunr",
+        "-search",
+        "search-pro",
+        "collapsible-menu"
+    ],
+
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": false
+        },
+        "sharing": {
+            "douban": false,
+            "facebook": false,
+            "google": false,
+            "hatenaBookmark": false,
+            "instapaper": false,
+            "line": false,
+            "linkedin": false,
+            "messenger": false,
+            "pocket": false,
+            "qq": true,
+            "qzone": true,
+            "stumbleupon": false,
+            "twitter": false,
+            "viber": false,
+            "vk": false,
+            "weibo": true,
+            "whatsapp": false,
+            "all": [
+                "facebook", "google", "twitter",
+                "weibo", "qq", "linkedin",
+                "qzone", "douban"
+            ]
+        },
+
+        "include-codeblock": {
+            "template": "default",
+            "unindent": true,
+            "edit": true
+        }
+    }
+}
