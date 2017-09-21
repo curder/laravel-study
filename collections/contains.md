@@ -3,6 +3,7 @@
 判断集合是否包含给定的项目。
 
 * 基本用法
+
 ```
 $collection = collect(['name' => 'Desk', 'price' => 100]);
 
