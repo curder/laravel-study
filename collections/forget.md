@@ -3,5 +3,9 @@
 通过给定的键来移除掉集合中对应的内容。
 
 ```
+$collection = collect(['name' => 'taylor', 'framework' => 'laravel']);
 
+$collection->forget('name');
+
+$collection->all(); // ['framework' => 'laravel']
 ```
