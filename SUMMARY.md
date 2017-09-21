@@ -2,7 +2,7 @@
 
 * [介绍](README.md)
 * [Laravel中Collection的使用](collections/README.md)
-  * [all](collections/all.md)
+  * [all](/collections/all.md)
   * [avg](collections/avg.md)
   * [chuck](collections/chuck.md)
   * [collapse](collections/collapse.md)
