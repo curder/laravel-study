@@ -7,13 +7,12 @@
         }
     }, 
     "plugins": [
-        "-sharing", 
-        "sharing-plus", 
-        "include-codeblock", 
-        "ace", 
-        "-lunr",
-        "-search", 
-        "search-pro", 
+        "-sharing",
+        "sharing-plus",
+        "include-codeblock",
+        "ace",
+        "-search",
+        "search-pro",
         "collapsible-menu"
     ], 
     "pluginsConfig": {
