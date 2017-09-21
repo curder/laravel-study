@@ -55,7 +55,7 @@ $collection = collect([1, 2, 3]);
 | flip [详细](/collections/flip.md) | 将集合中的键和对应的数值进行互换 |
 | forget [详细](/collections/forget.md) | 通过给定的键来移除掉集合中对应的内容 |
 | forPage [详细](/collections/forPage.md) | 返回给定页码上显示的项目的新集合 |
-| get [详细](/collections/get.md) |  |
+| get [详细](/collections/get.md) | 返回给定键的项目 |
 | groupBy [详细](/collections/groupBy.md) |  |
 | has [详细](/collections/has.md) |  |
 | implode [详细](/collections/implode.md) |  |
