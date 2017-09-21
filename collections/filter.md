@@ -20,5 +20,5 @@ $collection = collect([1, 2, 3, null, false, '', 0, []]);
 $collection->filter()->all(); // [1, 2, 3]
 ```
 
-与`filter()`相反的方法，可以查看[reject](/collections/reject.md)
+与`filter()`相反的方法，可以查看[reject](/collections/reject.md)。
 
