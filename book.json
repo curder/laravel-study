@@ -1,7 +1,6 @@
 {
     "title": "Laravel学习",
     "author": "curder",
-
     "plugins": [
         "-sharing",
         "sharing-plus",
@@ -9,7 +8,6 @@
         "-search",
         "search-pro"
     ],
-
     "pluginsConfig": {
         "sharing": {
             "douban": false,
