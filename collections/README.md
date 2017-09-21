@@ -74,7 +74,7 @@ $collection = collect([1, 2, 3]);
 | min [详细](/collections/min.md) | 返回给定键的最小值 |
 | mode [详细](/collections/mode.md) | 返回给定**键**的[众数值](https://baike.baidu.com/item/%E4%BC%97%E6%95%B0/44796 "百度百科-众数值") |
 | nth [详细](/collections/nth.md) | 创建由每隔`n`个元素组成一个新的集合 |
-| only [详细](/collections/only.md) |  |
+| only [详细](/collections/only.md) | 返回集合中给定键的所有项目 |
 | partition |  |
 | pipe |  |
 | pluck |  |
