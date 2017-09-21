@@ -1,11 +1,13 @@
 # Laravel 的集合 Collection
 
 - [简介](#introduction)
+- [创建集合](#creating-collections)
+- [可用的方法](available-methods)
 
+<a name="introduction"></a>
 ## 简介
 
 <a name="introduction"></a>
-
 `Illuminate\Support\Collection` 类提供了一个更具可读性的、更便于处理数组数据的封装，具体例子看下面的代码。
 
 我们使用了 `collect` 函数从数组中创建新的集合实例，对其中的每个元素运行 `strtoupper` 函数之后再移除所有的空元素：
@@ -30,8 +32,6 @@
 
 <a name="available-methods"></a>
 ## 可用的方法
-
-<a name="available-methods"></a>
 
 这个文档接下来的内容，我们会探讨 `Collection` 类每个可用的方法。记住，所有方法都可以以方法链的形式优雅地操纵数组。而且，几乎所有的方法都会返回新的 `Collection` 实例，允许你在必要时保存集合的原始副本。
 
