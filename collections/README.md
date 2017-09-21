@@ -2,7 +2,7 @@
 
 - [简介](#introduction)
 - [创建集合](#creating-collections)
-- [可用的方法](available-methods)
+- [可用的方法](#available-methods)
 
 <a name="introduction"></a>
 ## 简介
