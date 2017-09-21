@@ -20,17 +20,20 @@ composer require mockery/mockery --dev
 <env name="DB_CONNECTION" value="sqlite"/>
 <env name="DB_DATABASE" value=":memory:"/>
 ```
+
 > 使用`sqlite`的连接方式，使用`memory`进行数据存储。
 
 ## 针对Model进行测试
 ### 测试前的准备
 
 * 建立数据库模型和数据库迁移文件
+
 ```
 php artisan make:model Article -m
 ```
 
 * 编辑迁移文件
+
 ```
 public function up()
 {
@@ -43,7 +46,9 @@ public function up()
 }
 ```
 * 修改ModelFactory
+
 文件在`databases\factories\ModelFactory.php`
+
 ```
 $factory->define(App\Article::class, function (Faker\Generator $faker) {
     return [
@@ -54,6 +59,7 @@ $factory->define(App\Article::class, function (Faker\Generator $faker) {
 ```
 
 * 修改模型文件
+
 ```
 namespace App;
 
@@ -67,7 +73,9 @@ class Article extends Model
 ```
 
 ### 新增并修改测试文件
+
 * 测试有没有文章
+
 ```
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
@@ -91,6 +99,7 @@ class ArticleTest extends TestCase
 ```
 
 * 测试新增数据并列出数据
+
 ```
 use App\Article;
 
@@ -119,7 +128,9 @@ class ArticleTest extends TestCase
 > 在实际使用Laravel项目中，我们常常不会直接通过Controller向模型获取数据，而是会使用到Repository的开发模式，那么如何测试Repository呢？
 
 ## 使用Repository模式
+
 ### 新建Repository文件 
+
 `app/Repositories/ArticleRepository.php`
 
 ```
@@ -137,6 +148,7 @@ class ArticleRepository
 {
 }
 ```
+
 > 先建立一个空的Repository文件，后期在测试的过程中添加方法。
 
 ### 建立Repository测试文件
@@ -144,6 +156,7 @@ class ArticleRepository
 #### 测试Repository查询
 
 * 建立文件并编写测试代码，文件在`tests/Feature/ArticleRepositoryTest.php`
+
 ```
 <?php
 
@@ -197,21 +210,26 @@ class ArticleRepositoryTest extends TestCase
     }
 }
 ```
+
 * 抛出错误并修复
+
 ```
 Error: Call to undefined method App\Repositories\ArticleRepository::latest()
 ```
 
 1. 先向Repository中添加`latest()`方法
+
 ```
 public function latest10()
 {
 }
 ```
+
 > 执行phpunit报错。
-`Error: Call to a member function get() on null`
+> `Error: Call to a member function get() on null`
 
 2. 再向Repository添加`latest()`方法
+
 ```
 /**
  * @param int $limit
@@ -225,7 +243,9 @@ public function latest($limit)
 > 此时测试通过。
 
 #### 测试Repository添加操作
+
 1. 编写测试代码
+
 ```
 /** @test */
 public function create_article()
@@ -239,12 +259,15 @@ public function create_article()
     $this->assertEquals(1, $article->id);
 }
 ```
+
 抛出如下错误:
+
 ```
 Error: Call to undefined method App\Repositories\ArticleRepository::create()
 ```
 
 2. 修改Repository中代码，新增`create()`方法：
+
 ```
 use App\Article;
 
@@ -252,11 +275,15 @@ public function create()
 {
 }
 ```
+
 抛出如下错误：
+
 ```
 ErrorException: Trying to get property of non-object
 ```
+
 3. 修改Repository中`create()`方法，添加逻辑代码：
+
 ```
 use App\Article;
 
@@ -270,17 +297,8 @@ public function create(array $attributes = array())
     return Article::create($attributes);
 }
 ```
+
 > 以上测试过程即为TDD测试流程
  
-
-
-
-
-
-
-
 ## Reference
 [Web Development with Laravel 5](https://gist.github.com/jaceju/c415c1b42daf4c589f2a)
-
-
-
