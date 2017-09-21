@@ -11,6 +11,7 @@
         "sharing-plus", 
         "include-codeblock", 
         "ace", 
+        "-lunr",
         "-search", 
         "search-pro", 
         "collapsible-menu"
