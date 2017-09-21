@@ -92,7 +92,7 @@ $collection = collect([1, 2, 3]);
 | shuffle [详细](/collections/shuffle.md) | 随机排序集合中的项目 |
 | slice [详细](/collections/slice.md) | 返回集合中给定值后面的部分 |
 | sort [详细](/collections/sort.md) | 保留原数组的键，对集合进行排序 |
-| sortBy [详细](/collections/sortBy.md) |  |
+| sortBy [详细](/collections/sortBy.md) | 以给定的键对集合进行排序 |
 | sortByDesc [详细](/collections/sortByDesc.md) |  |
 | splice [详细](/collections/splice.md) |  |
 | split |  |
