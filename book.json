@@ -9,7 +9,6 @@
     "plugins": [
         "-sharing",
         "sharing-plus",
-        "ace",
         "-lunr",
         "-search",
         "search-pro",
