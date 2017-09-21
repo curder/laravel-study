@@ -53,7 +53,7 @@ $collection = collect([1, 2, 3]);
 | flatMap [详细](/collections/flatMap.md) | 遍历集合并将其中的每个值传递到给定的回调 |
 | flatten [详细](/collections/flatten.md)| 将多维集合转为一维 |
 | flip [详细](/collections/flip.md) | 将集合中的键和对应的数值进行互换 |
-| forget [详细](/collections/forget.md) |  |
+| forget [详细](/collections/forget.md) | 通过给定的键来移除掉集合中对应的内容 |
 | forPage [详细](/collections/forPage.md) |  |
 | get [详细](/collections/get.md) |  |
 | groupBy [详细](/collections/groupBy.md) |  |
