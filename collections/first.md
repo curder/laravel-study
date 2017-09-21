@@ -14,3 +14,5 @@ collect([1, 2, 3, 4])->first(function ($value, $key) {
 ```
 collect([1, 2, 3, 4])->first(); // 1
 ```
+
+> 如果需要返回最后一个元素可以使用[last()](/collections/last.md)方法。
