@@ -6,4 +6,5 @@
 $collection = collect(['account_id' => 1, 'product' => 'Desk']);
 
 $collection->has('product'); // true
+$collection->has('name'); // false
 ```
