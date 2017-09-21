@@ -34,8 +34,8 @@ $collection = collect([1, 2, 3]);
 | 方法名 | 释义 |
 | :--- | :--- |
 | all（[详细](/collections/all.md)） | 返回该集合表示的底层**数组** |
-| average（[详细](/collections/avg.md)） | `avg()`方法的别名 |
-| avg（[详细](/collections/avg.md)） |  |
+| average（[详细](/collections/avg.md)） | 方法`avg()`的别名 |
+| avg（[详细](/collections/avg.md)） | 返回给定键的**平均值** |
 | chunk |  |
 | collapse |  |
 | combine |  |
