@@ -49,7 +49,7 @@
             ]
         }, 
         "include-codeblock": {
-            "template": "default", 
+            "template": "ace", 
             "unindent": true, 
             "edit": true
         }
