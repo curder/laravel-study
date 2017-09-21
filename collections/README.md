@@ -50,8 +50,8 @@ $collection = collect([1, 2, 3]);
 | except [详细](/collections/except.md) | 返回集合中除了指定键以外的所有项目 |
 | filter [详细](/collections/filter.md) | 使用给定的回调函数过滤集合的内容，只留下那些通过给定真实测试的内容 |
 | first [详细](/collections/first.md) | 返回集合中通过给定真实测试的第一个元素 |
-| flatMap 详细 |  |
-| flatten |  |
+| flatMap [详细](/collections/flatMap.md) |  |
+| flatten [详细](/collections/flatten.md)| 将多维集合转为一维 |
 | flip |  |
 | forget |  |
 | forPage |  |
