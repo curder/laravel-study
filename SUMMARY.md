@@ -3,7 +3,6 @@
 * [介绍](README.md)
 * [Laravel中Collection的使用](collections/README.md)
   * [all](collections/all.md)
-  * [average](collections/avg.md)
   * [avg](collections/avg.md)
 * [Laravel5发送邮件使用Service隔离业务](send_mesages_use_service_partten.md)
 * [如何使用Repository模式](how_to_use_repository_mode.md)
