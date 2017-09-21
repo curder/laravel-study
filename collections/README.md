@@ -42,9 +42,9 @@ $collection = collect([1, 2, 3]);
 | contains [详细](/collections/contains.md) | 判断集合是否包含给定的项目 |
 | containsStrict [详细](/collections/containsStrict.md) | 使用「严格模式」来比较所有值 |
 | count [详细](/collections/count.md) | 返回该集合内的项目总数 |
-| diff [详细](/collections/diff.md) | 求差集 |
-| diffAssoc [详细](/collections/diffAssoc.md) |  |
-| diffKeys |  |
+| diff [详细](/collections/diff.md) | 基于值求差集 |
+| diffAssoc [详细](/collections/diffAssoc.md) | 基于键值对求差集 |
+| diffKeys [详细](/collections/diffKeys.md) |  |
 | each |  |
 | every |  |
 | except |  |
