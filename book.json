@@ -9,7 +9,6 @@
     "plugins": [
         "-sharing",
         "sharing-plus",
-        "include-codeblock",
         "ace",
         "-search",
         "search-pro",
@@ -47,11 +46,6 @@
                 "qzone", 
                 "douban"
             ]
-        }, 
-        "include-codeblock": {
-            "template": "ace", 
-            "unindent": true, 
-            "edit": true
         }
     }
 }
