@@ -90,7 +90,7 @@ $collection = collect([1, 2, 3]);
 | search [详细](/collections/search.md) | 搜索给定的值并返回它的键 |
 | shift [详细](/collections/shift.md) | 移除并返回集合的第一个项目 |
 | shuffle [详细](/collections/shuffle.md) | 随机排序集合中的项目 |
-| slice |  |
+| slice [详细](/collections/slice.md) | 返回集合中给定值后面的部分 |
 | sort |  |
 | sortBy |  |
 | sortByDesc |  |
