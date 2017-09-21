@@ -19,4 +19,5 @@ $collection = collect([
 ]);
 
 $collection->contains('product', 'Bookcase'); // false
+dd($collection->contains('price', '100')); // true
 ```
