@@ -72,7 +72,7 @@ $collection = collect([1, 2, 3]);
 | median [详细](/collections/median.md) | 方法返回给定**键**的中间值 |
 | merge [详细](/collections/merge.md) | 将给定数组或集合合并到原集合 |
 | min [详细](/collections/min.md) | 返回给定键的最小值 |
-| mode |  |
+| mode [详细](/collections/mode.md) |  |
 | nth |  |
 | only |  |
 | partition |  |
