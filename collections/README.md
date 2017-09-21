@@ -65,8 +65,8 @@ $collection = collect([1, 2, 3]);
 | isNotEmpty [详细](/collections/isNotEmpty.md) | 判断集合是否不为空 |
 | keyBy [详细](/collections/keyBy.md) | 以给定的键作为集合的键 |
 | keys [详细](/collections/keys.md) | 返回集合的所有键 |
-| last [详细](/collections/last.md) |  |
-| map [详细](/collections/map.md) |  |
+| last [详细](/collections/last.md) | 返回集合中通过给定真实测试的最后一个元素 |
+| map [详细](/collections/map.md) | 遍历集合并将每一个值传入给定的回调 |
 | mapWithKeys |  |
 | max |  |
 | median |  |
