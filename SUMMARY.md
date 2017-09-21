@@ -62,6 +62,7 @@
   * [pluck](/collections/pluck.md)
   * [pop](/collections/pop.md)
   * [prepend](/collections/prepend.md)
+  * [pull](/collections/pull.md)
   * [push](/collections/push.md)
   * [put](/collections/put.md)
   * [random](/collections/random.md)
