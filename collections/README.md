@@ -86,7 +86,7 @@ $collection = collect([1, 2, 3]);
 | random [详细](/collections/random.md) | 从集合中返回一个随机项 |
 | reduce [详细](/collections/reduce.md) | 将每次迭代的结果传递给下一次迭代直到集合减少为单个值 |
 | reject [详细](/collections/reject.md) | 使用指定的回调过滤集合 |
-| reverse |  |
+| reverse [详细](/collections/reverse.md) | 倒转集合中项目的顺序 |
 | search |  |
 | shift |  |
 | shuffle |  |
