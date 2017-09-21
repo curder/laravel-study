@@ -12,3 +12,5 @@ $collection = collect([
 
 dd($collection->containsStrict('price', '100')); // false
 ```
+
+如上例所示，数组值存在，但是值类型不一致也返回false
