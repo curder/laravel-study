@@ -79,7 +79,7 @@ $collection = collect([1, 2, 3]);
 | pipe [详细](/collections/pipe.md) | 将集合传给给定的回调并返回结果 |
 | pluck [详细](/collections/pluck.md) | 获取集合中给定键对应的所有值 |
 | pop [详细](/collections/pop.md) | 移除并返回集合中的最后一个项目 |
-| prepend |  |
+| prepend [详细](/collections/prepend.md) | 将给定的值添加到集合的开头 |
 | pull |  |
 | push |  |
 | put |  |
