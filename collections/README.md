@@ -63,8 +63,8 @@ $collection = collect([1, 2, 3]);
 | intersectKey [详细](/collections/intersectKey.md) | 删除原集合中不存在于给定数组或集合中的任何键 |
 | isEmpty [详细](/collections/isEmpty.md) | 判断集合是否为空 |
 | isNotEmpty [详细](/collections/isNotEmpty.md) | 判断集合是否不为空 |
-| keyBy |  |
-| keys |  |
+| keyBy [详细](/collections/keyBy.md) |  |
+| keys [详细](/collections/keys.md) | 返回集合的所有键 |
 | last |  |
 | map |  |
 | mapWithKeys |  |
