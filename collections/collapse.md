@@ -1,4 +1,4 @@
-## collapse方法
+# collapse方法
 
 将多个数组合并成一个。
 
