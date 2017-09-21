@@ -76,9 +76,9 @@ $collection = collect([1, 2, 3]);
 | nth [详细](/collections/nth.md) | 创建由每隔`n`个元素组成一个新的集合 |
 | only [详细](/collections/only.md) | 返回集合中给定键的所有项目 |
 | partition [详细](/collections/partition.md) | 配合`list()`方法区分回调函数满足和不满足的数据 |
-| pipe |  |
-| pluck |  |
-| pop |  |
+| pipe [详细](/collections/pipe.md) |  |
+| pluck [详细](/collections/pluck.md) |  |
+| pop [详细](/collections/pop.md) |  |
 | prepend |  |
 | pull |  |
 | push |  |
