@@ -44,7 +44,7 @@ $collection = collect([1, 2, 3]);
 | count [详细](/collections/count.md) | 返回该集合内的项目总数 |
 | diff [详细](/collections/diff.md) | 基于值求差集 |
 | diffAssoc [详细](/collections/diffAssoc.md) | 基于键值对求差集 |
-| diffKeys [详细](/collections/diffKeys.md) |  |
+| diffKeys [详细](/collections/diffKeys.md) | 基于键求差集 |
 | each |  |
 | every |  |
 | except |  |
