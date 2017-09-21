@@ -175,11 +175,11 @@ factory(UserAccount::class,1)->create() // 随机生成一个用户关联信息
 
 `users`表数据：
 
-![](image/screenshot_1492077162810.png)
+![](/image/screenshot_1492077162810.png)
 
 `users_accounts`表：
 
-![](image/screenshot_1492077196226.png)
+![](/image/screenshot_1492077196226.png)
 
 
 ## 定义Eloquent关联关系
@@ -242,7 +242,9 @@ class UserAccount extends Model
 ## 关联操作
 
 ### 新增数据
+
 同时新增 `users` 和 `user_accounts` 表数据
+
 ```
 $user = \App\User::create([
   'name' => 'curder',
@@ -255,6 +257,7 @@ $account = new \App\UserAccount(['qq' => 'qq Number', 'wechat' => 'wechatNumber'
 
 $user->account()->save($account); // 执行关联写入操作
 ```
+
 > 也可以是我们使用 `find()` 方法获得用户信息（或者使用 `\Auth::id()`获得用户信息），再写入到关联表 `user_accounts`。如下：（这种情况常见于用户修改创建、修改自己的账户信息）
 > ```
 >  $account = new \App\UserAccount(['qq' => 'another qq', 'wechat' => 'another wechat', 'weibo' => 'another weibo']); // 生成 UserAccount 对象，或者数据通过 Request 对象获取 $account = new \App\Account($request->all());
