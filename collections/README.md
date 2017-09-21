@@ -60,7 +60,7 @@ $collection = collect([1, 2, 3]);
 | has [详细](/collections/has.md) | 判断集合中是否存在给定的键 |
 | implode [详细](/collections/implode.md) | 合并集合中的项目 |
 | intersect [详细](/collections/intersect.md) | 从原集合中删除不在给定数组或集合中的任何值 |
-| intersectKey |  |
+| intersectKey [详细](/collections/intersectKey.md) | 删除原集合中不存在于给定数组或集合中的任何键 |
 | isEmpty |  |
 | isNotEmpty |  |
 | keyBy |  |
