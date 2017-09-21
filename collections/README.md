@@ -118,5 +118,29 @@ $collection = collect([1, 2, 3]);
 
 ## 在项目中单独使用
 
+### 安装
+
+Laravel中的Collection使用Composer管理，所以我们可以在项目中使用composer安装到非Laravel项目中，比如我们新建一个collections目录，通过下面使用命令安装
+
+```
+mkdir collections && cd collections
+composer require illuminate/support
+```
+
+执行完上面的命令将得到所需要的package。
 
 
+
+### 使用
+
+```
+<?php
+// 引入package
+require __DIR__ . '/vendor/autoload.php';
+```
+
+
+
+### 其他
+
+如果在js中也需要使用类似的数组操作，可以参考 [ecrmnn/collect.js](https://github.com/ecrmnn/collect.js) 的相关操作。
