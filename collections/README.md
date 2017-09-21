@@ -43,7 +43,7 @@ $collection = collect([1, 2, 3]);
 | containsStrict [详细](/collections/containsStrict.md) | 使用「严格模式」来比较所有值 |
 | count [详细](/collections/count.md) | 返回该集合内的项目总数 |
 | diff [详细](/collections/diff.md) | 求差集 |
-| diffAssoc |  |
+| diffAssoc [详细](/collections/diffAssoc.md) |  |
 | diffKeys |  |
 | each |  |
 | every |  |
