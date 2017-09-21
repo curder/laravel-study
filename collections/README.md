@@ -82,7 +82,7 @@ $collection = collect([1, 2, 3]);
 | prepend [详细](/collections/prepend.md) | 将给定的值添加到集合的开头 |
 | pull [详细](/collections/pull.md) | 把给定键对应的值从集合中移除并返回 |
 | push [详细](/collections/push.md) | 把给定值添加到集合的末尾 |
-| put |  |
+| put [详细](/collections/put.md) | 在集合内设置给定的键值对 |
 | random |  |
 | reduce |  |
 | reject |  |
