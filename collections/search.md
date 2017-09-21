@@ -13,12 +13,16 @@ $collection->search(4); // 1
 要使用「严格」比较，就传入 true 作为该方法的第二个参数：
 
 ```
+$collection = collect([2, 4, 6, 8]);
+
 $collection->search('4', true); // false
 ```
 
 另外，可以通过回调来搜索第一个通过真实测试的项目：
 
 ```
+$collection = collect([2, 4, 6, 8]);
+
 $collection->search(function ($item, $key) {
     return $item > 5;
 }); // 2
