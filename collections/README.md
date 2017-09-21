@@ -37,7 +37,7 @@ $collection = collect([1, 2, 3]);
 | average（[详细](/collections/avg.md)） | 方法`avg()`的别名 |
 | avg（[详细](/collections/avg.md)） | 返回给定键的**平均值** |
 | chunk（[详细](/collections/chuck.md)） | 将集合拆成多个指定大小的小集合 |
-| collapse |  |
+| collapse（[详细](/collections/collapse.md)） | 将多个数组合并成一个 |
 | combine |  |
 | contains |  |
 | containsStrict |  |
