@@ -1,9 +1,6 @@
 {
     "title": "Laravel学习",
     "author": "curder",
-    "links": {
-       
-    },
 
     "plugins": [
         "-sharing",
@@ -16,9 +13,6 @@
     ],
 
     "pluginsConfig": {
-        "theme-default": {
-            "showLevel": false
-        },
         "sharing": {
             "douban": false,
             "facebook": false,
