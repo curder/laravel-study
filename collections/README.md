@@ -83,9 +83,9 @@ $collection = collect([1, 2, 3]);
 | pull [详细](/collections/pull.md) | 把给定键对应的值从集合中移除并返回 |
 | push [详细](/collections/push.md) | 把给定值添加到集合的末尾 |
 | put [详细](/collections/put.md) | 在集合内设置给定的键值对 |
-| random |  |
-| reduce |  |
-| reject |  |
+| random [详细](/collections/random.md) | 从集合中返回一个随机项 |
+| reduce [详细](/collections/reduce.md) | 将每次迭代的结果传递给下一次迭代直到集合减少为单个值 |
+| reject [详细](/collections/reject.md) | 使用指定的回调过滤集合 |
 | reverse |  |
 | search |  |
 | shift |  |
