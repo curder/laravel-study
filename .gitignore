@@ -1,2 +1,4 @@
 node_modules/
-/_book
+*~
+_book
+.DS_Store
