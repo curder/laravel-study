@@ -81,7 +81,7 @@ $collection = collect([1, 2, 3]);
 | pop [详细](/collections/pop.md) | 移除并返回集合中的最后一个项目 |
 | prepend [详细](/collections/prepend.md) | 将给定的值添加到集合的开头 |
 | pull [详细](/collections/pull.md) | 把给定键对应的值从集合中移除并返回 |
-| push |  |
+| push [详细](/collections/push.md) | 把给定值添加到集合的末尾 |
 | put |  |
 | random |  |
 | reduce |  |
