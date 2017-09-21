@@ -47,7 +47,7 @@ $collection = collect([1, 2, 3]);
 | diffKeys [详细](/collections/diffKeys.md) | 基于键求差集 |
 | each [详细](/collections/each.md) | 迭代集合中的内容并将其传递到回调函数中 |
 | every [详细](/every) | 可用于验证集合中每一个元素都通过给定的真实测试 |
-| except |  |
+| except [详细](/collections/except.md) | 返回集合中除了指定键以外的所有项目 |
 | filter |  |
 | first |  |
 | flatMap |  |
