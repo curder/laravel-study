@@ -58,7 +58,7 @@ $collection = collect([1, 2, 3]);
 | get [详细](/collections/get.md) | 返回给定键的项目 |
 | groupBy [详细](/collections/groupBy.md) | 根据给定的键对集合内的项目进行分组 |
 | has [详细](/collections/has.md) | 判断集合中是否存在给定的键 |
-| implode [详细](/collections/implode.md) |  |
+| implode [详细](/collections/implode.md) | 合并集合中的项目 |
 | intersect |  |
 | intersectKey |  |
 | isEmpty |  |
