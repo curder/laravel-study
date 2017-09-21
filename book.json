@@ -12,7 +12,6 @@
         "sharing-plus",
         "include-codeblock",
         "ace",
-        "quiz",
         "-lunr",
         "-search",
         "search-pro",
@@ -52,23 +51,6 @@
             "template": "ace",
             "unindent": true,
             "edit": false
-        },
-
-        "quiz": {
-            "labels": {
-                "check": "提交答案",
-                "showExplanation": "显示解释",
-                "showCorrect": "显示正确答案",
-                "explanationHeader": "释义"
-            },
-            "text": {
-                "noChosen": "Choose at least one answer",
-                "incomplete": "Some correct answers are missing"
-            },
-            "buttons": {
-                "showCorrect": true,
-                "showExplanation": true
-            }
         }
     }
 }
