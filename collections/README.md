@@ -93,8 +93,8 @@ $collection = collect([1, 2, 3]);
 | slice [详细](/collections/slice.md) | 返回集合中给定值后面的部分 |
 | sort [详细](/collections/sort.md) | 保留原数组的键，对集合进行排序 |
 | sortBy [详细](/collections/sortBy.md) | 以给定的键对集合进行排序 |
-| sortByDesc [详细](/collections/sortByDesc.md) |  |
-| splice [详细](/collections/splice.md) |  |
+| sortByDesc [详细](/collections/sortByDesc.md) | 与[sortBy](/collections/sortBy.md)一样，以相反的顺序来对集合进行排序 |
+| splice [详细](/collections/splice.md) | 删除并返回从给定值后的内容，原集合也会受到影响 |
 | split |  |
 | sum |  |
 | take |  |
