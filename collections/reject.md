@@ -11,3 +11,5 @@ $filtered = $collection->reject(function ($value, $key) {
 
 $filtered->all(); // [1, 2]
 ```
+
+与 `reject()` 相反的方法，查看 [filter](/collections/filter.md)方法。
