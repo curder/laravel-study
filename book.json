@@ -48,7 +48,7 @@
         },
 
         "include-codeblock": {
-            "template": "ace",
+            "template": "default",
             "unindent": true,
             "edit": false
         }
