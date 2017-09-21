@@ -18,7 +18,6 @@ $collection = collect([
     ['product' => 'Desk', 'price' => 200], 
     ['product' => 'Chair', 'price' => 100],
 ]);
-
 $collection->contains('product', 'Bookcase'); // false
 dd($collection->contains('price', '100')); // true
 ```
