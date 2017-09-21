@@ -33,7 +33,7 @@ $collection = collect([1, 2, 3]);
 
 | 方法名 | 释义 |
 | :--- | :--- |
-| all |  |
+| all（[详细](/collections/all.md)） | 返回该集合表示的底层**数组** |
 | average |  |
 | avg |  |
 | chunk |  |
@@ -129,8 +129,6 @@ composer require illuminate/support
 
 执行完上面的命令将得到所需要的package。
 
-
-
 ### 使用
 
 ```
@@ -139,8 +137,7 @@ composer require illuminate/support
 require __DIR__ . '/vendor/autoload.php';
 ```
 
-
-
 ### 其他
 
 如果在js中也需要使用类似的数组操作，可以参考 [ecrmnn/collect.js](https://github.com/ecrmnn/collect.js) 的相关操作。
+
