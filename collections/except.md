@@ -10,7 +10,7 @@ $filtered = $collection->except(['price', 'discount']);
 $filtered->all(); // ['product_id' => 1]
 ```
 
-
+与之相反的方法 [only](/collections/only.md)。
 
 
 
