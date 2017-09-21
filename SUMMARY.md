@@ -1,4 +1,4 @@
-* [空白目录](README.md)
+* [介绍](README.md)
 * [Laravel5发送邮件使用Service隔离业务](send_mesages_use_service_partten.md)
 * [如何使用Repository模式](how_to_use_repository_mode.md)
 * [如何使用Service模式](how_to_use_service_mode.md)
