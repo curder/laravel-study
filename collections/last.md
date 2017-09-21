@@ -9,8 +9,10 @@ collect([1, 2, 3, 4])->last(function ($value, $key) {
 ```
 
 
-你也可以不传入参数调用 last 方法来获取集合中最后一个元素。如果集合是空的，返回 null：
+你也可以不传入参数调用 `last` 方法来获取集合中最后一个元素。如果集合是空的，返回 `null`：
 
 ```
 collect([1, 2, 3, 4])->last(); // 4
 ```
+
+如果需要返回第一个元素可以使用[first()](/collections/first.md)
