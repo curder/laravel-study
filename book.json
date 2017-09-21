@@ -39,7 +39,7 @@
             "viber": false,
             "vk": false,
             "weibo": true,
-            "whatsapp": false,
+            "whatsapp": true,
             "all": [
                 "facebook", "google", "twitter",
                 "weibo", "qq", "linkedin",
