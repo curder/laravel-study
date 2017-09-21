@@ -67,7 +67,7 @@ $collection = collect([1, 2, 3]);
 | keys [详细](/collections/keys.md) | 返回集合的所有键 |
 | last [详细](/collections/last.md) | 返回集合中通过给定真实测试的最后一个元素 |
 | map [详细](/collections/map.md) | 遍历集合并将每一个值传入给定的回调 |
-| mapWithKeys |  |
+| mapWithKeys [详细](/collections/mapWithKeys.md) | 遍历集合并将每个值传入给定的回调 |
 | max |  |
 | median |  |
 | merge |  |
