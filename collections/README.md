@@ -62,7 +62,7 @@ $collection = collect([1, 2, 3]);
 | intersect [详细](/collections/intersect.md) | 从原集合中删除不在给定数组或集合中的任何值 |
 | intersectKey [详细](/collections/intersectKey.md) | 删除原集合中不存在于给定数组或集合中的任何键 |
 | isEmpty [详细](/collections/isEmpty.md) | 判断集合是否为空 |
-| isNotEmpty |  |
+| isNotEmpty [详细](/collections/isNotEmpty.md) | 判断集合是否不为空 |
 | keyBy |  |
 | keys |  |
 | last |  |
