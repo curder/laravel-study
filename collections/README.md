@@ -56,8 +56,8 @@ $collection = collect([1, 2, 3]);
 | forget [详细](/collections/forget.md) | 通过给定的键来移除掉集合中对应的内容 |
 | forPage [详细](/collections/forPage.md) | 返回给定页码上显示的项目的新集合 |
 | get [详细](/collections/get.md) | 返回给定键的项目 |
-| groupBy [详细](/collections/groupBy.md) |  |
-| has [详细](/collections/has.md) |  |
+| groupBy [详细](/collections/groupBy.md) | 根据给定的键对集合内的项目进行分组 |
+| has [详细](/collections/has.md) | 判断集合中是否存在给定的键 |
 | implode [详细](/collections/implode.md) |  |
 | intersect |  |
 | intersectKey |  |
