@@ -10,7 +10,6 @@
     "plugins": [
         "-sharing",
         "sharing-plus",
-        "include-codeblock",
         "ace",
         "-lunr",
         "-search",
@@ -45,12 +44,6 @@
                 "weibo", "qq", "linkedin",
                 "qzone", "douban"
             ]
-        },
-
-        "include-codeblock": {
-            "template": "default",
-            "unindent": true,
-            "edit": true
         }
     }
 }
