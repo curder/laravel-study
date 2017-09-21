@@ -80,7 +80,7 @@ $collection = collect([1, 2, 3]);
 | pluck [详细](/collections/pluck.md) | 获取集合中给定键对应的所有值 |
 | pop [详细](/collections/pop.md) | 移除并返回集合中的最后一个项目 |
 | prepend [详细](/collections/prepend.md) | 将给定的值添加到集合的开头 |
-| pull 详细 |  |
+| pull [详细](/collections/pull.md) | 把给定键对应的值从集合中移除并返回 |
 | push |  |
 | put |  |
 | random |  |
