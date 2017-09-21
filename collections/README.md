@@ -38,9 +38,9 @@ $collection = collect([1, 2, 3]);
 | avg（[详细](/collections/avg.md)） | 返回给定键的**平均值** |
 | chunk（[详细](/collections/chuck.md)） | 将集合拆成多个指定大小的小集合 |
 | collapse（[详细](/collections/collapse.md)） | 将多个数组合并成一个 |
-| combine（[详细](/collections/combine.md)） |  |
-| contains（[详细](/collections/contains.md)） |  |
-| containsStrict（[详细](/collections/containsStrict.md)） |  |
+| combine（[详细](/collections/combine.md)） | 将一个集合的值作为「键」，再将另一个数组或者集合的值作为「值」合并成一个集合 |
+| contains（[详细](/collections/contains.md)） | 判断集合是否包含给定的项目 |
+| containsStrict（[详细](/collections/containsStrict.md)） | 使用「严格模式」来比较所有值 |
 | count（[详细](/collections/count.md)） |  |
 | diff |  |
 | diffAssoc |  |
