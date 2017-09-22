@@ -99,9 +99,9 @@ $collection = collect([1, 2, 3]);
 | sum [详细](/collections/sum.md) | 返回集合内所有项目的总和 |
 | take [详细](/collections/take.md) | 返回给定数量项目的新集合 |
 | tap [详细](/collections/tap.md) | 将集合传递给回调，在特定点「tap」集合 |
-| times |  |
-| toArray |  |
-| toJson |  |
+| times [详细](/collections/times.md) | 通过回调在给定次数内创建一个新的集合 |
+| toArray [详细](/collections/toArray.md) | 将集合转换成 PHP 数组 |
+| toJson [详细](/collections/toJson.md) | 将集合转换成 JSON 字符串 |
 | transform |  |
 | union |  |
 | unique |  |
