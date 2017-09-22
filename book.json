@@ -19,7 +19,8 @@
         "-search",
         "search-pro",
         "collapsible-menu",
-        "edit-link"
+        "edit-link",
+        "anchor-navigation-ex@0.1.8"
     ], 
     "pluginsConfig": {
         "theme-default": {
@@ -57,6 +58,12 @@
          "edit-link": {
             "base": "https://github.com/curder/laravel_study/edit/master",
             "label": "编辑"
+        },
+        "anchor-navigation-ex": {
+            "isRewritePageTitle": false,
+            "tocLevel1Icon": "fa fa-hand-o-right",
+            "tocLevel2Icon": "fa fa-hand-o-right",
+            "tocLevel3Icon": "fa fa-hand-o-right"
         }
     }
 }
