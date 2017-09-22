@@ -49,7 +49,7 @@
             ]
         },
          "edit-link": {
-            "base": "https://github.com/curder/laravel_study",
+            "base": "https://github.com/curder/laravel_study/tree/master",
             "label":{
                     "zh_cn": "编辑",
                     "en": "Edit This Page",
