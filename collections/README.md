@@ -105,11 +105,11 @@ $collection = collect([1, 2, 3]);
 | transform [详细](/collections/transform.md) | 迭代集合并对集合内的每个项目调用给定的回调 |
 | union [详细](/collections/union.md) | 将给定的数组添加到集合中 |
 | unique [详细](/collections/unique.md) | 返回集合中所有唯一的项目 |
-| uniqueStrict |  |
-| values |  |
-| when |  |
-| where |  |
-| whereStrict |  |
+| uniqueStrict [详细](/collections/uniqueStrict.md) | 使用严格模式返回集合中所有唯一的项目 |
+| values [详细](/collections/values.md) | 返回键被重置为连续编号的新集合 |
+| when [详细](/collections/when.md) | 当传入的第一个参数为 true 的时，将执行给定的回调 |
+| where [详细](/collections/where.md) | 通过给定的键值过滤集合 |
+| whereStrict [详细](/collections/whereStrict.md) | 使用严格模式通过给定的键值过滤集合 |
 | whereIn |  |
 | whereInStrict |  |
 | whereNotIn |  |
