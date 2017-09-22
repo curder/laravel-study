@@ -3,6 +3,7 @@
     "author": "curder", 
     "language" : "zh-hans",
     "output.name": "_book",
+    "gitbook": "3.2.2",
     "links": {
         "sidebar": {
             "Home": "https://github.com/curder"
