@@ -14,9 +14,7 @@
         "-search",
         "search-pro",
         "collapsible-menu",
-        "edit-link",
-        "github@^2.0.0",
-        "github-buttons@2.1.0"
+        "edit-link"
     ], 
     "pluginsConfig": {
         "theme-default": {
@@ -54,15 +52,6 @@
          "edit-link": {
             "base": "https://github.com/curder/laravel_study/edit/master",
             "label": "编辑"
-        },
-        "github": {
-            "url": "https://github.com/curder/laravel_study"
-        },
-        "github-buttons": {
-            "repo": "curder/laravel_study",
-            "types": [
-                "star"
-            ]
         }
     }
 }
