@@ -102,9 +102,9 @@ $collection = collect([1, 2, 3]);
 | times [详细](/collections/times.md) | 通过回调在给定次数内创建一个新的集合 |
 | toArray [详细](/collections/toArray.md) | 将集合转换成 PHP 数组 |
 | toJson [详细](/collections/toJson.md) | 将集合转换成 JSON 字符串 |
-| transform |  |
-| union |  |
-| unique |  |
+| transform [详细](/collections/transform.md) | 迭代集合并对集合内的每个项目调用给定的回调 |
+| union [详细](/collections/union.md) | 将给定的数组添加到集合中 |
+| unique [详细](/collections/unique.md) | 返回集合中所有唯一的项目 |
 | uniqueStrict |  |
 | values |  |
 | when |  |
