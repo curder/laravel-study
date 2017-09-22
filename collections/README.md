@@ -110,11 +110,11 @@ $collection = collect([1, 2, 3]);
 | when [详细](/collections/when.md) | 当传入的第一个参数为 true 的时，将执行给定的回调 |
 | where [详细](/collections/where.md) | 通过给定的键值过滤集合 |
 | whereStrict [详细](/collections/whereStrict.md) | 使用严格模式通过给定的键值过滤集合 |
-| whereIn |  |
-| whereInStrict |  |
-| whereNotIn |  |
-| whereNotInStrict |  |
-| zip |  |
+| whereIn [详细](/collections/whereIn.md) | 通过给定的键值数组来过滤集合 |
+| whereInStrict [详细](/collections/whereStrict.md) | 使用严格模式通过给定的键值数组来过滤集合 |
+| whereNotIn [详细](/collections/whereNotIn.md) | 集合中不包含的给定键值对进行匹配 |
+| whereNotInStrict [详细](/collections/whereNotInStrict.md) | 使用严格模式通过集合中不包含的给定键值对进行匹配 |
+| zip [详细](/collections/zip.md) | 将给定数组的值与相应索引处的原集合的值合并在一起 |
 
 ## 在项目中单独使用
 
