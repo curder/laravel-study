@@ -20,3 +20,5 @@ $collection->reduce(function ($carry, $item) {
     return $carry + $item;
 }, 4); // 10
 ```
+
+> 它与 [map()](/collections/map.md) 的区别是 [map()](/collections/map.md) 传入是对象或数组，返回也是数组活对象；而`reduce()`传入数组或对象，返回单一值。
