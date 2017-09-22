@@ -20,7 +20,8 @@
         "search-pro",
         "collapsible-menu",
         "edit-link",
-        "anchor-navigation-ex@0.1.8"
+        "anchor-navigation-ex@0.1.8",
+        "tbfed-pagefooter@^0.0.1"
     ], 
     "pluginsConfig": {
         "theme-default": {
@@ -64,6 +65,11 @@
             "tocLevel1Icon": "fa fa-hand-o-right",
             "tocLevel2Icon": "fa fa-hand-o-right",
             "tocLevel3Icon": "fa fa-hand-o-right"
-        }
+        },
+        "tbfed-pagefooter": {
+            "copyright": "Copyright © zhangjikai.com 2017",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
     }
 }
