@@ -4,6 +4,9 @@
     "language" : "zh-hans",
     "output.name": "_book",
     "gitbook": "3.2.2",
+    "structure": {
+        "readme": "README.md"
+    },
     "links": {
         "sidebar": {
             "Home": "https://github.com/curder"
