@@ -12,4 +12,5 @@ $collection->transform(function ($item, $key) {
 $collection->all(); // [2, 4, 6, 8, 10]
 ```
 
-> 与大多数集合的方法不同，`transform` 会修改集合本身。如果你想创建新的集合，就改用 [map](/collections/map.md) 方法。
+> 与大多数集合的方法不同，`transform` 会修改集合本身。
+> 如果你想创建新的集合，就改用 [map](/collections/map.md) 方法。
