@@ -22,7 +22,8 @@
         "edit-link",
         "anchor-navigation-ex@0.1.8",
         "tbfed-pagefooter@^0.0.1",
-        "simple-page-toc@^0.1.1"
+        "simple-page-toc@^0.1.1",
+        "ga"
     ], 
     "pluginsConfig": {
         "theme-default": {
@@ -75,6 +76,9 @@
         "simple-page-toc": {
             "maxDepth": 3,
             "skipFirstH1": true
+        },
+        "ga": {
+            "token": "UA-106893850-1"
         }
     }
 }
