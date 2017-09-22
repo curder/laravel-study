@@ -95,10 +95,10 @@ $collection = collect([1, 2, 3]);
 | sortBy [详细](/collections/sortBy.md) | 以给定的键对集合进行排序 |
 | sortByDesc [详细](/collections/sortByDesc.md) | 与[sortBy](/collections/sortBy.md)一样，以相反的顺序来对集合进行排序 |
 | splice [详细](/collections/splice.md) | 删除并返回从给定值后的内容，原集合也会受到影响 |
-| split [详细](/collections/split.md) |  |
-| sum |  |
-| take |  |
-| tap |  |
+| split [详细](/collections/split.md) | 将集合按给定的值拆分 |
+| sum [详细](/collections/sum.md) | 返回集合内所有项目的总和 |
+| take [详细](/collections/take.md) | 返回给定数量项目的新集合 |
+| tap [详细](/collections/tap.md) | 将集合传递给回调，在特定点「tap」集合 |
 | times |  |
 | toArray |  |
 | toJson |  |
