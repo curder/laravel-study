@@ -1,4 +1,4 @@
-# shuffle
+# shuffle方法
 
 随机排序集合中的项目。
 
