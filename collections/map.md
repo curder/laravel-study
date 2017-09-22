@@ -16,4 +16,4 @@ $multiplied->all(); // [2, 4, 6, 8, 10]
 
 > 像其他集合方法一样，`map` 返回一个新的集合实例；它不会修改它所调用的集合。如果想改变原集合，得使用 [transform](/collections/transform.md) 方法。
 
-> 它与 [reduce()](/collections/reduce.md) 的区别是 [reduce()](/collections/reduce.md) 传入是对象或数组，返回的是单一值；而`map()`传入数组或对象，返回的依然是集合。
+> 它与 [reduce()](/collections/reduce.md) 的区别是 [reduce()](/collections/reduce.md) 传入集合或数组，返回的是单一值；而`map()`传入数组或集合，返回的依然是集合。
