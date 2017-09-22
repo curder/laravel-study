@@ -60,8 +60,9 @@
         },
         "github-buttons": {
             "repo": "zhangjikai/gitbook-use",
-        "types": [
-            "star"
-        ]
+            "types": [
+                "star"
+            ]
+        }
     }
 }
