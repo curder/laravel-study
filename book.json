@@ -50,7 +50,11 @@
         },
          "edit-link": {
             "base": "https://github.com/curder/laravel_study",
-            "label": "编辑这个页面"
+            "label":{
+                    "zh_cn": "编辑",
+                    "en": "Edit This Page",
+                    "de": "Seite bearbeiten"
+                }
         }
     }
 }
