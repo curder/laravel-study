@@ -21,7 +21,8 @@
         "collapsible-menu",
         "edit-link",
         "anchor-navigation-ex@0.1.8",
-        "tbfed-pagefooter@^0.0.1"
+        "tbfed-pagefooter@^0.0.1",
+        "simple-page-toc@^0.1.1"
     ], 
     "pluginsConfig": {
         "theme-default": {
