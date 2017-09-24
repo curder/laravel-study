@@ -137,7 +137,6 @@ composer require illuminate/support
 require __DIR__ . '/vendor/autoload.php';
 ```
 
-### 其他
+## 其他
 
 如果在js中也需要使用类似的数组操作，可以参考 [ecrmnn/collect.js](https://github.com/ecrmnn/collect.js) 的相关操作。
-
