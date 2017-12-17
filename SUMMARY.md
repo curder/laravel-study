@@ -105,3 +105,4 @@
   * [collection格式化计算两个数组的数据](/collections_demo/format_two_array.md)
   * [collection中reduce创建lookup数组](/collections_demo/reduce_create_lookup_array.md)
 * [TODO](todo_list.md)
+* [使用Laravel开发自己的Package](packages/laravel-package-hello-world.md)
