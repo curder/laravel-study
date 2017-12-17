@@ -412,5 +412,129 @@ php artisan vendor:publish
 ## 访问效果
 
 ![](/assets/package-helloworld-browser.png)
+## 上传到GitHub
+
+### 设定package的命名空间
+
+目前在本地开发的这个package由于是搭配MyPackage项目测试，所以将`PSR-4`的`root namespace`设定在`MyPackage`项目的`composer.json`。
+
+但发布`package`之后，不可能要使用者也手动在自己项目的`composer.json`加上命名空间，所以我们要将命名空间设定在`package`自己的`composer.json`。
+
+我们来到项目的目录下`packages/curder/helloworld`下执行如下命令，生成`composer.json`文件：
+
+```
+composer init
+```
+
+下面是我们从上面的命令中生成的`composer.json`，添加上`PSR-4`的自动加载。
+
+```
+{
+    "name": "curder/helloworld",
+    "description": "A Laravel Package For Demo.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "curder",
+            "email": "curder@foxmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Curder\\HelloWorld\\": "src/"
+        }
+    },
+     "extra": {
+        "laravel": {
+            "providers": [
+                "Curder\\HelloWorld\\HelloWorldServiceProvider"
+            ]
+        }
+    }
+}
+```
+
+### 建立本地Git仓库
+
+```
+cd packages/curder/helloworld
+git init
+git add .
+git commit -m "Initial commit."
+```
+
+### 建立远程git仓库
+
+![](/assets/package-helloworld-create-github-repository.png)
+
+### 推送到远程仓库
+
+```
+git remote add origin git@github.com:curder/helloworld.git
+git push -u origin master
+git tag -a 1.0.0 -m "First version"
+git push --tags
+```
+
+
+## 上传Packagist
+### 登入Packagist
+
+[登录](https://packagist.org/login/)至Packagist，按右上角Submit上传package。
+
+
+
+### 提交Github网址
+
+贴上package在Github Repository的网址。
+
+
+
+
+### 确认提交
+
+因为Packagist已经有很多package名字叫做helloworld，Packagist让你确认是否要上传。
+
+
+### 上传成功
+
+![](/assets/package-helloworld-create-success.png)
+
+
+## 测试Package
+
+
+### 建立测试项目
+
+```
+composer create-project laravel/laravel MyTestPackage --prefer-dist
+```
+
+### 安裝Package
+
+```
+cd MyTestPackage
+composer require oomusou/helloworld
+```
+
+> 由于Laravel5.5之后新增了包的自动发现功能，所以我们并不需要在`config/app.config`中手动引入`ServiceProvider`。
+
+
+### 发布配置和迁移文件
+
+```
+php artisan vendor:publish
+```
+
+### 浏览器测试
+
+
+
+
+
+
+
 
 
