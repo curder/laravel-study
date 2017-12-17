@@ -61,4 +61,80 @@ composer create-project laravel/laravel MyPackage --prefer-dist
 composer dump-autoload
 ```
 
+## 建立Service Provider
+
+使用下面的命令建立`Service Provider`
+
+```
+php artisan make:provider HelloWorldServiceProvider
+```
+
+产生`HelloWorldServiceProvider.php`默认在`app/Providers`目录下，因为我们是要写package，所以将此文件移到`packages/curder/helloworld/src`目录下。
+
+因为文件的目录已经移动，需要重新修改一些它的namespace。
+
+```
+<?php
+
+namespace Curder\HelloWord;
+
+use Illuminate\Support\ServiceProvider;
+
+class HelloWorldServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap the application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+
+    /**
+     * Register the application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+}
+```
+
+使用命令生成的Provider默认会建立`boot()`和`register()`。
+
+## 注册ServiceProvider
+
+在`config/app.php`中註冊`HelloWorldServiceProvider`。
+
+```
+return [
+    ...
+    
+    'providers' => [
+        
+        ...
+        
+        /*
+         * Package Service Providers...
+         */
+         
+        Curder\HelloWord\HelloWorldProvider::class,
+        
+        /*
+         * Application Service Providers...
+         */
+
+        ...
+    ],
+
+    ...
+];
+```
+
+注册刚刚建立的`HelloWorldProvider`。
+
 
