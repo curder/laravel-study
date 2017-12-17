@@ -138,3 +138,208 @@ return [
 注册刚刚建立的`HelloWorldServiceProvider`。
 
 
+## 建立Router
+
+把路由文件放到`src/routes/`下，并命名为`web.php`，内容如下：
+
+```
+<?php
+
+$namespace = 'Curder\Http\Controllers';
+
+Route::group([
+    'namespace' => $namespace,
+    'prefix' => 'helloworld',
+], function () {
+    Route::get('/', 'PackageNameController@index');
+});
+```
+
+## 建立View
+
+把视图文件建立在src下的`resources/views`下，将其命名为`welcome.blade.php`。
+
+```
+<!doctype html>
+<html lang="{{ app()->getLocale() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Hello World</title>       
+    </head>
+    <body>
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('register') }}">Register</a>
+                    @endauth
+                </div>
+            @endif
+
+            <div class="content">
+                <div class="title m-b-md">
+                    {{ $message }}
+                </div>
+
+                <div class="links">
+                    <a href="https://laravel.com/docs">Documentation</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+```
+
+
+## 建立Controller
+
+
+根据上面路由的定义，把控制器文件放到`src/Http/Controllers`下。
+
+```
+<?php
+
+namespace Curder\HelloWorld;
+
+use App\Http\Controllers\Controller;
+
+class HelloWorldController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $message = 'Hello World';
+        return view('HelloWorld::welcome', compact('message'));
+    }
+}
+```
+
+## 创建Migration
+
+将数据库迁移文件创建在`src/publishable/databases/migrations/`下，我们按照当前日期将其命名为：`2017_12_17_000000_create_package_demo_table.php`，内容如下：
+
+```
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreatePackageDemoTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('package_demo', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('checklist_id');
+            $table->boolean('is_published');
+            $table->boolean('is_archived');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('package_demo');
+    }
+}
+```
+
+## 创建配置文件
+
+将配置文件创建在`src/publishable/config/`下，我们将其命名为`helloworld.php`，内容如下：
+
+```
+<?php
+
+return [
+    "message" => "Hello World",
+];
+
+```
+
+
+
+## 修改Service Provider
+
+```
+<?php
+
+namespace Curder\HelloWord;
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\ServiceProvider;
+
+class HelloWorldServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap the application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        Schema::defaultStringLength(191);
+
+        $this->loadRoutesFrom(__DIR__ . '/routes/web.php' .
+            '');
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'HelloWorld');
+    }
+
+    /**
+     * Register the application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->registerPublishables();
+    }
+    
+    private function registerPublishables()
+    {
+        $basePath = __DIR__;
+
+        $arrPublishable = [
+            'migrations' => [
+                "$basePath/publishable/databases/migrations" => database_path('migrations'),
+            ],
+            'config' => [
+                "$basePath/publishable/config/helloworld.php" => config_path('helloworld.php'),
+            ],
+        ];
+
+        foreach ($arrPublishable as $group => $paths) {
+            $this->publishes($paths, $group);
+        }
+    }
+}
+
+```
