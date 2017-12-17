@@ -27,11 +27,11 @@ use Illuminate\Support\Facades\Schema;
 
 public function boot()
 {
-    Schema::defaultStringLength(120);
+    Schema::defaultStringLength(191);
 }
 ```
 
-相当于给予`varchar`默认的长度**120**。
+相当于给予`varchar`默认的长度**191**。
 
 修改数据库的字符集
 如图，新版的Laravel 5.4 使用了 `utf8mb4` 和 `utf8mb4_unicode_ci` ，这个字符集支持 **emoji** 
