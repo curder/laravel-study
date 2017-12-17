@@ -254,6 +254,7 @@ return [
     "message" => "Hello World",
 ];
 ```
+
 > 配置文件的文件名不允许随意定义，不要与Laravel已有的配置文件文件名冲突，后期再项目的其他地方需要引用。
 
 ## 建立Controller
