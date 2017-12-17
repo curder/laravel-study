@@ -530,7 +530,7 @@ php artisan vendor:publish
 
 ### 浏览器测试
 
-
+![](/assets/package-helloworld-browser-test.png)
 
 
 
