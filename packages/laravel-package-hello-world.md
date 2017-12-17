@@ -122,7 +122,7 @@ return [
          * Package Service Providers...
          */
          
-        Curder\HelloWord\HelloWorldProvider::class,
+        Curder\HelloWord\HelloWorldServiceProvider::class,
         
         /*
          * Application Service Providers...
@@ -135,6 +135,6 @@ return [
 ];
 ```
 
-注册刚刚建立的`HelloWorldProvider`。
+注册刚刚建立的`HelloWorldServiceProvider`。
 
 
