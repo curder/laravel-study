@@ -23,7 +23,7 @@ composer create-project laravel/laravel MyPackage --prefer-dist
 
 在`packages`目录下建立`vendor/package/src`子目录，本package会建立`curder/helloworld/src`。
 
-![](/assets/package-helloworld-source-code-path.png)
+![](/assets/package-helloworld-source-code-path.jpg)
 
 ## 设定PSR-4命名空间
 
@@ -52,7 +52,7 @@ composer create-project laravel/laravel MyPackage --prefer-dist
 }
 ```
 
-注意我们添加的行：`"Curder\\HelloWord\\": "packages/curder/helloworld/src/"`的命名空间和路径的映射关系。
+注意我们添加的行：`"Curder\\HelloWorld\\": "packages/curder/helloworld/src/"`的命名空间和路径的映射关系。
 
 修改完上面的设定后，需要执行下面的composer命令更新一下自动加载。
 
@@ -75,7 +75,7 @@ php artisan make:provider HelloWorldServiceProvider
 ```
 <?php
 
-namespace Curder\HelloWord;
+namespace Curder\HelloWorld;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -103,7 +103,7 @@ class HelloWorldServiceProvider extends ServiceProvider
 }
 ```
 
-注意文件的命名空间是：`Curder\HelloWord`，使用命令生成的Provider默认会建立`boot()`和`register()`。
+注意文件的命名空间是：`Curder\HelloWorld`，使用命令生成的Provider默认会建立`boot()`和`register()`。
 
 ## 注册ServiceProvider
 
@@ -286,7 +286,7 @@ class HelloWorldController extends Controller
 ```
 <?php
 
-namespace Curder\HelloWord;
+namespace Curder\HelloWorld;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
