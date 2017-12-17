@@ -149,7 +149,7 @@ Route::group([
     'namespace' => $namespace,
     'prefix' => 'helloworld',
 ], function () {
-    Route::get('/', 'PackageNameCorntroller@index');
+    Route::get('/', 'HelloWorldController@index');
 });
 ```
 
