@@ -52,3 +52,13 @@ composer create-project laravel/laravel MyPackage --prefer-dist
     ...
 }
 ```
+
+注意我们添加的行：`"Curder\\HelloWord\\": "packages/curder/helloworld/src/"`的命名空间和路径的映射关系。
+
+修改完上面的设定后，需要执行下面的composer命令更新一下映射自动加载。
+
+```
+composer dump-autoload
+```
+
+
