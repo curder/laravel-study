@@ -104,7 +104,7 @@ class HelloWorldServiceProvider extends ServiceProvider
 }
 ```
 
-使用命令生成的Provider默认会建立`boot()`和`register()`。
+注意文件的命名空间是：`Curder\HelloWord`，使用命令生成的Provider默认会建立`boot()`和`register()`。
 
 ## 注册ServiceProvider
 
