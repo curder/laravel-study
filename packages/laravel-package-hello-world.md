@@ -4,7 +4,6 @@
 
 包含`route`、`controller`与`view`，然后会打包成package传到github与packagist，最后在其他的laravel项目中直接使用 `composer require vendor/package` 下载执行我们上传的package。
 
-
 ## Version
 
 * Laravel 5.5
@@ -35,9 +34,9 @@ composer create-project laravel/laravel MyPackage --prefer-dist
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
-    
+
     ...
-    
+
    "autoload": {
         "classmap": [
             "database/seeds",
@@ -48,7 +47,7 @@ composer create-project laravel/laravel MyPackage --prefer-dist
             "Curder\\HelloWord\\": "packages/curder/helloworld/src/"
         }
     },
-    
+
     ...
 }
 ```
@@ -113,17 +112,17 @@ class HelloWorldServiceProvider extends ServiceProvider
 ```
 return [
     ...
-    
+
     'providers' => [
-        
+
         ...
-        
+
         /*
          * Package Service Providers...
          */
-         
+
         Curder\HelloWord\HelloWorldServiceProvider::class,
-        
+
         /*
          * Application Service Providers...
          */
@@ -136,7 +135,6 @@ return [
 ```
 
 注册刚刚建立的`HelloWorldServiceProvider`。
-
 
 ## 建立Router
 
@@ -151,13 +149,13 @@ Route::group([
     'namespace' => $namespace,
     'prefix' => 'helloworld',
 ], function () {
-    Route::get('/', 'PackageNameController@index');
+    Route::get('/', 'PackageNameCorntroller@index');
 });
 ```
 
 ## 建立View
 
-把视图文件建立在src下的`resources/views`下，将其命名为`welcome.blade.php`。
+把视图文件建立在`src/resources/views`下，将其命名为`welcome.blade.php`。
 
 ```
 <!doctype html>
@@ -259,13 +257,12 @@ return [
 
 ## 建立Controller
 
-
 根据上面路由的定义，把控制器文件放到`src/Http/Controllers`下。
 
 ```
 <?php
 
-namespace Curder\HelloWorld;
+namespace Curder\HelloWorld\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 
@@ -283,9 +280,6 @@ class HelloWorldController extends Controller
     }
 }
 ```
-
-
-
 
 ## 修改Service Provider
 
@@ -322,7 +316,7 @@ class HelloWorldServiceProvider extends ServiceProvider
     {
         $this->registerPublishables();
     }
-    
+
     private function registerPublishables()
     {
         $basePath = __DIR__;
@@ -341,5 +335,7 @@ class HelloWorldServiceProvider extends ServiceProvider
         }
     }
 }
-
 ```
+
+
+
