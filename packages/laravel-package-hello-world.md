@@ -406,7 +406,7 @@ php artisan vendor:publish
 
 输入`Curder\HelloWorld\HelloWorldServiceProvider`的内容进行发布。
 
-> 对于已经发布的内容如果需要覆盖，在上面的发布命令中加入 `--force` 参数。但是在执行这个命令之前请确保对修改过的数据已有备份。
+> 另外对于已经发布的内容如果需要覆盖，在上面的发布命令中加入 `--force` 参数。但是在执行这个命令之前请确保对修改过的数据已有备份。
 
 
 
