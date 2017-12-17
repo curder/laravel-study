@@ -198,9 +198,63 @@ Route::group([
         </div>
     </body>
 </html>
-
 ```
 
+## 创建Migration
+
+将数据库迁移文件创建在`src/publishable/databases/migrations/`下，我们按照当前日期将其命名为：`2017_12_17_000000_create_package_demo_table.php`，内容如下：
+
+```
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreatePackageDemoTable extends Migration
+{
+    /**
+    * Run the migrations.
+    *
+    * @return void
+    */
+    public function up()
+    {
+        Schema::create('package_demo', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('checklist_id');
+            $table->boolean('is_published');
+            $table->boolean('is_archived');
+            $table->timestamps();
+        });
+    }
+
+    /**
+    * Reverse the migrations.
+    *
+    * @return void
+    */
+    public function down()
+    {
+        Schema::dropIfExists('package_demo');
+    }
+}
+```
+
+## 创建配置文件
+
+将配置文件创建在`src/publishable/config/`下，我们将其命名为`helloworld.php`，内容如下：
+
+```
+<?php
+
+return [
+    "message" => "Hello World",
+];
+```
+> 配置文件的文件名不允许随意定义，不要与Laravel已有的配置文件文件名冲突，后期再项目的其他地方需要引用。
 
 ## 建立Controller
 
@@ -223,67 +277,12 @@ class HelloWorldController extends Controller
      */
     public function index()
     {
-        $message = 'Hello World';
+        $message = config("helloworld.message");
         return view('HelloWorld::welcome', compact('message'));
     }
 }
 ```
 
-## 创建Migration
-
-将数据库迁移文件创建在`src/publishable/databases/migrations/`下，我们按照当前日期将其命名为：`2017_12_17_000000_create_package_demo_table.php`，内容如下：
-
-```
-<?php
-
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
-
-class CreatePackageDemoTable extends Migration
-{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('package_demo', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('checklist_id');
-            $table->boolean('is_published');
-            $table->boolean('is_archived');
-            $table->timestamps();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('package_demo');
-    }
-}
-```
-
-## 创建配置文件
-
-将配置文件创建在`src/publishable/config/`下，我们将其命名为`helloworld.php`，内容如下：
-
-```
-<?php
-
-return [
-    "message" => "Hello World",
-];
-
-```
 
 
 
