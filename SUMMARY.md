@@ -106,4 +106,7 @@
   * [collection中reduce创建lookup数组](collections_demo/reduce_create_lookup_array.md)
 * [TODO](todo_list.md)
 * [Laravel上传大文件提示413 Request Entity Too Large错误](laravel_upload_413_request_entity_too_large_error.md)
+* [开发Laravel的package扩展包](packages/README.md)
+
+
 
