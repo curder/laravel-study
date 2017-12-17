@@ -143,7 +143,7 @@ return [
 ```
 <?php
 
-$namespace = 'Curder\Http\Controllers';
+$namespace = 'Curder\HelloWorld\Http\Controllers';
 
 Route::group([
     'namespace' => $namespace,
