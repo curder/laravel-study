@@ -154,6 +154,8 @@ deleted event is fired
 => 1
 ```
 
+> 通过执行上面的删除代码，我们可以看到会依次触发`deleting`和`deleted`事件。
+
 
 ### 改
 
