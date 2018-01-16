@@ -65,3 +65,116 @@ class Post extends Model
     }
 }
 ```
+
+> 使用类的`boot()`静态方法注册模型观察者类。
+
+## 观察者类
+
+```
+<?php
+namespace App\Observers;
+
+class PostObserver
+{
+    // 新增模型数据触发
+    public function creating($post) {
+        echo "creating event is fired\n";
+    }
+
+    // 新增模型数据触发
+    public function created($post) {
+        echo "created event is fired\n";
+    }
+    
+    // 编辑模型数据触发
+    public function updating($post) {
+        echo "updating event is fired\n";
+    }
+    
+    // 编辑模型数据触发
+    public function updated($post) {
+        echo "updated event is fired\n";
+    }
+
+    // 新增、编辑模型数据触发
+    public function saving($post) {
+        echo "saving event is fired\n";
+    }
+    
+    // 新增、编辑模型数据触发
+    public function saved($post) {
+        echo "saved event is fired\n";
+    }
+    
+    // 删除模型数据触发
+    public function deleting($post) {
+        echo "deleting event is fired\n";
+    }
+
+    // 删除模型数据触发
+    public function deleted($post) {
+        echo "deleted event is fired\n";
+    }
+}
+```
+
+## 在Tinker中测试
+
+### 增
+
+```
+☁  laravel-model-observers [master] ⚡ tinker
+Psy Shell v0.8.17 (PHP 7.1.13 — cli) by Justin Hileman
+>>> App\Post::create(['title'=>'title', 'body'=>'Body']);
+saving event is fired
+creating event is fired
+created event is fired
+saved event is fired
+=> App\Post {#753
+     title: "title",
+     body: "Body",
+     updated_at: "2018-01-16 08:30:08",
+     created_at: "2018-01-16 08:30:08",
+     id: 1,
+   }
+>>>
+```
+
+> 通过执行上面的代码我们可以看到，执行模型`create()`方法，会依次触发`saving`、`creating`、`created` 和 `saved` 事件。
+
+
+### 删
+
+```
+☁ laravel-model-observers [master] ⚡ tinker
+Psy Shell v0.8.17 (PHP 7.1.13 — cli) by Justin Hileman
+>>> App\Post::destroy(1)
+deleting event is fired
+deleted event is fired
+=> 1
+```
+
+
+### 改
+
+```
+☁  laravel-model-observers [master] ⚡ tinker
+Psy Shell v0.8.17 (PHP 7.1.13 — cli) by Justin Hileman
+>>> $post = App\Post::first();
+=> App\Post {#752
+     id: "2",
+     title: "title",
+     body: "Body",
+     created_at: "2018-01-16 08:31:30",
+     updated_at: "2018-01-16 08:31:30",
+   }
+>>> $post->title = 'New Title'
+=> "New Title"
+>>> $post->save();
+saving event is fired
+updating event is fired
+updated event is fired
+saved event is fired
+=> true
+```
+
