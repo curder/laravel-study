@@ -1,5 +1,4 @@
-#
-Summary
+# Summary
 
 ## Laravel模式
 
