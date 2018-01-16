@@ -116,6 +116,19 @@ class PostObserver
     public function deleted($post) {
         echo "deleted event is fired\n";
     }
+    
+    
+    // 监听数据即将从软删除状态恢复的事件。
+    public function restoring($post)
+    {
+
+    }
+
+    // 监听数据从软删除状态恢复后的事件。
+    public function restored($post)
+    {
+
+    }
 }
 ```
 
