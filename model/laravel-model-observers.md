@@ -135,6 +135,7 @@ class PostObserver
 ```
 
 >**注意:** 如果 `saving`/`creating`/`updating`/`deleting`/`restoring` 事件逻辑中返回`false`，则相应的创建/更新/删除操作会退出，不再往下执行。
+> 其中`restoring`和`restored`事件需要模型 `use Illuminate\Database\Eloquent\SoftDeletes;`才能正常使用。
 
 
 ## 在Tinker中测试
