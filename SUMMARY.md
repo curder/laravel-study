@@ -6,7 +6,7 @@
 * [如何使用Service模式](how_to_use_service_mode.md)
 * [如何使用Presenter模式](how_to_use_presenter_mode.md)
 
-* [Laravel模型](model/README.md)
+## [Laravel模型](model/README.md)
   * [Laravel模型缓存](model/laravel-model-caching.md)
   * [Laravel模型事件](model/laravel-model-event.md)
 
