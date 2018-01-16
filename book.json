@@ -74,7 +74,7 @@
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
         "simple-page-toc": {
-            "maxDepth": 3,
+            "maxDepth": 4,
             "skipFirstH1": true
         },
         "ga": {
