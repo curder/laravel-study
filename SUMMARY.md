@@ -123,7 +123,6 @@
 * [Laravel上传大文件提示413 Request Entity Too Large错误](laravel_upload_413_request_entity_too_large_error.md)
 * [使用Laravel开发自己的Package](packages/laravel-package-hello-world.md)
 * [Laravel中涉及认证跳转地址的修改的地方](laravel_is_involved_in_the_modification_of_the_authentication_jump_address.md)
-* [Laravel 5.\* 执行迁移文件报错：Specified key was too long error]
-(specified_key_was_too_long_error.md)
+* [Laravel 5.\* 执行迁移文件报错：Specified key was too long error](specified_key_was_too_long_error.md)
 * [Laravel测试](laravel_test.md)
 * [TODO](todo_list.md)
