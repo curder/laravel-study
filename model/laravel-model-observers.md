@@ -117,7 +117,6 @@ class PostObserver
         echo "deleted event is fired\n";
     }
     
-    
     // 监听数据即将从软删除状态恢复的事件。
     public function restoring($post)
     {
