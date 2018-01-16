@@ -206,7 +206,7 @@ saved event is fired
 ## 事件模型的退出
 
 > **注意:** 
-如果`saving`/`creating`/`updating`/`deleting`事件逻辑中返回`false`，则相应的创建/更新/删除操作会退出，不再往下执行。
+如果`saving`/`creating`/`updating`/`deleting`/`restoring`事件逻辑中返回`false`，则相应的创建/更新/删除操作会退出，不再往下执行。
 
 
 ```php
