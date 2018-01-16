@@ -176,6 +176,26 @@ deleted event is fired
 > 通过执行上面的删除代码，我们可以看到会依次触发`deleting`和`deleted`事件。
 
 
+```
+>>> $post = Post::find(1)
+=> App\Post {#770
+     id: "1",
+     title: "title",
+     body: "Body",
+     deleted_at: null,
+     created_at: "2018-01-16 09:26:50",
+     updated_at: "2018-01-16 09:26:50",
+   }
+>>> $post->restore();
+restoring event is fired
+saving event is fired
+updating event is fired
+updated event is fired
+saved event is fired
+restored event is fired
+```
+
+> 
 
 
 ### 改
