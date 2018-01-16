@@ -55,7 +55,7 @@ php artisan migrate
 
 ## 模型内容
 
-我们使用上面提到的8种模型事件进行测试。
+我们使用上面提到的 10 种模型事件进行测试。
 
 ```php
 <?php
@@ -111,6 +111,14 @@ class Post extends Model
         static::deleted(function($post) {
             echo "deleted event is fired\n";
         });
+        
+        static::restoring(function($post) {
+            echo "restoring event is fired\n";
+        });
+        
+        static::restored(function(){
+           echo "restored event is fired\n"; 
+        });
     }
 }
 ```
@@ -141,6 +149,8 @@ saved event is fired
 
 ### 删
 
+* **软删除**
+
 ```
 ☁  model-events [master] ⚡ tinker
 Psy Shell v0.8.17 (PHP 7.1.13 — cli) by Justin Hileman
@@ -151,6 +161,20 @@ deleted event is fired
 ```
 
 > 通过执行上面的删除代码，我们可以看到会依次触发`deleting`和`deleted`事件。
+
+* **恢复删除**
+
+```
+>>> $post->find(1)->restore();
+restoring event is fired
+saving event is fired
+updating event is fired
+updated event is fired
+saved event is fired
+restored event is fired
+```
+
+> 通过执行上面的恢复删除代码，可以依次触发了`restoring`、`saving`、`updating`、`saved`和`restored`事件中的代码
 
 ### 改
 
