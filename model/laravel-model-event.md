@@ -16,7 +16,7 @@ Eloquent也支持模型事件——当模型被创建、更新或删除的时候
 laravel new model-events
 cd model-events
 php artisan make:model Post -m
-touch databases/database.sqlite
+touch database/database.sqlite
 ```
 > 上面的命令会创建一个Laravel项目并创建一个Post模型文件和对应的迁移文件与数据库配置文件。
 
@@ -26,41 +26,145 @@ touch databases/database.sqlite
 DB_CONNECTION=sqlite
 ```
 
+修改数据库迁移文件`database\migrations\****_**_**_******_create_posts_table.php`中的 `up()`方法
+
+```
+public function up()
+{
+    Schema::create('posts', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('title');
+        $table->text('body');
+        $table->timestamps();
+    });
+}
+```
+
+修改好迁移文件之后，执行迁移
+
+```
+php artisan migrate
+```
+
 ## 模型内容
 
 我们使用上面提到的8种模型事件进行测试。
 
 ```php
 <?php
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+
 class Post extends Model
 {
-    
-    // 允许自动填充
-    protected $guarded = ['id','updated_at','created_at'];
+    protected $fillable = [
+        'title', 'body'
+    ];
 
     protected static function boot()
     {
-        Post::saving(function($post){
-            echo 'saving event is fired<br>';
+
+        Post::creating(function(){
+            echo "creating event is fired\n";
         });
-        
-        Post::creating(function($post){
-            echo 'creating event is fired<br>';
-        });
-        
+
         Post::created(function($post){
-            echo 'created event is fired<br>';
+            echo "created event is fired\n";
         });
+
+        Post::updating(function($post){
+            echo "updating event is fired\n";
+        });
+
+        Post::updated(function($post){
+            echo "updated event is fired\n";
+        });
+
+        Post::saving(function($post){
+            echo "saving event is fired\n";
+        });
+        
         
         Post::saved(function($post){
-            echo 'saved event is fired<br>';
+            echo "saved event is fired\n";
+        });
+
+        Post::deleting(function($post){
+            echo "deleting event is fired\n";
+        });
+
+        Post::deleted(function($post) {
+            echo "deleted event is fired\n";
         });
     }
 }
 ```
+
+
+## 使用Tinker进行数据的增删改
+
+
+### 增
+
+```
+☁  model-events [master] ⚡ tinker
+Psy Shell v0.8.17 (PHP 7.1.13 — cli) by Justin Hileman
+>>> App\Post::create(['title'=>'title','body'=>'body']);
+saving event is fired
+creating event is fired
+created event is fired
+saved event is fired
+=> App\Post {#761
+     title: "title",
+     body: "body",
+     updated_at: "2018-01-16 02:38:54",
+     created_at: "2018-01-16 02:38:54",
+     id: 3,
+   }
+```
+> 通过执行上面的代码我们可以看到，执行模型`create()`方法，会依次触发`saving`、`creating`、`created` 和 `saved` 事件。
+
+### 删
+
+```
+☁  model-events [master] ⚡ tinker
+Psy Shell v0.8.17 (PHP 7.1.13 — cli) by Justin Hileman
+>>> App\Post::destroy(1);
+deleting event is fired
+deleted event is fired
+=> 1
+```
+
+> 通过执行上面的删除代码，我们可以看到会依次触发`deleting`和`deleted`事件。
+
+### 改
+
+```
+☁  model-events [master] ⚡ tinker
+Psy Shell v0.8.17 (PHP 7.1.13 — cli) by Justin Hileman
+>>> $post = App\Post::find(2)
+=> App\Post {#767
+     id: "2",
+     title: "title",
+     body: "body",
+     created_at: "2018-01-16 02:38:49",
+     updated_at: "2018-01-16 02:38:49",
+   }
+>>> $post->title = 'title Update'
+=> "title Update"
+>>> $post->save();
+saving event is fired
+updating event is fired
+updated event is fired
+saved event is fired
+=> true
+```
+
+> 通过执行上面的代码，我们可以看到会依次触发`saving` `updating` `updated` 和 `saved` 事件。
+
+在上面的测试代码中我们可以看到
 
 然后在控制器中编写测试代码如下：
 
