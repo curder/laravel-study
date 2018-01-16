@@ -65,36 +65,42 @@ class Post extends Model
 
     protected static function boot()
     {
-
+        // 新增模型数据触发
         Post::creating(function(){
             echo "creating event is fired\n";
         });
 
+        // 新增模型数据触发
         Post::created(function($post){
             echo "created event is fired\n";
         });
-
+        
+        // 编辑模型数据触发
         Post::updating(function($post){
             echo "updating event is fired\n";
         });
-
+        
+        // 编辑模型数据触发
         Post::updated(function($post){
             echo "updated event is fired\n";
         });
 
+        // 新增、编辑模型数据触发
         Post::saving(function($post){
             echo "saving event is fired\n";
         });
         
-        
+        // 新增、编辑模型数据触发
         Post::saved(function($post){
             echo "saved event is fired\n";
         });
-
+        
+        // 删除模型数据触发
         Post::deleting(function($post){
             echo "deleting event is fired\n";
         });
 
+        // 删除模型数据触发
         Post::deleted(function($post) {
             echo "deleted event is fired\n";
         });
@@ -164,7 +170,26 @@ saved event is fired
 
 > 通过执行上面的代码，我们可以看到会依次触发`saving` `updating` `updated` 和 `saved` 事件。
 
-在上面的测试代码中我们可以看到
+## 事件模型的退出
+
+> **注意:** 
+如果`saving`/`creating`/`updating`/`deleting`事件逻辑中返回`false`，则相应的创建/更新/删除操作会退出，不再往下执行。
+
+
+```php
+Post::creating(function($post){
+    echo 'creating event is fired<br>';
+    if($post->title == 'title')
+        return false;
+});
+```
+
+
+
+
+
+
+
 
 然后在控制器中编写测试代码如下：
 
