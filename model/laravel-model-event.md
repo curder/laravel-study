@@ -125,6 +125,7 @@ class Post extends Model
 }
 ```
 
+> 其中`restoring`和`restored`事件需要模型 `use Illuminate\Database\Eloquent\SoftDeletes;`才能正常使用。
 
 ## 使用Tinker进行数据的增删改
 
