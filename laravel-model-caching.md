@@ -20,3 +20,14 @@
 
 使用控制器，访问缓存的数据也不是很方便。
 
+我们可以构建一个模板，只有在文章更新时才能访问数据库，任何有权访问模型的代码都可以获取缓存的值：
+
+```
+<h3>$article->cached_comments_count {{ str_plural('Comment', $article->cached_comments_count)</h3>
+```
+
+使用模型访问器，我们将根据文章上次更新的时间缓存评论计数。
+
+那么当新评论被添加或删除时，我们如何更新文章的`updated_at`列呢？
+
+答案是配置`touch`方式。
