@@ -6,9 +6,9 @@
 * [如何使用Service模式](how_to_use_service_mode.md)
 * [如何使用Presenter模式](how_to_use_presenter_mode.md)
 
-* [Laravel模型](laravel-model.md)
-  * [Laravel模型缓存](laravel-model-caching.md)
-  * [Laravel模型事件](laravel-model-event.md)
+* [Laravel模型](model/README.md)
+  * [Laravel模型缓存](model/laravel-model-caching.md)
+  * [Laravel模型事件](model/laravel-model-event.md)
 
 * [Laravel 5.\* 执行迁移文件报错：Specified key was too long error](specified_key_was_too_long_error.md)
 * [EloquentORM关联关系](related_relationship/README.md)
