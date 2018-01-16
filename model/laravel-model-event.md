@@ -2,11 +2,13 @@
 
 Eloquent支持模型事件 —— 当模型被创建、更新或删除的时候触发相应事件。
 
-Eloquent目前支持八种事件类型：`creating`、`created`、`updating`、`updated`、`saving`、`saved`、`deleting`和`deleted`。
+目前使用Laravel版本是5.5，Eloquent目前支持10种事件类型：`creating`、`created`、`updating`、`updated`、`saving`、`saved`、`deleting`、`deleted`、`restoring`和`restored`。
 
 `deleting`和`deleted`很好理解，在删除模型时触发；`deleting`在删除操作前执行，`deleted`在删除完成后执行。
 
 当创建模型时，依次执行`saving`、`creating`、`created`和`saved`，同理在更新模型时依次执行`saving`、`updating`、`updated`和`saved`。
+
+`restoring`和`restored`
 
 无论是使用批量赋值（`create`/`update`）还是直接调用`save`方法，都会触发对应事件（前提是注册了相应的模型事件）。
 
@@ -39,6 +41,7 @@ public function up()
         $table->increments('id');
         $table->string('title');
         $table->text('body');
+        $table->softDeletes();
         $table->timestamps();
     });
 }
