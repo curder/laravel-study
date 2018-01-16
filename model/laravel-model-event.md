@@ -1,4 +1,4 @@
-## Laravel模型事件
+# Laravel模型事件
 
 Eloquent也支持模型事件——当模型被创建、更新或删除的时候触发相应事件，Eloquent目前支持八种事件类型：`creating`、`created`、`updating`、`updated`、`saving`、`saved`、`deleting`、`deleted`。
 
@@ -6,7 +6,29 @@ Eloquent也支持模型事件——当模型被创建、更新或删除的时候
 
 当创建模型时，依次执行`saving`、`creating`、`created`和`saved`，同理在更新模型时依次执行`saving`、`updating`、`updated`和`saved`。无论是使用批量赋值（`create`/`update`）还是直接调用`save`方法，都会触发对应事件（前提是注册了相应的模型事件）。
 
-这里我们选择再当前`\App\Post`类的`boot`方法里面注册(当然，也可以选择在服务提供者`AppServiceProvider`的`boot`方法中注册)：
+这里我们选择在当前`\App\Post`类的`boot`方法里面注册(当然，也可以选择在服务提供者`AppServiceProvider`的`boot`方法中注册)：
+
+## 数据准备
+
+命令行执行如下命令：
+
+```
+laravel new model-events
+cd model-events
+php artisan make:model Post -m
+touch databases/database.sqlite
+```
+> 上面的命令会创建一个Laravel项目并创建一个Post模型文件和对应的迁移文件与数据库配置文件。
+
+修改项目本地环境文件`.env`文件中的数据库连接
+
+```
+DB_CONNECTION=sqlite
+```
+
+## 模型内容
+
+我们使用上面提到的8种模型事件进行测试。
 
 ```php
 <?php
