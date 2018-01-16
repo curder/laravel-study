@@ -1,4 +1,4 @@
-# Laravel模型事件
+# 初窥Laravel模型事件
 
 Eloquent支持模型事件 —— 当模型被创建、更新或删除的时候触发相应事件。
 
@@ -63,9 +63,11 @@ php artisan migrate
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
+    use SoftDeletes;
     protected $fillable = [
         'title', 'body'
     ];
