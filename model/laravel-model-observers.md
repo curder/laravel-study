@@ -33,6 +33,7 @@ public function up()
         $table->increments('id');
         $table->string('title');
         $table->text('body');
+        $table->softDeletes();
         $table->timestamps();
     });
 }
@@ -52,9 +53,11 @@ php artisan migrate
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
+    use SoftDeletes;
     protected $fillable = [
         'title', 'body',
     ];
@@ -131,7 +134,7 @@ class PostObserver
 }
 ```
 
->**注意:** 如果`saving`/`creating`/`updating`/`deleting`事件逻辑中返回`false`，则相应的创建/更新/删除操作会退出，不再往下执行。
+>**注意:** 如果 `saving`/`creating`/`updating`/`deleting`/`restoring` 事件逻辑中返回`false`，则相应的创建/更新/删除操作会退出，不再往下执行。
 
 
 ## 在Tinker中测试
@@ -171,6 +174,8 @@ deleted event is fired
 ```
 
 > 通过执行上面的删除代码，我们可以看到会依次触发`deleting`和`deleted`事件。
+
+
 
 
 ### 改
