@@ -180,3 +180,4 @@ saved event is fired
 => true
 ```
 
+> 通过执行上面的代码，我们可以看到会依次触发`saving` `updating` `updated` 和 `saved` 事件。
