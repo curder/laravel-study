@@ -74,7 +74,7 @@ saved event is fired
 ```php
 Post::creating(function($post){
     echo 'creating event is fired<br>';
-    if($post->cat_id==1)
+    if($post->cat_id == 1)
         return false;
 });
 ```
