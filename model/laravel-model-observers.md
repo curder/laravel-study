@@ -195,7 +195,7 @@ saved event is fired
 restored event is fired
 ```
 
-> 
+> 通过执行上面的恢复删除代码，可以依次触发了`restoring`、`saving`、`updating`、`updated`、`saved`和`restored`事件中的代码
 
 
 ### 改
