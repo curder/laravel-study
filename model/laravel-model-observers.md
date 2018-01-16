@@ -121,13 +121,13 @@ class PostObserver
     // 监听数据即将从软删除状态恢复的事件。
     public function restoring($post)
     {
-
+        echo "restoring event is fired\n";
     }
 
     // 监听数据从软删除状态恢复后的事件。
     public function restored($post)
     {
-
+        echo "restored event is fired\n";
     }
 }
 ```
