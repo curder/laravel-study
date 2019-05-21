@@ -157,7 +157,7 @@ Psy Shell v0.8.11 (PHP 7.1.8 — cli) by Justin Hileman
 
 ### 到github登录自己的账号和密码，创建一个新的仓库并上传源代码
 
-![](images/QQ20170824-144746.jpg)
+![](https://ws2.sinaimg.cn/large/006tKfTcgy1fq0ikshdfdj30kt0ifac2.jpg)
 
 获取到 Remote Addr 后，再回到本地开发目录 `packages/curder/laravel-admin`执行如下命令：
 
@@ -171,34 +171,34 @@ git push -u origin master
 
 登录到GItHub应该就能看到如下图所示的内容：
 
-![](images/QQ20170824-145514.jpg)
+![](https://ws2.sinaimg.cn/large/006tKfTcgy1fq0iktwklij30t20jrtbn.jpg)
 
 
 ## 配置github提交时自动通知Packagist
 
 在项目列表下：即 https://github.com/curder/caravel-admin 下点击 "Settings" -> "Integrations & services" -> "Add Service"下拉菜单中选择 "Packagist"，如下图
 
-![](images/QQ20170824-145935.jpg)
+![](https://ws3.sinaimg.cn/large/006tKfTcgy1fq0ikv95o3j30so0e140u.jpg)
 
 
 点击进去后，会需要我们提供 'User' 和 ‘Token’ 信息我们需要登录[Packagist](https://packagist.org/profile/)获取。
 
-![](images/packagist_api_token.jpg)
+![](https://ws3.sinaimg.cn/large/006tKfTcgy1fq0ikwl5h0j30wq05xt9h.jpg)
 
 将上面获取的两个关键信息填入GitHub的表单中，如下：
 
-![](images/github_add_service.jpg)
+![](https://ws2.sinaimg.cn/large/006tKfTcgy1fq0ikxlxqzj30ky0mojtb.jpg)
 
 
 
 ## 提交package到Packagist
 
 登录packagist后，点击[submit](https://packagist.org/packages/submit)输入：`https://github.com/curder/caravel-admin`，如下：
-![](images/packagist_submit_package.jpg)
+![](https://ws3.sinaimg.cn/large/006tKfTcgy1fq0il0115sj30xd09ewgx.jpg)
 
 成功后会看到如下的界面：
 
-![](images/curder_laravel-admin.jpg)
+![](https://ws3.sinaimg.cn/large/006tKfTcgy1fq0il0sosrj30xd0j1jto.jpg)
 
 至此，同步完成。
 
