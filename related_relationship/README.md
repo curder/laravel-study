@@ -1,7 +1,10 @@
 ## 模型关联关系介绍
-* [EloquentORM关联关系之一对一](hasOne.md)
-* [EloquentORM关联关系之一对多](hasMany.md)
-* [EloquentORM关联关系之远层一对多](hasManyThrough.md)
-* [EloquentORM关联关系之多对多](morphToMany.md)
-* [EloquentORM关联关系之多态关联](morphMany.md)
-* [EloquentORM关联关系之多对多多态关联](belongsToMany.md)
+
+- [EloquentORM 一对一](hasOne.md)
+- [EloquentORM 一对多](hasMany.md)
+- [EloquentORM 多对多](belongsToMany.md)
+- [EloqumentORM 远层一对一](hasOneThrough.md)
+- [EloquentORM 远层一对多](hasManyThrough.md)
+- [EloqumentORM 多态一对一](morphOne.md)
+- [EloquentORM 多态多对多](morphToMany.md)
+- [EloquentORM 多态一对多](morphMany.md)
