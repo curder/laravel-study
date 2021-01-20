@@ -145,7 +145,7 @@ gitbook install && gitbook serve .
   - [collection 格式化 markdown 数据列表](/collections_demo/markdown_format.md)
   - [collection 格式化计算两个数组的数据](/collections_demo/format_two_array.md)
   - [collection 中 reduce 创建 lookup 数组](/collections_demo/reduce_create_lookup_array.md)
-
+  - [collection中通过值获取对应key](/collections_demo/get_key_from_value.md)
 ---
 
 ## 其他

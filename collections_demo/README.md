@@ -13,3 +13,5 @@ collection在实际开发中的使用。
 * [collection格式化计算两个数组的数据](/collections_demo/format_two_array.md)
 
 * [collection中reduce创建lookup数组](/collections_demo/reduce_create_lookup_array.md)
+
+* [collection中通过值获取对应key](/collections_demo/get_key_from_value.md)
