@@ -1,4 +1,4 @@
-# Laravel 的集合 Collection
+# 集合 Collection
 
 ## 简介
 
@@ -6,30 +6,31 @@
 
 我们使用了 `collect` 函数从数组中创建新的集合实例，对其中的每个元素运行 `strtoupper` 函数之后再移除所有的空元素：
 
-```
-$collection = collect(['taylor', 'abigail', null])->map(function ($name) {
+```php
+collect(['taylor', 'abigail', null])
+  ->map(function ($name) {
     return strtoupper($name);
-})
-->reject(function ($name) {
+  })
+  ->reject(function ($name) {
     return empty($name);
-});
+  });
 ```
 
-正如你看到的，`Collection` 类允许你链式调用其方法，以达到在底层数组上优雅地执行 map 和 reject 操作。一般来说，集合是不可改变的，这意味着每个 `Collection` 方法都会返回一个全新的 `Collection` 实例。
+正如你看到的，`Collection` 类允许你链式调用其方法，以达到在底层数组上优雅地执行 `map` 和 `reject` 操作。一般来说，集合是不可改变的，这意味着每个 `Collection` 方法都会返回一个全新的 `Collection` 实例。
 
 ## 创建集合
 
 如上所述，辅助函数 `collect` 会为给定的数组返回一个新的 `Illuminate\Support\Collection` 实例。也就是说，创建一个集合就这么简单：
 
-```
+```php
 $collection = collect([1, 2, 3]);
 ```
 
-> 默认情况下， [Eloquent](https://laravel.com/docs/5.5/eloquent) 查询的结果返回的内容都是 `Collection` 实例。
+> 默认情况下， [Eloquent](https://laravel.com/docs/8.x/eloquent) 查询的结果返回的内容都是 `Collection` 实例。
 
 ## 可用的方法
 
-接下来的内容，我们会探讨 `Collection` 类每个可用的方法。**记住，所有方法都可以以方法链的形式优雅地操纵数组。**而且，几乎所有的方法都会返回新的 `Collection` 实例，允许你在必要时保存集合的原始副本。
+接下来的内容，我们会探讨 `Collection` 类每个可用的方法。**记住，所有方法都可以以方法链的形式优雅地操纵数组。**而且，几乎所有的方法都会返回新的 `Collection` 实例，允许在必要时保存集合的原始副本。
 
 | 方法名 | 释义 |
 | :--- | :--- |
@@ -46,7 +47,7 @@ $collection = collect([1, 2, 3]);
 | diffAssoc [详细](/collections/diffAssoc.md) | 基于键值对求差集 |
 | diffKeys [详细](/collections/diffKeys.md) | 基于键求差集 |
 | each [详细](/collections/each.md) | 迭代集合中的内容并将其传递到回调函数中 |
-| every [详细](/every) | 可用于验证集合中每一个元素都通过给定的真实测试 |
+| every [详细](/collections/every.md) | 可用于验证集合中每一个元素都通过给定的真实测试 |
 | except [详细](/collections/except.md) | 返回集合中除了指定键以外的所有项目 |
 | filter [详细](/collections/filter.md) | 使用给定的回调函数过滤集合的内容，只留下那些通过给定真实测试的内容 |
 | first [详细](/collections/first.md) | 返回集合中通过给定真实测试的第一个元素 |
@@ -120,23 +121,23 @@ $collection = collect([1, 2, 3]);
 
 ### 安装
 
-Laravel中的Collection使用Composer管理，所以我们可以在项目中使用composer安装到非Laravel项目中，比如我们新建一个collections目录，通过下面使用命令安装
+Laravel 中的 Collection 使用 Composer 管理，所以可以在项目中使用 composer 安装到非 Laravel 项目中，比如新建一个 collections 目录，通过下面使用命令安装
 
-```
+```bash
 mkdir collections && cd collections
 composer require illuminate/support
 ```
 
-执行完上面的命令将得到所需要的package。
+执行完上面的命令将得到所需要的拓展包。
 
 ### 使用
 
-```
+```php
 <?php
-// 引入package
+// 引入 package
 require __DIR__ . '/vendor/autoload.php';
 ```
 
-## 其他
+## 在JavaScript中使用集合相关操作
 
-如果在js中也需要使用类似的数组操作，可以参考 [ecrmnn/collect.js](https://github.com/ecrmnn/collect.js) 的相关操作。
+如果在 JavaScript 中也需要使用类似的数组操作，可以参考 [ecrmnn/collect.js](https://github.com/ecrmnn/collect.js)。

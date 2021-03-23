@@ -26,29 +26,29 @@ gitbook install && gitbook serve .
 
 ## Laravel 模式
 
-- [介绍](README.md)
-- [Laravel5 发送邮件使用 Service 隔离业务](send_mesages_use_service_partten.md)
-- [如何使用 Repository 模式](how_to_use_repository_mode.md)
-- [如何使用 Service 模式](how_to_use_service_mode.md)
-- [如何使用 Presenter 模式](how_to_use_presenter_mode.md)
+- [介绍](/others/README.md)
+- [Laravel5 发送邮件使用 Service 隔离业务](/others/send_mesages_use_service_partten.md)
+- [如何使用 Repository 模式](/others/how_to_use_repository_mode.md)
+- [如何使用 Service 模式](/others/how_to_use_service_mode.md)
+- [如何使用 Presenter 模式](/others/how_to_use_presenter_mode.md)
 
 ---
 
 ## Laravel 模型
 
-- [Laravel 模型缓存](model/laravel-model-caching.md)
-- [Laravel 模型事件](model/laravel-model-event.md)
-- [Laravel 模型观察者](model/laravel-model-observers.md)
+- [Laravel 模型缓存](/model/laravel-model-caching.md)
+- [Laravel 模型事件](/model/laravel-model-event.md)
+- [Laravel 模型观察者](/model/laravel-model-observers.md)
 
-- [EloquentORM 关联关系](related_relationship/README.md)
-- [EloquentORM 一对一](related_relationship/hasOne.md)
-- [EloquentORM 一对多](related_relationship/hasMany.md)
-- [EloquentORM 多对多](related_relationship/belongsToMany.md)
-- [EloqumentORM 远层一对一](related_relationship/hasOneThrough.md)
-- [EloquentORM 远层一对多](related_relationship/hasManyThrough.md)
-- [EloqumentORM 多态一对一](related_relationship/morphOne.md)
-- [EloquentORM 多态多对多](related_relationship/morphToMany.md)
-- [EloquentORM 多态一对多](related_relationship/morphMany.md)
+- [EloquentORM 关联关系](/model/related-relationships/README.md)
+- [EloquentORM 一对一](/model/related-relationships/hasOne.md)
+- [EloquentORM 一对多](/model/related-relationships/hasMany.md)
+- [EloquentORM 多对多](/model/related-relationships/belongsToMany.md)
+- [EloquentORM 远层一对一](/model/related-relationships/hasOneThrough.md)
+- [EloquentORM 远层一对多](/model/related-relationships/hasManyThrough.md)
+- [EloquentORM 多态一对一](/model/related-relationships/morphOne.md)
+- [EloquentORM 多态多对多](/model/related-relationships/morphToMany.md)
+- [EloquentORM 多态一对多](/model/related-relationships/morphMany.md)
 
 ---
 
@@ -138,21 +138,20 @@ gitbook install && gitbook serve .
   - [whereNotInStrict](/collections/whereNotInStrict.md)
   - [zip](/collections/zip.md)
 
-- [Laravel 中 Collection 的实际使用](/collections_demo/README.md)
-  - [collection 中 sum 求和](/collections_demo/sum.md)
-  - [collection 格式化计算数据](/collections_demo/format.md)
-  - [collection 格式化计算数据计算 github 事件得分总和](/collections_demo/format_github_events_score.md)
-  - [collection 格式化 markdown 数据列表](/collections_demo/markdown_format.md)
-  - [collection 格式化计算两个数组的数据](/collections_demo/format_two_array.md)
-  - [collection 中 reduce 创建 lookup 数组](/collections_demo/reduce_create_lookup_array.md)
-  - [collection中通过值获取对应key](/collections_demo/get_key_from_value.md)
+- [Laravel 中 Collection 的实际使用](/collections/demo/README.md)
+  - [collection 中 sum 求和](/collections/demo/sum.md)
+  - [collection 格式化计算数据](/collections/demo/format.md)
+  - [collection 格式化计算数据计算 github 事件得分总和](/collections/demo/format_github_events_score.md)
+  - [collection 格式化 markdown 数据列表](/collections/demo/markdown_format.md)
+  - [collection 格式化计算两个数组的数据](/collections/demo/format_two_array.md)
+  - [collection 中 reduce 创建 lookup 数组](/collections/demo/reduce_create_lookup_array.md)
+  - [collection中通过值获取对应key](/collections/demo/get_key_from_value.md)
 ---
 
 ## 其他
 
-- [Laravel 上传大文件提示 413 Request Entity Too Large 错误](laravel_upload_413_request_entity_too_large_error.md)
-- [使用 Laravel 开发自己的 Package](packages/laravel-package-hello-world.md)
-- [Laravel 中涉及认证跳转地址的修改的地方](laravel_is_involved_in_the_modification_of_the_authentication_jump_address.md)
-- [Laravel 5.\* 执行迁移文件报错：Specified key was too long error](specified_key_was_too_long_error.md)
-- [Laravel 测试](laravel_test.md)
-- [TODO](todo_list.md)
+- [Laravel 上传大文件提示 413 Request Entity Too Large 错误](/others/laravel_upload_413_request_entity_too_large_error.md)
+- [使用 Laravel 开发自己的 Package](/others/laravel-package-hello-world.md)
+- [Laravel 中涉及认证跳转地址的修改的地方](/others/laravel_is_involved_in_the_modification_of_the_authentication_jump_address.md)
+- [Laravel 5.\* 执行迁移文件报错：Specified key was too long error](/others/specified_key_was_too_long_error.md)
+- [Laravel 测试](/others/laravel_test.md)

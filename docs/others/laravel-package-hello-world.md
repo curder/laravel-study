@@ -23,7 +23,7 @@ composer create-project laravel/laravel MyPackage --prefer-dist
 
 在`packages`目录下建立`vendor/package/src`子目录，本package会建立`curder/helloworld/src`。
 
-![](/assets/packages/helloworld-source-code-path.jpg)
+![](/packages/helloworld-source-code-path.jpg)
 
 ## 设定PSR-4命名空间
 
@@ -402,7 +402,6 @@ php artisan vendor:publish
 
 执行完上面的命令后，就能看到如下的界面
 
-![](/assets/packages/helloworld-publish-config-and-database-migration.png)
 
 输入`Curder\HelloWorld\HelloWorldServiceProvider`的内容进行发布。
 
@@ -411,7 +410,7 @@ php artisan vendor:publish
 
 ## 访问效果
 
-![](/assets/packages/helloworld-browser.png)
+![](/packages/helloworld-browser.png)
 ## 上传到GitHub
 
 ### 设定package的命名空间
@@ -467,7 +466,7 @@ git commit -m "Initial commit."
 
 ### 建立远程git仓库
 
-![](/assets/packages/helloworld-create-github-repository.png)
+![](/packages/helloworld-create-github-repository.png)
 
 ### 推送到远程仓库
 
@@ -500,7 +499,7 @@ git push --tags
 
 ### 上传成功
 
-![](/assets/packages/helloworld-create-success.png)
+![](/packages/helloworld-create-success.png)
 
 
 ## 测试Package
@@ -530,7 +529,7 @@ php artisan vendor:publish
 
 ### 浏览器测试
 
-![](/assets/packages/helloworld-browser-test.png)
+![](/packages/helloworld-browser-test.png)
 
 
 
