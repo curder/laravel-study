@@ -175,11 +175,11 @@ factory(UserAccount::class,1)->create() // 随机生成一个用户关联信息
 
 `users`表数据：
 
-![](/image/screenshot_1492077162810.png)
+![](/assets/related_relationship/screenshot_1492077162810.png)
 
 `users_accounts`表：
 
-![](/image/screenshot_1492077196226.png)
+![](/assets/related_relationship/screenshot_1492077196226.png)
 
 
 ## 定义Eloquent关联关系
@@ -196,7 +196,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
-    
+
 ...
 
    /**
