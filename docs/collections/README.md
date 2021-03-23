@@ -23,7 +23,7 @@ collect(['taylor', 'abigail', null])
 如上所述，辅助函数 `collect` 会为给定的数组返回一个新的 `Illuminate\Support\Collection` 实例。也就是说，创建一个集合就这么简单：
 
 ```php
-$collection = collect([1, 2, 3]);
+collect([1, 2, 3]);
 ```
 
 > 默认情况下， [Eloquent](https://laravel.com/docs/8.x/eloquent) 查询的结果返回的内容都是 `Collection` 实例。
@@ -31,6 +31,13 @@ $collection = collect([1, 2, 3]);
 ## 可用的方法
 
 接下来的内容，我们会探讨 `Collection` 类每个可用的方法。**记住，所有方法都可以以方法链的形式优雅地操纵数组。**而且，几乎所有的方法都会返回新的 `Collection` 实例，允许在必要时保存集合的原始副本。
+
+| 方法名 | 简单说明 |
+| :---- | :---- |
+| toJson [详细](collections/toJson.md) | 将集合转换成 JSON 字符串 |
+
+
+------
 
 | 方法名 | 释义 |
 | :--- | :--- |
@@ -121,10 +128,10 @@ $collection = collect([1, 2, 3]);
 
 ### 安装
 
-Laravel 中的 Collection 使用 Composer 管理，所以可以在项目中使用 composer 安装到非 Laravel 项目中，比如新建一个 collections 目录，通过下面使用命令安装
+Laravel 中的 Collection 使用 Composer 管理，所以可以在项目中使用 composer 安装到非 Laravel 项目中，比如新建一个 collections-demo 目录，通过下面使用命令安装
 
 ```bash
-mkdir collections && cd collections
+mkdir collections-demo && cd collections-demo
 composer require illuminate/support
 ```
 
@@ -136,6 +143,9 @@ composer require illuminate/support
 <?php
 // 引入 package
 require __DIR__ . '/vendor/autoload.php';
+
+// 简单使用
+collect([1, 2, 3]); // Illuminate\Support\Collection {#1070 all: [1, 2, 3]}
 ```
 
 ## 在JavaScript中使用集合相关操作
