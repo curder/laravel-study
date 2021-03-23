@@ -35,13 +35,14 @@ collect([1, 2, 3]);
 | 方法名 | 简单说明 |
 | :---- | :---- |
 | toJson [详细](collections/toJson.md) | 将集合转换成 JSON 字符串 |
-
+| all [详细](/collections/all.md) | 返回该集合表示的底层**数组** |
+| toArray [详细](/collections/toArray.md) | 将集合转换成 PHP 数组 |
+| times [详细](/collections/times.md) | 通过回调在给定次数内创建一个新的集合 |
 
 ------
 
 | 方法名 | 释义 |
 | :--- | :--- |
-| all [详细](/collections/all.md) | 返回该集合表示的底层**数组** |
 | average [详细](/collections/avg.md) | 方法`avg()`的别名 |
 | avg [详细](/collections/avg.md) | 返回给定键的**平均值** |
 | chunk [详细](/collections/chuck.md) | 将集合拆成多个指定大小的小集合 |
@@ -107,8 +108,6 @@ collect([1, 2, 3]);
 | sum [详细](/collections/sum.md) | 返回集合内所有项目的总和 |
 | take [详细](/collections/take.md) | 返回给定数量项目的新集合 |
 | tap [详细](/collections/tap.md) | 将集合传递给回调，在特定点「tap」集合 |
-| times [详细](/collections/times.md) | 通过回调在给定次数内创建一个新的集合 |
-| toArray [详细](/collections/toArray.md) | 将集合转换成 PHP 数组 |
 | transform [详细](/collections/transform.md) | 迭代集合并对集合内的每个项目调用给定的回调 |
 | union [详细](/collections/union.md) | 将给定的数组添加到集合中 |
 | unique [详细](/collections/unique.md) | 返回集合中所有唯一的项目 |
