@@ -1,7 +1,7 @@
 module.exports = {
     lang: 'zh-CN',
     title: 'Laravel 学习记录',
-    description: '这是我的第一个 VuePress 站点',
+    description: 'Laravel学习点滴',
 
 
     themeConfig: {
@@ -25,7 +25,7 @@ module.exports = {
                     text: null,
                     children: [
                         '/collections/README.md',
-                        '/collections-demo/README.md'
+                        '/collections/demo/README.md'
                     ],
                 }
             ],
