@@ -16,6 +16,19 @@ json_encode($data); // {"product":"apples","price":45}
 collect(['product' => 'apples', 'price' => 45])->toJson(); // {"product":"apples","price":45}
 ```
 
-当然，也可以在调用 `toJson` 时，传递对应的参数。
+当然，也可以在调用 `toJson` 时，传递对应的参数，比如：`JSON_PRETTY_PRINT` 参数。
 
-比如：`JSON_PRETTY_PRINT` 参数，更多参数[参考JSON 常量](https://www.php.net/manual/zh/json.constants.php) 。
+```php
+collect(['product' => 'apples', 'price' => 45])->toJson(JSON_PRETTY_PRINT);
+// output
+/** 
+"""
+{\n
+   "product": "apples",\n
+   "price": 45\n
+}
+"""
+*/
+```
+
+更多参数[参考JSON 常量](https://www.php.net/manual/zh/json.constants.php) 。
