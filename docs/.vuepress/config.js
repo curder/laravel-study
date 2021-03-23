@@ -5,7 +5,7 @@ module.exports = {
 
 
     themeConfig: {
-        logo: 'https://vuejs.org/images/logo.png',
+        logo: '/images/laravel-logo.min.svg',
         navbar: [
             {text: '首页', link: '/'},
             {
@@ -22,7 +22,7 @@ module.exports = {
             '/collections/': [
                 {
                     isGroup: true,
-                    text: 'Group',
+                    text: null,
                     children: [
                         '/collections/README.md',
                         '/collections-demo/README.md'

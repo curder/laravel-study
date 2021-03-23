@@ -1,16 +1,50 @@
 ---
 home: true
-# heroImage: /images/xxx.jpg
+title: 首页
+heroImage: /images/laravel-logo.min.svg
 heroText: Laravel 学习记录
 tagline: Study one by one.
-actionText: 开始阅读
-actionLink: //
-#features:
-#- title: 读书
-#  details: xxx
-#- title: 技术
-#  details: xxx
-#- title: 生活
-#  details: xxx
-#  footer: MIT Licensed |Copyright ©2021-present 戏里戏外
+actions:
+- text: 集合
+  link: /collections/
+  type: primary
+- text: 模型
+  link: /model/
+  type: secondary
+
+footer: MIT Licensed |Copyright ©2021-present 戏里戏外
 ---
+
+### 开发
+
+<CodeGroup>
+  <CodeGroupItem title="YARN" active>
+
+```bash
+# install in your project
+yarn
+
+# start writing
+yarn watch
+
+# build to static files
+yarn prod
+```
+
+  </CodeGroupItem>
+
+  <CodeGroupItem title="NPM">
+
+```bash
+# install in your project
+npm install
+
+# start writing
+npx watch
+
+# build to static files
+npx prod
+```
+
+  </CodeGroupItem>
+</CodeGroup>
