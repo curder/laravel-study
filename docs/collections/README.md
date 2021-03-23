@@ -38,6 +38,7 @@ collect([1, 2, 3]);
 | all [详细](/collections/all.md) | 返回该集合表示的底层**数组** |
 | toArray [详细](/collections/toArray.md) | 将集合转换成 PHP 数组 |
 | times [详细](/collections/times.md) | 通过回调在给定次数内创建一个新的集合 |
+| dump [详细](/collections/dump.md) | 打印集合的元素，调试时很有帮助 |
 
 ------
 
