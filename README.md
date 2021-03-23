@@ -13,12 +13,12 @@ Laravel 是一套简洁、优雅的 PHP Web 开发框架(PHP Web Framework)。�
    - `npm 5.3.0`
    - `gitbook CLI version: 2.3.2` && `GitBook version: 3.2.2`
 
-页面 GitHub 地址：https://www.github.com/curder/laravel_study
+页面 GitHub 地址：https://www.github.com/curder/laravel-study
 
 下载源代码到本地并执行相关命令启动本地阅览。
 
-```
-git clone git@github.com:curder/laravel_study.git && cd laravel_study
+```bash
+git clone git@github.com:curder/laravel-study.git && cd laravel-study
 gitbook install && gitbook serve .
 ```
 
