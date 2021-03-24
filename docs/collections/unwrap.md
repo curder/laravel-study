@@ -22,3 +22,14 @@ Illuminate\Support\Collection::unwrap('string');
 => "string"
  */
 ```
+
+```php
+Illuminate\Support\Collection::unwrap(collect('string'));
+
+// output
+/**
+=> [
+     "string",
+   ]
+ */
+```
