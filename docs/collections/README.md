@@ -41,6 +41,7 @@ collect([1, 2, 3]);
 | dump [详细](/collections/dump.md) | 打印集合的元素，调试时很有帮助 |
 | each [详细](/collections/each.md) | 迭代集合中的内容，**不改变原集合**的同时将其传递到回调函数中 |
 | eachSpread [详细](/collections/eachSpread.md) | 迭代集合中的内容，**不改变原集合**的同时将其传递到回调函数中 |
+| only [详细](/collections/only.md) | **不改变原集合**，返回集合中给定键的所有项目 |
 
 ------
 
@@ -57,7 +58,6 @@ collect([1, 2, 3]);
 | diff [详细](/collections/diff.md) | 基于值求差集 |
 | diffAssoc [详细](/collections/diffAssoc.md) | 基于键值对求差集 |
 | diffKeys [详细](/collections/diffKeys.md) | 基于键求差集 |
-
 | every [详细](/collections/every.md) | 可用于验证集合中每一个元素都通过给定的真实测试 |
 | except [详细](/collections/except.md) | 返回集合中除了指定键以外的所有项目 |
 | filter [详细](/collections/filter.md) | 使用给定的回调函数过滤集合的内容，只留下那些通过给定真实测试的内容 |
@@ -86,7 +86,6 @@ collect([1, 2, 3]);
 | min [详细](/collections/min.md) | 返回给定键的最小值 |
 | mode [详细](/collections/mode.md) | 返回给定**键**的[众数值](https://baike.baidu.com/item/%E4%BC%97%E6%95%B0/44796 "百度百科-众数值") |
 | nth [详细](/collections/nth.md) | 创建由每隔`n`个元素组成一个新的集合 |
-| only [详细](/collections/only.md) | 返回集合中给定键的所有项目 |
 | partition [详细](/collections/partition.md) | 配合`list()`方法区分回调函数满足和不满足的数据 |
 | pipe [详细](/collections/pipe.md) | 将集合传给给定的回调并返回结果 |
 | pluck [详细](/collections/pluck.md) | 获取集合中给定键对应的所有值 |
