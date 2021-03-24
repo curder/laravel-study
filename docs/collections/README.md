@@ -53,6 +53,7 @@ collect([1, 2, 3]);
 | sortBy [详细](/collections/sortBy.md) | **不改变原集合**，以给定的键对集合进行正序排序 |
 | sortByDesc [详细](/collections/sortByDesc.md) | 与[sortBy](/collections/sortBy.md)一样，以相反的顺序来对集合进行排序 |
 | sort [详细](/collections/sort.md) | 保留原数组的键，对集合进行排序 |
+| zip [详细](/collections/zip.md) | 将给定数组的值与相应索引处的原集合的值合并在一起 |
 
 ------
 
@@ -122,7 +123,6 @@ collect([1, 2, 3]);
 | whereInStrict [详细](/collections/whereStrict.md) | 使用严格模式通过给定的键值数组来过滤集合 |
 | whereNotIn [详细](/collections/whereNotIn.md) | 集合中不包含的给定键值对进行匹配 |
 | whereNotInStrict [详细](/collections/whereNotInStrict.md) | 使用严格模式通过集合中不包含的给定键值对进行匹配 |
-| zip [详细](/collections/zip.md) | 将给定数组的值与相应索引处的原集合的值合并在一起 |
 
 ## 在项目中单独使用
 
