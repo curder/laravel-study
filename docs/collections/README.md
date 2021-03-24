@@ -43,6 +43,7 @@ collect([1, 2, 3]);
 | eachSpread [详细](/collections/eachSpread.md) | 迭代集合中的内容，**不改变原集合**的同时将其传递到回调函数中 |
 | only [详细](/collections/only.md) | **不改变原集合**，返回集合中给定键的所有项目 |
 | nth [详细](/collections/nth.md) | **不改变原集合**，创建由每隔`n`个元素组成一个新集合 |
+| take [详细](/collections/take.md) | **不改变原集合**，返回给定数量项目的新集合 |
 
 ------
 
@@ -108,7 +109,6 @@ collect([1, 2, 3]);
 | splice [详细](/collections/splice.md) | 删除并返回从给定值后的内容，原集合也会受到影响 |
 | split [详细](/collections/split.md) | 将集合按给定的值拆分 |
 | sum [详细](/collections/sum.md) | 返回集合内所有项目的总和 |
-| take [详细](/collections/take.md) | 返回给定数量项目的新集合 |
 | tap [详细](/collections/tap.md) | 将集合传递给回调，在特定点「tap」集合 |
 | transform [详细](/collections/transform.md) | 迭代集合并对集合内的每个项目调用给定的回调 |
 | union [详细](/collections/union.md) | 将给定的数组添加到集合中 |
