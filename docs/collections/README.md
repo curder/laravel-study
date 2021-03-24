@@ -45,6 +45,7 @@ collect([1, 2, 3]);
 | nth [详细](/collections/nth.md) | **不改变原集合**，创建由每隔`n`个元素组成一个新集合 |
 | take [详细](/collections/take.md) | **不改变原集合**，返回给定数量项目的新集合 |
 | reverse [详细](/collections/reverse.md) | 倒转集合中项目的顺序 |
+| isEmpty [详细](/collections/isEmpty.md) | 判断集合是否为空 |
 
 ------
 
@@ -76,7 +77,6 @@ collect([1, 2, 3]);
 | implode [详细](/collections/implode.md) | 合并集合中的项目 |
 | intersect [详细](/collections/intersect.md) | 从原集合中删除不在给定数组或集合中的任何值 |
 | intersectKey [详细](/collections/intersectKey.md) | 删除原集合中不存在于给定数组或集合中的任何键 |
-| isEmpty [详细](/collections/isEmpty.md) | 判断集合是否为空 |
 | isNotEmpty [详细](/collections/isNotEmpty.md) | 判断集合是否不为空 |
 | keyBy [详细](/collections/keyBy.md) | 以给定的键作为集合的键 |
 | keys [详细](/collections/keys.md) | 返回集合的所有键 |
