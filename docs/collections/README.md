@@ -58,6 +58,7 @@ collect([1, 2, 3]);
 | firstWhere [详细](/collections/firstWhere.md) | 返回给定键值对的第一个元素 |
 | pluck [详细](/collections/pluck.md) | 获取集合中给定键对应的所有值 |
 | filter [详细](/collections/filter.md) | 使用给定的回调函数过滤集合的内容，只留下那些通过给定真实测试的内容 |
+| unwrap [详细](/collections/unwrap.md) | 静态 unwrap 方法在适用时从给定值返回集合的基础项 |
 
 ------
 
