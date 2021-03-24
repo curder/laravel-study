@@ -44,6 +44,7 @@ collect([1, 2, 3]);
 | only [详细](/collections/only.md) | **不改变原集合**，返回集合中给定键的所有项目 |
 | nth [详细](/collections/nth.md) | **不改变原集合**，创建由每隔`n`个元素组成一个新集合 |
 | take [详细](/collections/take.md) | **不改变原集合**，返回给定数量项目的新集合 |
+| reverse [详细](/collections/reverse.md) | 倒转集合中项目的顺序 |
 
 ------
 
@@ -98,7 +99,6 @@ collect([1, 2, 3]);
 | random [详细](/collections/random.md) | 从集合中返回一个随机项 |
 | reduce [详细](/collections/reduce.md) | 将每次迭代的结果传递给下一次迭代直到集合减少为单个值 |
 | reject [详细](/collections/reject.md) | 使用指定的回调过滤集合 |
-| reverse [详细](/collections/reverse.md) | 倒转集合中项目的顺序 |
 | search [详细](/collections/search.md) | 搜索给定的值并返回它的键 |
 | shift [详细](/collections/shift.md) | 移除并返回集合的第一个项目 |
 | shuffle [详细](/collections/shuffle.md) | 随机排序集合中的项目 |
