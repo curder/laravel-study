@@ -50,6 +50,8 @@ collect([1, 2, 3]);
 | last [详细](/collections/last.md) | 返回集合中通过给定真实测试的最后一个元素 |
 | first [详细](/collections/first.md) | 返回集合中通过给定真实测试的第一个元素 |
 | groupBy [详细](/collections/groupBy.md) | **不改变原集合**，根据给定的键对集合内的项目进行分组 |
+| sortBy [详细](/collections/sortBy.md) | **不改变原集合**，以给定的键对集合进行正序排序 |
+| sortByDesc [详细](/collections/sortByDesc.md) | 与[sortBy](/collections/sortBy.md)一样，以相反的顺序来对集合进行排序 |
 
 ------
 
@@ -104,8 +106,6 @@ collect([1, 2, 3]);
 | shuffle [详细](/collections/shuffle.md) | 随机排序集合中的项目 |
 | slice [详细](/collections/slice.md) | 返回集合中给定值后面的部分 |
 | sort [详细](/collections/sort.md) | 保留原数组的键，对集合进行排序 |
-| sortBy [详细](/collections/sortBy.md) | 以给定的键对集合进行排序 |
-| sortByDesc [详细](/collections/sortByDesc.md) | 与[sortBy](/collections/sortBy.md)一样，以相反的顺序来对集合进行排序 |
 | splice [详细](/collections/splice.md) | 删除并返回从给定值后的内容，原集合也会受到影响 |
 | split [详细](/collections/split.md) | 将集合按给定的值拆分 |
 | sum [详细](/collections/sum.md) | 返回集合内所有项目的总和 |
