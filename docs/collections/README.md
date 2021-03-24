@@ -57,6 +57,7 @@ collect([1, 2, 3]);
 | dd [详细](/collections/dd.md) | 打印集合的元素并终止脚本的执行 |
 | firstWhere [详细](/collections/firstWhere.md) | 返回给定键值对的第一个元素 |
 | pluck [详细](/collections/pluck.md) | 获取集合中给定键对应的所有值 |
+| filter [详细](/collections/filter.md) | 使用给定的回调函数过滤集合的内容，只留下那些通过给定真实测试的内容 |
 
 ------
 
@@ -75,7 +76,6 @@ collect([1, 2, 3]);
 | diffKeys [详细](/collections/diffKeys.md) | 基于键求差集 |
 | every [详细](/collections/every.md) | 可用于验证集合中每一个元素都通过给定的真实测试 |
 | except [详细](/collections/except.md) | 返回集合中除了指定键以外的所有项目 |
-| filter [详细](/collections/filter.md) | 使用给定的回调函数过滤集合的内容，只留下那些通过给定真实测试的内容 |
 | flatMap [详细](/collections/flatMap.md) | 遍历集合并将其中的每个值传递到给定的回调 |
 | flatten [详细](/collections/flatten.md)| 将多维集合转为一维 |
 | flip [详细](/collections/flip.md) | 将集合中的键和对应的数值进行互换 |
