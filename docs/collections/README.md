@@ -42,6 +42,7 @@ collect([1, 2, 3]);
 | each [详细](/collections/each.md) | 迭代集合中的内容，**不改变原集合**的同时将其传递到回调函数中 |
 | eachSpread [详细](/collections/eachSpread.md) | 迭代集合中的内容，**不改变原集合**的同时将其传递到回调函数中 |
 | only [详细](/collections/only.md) | **不改变原集合**，返回集合中给定键的所有项目 |
+| nth [详细](/collections/nth.md) | **不改变原集合**，创建由每隔`n`个元素组成一个新集合 |
 
 ------
 
@@ -85,7 +86,6 @@ collect([1, 2, 3]);
 | merge [详细](/collections/merge.md) | 将给定数组或集合合并到原集合 |
 | min [详细](/collections/min.md) | 返回给定键的最小值 |
 | mode [详细](/collections/mode.md) | 返回给定**键**的[众数值](https://baike.baidu.com/item/%E4%BC%97%E6%95%B0/44796 "百度百科-众数值") |
-| nth [详细](/collections/nth.md) | 创建由每隔`n`个元素组成一个新的集合 |
 | partition [详细](/collections/partition.md) | 配合`list()`方法区分回调函数满足和不满足的数据 |
 | pipe [详细](/collections/pipe.md) | 将集合传给给定的回调并返回结果 |
 | pluck [详细](/collections/pluck.md) | 获取集合中给定键对应的所有值 |
