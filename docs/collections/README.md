@@ -56,6 +56,7 @@ collect([1, 2, 3]);
 | zip [详细](/collections/zip.md) | 将给定数组的值与相应索引处的原集合的值合并在一起 |
 | dd [详细](/collections/dd.md) | 打印集合的元素并终止脚本的执行 |
 | firstWhere [详细](/collections/firstWhere.md) | 返回给定键值对的第一个元素 |
+| pluck [详细](/collections/pluck.md) | 获取集合中给定键对应的所有值 |
 
 ------
 
@@ -96,7 +97,6 @@ collect([1, 2, 3]);
 | mode [详细](/collections/mode.md) | 返回给定**键**的[众数值](https://baike.baidu.com/item/%E4%BC%97%E6%95%B0/44796 "百度百科-众数值") |
 | partition [详细](/collections/partition.md) | 配合`list()`方法区分回调函数满足和不满足的数据 |
 | pipe [详细](/collections/pipe.md) | 将集合传给给定的回调并返回结果 |
-| pluck [详细](/collections/pluck.md) | 获取集合中给定键对应的所有值 |
 | pop [详细](/collections/pop.md) | 移除并返回集合中的最后一个项目 |
 | prepend [详细](/collections/prepend.md) | 将给定的值添加到集合的开头 |
 | pull [详细](/collections/pull.md) | 把给定键对应的值从集合中移除并返回 |
