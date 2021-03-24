@@ -47,6 +47,7 @@ collect([1, 2, 3]);
 | reverse [详细](/collections/reverse.md) | 倒转集合中项目的顺序 |
 | isEmpty [详细](/collections/isEmpty.md) | **不改变原集合**，判断集合是否为空 |
 | isNotEmpty [详细](/collections/isNotEmpty.md) | **不改变原集合**，判断集合是否不为空 |
+| last [详细](/collections/last.md) | 返回集合中通过给定真实测试的最后一个元素 |
 
 ------
 
@@ -80,7 +81,6 @@ collect([1, 2, 3]);
 | intersectKey [详细](/collections/intersectKey.md) | 删除原集合中不存在于给定数组或集合中的任何键 |
 | keyBy [详细](/collections/keyBy.md) | 以给定的键作为集合的键 |
 | keys [详细](/collections/keys.md) | 返回集合的所有键 |
-| last [详细](/collections/last.md) | 返回集合中通过给定真实测试的最后一个元素 |
 | map [详细](/collections/map.md) | 遍历集合并将每一个值传入给定的回调 |
 | mapWithKeys [详细](/collections/mapWithKeys.md) | 遍历集合并将每个值传入给定的回调 |
 | max [详细](/collections/max.md) | 返回给定**键**的最大值 |
