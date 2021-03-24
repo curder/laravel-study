@@ -61,6 +61,8 @@ collect([1, 2, 3]);
 | unwrap [详细](/collections/unwrap.md) | 静态 unwrap 方法在适用时从给定值返回集合的基础项 |
 | wrap [详细](/collections/wrap.md) | 静态 wrap 方法在适用时将给定值包装在集合中 |
 | whereInstanceOf [详细](/collections/whereInstanceOf.md) | 按给定的类类型过滤集合 |
+| whereNotIn [详细](/collections/whereNotIn.md) | 集合中不包含的给定键值对进行匹配 |
+| whereNotInStrict [详细](/collections/whereNotInStrict.md) | 使用严格模式通过集合中不包含的给定键值对进行匹配 |
 
 ------
 
@@ -126,8 +128,6 @@ collect([1, 2, 3]);
 | whereStrict [详细](/collections/whereStrict.md) | 使用严格模式通过给定的键值过滤集合 |
 | whereIn [详细](/collections/whereIn.md) | 通过给定的键值数组来过滤集合 |
 | whereInStrict [详细](/collections/whereStrict.md) | 使用严格模式通过给定的键值数组来过滤集合 |
-| whereNotIn [详细](/collections/whereNotIn.md) | 集合中不包含的给定键值对进行匹配 |
-| whereNotInStrict [详细](/collections/whereNotInStrict.md) | 使用严格模式通过集合中不包含的给定键值对进行匹配 |
 
 ## 在项目中单独使用
 
