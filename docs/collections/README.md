@@ -48,6 +48,7 @@ collect([1, 2, 3]);
 | isEmpty [详细](/collections/isEmpty.md) | **不改变原集合**，判断集合是否为空 |
 | isNotEmpty [详细](/collections/isNotEmpty.md) | **不改变原集合**，判断集合是否不为空 |
 | last [详细](/collections/last.md) | 返回集合中通过给定真实测试的最后一个元素 |
+| first [详细](/collections/first.md) | 返回集合中通过给定真实测试的第一个元素 |
 
 ------
 
@@ -67,7 +68,6 @@ collect([1, 2, 3]);
 | every [详细](/collections/every.md) | 可用于验证集合中每一个元素都通过给定的真实测试 |
 | except [详细](/collections/except.md) | 返回集合中除了指定键以外的所有项目 |
 | filter [详细](/collections/filter.md) | 使用给定的回调函数过滤集合的内容，只留下那些通过给定真实测试的内容 |
-| first [详细](/collections/first.md) | 返回集合中通过给定真实测试的第一个元素 |
 | flatMap [详细](/collections/flatMap.md) | 遍历集合并将其中的每个值传递到给定的回调 |
 | flatten [详细](/collections/flatten.md)| 将多维集合转为一维 |
 | flip [详细](/collections/flip.md) | 将集合中的键和对应的数值进行互换 |
