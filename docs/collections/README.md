@@ -49,6 +49,7 @@ collect([1, 2, 3]);
 | isNotEmpty [详细](/collections/isNotEmpty.md) | **不改变原集合**，判断集合是否不为空 |
 | last [详细](/collections/last.md) | 返回集合中通过给定真实测试的最后一个元素 |
 | first [详细](/collections/first.md) | 返回集合中通过给定真实测试的第一个元素 |
+| groupBy [详细](/collections/groupBy.md) | **不改变原集合**，根据给定的键对集合内的项目进行分组 |
 
 ------
 
@@ -74,7 +75,6 @@ collect([1, 2, 3]);
 | forget [详细](/collections/forget.md) | 通过给定的键来移除掉集合中对应的内容 |
 | forPage [详细](/collections/forPage.md) | 返回给定页码上显示的项目的新集合 |
 | get [详细](/collections/get.md) | 返回给定键的项目 |
-| groupBy [详细](/collections/groupBy.md) | 根据给定的键对集合内的项目进行分组 |
 | has [详细](/collections/has.md) | 判断集合中是否存在给定的键 |
 | implode [详细](/collections/implode.md) | 合并集合中的项目 |
 | intersect [详细](/collections/intersect.md) | 从原集合中删除不在给定数组或集合中的任何值 |
