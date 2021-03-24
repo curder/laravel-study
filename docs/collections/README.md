@@ -54,6 +54,7 @@ collect([1, 2, 3]);
 | sortByDesc [详细](/collections/sortByDesc.md) | 与[sortBy](/collections/sortBy.md)一样，以相反的顺序来对集合进行排序 |
 | sort [详细](/collections/sort.md) | 保留原数组的键，对集合进行排序 |
 | zip [详细](/collections/zip.md) | 将给定数组的值与相应索引处的原集合的值合并在一起 |
+| dd [详细](/collections/dd.md) | 打印集合的元素并终止脚本的执行 |
 
 ------
 
