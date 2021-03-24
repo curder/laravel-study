@@ -39,6 +39,8 @@ collect([1, 2, 3]);
 | toArray [详细](/collections/toArray.md) | 将集合转换成 PHP 数组 |
 | times [详细](/collections/times.md) | 通过回调在给定次数内创建一个新的集合 |
 | dump [详细](/collections/dump.md) | 打印集合的元素，调试时很有帮助 |
+| each [详细](/collections/each.md) | 迭代集合中的内容，**不改变原集合**的同时将其传递到回调函数中 |
+| eachSpread [详细](/collections/eachSpread.md) | 迭代集合中的内容，**不改变原集合**的同时将其传递到回调函数中 |
 
 ------
 
@@ -55,7 +57,7 @@ collect([1, 2, 3]);
 | diff [详细](/collections/diff.md) | 基于值求差集 |
 | diffAssoc [详细](/collections/diffAssoc.md) | 基于键值对求差集 |
 | diffKeys [详细](/collections/diffKeys.md) | 基于键求差集 |
-| each [详细](/collections/each.md) | 迭代集合中的内容并将其传递到回调函数中 |
+
 | every [详细](/collections/every.md) | 可用于验证集合中每一个元素都通过给定的真实测试 |
 | except [详细](/collections/except.md) | 返回集合中除了指定键以外的所有项目 |
 | filter [详细](/collections/filter.md) | 使用给定的回调函数过滤集合的内容，只留下那些通过给定真实测试的内容 |
