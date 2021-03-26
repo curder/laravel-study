@@ -69,6 +69,8 @@ collect([1, 2, 3]);
 | whereNotBetween [详细](/collections/whereNotBetween.md) | **不改变原集合**，通过确定指定的项目值不存在给定范围内来过滤集合 |
 | where [详细](/collections/where.md) | **不改变原集合**，通过给定的键值过滤集合 |
 | whereStrict [详细](/collections/whereStrict.md) | **不改变原集合**，使用严格模式通过给定的键值过滤集合 |
+| mapToDirectory [详细](/collections/mapToDictionary.md) | **不改变原集合**，通过给定的闭包对集合的项目进行分组。该闭包应返回一个包含单个键/值对的关联数组，从而形成一个新的分组值数组 |
+| mapToGroup [详细](/collections/mapToGroup.md) | **不改变原集合**，通过给定的闭包对集合的项目进行分组。 该闭包应返回一个包含单个键/值对的关联数组，从而形成一个新的分组值集合 |
 
 ------
 
