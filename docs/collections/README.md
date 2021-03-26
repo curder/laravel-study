@@ -67,6 +67,8 @@ collect([1, 2, 3]);
 | whereInStrict [详细](/collections/whereInStrict.md) | **不改变原集合**，使用严格模式通过给定的键值数组来过滤集合 |
 | whereBetween [详细](/collections/whereBetween.md) | **不改变原集合**，通过确定指定的项目值是否在给定范围内来过滤集合 |
 | whereNotBetween [详细](/collections/whereNotBetween.md) | **不改变原集合**，通过确定指定的项目值不存在给定范围内来过滤集合 |
+| where [详细](/collections/where.md) | **不改变原集合**，通过给定的键值过滤集合 |
+| whereStrict [详细](/collections/whereStrict.md) | **不改变原集合**，使用严格模式通过给定的键值过滤集合 |
 
 ------
 
@@ -128,8 +130,6 @@ collect([1, 2, 3]);
 | uniqueStrict [详细](/collections/uniqueStrict.md) | 使用严格模式返回集合中所有唯一的项目 |
 | values [详细](/collections/values.md) | 返回键被重置为连续编号的新集合 |
 | when [详细](/collections/when.md) | 当传入的第一个参数为 true 的时，将执行给定的回调 |
-| where [详细](/collections/where.md) | 通过给定的键值过滤集合 |
-| whereStrict [详细](/collections/whereStrict.md) | 使用严格模式通过给定的键值过滤集合 |
 
 ## 在项目中单独使用
 
