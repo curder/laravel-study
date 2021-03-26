@@ -66,6 +66,7 @@ collect([1, 2, 3]);
 | whereIn [详细](/collections/whereIn.md) | **不改变原集合**，通过给定的键值数组来过滤集合 |
 | whereInStrict [详细](/collections/whereInStrict.md) | **不改变原集合**，使用严格模式通过给定的键值数组来过滤集合 |
 | whereBetween [详细](/collections/whereBetween.md) | **不改变原集合**，通过确定指定的项目值是否在给定范围内来过滤集合 |
+| whereNotBetween [详细](/collections/whereNotBetween.md) | **不改变原集合**，通过确定指定的项目值不存在给定范围内来过滤集合 |
 
 ------
 
