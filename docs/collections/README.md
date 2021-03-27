@@ -110,6 +110,7 @@ collect([1, 2, 3]);
 | keyBy [详细](/collections/keyBy.md) | 以给定的键作为集合的键 |
 | keys [详细](/collections/keys.md) | 返回集合的所有键 |
 | merge [详细](/collections/merge.md) | 将给定数组或集合合并到原集合 |
+| mergeRecursive [详细](/collections/mergeRecursive.md) | 将给定的数组或集合与原始集合递归合并 |
 
 ------
 

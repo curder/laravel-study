@@ -1,4 +1,4 @@
-# merge 方法
+# merge mergeRecursive.md方法
 
 将给定数组或集合合并到原集合。
 
