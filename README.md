@@ -10,8 +10,8 @@ Laravel 是一套简洁、优雅的 PHP Web 开发框架(PHP Web Framework)。�
 
 2. 本地下载
 
-   - `npm 5.3.0`
-   - `gitbook CLI version: 2.3.2` && `GitBook version: 3.2.2`
+   - `npm 6.14.10`
+   - `vuepress version: ^2.0.0-beta.4`
 
 页面 GitHub 地址：https://www.github.com/curder/laravel-study
 
@@ -19,10 +19,18 @@ Laravel 是一套简洁、优雅的 PHP Web 开发框架(PHP Web Framework)。�
 
 ```bash
 git clone git@github.com:curder/laravel-study.git && cd laravel-study
-gitbook install && gitbook serve .
+
+# 安装前端依赖
+yarn
 ```
 
-> 需要 git 命令下载源文件和 gitbook 命令升级插件等。
+```bash
+# 开发
+yarn watch
+
+# 发布
+yarn prod
+```
 
 ## Laravel 模式
 
