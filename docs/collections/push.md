@@ -1,8 +1,8 @@
-# push方法
+# push 方法
 
-把给定值添加到集合的末尾
+把给定值添加到集合的末尾。
 
-```
+```php
 $collection = collect([1, 2, 3, 4]);
 
 $collection->push(5);
