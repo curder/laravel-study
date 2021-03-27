@@ -34,7 +34,7 @@ collect([1, 2, 3]);
 
 | 方法名 | 简单说明 |
 | :---- | :---- |
-| toJson [详细](collections/toJson.md) | 将集合转换成 JSON 字符串 |
+| toJson [详细](/collections/toJson.md) | 将集合转换成 JSON 字符串 |
 | all [详细](/collections/all.md) | 返回该集合表示的底层**数组** |
 | toArray [详细](/collections/toArray.md) | 将集合转换成 PHP 数组 |
 | times [详细](/collections/times.md) | 通过回调在给定次数内创建一个新的集合 |
@@ -71,6 +71,8 @@ collect([1, 2, 3]);
 | whereStrict [详细](/collections/whereStrict.md) | **不改变原集合**，使用严格模式通过给定的键值过滤集合 |
 | mapToDirectory [详细](/collections/mapToDictionary.md) | **不改变原集合**，通过给定的闭包对集合的项目进行分组。该闭包应返回一个包含单个键/值对的关联数组，从而形成一个新的分组值数组 |
 | mapToGroup [详细](/collections/mapToGroup.md) | **不改变原集合**，通过给定的闭包对集合的项目进行分组。 该闭包应返回一个包含单个键/值对的关联数组，从而形成一个新的分组值集合 |
+| mapSpread [详细](/collections/mapSpread.md) | **改变原集合**，迭代集合的项目，将每个嵌套的项目值传递到给定的闭包中。 闭包可以自由修改并返回它，从而形成一个新的修改后的集合。 |
+
 
 ------
 
