@@ -25,6 +25,7 @@ collect([['price' => 10000], ['price' => 20000], ['price' => 30000]])->min('pric
 ```
 
 * 使用回调
+
 ```php
 collect([
   ['price' => 10000, 'tax' => 500],
@@ -37,7 +38,7 @@ collect([
 => 10500
  */
 ```
-                                                                                               
+
 ```php
 collect([
   ['price' => 10000, 'tax' => 500, 'active' => false],

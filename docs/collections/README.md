@@ -92,6 +92,7 @@ collect([1, 2, 3]);
 | collapse [详细](/collections/collapse.md) | 将多个数组合并成一个 |
 | min [详细](/collections/min.md) | 返回给定键的最小值 |
 | median [详细](/collections/median.md) | 方法返回给定**键**的中间值 |
+| max [详细](/collections/max.md) | 返回给定**键**的最大值 |
 
 ------
 
@@ -113,7 +114,6 @@ collect([1, 2, 3]);
 | intersectKey [详细](/collections/intersectKey.md) | 删除原集合中不存在于给定数组或集合中的任何键 |
 | keyBy [详细](/collections/keyBy.md) | 以给定的键作为集合的键 |
 | keys [详细](/collections/keys.md) | 返回集合的所有键 |
-| max [详细](/collections/max.md) | 返回给定**键**的最大值 |
 | merge [详细](/collections/merge.md) | 将给定数组或集合合并到原集合 |
 | mode [详细](/collections/mode.md) | 返回给定**键**的[众数值](https://baike.baidu.com/item/%E4%BC%97%E6%95%B0/44796 "百度百科-众数值") |
 | partition [详细](/collections/partition.md) | 配合`list()`方法区分回调函数满足和不满足的数据 |
