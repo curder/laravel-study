@@ -51,7 +51,7 @@ collect([1, 2, 3]);
 | first [详细](/collections/first.md) | 返回集合中通过给定真实测试的第一个元素 |
 | groupBy [详细](/collections/groupBy.md) | **不改变原集合**，根据给定的键对集合内的项目进行分组 |
 | sortBy [详细](/collections/sortBy.md) | **不改变原集合**，以给定的键对集合进行正序排序 |
-| sortByDesc [详细](/collections/sortByDesc.md) | 与[sortBy](/collections/sortBy.md)一样，以相反的顺序来对集合进行排序 |
+| sortByDesc [详细](/collections/sortByDesc.md) | 与 [sortBy](/collections/sortBy.md) 一样，以相反的顺序来对集合进行排序 |
 | sort [详细](/collections/sort.md) | 保留原数组的键，对集合进行排序 |
 | zip [详细](/collections/zip.md) | 将给定数组的值与相应索引处的原集合的值合并在一起 |
 | dd [详细](/collections/dd.md) | 打印集合的元素并终止脚本的执行 |
@@ -76,7 +76,7 @@ collect([1, 2, 3]);
 | mapWithKeys [详细](/collections/mapWithKeys.md) | **不改变原集合**，遍历集合并将每个值传入给定的回调 |
 | map [详细](/collections/map.md) | **不改变原集合**，遍历集合并将每一个值传入给定的回调 |
 | tap [详细](/collections/tap.md) | 将集合传递给回调，在特定点「tap」集合 |
-
+| diffUsing [详细](/collections/diffUsing.md) | 获取集合中不存在给定项目的项目 |
 
 ------
 
