@@ -1,4 +1,4 @@
-# whereNotInStrict 方法
+# whereNotInStrict
 
 使用严格模式通过集合中不包含的给定键值对进行匹配
 

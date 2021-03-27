@@ -1,4 +1,4 @@
-# sortByDesc 方法
+# sortByDesc
 
 以给定的键对集合进行正序排序。
 

@@ -1,4 +1,4 @@
-# whereInStrict方法
+# whereInStrict
 
 通过给定的键值数组来过滤集合。
 

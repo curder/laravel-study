@@ -1,6 +1,4 @@
-
-
-# collection在实际开发中的使用
+# 实际应用
 
 - [collection中sum求和](/collections/demo/sum.md)
 - [collection格式化计算数据](/collections/demo/format.md)

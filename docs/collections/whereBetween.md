@@ -1,4 +1,4 @@
-# whereBetween 方法
+# whereBetween
 
 通过确定指定的项目值是否在给定范围内来过滤集合。
 

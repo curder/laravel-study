@@ -1,4 +1,4 @@
-# times 方法
+# times
 
 `times` 方法是 Collection 类的静态方法，通过 `Collection::times()` 调用
 

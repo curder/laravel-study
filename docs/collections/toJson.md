@@ -1,4 +1,4 @@
-# toJson 方法
+# toJson
 
 将集合转换成 JSON 字符串。
 

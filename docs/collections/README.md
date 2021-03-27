@@ -1,6 +1,4 @@
-# 集合 Collection
-
-## 简介
+# 简介
 
 `Illuminate\Support\Collection` 类提供了一个更具可读性的、更便于处理数组数据的封装，具体例子看下面的代码。
 

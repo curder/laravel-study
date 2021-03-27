@@ -1,4 +1,4 @@
-# implode 方法
+# implode
 
 合并集合中的项目。
 

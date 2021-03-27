@@ -1,5 +1,5 @@
-# whereStrict 方法
-       
+# whereStrict
+
 通过给定的键值过滤集合。
 
 ```php

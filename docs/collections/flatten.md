@@ -1,4 +1,4 @@
-# flatten 方法
+# flatten
 
 将多维集合转为一维。
 

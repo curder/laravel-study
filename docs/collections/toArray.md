@@ -1,4 +1,4 @@
-# toArray 方法
+# toArray
 
 将集合转换成 PHP 数组。如果集合的值是 `Eloquent` 模型，那也会被转换成数组。
 

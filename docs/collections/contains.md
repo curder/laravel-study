@@ -1,4 +1,4 @@
-# contains方法
+# contains
 
 判断集合是否包含给定的项目。
 

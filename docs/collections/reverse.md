@@ -1,4 +1,4 @@
-# reverse方法
+# reverse
 
 倒转集合中项目的顺序。 
 

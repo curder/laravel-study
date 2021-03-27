@@ -1,4 +1,4 @@
-# intersectByKeys 方法
+# intersectByKeys
 
 删除原集合中不存在于给定数组或集合中的任何键。
 
