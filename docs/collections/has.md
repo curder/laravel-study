@@ -1,10 +1,20 @@
-# has方法
+## has
 
 判断集合中是否存在给定的键。
 
-```
-$collection = collect(['account_id' => 1, 'product' => 'Desk']);
+```php
+$collection = collect(['account_id' => 1, 'product' => 'Desk', 'amount' => 5]);
 
-$collection->has('product'); // true
-$collection->has('name'); // false
+dump($collection->has('product'));
+dump($collection->has(['product', 'amount']));
+dd($collection->has(['amount', 'price']));
+
+// output
+/**
+true
+
+true 
+
+false
+ */
 ```

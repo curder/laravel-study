@@ -103,12 +103,12 @@ collect([1, 2, 3]);
 | forget [详细](/collections/forget.md) | **改变原集合**，通过给定的键来移除掉集合中对应的内容 |
 | forPage [详细](/collections/forPage.md) | 返回给定页码上显示的项目的新集合 |
 | get [详细](/collections/get.md) | 返回给定键的项目 |
+| has [详细](/collections/has.md) | 判断集合中是否存在给定的键 |
 
 ------
 
 | 方法名 | 释义 |
 | :--- | :--- |
-| has [详细](/collections/has.md) | 判断集合中是否存在给定的键 |
 | implode [详细](/collections/implode.md) | 合并集合中的项目 |
 | intersect [详细](/collections/intersect.md) | 从原集合中删除不在给定数组或集合中的任何值 |
 | intersectKey [详细](/collections/intersectKey.md) | 删除原集合中不存在于给定数组或集合中的任何键 |
