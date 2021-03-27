@@ -84,6 +84,7 @@ collect([1, 2, 3]);
 | diffKeys [详细](/collections/diffKeys.md) | 基于键求差集 |
 | crossJoin [详细](/collections/crossJoin.md) | 将集合的值交叉连接到给定的数组或集合中，返回具有所有可能排列的笛卡尔积 |
 | count [详细](/collections/count.md) | 返回该集合内的项目总数 |
+| contains [详细](/collections/contains.md) | 判断集合是否包含给定的项目 |
 
 ------
 
@@ -94,7 +95,6 @@ collect([1, 2, 3]);
 | chunk [详细](/collections/chuck.md) | 将集合拆成多个指定大小的小集合 |
 | collapse [详细](/collections/collapse.md) | 将多个数组合并成一个 |
 | combine [详细](/collections/combine.md) | 将一个集合的值作为「键」，再将另一个数组或者集合的值作为「值」合并成一个集合 |
-| contains [详细](/collections/contains.md) | 判断集合是否包含给定的项目 |
 | containsStrict [详细](/collections/containsStrict.md) | 使用「严格模式」来比较所有值 |
 | every [详细](/collections/every.md) | 可用于验证集合中每一个元素都通过给定的真实测试 |
 | except [详细](/collections/except.md) | 返回集合中除了指定键以外的所有项目 |
