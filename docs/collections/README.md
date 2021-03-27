@@ -86,6 +86,7 @@ collect([1, 2, 3]);
 | count [详细](/collections/count.md) | 返回该集合内的项目总数 |
 | contains [详细](/collections/contains.md) | 判断集合是否包含给定的项目 |
 | containsStrict [详细](/collections/containsStrict.md) | 使用「严格模式」来比较所有值 |
+| concat [详细](/collections/concat.md) | 将给定数组或集合的值附加到另一个集合的末尾 |
 
 ------
 
