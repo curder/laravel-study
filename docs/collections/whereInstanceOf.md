@@ -1,4 +1,4 @@
-## whereInstanceOf 方法
+# whereInstanceOf 方法
 
 该方法按给定的类类型过滤集合。
 

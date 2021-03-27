@@ -1,4 +1,4 @@
-## mergeRecursive 方法
+# mergeRecursive 方法
 
 将给定的数组或集合与原始集合递归合并。
 
