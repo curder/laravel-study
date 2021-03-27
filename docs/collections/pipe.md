@@ -1,12 +1,13 @@
-# pip方法
+# pip 方法
 
 将集合传给给定的回调并返回结果。
 
+```php
+collect([1, 2, 3])->pipe(function ($collection) {
+  return $collection->sum();
+});
 
-```
-$collection = collect([1, 2, 3]);
-
-$piped = $collection->pipe(function ($collection) {
-    return $collection->sum();
-}); // 6
+/**
+=> 6
+ */
 ```
