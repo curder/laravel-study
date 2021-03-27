@@ -1,11 +1,21 @@
-# pop方法
+# pop 方法
 
 移除并返回集合中的最后一个项目。
 
-```
+```php
 $collection = collect([1, 2, 3, 4, 5]);
 
-$collection->pop(); // 5
+dump($collection->pop());
+$collection->all();
 
-$collection->all(); // [1, 2, 3, 4]
+/**
+5
+
+=> [
+     1,
+     2,
+     3,
+     4,
+   ]
+ */
 ```
