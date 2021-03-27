@@ -4,13 +4,19 @@
 
 基本使用
 
-```
+```php
 $collection = collect([
-    ['product' => 'Desk', 'price' => 200],
-    ['product' => 'Chair', 'price' => 100],
+  ['product' => 'Desk', 'price' => 200],
+  ['product' => 'Chair', 'price' => 100],
 ]);
 
-dd($collection->containsStrict('price', '100')); // false
+$collection->containsStrict('price', '100');
+
+// output
+/**
+=> false
+ */ 
 ```
 
-如上例所示，数组值存在，但是值类型不一致也返回false
+如上例所示，集合中对应的值存在，但是值类型不一致也返回 `false`。
+
