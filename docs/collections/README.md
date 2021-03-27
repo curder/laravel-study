@@ -79,6 +79,7 @@ collect([1, 2, 3]);
 | diffUsing [详细](/collections/diffUsing.md) | 获取集合中不存在给定项目的项目 |
 | diffAssocUsing [详细](/collections/diffAssocUsing.md) | 使用回调获取集合中键和值不存在的项目 |
 | diffKeysUsing [详细](/collections/diffKeysUsing.md) | 使用回调获取集合中键不存在于给定项中的项 |
+| diff [详细](/collections/diff.md) | 基于值求差集 |
 
 ------
 
@@ -92,7 +93,6 @@ collect([1, 2, 3]);
 | contains [详细](/collections/contains.md) | 判断集合是否包含给定的项目 |
 | containsStrict [详细](/collections/containsStrict.md) | 使用「严格模式」来比较所有值 |
 | count [详细](/collections/count.md) | 返回该集合内的项目总数 |
-| diff [详细](/collections/diff.md) | 基于值求差集 |
 | diffAssoc [详细](/collections/diffAssoc.md) | 基于键值对求差集 |
 | diffKeys [详细](/collections/diffKeys.md) | 基于键求差集 |
 | every [详细](/collections/every.md) | 可用于验证集合中每一个元素都通过给定的真实测试 |
