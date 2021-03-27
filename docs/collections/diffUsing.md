@@ -20,3 +20,23 @@ $collection->diffUsing([0.1, 0.25], function ($a, $b) {
    }
  */
 ```
+
+diffUsing 关注 value 是否匹配。
+
+```php
+$collection = collect(['123A-G', '456A-G']);
+
+$collection->diffUsing(['123AG'], function ($a, $b) {
+  $code = str_replace('-', '', $a);
+  return $code === $b ? 0 : -1;
+});
+
+// output
+/**
+=> Illuminate\Support\Collection {#1105
+     all: [
+       1 => "456A-G",
+     ],
+   }
+ */
+```
