@@ -12,7 +12,7 @@ actions:
   link: /model/
   type: secondary
 
-footer: MIT Licensed |Copyright ©2021-present 戏里戏外
+footer: MIT Licensed |Copyright ©2021-present Curder
 ---
 
 ### 开发
