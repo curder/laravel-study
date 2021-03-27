@@ -93,13 +93,13 @@ collect([1, 2, 3]);
 | min [详细](/collections/min.md) | 返回给定键的最小值 |
 | median [详细](/collections/median.md) | 方法返回给定**键**的中间值 |
 | max [详细](/collections/max.md) | 返回给定**键**的最大值 |
+| average [详细](/collections/avg.md) | 方法`avg()`的别名 |
+| avg [详细](/collections/avg.md) | 返回给定键的**平均值** |
 
 ------
 
 | 方法名 | 释义 |
 | :--- | :--- |
-| average [详细](/collections/avg.md) | 方法`avg()`的别名 |
-| avg [详细](/collections/avg.md) | 返回给定键的**平均值** |
 | every [详细](/collections/every.md) | 可用于验证集合中每一个元素都通过给定的真实测试 |
 | except [详细](/collections/except.md) | 返回集合中除了指定键以外的所有项目 |
 | flatMap [详细](/collections/flatMap.md) | 遍历集合并将其中的每个值传递到给定的回调 |
