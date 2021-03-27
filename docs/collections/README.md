@@ -88,6 +88,7 @@ collect([1, 2, 3]);
 | containsStrict [详细](/collections/containsStrict.md) | 使用「严格模式」来比较所有值 |
 | concat [详细](/collections/concat.md) | 将给定数组或集合的值附加到另一个集合的末尾 |
 | combine [详细](/collections/combine.md) | 将一个集合的值作为「键」，再将另一个数组或者集合的值作为「值」合并成一个集合 |
+| chunk [详细](/collections/chuck.md) | 将集合拆成多个指定大小的小集合 |
 
 ------
 
@@ -95,7 +96,6 @@ collect([1, 2, 3]);
 | :--- | :--- |
 | average [详细](/collections/avg.md) | 方法`avg()`的别名 |
 | avg [详细](/collections/avg.md) | 返回给定键的**平均值** |
-| chunk [详细](/collections/chuck.md) | 将集合拆成多个指定大小的小集合 |
 | collapse [详细](/collections/collapse.md) | 将多个数组合并成一个 |
 | every [详细](/collections/every.md) | 可用于验证集合中每一个元素都通过给定的真实测试 |
 | except [详细](/collections/except.md) | 返回集合中除了指定键以外的所有项目 |

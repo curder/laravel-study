@@ -1,23 +1,67 @@
-# chuck方法
+# chuck 方法
 
 将集合拆分多个指定大小的小集合。
 
-```
-$collection = collect([1, 2, 3, 4, 5, 6, 7]);
-$chunks = $collection->chunk(4);
-$chunks->toArray(); // [[1, 2, 3, 4], [5, 6, 7]]
+```php
+$collection = collect([1, 2, 3, 4, 5, 6, 7, 8]);
+$collection->chunk(4);
+
+// output
+/**
+=> Illuminate\Support\Collection {#1089
+     all: [
+       Illuminate\Support\Collection {#1091
+         all: [
+           1,
+           2,
+           3,
+           4,
+         ],
+       },
+       Illuminate\Support\Collection {#1090
+         all: [
+           4 => 5,
+           5 => 6,
+           6 => 7,
+           7 => 8,
+         ],
+       },
+     ],
+   }
+ */
 ```
 
-这个方法比较适用在使用网格系统时的视图中，如 Bootstrap。
+如果集合中的元素个数无法被整除，则会导致拆分后的集合的数量不一致。
 
-想象一下有一个 Eloquent 模型的集合要在网格中显示
+```php
+$collection = collect([1, 2, 3, 4, 5, 6, 7, 8]);
+$collection->chunk(3);
 
-```
-@foreach ($products->chunk(3) as $chunk)
-    <div class="row">
-        @foreach ($chunk as $product)
-            <div class="col-xs-4">{{ $product->name }}</div>
-        @endforeach
-    </div>
-@endforeach
+// output
+/**
+=> Illuminate\Support\Collection {#1088
+     all: [
+       Illuminate\Support\Collection {#1091
+         all: [
+           1,
+           2,
+           3,
+         ],
+       },
+       Illuminate\Support\Collection {#1090
+         all: [
+           3 => 4,
+           4 => 5,
+           5 => 6,
+         ],
+       },
+       Illuminate\Support\Collection {#1089
+         all: [
+           6 => 7,
+           7 => 8,
+         ],
+       },
+     ],
+   }
+ */
 ```
