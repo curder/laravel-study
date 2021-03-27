@@ -2,7 +2,7 @@
 
 从集合中返回一个随机项。
 
-```
+```php
 $collection = collect([1, 2, 3, 4, 5]);
 
 $collection->random(); // 4 - (retrieved randomly)
@@ -12,10 +12,12 @@ $collection->random(); // 4 - (retrieved randomly)
 
 当显式传递希望接收的数量时，则会返回项目的集合。
 
-```
+```php
 $collection = collect([1, 2, 3, 4, 5]);
 
 $random = $collection->random(3);
 
 $random->all(); // [0 => 1, 1 => 2, 4 => 5] - (retrieved randomly)
 ```
+
+> 如果传入的值大于当前集合中的值，则会抛出 `InvalidArgumentException` 错误。
