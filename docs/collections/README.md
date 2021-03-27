@@ -116,12 +116,12 @@ collect([1, 2, 3]);
 | pipe [详细](/collections/pipe.md) | 将集合传给给定的回调并返回结果 |
 | pop [详细](/collections/pop.md) | **改变原集合**，移除并返回集合中的最后一个项目 |
 | prepend [详细](/collections/prepend.md) | **改变原集合**，将给定的值添加到集合的开头 |
+| pull [详细](/collections/pull.md) | **改变原集合**，把给定键对应的值从集合中移除并返回 |
 
 ------
 
 | 方法名 | 释义 |
 | :--- | :--- |
-| pull [详细](/collections/pull.md) | 把给定键对应的值从集合中移除并返回 |
 | push [详细](/collections/push.md) | 把给定值添加到集合的末尾 |
 | put [详细](/collections/put.md) | 在集合内设置给定的键值对 |
 | random [详细](/collections/random.md) | 从集合中返回一个随机项 |
