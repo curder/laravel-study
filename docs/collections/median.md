@@ -1,9 +1,23 @@
-# median方法
+# median 方法
 
 方法返回给定**键**的中间值。
 
-```
-$median = collect([['foo' => 10], ['foo' => 10], ['foo' => 20], ['foo' => 40]])->median('foo'); // 15
+```php
+collect([10000, 20000, 30000])->median();
 
-$median = collect([1, 1, 2, 4])->median(); // 1.5
+// output
+/**
+=> 20000
+ */
+```
+
+```php
+collect([['price' => 10000], ['price' => 20000], ['price' => 30000]])->median(
+  'price'
+);
+
+// output 
+/**
+=> 20000
+ */
 ```
