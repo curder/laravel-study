@@ -112,12 +112,12 @@ collect([1, 2, 3]);
 | merge [详细](/collections/merge.md) | 将给定数组或集合合并到原集合 |
 | mergeRecursive [详细](/collections/mergeRecursive.md) | 将给定的数组或集合与原始集合递归合并 |
 | mode [详细](/collections/mode.md) | 返回给定**键**的[众数值](https://baike.baidu.com/item/%E4%BC%97%E6%95%B0/44796 "百度百科-众数值") |
+| partition [详细](/collections/partition.md) | 配合`list()`方法区分回调函数满足和不满足的数据 |
 
 ------
 
 | 方法名 | 释义 |
 | :--- | :--- |
-| partition [详细](/collections/partition.md) | 配合`list()`方法区分回调函数满足和不满足的数据 |
 | pipe [详细](/collections/pipe.md) | 将集合传给给定的回调并返回结果 |
 | pop [详细](/collections/pop.md) | 移除并返回集合中的最后一个项目 |
 | prepend [详细](/collections/prepend.md) | 将给定的值添加到集合的开头 |
