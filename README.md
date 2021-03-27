@@ -90,7 +90,7 @@ yarn prod
   - [has](/collections/has.md)
   - [implode](/collections/implode.md)
   - [intersect](/collections/intersect.md)
-  - [intersectKey](/collections/intersectKey.md)
+  - [intersectKey](/collections/intersectByKeys.md)
   - [isEmpty](/collections/isEmpty.md)
   - [isNotEmpty](/collections/isNotEmpty.md)
   - [keyBy](/collections/keyBy.md)
