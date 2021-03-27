@@ -72,6 +72,7 @@ collect([1, 2, 3]);
 | mapToDirectory [详细](/collections/mapToDictionary.md) | **不改变原集合**，通过给定的闭包对集合的项目进行分组。该闭包应返回一个包含单个键/值对的关联数组，从而形成一个新的分组值数组 |
 | mapToGroup [详细](/collections/mapToGroup.md) | **不改变原集合**，通过给定的闭包对集合的项目进行分组。 该闭包应返回一个包含单个键/值对的关联数组，从而形成一个新的分组值集合 |
 | mapSpread [详细](/collections/mapSpread.md) | **改变原集合**，迭代集合的项目，将每个嵌套的项目值传递到给定的闭包中。 闭包可以自由修改并返回它，从而形成一个新的修改后的集合。 |
+| mapInto [详细](/collections/mapInto.md) | **不改变原集合**，遍历集合，通过将值传递给构造函数来创建给定类的新实例 |
 
 
 ------
