@@ -77,6 +77,7 @@ collect([1, 2, 3]);
 | map [详细](/collections/map.md) | **不改变原集合**，遍历集合并将每一个值传入给定的回调 |
 | tap [详细](/collections/tap.md) | 将集合传递给回调，在特定点「tap」集合 |
 | diffUsing [详细](/collections/diffUsing.md) | 获取集合中不存在给定项目的项目 |
+| diffAssocUsing [详细](/collections/diffAssocUsing.md) | 使用回调获取集合中键和值不存在的项目 |
 
 ------
 
