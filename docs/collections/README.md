@@ -96,12 +96,12 @@ collect([1, 2, 3]);
 | average [详细](/collections/avg.md) | 方法`avg()`的别名 |
 | avg [详细](/collections/avg.md) | 返回给定键的**平均值** |
 | every [详细](/collections/every.md) | 可用于验证集合中每一个元素都通过给定的真实测试 |
+| except [详细](/collections/except.md) | 返回集合中除了指定键以外的所有项目 |
 
 ------
 
 | 方法名 | 释义 |
 | :--- | :--- |
-| except [详细](/collections/except.md) | 返回集合中除了指定键以外的所有项目 |
 | flatMap [详细](/collections/flatMap.md) | 遍历集合并将其中的每个值传递到给定的回调 |
 | flatten [详细](/collections/flatten.md)| 将多维集合转为一维 |
 | flip [详细](/collections/flip.md) | 将集合中的键和对应的数值进行互换 |
