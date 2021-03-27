@@ -125,12 +125,12 @@ collect([1, 2, 3]);
 | search [详细](/collections/search.md) | 搜索给定的值并返回它的键 |
 | shift [详细](/collections/shift.md) | **改变原集合**，移除并返回集合的第一个项目 |
 | shuffle [详细](/collections/shuffle.md) | 随机排序集合中的项目 |
+| slice [详细](/collections/slice.md) | 返回集合中给定值后面的部分 |
 
 ------
 
 | 方法名 | 释义 |
 | :--- | :--- |
-| slice [详细](/collections/slice.md) | 返回集合中给定值后面的部分 |
 | splice [详细](/collections/splice.md) | 删除并返回从给定值后的内容，原集合也会受到影响 |
 | split [详细](/collections/split.md) | 将集合按给定的值拆分 |
 | sum [详细](/collections/sum.md) | 返回集合内所有项目的总和 |
