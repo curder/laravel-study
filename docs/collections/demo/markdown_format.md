@@ -12,7 +12,7 @@ $messages = [
 
 格式化成 `markdown` 的 `li` 格式数据，如下：
 
-```
+```markdown
 - Should be working now for all Providers. \n
 - If you see one where spaces are in the title let me know. \n
 - But there should not have blank in the key of config or .env file.

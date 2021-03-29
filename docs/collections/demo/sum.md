@@ -1,4 +1,4 @@
-# collection中 sum 求和
+# sum 求和数组项
 
 ## 计算数组元素和 
 
