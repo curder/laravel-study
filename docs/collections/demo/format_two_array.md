@@ -1,8 +1,8 @@
-# collection格式化计算两个数组的数据
+# 格式化计算两个数组的数据
 
 有如下两组数据分别代表去年的营收和今年的营收，求每个月的盈亏情况。
 
-```
+```php
 $lastYear = [
     6345.75,
     9839.45,
@@ -35,20 +35,117 @@ $thisYear = [
 
 ## 使用foreach
 
-```
+```php
+
+$lastYear = [
+  6345.75,
+  9839.45,
+  7134.6,
+  9479.5,
+  9928.0,
+  8652.0,
+  7658.4,
+  10245.4,
+  7889.4,
+  3892.4,
+  3638.4,
+  2339.4,
+];
+$thisYear = [
+  6145.75,
+  6895.0,
+  3434.0,
+  9349350,
+  9478.6,
+  7652.8,
+  4758.4,
+  10945.4,
+  3689.4,
+  8992.4,
+  7588.4,
+  2239.4,
+];
+
 $profit = [];
 
-foreach($thisYear as $key => $monthly){
-    $profit[$key] = $monthly - $lastYear[$key];
+foreach ($thisYear as $key => $monthly) {
+  $profit[$key] = $monthly - $lastYear[$key];
 }
 dd($profit);
+
+/**
+array:12 [
+  0 => -200.0
+  1 => -2944.45
+  2 => -3700.6
+  3 => 9339870.5
+  4 => -449.4
+  5 => -999.2
+  6 => -2900.0
+  7 => 700.0
+  8 => -4200.0
+  9 => 5100.0
+  10 => 3950.0
+  11 => -100.0
+]
+ */
 ```
 
-## 使用 [zip](/collections/zip.md)、[first](/collections/first.md)和[last](collections/last.md)
+## 使用 [zip](/collections/zip.md)、[first](/collections/first.md) 和 [last](collections/last.md) 方法
 
-```
-$profit = collect($thisYear)->zip($lastYear)->map(function($monthly){
+```php
+$lastYear = [
+  6345.75,
+  9839.45,
+  7134.6,
+  9479.5,
+  9928.0,
+  8652.0,
+  7658.4,
+  10245.4,
+  7889.4,
+  3892.4,
+  3638.4,
+  2339.4,
+];
+$thisYear = [
+  6145.75,
+  6895.0,
+  3434.0,
+  9349350,
+  9478.6,
+  7652.8,
+  4758.4,
+  10945.4,
+  3689.4,
+  8992.4,
+  7588.4,
+  2239.4,
+];
+
+$profit = collect($thisYear)
+  ->zip($lastYear)
+  ->map(function ($monthly) {
     return $monthly->first() - $monthly->last();
-});
+  });
 dd($profit);
+
+/**
+Illuminate\Support\Collection {#1144
+  #items: array:12 [
+    0 => -200.0
+    1 => -2944.45
+    2 => -3700.6
+    3 => 9339870.5
+    4 => -449.4
+    5 => -999.2
+    6 => -2900.0
+    7 => 700.0
+    8 => -4200.0
+    9 => 5100.0
+    10 => 3950.0
+    11 => -100.0
+  ]
+}
+ */
 ```
