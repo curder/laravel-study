@@ -42,6 +42,7 @@ collect([1, 2, 3]);
 | only [详细](/collections/only.md) | **不改变原集合**，返回集合中给定键的所有项目 |
 | nth [详细](/collections/nth.md) | **不改变原集合**，创建由每隔`n`个元素组成一个新集合 |
 | take [详细](/collections/take.md) | **不改变原集合**，返回给定数量项目的新集合 |
+| takeUntil [详细](/collections/takeUntil.md) | 将返回集合中的项目，直到给定的回调返回 `true` |
 | reverse [详细](/collections/reverse.md) | 倒转集合中项目的顺序 |
 | isEmpty [详细](/collections/isEmpty.md) | **不改变原集合**，判断集合是否为空 |
 | isNotEmpty [详细](/collections/isNotEmpty.md) | **不改变原集合**，判断集合是否不为空 |
