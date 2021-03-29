@@ -125,7 +125,7 @@ collect([1, 2, 3]);
 | shuffle [详细](/collections/shuffle.md) | 随机排序集合中的项目 |
 | skip [详细](/collections/skip.md) | 返回一个新的集合，其中给定数量的元素从集合的开头删除 |
 | skipUntil [详细](/collections/skipUntil.md) | 跳过集合中的项目，直到给定的回调返回 `true` ，然后将集合中的其余项目作为新集合实例返回 |
-| skipWhile |  |
+| skipWhile [详细](/collections/skipWhile.md) | 跳过集合中的项目，同时给定的回调返回 `true` ，然后将集合中的其余项目作为新集合返回 |
 | slice [详细](/collections/slice.md) | 返回集合中给定值后面的部分 |
 
 ------
