@@ -134,12 +134,12 @@ collect([1, 2, 3]);
 | split [详细](/collections/split.md) | 将集合按给定的值拆分 |
 | splitIn [详细](/collections/splitIn.md) | 将集合分为给定数量的组 |
 | sum [详细](/collections/sum.md) | 返回集合内所有项目的总和 |
+| transform [详细](/collections/transform.md) | **改变原集合**，迭代集合并对集合内的每个项目调用给定的回调 |
 
 ------
 
 | 方法名 | 释义 |
 | :--- | :--- |
-| transform [详细](/collections/transform.md) | 迭代集合并对集合内的每个项目调用给定的回调 |
 | union [详细](/collections/union.md) | 将给定的数组添加到集合中 |
 | unique [详细](/collections/unique.md) | 返回集合中所有唯一的项目 |
 | uniqueStrict [详细](/collections/uniqueStrict.md) | 使用严格模式返回集合中所有唯一的项目 |
