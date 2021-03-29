@@ -144,11 +144,6 @@ collect([1, 2, 3]);
 | whenEmpty [详细](/collections/whenEmpty.md) | 当集合为空时，`whenEmpty` 方法将执行给定的回调 |
 | whenNotEmpty [详细](/collections/whenNotEmpty.md) | 当集合不为空时，`whenNotEmpty` 方法将执行给定的回调 |
 | values [详细](/collections/values.md) | 返回键被重置为连续编号的新集合 |
-
-------
-
-| 方法名 | 释义 |
-| :--- | :--- |
 | when [详细](/collections/when.md) | 当传入的第一个参数为 true 的时，将执行给定的回调 |
 
 ## 在项目中单独使用
