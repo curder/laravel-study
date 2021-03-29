@@ -141,10 +141,10 @@ collect([1, 2, 3]);
 | unless [详细](/collections/unless.md) | 除非方法的第一个参数的计算结果为true，否则该方法将执行给定的回调 |
 | unlessEmpty [详细](/collections/whenNotEmpty.md) | [whenNotEmpty](/collections/whenNotEmpty.md) 方法的别名 |
 | unlessNotEmpty [详细](/collections/whenEmpty.md) | [whenEmpty](/collections/whenEmpty.md) 方法别名 |
-| whenEmpty [详细](/collections/whenEmpty.md) | 当集合为空时，`whenEmpty` 方法将执行给定的回调 |
-| whenNotEmpty [详细](/collections/whenNotEmpty.md) | 当集合不为空时，`whenNotEmpty` 方法将执行给定的回调 |
 | values [详细](/collections/values.md) | 返回键被重置为连续编号的新集合 |
 | when [详细](/collections/when.md) | 当传入的第一个参数为 true 的时，将执行给定的回调 |
+| whenEmpty [详细](/collections/whenEmpty.md) | 当集合为空时，`whenEmpty` 方法将执行给定的回调 |
+| whenNotEmpty [详细](/collections/whenNotEmpty.md) | 当集合不为空时，`whenNotEmpty` 方法将执行给定的回调 |
 
 ## 在项目中单独使用
 
