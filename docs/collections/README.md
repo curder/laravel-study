@@ -129,12 +129,12 @@ collect([1, 2, 3]);
 | slice [详细](/collections/slice.md) | 返回集合中给定值后面的部分 |
 | some [详情](/collections/contains.md) | [contains](/collections/contains.md) 方法的别名 |
 | splice [详细](/collections/splice.md) | 删除并返回从给定值后的内容，原集合也会受到影响 |
+| split [详细](/collections/split.md) | 将集合按给定的值拆分 |
 
 ------
 
 | 方法名 | 释义 |
 | :--- | :--- |
-| split [详细](/collections/split.md) | 将集合按给定的值拆分 |
 | sum [详细](/collections/sum.md) | 返回集合内所有项目的总和 |
 | transform [详细](/collections/transform.md) | 迭代集合并对集合内的每个项目调用给定的回调 |
 | union [详细](/collections/union.md) | 将给定的数组添加到集合中 |
