@@ -1,14 +1,16 @@
-# collection格式化markdown数据列表
+# 格式化 Markdown 数据列表
 
 有如下数据：
-```
+
+```php
 $messages = [
-    'Should be working now for all Providers.',
-    'If you see one where spaces are in the title let me know.',
-    'But there should not have blank in the key of config or .env file.'
+  'Should be working now for all Providers.',
+  'If you see one where spaces are in the title let me know.',
+  'But there should not have blank in the key of config or .env file.',
 ];
 ```
-格式化成Markdown的li格式数据，如下：
+
+格式化成 `markdown` 的 `li` 格式数据，如下：
 
 ```
 - Should be working now for all Providers. \n
@@ -17,33 +19,53 @@ $messages = [
 ```
 
 
-## 使用foreach循环解决
+## 使用 foreach 方法
 
-```
+```php
 $messages = [
-    'Should be working now for all Providers.',
-    'If you see one where spaces are in the title let me know.',
-    'But there should not have blank in the key of config or .env file.'
+  'Should be working now for all Providers.',
+  'If you see one where spaces are in the title let me know.',
+  'But there should not have blank in the key of config or .env file.',
 ];
 
-$comment = '- ' . array_shift($messages);
+$comment = ' - ' . array_shift($messages);
 foreach ($messages as $message) {
-    $comment .= "\n -  ${message}";
+  $comment .= "\n -  ${message}";
 }
-```
-
-## 使用collection的[map](/collections/map.md)和[implode](/collections/implode.md)方法
-
-```
-$messages = [
-    'Should be working now for all Providers.',
-    'If you see one where spaces are in the title let me know.',
-    'But there should not have blank in the key of config or .env file.'
-];
-
-$comment = collect($messages)->map(function($message){
-    return '- ' . $message;
-})->implode("\n");
 
 dd($comment);
+
+/**
+"""
+ - Should be working now for all Providers.\n
+ -  If you see one where spaces are in the title let me know.\n
+ -  But there should not have blank in the key of config or .env file.
+"""
+ */
+```
+
+## 使用 [map](/collections/map.md) 和 [implode](/collections/implode.md) 方法
+
+```php
+$messages = [
+  'Should be working now for all Providers.',
+  'If you see one where spaces are in the title let me know.',
+  'But there should not have blank in the key of config or .env file.',
+];
+
+$comment = collect($messages)
+  ->map(function ($message) {
+    return '- ' . $message;
+  })
+  ->implode("\n");
+
+dd($comment);
+
+/**
+"""
+- Should be working now for all Providers.\n
+- If you see one where spaces are in the title let me know.\n
+- But there should not have blank in the key of config or .env file.
+"""
+ */
 ```
