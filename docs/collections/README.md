@@ -127,6 +127,7 @@ collect([1, 2, 3]);
 | skipUntil [详细](/collections/skipUntil.md) | 跳过集合中的项目，直到给定的回调返回 `true` ，然后将集合中的其余项目作为新集合实例返回 |
 | skipWhile [详细](/collections/skipWhile.md) | 跳过集合中的项目，同时给定的回调返回 `true` ，然后将集合中的其余项目作为新集合返回 |
 | slice [详细](/collections/slice.md) | 返回集合中给定值后面的部分 |
+| some [详情](/collections/contains.md) | [contains](/collections/contains.md) 方法的别名 |
 
 ------
 
