@@ -138,6 +138,7 @@ collect([1, 2, 3]);
 | union [详细](/collections/union.md) | 将给定的数组添加到集合中 |
 | unique [详细](/collections/unique.md) | 返回集合中所有唯一的项目 |
 | uniqueStrict [详细](/collections/uniqueStrict.md) | 使用严格模式返回集合中所有唯一的项目 |
+| unless [详细](/collections/unless.md) | 除非方法的第一个参数的计算结果为true，否则该方法将执行给定的回调 |
 
 ------
 
