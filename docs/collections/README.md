@@ -114,6 +114,7 @@ collect([1, 2, 3]);
 | mode [详细](/collections/mode.md) | 返回给定**键**的[众数值](https://baike.baidu.com/item/%E4%BC%97%E6%95%B0/44796 "百度百科-众数值") |
 | partition [详细](/collections/partition.md) | 配合`list()`方法区分回调函数满足和不满足的数据 |
 | pipe [详细](/collections/pipe.md) | 将集合传给给定的回调并返回结果 |
+| pipeInto [详细](/collections/pipeInto.md) | 创建给定类的新实例，并将集合传递给构造函数 |
 | pop [详细](/collections/pop.md) | **改变原集合**，移除并返回集合中的最后一个项目 |
 | prepend [详细](/collections/prepend.md) | **改变原集合**，将给定的值添加到集合的开头 |
 | pull [详细](/collections/pull.md) | **改变原集合**，把给定键对应的值从集合中移除并返回 |
