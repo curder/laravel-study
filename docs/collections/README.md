@@ -147,7 +147,7 @@ collect([1, 2, 3]);
 | [whenEmpty](/collections/whenEmpty.md) | 当集合为空时，`whenEmpty` 方法将执行给定的回调 |
 | [whenNotEmpty](/collections/whenNotEmpty.md) | 当集合不为空时，`whenNotEmpty` 方法将执行给定的回调 |
 
-## 在项目中单独使用
+## 其它项目中单独使用
 
 ### 安装
 
