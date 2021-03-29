@@ -140,7 +140,9 @@ collect([1, 2, 3]);
 | uniqueStrict [详细](/collections/uniqueStrict.md) | 使用严格模式返回集合中所有唯一的项目 |
 | unless [详细](/collections/unless.md) | 除非方法的第一个参数的计算结果为true，否则该方法将执行给定的回调 |
 | unlessEmpty [详细](/collections/whenNotEmpty.md) | [whenNotEmpty](/collections/whenNotEmpty.md) 方法的别名 |
-| unlessNotEmpty [详细](/collections/whenEmpty.md) |  [whenEmpty](/collections/whenEmpty.md) 方法别名 |
+| unlessNotEmpty [详细](/collections/whenEmpty.md) | [whenEmpty](/collections/whenEmpty.md) 方法别名 |
+| whenEmpty [详细](/collections/whenEmpty.md) | 当集合为空时，`whenEmpty` 方法将执行给定的回调 |
+| whenNotEmpty [详细](/collections/whenNotEmpty.md) | 当集合不为空时，`whenNotEmpty` 方法将执行给定的回调 |
 
 ------
 
