@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>Laravel 学习记录</title><meta name="description" content="Laravel学习点滴"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="VuePress 2.0.0-beta.4">
+    <link rel="preload" href="/assets/js/runtime~app.f0858e2c.js" as="script"><link rel="preload" href="/assets/css/styles.9ef2d71a.css" as="style"><link rel="preload" href="/assets/js/3070.7fcc83c6.js" as="script"><link rel="preload" href="/assets/js/app.564a1c2a.js" as="script">
+    <link rel="stylesheet" href="/assets/css/styles.9ef2d71a.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container no-sidebar"><header class="navbar"><div class="toggle-sidebar-button"><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class=""></path></svg></div><span><a href="/" class=""><img class="logo" src="/images/laravel-logo.min.svg" alt="Laravel 学习记录"><span class="site-name can-hide">Laravel 学习记录</span></a></span><div class="navbar-links-wrapper" style=""><!--[--><!--]--><nav class="navbar-links can-hide"><!--[--><div class="navbar-links-item"><a href="/" class="nav-link" exact="true" aria-label="首页"><!--[--><!--]--> 首页 <!--[--><!--]--></a></div><div class="navbar-links-item"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="集合"><span class="title">集合</span><span class="arrow down"></span></button><button class="mobile-dropdown-title" type="button" aria-label="集合"><span class="title">集合</span><span class="right arrow"></span></button><ul style="display:none;" class="nav-dropdown"><!--[--><li class="dropdown-item"><a href="/collections/" class="nav-link" exact="false" aria-label="基础"><!--[--><!--]--> 基础 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/collections/demo/" class="nav-link" exact="false" aria-label="实际应用"><!--[--><!--]--> 实际应用 <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-links-item"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="模型"><span class="title">模型</span><span class="arrow down"></span></button><button class="mobile-dropdown-title" type="button" aria-label="模型"><span class="title">模型</span><span class="right arrow"></span></button><ul style="display:none;" class="nav-dropdown"><!--[--><li class="dropdown-item"><a href="/model/" class="nav-link" exact="false" aria-label="Laravel模型"><!--[--><!--]--> Laravel模型 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/model/related-relationships/" class="nav-link" exact="false" aria-label="模型关联关系"><!--[--><!--]--> 模型关联关系 <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-links-item"><a href="/others/" class="nav-link" exact="false" aria-label="其它"><!--[--><!--]--> 其它 <!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><!----></div></header><div class="sidebar-mask"></div><aside class="sidebar"><nav class="navbar-links"><!--[--><div class="navbar-links-item"><a href="/" class="nav-link" exact="true" aria-label="首页"><!--[--><!--]--> 首页 <!--[--><!--]--></a></div><div class="navbar-links-item"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="集合"><span class="title">集合</span><span class="arrow down"></span></button><button class="mobile-dropdown-title" type="button" aria-label="集合"><span class="title">集合</span><span class="right arrow"></span></button><ul style="display:none;" class="nav-dropdown"><!--[--><li class="dropdown-item"><a href="/collections/" class="nav-link" exact="false" aria-label="基础"><!--[--><!--]--> 基础 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/collections/demo/" class="nav-link" exact="false" aria-label="实际应用"><!--[--><!--]--> 实际应用 <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-links-item"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="模型"><span class="title">模型</span><span class="arrow down"></span></button><button class="mobile-dropdown-title" type="button" aria-label="模型"><span class="title">模型</span><span class="right arrow"></span></button><ul style="display:none;" class="nav-dropdown"><!--[--><li class="dropdown-item"><a href="/model/" class="nav-link" exact="false" aria-label="Laravel模型"><!--[--><!--]--> Laravel模型 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/model/related-relationships/" class="nav-link" exact="false" aria-label="模型关联关系"><!--[--><!--]--> 模型关联关系 <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-links-item"><a href="/others/" class="nav-link" exact="false" aria-label="其它"><!--[--><!--]--> 其它 <!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-links"><!--[--><!--]--></ul><!--[--><!--]--></aside><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h2 id="如何使用-service-模式"><a class="header-anchor" href="#如何使用-service-模式">#</a> 如何使用 Service 模式</h2><p>若将数据库逻辑都写在 Controller 里，会造成 Controller 代码的臃肿难以维护，基于 SOLID 原则，我们应该使用 <strong>Service</strong> 模式辅助 Controller，将相关的业务逻辑封装在不同的 Service，方便项目的后期维护。</p><h3 id="laravel-框架版本"><a class="header-anchor" href="#laravel-框架版本">#</a> Laravel 框架版本</h3><p>Laravel 5.4.17</p><h2 id="业务逻辑"><a class="header-anchor" href="#业务逻辑">#</a> 业务逻辑</h2><p>业务逻辑中，常见的如：</p><ul><li><p>牵涉到外部行为： 如 <code>发送 Email 邮件</code>，<code>使用外部API</code> ..</p></li><li><p>使用 PHP 写的逻辑： 如 <code>根据购买的数量，给予不同的折扣</code></p></li></ul><h2 id="service"><a class="header-anchor" href="#service">#</a> Service</h2><h3 id="牵涉到外部的行为"><a class="header-anchor" href="#牵涉到外部的行为">#</a> 牵涉到外部的行为</h3><p>如 <code>发送Email</code>，常常会在 Controller 中直接调用 <code>Mail::queue()</code></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code> /**
+ * @param \Illuminate\Http\Request $request
+ */
+public function store(Request $request)
+{
+    \Mail::queue(&#39;email.index&#39;, $request-&gt;all(), function (Message $message) {
+        $message-&gt;sender(env(&#39;MAIL_USERNAME&#39;));
+        $message-&gt;subject(env(&#39;MAIL_SUBJECT&#39;));
+        $message-&gt;to(env(&#39;MAIL_TO_ADDR&#39;));
+    });
+}
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>在中大型的项目中，会有几个问题：</p><ul><li><p>将牵涉到外部行为的逻辑写在 Controller，造成 Controller 代码臃肿难以维护</p></li><li><p>违反 SOLID 的单一职责原则：外部行为不应该写在 Controller</p></li><li><p>Controller 直接相依于外部行为，使得我们无法对 Controller 做单元测试</p></li></ul><p>比较好的方式是使用 Service，使用的步骤如下：</p><ul><li><p>将外部行为注入到 Service</p></li><li><p>在 Service 使用外部行为</p></li><li><p>将 Service 注入到 Controlelr</p></li></ul><p><code>app\Services\EmailService.php</code></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>&lt;?php
+
+namespace App\Services;
+use Illuminate\Mail\Message;
+use Mail;
+
+/**
+ * Class EmailService
+ *
+ * @package \App\Services
+ */
+/**
+ * Class EmailService
+ *
+ * @package App\Services
+ */
+class EmailService
+{
+    /**
+     * @var \Mail
+     */
+    protected $mailer;
+
+    /**
+     * 将相依的 Mailer 注入到 EmailService
+     * EmailService constructor.
+     *
+     * @param $mailer
+     */
+    public function __construct(Mail $mailer)
+    {
+        $this-&gt;mailer = $mailer;
+    }
+
+    /**
+     * 发送 Email的逻辑写在 send() 不是使用 Mail Facade，而是使用 $this-&gt;mailer
+     * @param array $request
+     */
+    public function send(array $request)
+    {
+        $this-&gt;mailer-&gt;queue(&#39;email.index&#39;,$request,function(Message $message){
+            $message-&gt;sender(env(&#39;MAIL_USERNAME&#39;));
+            $message-&gt;subject(env(&#39;MAIL_SUBJECT&#39;));
+            $message-&gt;to(env(&#39;MAIL_TO_ADDR&#39;));
+        });
+    }
+}
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br></div></div><p><code>app\Controllers\UserController.php</code></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>&lt;?php
+
+namespace App\Http\Controllers;
+
+use App\Services\EmailService;
+use Illuminate\Http\Request;
+
+/**
+ * Class UserController
+ *
+ * @package App\Http\Controllers
+ */
+class UserController extends Controller
+{
+    /**
+     * @var \App\Services\EmailService
+     */
+    protected $emailService;
+
+
+    /**
+     * @param \Illuminate\Http\Request $request
+     */
+    public function store(Request $request)
+    {
+        $this-&gt;emailService-&gt;send($request-&gt;all());
+    }
+}
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p>从原本相依于 <code>Mail Facade</code> ，改成相依于注入的 <code>EmailService</code>。</p><p>改用这种写法有几个优点，如下：</p><ul><li><p>将外部行为写在 Service，解决了 Controller 代码臃肿的问题。</p></li><li><p>符合 SOLID 的单一职责原则： 外部行为写在　Service ，没写在 Controller。</p></li><li><p>符合 SOLID 的依赖反转原则：Controller 并非直接相依于 Service，而是将 Service 依赖注入进 Controller。</p></li></ul><h3 id="使用-php-写的逻辑"><a class="header-anchor" href="#使用-php-写的逻辑">#</a> 使用 PHP 写的逻辑</h3><p>如 <code>根据用户购买数量，给予同步的折扣</code>，可能我们会在 Controller 直接写 <code>if () { ... } else { ... }</code> 逻辑。如下<code>app\Controllers\UserController.php</code>：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>public function index(Request $request)
+{
+    $number = $request-&gt;input(&#39;number&#39;);
+    $price = 500;
+    $discount = 1;
+    if ($number == 1) {
+        $discount = 1;
+    } elseif ($number == 2) {
+        $discount = 0.9;
+    } elseif ($number == 3) {
+        $discount = 0.8;
+    } else {
+        $discount = 0.7;
+    }
+    $total = $price * $number * $discount;
+
+    return $total;
+}
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>在中大型项目中，会有几个问题：</p><ul><li><p>将 PHP 写的业务逻辑直接写在 Controller ，造成 Controller 的代码臃肿难以维护</p></li><li><p>违反了 SOLID 的单一职责原则：业务逻辑不应该写在 Controller</p></li><li><p>违反了 SOLID 的单一职责原则：若未来想要改变折扣的写算法，都需要用到此 Method，也也就是说这个 Method 同时包含了计算折扣于计算加总的职责，因此违反了 SOLID 的单一职责原则</p></li><li><p>直接写在 Controller 的逻辑无法被其他 Controller 使用</p></li></ul><p><code>app\Services\OrderService.php</code></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>&lt;?php
+
+namespace App\Services;
+
+/**
+ * Class OrderService
+ *
+ * @package App\Services
+ */
+/**
+ * Class OrderService
+ *
+ * @package App\Services
+ */
+class OrderService
+{
+    /**
+     * 计算折扣
+     *
+     * @param $number
+     *
+     * @return float
+     */
+    public function getDisCount($number)
+    {
+        switch ($number) {
+            case 1:
+                return 1.0;
+                break;
+            case 2:
+                return 0.9;
+                break;
+            case 3:
+                return 0.8;
+                break;
+            default:
+                return 0.7;
+        }
+    }
+
+    /**
+     * 计算最后价格
+     *
+     * @param $number
+     * @param $discount
+     *
+     * @return int
+     */
+    public function getTotal($number, $discount)
+    {
+        return 500 * $number * $discount;
+    }
+}
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br></div></div><p>在 Controller 中调用代码，如下：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>&lt;?php
+
+namespace App\Http\Controllers;
+
+use App\Services\OrderService;
+use Illuminate\Http\Request;
+
+/**
+ * Class UserController
+ *
+ * @package App\Http\Controllers
+ */
+class UserController extends Controller
+{
+    /**
+     * @var \App\Services\EmailService
+     */
+    protected $orderService;
+
+    /**
+     * UserController constructor.
+     *
+     * @param \App\Services\OrderService $orderService
+     */
+    public function __construct(OrderService $orderService)
+    {
+        $this-&gt;orderService = $orderService;
+    }
+    
+    /**
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return int
+     */
+    public function index(Request $request)
+    {
+        $number = $request-&gt;input(&#39;number&#39;);
+        $discount = $this-&gt;orderService-&gt;getDisCount($number);
+        return $this-&gt;orderService-&gt;getTotal($number, $discount);
+    }
+}
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br></div></div><p>将原本的 <code>if () { .. } else { .. }</code> 逻辑改写成使用 <code>OrderService</code>，Controller 变得非常感觉，也达成原来 Controller 接受 Http Request，调用其他 Class 的责任。</p><p>改用这种写法的几个优点：</p><ul><li><p>将 PHP 写的业务逻辑写在　Service ，解决了 Controller 代码臃肿的问题</p></li><li><p>符合 SOLID 的单一职责原则： 业务逻辑写在 Service，没写在 Controller</p></li><li><p>符合 SOLID 的单一职责原则：计算折扣与计算加总分开在不同的 Method，且归属于 <code>OrderService</code>，而非 <code>Controller</code></p></li><li><p>符合 SOLID 的依赖反转原则： Controller 并非直接相依于 Service，而是将 Service 依赖注入进 Controller</p></li><li><p>其他 Controller 也可以重复使用这段业务逻辑</p></li></ul><h3 id="结束"><a class="header-anchor" href="#结束">#</a> 结束</h3><ul><li><p>实际上会有很多 Service ，需要自行依照 SOLID 原则去判断是否该建立 Service</p></li><li><p>Service 使得业务逻辑从 Controller 中解放，不仅更容易维护、更容易拓展、更容易重复使用且更容易测试</p></li></ul><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><span class="meta-item-info">3/30/2021, 2:29:23 AM</span></div><!----></footer><!----><!--[--><!--]--></main></div><!----><!--]--></div>
+    <script src="/assets/js/runtime~app.f0858e2c.js" defer></script><script src="/assets/js/3070.7fcc83c6.js" defer></script><script src="/assets/js/app.564a1c2a.js" defer></script>
+  </body>
+</html>

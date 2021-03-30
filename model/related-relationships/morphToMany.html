@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>多对多多态关联 | Laravel 学习记录</title><meta name="description" content="Laravel学习点滴"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="VuePress 2.0.0-beta.4">
+    <link rel="preload" href="/assets/js/runtime~app.f0858e2c.js" as="script"><link rel="preload" href="/assets/css/styles.9ef2d71a.css" as="style"><link rel="preload" href="/assets/js/3070.7fcc83c6.js" as="script"><link rel="preload" href="/assets/js/app.564a1c2a.js" as="script">
+    <link rel="stylesheet" href="/assets/css/styles.9ef2d71a.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><header class="navbar"><div class="toggle-sidebar-button"><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class=""></path></svg></div><span><a href="/" class=""><img class="logo" src="/images/laravel-logo.min.svg" alt="Laravel 学习记录"><span class="site-name can-hide">Laravel 学习记录</span></a></span><div class="navbar-links-wrapper" style=""><!--[--><!--]--><nav class="navbar-links can-hide"><!--[--><div class="navbar-links-item"><a href="/" class="nav-link" exact="true" aria-label="首页"><!--[--><!--]--> 首页 <!--[--><!--]--></a></div><div class="navbar-links-item"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="集合"><span class="title">集合</span><span class="arrow down"></span></button><button class="mobile-dropdown-title" type="button" aria-label="集合"><span class="title">集合</span><span class="right arrow"></span></button><ul style="display:none;" class="nav-dropdown"><!--[--><li class="dropdown-item"><a href="/collections/" class="nav-link" exact="false" aria-label="基础"><!--[--><!--]--> 基础 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/collections/demo/" class="nav-link" exact="false" aria-label="实际应用"><!--[--><!--]--> 实际应用 <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-links-item"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="模型"><span class="title">模型</span><span class="arrow down"></span></button><button class="mobile-dropdown-title" type="button" aria-label="模型"><span class="title">模型</span><span class="right arrow"></span></button><ul style="display:none;" class="nav-dropdown"><!--[--><li class="dropdown-item"><a href="/model/" class="nav-link" exact="false" aria-label="Laravel模型"><!--[--><!--]--> Laravel模型 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/model/related-relationships/" class="nav-link" exact="false" aria-label="模型关联关系"><!--[--><!--]--> 模型关联关系 <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-links-item"><a href="/others/" class="nav-link" exact="false" aria-label="其它"><!--[--><!--]--> 其它 <!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><!----></div></header><div class="sidebar-mask"></div><aside class="sidebar"><nav class="navbar-links"><!--[--><div class="navbar-links-item"><a href="/" class="nav-link" exact="true" aria-label="首页"><!--[--><!--]--> 首页 <!--[--><!--]--></a></div><div class="navbar-links-item"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="集合"><span class="title">集合</span><span class="arrow down"></span></button><button class="mobile-dropdown-title" type="button" aria-label="集合"><span class="title">集合</span><span class="right arrow"></span></button><ul style="display:none;" class="nav-dropdown"><!--[--><li class="dropdown-item"><a href="/collections/" class="nav-link" exact="false" aria-label="基础"><!--[--><!--]--> 基础 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/collections/demo/" class="nav-link" exact="false" aria-label="实际应用"><!--[--><!--]--> 实际应用 <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-links-item"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="模型"><span class="title">模型</span><span class="arrow down"></span></button><button class="mobile-dropdown-title" type="button" aria-label="模型"><span class="title">模型</span><span class="right arrow"></span></button><ul style="display:none;" class="nav-dropdown"><!--[--><li class="dropdown-item"><a href="/model/" class="nav-link" exact="false" aria-label="Laravel模型"><!--[--><!--]--> Laravel模型 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/model/related-relationships/" class="nav-link" exact="false" aria-label="模型关联关系"><!--[--><!--]--> 模型关联关系 <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-links-item"><a href="/others/" class="nav-link" exact="false" aria-label="其它"><!--[--><!--]--> 其它 <!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-links"><!--[--><!--[--><section class="sidebar-group"><p class="sidebar-heading">基础</p><ul class=""><li><!--[--><a href="/model/laravel-model-caching.html" class="nav-link sidebar-link" exact="false" aria-label="模型缓存"><!--[--><!--]--> 模型缓存 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/model/laravel-model-event.html" class="nav-link sidebar-link" exact="false" aria-label="模型事件"><!--[--><!--]--> 模型事件 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/model/laravel-model-observers.html" class="nav-link sidebar-link" exact="false" aria-label="模型观察者"><!--[--><!--]--> 模型观察者 <!--[--><!--]--></a><!----><!--]--></li></ul></section><!--]--><!--[--><section class="sidebar-group"><p class="sidebar-heading">关联关系</p><ul class=""><li><!--[--><a href="/model/related-relationships/belongsToMany.html" class="nav-link sidebar-link" exact="false" aria-label="多对多"><!--[--><!--]--> 多对多 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/model/related-relationships/hasMany.html" class="nav-link sidebar-link" exact="false" aria-label="一对多"><!--[--><!--]--> 一对多 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/model/related-relationships/hasManyThrough.html" class="nav-link sidebar-link" exact="false" aria-label="远层一对多"><!--[--><!--]--> 远层一对多 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/model/related-relationships/hasOne.html" class="nav-link sidebar-link" exact="false" aria-label="一对一"><!--[--><!--]--> 一对一 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/model/related-relationships/hasOneThrough.html" class="nav-link sidebar-link" exact="false" aria-label="远层一对一"><!--[--><!--]--> 远层一对一 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/model/related-relationships/morphMany.html" class="nav-link sidebar-link" exact="false" aria-label="多态关联"><!--[--><!--]--> 多态关联 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/model/related-relationships/morphOne.html" class="nav-link sidebar-link" exact="false" aria-label="多态一对一"><!--[--><!--]--> 多态一对一 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/model/related-relationships/morphToMany.html" class="router-link-active router-link-exact-active nav-link sidebar-link active" exact="false" aria-label="多对多多态关联"><!--[--><!--]--> 多对多多态关联 <!--[--><!--]--></a><ul class="sidebar-sub-headers"><li><!--[--><a aria-current="page" href="/model/related-relationships/morphToMany.html#软件版本" class="router-link-active router-link-exact-active nav-link sidebar-link" exact="false" aria-label="软件版本"><!--[--><!--]--> 软件版本 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/model/related-relationships/morphToMany.html#关键字和表" class="router-link-active router-link-exact-active nav-link sidebar-link" exact="false" aria-label="关键字和表"><!--[--><!--]--> 关键字和表 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/model/related-relationships/morphToMany.html#生成模型和迁移文件" class="router-link-active router-link-exact-active nav-link sidebar-link" exact="false" aria-label="生成模型和迁移文件"><!--[--><!--]--> 生成模型和迁移文件 <!--[--><!--]--></a><ul class="sidebar-sub-headers"><li><!--[--><a aria-current="page" href="/model/related-relationships/morphToMany.html#编辑迁移文件" class="router-link-active router-link-exact-active nav-link sidebar-link" exact="false" aria-label="编辑迁移文件"><!--[--><!--]--> 编辑迁移文件 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/model/related-relationships/morphToMany.html#运行-php-artisan-命令保存修改到数据库" class="router-link-active router-link-exact-active nav-link sidebar-link" exact="false" aria-label="运行 php artisan 命令保存修改到数据库"><!--[--><!--]--> 运行 php artisan 命令保存修改到数据库 <!--[--><!--]--></a><!----><!--]--></li></ul><!--]--></li><li><!--[--><a aria-current="page" href="/model/related-relationships/morphToMany.html#定义关联关系和修改模型的-fillable-属性" class="router-link-active router-link-exact-active nav-link sidebar-link" exact="false" aria-label="定义关联关系和修改模型的 fillable 属性"><!--[--><!--]--> 定义关联关系和修改模型的 fillable 属性 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/model/related-relationships/morphToMany.html#使用-tinker-填充数据" class="router-link-active router-link-exact-active nav-link sidebar-link" exact="false" aria-label="使用 tinker 填充数据"><!--[--><!--]--> 使用 tinker 填充数据 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/model/related-relationships/morphToMany.html#关联操作" class="router-link-active router-link-exact-active nav-link sidebar-link" exact="false" aria-label="关联操作"><!--[--><!--]--> 关联操作 <!--[--><!--]--></a><ul class="sidebar-sub-headers"><li><!--[--><a aria-current="page" href="/model/related-relationships/morphToMany.html#新增数据" class="router-link-active router-link-exact-active nav-link sidebar-link" exact="false" aria-label="新增数据"><!--[--><!--]--> 新增数据 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/model/related-relationships/morphToMany.html#删除数据" class="router-link-active router-link-exact-active nav-link sidebar-link" exact="false" aria-label="删除数据"><!--[--><!--]--> 删除数据 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/model/related-relationships/morphToMany.html#查询数据" class="router-link-active router-link-exact-active nav-link sidebar-link" exact="false" aria-label="查询数据"><!--[--><!--]--> 查询数据 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/model/related-relationships/morphToMany.html#编辑数据" class="router-link-active router-link-exact-active nav-link sidebar-link" exact="false" aria-label="编辑数据"><!--[--><!--]--> 编辑数据 <!--[--><!--]--></a><!----><!--]--></li></ul><!--]--></li><li><!--[--><a aria-current="page" href="/model/related-relationships/morphToMany.html#其他" class="router-link-active router-link-exact-active nav-link sidebar-link" exact="false" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a><ul class="sidebar-sub-headers"><li><!--[--><a aria-current="page" href="/model/related-relationships/morphToMany.html#建立关联" class="router-link-active router-link-exact-active nav-link sidebar-link" exact="false" aria-label="建立关联"><!--[--><!--]--> 建立关联 <!--[--><!--]--></a><!----><!--]--></li></ul><!--]--></li></ul><!--]--></li></ul></section><!--]--><!--]--></ul><!--[--><!--]--></aside><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h1 id="多对多多态关联"><a class="header-anchor" href="#多对多多态关联">#</a> 多对多多态关联</h1><p>多对多多态最常见的应用场景就是标签，比如一篇文章对应多个标签，一个视频也对应多个标签，同时一个标签可能对应多篇文章或多个视频，这就是所谓的“多对多多态关联”。</p><p>此时仅仅在标签表 <code>tags</code> 上定义一个 <code>item_id</code> 和 <code>item_type</code> 已经不够了，因为这个标签可能对应多个文章或视频，那么如何建立关联关系呢，我们可以通过一张中间表 <code>taggables</code> 来实现：该表中定义了文章/视频与标签的对应关系。</p><h2 id="软件版本"><a class="header-anchor" href="#软件版本">#</a> 软件版本</h2><ul><li><p>Laravel Version 5.4.19</p></li><li><p>PHP Version 7.0.8</p></li></ul><h2 id="关键字和表"><a class="header-anchor" href="#关键字和表">#</a> 关键字和表</h2><ul><li><p><code>morphToMany()</code></p></li><li><p><code>morphedByMany()</code></p></li><li><p><code>attach()</code></p></li><li><p><code>detach()</code></p></li><li><p><code>sync()</code></p></li><li><p><code>toggle()</code></p></li><li><p><code>posts</code> 、<code>videos</code> 、<code>tags</code>、<code>taggables</code> 和 <code>users</code> 表</p></li></ul><h2 id="生成模型和迁移文件"><a class="header-anchor" href="#生成模型和迁移文件">#</a> 生成模型和迁移文件</h2><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>php artisan make:model Post -m
+php artisan make:model Video -m
+php artisan make:model Tag -m
+php artisan make:model Taggable -m
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="编辑迁移文件"><a class="header-anchor" href="#编辑迁移文件">#</a> 编辑迁移文件</h3><p>文件 <code>&lt;project&gt;/database/migrate/*_create_users_table.php</code> 内容如下</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>Schema::create(&#39;users&#39; , function(Blueprint $table){
+    $table-&gt;increments(&#39;id&#39;);
+    $table-&gt;string(&#39;name&#39;);
+    $table-&gt;string(&#39;email&#39; , 30)-&gt;unique();
+    $table-&gt;string(&#39;password&#39;);
+    $table-&gt;rememberToken();
+    $table-&gt;timestamps();
+});
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>文件 <code>&lt;project&gt;/database/migrate/*_create_posts_table.php</code> 内容如下</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>Schema::create(&#39;posts&#39; , function(Blueprint $table){
+    $table-&gt;increments(&#39;id&#39;);
+    $table-&gt;unsignedInteger(&#39;user_id&#39;);
+    $table-&gt;string(&#39;title&#39; , 60);
+    $table-&gt;unsignedInteger(&#39;views&#39;)-&gt;comment(&#39;浏览数&#39;);
+    $table-&gt;text(&#39;body&#39;);
+    $table-&gt;timestamp(&#39;published_at&#39;)-&gt;nullable();
+    $table-&gt;timestamps();
+
+    $table-&gt;foreign(&#39;user_id&#39;)
+        -&gt;references(&#39;id&#39;)
+        -&gt;on(&#39;users&#39;)
+        -&gt;onUpdate(&#39;cascade&#39;)
+        -&gt;onDelete(&#39;cascade&#39;);
+});
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>文件 <code>&lt;project&gt;/database/migrate/*_create_videos_table.php</code> 内容如下</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>Schema::create(&#39;videos&#39; , function(Blueprint $table){
+    $table-&gt;increments(&#39;id&#39;);
+    $table-&gt;unsignedInteger(&#39;user_id&#39;)-&gt;comment(&#39;用户id&#39;);
+    $table-&gt;unsignedTinyInteger(&#39;status&#39;)-&gt;comment(&#39;数据状态&#39;);
+    $table-&gt;string(&#39;title&#39; , 30)-&gt;comment(&#39;标题&#39;);
+    $table-&gt;string(&#39;description&#39; , 120)-&gt;comment(&#39;描述&#39;);
+    $table-&gt;text(&#39;body&#39;)-&gt;comment(&#39;内容&#39;);
+    $table-&gt;timestamps();
+
+    $table-&gt;foreign(&#39;user_id&#39;)
+        -&gt;references(&#39;id&#39;)
+        -&gt;on(&#39;users&#39;)
+        -&gt;onUpdate(&#39;cascade&#39;)
+        -&gt;onDelete(&#39;cascade&#39;);
+});
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>文件 <code>&lt;project&gt;/database/migrate/*_create_tags_table.php</code> 内容如下</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>Schema::create(&#39;tags&#39;, function (Blueprint $table) {
+    $table-&gt;increments(&#39;id&#39;);
+    $table-&gt;string(&#39;name&#39;,20)-&gt;default(&#39;&#39;)-&gt;comment(&#39;标签名&#39;);
+    $table-&gt;timestamps();
+});
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>文件 <code>&lt;project&gt;/database/migrate/*_create_taggables_table.php</code> 内容如下</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>Schema::create(&#39;taggables&#39; , function(Blueprint $table){
+    $table-&gt;increments(&#39;id&#39;);
+    $table-&gt;unsignedInteger(&#39;taggable_id&#39;)-&gt;comment(&#39;数据id&#39;);
+    $table-&gt;string(&#39;taggable_type&#39; , 40)-&gt;comment(&#39;关联模型&#39;);
+    $table-&gt;unsignedInteger(&#39;tag_id&#39;)-&gt;comment(&#39;标签id&#39;);
+    $table-&gt;timestamps();
+});
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="运行-php-artisan-命令保存修改到数据库"><a class="header-anchor" href="#运行-php-artisan-命令保存修改到数据库">#</a> 运行 php artisan 命令保存修改到数据库</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>php artisan migrate
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><blockquote><p>执行上面的命令后数据库将生成七张表， migrations password_resets posts taggables tags users videos</p></blockquote><h2 id="定义关联关系和修改模型的-fillable-属性"><a class="header-anchor" href="#定义关联关系和修改模型的-fillable-属性">#</a> 定义关联关系和修改模型的 fillable 属性</h2><p>在 <code>Post</code> 模型中定义关联关系：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>public function tags()
+{
+  return $this-&gt;morphToMany(&#39;App\Tag&#39;,&#39;taggable&#39;);
+}
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>在 <code>Video</code> 模型中定义关联关系：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>public function tags()
+{
+  return $this-&gt;morphToMany(&#39;App\Tag&#39;,&#39;taggable&#39;);
+}
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>在 <code>Tag</code> 模型中定义关联关系：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>public $timestamps = false;
+
+// 多对多多态关联
+public function posts()
+{
+return $this-&gt;morphedByMany(&#39;App\Post&#39;,&#39;taggable&#39;)-&gt;withTimestamps();
+}
+// 多对多多态关联
+public function videos()
+{
+return $this-&gt;morphedByMany(&#39;App\Video&#39;,&#39;taggable&#39;)-&gt;withTimestamps();
+}
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h2 id="使用-tinker-填充数据"><a class="header-anchor" href="#使用-tinker-填充数据">#</a> 使用 tinker 填充数据</h2><p>修改 <code>/databases/factories/ModelFactory.php</code>，新增关联数据。</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory-&gt;define(App\User::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        &#39;name&#39; =&gt; $faker-&gt;name,
+        &#39;email&#39; =&gt; $faker-&gt;unique()-&gt;safeEmail,
+        &#39;password&#39; =&gt; $password ?: $password = bcrypt(&#39;secret&#39;),
+        &#39;remember_token&#39; =&gt; str_random(10),
+    ];
+});
+
+$factory-&gt;define(App\Post::class, function (Faker\Generator $faker) {
+    $user_ids = \App\User::pluck(&#39;id&#39;)-&gt;toArray();
+    return [
+        &#39;user_id&#39; =&gt; $faker-&gt;randomElement($user_ids),
+        &#39;title&#39; =&gt; $faker-&gt;title,
+        &#39;body&#39; =&gt; $faker-&gt;text(),
+        &#39;views&#39; =&gt; $faker-&gt;numberBetween(0, 1000),
+    ];
+});
+
+$factory-&gt;define(App\Video::class, function (Faker\Generator $faker) {
+    $user_ids = \App\User::pluck(&#39;id&#39;)-&gt;toArray();
+    return [
+        &#39;user_id&#39; =&gt; $faker-&gt;randomElement($user_ids),
+        &#39;title&#39; =&gt; $faker-&gt;title,
+        &#39;body&#39; =&gt; $faker-&gt;text(),
+        &#39;description&#39; =&gt; $faker-&gt;title,
+        &#39;status&#39; =&gt; 1
+    ];
+});
+
+$factory-&gt;define(App\Tag::class, function (Faker\Generator $faker) {
+    return [
+        &#39;name&#39; =&gt; $faker-&gt;lastName,
+    ];
+});
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><p>使用 tinker 命令</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>php artisan tinker
+
+## 进入到 tinker 界面执行如下命令
+namespace App
+factory(User::class,4)-&gt;create(); // 生成4个用户
+factory(Post::class,20)-&gt;create() // 生成20条 posts 表的测试数据
+factory(Video::class,20)-&gt;create() // 生成20条 videos 表的测试数据
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="关联操作"><a class="header-anchor" href="#关联操作">#</a> 关联操作</h2><h3 id="新增数据"><a class="header-anchor" href="#新增数据">#</a> 新增数据</h3><h4 id="添加一个文章标签"><a class="header-anchor" href="#添加一个文章标签">#</a> 添加一个文章标签</h4><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>$tag = new \App\Tag([&#39;name&#39; =&gt; &#39;A Post Tag For 1.&#39;]);
+$post = \App\Post::find(1);
+$post-&gt;tags()-&gt;save($tag); // 新增的 `tag` 模型中 `taggable_id` 和 `taggable_type` 字段会被自动设定
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h4 id="添加多个文章标签"><a class="header-anchor" href="#添加多个文章标签">#</a> 添加多个文章标签</h4><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>$tags = [
+    new \App\Tag([&#39;name&#39; =&gt; &#39;A Post Tag For 2.&#39;]),
+    new \App\Tag([&#39;name&#39; =&gt; &#39;A Post Tag For 2.&#39;])
+];
+$post = \App\Post::find(2);
+$post-&gt;tags()-&gt;saveMany($tags); // 新增的 `tag` 模型中 `taggable_id` 和 `taggable_type` 字段会被自动设定
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h4 id="添加一个视频标签"><a class="header-anchor" href="#添加一个视频标签">#</a> 添加一个视频标签</h4><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>$tag = new \App\Tag([&#39;name&#39; =&gt; &#39;A Post Tag For 2.&#39;]);
+$video = \App\Video::find(2);
+$video-&gt;tags()-&gt;save($tag); // 新增的 `tag` 模型中 `taggable_id` 和 `taggable_type` 字段会被自动设定
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h4 id="添加多个视频标签"><a class="header-anchor" href="#添加多个视频标签">#</a> 添加多个视频标签</h4><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>$tags = [
+    new \App\Tag([&#39;name&#39; =&gt; &#39;A Video Tag For 1.&#39;]),
+    new \App\Tag([&#39;name&#39; =&gt; &#39;A Video Tag For 1.&#39;]),
+];
+$video = \App\Video::find(1);
+$video-&gt;tags()-&gt;saveMany($tags);
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="删除数据"><a class="header-anchor" href="#删除数据">#</a> 删除数据</h3><h4 id="删除一篇文章下的所有标签"><a class="header-anchor" href="#删除一篇文章下的所有标签">#</a> 删除一篇文章下的所有标签</h4><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>$post = \App\Post::find(1);
+
+$post-&gt;tags()-&gt;delete();  // 删除tags Table 中的关联数据
+$post-&gt;tags()-&gt;detach(); // 同步删除 toggables Table中的关联数据
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="查询数据"><a class="header-anchor" href="#查询数据">#</a> 查询数据</h3><h4 id="查询一篇文章的标签"><a class="header-anchor" href="#查询一篇文章的标签">#</a> 查询一篇文章的标签</h4><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>$post = \App\Post::find(2);
+$tags = $post-&gt;tags;
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="查询一个视频的标签"><a class="header-anchor" href="#查询一个视频的标签">#</a> 查询一个视频的标签</h4><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>$video = \App\Video::find(1);
+$tags = $video-&gt;tags;
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="查询标签对应节点"><a class="header-anchor" href="#查询标签对应节点">#</a> 查询标签对应节点</h4><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>$tag = \App\Tag::find(1);
+$posts = $tag-&gt;posts;
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="编辑数据"><a class="header-anchor" href="#编辑数据">#</a> 编辑数据</h3><h2 id="其他"><a class="header-anchor" href="#其他">#</a> 其他</h2><h3 id="建立关联"><a class="header-anchor" href="#建立关联">#</a> 建立关联</h3><h4 id="tags-跟-videos-posts-做关联"><a class="header-anchor" href="#tags-跟-videos-posts-做关联">#</a> <code>tags</code> 跟 <code>videos</code>, <code>posts</code> 做关联</h4><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>$tag-&gt;videos()-&gt;attach($video-&gt;id);
+
+$tag-&gt;posts()-&gt;attach($post-&gt;id);
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h4 id="videos-posts-跟-tag-做关联"><a class="header-anchor" href="#videos-posts-跟-tag-做关联">#</a> <code>videos</code>, <code>posts</code> 跟 <code>tag</code> 做关联</h4><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>$videos-&gt;tags()-&gt;attach($tag-&gt;id);
+
+$post-&gt;tags()-&gt;attach($tag-&gt;id);
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><blockquote><p>将视频或者文字添加某个标签</p></blockquote><h4 id="删除关联"><a class="header-anchor" href="#删除关联">#</a> 删除关联</h4><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>$tag-&gt;videos()-&gt;detach($vedio-&gt;id);
+
+$tag-&gt;posts()-&gt;detach($post-&gt;id);
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><span class="meta-item-info">3/30/2021, 2:29:23 AM</span></div><!----></footer><nav class="page-nav"><p class="inner"><span class="prev"> ← <a href="/model/related-relationships/morphOne.html" class="nav-link" exact="false" aria-label="多态一对一"><!--[--><!--]--> 多态一对一 <!--[--><!--]--></a></span><!----></p></nav><!--[--><!--]--></main></div><!----><!--]--></div>
+    <script src="/assets/js/runtime~app.f0858e2c.js" defer></script><script src="/assets/js/3070.7fcc83c6.js" defer></script><script src="/assets/js/app.564a1c2a.js" defer></script>
+  </body>
+</html>
