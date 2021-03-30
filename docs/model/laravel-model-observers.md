@@ -11,8 +11,8 @@
 命令行执行如下命令：
 
 ```bash
-laravel new laravel-model-observers
-cd laravel-model-observers
+laravel new laravel-model-observers-demo
+cd laravel-model-observers-demo
 php artisan make:model Post -m
 touch database/database.sqlite
 ```
@@ -184,7 +184,7 @@ deleted event is fired
 ```php
 use App\Models\Post;
 
-$post = Post::latest()->first();
+$post = Post::withTrashed()->latest()->first();
 $post->restore();
 
 /**
