@@ -5,6 +5,7 @@
 * [Laravel模型缓存](/model/laravel-model-caching.md)
 * [Laravel模型事件](/model/laravel-model-events.md)
 * [Laravel模型观察者](/model/laravel-model-observers.md)
+* [Laravel查询优化](/model/some-tips-for-optimize-database-queries.md)
 
 
 ## 模型关联关系
