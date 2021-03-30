@@ -3,7 +3,7 @@
 ## 基础
 
 * [Laravel模型缓存](/model/laravel-model-caching.md)
-* [Laravel模型事件](/model/laravel-model-event.md)
+* [Laravel模型事件](/model/laravel-model-events.md)
 * [Laravel模型观察者](/model/laravel-model-observers.md)
 
 
