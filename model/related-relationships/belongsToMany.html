@@ -2,7 +2,7 @@
 <html lang="zh-CN">
   <head>
     <title>多对多 | Laravel 学习记录</title><meta name="description" content="Laravel学习点滴"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="VuePress 2.0.0-beta.4">
-    <link rel="preload" href="/laravel-study/assets/js/runtime~app.375db456.js" as="script"><link rel="preload" href="/laravel-study/assets/css/styles.9ef2d71a.css" as="style"><link rel="preload" href="/laravel-study/assets/js/3070.7fcc83c6.js" as="script"><link rel="preload" href="/laravel-study/assets/js/app.c26f8a01.js" as="script">
+    <link rel="preload" href="/laravel-study/assets/js/runtime~app.9d4af658.js" as="script"><link rel="preload" href="/laravel-study/assets/css/styles.9ef2d71a.css" as="style"><link rel="preload" href="/laravel-study/assets/js/3070.7fcc83c6.js" as="script"><link rel="preload" href="/laravel-study/assets/js/app.c26f8a01.js" as="script">
     <link rel="stylesheet" href="/laravel-study/assets/css/styles.9ef2d71a.css">
   </head>
   <body>
@@ -132,7 +132,7 @@ $user-&gt;roles()-&gt;updateExistingPivot($role_id,[&#39;created_at&#39;=&gt;&#3
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></blockquote><h3 id="一些方法"><a class="header-anchor" href="#一些方法">#</a> 一些方法</h3><h4 id="toggle"><a class="header-anchor" href="#toggle">#</a> <code>toggle</code></h4><p>顾名思义，如果表中存在则删除数据，如果表中不存在则新增数据。运用场景比如：点赞、喜欢或踩等切换操作。</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>$role_id = 2; // 入参 integer | array
 $user = \App\User::find(1);
 $user-&gt;roles()-&gt;toggle($role_id);
-</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><span class="meta-item-info">3/30/2021, 2:34:47 AM</span></div><!----></footer><nav class="page-nav"><p class="inner"><!----><span class="next"><a href="/laravel-study/model/related-relationships/hasMany.html" class="nav-link" exact="false" aria-label="一对多"><!--[--><!--]--> 一对多 <!--[--><!--]--></a> → </span></p></nav><!--[--><!--]--></main></div><!----><!--]--></div>
-    <script src="/laravel-study/assets/js/runtime~app.375db456.js" defer></script><script src="/laravel-study/assets/js/3070.7fcc83c6.js" defer></script><script src="/laravel-study/assets/js/app.c26f8a01.js" defer></script>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><span class="meta-item-info">3/30/2021, 2:35:41 AM</span></div><!----></footer><nav class="page-nav"><p class="inner"><!----><span class="next"><a href="/laravel-study/model/related-relationships/hasMany.html" class="nav-link" exact="false" aria-label="一对多"><!--[--><!--]--> 一对多 <!--[--><!--]--></a> → </span></p></nav><!--[--><!--]--></main></div><!----><!--]--></div>
+    <script src="/laravel-study/assets/js/runtime~app.9d4af658.js" defer></script><script src="/laravel-study/assets/js/3070.7fcc83c6.js" defer></script><script src="/laravel-study/assets/js/app.c26f8a01.js" defer></script>
   </body>
 </html>
