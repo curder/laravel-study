@@ -8,11 +8,10 @@ const getFiles = (dir, filteredReadme = true) => {
 }
 
 module.exports = {
+    base: "/laravel-study/",
     lang: 'zh-CN',
     title: 'Laravel 学习记录',
     description: 'Laravel学习点滴',
-
-
     themeConfig: {
         logo: '/images/laravel-logo.min.svg',
         navbar: [
