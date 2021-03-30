@@ -2,7 +2,7 @@
 <html lang="zh-CN">
   <head>
     <title>Laravel 学习记录</title><meta name="description" content="Laravel学习点滴"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="VuePress 2.0.0-beta.4">
-    <link rel="preload" href="/laravel-study/assets/js/runtime~app.025c75ec.js" as="script"><link rel="preload" href="/laravel-study/assets/css/styles.9ef2d71a.css" as="style"><link rel="preload" href="/laravel-study/assets/js/3070.7fcc83c6.js" as="script"><link rel="preload" href="/laravel-study/assets/js/app.c26f8a01.js" as="script">
+    <link rel="preload" href="/laravel-study/assets/js/runtime~app.f4b373d1.js" as="script"><link rel="preload" href="/laravel-study/assets/css/styles.9ef2d71a.css" as="style"><link rel="preload" href="/laravel-study/assets/js/3070.594e795f.js" as="script"><link rel="preload" href="/laravel-study/assets/js/app.f46eb260.js" as="script">
     <link rel="stylesheet" href="/laravel-study/assets/css/styles.9ef2d71a.css">
   </head>
   <body>
@@ -25,7 +25,7 @@ public function boot()
 }
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>相当于给予<code>varchar</code>默认的长度<strong>191</strong>。</p><p>修改数据库的字符集 如图，新版的Laravel 5.4 使用了 <code>utf8mb4</code> 和 <code>utf8mb4_unicode_ci</code> ，这个字符集支持 <strong>emoji</strong></p><p><img src="/related_relationship/screenshot_1493026376620.png" alt=""></p><p>我们将他改成：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>&#39;charset&#39; =&gt; &#39;utf8&#39;,
 &#39;collation&#39; =&gt; &#39;utf8_general_ci&#39;,
-</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><blockquote><p>建议在数据库迁移文件中使用第二个参数根据业务需求指定字段的长度，这样更加的切合实际和需求。</p></blockquote><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><span class="meta-item-info">3/30/2021, 2:38:50 AM</span></div><!----></footer><!----><!--[--><!--]--></main></div><!----><!--]--></div>
-    <script src="/laravel-study/assets/js/runtime~app.025c75ec.js" defer></script><script src="/laravel-study/assets/js/3070.7fcc83c6.js" defer></script><script src="/laravel-study/assets/js/app.c26f8a01.js" defer></script>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><blockquote><p>建议在数据库迁移文件中使用第二个参数根据业务需求指定字段的长度，这样更加的切合实际和需求。</p></blockquote><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><span class="meta-item-info">3/30/2021, 2:46:51 AM</span></div><!----></footer><!----><!--[--><!--]--></main></div><!----><!--]--></div>
+    <script src="/laravel-study/assets/js/runtime~app.f4b373d1.js" defer></script><script src="/laravel-study/assets/js/3070.594e795f.js" defer></script><script src="/laravel-study/assets/js/app.f46eb260.js" defer></script>
   </body>
 </html>
