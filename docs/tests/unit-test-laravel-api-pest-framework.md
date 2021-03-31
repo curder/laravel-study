@@ -112,7 +112,7 @@ test('basic')->assertTrue(true);
 
 如下图所示，所有测试均应通过。
 
-![](/images/tests/unit-test-laravel-api-pest-framework/init-run-pest-test-pass.jpg "Run pest test passed")
+<img :src="$withBase('/images/tests/unit-test-laravel-api-pest-framework/init-run-pest-test-pass.jpg')" alt="Run pest test passed">
 
 ## 创建待办事项模型，迁移和控制器
 
@@ -341,7 +341,7 @@ it('can delete a to-do', function () {
 
 由于当前尚未实现任何功能，因此测试应该会失败。
 
-![](/images/tests/unit-test-laravel-api-pest-framework/run-pest-test-failed.jpg)
+<img :src="$withBase('/images/tests/unit-test-laravel-api-pest-framework/run-pest-test-failed.jpg')">
 
 ## 生成待办事项应用程序
 
@@ -450,7 +450,7 @@ Route::delete('/todos/{todo}', [TodoController::class, 'delete']);
 ./vendor/bin/pest --filter TodoTest
 ```
 
-![](/images/tests/unit-test-laravel-api-pest-framework/run-pest-test-pass.jpg)
+<img :src="$withBase('/images/tests/unit-test-laravel-api-pest-framework/run-pest-test-pass.jpg')" alt="Run pest test passed">
 
 ## 结论
 
