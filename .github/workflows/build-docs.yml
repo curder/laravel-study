@@ -7,12 +7,17 @@ on:
   push:
     branches:
       - master
+  # trigger deployment manually
+  workflow_dispatch:
 
 jobs:
   build-docs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+        with:
+          # fetch all commits to get last updated time or other git log info
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v2.1.2
@@ -23,13 +28,16 @@ jobs:
         uses: actions/cache@v2
         with:
           path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - name: Install packages
-        run: yarn install
 
-      - name: Build Docs
+      - name: Install packages
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn --frozen-lockfile
+
+      # run build script
+      - name: Build VuePress site
         run: yarn prod
 
       - name: Deployment
