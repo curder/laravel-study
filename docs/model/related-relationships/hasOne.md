@@ -175,11 +175,11 @@ factory(UserAccount::class,1)->create() // 随机生成一个用户关联信息
 
 `users`表数据：
 
-![](/related_relationship/screenshot_1492077162810.png)
+![](/images/related_relationship/screenshot_1492077162810.png)
 
 `users_accounts`表：
 
-![](/related_relationship/screenshot_1492077196226.png)
+![](/images/related_relationship/screenshot_1492077196226.png)
 
 
 ## 定义Eloquent关联关系
