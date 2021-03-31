@@ -18,7 +18,7 @@ module.exports = {
             {text: '首页', link: '/'},
             {text: '集合', children:['/collections/','/collections/demo/']},
             {text: '模型', children: ['/model/', '/model/related-relationships/']},
-            {text: "其它", link: '/others/'}
+            {text: "其它", children: ['/tests/', '/others/']}
         ],
         sidebar: {
             '/collections/': [
@@ -45,6 +45,13 @@ module.exports = {
                     children: getFiles('model/related-relationships'),
                 }
             ],
+            '/tests/': [
+                {
+                    isGroup: true,
+                    text: '测试',
+                    children: getFiles('tests'),
+                }
+            ]
         },
     }
 }
