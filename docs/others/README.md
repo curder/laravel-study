@@ -9,6 +9,7 @@
 - [使用 Laravel 开发自己的 Package](/others/laravel-package-hello-world.md)
 - [Laravel 中涉及认证跳转地址的修改的地方](/others/laravel_is_involved_in_the_modification_of_the_authentication_jump_address.md)
 - [Laravel 5.\* 执行迁移文件报错：Specified key was too long error](/others/specified_key_was_too_long_error.md)
-- [Laravel 测试](/others/laravel_test.md)
+- [Laravel 测试](/others/laravel-test.md)
 
 - [Laravel 创建自定义 Facade](/others/laravel-create-custom-facade-test-demo.md)
+
