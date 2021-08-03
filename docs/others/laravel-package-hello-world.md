@@ -2,7 +2,8 @@
 
 `Service Provider`最主要的功能就是让我们写package，本文以一个简单的 `Hello World` 的功能，介绍一下package的开发流程。
 
-包含`route`、`controller`与`view`，然后会打包成package传到github与packagist，最后在其他的laravel项目中直接使用 `composer require vendor/package` 下载执行我们上传的package。
+包含`route`、`controller`与`view`，然后会打包成package传到github与packagist，最后在其他的laravel项目中直接使用 `composer require vendor/package`
+下载执行我们上传的package。
 
 ## Version
 
@@ -27,7 +28,8 @@ composer create-project laravel/laravel MyPackage --prefer-dist
 
 ## 设定PSR-4命名空间
 
-由于目前Laravel预设的`root namespace`是在`app`目录下，并且无法法得知我们新加的`packages/curder/helloworld/src`目录，必须在`MyPackage`项目的`composer.json`加入对应新的`root namespace`。
+由于目前Laravel预设的`root namespace`是在`app`目录下，并且无法法得知我们新加的`packages/curder/helloworld/src`目录，必须在`MyPackage`项目的`composer.json`
+加入对应新的`root namespace`。
 
 ```
 {
@@ -257,7 +259,8 @@ Route::group([
 
 ## 创建Migration
 
-将数据库迁移文件创建在`src/publishable/databases/migrations/`下，我们按照当前日期将其命名为：`2017_12_17_000000_create_package_demo_table.php`，内容如下：
+将数据库迁移文件创建在`src/publishable/databases/migrations/`下，我们按照当前日期将其命名为：`2017_12_17_000000_create_package_demo_table.php`
+，内容如下：
 
 ```
 <?php
@@ -402,14 +405,11 @@ php artisan vendor:publish
 
 执行完上面的命令后，就能看到如下的界面
 
-
 输入`Curder\HelloWorld\HelloWorldServiceProvider`的内容进行发布。
 
 > 另外对于已经发布的内容如果需要覆盖，在上面的发布命令中加入 `--force` 参数。但是在执行这个命令之前请确保对修改过的数据已有备份。
 
-
 ## 访问效果
-
 
 <img :src="$withBase('/images/packages/helloworld-browser.png')" alt="">
 ## 上传到GitHub
@@ -478,32 +478,25 @@ git tag -a 1.0.0 -m "First version"
 git push --tags
 ```
 
-
 ## 上传Packagist
+
 ### 登入Packagist
 
 [登录](https://packagist.org/login/)至Packagist，按右上角Submit上传package。
-
-
 
 ### 提交Github网址
 
 贴上package在Github Repository的网址。
 
-
-
-
 ### 确认提交
 
 因为Packagist已经有很多package名字叫做helloworld，Packagist让你确认是否要上传。
-
 
 ### 上传成功
 
 <img :src="$withBase('/images/packages/helloworld-create-success.png')" alt="">
 
 ## 测试Package
-
 
 ### 建立测试项目
 
@@ -519,7 +512,6 @@ composer require oomusou/helloworld
 ```
 
 > 由于Laravel5.5之后新增了包的自动发现功能，所以我们并不需要在`config/app.config`中手动引入`ServiceProvider`。
-
 
 ### 发布配置和迁移文件
 

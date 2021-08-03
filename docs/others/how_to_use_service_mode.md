@@ -20,7 +20,7 @@ Laravel 5.4.17
 
 如 `发送Email`，常常会在 Controller 中直接调用 `Mail::queue()`
 
-```
+```php
  /**
  * @param \Illuminate\Http\Request $request
  */
@@ -48,11 +48,11 @@ public function store(Request $request)
 
 * 在 Service 使用外部行为
 
-* 将 Service 注入到 Controlelr
+* 将 Service 注入到 Controller
 
 `app\Services\EmailService.php`
 
-```
+```php
 <?php
 
 namespace App\Services;
@@ -105,7 +105,7 @@ class EmailService
 `app\Controllers\UserController.php`
 
 
-```
+```php
 <?php
 
 namespace App\Http\Controllers;
@@ -151,7 +151,7 @@ class UserController extends Controller
 
 如 `根据用户购买数量，给予同步的折扣`，可能我们会在 Controller 直接写 `if () { ... } else { ... }` 逻辑。如下`app\Controllers\UserController.php`：
 
-```
+```php
 public function index(Request $request)
 {
     $number = $request->input('number');
@@ -184,7 +184,7 @@ public function index(Request $request)
  
 `app\Services\OrderService.php`
 
-```
+```php
 <?php
 
 namespace App\Services;
@@ -242,7 +242,7 @@ class OrderService
 
 在 Controller 中调用代码，如下：
 
-```
+```php
 <?php
 
 namespace App\Http\Controllers;

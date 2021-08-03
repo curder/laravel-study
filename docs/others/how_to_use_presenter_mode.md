@@ -22,7 +22,7 @@ Lararvel 5.4.17
 
 如 `性别字段为 M，就显示 Mr.，若性别字段为 F，就显示 Mrs.`，我们可能会直接用 blade 写在 view 里，如下：
 
-```
+```html
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
 <head>
@@ -31,10 +31,10 @@ Lararvel 5.4.17
 <body>
 <div class="flex-center position-ref full-height">
     @foreach($users as $user)
-        <div>
-            <h2>@if($user->gender == 'm'){{ "Mr." }} @else {{ "Mrs." }} @endif {{$user->name}}</h2>
-            <h2>{{ $user->email }}</h2>
-        </div>
+    <div>
+        <h2>@if($user->gender == 'm'){{ "Mr." }} @else {{ "Mrs." }} @endif {{$user->name}}</h2>
+        <h2>{{ $user->email }}</h2>
+    </div>
     @endforeach
 </div>
 </body>
@@ -59,7 +59,7 @@ Lararvel 5.4.17
 
 `app\Presenters\UserPersenter.php` 代码如下：
 
-```
+```php
 <?php
 
 namespace App\Presenters;
@@ -93,7 +93,7 @@ class UserPresenter
 
 将来如乱显示逻辑怎么修改，都不用改到 Blade ，直接在相关 Presenter 中修改即可。
 
-```
+```html
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
 <head>
@@ -103,11 +103,11 @@ class UserPresenter
 <div class="flex-center position-ref full-height">
     @inject('userPresenter','App\Presenters\UserPresenter')
     @foreach($users as $user)
-        <div>
-            {{--<h2>@if($user->gender == 'm'){{ "Mr." }} @else {{ "Mrs." }} @endif {{$user->name}}</h2>--}}
-            <h2>{{ $userPresenter->getFullName($user->gender,$user->name) }}</h2>
-            <h2>{{ $user->email }}</h2>
-        </div>
+    <div>
+        {{--<h2>@if($user->gender == 'm'){{ "Mr." }} @else {{ "Mrs." }} @endif {{$user->name}}</h2>--}}
+        <h2>{{ $userPresenter->getFullName($user->gender,$user->name) }}</h2>
+        <h2>{{ $user->email }}</h2>
+    </div>
     @endforeach
 </div>
 </body>
@@ -120,12 +120,11 @@ class UserPresenter
 
 * 可以显示逻辑做重构于物件导向
 
-
 ## 是否显示某些资料
 
 如 `根据字段值是否为 T ，要不要显示该字段`，我们常常会直接用 blade 写在 View 中。
 
-```
+```html
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
 <head>
@@ -134,10 +133,10 @@ class UserPresenter
 <body>
 <div class="flex-center position-ref full-height">
     @foreach($users as $user)
-        <h2>{{ $user->name }}</h2>
-        @if($user->is_hidden == 'F')
-            <h2>{{ $user->email }}</h2>
-        @endif
+    <h2>{{ $user->name }}</h2>
+    @if($user->is_hidden == 'F')
+    <h2>{{ $user->email }}</h2>
+    @endif
     @endforeach
 </div>
 </body>
@@ -160,7 +159,7 @@ class UserPresenter
 
 `app\Presenters\UserPresenter.php` 代码：
 
-```
+```php
 <?php
 namespace App\Presenters;
 
@@ -189,7 +188,7 @@ class UserPresenter
 
 将 `@if() .. @endif` 的 boolean 判断封装在 Presenter 内，改由 Presenter 负责输出 HTML。
 
-```
+```html
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
 <head>
@@ -199,8 +198,8 @@ class UserPresenter
 <div class="flex-center position-ref full-height">
     @inject('userPresenter','App\Presenters\UserPresenter')
     @foreach($users as $user)
-        <h2>{{ $user->name }}</h2>
-        {!! $userPresenter->showEmail($user) !!}
+    <h2>{{ $user->name }}</h2>
+    {!! $userPresenter->showEmail($user) !!}
     @endforeach
 </div>
 </body>
@@ -223,7 +222,7 @@ class UserPresenter
 
 如 `按照不同的语系，显示不同的日期格式`，我们常常会直接用 Blade 写在 View 里。 如下：
 
-```
+```html
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
 <head>
@@ -265,7 +264,7 @@ class UserPresenter
 
 定义接口代码 `app\Presenters\DataFormatPresenterInterface.php` ，具体代码如下：
 
-```
+```php
 <?php
 
 namespace App\Presenters;
@@ -296,7 +295,7 @@ interface DateFormatPresenterInterface
 
 `app\Presenters\DateFormatPresenterTW.php`，具体代码内容如下：
 
-```
+```php
 <?php
 
 namespace App\Presenters;
@@ -325,8 +324,7 @@ class DateFormatPresenterTw implements DateFormatPresenterInterface
 
 `app\Presenters\DateFormatPresenterUk.php`，具体代码内容如下：
 
-
-```
+```php
 <?php
 
 namespace App\Presenters;
@@ -354,7 +352,7 @@ class DateFormatPresenterUk implements DateFormatPresenterInterface
 
 `app\Presenters\DateFormatPresenterUs.php`，具体代码内容如下：
 
-```
+```php
 <?php
 
 namespace App\Presenters;
@@ -386,7 +384,7 @@ class DateFormatPresenterUs implements DateFormatPresenterInterface
 
 由于每个语言的日期格式都是一个 presenter 物件，那势必遇到一个最基本的问题： `我们必须根据不同的语言去实例化不同的 Presenter 物件`，我们可能会在 Controller 中去 实例化。如下：
 
-```
+```php
 /**
  * @param \Illuminate\Http\Request $request
  *
@@ -423,7 +421,7 @@ public function index(Request $request)
 
 `app/Presenters/DateFormatPresenterFactory.php` 内容如下：
 
-```
+```php
 <?php
 
 namespace App\Presenters;
@@ -446,15 +444,17 @@ class DateFormatPresenterFactory
     }
 }
 ```
-使用 **Presenter Factory** 的 `create()` 去取代  new 建立物件。
 
-这里当然可以在 `create()` 里去写 `if () { ... } else { ... }` 去建立 Presenter 物件，不过这样会违反 SOLID 的开放封闭原则，比较好的方式是改用 `App::bind()`，直接根据 `$locale` 去 binding 相对应的 Class，这样无论再怎么新增语言与日期格式， Controller 与 Presenter Factory 都不用做任何修改，完全符合开放封闭原则。
+使用 **Presenter Factory** 的 `create()` 去取代 new 建立物件。
+
+这里当然可以在 `create()` 里去写 `if () { ... } else { ... }` 去建立 Presenter 物件，不过这样会违反 SOLID 的开放封闭原则，比较好的方式是改用 `App::bind()`
+，直接根据 `$locale` 去 binding 相对应的 Class，这样无论再怎么新增语言与日期格式， Controller 与 Presenter Factory 都不用做任何修改，完全符合开放封闭原则。
 
 ##### 控制器调用
 
 `app\Http\Controllers\UserController.php` 中的内容，如下：
 
-```
+```php
 public function index(Request $request, DateFormatPresenterFactory $dataFormatPresenterFactory)
 {
     $locate = 'uk';
@@ -469,8 +469,7 @@ public function index(Request $request, DateFormatPresenterFactory $dataFormatPr
 
 ##### Blade 调用
 
-
-```
+```html
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
 <head>
@@ -493,14 +492,14 @@ public function index(Request $request, DateFormatPresenterFactory $dataFormatPr
 
 使用 Presenter 的 `showDateFormate()` 将日期转换成预计的格式
 
-
 使用这种写法有几个优点
 
 * 将 `依需求显示不同的格式` 的显示逻辑写在 Presenter ，解决写在 Blade 不容易维护的问题
 
 * 可对显示逻辑做重构与物件导向
 
-* 符合 SOLID 的开放闭合原则：将来若有新的语言，对于拓展是开放的，只要新增 Class 实现 `DateFormatPresenterInterface` 接口即可；对于修改是封闭的， Controller、FactoryInterface、Factory 与 View 都不用做任何修改
+* 符合 SOLID 的开放闭合原则：将来若有新的语言，对于拓展是开放的，只要新增 Class 实现 `DateFormatPresenterInterface` 接口即可；对于修改是封闭的，
+  Controller、FactoryInterface、Factory 与 View 都不用做任何修改
 
 * 不单只有 PHP 可以使用 Service Container，连 Blade 也可以使用 Service Container，甚至搭配 Service Provider
 
@@ -508,7 +507,7 @@ public function index(Request $request, DateFormatPresenterFactory $dataFormatPr
 
 * 若使用了 Presenter 辅助 Blade ，在搭配 `@inject()` 注入到 View，View就会非常干净，可专心处理 `将资料binding到HTML`的职责
 
-* 将来只有 Layout 改变才会动到 Balde ，若是显示逻辑改变都是修改 Presenter
+* 将来只有 Layout 改变才会动到 Blade ，若是显示逻辑改变都是修改 Presenter
 
 ### 最后
 

@@ -3,17 +3,11 @@
 [![GitHub Tests Action Status](https://github.com/curder/laravel-create-custom-facade-test-demo/actions/workflows/run-test.yml/badge.svg)](https://github.com/curder/laravel-create-custom-facade-test-demo/actions?query=run-test%3Amaster)
 [![GitHub Code Style Action Status](https://github.com/curder/laravel-create-custom-facade-test-demo/actions/workflows/php-cs-fixer.yml/badge.svg)](https://github.com/curder/laravel-create-custom-facade-test-demo/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
 
-
-
 [GitHub 源代码](https://github.com/curder/laravel-create-custom-facade-test-demo)
-
-
 
 在 Laravel 应用程序中，[Facade](https://laravel.com/docs/8.x/facades) 是提供从容器访问对象的类。
 
 Laravel 的外观以及您创建的任何自定义外观都将扩展基础 `Illuminate\Support\Facades\Facade` 类。
-
-
 
 Laravel 提供默认的外观，例如 `Route`，`Redirect`，`Cookie`，`App`，`Crypt`等。
 
@@ -24,8 +18,6 @@ Laravel 提供默认的外观，例如 `Route`，`Redirect`，`Cookie`，`App`�
 ```bash
 composer create-project laravel/laravel laravel-create-custom-facade-test-demo -vvv
 ```
-
-
 
 ## 创建实现类
 
@@ -66,8 +58,6 @@ class DateFormatService
 }
 ```
 
-
-
 ## 创建门面
 
 在 `app\Services\Facades`目录下创建对应文件如下：
@@ -93,8 +83,6 @@ class DateFormatFacade extends Facade
     }
 }
 ```
-
-
 
 ## 创建测试
 
@@ -140,8 +128,6 @@ class DateFormatFacadeTest extends TestCase
     }
 }
 ```
-
-
 
 ## 参考地址
 

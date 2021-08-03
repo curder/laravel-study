@@ -37,7 +37,7 @@ Laravel 5.4.17
 
 > 因为 Eloquent 会根据数据库字段动态的产生 property 与 method等，若使用 [Laravel IDE Helper](https://github.com/barryvdh/laravel-ide-helper) ，会直接在Model加上 `@property` 与 `@method` 描述model的动态 proerty 与 method。 如下`app\User.php`中安装完`Laravel IDE Helper`后执行`php artisan ide-helper:models`后自动生成的内容：
 
-```
+```php
 <?php
 
 namespace App;
@@ -93,7 +93,7 @@ class User extends Authenticatable
 
 在开发时常常会在 Controller 直接调用 Model 写数据库逻辑，如下：获取数据库中用户 `age>20`的数据。
 
-```
+```php
 public function index()
 {
     return User::where('age','>',20)->orderBy('age')->get();
@@ -119,7 +119,7 @@ public function index()
 
 `app/Repositories/UserRepostitory.php` 中的内容：
 
-```
+```php
 <?php
 
 namespace App\Repositories;
@@ -164,7 +164,7 @@ class UserRepository
 
 在控制器`app\Controllers\UserController.php`中使用依赖注入：
 
-```
+```php
 <?php
 
 namespace App\Http\Controllers;
@@ -227,7 +227,7 @@ Laravel 4.2 就有 QueryScope，到 Laravel5.1 都还保留着，它让我们可
 
 如 `app/User.php` 里的代码：
 
-```
+```php
 <?php
 
 namespace App;
@@ -297,7 +297,7 @@ QueryScope 必须以 `scope`开头，第一个参数为 queryBuilder，一定要
 
 `app/Controllers/UserController.php` 中使用代码：
 
-```
+```php
 <?php
 
 namespace App\Http\Controllers;
