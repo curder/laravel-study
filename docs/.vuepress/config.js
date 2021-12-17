@@ -18,7 +18,11 @@ module.exports = {
             {text: '首页', link: '/'},
             {text: '集合', children:['/collections/','/collections/demo/']},
             {text: '模型', children: ['/model/', '/model/related-relationships/']},
-            {text: "其它", children: ['/tests/', '/others/']}
+            {text: "其它", children: ['/tests/', '/others/']},
+            {text: "📖📚", children: [
+                { text: 'Bolg', link: 'https://curder.github.io/blog/'},
+                { text: 'Setup mac for developer', link: 'https://curder.github.io/setup-mac-for-developer/'},
+            ]},
         ],
         sidebar: {
             '/collections/': [
