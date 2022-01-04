@@ -1,0 +1,1 @@
+const t={key:"v-3e26a5b2",path:"/collections/concat.html",title:"concat",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616865921e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:3}]},filePathRelative:"collections/concat.md"};export{t as data};

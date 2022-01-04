@@ -1,0 +1,1 @@
+const e={key:"v-ec88cecc",path:"/collections/skipWhile.html",title:"skipWhile",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616983602e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:1}]},filePathRelative:"collections/skipWhile.md"};export{e as data};

@@ -1,0 +1,1 @@
+const e={key:"v-62ba3212",path:"/collections/keys.html",title:"keys",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616865921e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:3}]},filePathRelative:"collections/keys.md"};export{e as data};

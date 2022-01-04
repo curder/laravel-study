@@ -1,0 +1,1 @@
+const t={key:"v-cbc4b6ec",path:"/collections/shift.html",title:"shift",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616865921e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:3}]},filePathRelative:"collections/shift.md"};export{t as data};

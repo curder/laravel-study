@@ -1,0 +1,1 @@
+const t={key:"v-54c8c9a8",path:"/collections/max.html",title:"max",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616865921e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:3}]},filePathRelative:"collections/max.md"};export{t as data};

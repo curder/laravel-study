@@ -1,0 +1,1 @@
+const t={key:"v-0b79e4bc",path:"/collections/partition.html",title:"partition",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616865921e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:3}]},filePathRelative:"collections/partition.md"};export{t as data};

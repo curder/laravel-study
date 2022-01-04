@@ -1,0 +1,1 @@
+const e={key:"v-18cdbad0",path:"/collections/pipe.html",title:"pip",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616865921e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:3}]},filePathRelative:"collections/pipe.md"};export{e as data};

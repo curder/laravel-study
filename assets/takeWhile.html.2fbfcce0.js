@@ -1,0 +1,1 @@
+const e={key:"v-77ea84bc",path:"/collections/takeWhile.html",title:"takeWhile",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616986482e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:1}]},filePathRelative:"collections/takeWhile.md"};export{e as data};

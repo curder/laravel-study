@@ -1,0 +1,1 @@
+const t={key:"v-b0d4e246",path:"/collections/put.html",title:"put",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616865921e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:3}]},filePathRelative:"collections/put.md"};export{t as data};
