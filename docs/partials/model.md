@@ -23,3 +23,18 @@ $user->name = "John";
 $user->phone->number = '1234567890';
 $user->push(); // 这会更新数据库中的用户记录和相关的用户电话号码记录
 ```
+
+## 获取查询日志
+
+在开发过程中记录所有数据库查询，请将此代码段添加到的 `AppServiceProvider.php`：
+
+```php
+public function boot()
+{
+    if (App::environment ('local')) {
+        DB::listen(function($query) {
+            logger(Str::replaceArray('?', $query->bindings, $query->sql));
+        });
+    }
+}
+```
