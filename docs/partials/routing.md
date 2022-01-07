@@ -6,7 +6,7 @@
 
 ```php
 // 定义规则，每个用户或IP每分钟允许发送1个请求
-// 定义在 `App\Providers\RouteServiceProvider::configureRateLimiting()` 方法中定义
+// 在 `App\Providers\RouteServiceProvider::configureRateLimiting()` 方法中定义
 RateLimiter::for('reset-password', function (Request $request) {
     return Limit::perMinute(1)->by(
         optional($request->user())->id ?: $request->ip()
