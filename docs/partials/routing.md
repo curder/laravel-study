@@ -18,3 +18,5 @@ Route::get('reset-password', function() {
     //
 })->middleware(['throttle:reset-password']);
 ```
+
+更多官方文档[查看这里](https://laravel.com/docs/8.x/routing#rate-limiting)。
