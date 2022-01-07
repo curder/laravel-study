@@ -1,1 +1,0 @@
-const t={key:"v-47999657",path:"/partials/routing.html",title:"Routing \u8DEF\u7531",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u9650\u901F",slug:"\u9650\u901F",children:[]}],git:{updatedTime:164152647e4,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:2}]},filePathRelative:"partials/routing.md"};export{t as data};
