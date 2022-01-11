@@ -13,7 +13,7 @@ Laravel 是一套简洁、优雅的 PHP Web 开发框架(PHP Web Framework)。�
 
 2. 本地下载
 
-   - `npm 6.14.10`
+   - `node v16.13.0`
    - `vuepress version: ^2.0.0-beta.4`
 
 页面 GitHub 地址：https://www.github.com/curder/laravel-study
