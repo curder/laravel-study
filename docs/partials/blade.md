@@ -94,6 +94,35 @@ class PagesController extends Controller
 </CodeGroup>
 
 
+## `@auth` 模版指令
+
+使用 `@auth` 指令代替 `@if` 语句来检查登录用户。
+
+### 典型方式
+
+```php
+@if(auth()->user())
+// 用户已验证身份
+@endif
+```
+
+### 简洁
+
+```php
+@auth
+// 用户已验证身份
+@endauth
+```
+
+### 与之相反的是 `@guest` 指令
+
+```php
+@guest
+// 用户未验证
+@endguest
+```
+
+
 ## 自定义模版指令
 
 使用 `Blade::if()` 方法轻松创建新的 `if` 模版指令。
