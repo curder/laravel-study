@@ -332,3 +332,40 @@ class NavLink extends Component
 <x-nav-link :href="route('projects.index')" active="projects/*">Projects</x-nav-link>
 <x-nav-link :href="route('projects.index')" :active="$tab = 'projects'">Projects</x-nav-link>
 ```
+                     
+## `@each` 循环
+
+<CodeGroup>
+
+  <CodeGroupItem title="@foreach写法">
+
+```php
+// 1. 定义公共模版 resources/views/partials/item.blade.php
+<div>
+    <p>Name: {{ $item->name }}
+    <p>Price: {{ $item->price }}
+</div>
+
+// 2. 使用
+@foreach($item in $items)
+    @include('partials.item', $item)
+@endforeach
+```
+  </CodeGroupItem>
+
+  <CodeGroupItem title="@each 优化写法" active>
+
+```php {8}
+// 1. 定义公共模版 resources/views/partials/item.blade.php
+<div>
+    <p>Name: {{ $item->name }}
+    <p>Price: {{ $item->price }}
+</div>
+
+// 2. 使用
+@each('partials.item', $items, 'item')
+```
+  </CodeGroupItem>
+
+</CodeGroup>
+
