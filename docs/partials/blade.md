@@ -212,3 +212,20 @@ public function boot()
 @includeFirst('adminlte.header', 'default.header')
 ```
 > 尝试加载 `adminlte.header`，如果不存在，将加载 `default.header`
+
+## 使用 Blade-X 变量绑定来节省更多空间
+              
+### 使用 `@include`
+```php
+@include("components.post", ["title" => $post->title])
+```
+   
+### 使用 `blade-x`
+
+```html
+<!--使用 Blade-X-->
+<x-post link="{{ $post->title }}" />
+
+<!--使用 Blade-X 绑定变量-->
+<x-post :link="$post->title" />
+```
