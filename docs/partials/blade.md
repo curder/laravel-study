@@ -188,3 +188,27 @@ public function boot()
 // 该应用程序不接受常规注册
 @endenabled
 ```
+           
+## `IncludeIf`, `IncludeWhen`, `IncludeFirst` 指令
+
+如果不确定模版文件是否真的存在，可以使用这些条件命令：
+
+### 当模版文件存在时加载
+
+```php
+@includeIf('partials.header')
+```
+
+### 当满足条件是加载
+
+```php
+@includeWhen(auth()->user()->role_id == 1, 'partials.header')
+```
+> 将仅为角色 ID 为 1 的用户加载对应模版 `partials.header`
+
+### 加载第一个存在的文件
+
+```php
+@includeFirst('adminlte.header', 'default.header')
+```
+> 尝试加载 `adminlte.header`，如果不存在，将加载 `default.header`
