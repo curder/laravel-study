@@ -51,6 +51,14 @@ if (view()->exists('custom.page')) {
 ```php
 return view()->first(['custom.dashboard', 'dashboard'], $data);
 ```
+         
+## 自定义错误页面
+
+如果想为某些 HTTP 代码创建一个特定的错误页面，例如 `500` 或 `403` - 只需在 `resources/views/errors/500.blade.php` 或 `resources/views/errors/403.blade.php` 等中创建一个将此代码作为文件名的 blade 文件。
+
+当出现该错误代码，它将自动加载。
+
+[官方文档](https://laravel.com/docs/master/errors#custom-http-error-pages) 查看更多。
 
 
 ## 自定义模版指令
