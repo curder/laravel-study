@@ -229,3 +229,24 @@ public function boot()
 <!--使用 Blade-X 绑定变量-->
 <x-post :link="$post->title" />
 ```
+                      
+## 组件属性
+
+```php
+// button.blade.php 接收属性并添加默认值
+@props(['rounded' => false])
+
+<button {{ $attributes->class([
+    'bg-red-100 text-red-800',
+    'rounded' => $rounded
+    ]) }}>
+    {{ $slot }}
+</button>
+
+// view.blade.php
+// 不传递 rounded 属性
+<x-button>Submit</x-button>
+
+// 传递 rounded 属性
+<x-button rounded>Submit</x-button>
+```
