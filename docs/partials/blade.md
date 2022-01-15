@@ -369,3 +369,39 @@ class NavLink extends Component
 
 </CodeGroup>
 
+## 整理模版的简单方法
+
+<CodeGroup>
+
+  <CodeGroupItem title="@if/loop 组合">
+
+```php
+// if/loop 组合
+@if ($orders->count())
+    @foreach($orders as $order)
+        <div>
+            {{ $order->id }}
+        </div>
+    @endforeach
+@else
+    <p>You haven't placed any orders yet.</p>
+@endif
+```
+
+  </CodeGroupItem>
+
+  <CodeGroupItem title="@forelse 选择" active>
+
+```php
+// forelse 选择
+@forelse($orders as $order)
+    <div>
+        {{ $order->id }}
+    </div>
+@empty
+    <p>You haven't placed any orders yet.</p>
+@endforelse
+```
+
+  </CodeGroupItem>
+</CodeGroup>
