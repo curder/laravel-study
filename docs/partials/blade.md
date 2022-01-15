@@ -1,5 +1,40 @@
 # Blade 模版
 
+## `@foreach` 循环中的 `$loop` 变量
+
+在 `foreach` 循环中，仅使用 `$loop` 变量检查当前条目是否是第一个/最后一个。
+
+```php {2,6}
+@foreach ($users as $user)
+     @if ($loop->first)
+        This is the first iteration.
+     @endif
+
+     @if ($loop->last)
+        This is the last iteration.
+     @endif
+
+     <p>This is user {{ $user->id }}</p>
+@endforeach
+```
+
+`$loop` 变量还包含各种其他有用的属性：
+
+| 属性                 | 描述                 |
+|--------------------|--------------------|
+| `$loop->index`     | 当前循环迭代的索引（从 0 开始）。 |
+| `$loop->iteration` | 当前循环迭代（从 1 开始）。    |
+| `$loop->remaining` | 循环中剩余的迭代。          |
+| `$loop->count`     | 正在迭代的数组中的项目总数。     |
+| `$loop->first`     | 是否是循环的第一次迭代。       |
+| `$loop->last`      | 是否是循环的最后一次迭代。      |
+| `$loop->even`      | 是否是循环中的偶数迭代。       |
+| `$loop->odd`       | 是否是循环中的奇数迭代。       |
+| `$loop->depth`     | 当前循环的嵌套级别。         |
+| `$loop->parent`    | 在嵌套循环中时，父循环变量。     |
+
+[官方文档](https://laravel.com/docs/master/blade#the-loop-variable) 查看更多。                                                     
+
 ## 自定义模版指令
 
 使用 `Blade::if()` 方法轻松创建新的 `if` 模版指令。
