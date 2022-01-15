@@ -121,6 +121,20 @@ class PagesController extends Controller
 // 用户未验证
 @endguest
 ```
+                
+## 父级 $loop 变量 
+
+在 `Blade` 的 `@foreach` 指令中，甚至可以在两级循环中使用 `$loop` 变量来访问父变量。
+
+```php
+@foreach ($users as $user)
+    @foreach ($user->posts as $post)
+        @if ($loop->parent->first)
+            // 父循环的第一次迭代。
+        @endif
+    @endforeach
+@endforeach
+```
 
 
 ## 自定义模版指令
