@@ -263,3 +263,14 @@ public function boot()
     {{ $user->email }}
 </div>
 ```
+
+## 组件语法提示
+
+如果在组件参数前传递冒号 `:` ，就可以直接传递变量而不用 `{{ }}` 吗？
+
+```php
+<x-navbar title="{{ $title }}"/>
+
+// 使用下面的语法替代
+<x-navbar :title="$title"/>
+```
