@@ -34,6 +34,24 @@
 | `$loop->parent`    | 在嵌套循环中时，父循环变量。     |
 
 [官方文档](https://laravel.com/docs/master/blade#the-loop-variable) 查看更多。                                                     
+        
+## 判断模版是否存在
+
+
+可以在实际加载之前检查视图文件是否存在。
+
+```php{1}
+if (view()->exists('custom.page')) {
+ // Load the view
+}
+```
+
+甚至可以加载一组视图，并且只会实际加载第一个存在的视图。
+
+```php
+return view()->first(['custom.dashboard', 'dashboard'], $data);
+```
+
 
 ## 自定义模版指令
 
