@@ -274,3 +274,61 @@ public function boot()
 // 使用下面的语法替代
 <x-navbar :title="$title"/>
 ```
+   
+## 自动高亮导航链接
+
+当精确的 URL 匹配时自动高亮显示导航链接，或者传递路径或路由名称，带有请求和 CSS 类的模版组件使得显示活动/非活动状态变得简单。
+                   
+- 组件代码
+```php
+class NavLink extends Component
+{
+    public function __construct($href, $active = null)
+    {
+        $this->href = $href;
+        $this->active = $active ?? $href;        
+    }
+    
+    public function render(): View
+    {
+        $classes = ['font-medium', 'py-2', 'text-primary' => $this->isActive()];
+        
+        return view('components.nav-link', [
+            'class' => Arr::toCssClasses($classes);
+        ]);
+    }
+    
+    protected function isActive(): bool
+    {
+        if (is_bool($this->active)) {
+            return $this->active;
+        }
+        
+        if (request()->is($this->active)) {
+            return true;
+        }
+        
+        if (request()->fullUrlIs($this->active)) {
+            return true;
+        }
+        
+        return request()->routeIs($this->active);
+    }
+}
+```
+          
+
+```php
+// resources/views/components/nav-link.blade.php
+<a href="{{ $href }}" {{ $attributes->class($class) }}>
+    {{ $slot }}
+</a>
+```
+
+```php
+// 在模版中使用
+<x-nav-link :href="route('projects.index')">Projects</x-nav-link>
+<x-nav-link :href="route('projects.index')" active="projects.*">Projects</x-nav-link>
+<x-nav-link :href="route('projects.index')" active="projects/*">Projects</x-nav-link>
+<x-nav-link :href="route('projects.index')" :active="$tab = 'projects'">Projects</x-nav-link>
+```
