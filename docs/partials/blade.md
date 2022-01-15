@@ -250,3 +250,16 @@ public function boot()
 // 传递 rounded 属性
 <x-button rounded>Submit</x-button>
 ```
+              
+## 自动完成类型提示 
+
+```php
+@php
+    /* @var \App\Models\User $user */
+@endphp
+
+<div>
+    // 编辑器将添加自动提示
+    {{ $user->email }}
+</div>
+```
