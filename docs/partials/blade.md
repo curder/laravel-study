@@ -405,3 +405,21 @@ class NavLink extends Component
 
   </CodeGroupItem>
 </CodeGroup>
+
+## 环境变量指令 `@env` `@production`
+
+模版指令使其非常容易加载，例如当应用程序处于生产模式时，加载谷歌代码。
+
+```php
+@production
+// 生产环境代码
+@endproduction
+
+@env('staging')
+// 测试环境代码
+@endenv
+
+@env(['staging', 'production'])
+// 测试环境和生产环境代码
+@endenv
+```
