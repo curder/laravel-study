@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="generator" content="VuePress 2.0.0-beta.32">
     <title>Laravel 学习记录</title><meta name="description" content="Laravel学习点滴">
-    <link rel="modulepreload" href="/laravel-study/assets/app.024192cd.js"><link rel="modulepreload" href="/laravel-study/assets/specified_key_was_too_long_error.html.eee82e0c.js"><link rel="modulepreload" href="/laravel-study/assets/plugin-vue_export-helper.21dcd24c.js"><link rel="modulepreload" href="/laravel-study/assets/specified_key_was_too_long_error.html.61f7a391.js">
+    <link rel="modulepreload" href="/laravel-study/assets/app.0912483e.js"><link rel="modulepreload" href="/laravel-study/assets/specified_key_was_too_long_error.html.cf202664.js"><link rel="modulepreload" href="/laravel-study/assets/plugin-vue_export-helper.21dcd24c.js"><link rel="modulepreload" href="/laravel-study/assets/specified_key_was_too_long_error.html.61f7a391.js">
     <link rel="stylesheet" href="/laravel-study/assets/style.45c5dbd6.css">
   </head>
   <body>
@@ -29,6 +29,6 @@ public function boot()
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>相当于给予<code>varchar</code>默认的长度<strong>191</strong>。</p><p>修改数据库的字符集 如图，新版的Laravel 5.4 使用了 <code>utf8mb4</code> 和 <code>utf8mb4_unicode_ci</code> ，这个字符集支持 <strong>emoji</strong></p><img src="/laravel-study/images/related_relationship/screenshot_1493026376620.png" alt=""><p>我们将他改成：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>&#39;charset&#39; =&gt; &#39;utf8&#39;,
 &#39;collation&#39; =&gt; &#39;utf8_general_ci&#39;,
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><blockquote><p>建议在数据库迁移文件中使用第二个参数根据业务需求指定字段的长度，这样更加的切合实际和需求。</p></blockquote><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: q.curder@gmail.com">curder</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/laravel-study/assets/app.024192cd.js" defer></script>
+    <script type="module" src="/laravel-study/assets/app.0912483e.js" defer></script>
   </body>
 </html>
