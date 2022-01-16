@@ -5,3 +5,4 @@
 - [Validation 验证](/partials/validation.md)
 - [URL 生成](/partials/urls.md)
 - [Routing 路由](/partials/routing.md)
+- [Testing 测试](/partials/testing.md)
