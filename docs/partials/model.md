@@ -466,7 +466,39 @@ if ( ! $model->where('status', 'pending')->exists() ) {
 if ( $model->where('status', 'pending')->doesntExist() ) {
 }
 ```
+                   
+## 添加模型的Trait且自动调用它们的 `boot()` 方法
 
+如果有一个 Trait 想要添加到几个模型中以自动调用它们的 `boot()` 方法，可以在 `Trait` 中编写静态方法 boot[TraitName]。
+
+```php
+// Transaction 模型
+class Transaction extends  Model
+{
+    use MultiTenantModelTrait;
+}
+
+// Task 模型
+class Task extends  Model
+{
+    use MultiTenantModelTrait;
+}
+
+// MultiTenantModelTrait Trait
+trait MultiTenantModelTrait
+{
+    // This method's name is boot[TraitName]
+    // It will be auto-called as boot() of Transaction/Task
+    public static function bootMultiTenantModelTrait()
+    {
+        static::creating(function ($model) {
+            if (!$isAdmin) {
+                $isAdmin->created_by_id = auth()->id();
+            }
+        })
+    }
+}
+```
 
 ## 保存模型及其所有关系
 
