@@ -321,6 +321,19 @@ DB::transaction(function () {
 });
 ```
 
+## 更新或创建
+
+如果需要检查记录是否存在，存在则更新它，不存在则创建一个新记录。 使用模型的 `updateOrCreate()` 方法：
+
+```php
+$flight = Flight::updateOrCreate(
+    ['departure' => 'Oakland', 'destination' => 'San Diego'], // 条件
+    ['price' => 99, 'discounted' => 1], 
+);
+```
+
+
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
