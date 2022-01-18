@@ -500,6 +500,27 @@ trait MultiTenantModelTrait
 }
 ```
 
+
+## 如何防止“非对象属性”错误
+
+```php
+// 如果没有作者附加到帖子，这个关系将返回一个空的 `App\Author` 模型
+public function author() {
+    return $this->belongsTo('App\Author')->withDefault();
+}
+// or
+public function author() {
+    return $this->belongsTo('App\Author')->withDefault([
+        'name' => 'Guest Author'
+    ]);
+}
+
+// 代码调用
+$post->author->name;
+```
+
+
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
