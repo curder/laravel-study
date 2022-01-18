@@ -697,6 +697,29 @@ class User extends Model
 }
 ```
 
+## `withAggregate` 方法
+
+在底层，模型中的 `withAvg`/`withCount`/`withSum` 和其他方法使用了 `withAggregate` 方法。
+
+可以使用此方法添加基于关系的子选择
+
+```php
+// 模型 Post
+class Post extends Model
+{
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}
+
+$posts = Post::with('user')->get(); // 惰性加载所有用户
+
+$posts = Post::withAggregate('user', 'name')->get(); // 可以添加子选择以仅检索用户名
+
+$posts->first()->user_name; // 将为 Post 实例添加一个 'user_name' 属性
+```
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
