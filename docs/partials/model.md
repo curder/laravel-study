@@ -598,6 +598,14 @@ return User::orderBy('name')->chunkMap(fn ($user) => [
 ]), 25);
 ```
 
+## 更新模型但不触发事件
+
+有时需要在不发送任何事件的情况下更新模型。现在可以使用 `updateQuietly()` 方法来做到这一点，该方法在背后使用 `saveQuietly()` 方法。
+
+```php
+$flight->updateQuietly(['departed' => false]);
+```
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
