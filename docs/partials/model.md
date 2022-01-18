@@ -661,6 +661,22 @@ protected function schedule(Schedule $schedule)
 </CodeGroupItem>
 </CodeGroup>
 
+## 不可变的日期
+
+`Laravel 8.53` 引入了将日期转换为不可变的 `immutable_date` 和 `immutable_datetime` 种姓。
+
+转换为 `CarbonImmutable` 而不是常规的 `Carbon` 实例。
+
+```php
+class User extends Model
+{
+    public $casts = [
+        'date_field'     => 'immutable_date',
+        'datetime_field' => 'immutable_datetime',
+    ];
+}
+```
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
