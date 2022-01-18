@@ -606,6 +606,61 @@ return User::orderBy('name')->chunkMap(fn ($user) => [
 $flight->updateQuietly(['departed' => false]);
 ```
 
+## 定期清理过时记录中的模型
+
+有了这个特性，Laravel会自动执行此操作，只需要在 Kernel 类中调整 `model:prune` 命令的频率即可。
+
+<CodeGroup>
+
+  <CodeGroupItem title="模型定义">   
+
+```php
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Prunable;
+class Flight extends Model
+{
+    use Prunable;
+    /**
+     * Get the prunable model query.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function prunable()
+    {
+        return static::where('created_at', '&lt;=', now()->subMonth());
+    }
+    
+    // 此外，可以设置在删除模型之前必须执行的操作：
+    protected function pruning()
+    {
+        // 删除关联资源，例如文件
+        Storage::disk('s3')->delete($this->filename);
+    }
+}
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="定时任务">
+
+```php
+// App\Console\Kernel.php
+/**
+ * Define the application's command schedule.
+ *
+ * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+ * @return void
+ */
+protected function schedule(Schedule $schedule)
+{
+    $schedule->command('model:prune')->daily();
+    // $schedule->command('model:prune', ['--model' => [Address::class, Flight::class]])->daily(); // 指定特定模型参数
+}
+```
+
+</CodeGroupItem>
+</CodeGroup>
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
