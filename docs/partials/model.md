@@ -169,8 +169,14 @@ $todayUsers = User::whereDate('created_at', now())->get();
      
 ## 按首字母分组
 
-```php
+可以按任何自定义条件对 Eloquent 结果进行分组。
 
+以下是按用户名的首字母分组的方法：
+
+```php
+User::all()->groupBy(function($item) {
+    return $item->name[0];
+});
 ```
 
 ## 保存模型及其所有关系
