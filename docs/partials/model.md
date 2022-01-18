@@ -206,6 +206,9 @@ $user = User::find(1); // 返回模型实例
 $users = User::find([1,2,3]); // 返回模型集合
 
 $users = User::find([1,2,3], ['first_name', 'email']); // 指定返回的模型集合中的对应字段
+
+// 通过模型主键查询可以通过 `->whereKey()` 方法
+$users = User::whereKey([1,2,3])->get();
 ```
 
 ## 保存模型及其所有关系
