@@ -179,6 +179,24 @@ User::all()->groupBy(function($item) {
 });
 ```
 
+## 字段仅更新一次 
+
+如果有 DB 列，只想设置一次并且不再更新，可以使用 mutator 对 Eloquent 模型设置该限制：
+
+```php
+class User extends Model
+{
+    public function setEmailAttribute($value)
+    {
+        if ($this->email) {
+            return;
+        }
+
+        $this->attributes['email'] = $value;
+    }
+}
+```
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
