@@ -872,6 +872,24 @@ Integration::where('name', 'foo')->valueOrFail('active')';
 ```
 
 
+## 检查更改的值是否更改
+
+想知道对模型所做的更改是否改变了键的值，使用 `originalIsEquivalent`。
+
+```php
+$user = User::first(); // ['name' => "John']
+
+$user->name = 'John';
+
+$user->originalIsEquivalent('name'); // true
+
+$user->name = 'David'; // Set directly
+$user->fill(['name' => 'David']); // Or set via fill
+
+$user->originalIsEquivalent('name'); // false
+```
+
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
