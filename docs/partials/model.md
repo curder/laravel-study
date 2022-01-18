@@ -95,6 +95,26 @@ User::where('email', 'test@example.com')->firstOr(function () {
 });
 ```
 
+## `findOrFail()` 方法还接受主键数组
+
+`findOrFail()` 方法接受主键数组。如果未找到任何这些 id，则它“失败”。
+
+如果需要检索一组特定的模型并且不想检查您获得的计数是否是您预期的计数。
+
+```php
+User::create(['id' => 1]);
+User::create(['id' => 2);
+User::create(['id' => 3]);
+
+$user = User::findOrFail(1); // 检索用户
+
+User::findOrFail(99); // 因为用户不存在而抛出 404
+
+$users = User::findOrFail([1, 2, 3]); // 检索三个用户
+
+User::findOrFail([1, 2, 3, 99]); // 抛出因为它无法找到 *all* 的用户
+```
+
 ## 修改数据库字段
 
 在查询语句中，可以指定 `as` 以返回具有不同名称的任何列，就像在普通 SQL 查询中一样。
