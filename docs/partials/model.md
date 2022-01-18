@@ -90,6 +90,14 @@ User::all(['id', 'name', 'email']);
 User::where('email', 'test@exmple.com')->firstOrFail();
 ```
 
+## 修改数据库字段
+
+在查询语句中，可以指定 `as` 以返回具有不同名称的任何列，就像在普通 SQL 查询中一样。
+
+```php
+DB::table('users')->select('name', 'email as user_email')->get();
+```
+
 
 ## 保存模型及其所有关系
 
