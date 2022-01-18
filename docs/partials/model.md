@@ -246,6 +246,17 @@ class User extends Model
 } 
 ```
 
+## 子查询
+
+从 Laravel 6 开始，可以在模型语句中使用 `addSelect()`，并对添加的列进行一些计算。
+
+```php
+return Destination::addSelect(['last_flight' => Flight::select('name')
+    ->whereColumn('destination_id', 'destinations.id')
+    ->orderBy('arrived_at', 'desc')
+    ->limit(1)
+])->get();
+```
 
 ## 保存模型及其所有关系
 
