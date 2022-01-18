@@ -452,6 +452,21 @@ Illuminate\Support\Collection {#5344
 }
 ```
 
+## `dontExist()` 方法
+
+```php
+if ( 0 === $model->where('status', 'pending')->count() ) {
+}
+
+// 但是由于我不关心总数，`exists()` 方法更简洁。
+if ( ! $model->where('status', 'pending')->exists() ) {
+}
+
+// `doesntExist()` 方法使之更加简洁
+if ( $model->where('status', 'pending')->doesntExist() ) {
+}
+```
+
 
 ## 保存模型及其所有关系
 
