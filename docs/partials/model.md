@@ -143,6 +143,20 @@ User::where('active', 1)
     ->get();
 ```
 
+## 多个 scope 查询
+
+```php
+// 模型定义
+public function scopeActive($query) {
+    return $query->where('active', 1);
+}
+public function scopeRegisteredWithinDays($query, $days) {
+    return $query->where('created_at', '>=', now()->subDays($days));
+}
+
+// 使用 
+User::registeredWithinDays(30)->active()->get();
+```
 
 ## 保存模型及其所有关系
 
