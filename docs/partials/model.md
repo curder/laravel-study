@@ -131,6 +131,19 @@ User::oldest()->get(); // 升序排序
 User::latest('updated_at')->get(); // 指定字段，降序排序
 ```
 
+## 数据库原始查询计算运行得更快
+
+使用 SQL 原始查询，如 `whereRaw()` 方法，直接在查询中进行一些特定于 `DB` 的计算，而不是在 `Laravel` 中，通常结果会更快。 
+
+例如，如果想获得注册后 30 天以上仍处于活跃状态的用户，代码如下：
+
+```php
+User::where('active', 1)
+    ->whereRaw('TIMESTAMPDIFF(DAY, created_at, updated_at) > ?', 30)
+    ->get();
+```
+
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
