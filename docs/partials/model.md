@@ -543,6 +543,39 @@ DB::unprepared(
 );
 ```
 
+## 按中间表字段排序
+
+`BelongsToMany::orderByPivot()` 允许直接对 BelongsToMany 关系查询的结果进行排序。
+
+```php
+class Tag extends Model
+{
+    public $table = 'tags';
+}
+
+class Post extends Model
+{
+    public $table = 'posts';
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'post_tag', 'post_id', 'tag_id')
+            ->using(PostTagPivot::class)
+            ->withTimestamps()
+            ->withPivot('flag');
+    }
+}
+
+class PostTagPivot extends Pivot
+{
+    protected $table = 'post_tag';
+}
+
+// 调用
+Post::findOrFail($id)->tags()->orderByPivot('flag', 'desc')->get();
+```
+
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
