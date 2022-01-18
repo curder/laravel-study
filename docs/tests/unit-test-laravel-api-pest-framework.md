@@ -202,7 +202,7 @@ class TodoFactory extends Factory
 
 位于项目目录根目录下的 `phpunit.xml` 文件，并取消注释以下代码行：
 
-```yml{24-25}
+```xml {24-25}
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
