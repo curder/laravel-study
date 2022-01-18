@@ -66,6 +66,16 @@ class Company extends Model
 }
 ```
 
+## 软删除：多次还原
+
+使用软删除时，使用 `restore()` 恢复多行。
+
+```php
+Post::onlyTrashed()->where('author_id', 1)->restore();
+```
+                                         
+
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
