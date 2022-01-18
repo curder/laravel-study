@@ -1,4 +1,4 @@
-const { readdirSync } = require('fs');
+const {readdirSync} = require('fs');
 
 const getFiles = (dir, filteredReadme = true) => {
     return readdirSync(`docs/${dir}`, 'utf-8')
@@ -16,13 +16,15 @@ module.exports = {
         logo: '/images/laravel-logo.min.svg',
         navbar: [
             {text: '首页', link: '/'},
-            {text: '集合', children:['/collections/','/collections/demo/']},
+            {text: '集合', children: ['/collections/', '/collections/demo/']},
             {text: '模型', children: ['/model/', '/model/related-relationships/']},
             {text: "其它", children: ['/tests/', '/partials/', '/others/']},
-            {text: "📖📚", children: [
-                { text: 'Bolg', link: 'https://curder.github.io/blog/'},
-                { text: 'Setup mac for developer', link: 'https://curder.github.io/setup-mac-for-developer/'},
-            ]},
+            {
+                text: "📖📚", children: [
+                    {text: 'Bolg', link: 'https://curder.github.io/blog/'},
+                    {text: 'Setup mac for developer', link: 'https://curder.github.io/setup-mac-for-developer/'},
+                ]
+            },
         ],
         sidebar: {
             '/collections/': [
