@@ -754,6 +754,35 @@ if ($nthUsers->isNotEmpty()) {
 }
 ```
 
+## 自定有数据转换
+
+可以创建自定义转换来自动格式化模型数据。如下检索或更改用户名时将其大写的示例。
+
+```php
+class CapitalizeWordsCast implements CastsAttributes
+{
+    public function get($model, string $key, $value, array $attributes)
+    {
+        return ucwords($value);
+    }
+    
+    public function set($model, string $key, $value, array $attributes)
+    {
+        return ucwords($value);
+    }
+}
+
+// 使用
+class User extends Model
+{
+    protected $casts = [
+        'name'  => CapitalizeWordsCast::class,
+        'email' => 'string',
+    ]; 
+}
+```
+
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
