@@ -332,6 +332,24 @@ $flight = Flight::updateOrCreate(
 );
 ```
 
+## 更改日期格式
+
+```php
+// 模型定义
+public function getCreatedAtFormattedAttribute()
+{
+   return $this->created_at->format('H:i d, M Y');
+}
+
+public function getUpdatedAtFormattedAttribute()
+{
+   return $this->updated_at->format('H:i d, M Y');
+}
+
+// 使用
+$user->created_at_formatted; // `12:25 18, Jan 2021`
+```
+
 ## 在JSON字段中存储数组 
 
 如果输入字段需要一个数组并且必须将其存储为 JSON，可以在模型中使用 `$casts` 属性。这里的 `images` 是一个 `JSON` 属性。
