@@ -98,6 +98,16 @@ User::where('email', 'test@exmple.com')->firstOrFail();
 DB::table('users')->select('name', 'email as user_email')->get();
 ```
 
+## 查询结果集使用map回调
+
+在模型查询后，可以使用 `Collections` 中的 `map()` 函数来修改行。
+
+```php
+User::where('role_id', 1)->get()->map(function (User $user) {
+    $user->some_column = some_function($user);
+    return $user;
+});
+```
 
 ## 保存模型及其所有关系
 
