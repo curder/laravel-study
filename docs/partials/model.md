@@ -74,7 +74,13 @@ class Company extends Model
 Post::onlyTrashed()->where('author_id', 1)->restore();
 ```
                                          
+# `all` 方法值定返回字段
 
+调用模型的 `Model::all()` 时，可以指定要返回的列。
+
+```php
+User::all(['id', 'name', 'email']);
+```
 
 ## 保存模型及其所有关系
 
