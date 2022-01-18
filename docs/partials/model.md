@@ -424,6 +424,34 @@ class Article extends Model
 }
 ```
 
+## 分析查询
+
+可以在查询上调用 `explain()` 方法来了解有关查询的额外信息。
+
+```php
+Book::where('name', 'Ruskin Bond')->explain()->dd();
+
+// 像下面这样
+Illuminate\Support\Collection {#5344
+    all: [
+        {#15407
+            +"id": 1,
+            +"select_type": "SIMPLE",
+            +"table": "books",
+            +"partitions": null,
+            +"type": "ALL",
+            +"possible_keys": null,
+            +"key": null,
+            +"key_len": null,
+            +"ref": null,
+            +"rows": 9,
+            +"filtered": 11.11111164093,
+            +"Extra": "Using where",
+        },
+    ],
+}
+```
+
 
 ## 保存模型及其所有关系
 
