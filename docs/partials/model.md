@@ -47,6 +47,15 @@ $products = Product::whereYear('created_at', date('Y'))->get();
 $products = Product::whereTime('created_at', '=', '14:13:58')->get();
 ```
 
+## 增减某个字段
+
+如果想在某个表中增加某列的数值，只需使用 `increment()` 函数。 当然不仅可以增加 `1`，也可以增加一些数字，比如 `50`。
+
+```php
+Post::find($post_id)->increment('view_count');
+User::find($user_id)->decrement('points', 50); # 减少字段 points 的值
+```
+
 
 ## 保存模型及其所有关系
 
