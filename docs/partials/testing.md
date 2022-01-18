@@ -1,6 +1,6 @@
 # Testing 测试
 
-## Test command is scheduled
+## 测试命令定时执行
 
 ```php
 // App\Console\Kernel
