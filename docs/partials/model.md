@@ -401,6 +401,29 @@ public function delete(){
     Model::delete(); // 现在执行正常删除
 }
 ```
+        
+
+## 将数据持久化到数据库时自动填充列
+
+如果将数据持久化到数据库时自动填充一列（例如：`slug`），请使用模型监听者而不是每次都对其进行硬编码。
+
+```php
+use Illuminate\Support\Str;
+
+class Article extends Model
+{
+    ...
+    protected static function boot()
+    {
+        parent:boot();
+        
+        static::saving(function ($model) {
+            $model->slug = Str::slug($model->title);
+        });
+    }
+}
+```
+
 
 ## 保存模型及其所有关系
 
