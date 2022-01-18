@@ -855,6 +855,23 @@ Post::whereJsonContains('extra->is_popular', 1)->get();
 
 参考地址：[Sort by Mysql JSON Field Value in Laravel](https://5balloons.info/sort-by-mysql-json-field-value-in-laravel/)
 
+
+## 从第一个结果中获取单列的值 `value()`
+
+可以使用 `value()` 方法从查询的第一个结果中获取单个列的值                                                          
+
+```php
+// Instead of
+Integration::where('name', 'foo')->first()->active;
+
+// You can use
+Integration::where('name', 'foo')->value('active');
+
+// or this to throw an exception if no records found
+Integration::where('name', 'foo')->valueOrFail('active')';
+```
+
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
