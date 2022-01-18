@@ -737,6 +737,22 @@ Flight::upsert(
 - 第二个数组：select语句中使用的唯一标识符列 
 - 第三个数组：如果记录存在则要更新的列
 
+## 过滤结果后检索查询生成器
+
+要在过滤结果后检索查询生成器：您可以使用 `->toQuery()`。 该方法在内部使用集合的第一个模型和集合模型上的 `whereKey` 比较。
+
+```php
+$loggedInUsers = User::where('logged_in', true)->get(); // 检索所有已登录的用户
+
+$nthUsers = $loggedInUsers->nth(3); // 使用 Collection 方法或 php 过滤过滤它们
+
+$nthUsers->update(/* ... */); // 不能在集合上执行此操作
+
+// 但是可以使用 `->toQuery()` 检索 Builder
+if ($nthUsers->isNotEmpty()) {
+    $nthUsers->toQuery()->update(/* ... */);
+}
+```
 
 ## 保存模型及其所有关系
 
