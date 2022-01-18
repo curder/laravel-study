@@ -720,6 +720,24 @@ $posts = Post::withAggregate('user', 'name')->get(); // 可以添加子选择以
 $posts->first()->user_name; // 将为 Post 实例添加一个 'user_name' 属性
 ```
 
+## `upsert()` 方法插入或更新多条记录
+
+```php
+Flight::upsert(
+    [
+        ['departure' => 'Oakland', 'destination' => 'San Diego', 'price' => 99],
+        ['departure' => 'Chicago', 'destination' => 'New York', 'price' => 150],
+    ],
+    ['departure', 'destination'], 
+    ['price']
+ );
+```
+
+- 第一个数组：要插入或更新的值 
+- 第二个数组：select语句中使用的唯一标识符列 
+- 第三个数组：如果记录存在则要更新的列
+
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
