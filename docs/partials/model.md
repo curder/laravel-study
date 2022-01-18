@@ -587,6 +587,16 @@ Post::findOrFail($id)->tags()->orderByPivot('flag', 'desc')->get();
 DB::table('products')->where('ref', '#123')->sole();
 ```
 
+## chuckMap 处理结果
+
+类似于 `each()` 方法，但更易于使用。自动将结果拆分为多个部分（块）。
+
+```php
+return User::orderBy('name')->chunkMap(fn ($user) => [
+    'id' => $user->id,
+    'name' => $user->name,
+]), 25);
+```
 
 ## 保存模型及其所有关系
 
