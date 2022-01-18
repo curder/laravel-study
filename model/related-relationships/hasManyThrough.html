@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="generator" content="VuePress 2.0.0-beta.32">
     <title>远层一对多 | Laravel 学习记录</title><meta name="description" content="Laravel学习点滴">
-    <link rel="modulepreload" href="/laravel-study/assets/app.dd54ac99.js"><link rel="modulepreload" href="/laravel-study/assets/hasManyThrough.html.74bbff33.js"><link rel="modulepreload" href="/laravel-study/assets/plugin-vue_export-helper.21dcd24c.js"><link rel="modulepreload" href="/laravel-study/assets/hasManyThrough.html.77ad4ab3.js">
+    <link rel="modulepreload" href="/laravel-study/assets/app.e716e27d.js"><link rel="modulepreload" href="/laravel-study/assets/hasManyThrough.html.1467345d.js"><link rel="modulepreload" href="/laravel-study/assets/plugin-vue_export-helper.21dcd24c.js"><link rel="modulepreload" href="/laravel-study/assets/hasManyThrough.html.77ad4ab3.js">
     <link rel="stylesheet" href="/laravel-study/assets/style.45c5dbd6.css">
   </head>
   <body>
@@ -169,6 +169,6 @@ $user-&gt;posts()-&gt;delete(); // 删除 posts 表中相关记录
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>通过国家关联删除文章信息</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>$country = \App\Country::find(1);
 $country-&gt;posts()-&gt;delete(); // 关联删除 posts 表中country_id 为 1 的相关记录，此处country_id 为 1 通过用户表关联得出。
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><blockquote><p>相关的更多的关联删除操作，可以自行尝试。</p></blockquote><h3 id="更新数据" tabindex="-1"><a class="header-anchor" href="#更新数据" aria-hidden="true">#</a> 更新数据</h3><h4 id="通过关联-user-数据" tabindex="-1"><a class="header-anchor" href="#通过关联-user-数据" aria-hidden="true">#</a> 通过关联 User 数据</h4><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: q.curder@gmail.com">curder</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/laravel-study/model/related-relationships/hasMany.html" class="" aria-label="一对多"><!--[--><!--]--> 一对多 <!--[--><!--]--></a></span><span class="next"><a href="/laravel-study/model/related-relationships/hasOne.html" class="" aria-label="一对一"><!--[--><!--]--> 一对一 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/laravel-study/assets/app.dd54ac99.js" defer></script>
+    <script type="module" src="/laravel-study/assets/app.e716e27d.js" defer></script>
   </body>
 </html>
