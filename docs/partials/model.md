@@ -211,6 +211,42 @@ $users = User::find([1,2,3], ['first_name', 'email']); // 指定返回的模型�
 $users = User::whereKey([1,2,3])->get();
 ```
 
+## 使用UUID代替主键自增
+
+在模型中不希望使用主键自增？可以使用UUID代替：   
+
+* 迁移文件
+```php
+Schema::create('users', function (Blueprint $table) {
+    // $table->increments('id');
+    $table->uuid('id')->unique();
+});
+```
+
+* 模型定义
+```php
+class User extends Model
+{
+    public $incrementing = false;
+    protected $keyType = 'string';
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        User::creating(function ($model) {
+            $model->setId();
+        });
+    }
+
+    public function setId()
+    {
+        $this->attributes['id'] = Str::uuid();
+    }
+} 
+```
+
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
