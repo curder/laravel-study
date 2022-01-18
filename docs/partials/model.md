@@ -817,6 +817,20 @@ $invoice = DB::transaction(function () {
 });
 ```
 
+## 查询中删除 `globalScopes()`
+
+使用模型全局作用域时，不仅可以使用 MULTIPLE 作用域，还可以在不需要时删除某些scope，方法是将数组提供给 `withoutGlobalScopes()`：
+
+```php
+// 删除所有全局范围
+User::withoutGlobalScopes()->get();
+
+// 删除一些全局范围
+User::withoutGlobalScopes([
+    FirstScope::class, SecondScope::class
+])->get();
+```
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
