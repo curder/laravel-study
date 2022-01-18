@@ -387,6 +387,21 @@ $billing = $shipping->replicate()->fill([
 $billing->save();
 ```
 
+## 删除模型之前执行任何额外步骤
+
+可以在重写的删除方法中使用 `Model::delete()` 来执行额外的步骤。
+
+```php
+// App\Models\User.php
+
+public function delete(){
+
+    // 这里有额外的步骤，无论你想要什么
+
+    Model::delete(); // 现在执行正常删除
+}
+```
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
