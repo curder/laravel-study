@@ -890,6 +890,31 @@ $user->originalIsEquivalent('name'); // false
 ```
 
 
+## 定义访问器和修改器的新方法
+
+在 Laravel 8.77 中定义属性访问器和修改器的新方法：
+
+```php
+// Before, two-method approach
+public function setTitleAttribute($value)
+{
+    $this->attributes['title'] = strtolower($value);
+}
+public function getTitleAttribute($value)
+{
+    return strtoupper($value);
+}
+ 
+// New approach
+protected function title(): Attribute
+{
+    return new Attribute(
+        get: fn ($value) => strtoupper($value),
+        set: fn ($value) => strtolower($value),
+}
+```
+
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
