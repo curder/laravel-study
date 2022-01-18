@@ -166,6 +166,12 @@ User::registeredWithinDays(30)->active()->get();
 // 无需对时间进行转换，直接使用 `now()`
 $todayUsers = User::whereDate('created_at', now())->get();
 ```
+     
+## 按首字母分组
+
+```php
+
+```
 
 ## 保存模型及其所有关系
 
