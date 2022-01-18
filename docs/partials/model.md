@@ -109,6 +109,18 @@ User::where('role_id', 1)->get()->map(function (User $user) {
 });
 ```
 
+## 修改默认的时间字段
+
+如果使用的是非 Laravel 数据库并且时间戳列的名称不同怎么办？ 比如 `create_time` 和 `update_time`。 可以在模型中指定它们：
+
+```php
+class User extends Model
+{
+    const CREATED_AT = 'create_time';
+    const UPDATED_AT = 'update_time';
+}
+```
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
