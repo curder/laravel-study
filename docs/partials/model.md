@@ -258,6 +258,23 @@ return Destination::addSelect(['last_flight' => Flight::select('name')
 ])->get();
 ```
 
+## 隐藏一些字段
+
+在进行模型查询时，如果要隐藏特定字段不被返回，最快的方法之一是在 Collection 结果上添加 `->makeHidden()`。
+
+```php
+$users = User::all()->makeHidden(['email_verified_at', 'deleted_at']);
+
+// 或者在模型中定义
+class User extends Authenticatable 
+{
+    // ...
+    protected $hidden = [
+        'email_verified_at', 'deleted_at'
+    ];
+}
+```
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
