@@ -197,6 +197,17 @@ class User extends Model
 }
 ```
 
+## find 方法针对主键查询更多
+
+模型方法 `find()` 可以接受数组参数，然后它返回一个包含所有找到的记录的集合，而不仅仅是一个模型实例：
+
+```php
+$user = User::find(1); // 返回模型实例
+$users = User::find([1,2,3]); // 返回模型集合
+
+$products = Product::find($this->productIDs);
+```
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
