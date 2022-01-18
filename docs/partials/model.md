@@ -275,6 +275,21 @@ class User extends Authenticatable
 }
 ```
 
+## 捕捉数据库错误
+
+如果要捕获模型查询异常，请使用特定的 `QueryException` 而不是默认的 `Exception` 类，将能够获得错误的确切 SQL 代码。
+
+```php
+try {
+    // Some Eloquent/SQL statement
+} catch (\Illuminate\Database\QueryException $e) {
+    if ($e->getCode() === '23000') { // integrity constraint violation
+        return back()->withError('Invalid data');
+    }
+}
+```
+
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
