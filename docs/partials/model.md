@@ -520,6 +520,19 @@ $post->author->name;
 ```
 
 
+## 修改模型记录后获取原始属性 `getOriginal()` 
+
+修改模型记录后获取原始属性，可以通过调用 `getOriginal()` 获取原始属性。
+
+```php
+$user = App\User::first();
+$user->name; // John
+$user->name = "Peter"; // Peter
+$user->getOriginal('name'); // John
+$user->getOriginal(); // Original $user record
+```
+
+
 
 ## 保存模型及其所有关系
 
