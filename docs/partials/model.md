@@ -332,6 +332,18 @@ $flight = Flight::updateOrCreate(
 );
 ```
 
+## 在JSON字段中存储数组 
+
+如果输入字段需要一个数组并且必须将其存储为 JSON，可以在模型中使用 `$casts` 属性。这里的 `images` 是一个 `JSON` 属性。
+
+```php
+// 模型定义
+protected $casts = [
+    'images' => 'array',
+];
+```
+
+
 ## 模型的副本
 
 如果有两个非常相似的模型（例如送货地址和帐单地址），并且需要将一个复制到另一个，可以使用 `replicate()` 方法并在此之后更改一些属性。
