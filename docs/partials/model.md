@@ -289,6 +289,16 @@ try {
 }
 ```
 
+## 查询生成 - 软删除
+
+不要忘记，当使用模型时，软删除会排除条目，但如果您使用 Query Builder，则不会起作用。
+
+```php
+$users = User::all(); // 将不包含已删除的项
+$users = User::withTrashed()->get(); // 包含已删除的项
+
+$users = DB::table('users')->get(); // 包含已删除的项
+```
 
 ## 保存模型及其所有关系
 
