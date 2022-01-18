@@ -19,6 +19,23 @@ if ($user->wasRecentlyCreated) {
 }
 ```
 
+## 重用或克隆查询
+
+通常，需要从过滤后的查询再进行多次查询。大多数时候使用 `query()` 方法，编写一个查询来获取创建的活跃和非活跃产品。
+
+```php
+$query = Product::query();
+
+$today = request()->q_date ?? today();
+if ($today) {
+    $query->where('created_at', $today);
+}
+
+$active_products = $query->clone()->where('status', 1)->get(); // 不会修改 $query 变量
+$inactive_products = $query->clone()->where('status', 0)->get(); // 从 $query 中获取正确的产品
+```
+
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
