@@ -533,6 +533,15 @@ $user->getOriginal(); // Original $user record
 ```
 
 
+## 填充数据库的简单方法
+
+使用 .sql 转储文件播种数据库的简单方法。假如存在 `dump.sql`：
+
+```php
+DB::unprepared(
+    file_get_contents(__DIR__ . './dump.sql')
+);
+```
 
 ## 保存模型及其所有关系
 
