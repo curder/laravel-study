@@ -309,6 +309,17 @@ DB::statement('DROP TABLE users');
 DB::statement('ALTER TABLE projects AUTO_INCREMENT=123');
 ```
 
+## 使用DB事务
+
+如果执行了两个数据库操作，第二个可能会出错，那么应该回滚第一个。 为此，建议使用 DB 事务：
+
+```php
+DB::transaction(function () {
+    DB::table('users')->update(['votes' => 1]);
+
+    DB::table('posts')->delete();
+});
+```
 
 ## 保存模型及其所有关系
 
