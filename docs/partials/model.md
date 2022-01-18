@@ -158,6 +158,15 @@ public function scopeRegisteredWithinDays($query, $days) {
 User::registeredWithinDays(30)->active()->get();
 ```
 
+## 无需转换 carbon
+
+如果正在执行 `whereDate()` 并检索今天的记录，可以使用 Carbon 的 `now()` ，它会自动转换为日期。 无需执行 `->toDateString()`。
+
+```php
+// 无需对时间进行转换，直接使用 `now()`
+$todayUsers = User::whereDate('created_at', now())->get();
+```
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
