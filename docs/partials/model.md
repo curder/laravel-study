@@ -88,6 +88,11 @@ User::all(['id', 'name', 'email']);
 
 ```php
 User::where('email', 'test@exmple.com')->firstOrFail();
+
+// 可以调用 `firstOr()` 对失败执行其他操作
+User::where('email', 'test@example.com')->firstOr(function () {
+    // ...
+});
 ```
 
 ## 修改数据库字段
