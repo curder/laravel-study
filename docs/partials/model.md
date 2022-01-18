@@ -783,6 +783,21 @@ class User extends Model
 ```
 
 
+## 根据相关模型的平均值或计数排序
+
+是否曾经需要根据相关型号的平均值或计数进行排序
+
+```php
+public function bestBooks()
+{
+    Book::query()
+        ->withAvg('ratings as average_rating', 'rating')
+        ->orderByDesc('average_rating');
+}
+```
+
+
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
