@@ -56,6 +56,15 @@ Post::find($post_id)->increment('view_count');
 User::find($user_id)->decrement('points', 50); # 减少字段 points 的值
 ```
 
+## 表不存在时间字段 
+
+如果数据库表不包含时间戳字段 `created_at` 和 `updated_at`，可以通过 `$timestamps = false` 属性指定模型不使用它们。
+```php
+class Company extends Model
+{
+    public $timestamps = false;
+}
+```
 
 ## 保存模型及其所有关系
 
