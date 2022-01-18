@@ -121,6 +121,16 @@ class User extends Model
 }
 ```
 
+## 通过某个字段快速排序
+
+通过使用 `latest()` 和 `oldest()` 代替 `->orderBy()`。       
+
+```php
+User::latest()->get(); // 降序排序，代替 ->orderBy('created_at', 'desc')
+User::oldest()->get(); // 升序排序
+User::latest('updated_at')->get(); // 指定字段，降序排序
+```
+
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
