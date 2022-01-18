@@ -35,6 +35,18 @@ $active_products = $query->clone()->where('status', 1)->get(); // 不会修改 $
 $inactive_products = $query->clone()->where('status', 0)->get(); // 从 $query 中获取正确的产品
 ```
 
+## 模型的时间查询方法
+
+Laravel 提供了一些时间查询方法，例如：`whereDate`、`whereMonth`、`whereDay`、`whereYear`、`whereTime`。
+
+```php
+$products = Product::whereDate('created_at', '2018-01-31')->get();
+$products = Product::whereMonth('created_at', '12')->get();
+$products = Product::whereDay('created_at', '31')->get();
+$products = Product::whereYear('created_at', date('Y'))->get();
+$products = Product::whereTime('created_at', '=', '14:13:58')->get();
+```
+
 
 ## 保存模型及其所有关系
 
