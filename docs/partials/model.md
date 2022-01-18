@@ -796,7 +796,26 @@ public function bestBooks()
 }
 ```
 
+## 返回事务结果
 
+如果有一个 DB 事务，想要返回它的结果，至少有两种方式，看例子：
+
+```php
+// 1. 可以通过引用传递参数
+$invoice = NULL;
+DB::transaction(function () use (&$invoice) {
+    $invoice = Invoice::create(...);
+    $invoice->items()->attach(...);
+})
+
+// 2. 或更短：只返回事务结果
+$invoice = DB::transaction(function () {
+    $invoice = Invoice::create(...);
+    $invoice->items()->attach(...);
+    
+    return $invoice;
+});
+```
 
 ## 保存模型及其所有关系
 
