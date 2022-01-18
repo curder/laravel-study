@@ -332,7 +332,25 @@ $flight = Flight::updateOrCreate(
 );
 ```
 
+## 模型的副本
 
+如果有两个非常相似的模型（例如送货地址和帐单地址），并且需要将一个复制到另一个，可以使用 `replicate()` 方法并在此之后更改一些属性。
+
+```php
+$shipping = Address::create([
+    'type' => 'shipping',
+    'line_1' => '123 Example Street',
+    'city' => 'Victorville',
+    'state' => 'CA',
+    'postcode' => '90001',
+]);
+
+$billing = $shipping->replicate()->fill([
+    'type' => 'billing'
+]);
+
+$billing->save();
+```
 
 ## 保存模型及其所有关系
 
