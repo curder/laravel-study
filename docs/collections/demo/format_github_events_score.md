@@ -44,6 +44,9 @@ dd($score);
 
 ## 使用 [pluck](/collections/pluck.md)、[map](/collections/map.md) 和 [sum](/collections/sum.md) 方法
 
+<CodeGroup>
+  <CodeGroupItem title="PHP < 8.0  switch" active>
+
 ```php
 $events = collect(
   Http::get('https://api.github.com/users/curder/events')->json()
@@ -76,6 +79,30 @@ $score = $events
 => 134
  */
 ```
+  </CodeGroupItem>
+
+  <CodeGroupItem title="PHP > 8.0  match">
+
+```php
+$events = collect(
+  Http::get('https://api.github.com/users/curder/events')->json()
+);
+
+$score = $events
+  ->pluck('type')
+  ->map(fn ($eventType) => match ($eventType) { 
+    'PushEvent' => 5,
+    'CreateEvent' => 4,
+    'IssueEvent' => 3,
+    'IssueCommentEvent' => 2,
+    default => 1,
+  })
+  ->sum();
+```
+
+  </CodeGroupItem>
+
+</CodeGroup>
 
 ## 使用 [pluck](/collections/pluck.md)、[map](/collections/map.md)、[get](/collections/get.md) 和 [sum](/collections/sum.md) 方法
 
