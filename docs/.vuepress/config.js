@@ -22,6 +22,7 @@ module.exports = {
             {
                 text: "📖📚", children: [
                     {text: 'Bolg', link: 'https://curder.github.io/blog/'},
+                    {text: 'What is new in PHP', link: 'https://curder.github.io/what-is-new-in-php/'},
                     {text: 'Setup mac for developer', link: 'https://curder.github.io/setup-mac-for-developer/'},
                 ]
             },
