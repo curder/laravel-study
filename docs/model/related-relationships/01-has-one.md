@@ -4,9 +4,9 @@
 
 ## 软件版本
 
-* Laravel Version 8.6.10
+* Laravel 版本 8.6.10
 
-* PHP Version 8.1.0
+* PHP 版本 7.4.26
 
 ## 关键字和数据表
 
@@ -31,22 +31,22 @@ DB_PASSWORD=db_password
 
 比如一个用户对应一个社交账号，在演示该关联关系之前我们先创建一个社交账号表 `user_accounts` （**假设用户表使用系统自带的**）
 
-## 生成模型和迁移文件
+## 生成文件
 
-```shell
-php artisan make:model UserAccount -m
+```bash
+php artisan make:model UserAccount -msf
 ```
 
 ### 编辑迁移文件
 
-`<project>/database/migrate/*_create_user_accounts_table.php`如下
+`<project>/database/migrate/*_create_user_accounts_table.php` 如下：
 
 ```php
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateUserAccountsTable extends Migration
 {
@@ -58,17 +58,19 @@ class CreateUserAccountsTable extends Migration
     public function up()
     {
         Schema::create('user_accounts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->char('qq', 12)->nullable();
-            $table->string('wechat', 100)->nullable();
-            $table->string('weibo', 100)->nullable();
+            $table->string('wechat')->nullable();
+            $table->string('weibo')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('facebook')->nullable();
             $table->timestamps();
             $table->foreign('user_id')
-                      ->references('id')
-                      ->on('users')
-                      ->onUpdate('cascade')
-                      ->onDelete('cascade');
+                  ->references('id')
+                  ->on('users')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
         });
     }
 
@@ -84,23 +86,76 @@ class CreateUserAccountsTable extends Migration
 }
 ```
 
-### 运行 php artisan 命令保存修改到数据库
+### 编辑填充文件
 
-```shell
-php artisan migrate
+#### 修改 `/databases/factories/UserAccountFactory.php`，新增关联数据。
+
+```php
+<?php
+
+namespace Database\Factories;
+
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class UserAccountFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition() : array
+    {
+        return [
+            'user_id' => fn () => User::factory()->create(),
+            'qq' => $this->faker->numberBetween(100000, 999999999),
+            'wechat' => $this->faker->word,
+            'weibo' => $this->faker->word,
+            'twitter' => $this->faker->word,
+            'facebook' => $this->faker->word,
+        ];
+    }
+}
 ```
 
-> 执行上面的命令后数据库将生成四张表，
-> - `migrations`
-> - `password_resets`
-> - `user_accounts`
-> - `users`
+#### 修改 `databases/seeders/UserAccountSeeder.php`，执行填充。
 
-## 定义关联关系和修改模型的 fillable 属性
+```php
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\UserAccount;
+use Illuminate\Database\Seeder;
+
+class UserAccountSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        UserAccount::factory()->create();
+    }
+}
+```
+
+### 执行数据库迁移和数据填充
+
+```shell
+php artisan migrate:refresh --seeder=UserAccountSeeder
+```
+
+> 执行完上面的命令后，在数据库表 `users` 和 `user_accounts` 表中分别存在一条数据。
+
+## 定义关联关系和修改模型的 `fillable` 属性
 
 并定义可填充的数据，即 `$fillable` 数组的值。
 
-```php {17}
+```php {14}
 <?php
 
 namespace App;
@@ -114,85 +169,19 @@ use Illuminate\Database\Eloquent\Model;
  */
 class UserAccount extends Model
 {
-    /**
-     * @var array
-     */
-    protected $fillable = ['user_id', 'qq', 'wechat', 'weibo'];
+    protected $fillable = ['user_id', 'qq', 'wechat', 'weibo', 'twitter', 'facebook'];
 }
 ```
 
-### 使用 tinker 填充数据
-
-修改 `/databases/factories/ModelFactory.php`，新增关联数据。
-
-```
-<?php
-
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| Here you may define all of your model factories. Model factories give
-| you a convenient way to create models for testing and seeding your
-| database. Just tell the factory how a default model should look.
-|
-*/
-
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
-
-    return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
-    ];
-});
-
-$factory->define(App\UserAccount::class, function (Faker\Generator $faker) {
-    return [
-        'user_id' => 1,
-        'qq' => $faker->numberBetween(100000, 999999999),
-        'wechat' => bcrypt('secret'),
-        'weibo' => bcrypt('secret')
-    ];
-});
-```
-
-### 执行上述迁移文件填充数据到数据库
-
-```shell
-php artisan tinker
-
-// 进入到交互界面执行如下命令生成关联数据
-namespace App
-factory(User::class, 1)->create() // 随机生成一个用户信息
-factory(UserAccount::class, 1)->create() // 随机生成一个用户关联信息
-```
-
-### 查看执行结果
-
-在两个表中可以看到写入的数据：
-
-`users`表数据：
-
-<img :src="$withBase('/images/related_relationship/screenshot_1492077162810.png')" alt="">
-
-`users_accounts`表：
-
-<img :src="$withBase('/images/related_relationship/screenshot_1492077196226.png')" alt="">
-
 ## 定义Eloquent关联关系
 
-文件在`<project>/app/User.php`和`<project>/app/UserAccount.php`。
+文件在`<project>/app/Models/User.php`和`<project>/app/Models/UserAccount.php`。
 
 ### 定义关联关系
 
-- 在 `User` 模型中定义与 `UserAccount` 模型的一对一对应关系
+- 在 `User` 模型中定义与 `UserAccount` 模型的一对一关联关系
 
-```php
+```php {19}
 <?php
 namespace App;
 use Illuminate\Database\Eloquent\Model;
@@ -216,9 +205,9 @@ class User extends Model
 }
 ```
 
-- 在 `UserAccount` 模型中定义与 `User` 的一对一关系
+- 在 `UserAccount` 模型中定义与 `User` 的一对一从属关系
 
-```php
+```php {19}
 <?php
 namespace App;
 use Illuminate\Database\Eloquent\Model;
@@ -249,38 +238,25 @@ class UserAccount extends Model
 同时新增 `users` 和 `user_accounts` 表数据
 
 ```php
-$user = \App\User::create([
-  'name' => 'curder',
-  'email' => 'curder@foxmail.com',
-  'password' => bcrypt('secret'),
-  'remember_token' => str_random(10),
-]); // 新增一个用户信息
-
-$account = new \App\UserAccount(['qq' => 'qq Number', 'wechat' => 'wechatNumber', 'weibo' => 'weiboNumber']); // 生成 UserAccount 对象
-
+$user = \App\Models\User::factory()->create(); // 新增一个用户信息
+$account = \App\Models\UserAccount::factory()->make(['user_id' => null]); // 生成 UserAccount 对象
 $user->account()->save($account); // 执行关联写入操作
 ```
 
-> 也可以是我们使用 `find()` 方法获得用户信息（或者使用 `\Auth::id()`获得用户信息），再写入到关联表 `user_accounts`。如下：（这种情况常见于用户修改创建、修改自己的账户信息）
-> ```
->  $account = new \App\UserAccount(['qq' => 'another qq', 'wechat' => 'another wechat', 'weibo' => 'another weibo']); // 生成 UserAccount 对象，或者数据通过 Request 对象获取 $account = new \App\Account($request->all());
->  \Auth::user()->account()->save($account);
-> ```
-
 ### 查询数据
 
-通过用户获取用户关联信息
+- 通过用户获取用户关联信息
 
 ```php
-$user = User::find(1); // 获取用户表数据
+$user = \App\Models\User::find(1); // 获取用户表数据
 
 $user->account; // 通过用户信息获取用户关联信息
 ```
 
-通过用户关联信息获取用户信息
+- 通过用户关联信息获取用户相关信息
 
 ```php
-$account = UserAccount::find(3); // 获取用户关联信息
+$account = \App\Models\UserAccount::find(3); // 获取用户关联信息
 
 $account->user; // 通过关联信息获取用户信息
 ```
@@ -288,48 +264,113 @@ $account->user; // 通过关联信息获取用户信息
 ### 关联删除
 
 ```php
-$account = \App\UserAccount::find(1);
-$account->user->delete(); // 删除用户 users 表和 user_account 相关记录
+DB::transaction(function () {            
+    $account = \App\Models\UserAccount::first();
+    $account->user->delete(); // 删除用户 users 表记录行
+    $account->delet(); // 删除 user_account 记录
+});
+
+DB::transaction(function () {     
+    $user = \App\Models\User::first();
+    $user->account->delete(); // user_account 记录
+    $user->delete(); //  删除用户 users 表记录行
+});
 ```
 
 ### 更新数据
 
-通过用户表 `users` 数据，更新关联 `user_accounts`
+#### 更新从属表
+
+- 使用 `push()`  方法
+
+```php {3}
+$user = \App\Models\User::first();
+// $user->email = 'example@example.com'; // 修改主表属性
+$user->account->qq = 'new QQ'; // 修改附属表属性
+$user->push();
+```
+> 当然 `push()` 方法也可以修改主表本身的属性。比如：当修改附属表属性的同时也可以修改用户邮箱 `$user->email = 'example@example.com';`
+
+- 使用 `save()` 方法 
 
 ```php
-$user = \App\User::find(1);
+// 通过用户表 `users` 数据，更新关联 `user_accounts`
+$user = \App\Models\User::first();
 $account = $user->account; // 获取到关联信息
-$account->qq = 'new qq';
-$account->wechat = 'new Wechat';
+$account->qq = 'new QQ';
 $account->save();
 
 // 或者当用户登录时，直接通过关联关系进行更新数据
-\Auth::user()->account()->update(['qq' => 'new QQ', 'wechat' => 'new Wechat']);
+$user->account()->update(['wechat' => 'new Wechat']);
 ```
 
-通过 用户信息表 `user_accounts` 关联更新 `users` 数据表
+#### 更新主表
 
+- 使用 `push()` 方法
 ```php
-$account = \App\UserAccount::find(1);
+$account = \App\Models\UserAccount::first();
+$account->user->email = 'push@method.com';
+$account->push();
+```
+
+- 使用 `save()` 方法
+```php
+// 通过 用户信息表 `user_accounts` 关联更新 `users` 数据表
+$account = \App\Models\UserAccount::first();
 $user = $account->user; // 获取到关联信息
 
-$user->email = 'new@test.com';
+$user->email = 'save@method.com';
 $user->save();
 ```
 
-#### 通过关联 User 数据
+### 关联更新 updated_at
 
-另外，如果需要同步更新关联表的 `updated_at` 字段，在模型中定义 `$touches` 属性，例如，我们在 UserAccount 中定义如下关系：
+默认情况下，当我们更新主表附属表的 `updated_at` 字段不会跟随主表 `updated_at` 字段更新；或者更新附属表 `updated_at` 字段时主表 `updated_at` 字段不会跟随更新。
+
+如果需要同步更新关联表的 `updated_at` 字段，在模型中定义 `$touches` 属性。
+
+> **注意：** 不能既在主表中配置又在附属表中配置。
+
+#### 附属表关联主表
+
+例如在 `UserAccount` 中定义如下关系：
 
 ```php
 /**
- * 要触发的所有关联关系
+ * 要触发的关联关系
  *
  * @var array
  */
  protected $touches = ['user'];
 ```
 
-在更新 `user_accounts` 表中数据时，同步更新 `users` 表的 `updated_at` 数据。
+使用模型操作，在更新 `user_accounts` 表中数据时，同步更新 `users` 表的 `updated_at` 数据。
 
+#### 主表关联附属表
 
+在 `User` 中定义如下关系：
+
+```php
+/**
+ * 要触发的关联关系
+ *
+ * @var array
+ */
+ protected $touches = ['account'];
+```
+
+使用模型操作，在更新 `users` 表中数据时，同步更新 `user_accounts` 表的 `updated_at` 数据。
+
+#### 关联关系调用 `touch()` 方法
+
+```php
+// 1. UserAccount 模型未设置 `touches` 属性时，仅更新 user_accounts 表的 updated_at 字段。
+// 2. UserAccount 模型设置 `touches` 属性时，同时更新 `user_accounts` 和 `users` 表的 updated_at 字段。 
+$user = \App\Models\User::first();
+$user->account->touch(); 
+
+// 1. User 模型未设置 `touches` 属性时，仅更新 users 表的 updated_at 字段。
+// 2. User 模型设置 `touches` 属性时，同时更新 `user_accounts` 和 `users` 表的 updated_at 字段。 
+$account = \App\Models\UserAccount::first();
+$account->user->touch(); 
+```
