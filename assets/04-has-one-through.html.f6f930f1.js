@@ -1,0 +1,1 @@
+const e={key:"v-7052f97c",path:"/model/related-relationships/04-has-one-through.html",title:"\u8FDC\u5C42\u4E00\u5BF9\u4E00",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1642650416e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:1}]},filePathRelative:"model/related-relationships/04-has-one-through.md"};export{e as data};
