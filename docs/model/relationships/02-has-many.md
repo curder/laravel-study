@@ -4,9 +4,9 @@
 
 ## 软件版本
 
-* Laravel Version 5.4.19
+* Laravel 版本 8.80.0
 
-* PHP Version 7.0.8
+* PHP 版本 7.4.26
 
 ## 关键字和表
 
@@ -16,34 +16,29 @@
 
 * `posts` 和 `users` 表
 
-数据操作之前请先配置好，数据库的一些连接信息。例如下面使用mysql数据库，修改项目根目录下的 `.env` 文件内容。
+数据操作之前请先配置好，数据库的一些连接信息。例如下面使用 sqlite 数据库，修改项目根目录下的 `.env` 文件内容。
 
 ```
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=db_name
-DB_USERNAME=db_username
-DB_PASSWORD=db_password
+DB_CONNECTION=sqlite
 ```
 
 一对多的关联关系，表示表A对应表B的N条记录，例如一个用户可以发表多条文章。
 
-我们定义关联关系，文章表 `posts` （**假设用户表使用系统自带的**）
+定义关联关系，文章表 `posts` （**假设用户表使用系统自带的**）
 
 ## 生成模型和迁移文件
 
 ```shell
-php artisan make:migration create_posts_table --create=posts
+touch database/database.sqlite # 生成 sqlite 文件
 
-php artisan make:model Post
+php artisan make:model Post -mfs # 生成模型、迁移、生成等文件
 ```
 
 ### 编辑迁移文件
 
 `<project>/database/migrate/*_create_posts_table.php`如下
 
-```
+```php
 <?php
 
 use Illuminate\Support\Facades\Schema;
@@ -60,17 +55,18 @@ class CreatePostsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->unsignedInteger('user_id');
-            $table->string('title', 60);
+            $table->string('title');
             $table->text('body');
             $table->timestamps();
             $table->timestamp('published_at')->nullable();
-             $table->foreign('user_id')
-                      ->references('id')
-                      ->on('users')
-                      ->onUpdate('cascade')
-                      ->onDelete('cascade');
+
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
         });
     }
 
@@ -86,78 +82,112 @@ class CreatePostsTable extends Migration
 }
 ```
 
-### 运行 php artisan 命令保存修改到数据库
+### 编辑填充文件
 
-```shell
-php artisan migrate
-```
+#### 修改 `/databases/factories/PostFactory.php`，新增关联数据。
 
-> 执行上面的命令后数据库将生成四张表，
-> migrations
-> password_resets
-> post
-> users
-
-### 定义关联关系和修改模型的 fillable 属性
-
-`App\Post` 模型关联关系：
-
-```
+```php
 <?php
 
-namespace App;
+namespace Database\Factories;
+
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class PostFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition() : array
+    {
+        return [
+            'user_id' => fn () => User::factory()->create(),
+            'title' => $this->faker->sentence(3),
+            'body' => $this->faker->sentence(20),
+            'published_at' => now(),
+        ];
+    }
+}
+
+```
+
+#### 修改 `databases/seeders/PostSeeder.php`，执行填充。
+
+```php
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Post;
+use App\Models\User;
+use Illuminate\Database\Seeder;
+
+class PostSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Post::factory()->count(10)->create(['user_id' => User::factory()->create()]);
+    }
+}
+```
+
+### 执行数据库迁移和数据填充
+
+```shell
+php artisan migrate:refresh --seeder=PostSeeder
+```
+
+> 执行完上面的命令后，在数据库表 `users` 和 `posts` 表中分别生成一些数据。
+
+
+
+### 修改模型的 fillable 属性
+
+`App\Models\Post` 模型关联关系：
+
+```php {9}
+<?php
+
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
     protected $fillable = ['title', 'user_id', 'body', 'published_at'];
-
-    public function user()
-    {
-        /**
-         * User::class related 关联模型
-         * user_id ownerKey 当前表关联字段
-         * id relation 关联表字段，这里指 user 表
-         */
-        return $this->belongsTo(User::class, 'user_id', 'id');
-    }
 }
 ```
 
-`App\User` 模型关联关系；
 
-```
+### 定义Eloquent关联关系
+
+文件在 `<project>/app/Models/User.php` 和 `<project>/app/Models/Post.php`。
+
+#### hasMany
+
+修改模型文件 `app\Models\User.php`，添加关联 `posts` 方法。
+
+```php {19}
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
-    public function posts()
+    // ...
+    public function posts(): HasMany
     {
         /**
          * Post::class related 关联模型
@@ -169,43 +199,30 @@ class User extends Authenticatable
 }
 ```
 
-### 使用 tinker 填充数据
+#### belongsTo
 
-修改 `/databases/factories/ModelFactory.php`，新增关联数据。
+修改模型文件 `app\Models\Post.php`，添加关联 `user` 方法。
 
-```
+```php {17}
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
+namespace App\Models;
 
-    return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
-    ];
-});
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-$factory->define(App\Post::class, function (Faker\Generator $faker) {
-    $user_ids = \App\User::pluck('id')->toArray();
-    return [
-        'user_id' => $faker->randomElement($user_ids),
-        'title' => $faker->word,
-        'body' => $faker->text(),
-    ];
-});
-
-```
-
-```
-php artisan tinker
-
-## 进入到 tinker 界面执行如下命令
-namespace App
-factory(User::class,3)->create(); // 生成3个用户
-factory(Post::class,30)->create() // 生成30条 posts 表的测试数据
+class Post extends Model
+{
+    public function user(): BelongsTo
+    {
+        /**
+         * User::class related 关联模型
+         * user_id ownerKey 当前表关联字段
+         * id relation 关联表字段，这里指 user 表
+         */
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+}
 ```
 
 ## 关联操作
@@ -248,7 +265,7 @@ $post = new \App\Post($request->all());
 ```
 
 
-> `create()` 方法接受属性数组、 创建模型，然后写入数据库，`save()` 和 `create()` 的不同之处在于 `save()` 接收整个 Eloquent 模型实例，而 `create()` 接收原生 PHP 数组。
+> `create()` 方法接受属性数组、 创建模型，然后写入数据库，`save()` 和 `create()` 的不同之处在于 `save()` 接收整个 Eloquent 模型实例，而 `create()` 接收原生 PHP 数组。
 > **注意：** 使用 create 方法之前确保 `$fillable` 属性填充批量赋值。
 
 
