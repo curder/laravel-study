@@ -16,15 +16,10 @@
 
 * `users` 和 `user_accounts` 表
 
-数据操作之前请先配置好，数据库的一些连接信息。例如下面使用 mysql 数据库，修改项目根目录下的 `.env` 文件内容。
+数据操作之前请先配置好，数据库的一些连接信息。例如下面使用 sqlite 数据库，修改项目根目录下的 `.env` 文件内容。
 
 ```dotenv
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=db_name
-DB_USERNAME=db_username
-DB_PASSWORD=db_password
+DB_CONNECTION=sqlite
 ```
 
 一对一是最简单的关联关系，表示表A和表B的记录一一对应。
@@ -34,7 +29,9 @@ DB_PASSWORD=db_password
 ## 生成文件
 
 ```bash
-php artisan make:model UserAccount -msf
+touch database/database.sqlite # 生成 sqlite 文件
+
+php artisan make:model UserAccount -msf # 生成模型、迁移、生成等文件
 ```
 
 ### 编辑迁移文件
