@@ -1,4 +1,4 @@
-# 格式化数据
+# map 格式化数据
 
 有如下结构数组
 
@@ -18,6 +18,8 @@ $gates = [
 ```php
 $boards = ['A17', 'J7', 'K203', 'A157', 'A2', 'B230'];
 ```
+
+观察格式化后的数组为原数组元素`_`后的结尾字符。
 
 ## 使用 foreach 循环
 
@@ -85,7 +87,7 @@ collect($gates)->map(function ($gate) {
  */
 ```
 
-## 使用collection中的[map](/collections/map.md) 和 [last](/collections/last.md) 方法
+## 使用集合的 [map](/collections/map.md) 和 [last](/collections/last.md) 方法
 
 ```php
 $gates = [
