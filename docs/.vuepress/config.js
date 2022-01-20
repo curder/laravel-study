@@ -16,9 +16,8 @@ module.exports = {
         logo: '/images/laravel-logo.min.svg',
         navbar: [
             {text: '首页', link: '/'},
-            {text: '集合', children: ['/collections/', '/collections/demo/']},
-            {text: '模型', children: ['/model/', '/model/related-relationships/']},
-            {text: "其它", children: ['/tests/', '/partials/', '/others/']},
+            {text: '基础', children: ['/collections/', '/model/']},
+            {text: "其它", children: ['/partials/', '/tests/', '/others/']},
             {
                 text: "📖📚", children: [
                     {text: 'Bolg', link: 'https://curder.github.io/blog/'},
@@ -31,26 +30,26 @@ module.exports = {
             '/collections/': [
                 {
                     isGroup: true,
-                    text: '集合',
-                    children: getFiles('collections', false),
+                    text: '相关应用',
+                    children: getFiles('collections/demo'),
                 },
                 {
                     isGroup: true,
-                    text: '实际应用',
-                    children: getFiles('collections/demo'),
-                }
+                    text: '集合',
+                    children: getFiles('collections', false),
+                },
             ],
             '/model/': [
+                {
+                    isGroup: true,
+                    text: '关联关系',
+                    children: getFiles('model/related-relationships'),
+                },
                 {
                     isGroup: true,
                     text: '基础',
                     children: getFiles('model'),
                 },
-                {
-                    isGroup: true,
-                    text: '关联关系',
-                    children: getFiles('model/related-relationships'),
-                }
             ],
             '/tests/': [
                 {
