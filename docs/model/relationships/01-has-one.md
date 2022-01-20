@@ -2,6 +2,8 @@
 
 数据表之间往往不是孤立的，而是纵横交叉、相互关联的，比如一个用户对应一个账户，一个账户只属于一个用户就属于一对一关联。
 
+[GitHub 源代码仓库 - Laravel hasOne Relationships](https://github.com/curder/larave-relationships-demo/tree/has-one)  
+
 ## 软件版本
 
 * Laravel 版本 8.80.0
