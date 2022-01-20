@@ -43,7 +43,7 @@ module.exports = {
                 {
                     isGroup: true,
                     text: '关联关系',
-                    children: getFiles('model/related-relationships'),
+                    children: getFiles('model/relationships'),
                 },
                 {
                     isGroup: true,

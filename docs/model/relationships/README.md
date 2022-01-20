@@ -1,6 +1,4 @@
-# Eloquent 模型
-
-## 关联关系
+# 模型关联关系
 
 * [一对一](/model/relationships/01-has-one.md)
 * [一对多](/model/relationships/02-has-many.md)
@@ -10,10 +8,3 @@
 * [多态一对一](/model/relationships/06-morph-one.md)
 * [多态多对多](/model/relationships/07-morph-to-many.md)
 * [多态一对多](/model/relationships/08-morph-many.md)
-
-## 基础
-
-* [模型缓存](/model/laravel-model-caching.md)
-* [模型事件](/model/laravel-model-events.md)
-* [模型观察者](/model/laravel-model-observers.md)
-* [查询优化](/model/some-tips-for-optimize-database-queries.md)
