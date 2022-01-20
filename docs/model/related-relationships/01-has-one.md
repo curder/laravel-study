@@ -4,21 +4,21 @@
 
 ## 软件版本
 
-* Laravel Version 5.4.19
+* Laravel Version 8.6.10
 
-* PHP Version 7.0.8
+* PHP Version 8.1.0
 
 ## 关键字和数据表
 
-* `hasOne()`
+* `hasOne()` 一个用户拥有对应的一行用户账号信息
 
-* `belongsTo()`
+* `belongsTo()` 一行账号信息从属一个用户
 
 * `users` 和 `user_accounts` 表
 
 数据操作之前请先配置好，数据库的一些连接信息。例如下面使用mysql数据库，修改项目根目录下的 `.env` 文件内容。
 
-```
+```dotenv
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
