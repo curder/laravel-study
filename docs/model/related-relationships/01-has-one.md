@@ -1,6 +1,6 @@
 # 一对一
 
-数据表之间往往不是孤立的，而是纵横交叉、相互关联的，比如一个用户对应一个账户，一个账户只属于一个用户就属于一对一关联。 
+数据表之间往往不是孤立的，而是纵横交叉、相互关联的，比如一个用户对应一个账户，一个账户只属于一个用户就属于一对一关联。
 
 ## 软件版本
 
@@ -16,7 +16,7 @@
 
 * `users` 和 `user_accounts` 表
 
-数据操作之前请先配置好，数据库的一些连接信息。例如下面使用mysql数据库，修改项目根目录下的 `.env` 文件内容。
+数据操作之前请先配置好，数据库的一些连接信息。例如下面使用 mysql 数据库，修改项目根目录下的 `.env` 文件内容。
 
 ```dotenv
 DB_CONNECTION=mysql
@@ -36,7 +36,6 @@ DB_PASSWORD=db_password
 ```shell
 php artisan make:model UserAccount -m
 ```
-
 
 ### 编辑迁移文件
 
@@ -85,7 +84,6 @@ class CreateUserAccountsTable extends Migration
 }
 ```
 
-
 ### 运行 php artisan 命令保存修改到数据库
 
 ```shell
@@ -93,15 +91,16 @@ php artisan migrate
 ```
 
 > 执行上面的命令后数据库将生成四张表，
-> migrations
-> password_resets
-> user_accounts
-> users
+> - `migrations`
+> - `password_resets`
+> - `user_accounts`
+> - `users`
 
 ## 定义关联关系和修改模型的 fillable 属性
 
 并定义可填充的数据，即 `$fillable` 数组的值。
-```
+
+```php {17}
 <?php
 
 namespace App;
@@ -123,7 +122,9 @@ class UserAccount extends Model
 ```
 
 ### 使用 tinker 填充数据
+
 修改 `/databases/factories/ModelFactory.php`，新增关联数据。
+
 ```
 <?php
 
@@ -161,16 +162,18 @@ $factory->define(App\UserAccount::class, function (Faker\Generator $faker) {
 ```
 
 ### 执行上述迁移文件填充数据到数据库
+
 ```shell
 php artisan tinker
 
 // 进入到交互界面执行如下命令生成关联数据
 namespace App
-factory(User::class,1)->create() // 随机生成一个用户信息
-factory(UserAccount::class,1)->create() // 随机生成一个用户关联信息
+factory(User::class, 1)->create() // 随机生成一个用户信息
+factory(UserAccount::class, 1)->create() // 随机生成一个用户关联信息
 ```
 
 ### 查看执行结果
+
 在两个表中可以看到写入的数据：
 
 `users`表数据：
@@ -180,7 +183,6 @@ factory(UserAccount::class,1)->create() // 随机生成一个用户关联信息
 `users_accounts`表：
 
 <img :src="$withBase('/images/related_relationship/screenshot_1492077196226.png')" alt="">
-
 
 ## 定义Eloquent关联关系
 
@@ -197,7 +199,7 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
 
-...
+    // ...
 
    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -215,6 +217,7 @@ class User extends Model
 ```
 
 - 在 `UserAccount` 模型中定义与 `User` 的一对一关系
+
 ```php
 <?php
 namespace App;
@@ -222,7 +225,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserAccount extends Model
 {
 
-... 
+    // ... 
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -245,7 +248,7 @@ class UserAccount extends Model
 
 同时新增 `users` 和 `user_accounts` 表数据
 
-```
+```php
 $user = \App\User::create([
   'name' => 'curder',
   'email' => 'curder@foxmail.com',
@@ -263,7 +266,6 @@ $user->account()->save($account); // 执行关联写入操作
 >  $account = new \App\UserAccount(['qq' => 'another qq', 'wechat' => 'another wechat', 'weibo' => 'another weibo']); // 生成 UserAccount 对象，或者数据通过 Request 对象获取 $account = new \App\Account($request->all());
 >  \Auth::user()->account()->save($account);
 > ```
-
 
 ### 查询数据
 
@@ -285,17 +287,16 @@ $account->user; // 通过关联信息获取用户信息
 
 ### 关联删除
 
-```
+```php
 $account = \App\UserAccount::find(1);
 $account->user->delete(); // 删除用户 users 表和 user_account 相关记录
 ```
-
 
 ### 更新数据
 
 通过用户表 `users` 数据，更新关联 `user_accounts`
 
-```
+```php
 $user = \App\User::find(1);
 $account = $user->account; // 获取到关联信息
 $account->qq = 'new qq';
@@ -308,7 +309,7 @@ $account->save();
 
 通过 用户信息表 `user_accounts` 关联更新 `users` 数据表
 
-```
+```php
 $account = \App\UserAccount::find(1);
 $user = $account->user; // 获取到关联信息
 
@@ -317,8 +318,10 @@ $user->save();
 ```
 
 #### 通过关联 User 数据
+
 另外，如果需要同步更新关联表的 `updated_at` 字段，在模型中定义 `$touches` 属性，例如，我们在 UserAccount 中定义如下关系：
-```
+
+```php
 /**
  * 要触发的所有关联关系
  *
@@ -326,6 +329,7 @@ $user->save();
  */
  protected $touches = ['user'];
 ```
+
 在更新 `user_accounts` 表中数据时，同步更新 `users` 表的 `updated_at` 数据。
 
 
