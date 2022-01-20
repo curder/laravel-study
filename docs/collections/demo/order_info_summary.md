@@ -2,7 +2,7 @@
 
 有如下订单数据，计算汇总数据。
 
-```
+```php
 $orders = [
     [
         'date' => '2017-09-11',
@@ -66,13 +66,13 @@ $orders = [
 
 ## 根据日期汇总订单
 
-```
+```php
 $result = collect($orders)->groupBy('date');
 ```
 
 ## 根据日期和供应商分组
 
-```
+```php
 $result = collect($orders)->groupBy('date')->map(function($item){
     return $item->groupBy('supplier');
 });
@@ -80,7 +80,7 @@ $result = collect($orders)->groupBy('date')->map(function($item){
 
 # 计算每日销售金额
 
-```
+```php
 $result = collect($orders)->groupBy('date')->map(function($item){
     return $item->sum(function($item){
         return $item['item_unit_price'] * $item['qty'];
