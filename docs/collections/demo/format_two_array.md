@@ -127,8 +127,7 @@ $profit = collect($thisYear)
   ->zip($lastYear)
   ->map(function ($monthly) {
     return $monthly->first() - $monthly->last();
-  });
-dd($profit);
+  })->dd();
 
 /**
 Illuminate\Support\Collection {#1144
