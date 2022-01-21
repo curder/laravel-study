@@ -173,7 +173,7 @@ class Post extends Model
 
 #### hasMany
 
-修改模型文件 `app\Models\User.php`，添加关联 `posts` 方法。
+修改模型文件 `app\Models\User.php`，添加 `posts` 关联方法。
 
 ```php {19}
 <?php
@@ -229,96 +229,194 @@ class Post extends Model
 
 ### 新增数据
 
-#### 使用 save() 方法进行关联数据的新增
+#### 创建一条关联数据
 
 常见的新增 `posts` 数据场景是用户发布一篇文章，如下:
-```
-$post = new \App\Post([
-	'title' => 'test title',
-	'body' => 'test body',
-	'published_at' => null,
-]);
-\Auth::user()->posts()->save($post);
 
-// 或者获取 \Request 对象传递的数据写入
-$post = new \App\Post($request->all());
-\Auth::user->posts()->save($post));
-```
+- 使用 `create()` 方法进行关联数据的新增
+```php
+$user = User::first();
 
-#### 使用 saveMany() 方法进行关联数据的批量新增
-```
-// 如果需要保存多个关联模型，可以使用 `saveMany()` 方法，如下：
-\Auth::user()->posts()->saveMany([
-	new \App\Post(['title' => 'test title', 'body' => 'test body', 'published_at' => null]),
-	new \App\Post(['title' => 'test title2', 'body' => 'test body2', 'published_at' => null])
+$user->posts()->create([
+  'title' => 'test create title',
+  'body' => 'test create body',
+  'published_at' => null,
 ]);
 ```
 
-#### 使用 create() 方法进行关联数据的新增
+- 使用 `save()` 方法进行关联数据新增
+```php
+$user = User::first();
 
-```
-\Auth::user()->posts()->create([
-	'title' => 'test title3',
-	'body' => 'test body3',
-	'published_at' => null,
+(new Post)->fill([
+  'title' => 'save test title',
+  'body' => 'save test body',
+  'published_at' => null,
 ]);
+
+$user->posts()->save($post); 
 ```
+
+> 通过调用 User 模型的 `posts()` 关联方法创建文章。
 
 
 > `create()` 方法接受属性数组、 创建模型，然后写入数据库，`save()` 和 `create()` 的不同之处在于 `save()` 接收整个 Eloquent 模型实例，而 `create()` 接收原生 PHP 数组。
-> **注意：** 使用 create 方法之前确保 `$fillable` 属性填充批量赋值。
+> 
+> **注意：** 使用 `create()` 方法之前确保 `$fillable` 属性填充批量赋值。
 
+
+#### 批量创建关联数据
+
+如果需要保存多个关联模型，可以使用 `saveMany()` 或 `createMany()` 方法。
+
+- `saveMany()` 方法
+
+```php {5}
+$user = \App\Models\User::first();
+
+$user
+  ->posts()
+  ->saveMany([
+    new \App\Models\Post([
+      'title' => 'test saveMany title',
+      'body' => 'test saveMany body',
+      'published_at' => null,
+    ]),
+    new \App\Models\Post([
+      'title' => 'test saveMany another title',
+      'body' => 'test saveMany another body',
+      'published_at' => null,
+    ]),
+  ]);
+```
+> `saveMany()` 方法接收模型数组参数     
+
+- `createMany()` 方法
+```php {3}
+$user = \App\Models\User::first();
+
+$user->posts()->createMany([
+  [
+    'title' => 'test createMany title',
+    'body' => 'test createMany body',
+    'published_at' => null,
+  ],
+  [
+    'title' => 'test createMany another title',
+    'body' => 'test createMany another body',
+    'published_at' => null,
+  ],
+]); 
+```
+> `createMany` 方法接收数组参数
+
+> 执行上面的操作后将一次生成两条关联数据。
 
 ### 查询数据
 
-#### 查询用户发布的所有文章
-##### 获取单个用户的文章
-```
-// 查询当前用户的所有文章
-$posts = \Auth::user()->posts->toArray();
+#### 查询所属数据
 
+- 获取指定模型的关联数据
+```php
+$user = \App\Models\User::first();
+$posts = $user->posts;
 
-// 根据条件筛选当前用户的文字
-$posts = \Auth::user()->posts()->where('id','>',10)->get()->toArray();
-```
-
-##### 获取用户列表并关联所属文章
-```
-\App\User::with('posts')->get()->toArray();
+// 分页
+$user = \App\Models\User::first();
+$posts = $user->posts()->paginate();
 ```
 
+- 获取指定字段的关联数据
+```php
+$user = \App\Models\User::first();
+$user->with('posts:user_id,title,published_at')->get(); // 仅获取关联数据的某些指定字段，但需要注意的是 foreignKey 必须提供，比如这里的 user_id
 
-#### 查询文章所属用户
-
-##### 查询单个文章的关联用户信息
+// 添加条件
+$user = \App\Models\User::first();
+$user
+  ->with([
+    'posts' => function ($query) {
+      $query
+        ->select('user_id', 'title', 'published_at')
+        ->whereNotNull('published_at') // published_at 不为 Null
+        ->latest('id') // 通过 id 倒序
+        ->first()
+        ->withDefault();; // 仅获取第一条数据
+    },
+  ])
+  ->get(); 
 ```
-$post = \App\Post::find(1); // 获取文章数据
-$user = $post->user->toArray(); // 获取文字所属用户
-```
 
-##### 文章列表关联用户信息
-```
-$post = \App\Post::with('user')->get()->toArray();
+- 获取用户列表并关联所属文章
+```php
+\App\Models\User::with('posts')
+  ->get();
 ```
 
 
+#### 查询属主
+
+- 查询关联属主
+```php
+$post = \App\Models\Post::find(1); // 获取文章数据
+$user = $post->user; // 获取所属用户
+```
+
+- 查询列表并附加关联数据
+```php
+\App\Models\Post::with('user')->get();
+
+// 获取指定字段的关联数据
+\App\Models\Post::with('user:id,name,email')->get();
+
+// 添加条件
+\App\Models\Post::with([
+  'user' => function ($query) {
+    $query->select('id', 'name', 'email')->whereNotNull(
+      'email_verified_at' // email_verified_at 不为 Null
+    );
+  },
+])->get();
+```
+
+- 添加默认模型
+```php
+$post = \App\Models\Post::with([
+  'user' => function ($query) {
+    $query
+      ->select('id', 'name', 'email')
+      ->whereNotNull(
+        'email_verified_at' // email_verified_at 不为 Null
+      )
+      ->withDefault(); // 添加这个调用将在没有获取到值时，返回空的模型，而不是 null
+  },
+])->get();
+```
+
+> `withDefault()` 还可以添加参数，[源代码查看这里](https://github.com/laravel/framework/blob/8.x/src/Illuminate/Database/Eloquent/Relations/Concerns/SupportsDefaultModels.php#L32)
+                               
 ### 关联删除
 
-删除某用户下的所有文章数据。
+- 删除某用户下的所有文章数据。
 
+```php
+$user = \App\Models\User::first();
+
+$user->post()->delete(); // 通过关联关系删除，返回删除数据的行数
+
+$user->posts->each->delete(); // 通过 \Illuminate\Database\Eloquent\Collection 集合类删除，返回值为集合
 ```
-$user = \App\User::find(1);
-$user->posts()->delete(); // 删除 posts 表中相关记录
+
+- 禁用某篇文章的用户
+
+```php
+$post = \App\Models\Post::first();
+
+$post->user->delete(); // 通过模型删除
+
+$post->user()->delete(); // 通过关联关系删除
 ```
 
 ### 更新数据
 
-
-
-
-
-#### 通过关联 User 数据
-
-
-
-
+一般情况下不会出现需要关联更新数据的情况。
