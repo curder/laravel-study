@@ -1,8 +1,25 @@
 # 一对一
-
-数据表之间往往不是孤立的，而是纵横交叉、相互关联的，比如一个用户对应一个账户，一个账户只属于一个用户就属于一对一关联。
-
+ 
 [GitHub 源代码仓库 - Laravel hasOne Relationships](https://github.com/curder/larave-relationships-demo/tree/has-one)  
+
+
+一对一的关联关系是最简单的关联关系，比如一个用户对应一个账户，一个账户只属于一个用户。
+
+下面是对应的表结构：
+
+```
+users
+    id - integer
+    name - string
+    ...
+
+user_accounts
+    id - integer
+    user_id - integer
+    qq - string
+    ...
+```
+
 
 ## 软件版本
 
