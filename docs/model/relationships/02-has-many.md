@@ -1,6 +1,26 @@
 # 一对多
 
-数据表之间往往不是孤立的，而是纵横交叉、相互关联的，比如一个用户发表了多篇文章，一篇文章只属于一个用户等。
+[GitHub 源代码仓库 - Laravel hasOne Relationships](https://github.com/curder/larave-relationships-demo/tree/has-many)
+
+
+一个用户发表了多篇文章，一篇文章只属于一个用户。
+
+
+下面是对应的表结构：
+
+```
+users
+    id - integer
+    name - string
+    ...
+
+posts
+    id - integer
+    user_id - integer
+    title - string
+    ...
+```
+
 
 ## 软件版本
 
