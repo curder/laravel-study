@@ -1,6 +1,6 @@
 # 一对多
 
-[GitHub 源代码仓库 - Laravel hasOne Relationships](https://github.com/curder/larave-relationships-demo/tree/has-many)
+[GitHub 源代码仓库 - Laravel hasMany Relationships](https://github.com/curder/laravel-relationships-demo/tree/has-many)
 
 
 一个用户发表了多篇文章，一篇文章只属于一个用户。

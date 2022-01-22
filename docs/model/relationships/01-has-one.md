@@ -1,6 +1,6 @@
 # 一对一
  
-[GitHub 源代码仓库 - Laravel hasOne Relationships](https://github.com/curder/larave-relationships-demo/tree/has-one)  
+[GitHub 源代码仓库 - Laravel hasOne Relationships](https://github.com/curder/laravel-relationships-demo/tree/has-one)  
 
 
 一对一的关联关系是最简单的关联关系，比如一个用户对应一个账户，一个账户只属于一个用户。
