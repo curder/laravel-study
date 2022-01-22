@@ -257,7 +257,7 @@ public function roles() : BelongsToMany
      */
     return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id', 'id', 'id', 'roles')
                 ->using(RoleUser::class)
-                ->withPivot(['created_at', 'updated_at']) // 中间表的字段，这里的中间表是 role_user
+                ->withPivot(['description']) // 中间表的字段，这里的中间表是 role_user，默认有 created_at和 updated_at 字段
                 ->withTimestamps();
 }
 ```
@@ -280,7 +280,7 @@ public function users() : BelongsToMany
      */
     return $this->belongsToMany(User::class, 'role_user', 'role_id', 'user_id', 'id', 'id', 'users')
                 ->using(RoleUser::class)
-                ->withPivot(['created_at', 'updated_at']) // 中间表的字段，这里的中间表是 role_user
+                ->withPivot(['description']) // 中间表的字段，这里的中间表是 role_user，默认有 created_at和 updated_at 字段
                 ->withTimestamps();
 }
 ```
