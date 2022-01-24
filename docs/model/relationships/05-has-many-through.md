@@ -1,216 +1,322 @@
 # 远层一对多
 
-“远层一对多”指的是通过一个中间关联对象访问远层的关联关系，比如用户与文章之间存在一对多关系，国家与用户之间也存在一对多关系，那么通过用户可以建立国家与文章的之间的一对多关联关系，我们称之为“远层一对多”，我们可以利用这种关联关系处理多语言环境下的文章列表。
+"远层一对多"指的是通过一个中间关联对象访问远层的关联关系。
+
+比如用户与文章之间存在一对多关系，国家与用户之间也存在一对多关系，通过用户可以建立国家与文章的之间的一对多关联关系，称之为"远层一对多"，利用关联关系处理多语言环境下的文章列表。
+                        
+
+```
+users
+    id - integer
+    name - string
+    ...
+
+posts
+    id - integer
+    user_id - integer
+    name - string
+    ...
+
+countries
+    id - integer
+    user_id - integer
+    name - string
+    ...
+```
 
 ## 软件版本
 
-* Laravel Version 5.4.19
+- Laravel 版本 8.80.0
 
-* PHP Version 7.0.8
+- PHP 版本 7.4.26
 
 ## 关键字和表
 
-* `hasOne()`
+- `hasManyThrough()`
 
-* `hasMany()`
+- `posts` 、`countries` 和 `users` 表
 
-* `belongsTo()`
+数据操作之前请先配置好，数据库的一些连接信息。例如下面使用 `sqlite` 数据库，修改项目根目录下的 `.env` 文件内容。
 
-*  `hasManyThrough()`
-
-* `posts` 、`countries` 和 `users` 表
-
-数据操作之前请先配置好，数据库的一些连接信息。例如下面使用mysql数据库，修改项目根目录下的 `.env` 文件内容。
-
-```
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=db_name
-DB_USERNAME=db_username
-DB_PASSWORD=db_password
+```dotenv
+DB_CONNECTION=sqlite
 ```
 
 
-我们定义关联关系，文章表 `posts` 和 国家表 `countries`（**假设用户表使用系统自带的**）
-
-## 生成模型和迁移文件
+## 生成文件
 
 ```shell
-php artisan make:migration create_posts_table --create=posts
+touch database/database.sqlite # 生成 sqlite 文件
 
-php artisan make:migration create_countries_table --create=countries
-
-php artisan make:model Post
-php artisan make:model Country
+php artisan make:model Country -ms # 生成模型、迁移、生成等文件
+php artisan make:model Post -ms # 生成模型、迁移、生成等文件
 ```
 
 ### 编辑迁移文件
 文件 `<project>/database/migrate/*_create_users_table.php` 内容如下
+```php
+Schema::create('users', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->string('email')->unique();
+    $table->timestamp('email_verified_at')->nullable();
+    $table->string('password');
+    $table->rememberToken();
+    $table->timestamps();
+})
 ```
- $table->increments('id');
- $table->string('name');
- $table->unsignedInteger('country_id'); // 新增这个表字段
- $table->string('email',30)->unique();
- $table->string('password');
- $table->rememberToken();
- $table->timestamps();
-```
-
-
-文件 `<project>/database/migrate/*_create_posts_table.php` 内容如下
-```
- $table->increments('id');
- $table->unsignedInteger('user_id');
- $table->string('title', 60);
- $table->text('body');
- $table->timestamps();
- $table->timestamp('published_at')->nullable();
- $table->foreign('user_id')
- 		->references('id')
- 		->on('users')
- 		->onUpdate('cascade')
- 		->onDelete('cascade');
-```
-
 
 文件 `<project>/database/migrate/*_create_countries_table.php` 内容如下
-```
- $table->increments('id');
- $table->string('name',20);
- $table->string('display_name',20);
- $table->timestamps();
+```php
+Schema::create('countries', function (Blueprint $table) {
+     $table->id();
+     $table->unsignedBigInteger('user_id');
+     $table->string('name');
+     $table->string('display_name');
+     $table->timestamps();
+     $table->foreign('user_id')
+      ->references('id')
+      ->on('users')
+      ->onUpdate('cascade')
+      ->onDelete('cascade');
+});
 ```
 
-### 运行 php artisan 命令保存修改到数据库
+文件 `<project>/database/migrate/*_create_posts_table.php` 内容如下
+```php
+Schema::create('posts', function (Blueprint $table) {
+    $table->id();
+    $table->unsignedBigInteger('country_id');
+    $table->string('name');
+    $table->text('body')->nullable();
+    $table->timestamp('published_at')->nullable();
+    $table->timestamps();
+    $table->foreign('user_id')
+        ->references('id')
+        ->on('users')
+        ->onUpdate('cascade')
+        ->onDelete('cascade');
+});
+```
+
+
+
+### 编辑填充文件
+ 
+#### 修改 `databases/factories/CountryFactory.php`，新增关联数据。
+
+```php
+<?php
+
+namespace Database\Factories;
+
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class CountryFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition(): array
+    {
+        return [
+            'user_id' => fn () => User::factory()->create(),
+            'name' => $this->faker->word(),
+            'display_name' => $this->faker->word(),
+        ];
+    }
+}
+```
+
+#### 修改 `databases/factories/PostFactory.php`，新增关联数据。
+
+```php
+<?php
+
+namespace Database\Factories;
+
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class PostFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition(): array
+    {
+        return [
+            'country_id' => fn () => Country::factory()->create(),
+            'name' => $this->faker->word(),
+            'body' => $this->faker->sentence(10),
+            'published_at' => null,
+        ];
+    }
+}
+```
+
+#### 修改 `databases/seeders/DatabaseSeeder.php`，执行填充。
+```php
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Country;
+use App\Models\Post;
+use App\Models\User;
+use Illuminate\Database\Seeder;
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $country = Country::factory()->create();
+
+        Post::factory()->count(2)->create(['country_id' => $country]);
+    }
+}
+```
+
+
+### 执行数据库迁移和数据填充
 
 ```shell
-php artisan migrate
+php artisan migrate:refresh --seed
 ```
 
-> 执行上面的命令后数据库将生成五张表，
-> migrations
-> password_resets
-> post
-> users
-> countries
+> 执行完上面的命令后，在数据库表 `users`、`posts` 和 `countries` 表中分别生成一些数据。
 
-### 定义关联关系和修改模型的 fillable 属性
 
-`App\Country` 模型中定义与 `App\Post` 模型的远层一对多关系
-```
-public function user()
+### 修改模型的 fillable 属性
+- `App\Models\Country` 模型
+```php {12} 
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Country extends Model
 {
-    /**
-     * User::class related 关联模型
-     * country_id foreignKey 当前表关联字段
-     * id localKey 关联表字段
-     */
-    return $this->hasMany('App\User' , 'country_id' , 'id');
-}
+    use HasFactory;
+    
+    protected $fillable = ['user_id', 'name', 'display_name'];
+} 
+```
 
-public function posts()
+- `App\Models\Post` 模型
+```php {12}
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Post extends Model
 {
-    /**
-     * @param  string      $related
-     * @param  string      $through
-     * @param  string|null $firstKey
-     * @param  string|null $secondKey
-     * @param  string|null $localKey 不填默认为当前模型的主键
-     */
-    return $this->hasManyThrough('App\Post' , 'App\User' , 'country_id' , 'user_id', 'id');
-}
+    use HasFactory;
+    
+    protected $fillable = ['country_id', 'name', 'body', 'published_at'];
+} 
 ```
 
-> 由此可见我们通过 `hasManyThrough()` 方法来定义远层一对多关联。其中第一个参数是关联对象类名，第二个参数是中间对象类名。
+### 定义Eloquent关联关系
 
-`App\Post` 模型关联关系：
-```
-protected $fillable = ['title' , 'user_id' , 'body' , 'published_at'];
+文件在 `<project>/app/Models/User.php`、`<project>/app/Models/Post.php` 和 `<project>/app/Models/Country.php`。
+                
+- 修改模型文件 `app\Models\User.php`，添加 `country` 和 `posts` 关联方法。
+```php {13,19}
+<?php
 
-public function user()
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+
+class User extends Authenticatable
 {
-    /**
-    * User::class related 关联模型
-    * user_id ownerKey 当前表关联字段
-    * id relation 关联表字段
-    */
-    return $this->belongsTo(User::class , 'user_id' , 'id');
+    // ...
+
+    public function country(): HasOne
+    {
+        return $this->hasOne(Country::class);
+    }
+
+
+    public function posts(): HasManyThrough
+    {
+        /**
+         * @param  string      $related
+         * @param  string      $through
+         * @param  string|null $firstKey
+         * @param  string|null $secondKey
+         * @param  string|null $localKey 不填默认为当前模型的主键
+         */
+        return $this->hasManyThrough(Post::class, Country::class);
+    }
 }
 ```
 
-`App\User` 模型关联关系
+- 修改模型文件 `app\Models\Post.php`
+```php {10}
+<?php
 
-```
-public function posts()
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+class Post extends Model
 {
-    /**
-     * Post::class related 关联模型
-     * user_id foreignKey 当前表关联字段
-     * id localKey 关联表字段
-     */
-    return $this->hasMany(Post::class , 'user_id' , 'id');
-}
+    public function country(): BelongsTo
+    {
+        return $this->belongsTo(Country::class);
+    }
+} 
+```
 
-public function country()
+- 修改模型文件 `app\Models\Country.php`
+```php{11,16}
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+class Country extends Model
 {
-    /**
-     * Country::class related 关联模型
-     * id foreignKey 当前表关联字段
-     * country_id localKey 关联表字段
-     */
-    return $this->hasOne(Country::class , 'id' , 'country_id');
-}
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class);
+    }
+} 
 ```
 
-### 使用 tinker 填充数据
-
-修改 `/databases/factories/ModelFactory.php`，新增关联数据。
-
-```
-$factory->define(App\User::class , function(Faker\Generator $faker){
-    static $password;
-    $country_ids = \App\Country::pluck('id')->toArray();
-
-    return [
-        'name'           => $faker->name ,
-        'country_id'     => $faker->randomElement($country_ids) ,
-        'email'          => $faker->unique()->safeEmail ,
-        'password'       => $password ? : $password = bcrypt('secret') ,
-        'remember_token' => str_random(10) ,
-    ];
-});
-$factory->define(App\Post::class , function(Faker\Generator $faker){
-    $user_ids = \App\User::pluck('id')->toArray();
-
-    return [
-        'user_id' => $faker->randomElement($user_ids) ,
-        'title'   => $faker->word ,
-        'body'    => $faker->text() ,
-    ];
-});
-
-$factory->define(App\Country::class , function(Faker\Generator $faker){
-    return [
-        'name'         => $faker->country ,
-        'display_name' => $faker->country ,
-    ];
-});
-```
-
-```
-php artisan tinker
-
-## 进入到 tinker 界面执行如下命令
-namespace App
-factory(Country::class,2)->create(); // 生成两个国家数据
-factory(User::class,3)->create(); // 生成3个用户
-factory(Post::class,30)->create() // 生成30条 posts 表的测试数据
-```
 ## 关联操作
 
 ### 新增数据
-#### 使用 save() 方法进行关联数据的新增
+
+#### 使用 `save()` 方法进行关联数据的新增
 
 常见的新增 `posts` 数据场景是用户发布一篇文章，如下:
 ```
