@@ -1,6 +1,6 @@
 # 模型关联关系
   
-*定义关系
+* 定义关系
     * [One To One 一对一](/model/relationships/01-has-one.md)
     * [One To Many 一对多](/model/relationships/02-has-many.md)
     * [Has One Of Many 许多之一 ](/model/relationships/03-has-one-of-many.md)
