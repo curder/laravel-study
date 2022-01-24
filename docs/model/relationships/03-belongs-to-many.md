@@ -1,5 +1,7 @@
 # 多对多
 
+[GitHub 源码演示 - Laravel Relationships Demo](https://github.com/curder/laravel-relationships-demo/tree/belongs-to-many)
+
 一个用户对应多个角色，一个角色拥有多个用户。
 
 下面是对应的表结构：

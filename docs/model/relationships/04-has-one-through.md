@@ -1,5 +1,7 @@
 # 远层一对一
 
+[GitHub 源码演示 - Laravel Relationships Demo](https://github.com/curder/laravel-relationships-demo/tree/has-one-through)
+
 "远层一对一"关系定义了与另一个模型的一对一关系。但是，这种关系表明声明模型可以通过第三个模型与另一个模型的一个实例匹配。
 
 在车辆修理店应用中，每个 `Mechanic` 模型可以与一个 `Car` 模型相关联，并且每个 `Car` 模型可以与一个 `Owner` 模型相关联。 虽然机械师 `Mechanic` 和所有者 `Owner` 在数据库中没有直接关系，但机械师 `Mechanic` 可以通过 `Car` 模型访问所有者 `Owner` 。
