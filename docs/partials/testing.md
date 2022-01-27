@@ -2,6 +2,8 @@
 
 ## 测试命令定时执行
 
+断言定时任务一定会按照指定的规则执行。
+
 <CodeGroup>
 
   <CodeGroupItem title="App\Console\Kernel.php">
@@ -62,3 +64,5 @@ class KernelTest extends TestCase
 
   </CodeGroupItem>
 </CodeGroup>
+
+其他的简单测试示例代码 [curder/laravel-console-command-test-demo](https://github.com/curder/laravel-console-command-test-demo) 。
