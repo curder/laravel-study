@@ -953,3 +953,21 @@ public function boot()
     }
 }
 ```
+
+## whereBelongsTo 关联查询
+
+在 [laravel/framework v8.63.0](https://github.com/laravel/framework/releases/tag/v8.63.0) 开始加入 `whereBelongsTo` 方法。
+
+这允许从查询中删除已属性外键名称，并使用关系方法作为数据来源！
+
+```php
+// ❌
+Post::where('user_id', $user->id)
+    ->where('category_id', $category->id)
+    ->first();
+
+// ✅
+Post::whereBelongsTo($user)
+    ->whereBelongsTo($category)
+    ->first(); 
+```
