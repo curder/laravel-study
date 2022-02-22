@@ -3,7 +3,7 @@
 * 定义关系
     * [One To One 一对一](/model/relationships/01-has-one.md)
     * [One To Many 一对多](/model/relationships/02-has-many.md)
-    * [Has One Of Many 许多之一 ~ TODO](/model/relationships/03-has-one-of-many.md)
+    * [Has One Of Many 许多之一](/model/relationships/03-has-one-of-many.md)
     * [Has One Through 远层一对一](/model/relationships/04-has-one-through.md)
     * [Has Many Through 远层一对多](/model/relationships/05-has-many-through.md)
     * [Many To Many 多对多](/model/relationships/06-belongs-to-many.md)

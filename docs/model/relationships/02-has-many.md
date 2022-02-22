@@ -476,7 +476,7 @@ class HasManyTest extends TestCase
     }
 }
 ```
-                       
+
 ### belongsTo
 
 ```php
