@@ -9,7 +9,7 @@
     * [Many To Many 多对多](/model/relationships/06-belongs-to-many.md)
 
 * 多态关系
-  * [One To One 多态一对一](/model/relationships/07-morph-one.md)
-  * [One To Many 多态一对多](/model/relationships/08-morph-many.md)
+  * [Morph One 多态一对一](/model/relationships/07-morph-one.md)
+  * [Morph Many 多态一对多](/model/relationships/08-morph-many.md)
   * [One Of Many 多态其中之一 ~ TODO](/model/relationships/09-one-of-many.md)
-  * [Many To Many 多态多对多](/model/relationships/10-morph-to-many.md)
+  * [Morph To Many 多态多对多](/model/relationships/10-morph-to-many.md)
