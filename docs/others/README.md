@@ -1,7 +1,6 @@
 
 # 其它
 
-- [Laravel5 发送邮件使用 Service 隔离业务](./send_mesages_use_service_partten.md)
 - [如何使用 Repository 模式](./how_to_use_repository_mode.md)
 - [如何使用 Service 模式](./how_to_use_service_mode.md)
 - [如何使用 Presenter 模式](./how_to_use_presenter_mode.md)
