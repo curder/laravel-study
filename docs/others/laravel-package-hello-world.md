@@ -24,7 +24,7 @@ composer create-project laravel/laravel MyPackage --prefer-dist
 
 在`packages`目录下建立`vendor/package/src`子目录，本package会建立`curder/helloworld/src`。
 
-<img :src="$withBase('/images/packages/helloworld-source-code-path.jpg')" alt="">
+![创建目录](./images/helloworld-source-code-path.jpg)
 
 ## 设定PSR-4命名空间
 
@@ -405,13 +405,16 @@ php artisan vendor:publish
 
 执行完上面的命令后，就能看到如下的界面
 
-输入`Curder\HelloWorld\HelloWorldServiceProvider`的内容进行发布。
+![发布状态](./images/helloworld-publish-config-and-database-migration.png)
+
+输入`Curder\HelloWorld\HelloWorldServiceProvider` 的索引号对内容进行发布。
 
 > 另外对于已经发布的内容如果需要覆盖，在上面的发布命令中加入 `--force` 参数。但是在执行这个命令之前请确保对修改过的数据已有备份。
 
 ## 访问效果
 
-<img :src="$withBase('/images/packages/helloworld-browser.png')" alt="">
+![访问效果](./images/helloworld-browser.png)
+
 ## 上传到GitHub
 
 ### 设定package的命名空间
@@ -467,7 +470,7 @@ git commit -m "Initial commit."
 
 ### 建立远程git仓库
 
-<img :src="$withBase('/images/packages/helloworld-create-github-repository.png')" alt="">
+![建立远程git仓库](./images/helloworld-create-github-repository.png)
 
 ### 推送到远程仓库
 
@@ -493,8 +496,8 @@ git push --tags
 因为Packagist已经有很多package名字叫做helloworld，Packagist让你确认是否要上传。
 
 ### 上传成功
-
-<img :src="$withBase('/images/packages/helloworld-create-success.png')" alt="">
+                   
+![上传成功状态](./images/helloworld-create-success.png)
 
 ## 测试Package
 
@@ -521,8 +524,7 @@ php artisan vendor:publish
 
 ### 浏览器测试
 
-<img :src="$withBase('/images/packages/helloworld-browser-test.png')" alt="">
-
+![浏览器测试](./images/helloworld-browser-test.png)
 
 
 
