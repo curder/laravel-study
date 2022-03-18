@@ -1,4 +1,4 @@
-## 如何使用 Service 模式
+# 如何使用 Service 模式
 
 若将数据库逻辑都写在 Controller 里，会造成 Controller 代码的臃肿难以维护，基于 SOLID 原则，我们应该使用 **Service** 模式辅助 Controller，将相关的业务逻辑封装在不同的 Service，方便项目的后期维护。
 

@@ -1,4 +1,4 @@
-## 如何使用 Repository 模式
+# 如何使用 Repository 模式
 
 若将数据库逻辑都写在 Model 里，会造成 model 代码的臃肿难以维护，基于 SOLID 原则，我们应该使用 **Repository** 模式辅助 Model，将相关的数据库逻辑封装在不同的 Repository，方便后期项目的维护。
 

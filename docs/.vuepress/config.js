@@ -65,6 +65,13 @@ module.exports = {
                     children: getFiles('partials'),
                 }
             ],
+            '/others/': [
+                {
+                    isGroup: true,
+                    text: "其他",
+                    children: getFiles('others'),
+                }
+            ],
         },
     }
 }

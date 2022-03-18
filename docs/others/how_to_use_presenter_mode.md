@@ -1,8 +1,8 @@
-## 如何使用Presenter模式
+# 如何使用Presenter模式
 
 若将显示逻辑都写在 View，会造成 View 代码臃肿而难以维护，基于 SOLID 原则，应该使用 Presenter 模式辅助 View，将相关的显示逻辑封装在不同的 Presenter ，方便中大型项目的维护。
 
-### 版本
+## 版本
 
 Lararvel 5.4.17
 
