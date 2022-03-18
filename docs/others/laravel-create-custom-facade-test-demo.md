@@ -13,7 +13,7 @@ Laravel 提供默认的外观，例如 `Route`，`Redirect`，`Cookie`，`App`�
 
 如果要为自己的应用程序创建 `Facade` ，只需遵循以下步骤：
 
-## 安装Laravle
+## 安装 Laravel
 
 ```bash
 composer create-project laravel/laravel laravel-create-custom-facade-test-demo -vvv
