@@ -12,4 +12,4 @@
 - [Laravel 测试](./laravel-test.md)
 
 - [Laravel 创建自定义 Facade](./laravel-create-custom-facade-test-demo.md)
-
+- [Laravel添加全局函数](./laravel-import-custom-function-file.md)
