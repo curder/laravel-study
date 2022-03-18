@@ -36,9 +36,10 @@ public function boot()
 修改数据库的字符集
 如图，新版的Laravel 5.4 使用了 `utf8mb4` 和 `utf8mb4_unicode_ci` ，这个字符集支持 **emoji** 
 
-<img :src="$withBase('/images/related_relationship/screenshot_1493026376620.png')" alt="">
+![](./images/screenshot_1493026376620.png)
 
 我们将他改成：
+
 ```
 'charset' => 'utf8',
 'collation' => 'utf8_general_ci',
