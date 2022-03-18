@@ -32,7 +32,6 @@ function limit(string $value, int $limit = 200, string $end = ''): string
 
 ```json
 {
-//     ...
     "autoload": {
         "psr-4": {
             "App\\": "app/",
@@ -41,14 +40,8 @@ function limit(string $value, int $limit = 200, string $end = ''): string
         },
         "files": [
             "app/Supports/helpers.php"
-        ],
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
-//     ...
+        ]
+    }
 }
 ```
 
