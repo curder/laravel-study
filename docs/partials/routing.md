@@ -92,6 +92,31 @@ public function getRouteKeyName() {
 }
 ```
 
+## 从路由文件快速导航到控制器
+
+这个特性在 Laravel 8 之前是可选的，在 Laravel 8 中成为标准的主要路由语法。
+
+更早时的路由定义：
+
+```php
+Route::get('page', 'PageController@action');
+```
+
+可以将 Controller 指定为一个类：
+
+```php
+Route::get('page', [\App\Http\Controllers\PageController::class, 'action']);
+```
+
+然后能够在 **PhpStorm** 中单击 `PageController`，并直接导航到控制器文件，而不是手动搜索它。
+
+或者，为了使其更短，将其添加到路由定义文件的顶部：
+
+```php
+use App\Http\Controllers\PageController;
+
+Route::get('page', [PageController::class, 'action']);
+```
 
 ## 限速
 
