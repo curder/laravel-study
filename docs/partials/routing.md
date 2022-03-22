@@ -27,6 +27,58 @@ Route::domain('{username}.workspace.com')->group(function () {
 });
 ```
 
+## Laravel UI 包 route 方法
+
+如果使用 [Laravel UI](https://github.com/laravel/ui) 包，可能想知道 `Auth::routes();` 背后的实际路由是什么？ 可以检查文件 `/vendor/laravel/ui/src/AuthRouteMethods.php`。
+
+```php
+public function auth()
+{
+    return function ($options = []) {
+        // Authentication Routes...
+        $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
+        $this->post('login', 'Auth\LoginController@login');
+        $this->post('logout', 'Auth\LoginController@logout')->name('logout');
+        // Registration Routes...
+        if ($options['register'] ?? true) {
+            $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+            $this->post('register', 'Auth\RegisterController@register');
+        }
+        // Password Reset Routes...
+        if ($options['reset'] ?? true) {
+            $this->resetPassword();
+        }
+        // Password Confirmation Routes...
+        if ($options['confirm'] ?? class_exists($this->prependGroupNamespace('Auth\ConfirmPasswordController'))) {
+            $this->confirmPassword();
+        }
+        // Email Verification Routes...
+        if ($options['verify'] ?? false) {
+            $this->emailVerification();
+        }
+    };
+}
+```
+
+该函数的默认用法很简单：
+
+```php
+Auth::routes(); // 默认没有参数
+```
+
+但是可以提供参数来启用或禁用某些路由：
+
+```php
+Auth::routes([
+    'login'    => true,
+    'logout'   => true,
+    'register' => true,
+    'reset'    => true,  // 启用重置密码
+    'confirm'  => false, // 启用密码确认
+    'verify'   => false, // 启用邮箱验证
+]);
+```
+
 
 
 ## 限速
