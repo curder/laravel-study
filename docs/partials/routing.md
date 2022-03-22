@@ -1,5 +1,22 @@
 # Routing 路由
 
+## 路由分组 group
+
+在路由中，可以在组内创建组，将某个中间件仅分配给 "父" 组中的某些 URL。
+
+```php
+Route::group(['prefix' => 'account', 'as' => 'account.'], function() {
+    Route::get('login', 'AccountController@login'); // /account/login
+    Route::get('register', 'AccountController@register'); // /account/register
+    
+    Route::group(['middleware' => 'auth'], function() {
+        Route::get('edit', 'AccountController@edit'); // account/edit
+    });
+});
+```
+
+
+
 ## 限速
 
 使用场景，发送短信验证码接口每分钟允许请求一次。
