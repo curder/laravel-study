@@ -235,3 +235,14 @@ public function boot()
     // ...
 }
 ```
+
+## 自定义资源路由名称
+
+使用资源控制器时，可以在 `routes/web.php` 中指定 `->names()` 参数，这样浏览器中的 URL 前缀和在整个 `Laravel` 项目中使用的路由名称前缀可能会有所不同。
+
+```php
+Route::resource('p', ProductController::class)->names('products');
+```
+
+所以上面的这段代码会生成像 `/p`、`/p/{id}`、`/p/{id}/edit` 等 URL。但可以在代码中通过 `route('products.index')`, `route('products.create')` 等生成 URL。
+
