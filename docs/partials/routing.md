@@ -337,3 +337,11 @@ public function show(Product $product) {
 ```
 
 当然 `is` 方法支持正则匹配，比如 `Route::is('posts*')` 能匹配 `posts.index` 和 `posts.show` 等路由名。
+
+## 使用 `route()` 方法生成绝对路径
+
+```php
+route('page.show', $page->id); // http://localhost/pages/1
+
+route('page.show', $page->id, false); // /pages/1
+```
