@@ -399,3 +399,35 @@ class AccountController extends Controller
     }
 }
 ```
+
+
+## 在中间件方法中使用 Gate
+
+可以在中间件方法中使用您在 `App\Providers\AuthServiceProvider` 中指定。
+
+```php
+// 1. 路由定义
+Route::put('/post/{post}', function (Post $post) {
+    // The current user may update the post ...
+})->middleware('can:update-post');
+
+// 2. 授权定义
+use App\Policies\PostPolicy;
+use Illuminate\Support\Facades\Gate;
+ 
+/**
+ * Register any authentication / authorization services.
+ *
+ * @return void
+ */
+public function boot()
+{
+    $this->registerPolicies();
+ 
+    Gate::define('update-post', function (User $user, Post $post) {
+        return $user->id === $post->user_id;
+    });
+}
+```
+
+[Authorization](https://laravel.com/docs/9.x/authorization)
