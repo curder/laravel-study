@@ -118,6 +118,22 @@ use App\Http\Controllers\PageController;
 Route::get('page', [PageController::class, 'action']);
 ```
 
+## 路由回退：没有其他路由匹配时
+
+如果想为未找到的路由指定额外的逻辑，而不是仅仅抛出默认的 `404` 页面，可以在路由文件的最后创建一个特殊的路由。
+
+```php
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::get('/home', 'HomeController@index');
+    Route::resource('tasks', 'Admin\TasksController');
+});
+
+// Some more routes....
+Route::fallback(function() {
+    return 'Hm, why did you land here somehow?';
+});
+```
+
 ## 限速
 
 使用场景，发送短信验证码接口每分钟允许请求一次。
