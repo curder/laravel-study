@@ -370,3 +370,32 @@ public function resolveRouteBinding($value, $field = null)
 ```
 
 
+## 受保护的URL
+
+
+如果需要公共 URL 但又希望它们受到保护，使用 Laravel 签名 URL 。
+
+```php
+class AccountController extends Controller
+{
+    public function destroy(Request $request)
+    {
+        $confirmDeleteUrl = URL::signedRoute('confirm-destroy', [
+            $user => $request->user()
+        ]);
+        // Send link by email...
+    }
+    
+    public function confirmDestroy(Request $request, User $user)
+    {
+        if (! $request->hasValidSignature()) {
+            abort(403);
+        }
+        
+        // User confirmed by clikcing on the email
+        $user->delete();
+        
+        return redirect()->route('home');
+    }
+}
+```
