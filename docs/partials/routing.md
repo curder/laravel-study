@@ -80,6 +80,18 @@ Auth::routes([
 ```
 
 
+## 路由模型绑定
+
+可以像 `Route::get('api/users/{user}', function (App\Models\User $user) { ... }` 之类的路由模型绑定，但不仅可以通过 id 字段。
+
+如果希望 `{user}` 成为用户名字段，将其放入模型中：
+
+```php
+public function getRouteKeyName() {
+    return 'username';
+}
+```
+
 
 ## 限速
 
