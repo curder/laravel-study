@@ -1,5 +1,35 @@
 # Testing 测试
 
+## 测试是否将正确的数据传递给视图
+
+需要测试是否将正确的数据传递给视图？可以在响应中使用 `viewData` 方法。
+
+```php
+/** @test */
+public function it_has_the_correct_value()
+{
+    // ...
+    $response = $this->get('/some-route');
+    $this->assertEquals('John Doe', $response->viewData('name'));
+}
+
+/** @test */
+public function it_contains_a_given_record()
+{
+    // ...
+    $response = $this->get('/some-route');
+    $this->assertTrue($response->viewData('users')->contains($userA));
+}
+
+/** @test */
+public function it_returns_the_correct_amount_of_records()
+{
+    // ...
+    $response = $this->get('/some-route');
+    $this->assertCount(10, $response->viewData('users'));
+}
+```
+
 ## 测试命令定时执行
 
 断言定时任务一定会按照指定的规则执行。
