@@ -134,6 +134,26 @@ Route::fallback(function() {
 });
 ```
 
+## 使用 RegExp 进行路由参数验证
+
+可以直接在路由中验证参数，使用 `where` 参数。
+
+一个非常常见的情况是通过语言区域设置为路由添加前缀。
+
+```php
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\HomeController;
+
+Route::group([
+    'prefix' => '{locale}',
+    'where' => ['locale' => '[a-zA-Z]{2}']
+], function () {
+    Route::get('/', [HomeController::class, 'index']);
+    Route::get('article/{id}', [ArticleController::class, 'show']);
+});
+```
+
+
 ## 限速
 
 使用场景，发送短信验证码接口每分钟允许请求一次。
