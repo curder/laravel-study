@@ -1,1 +1,0 @@
-const e={key:"v-7536375c",path:"/model/relationships/09-one-of-many.html",title:"\u591A\u6001\u5176\u4E2D\u4E4B\u4E00 TODO",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1643507443e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:1}]},filePathRelative:"model/relationships/09-one-of-many.md"};export{e as data};
