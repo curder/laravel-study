@@ -345,3 +345,28 @@ route('page.show', $page->id); // http://localhost/pages/1
 
 route('page.show', $page->id, false); // /pages/1
 ```
+
+
+## 覆盖每个模型的路由绑定解析器
+
+可以覆盖每个模型的路由绑定解析器。在此示例中，无法控制 `URL` 中的 `@` 符号，因此使用 `resolveRouteBinding` 方法，能够删除 `@` 符号并解析模型。
+
+```php
+// 路由定义
+Route::get('{user}', function (\App\Models\User $user) {
+  dd($user);
+});
+
+// User Model
+public function resolveRouteBinding($value, $field = null)
+{
+    $value = str_replace('@', '', $value);
+
+    return parent::resolveRouteBinding($value, $field);
+}
+
+
+// 请求 http://localhost/@curder 时，路由参数会被转换成 `curder`
+```
+
+
