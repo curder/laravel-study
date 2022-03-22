@@ -218,3 +218,20 @@ Route::get('user/{id}/profile', function ($id) {
 
 $url = route('profile', ['id' => 1, 'photos' => 'yes']); // Result: /user/1/profile?photos=yes
 ```
+
+
+## 翻译资源动词
+
+如果使用资源控制器，但想将 URL 动词更改为非英语以用于 SEO 目的，可以使用 `App\Providers\RouteServiceProvider` 中的 `Route::resourceVerbs()` 方法对其进行配置。
+
+```php
+public function boot()
+{
+    Route::resourceVerbs([
+        'create' => 'crear',
+        'edit' => 'editar',
+    ]);
+
+    // ...
+}
+```
