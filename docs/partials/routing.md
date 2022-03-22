@@ -246,3 +246,65 @@ Route::resource('p', ProductController::class)->names('products');
 
 所以上面的这段代码会生成像 `/p`、`/p/{id}`、`/p/{id}/edit` 等 URL。但可以在代码中通过 `route('products.index')`, `route('products.create')` 等生成 URL。
 
+
+## 更具可读性的路由列表
+
+曾经运行过 `php artisan route:list`，然后意识到该列表占用了太多空间且难以阅读。
+
+这是解决方案： `php artisan route:list --compact` 然后它显示 3 列而不是默认的 6 列：仅显示 `Method` | `URI` | `Action`。
+
+```text
++----------+---------------------------------+-------------------------------------------------------------------------+
+| Method   | URI                             | Action                                                                  |
++----------+---------------------------------+-------------------------------------------------------------------------+
+| GET|HEAD | /                               | Closure                                                                 |
+| GET|HEAD | api/user                        | Closure                                                                 |
+| POST     | confirm-password                | App\Http\Controllers\Auth\ConfirmablePasswordController@store           |
+| GET|HEAD | confirm-password                | App\Http\Controllers\Auth\ConfirmablePasswordController@show            |
+| GET|HEAD | dashboard                       | Closure                                                                 |
+| POST     | email/verification-notification | App\Http\Controllers\Auth\EmailVerificationNotificationController@store |
+| POST     | forgot-password                 | App\Http\Controllers\Auth\PasswordResetLinkController@store             |
+| GET|HEAD | forgot-password                 | App\Http\Controllers\Auth\PasswordResetLinkController@create            |
+| POST     | login                           | App\Http\Controllers\Auth\AuthenticatedSessionController@store          |
+| GET|HEAD | login                           | App\Http\Controllers\Auth\AuthenticatedSessionController@create         |
+| POST     | logout                          | App\Http\Controllers\Auth\AuthenticatedSessionController@destroy        |
+| POST     | register                        | App\Http\Controllers\Auth\RegisteredUserController@store                |
+| GET|HEAD | register                        | App\Http\Controllers\Auth\RegisteredUserController@create               |
+| POST     | reset-password                  | App\Http\Controllers\Auth\NewPasswordController@store                   |
+| GET|HEAD | reset-password/{token}          | App\Http\Controllers\Auth\NewPasswordController@create                  |
+| GET|HEAD | verify-email                    | App\Http\Controllers\Auth\EmailVerificationPromptController@__invoke    |
+| GET|HEAD | verify-email/{id}/{hash}        | App\Http\Controllers\Auth\VerifyEmailController@__invoke                |
++----------+---------------------------------+-------------------------------------------------------------------------+
+```
+
+还可以通过 `--columns` 参数指定所需的确切列：
+
+```bash
+php artisan route:list --columns=Method,URI,Name
+```
+
+```text
++----------+---------------------------------+---------------------+
+| Method   | URI                             | Name                |
++----------+---------------------------------+---------------------+
+| GET|HEAD | /                               |                     |
+| GET|HEAD | api/user                        |                     |
+| POST     | confirm-password                |                     |
+| GET|HEAD | confirm-password                | password.confirm    |
+| GET|HEAD | dashboard                       | dashboard           |
+| POST     | email/verification-notification | verification.send   |
+| POST     | forgot-password                 | password.email      |
+| GET|HEAD | forgot-password                 | password.request    |
+| POST     | login                           |                     |
+| GET|HEAD | login                           | login               |
+| POST     | logout                          | logout              |
+| POST     | register                        |                     |
+| GET|HEAD | register                        | register            |
+| POST     | reset-password                  | password.update     |
+| GET|HEAD | reset-password/{token}          | password.reset      |
+| GET|HEAD | verify-email                    | verification.notice |
+| GET|HEAD | verify-email/{id}/{hash}        | verification.verify |
++----------+---------------------------------+---------------------+
+```
+
+所有支持的列包含：`domain`，`method`, `uri`, `name`, `action`, `middleware`。
