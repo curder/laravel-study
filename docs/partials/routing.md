@@ -456,3 +456,32 @@ Route::resources([
     'posts' => PostController::class,
 ]);
 ```
+
+## 自定义路由绑定
+
+定义 Laravel 应该如何从路由参数中解析它们
+
+```php
+// RouteServiceProvider.php
+
+class RouteServiceProvider extends ServiceProvider
+{
+    public function boot()
+    {
+        Route::bind('portfolio', function (string $slug) {
+            return Portfolio::query()
+                ->whereBelongsto(request()->user())
+                ->whereSlug($slug)
+                ->firstOrFail();
+        });
+    }
+}
+```
+
+```php
+Route::get('portfolios/{portfolio}', function (Portfolio $portfolio) {
+    /*
+     * The $portfolio will be the result of the query defined in the RouteServiceProvider
+     */
+})
+```
