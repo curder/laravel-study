@@ -431,3 +431,16 @@ public function boot()
 ```
 
 [Authorization](https://laravel.com/docs/9.x/authorization)
+
+
+## 优化路由文件
+
+创建一个 `/routes/web/` 目录，并且在 `/routes/web.php` 文件中：
+
+```php
+foreach(glob(dirname(__FILE__).'/web/*.php', GLOB_NOSORT) as $route_file) {
+    include $route_file;
+}
+```
+
+现在 `/routes/web/` 中的每个文件都充当路由器文件，可以将路由组织到不同的文件中。
