@@ -174,3 +174,35 @@ Route::get('reset-password', function() {
 ```
 
 更多官方文档[查看这里](https://laravel.com/docs/8.x/routing#rate-limiting)。
+
+
+## 速率限制：全局和针对访客/用户
+
+可以限制某些 URL 每分钟最多调用 60 次，使用 `throttle:60,1` ：
+
+```php
+Route::middleware('auth:api', 'throttle:60,1')->group(function () {
+    Route::get('/user', function () {
+        //
+    });
+});
+```
+
+而且，可以分别为公共用户和登录用户执行此操作：
+
+```php
+// 访客最多 10 个请求，经过身份验证的用户最多 60 个
+Route::middleware('throttle:10|60,1')->group(function () {
+    //
+});
+```
+
+此外，可以有一个数据库字段 `users.rate_limit` 并限制特定用户的数量：
+
+```php
+Route::middleware('auth:api', 'throttle:rate_limit,1')->group(function () {
+    Route::get('/user', function () {
+        //
+    });
+});
+```
