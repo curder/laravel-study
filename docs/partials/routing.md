@@ -444,3 +444,15 @@ foreach(glob(dirname(__FILE__).'/web/*.php', GLOB_NOSORT) as $route_file) {
 ```
 
 现在 `/routes/web/` 中的每个文件都充当路由器文件，可以将路由组织到不同的文件中。
+
+
+## 路由资源分组
+
+如果路由有很多资源控制器，可以将它们分组并调用一个 `Route::resources()` 而不是许多单个 `Route::resource()` 语句。
+
+```php
+Route::resources([
+    'photos' => PhotoController::class,
+    'posts' => PostController::class,
+]);
+```
