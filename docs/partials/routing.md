@@ -320,3 +320,20 @@ public function show(Product $product) {
     //
 }
 ```
+
+## 轻松突出显示您的导航栏菜单
+
+使用 `Route::is('route-name')` 轻松突出显示导航栏菜单：
+
+```php
+<ul>
+    <li @if(Route::is('home')) class="active" @endif>
+        <a href="/">Home</a>
+    </li>
+    <li @if(Route::is('contact-us')) class="active" @endif>
+        <a href="/contact-us">Contact us</a>
+    </li>
+</ul>
+```
+
+当然 `is` 方法支持正则匹配，比如 `Route::is('posts*')` 能匹配 `posts.index` 和 `posts.show` 等路由名。
