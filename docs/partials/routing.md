@@ -15,6 +15,18 @@ Route::group(['prefix' => 'account', 'as' => 'account.'], function() {
 });
 ```
 
+## 通配符子域
+
+可以通过动态子域名创建路由组，并将其值传递给每个路由。
+
+```php
+Route::domain('{username}.workspace.com')->group(function () {
+    Route::get('user/{id}', function ($username, $id) {
+        //
+    });
+});
+```
+
 
 
 ## 限速
