@@ -308,3 +308,15 @@ php artisan route:list --columns=Method,URI,Name
 ```
 
 所有支持的列包含：`domain`，`method`, `uri`, `name`, `action`, `middleware`。
+
+
+## 关联关系
+
+如果使用路由模型绑定并认为不能将惰性加载用于关系，但是有一个 `belongsTo` 关系，使用 `->load()` 加载关系。
+
+```php
+public function show(Product $product) {
+    $product->load('category');
+    //
+}
+```
