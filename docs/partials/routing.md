@@ -206,3 +206,15 @@ Route::middleware('auth:api', 'throttle:rate_limit,1')->group(function () {
     });
 });
 ```
+
+## 向路由查询字符串参数
+
+如果将附加参数传递给路由，则在数组中，这些键/值对将自动添加到生成的 URL 的查询字符串中。
+
+```php
+Route::get('user/{id}/profile', function ($id) {
+    //
+})->name('profile');
+
+$url = route('profile', ['id' => 1, 'photos' => 'yes']); // Result: /user/1/profile?photos=yes
+```
