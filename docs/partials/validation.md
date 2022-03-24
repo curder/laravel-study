@@ -353,3 +353,30 @@ $rules = [
 $validator = Validator::make($data, $rules);
 $validator->passes(); // false
 ```
+
+## 验证消息中定位占位符
+
+在 Laravel 9 中，如果使用数组，则可以在验证消息中使用 `:position` 占位符。 这将输出：“请提供价格 #2 的金额”
+
+```php
+class CreateProductRequest extends FormRequest
+{
+    public function rules(): array
+    {
+        return  [
+            'title' => ['required', 'string'];
+            'description' => ['nullable', 'sometimes', 'string'],
+            'prices' => ['required', 'array'],
+            'prices.*.amount' => ['required', 'numeric'],
+            'prices.*.expired_at' => ['required', 'date'],
+        ];
+    }
+    
+    public function messages(): array
+    {
+        'prices.*.amount.required' => 'Please provide an amount for price #:position'
+    }
+}
+```
+
+[Error message indexes and positions](https://laravel.com/docs/9.x/validation#error-message-indexes-and-positions)
