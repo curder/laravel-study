@@ -85,3 +85,26 @@ class CategoryStoreRequest extends FormRequest
     }
 }
 ```
+
+## 更改默认验证消息
+
+如果想更改特定字段和特定验证规则的默认验证错误消息，只需将 `messages()` 方法添加到您的 `FormRequest` 类中。
+
+```php
+class UserStoreRequest extends FormRequest
+{
+    public function rules()
+    {
+        return [
+            'name' => 'required',
+        ];
+    }
+    
+    public function messages()
+    {
+        return [
+            'name.required' => '请输入您的名字',
+        ];
+    }
+}
+```
