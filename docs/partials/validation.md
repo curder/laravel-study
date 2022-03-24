@@ -61,3 +61,27 @@ Validator::make([
 ```
 
 更多详情查看: [Added rule to validate MAC address (#40098)](https://github.com/laravel/framework/pull/40098)
+
+## 有条件的验证规则
+
+如果验证规则取决于某些条件，可以通过将 `withValidator()` 添加到 `FormRequest` 类来修改规则，并在那里指定自定义逻辑。
+
+例如，如果只想为某些用户角色添加验证规则。
+
+```php
+use Illuminate\Validation\Validator;
+
+class CategoryStoreRequest extends FormRequest
+{
+    // ...
+    
+    public function withValidator(Validator $validator)
+    {
+        if (auth()->user()->isSuperAdmin()) {
+            $validator->addRules([
+                'some_secret_password' => 'required'
+            ]);
+        }
+    }
+}
+```
