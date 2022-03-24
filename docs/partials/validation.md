@@ -293,3 +293,17 @@ request()->validate([
     ['password' => ['required', Password::defaults()]]
 ])
 ```
+
+
+## 验证重定向的表单请求
+
+当使用表单请求进行验证时，默认情况下验证错误将重定向回上一步，可以通过定义 `$redirect` 或 `$redirectRoute` 的属性即可覆盖它。
+
+```php
+// The URI that users should be redirected to if validation fails./
+protected $redirect = '/dashboard';
+
+// The route that users should be redirected to if validation fails.
+protected $redirectRoute = 'dashboard';
+```
+
