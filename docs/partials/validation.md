@@ -307,3 +307,49 @@ protected $redirect = '/dashboard';
 protected $redirectRoute = 'dashboard';
 ```
 
+## 数组验证规则 `required_array_keys`
+
+`Laravel 8.82` 添加了 `required_array_keys` 验证规则。
+
+该规则检查数组中是否存在所有指定的键。将通过验证的有效数据：
+
+```php
+$data = [
+    'baz' => [
+        'foo' => 'bar',
+        'fee' => 'faa',
+        'laa' => 'lee'
+    ],
+];
+
+$rules = [
+    'baz' => [
+        'array',
+        'required_array_keys:foo,fee,laa',
+    ],
+];
+
+$validator = Validator::make($data, $rules);
+$validator->passes(); // true
+```
+
+验证失败的无效数据：
+
+```php
+$data = [
+    'baz' => [
+        'foo' => 'bar',
+        'fee' => 'faa',
+    ],
+];
+
+$rules = [
+    'baz' => [
+        'array',
+        'required_array_keys:foo,fee,laa',
+    ],
+];
+
+$validator = Validator::make($data, $rules);
+$validator->passes(); // false
+```
