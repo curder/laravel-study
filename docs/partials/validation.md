@@ -10,6 +10,23 @@
 ],
 ```
 
+## 自定义验证错误消息 
+
+可以自定义每个字段、规则和语言的验证错误消息 - 只需创建具有适当数组结构的特定语言文件 `resources/lang/xx/validation.php`。
+
+```php
+// 规则
+[
+    'email' => ['required']
+], 
+
+// 错误信息
+'custom' => [
+     'email' => [
+        'required' => '请提供邮箱地址！',
+     ],
+],
+```
 
 
 ## `mac_address`
