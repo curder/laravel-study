@@ -182,3 +182,62 @@ public function store(Request $request)
     //
 }
 ```
+
+## 使用 `Rule::when()` 可以有条件地应用验证规则
+
+可以有条件地在 `laravel` 中应用验证规则。在此示例中，仅在用户可以实际投票帖子时验证投票的价值。
+
+```php
+use Illuminate\Validation\Rule;
+
+public function rules()
+{
+    return [
+        'vote' => Rule::when($user->can('vote', $post), ['required', 'int', 'between:1,5']),
+    ]
+}
+```
+
+## `unique` 不考虑应用于模型的 `SoftDeletes` 全局范围
+
+奇怪的是，默认情况下 `Rule::unique` 不考虑应用于模型的 `SoftDeletes` 全局范围。但是 `withoutTrashed()` 方法是可用的：
+
+```php
+Rule::unique('users', 'email')->withoutTrashed();
+```
+
+## `Validator::sometimes()` 方法允许我们定义何时应用验证规则
+
+Laravel `Validator::sometimes()` 方法允许我们根据提供的输入定义何时应用验证规则。
+
+例如：该片段显示了如果购买的商品数量不足，如何禁止使用优惠券。
+
+```php
+$data = [
+    'coupon' => 'PIZZA_PARTY',
+    'items' => [
+        [
+            'id' => 1,
+            'quantity' => 2
+        ],
+        [
+            'id' => 2,
+            'quantity' => 2,
+        ],
+    ],
+];
+
+$validator = Validator::make($data, [
+    'coupon' => 'exists:coupons,name',
+    'items' => 'required|array',
+    'items.*.id' => 'required|int',
+    'items.*.quantity' => 'required|int',
+]);
+
+$validator->sometimes('coupon', 'prohibited', function (Fluent $data) {
+    return collect($data->items)->sum('quantity') < 5;
+});
+
+// throws a ValidationException as the quantity provided is not enough
+$validator->validate();
+```
