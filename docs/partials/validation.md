@@ -241,3 +241,28 @@ $validator->sometimes('coupon', 'prohibited', function (Fluent $data) {
 // throws a ValidationException as the quantity provided is not enough
 $validator->validate();
 ```
+
+## 数组元素验证
+
+如果想验证提交的数组的元素，请在带有“*”的规则中使用点表示法
+
+```php
+// say you have this array
+// array in request 'user_info'
+$request->validated()->user_info = [
+    [
+        'name' => 'Qasim',
+        'age' => 26,
+    ],
+    [
+        'name' => 'Ahmed',
+        'age' => 23,
+    ],
+];
+
+// Rule
+$rules = [
+    'user_info.*.name' => ['required', 'alpha'],
+    'user_info.*.age' => ['required', 'numeric'],
+];
+```
