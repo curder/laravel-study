@@ -47,6 +47,16 @@ it('will preform the right redirects', function () {
     ]);
     $this->get('/my-test-router')->assertRedirect('/new-homepage');
 });
+
+function createRequest($method, $uri): \Illuminate\Http\Request
+{
+    $symfony_request = \Symfony\Component\HttpFoundation\Request::create(
+        $uri,
+        $method,
+    );
+
+    return \Illuminate\Http\Request::createFromBase($symfony_request);
+}
 ```
   </CodeGroupItem>
 
