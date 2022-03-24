@@ -1,8 +1,8 @@
 # 代码片段
 
-- [Blade 模版](/partials/blade.md)
-- [Model 模型](/partials/model.md)
-- [Validation 验证](/partials/validation.md)
-- [URL 生成](/partials/urls.md)
-- [Routing 路由](/partials/routing.md)
-- [Testing 测试](/partials/testing.md)
+- [Blade 模版](./blade.md)
+- [Model 模型](./model.md)
+- [Validation 验证](./validation.md)
+- [URL 生成](./urls.md)
+- [Routing 路由](./routing.md)
+- [Testing 测试](./testing.md)
