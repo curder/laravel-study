@@ -86,6 +86,19 @@ class CategoryStoreRequest extends FormRequest
 }
 ```
 
+## `prepareForValidation` 验证前
+
+如果想在默认 Laravel 验证之前修改某些字段，或者换句话说，“准备”该字段，在 `FormRequest` 类中有一个方法 `prepareForValidation()`：
+
+```php
+protected function prepareForValidation()
+{
+    $this->merge([
+        'slug' => Illuminate\Support\Str::slug($this->slug),
+    ]);
+}
+```
+
 ## 更改默认验证消息
 
 如果想更改特定字段和特定验证规则的默认验证错误消息，只需将 `messages()` 方法添加到您的 `FormRequest` 类中。
