@@ -121,3 +121,24 @@ class UserStoreRequest extends FormRequest
     }
 }
 ```
+
+## 在第一次验证失败时停止
+
+默认情况下，`Laravel` 验证错误将在列表中返回，检查所有验证规则。
+
+但是，如果您希望进程在第一个错误后停止，请使用名为 `bail` 的验证规则：
+
+```php
+$request->validate([
+    'title' => 'bail|required|unique:posts|max:255',
+    'body' => 'required',
+]);
+```
+
+如果需要在 `FormRequest` 类中的第一个错误上停止验证，可以将 `stopOnFirstFailure` 属性设置为 `true`：
+
+```php
+protected $stopOnFirstFailure = true;
+```
+
+[Stopping on first validation failure](https://laravel.com/docs/9.x/validation#stopping-on-first-validation-failure)
