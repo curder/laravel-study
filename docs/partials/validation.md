@@ -28,6 +28,19 @@
 ],
 ```
 
+## 用 `now` 或 `yesterday` 验证日期
+
+可以通过之前/之后的规则验证日期，并将各种字符串作为参数传递。
+
+例如：`tomorrw`、`now`、`yesterday`。示例：`'start_date' => 'after:now'`。
+
+```php
+$rules = [
+    'start_date' => 'after:tomorrow',
+    'end_date' => 'after:start_date'
+];
+```
+
 
 ## `mac_address`
 
