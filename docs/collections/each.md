@@ -22,7 +22,7 @@ Illuminate\Support\Collection {#1223
 */
 ```
 
-> 不要尝试在回调函数中直接调用 `return` 改变集合，因为each方法不会改变原集合。如果需要执行改变原数组的话可以使用 [map](/collections/map.md) 方法。例如：
+> 不要尝试在回调函数中直接调用 `return` 改变集合，因为each方法不会改变原集合。如果需要执行改变原数组的话可以使用 [map](./map.md) 方法。例如：
 > ```php
 > // 请使用 map 代替 each 方法
 > collect([1,2,3,4])->each(fn($value) => "The current value is ${value}");
@@ -96,7 +96,7 @@ collect([
 
 > 在循环的回调函数中通过下标获取对应值的方式不是很优雅，可能过了一段时间就忘了对应的值是什么。
 >
-> 有没有更加优雅的方式优化这个问题呢？使用 [eachSpread](/collections/eachSpread.md) 方法。
+> 有没有更加优雅的方式优化这个问题呢？使用 [eachSpread](./eachSpread.md) 方法。
 
 ```php
 collect([
@@ -134,4 +134,4 @@ collect([
 */
 ```
 
-> 可以看到通过调用 [eachSpread](/collections/eachSpread.md) 方法，在回调函数中有更明确的变量可供使用，变得更加有寓意话。
+> 可以看到通过调用 [eachSpread](./eachSpread.md) 方法，在回调函数中有更明确的变量可供使用，变得更加有寓意话。

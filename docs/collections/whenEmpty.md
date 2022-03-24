@@ -49,4 +49,4 @@ array:3 [
  */
 ```
 
-如果需要和 `whenEmpty` 方法相反的操作，可以使用 [whereNotEmpty](/collections/whenNotEmpty.md) 方法。
+如果需要和 `whenEmpty` 方法相反的操作，可以使用 [whereNotEmpty](./whenNotEmpty.md) 方法。

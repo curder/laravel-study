@@ -18,7 +18,7 @@ collect(['product_id' => 1, 'price' => 100, 'discount' => false])->except([
  */
 ```
 
-与之相反操作是 [only](/collections/only.md) 方法。
+与之相反操作是 [only](./only.md) 方法。
 
 
 

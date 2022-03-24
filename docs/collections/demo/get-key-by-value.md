@@ -14,7 +14,7 @@ $messages = [
 
 给定对应的数组值，获取对应的key。
 
-## 通过 [contains](/collections/contains.md) 和 [search](/collections/search.md) 方法
+## 通过 [contains](./contains.md) 和 [search](./search.md) 方法
 当知道值 `val2` 时，获取其在数组中的 key 值。
 
 ```php

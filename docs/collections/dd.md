@@ -20,4 +20,4 @@ array:4 [
  */
 ```
 
-如果不希望终止脚本的执行，调用 [dump](/collections/dump.md) 方法即可。
+如果不希望终止脚本的执行，调用 [dump](./dump.md) 方法即可。

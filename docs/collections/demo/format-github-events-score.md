@@ -42,7 +42,7 @@ dd($score);
  */
 ```
 
-## 使用 [pluck](/collections/pluck.md)、[map](/collections/map.md) 和 [sum](/collections/sum.md) 方法
+## 使用 [pluck](./pluck.md)、[map](./map.md) 和 [sum](./sum.md) 方法
 
 <CodeGroup>
   <CodeGroupItem title="PHP < 8.0  switch" active>
@@ -104,7 +104,7 @@ $score = $events
 
 </CodeGroup>
 
-## 使用 [pluck](/collections/pluck.md)、[map](/collections/map.md)、[get](/collections/get.md) 和 [sum](/collections/sum.md) 方法
+## 使用 [pluck](./pluck.md)、[map](./map.md)、[get](./get.md) 和 [sum](./sum.md) 方法
 
 ```php
 $events = collect(

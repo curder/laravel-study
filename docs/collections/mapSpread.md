@@ -41,7 +41,7 @@ collect([1, 2, 3, 4, 5, 6, 7])
 
 // output
 /**
-  TypeError: Too few arguments to function {closure}(), 2 passed in /Users/curder/Codes/laravel8/vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php on line 316 and exactly 3 expected
+  TypeError: Too few arguments to function {closure}(), 2 passed in /Users/curder/Codes/laravel8/vendor/laravel/framework/src/Illuminate./Traits/EnumeratesValues.php on line 316 and exactly 3 expected
  */
 ```
 

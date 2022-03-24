@@ -83,4 +83,4 @@ array:4 [
  */
 ```
 
-如果需要过滤集合的值不包含在某个范围可以使用 [whereNotBetween](/collections/whereNotBetween.md) 方法。
+如果需要过滤集合的值不包含在某个范围可以使用 [whereNotBetween](./whereNotBetween.md) 方法。

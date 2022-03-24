@@ -43,7 +43,7 @@ collect([
 
 ## 重置新集合的key
 
-如果不希望保留原集合中的 key ，可以调用 [values](/collections/values.md) 方法。
+如果不希望保留原集合中的 key ，可以调用 [values](./values.md) 方法。
 
 ```php
 collect([1, 2, 3, 4])

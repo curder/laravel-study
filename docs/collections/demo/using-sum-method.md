@@ -80,7 +80,7 @@ dd($price);
 > 声明临时变量记录总价格，配合两次循环获得总价并累计。
 
 
-### 使用 [map](/collections/map.md)、[flatten](/collections/flatten.md) 和 [sum](/collections/sum.md)
+### 使用 [map](./map.md)、[flatten](./flatten.md) 和 [sum](./sum.md)
 
 ```php
 $orders = [
@@ -125,7 +125,7 @@ collect($orders)
  */
 ```
 
-### 使用 [flatMap](/collections/flatMap.md)、[pluck](/collections/pluck.md) 和 [sum](/collections/sum.md)
+### 使用 [flatMap](./flatMap.md)、[pluck](./pluck.md) 和 [sum](./sum.md)
 
 ```php
 $orders = [
@@ -167,7 +167,7 @@ collect($orders)
  */
 ```
 
-### 使用 [flatMap](/collections/flatMap.md) 和 [sum](/collections/sum.md)
+### 使用 [flatMap](./flatMap.md) 和 [sum](./sum.md)
 
 ```php
 $orders = [

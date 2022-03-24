@@ -56,7 +56,7 @@ array:6 [
  */
 ```
 
-## 使用 [map](/collections/map.md) 方法
+## 使用 [map](./map.md) 方法
 
 ```php
 $gates = [
@@ -87,7 +87,7 @@ collect($gates)->map(function ($gate) {
  */
 ```
 
-## 使用集合的 [map](/collections/map.md) 和 [last](/collections/last.md) 方法
+## 使用集合的 [map](./map.md) 和 [last](./last.md) 方法
 
 ```php
 $gates = [

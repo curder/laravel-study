@@ -1,6 +1,6 @@
 # unique
 
-返回集合中所有唯一的项目。返回的集合保留着原数组的键，所以在这个例子中，我们会使用 [values](/collections/values.md) 方法来把键重置为连续编号的索引。
+返回集合中所有唯一的项目。返回的集合保留着原数组的键，所以在这个例子中，我们会使用 [values](./values.md) 方法来把键重置为连续编号的索引。
 
 ```php
 collect([1, 1, 2, 2, 3, 4, 2])->unique();
@@ -90,6 +90,6 @@ collect([
 
 > 在检查项目值时 `unique` 方法使用的是「宽松」比较，意味着具有整数值的字符串将被视为等于相同值的整数。
 > 
-> 使用 [uniqueStrict](/collections/uniqueStrict.md) 可以进行「严格」比较 。
+> 使用 [uniqueStrict](./uniqueStrict.md) 可以进行「严格」比较 。
 
 

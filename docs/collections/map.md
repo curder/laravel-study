@@ -22,9 +22,9 @@ collect([1, 2, 3, 4])->map(function ($item) {
  */
 ```
 
-> 像其他集合方法一样，`map` 返回一个新集合实例；它不会修改它所调用的集合。如果想改变原集合，得使用 [transform](/collections/transform.md) 方法。
+> 像其他集合方法一样，`map` 返回一个新集合实例；它不会修改它所调用的集合。如果想改变原集合，得使用 [transform](./transform.md) 方法。
 
-> 它与 [reduce()](/collections/reduce.md) 的区别是 [reduce()](/collections/reduce.md) 传入集合或数组，返回的是单一值；而`map()`传入数组或集合，返回的依然是集合。
+> 它与 [reduce()](./reduce.md) 的区别是 [reduce()](./reduce.md) 传入集合或数组，返回的是单一值；而`map()`传入数组或集合，返回的依然是集合。
 
 
 ## 返回字符串

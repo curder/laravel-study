@@ -78,4 +78,4 @@ array:4 [
 
 > 比较数值的时候，`whereStrict` 方法使用「严格」比较，意味着具有整数值的字符串将被认为等于相同值的整数。
 >
-> 使用 [where](/collections/where.md) 方法来进行较为松散比较过滤。
+> 使用 [where](./where.md) 方法来进行较为松散比较过滤。

@@ -40,7 +40,7 @@ collect([
 
 ### Condition
 
-跟 [each](/collections/each.md) 方法的使用一致，也可以在回调函数中编写逻辑，当返回 `false` 后会停止循环。
+跟 [each](./each.md) 方法的使用一致，也可以在回调函数中编写逻辑，当返回 `false` 后会停止循环。
 
 ```php
 collect([

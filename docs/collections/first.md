@@ -39,4 +39,4 @@ collect([])->first(null, 1000);
  */
 ```
 
-> 如果需要返回最后一个元素可以使用 [last](/collections/last.md) 方法。
+> 如果需要返回最后一个元素可以使用 [last](./last.md) 方法。

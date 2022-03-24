@@ -22,4 +22,4 @@ collect([1, 2, 3])
  */
 ```
 
-如果需要反向操作，请使用 [when](/collections/when.md) 方法。
+如果需要反向操作，请使用 [when](./when.md) 方法。

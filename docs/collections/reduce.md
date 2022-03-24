@@ -19,6 +19,6 @@ collect([1, 2, 3])->reduce(function ($carry, $item) {
 }, 4); // 10
 ```
 
-> 它与 [map](/collections/map.md) 的区别是 [map](/collections/map.md) 传入集合或数组，返回是集合；
+> 它与 [map](./map.md) 的区别是 [map](./map.md) 传入集合或数组，返回是集合；
 > 
 > 而`reduce()`传入数组或集合，返回单一值。

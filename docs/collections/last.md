@@ -39,4 +39,4 @@ collect([])->last(null, 1000);
  */
 ```
 
-> 如果需要返回第一个元素可以使用[first()](/collections/first.md)方法。
+> 如果需要返回第一个元素可以使用[first()](./first.md)方法。

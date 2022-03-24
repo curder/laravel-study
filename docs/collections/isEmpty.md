@@ -40,4 +40,4 @@ collect([null])->isEmpty();
  */
 ```
 
-与 isEmpty 相反操作的方法是 [isNotEmpty](/collections/isNotEmpty.md) 方法。
+与 isEmpty 相反操作的方法是 [isNotEmpty](./isNotEmpty.md) 方法。

@@ -15,4 +15,4 @@ collect(['name' => 'Desk', 'price' => 200])->toArray();
 
 > `toArray()` 也会将所有集合的嵌套对象转换为数组。
 >
-> 如果获取原数组，应该使用 [all](/collections/all.md) 方法。
+> 如果获取原数组，应该使用 [all](./all.md) 方法。

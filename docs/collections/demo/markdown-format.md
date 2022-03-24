@@ -44,7 +44,7 @@ dd($comment);
  */
 ```
 
-## 使用 [map](/collections/map.md) 和 [implode](/collections/implode.md) 方法
+## 使用 [map](./map.md) 和 [implode](./implode.md) 方法
 
 ```php
 $messages = [

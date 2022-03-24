@@ -32,9 +32,9 @@ collect([
 */
 ```
 
-如果需要按照数值越大越靠前的倒序排序方式，可以再调用 [reverse](/collections/reverse.md) 方法；
+如果需要按照数值越大越靠前的倒序排序方式，可以再调用 [reverse](./reverse.md) 方法；
 
-或者使用 [sortBy](/collections/sortBy.md) 方法。
+或者使用 [sortBy](./sortBy.md) 方法。
 
 
 

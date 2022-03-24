@@ -21,7 +21,7 @@ collect([1, 2, 3, 4, 5])->transform(function ($item, $key) {
 ```
 
 > 与大多数集合的方法不同，`transform` 会修改集合本身。
-> 如果想创建新集合，应该使用 [map](/collections/map.md) 方法。
+> 如果想创建新集合，应该使用 [map](./map.md) 方法。
 
 ## 改变原集合
 

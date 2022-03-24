@@ -105,4 +105,4 @@ array:4 [
 
 > 比较数值的时候，`where` 方法使用「宽松」比较，意味着具有整数值的字符串将被认为等于相同值的整数。
 > 
-> 使用 [whereStrict](/collections/whereStrict.md) 方法来进行「严格」比较过滤。
+> 使用 [whereStrict](./whereStrict.md) 方法来进行「严格」比较过滤。

@@ -60,5 +60,5 @@ array:2 [
  */
 ```
 
-与 `filter` 相反的方法，可以查看 [reject](/collections/reject.md) 方法。
+与 `filter` 相反的方法，可以查看 [reject](./reject.md) 方法。
 

@@ -116,4 +116,4 @@ array:2 [
  */
 ```
 
-> 与 `only` 相反的操作是 [except](/collections/except.md) 方法。
+> 与 `only` 相反的操作是 [except](./except.md) 方法。

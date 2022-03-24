@@ -80,6 +80,6 @@ $collection->contains(function ($value, $key) {
 
 
 
-> [contains](/collections/contains.md) 方法在检查项目值时使用「宽松」比较，意味着具有整数值的字符串将被视为等于相同值的整数。
+> [contains](./contains.md) 方法在检查项目值时使用「宽松」比较，意味着具有整数值的字符串将被视为等于相同值的整数。
 > 
-> 相反 [containsStrict](/collections/containsStrict.md) 方法则是使用「严格」比较进行过滤。
+> 相反 [containsStrict](./containsStrict.md) 方法则是使用「严格」比较进行过滤。

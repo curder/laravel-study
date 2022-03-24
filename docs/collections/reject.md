@@ -17,4 +17,4 @@ $collection = collect([1, 2, 3, 4])->reject(function ($value, $key) {
  */
 ```
 
-与 `reject` 相反的方法，查看 [filter](/collections/filter.md) 方法。
+与 `reject` 相反的方法，查看 [filter](./filter.md) 方法。

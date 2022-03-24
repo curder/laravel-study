@@ -6,7 +6,7 @@ heroText: Laravel 学习记录
 tagline: Study one by one.
 actions:
 - text: 集合
-  link: /collections/
+  link: ./
   type: primary
 - text: 模型
   link: /model/
