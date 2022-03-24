@@ -142,3 +142,15 @@ protected $stopOnFirstFailure = true;
 ```
 
 [Stopping on first validation failure](https://laravel.com/docs/9.x/validation#stopping-on-first-validation-failure)
+
+## 在不使用 `validate()` 或 `FormRequest` 的情况下抛出 422 状态码
+
+如果不使用 `validate()` 或 `FormRequest`，但仍需要抛出具有相同 `422` 状态码和错误结构的错误，则可以手动抛出 `ValidationException::withMessages()` 。
+
+```php
+if (!$user || !Hash::check($request->password, $user->password)) {
+    throw ValidationException::withMessages([
+        'email' => ['The provided credentials are incorrect.'],
+    ]);
+}
+```
