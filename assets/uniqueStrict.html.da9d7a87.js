@@ -1,0 +1,1 @@
+const t={key:"v-64fc80cc",path:"/collections/uniqueStrict.html",title:"uniqueStrict",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1648089437e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:3}]},filePathRelative:"collections/uniqueStrict.md"};export{t as data};

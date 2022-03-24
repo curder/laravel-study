@@ -1,0 +1,1 @@
+const t={key:"v-59bf2e47",path:"/collections/contains.html",title:"contains",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1648089437e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:4}]},filePathRelative:"collections/contains.md"};export{t as data};

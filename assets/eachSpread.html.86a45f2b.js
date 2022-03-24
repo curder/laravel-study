@@ -1,1 +1,0 @@
-const e={key:"v-4fbcfb72",path:"/collections/eachSpread.html",title:"eachSpread",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:3,title:"Condition",slug:"condition",children:[]}],git:{updatedTime:1616865921e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:3}]},filePathRelative:"collections/eachSpread.md"};export{e as data};

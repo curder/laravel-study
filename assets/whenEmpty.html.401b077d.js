@@ -1,0 +1,1 @@
+const e={key:"v-55c0e7f9",path:"/collections/whenEmpty.html",title:"whenEmpty",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1648089437e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:2}]},filePathRelative:"collections/whenEmpty.md"};export{e as data};

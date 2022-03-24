@@ -1,0 +1,1 @@
+const t={key:"v-561ddf88",path:"/collections/flatten.html",title:"flatten",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1648089437e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:4}]},filePathRelative:"collections/flatten.md"};export{t as data};
