@@ -266,3 +266,30 @@ $rules = [
     'user_info.*.age' => ['required', 'numeric'],
 ];
 ```
+
+## `Password::defaults` 方法
+
+在验证用户提供的密码时，可以使用 `Password::defaults` 方法强制执行特定规则。
+
+它包括要求字母、数字、符号等的选项。
+
+```php
+class AppServiceProvider
+{
+    public function boot(): void
+    {
+        Password::defaults(function () {
+            return Password::min(12)
+                ->letters()
+                ->numbers()
+                ->symbols()
+                ->mixedCase()
+                ->uncompromised();
+        })
+    }
+}
+
+request()->validate([
+    ['password' => ['required', Password::defaults()]]
+])
+```
