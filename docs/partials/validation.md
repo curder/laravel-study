@@ -154,3 +154,31 @@ if (!$user || !Hash::check($request->password, $user->password)) {
     ]);
 }
 ```
+
+## 规则条件
+
+如果规则是动态的并且取决于其他条件，可以即时创建该规则数组
+
+```php
+public function store(Request $request)
+{
+    $validationArray = [
+        'title' => 'required',
+        'company' => 'required',
+        'logo' => 'file|max:2048',
+        'location' => 'required',
+        'apply_link' => 'required|url',
+        'content' => 'required',
+        'payment_method_id' => 'required'
+    ];
+
+    if (!Auth::check()) {
+        $validationArray = array_merge($validationArray, [
+            'email' => 'required|email|unique:users',
+            'password' => 'required|confirmed|min:5',
+            'name' => 'required'
+        ]);
+    }
+    //
+}
+```
