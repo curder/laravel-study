@@ -1,1 +1,0 @@
-const a={key:"v-0cf0f2fc",path:"/partials/validation.html",title:"Validation \u9A8C\u8BC1",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:2,title:"mac_address",slug:"mac-address",children:[]}],git:{updatedTime:1641522948e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:2}]},filePathRelative:"partials/validation.md"};export{a as data};
