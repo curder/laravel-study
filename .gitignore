@@ -4,3 +4,5 @@ _book
 .DS_Store
 .temp
 .cache
+
+docs/.vuepress/dist
