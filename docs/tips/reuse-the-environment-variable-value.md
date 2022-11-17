@@ -13,5 +13,5 @@
 - :white_check_mark:
   ```dotenv {2}
   APP_URL=https://laravel-tips.test
-  ADMIN_URL="${APP_URL}"  
+  ADMIN_URL="${APP_URL}"
   ```
