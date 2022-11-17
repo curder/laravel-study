@@ -1,0 +1,1 @@
+const e={key:"v-ae0ee7a8",path:"/tips/reuse-the-environment-variable-value.html",title:"\u91CD\u7528\u73AF\u5883\u53D8\u91CF\u503C",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1668662148e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:2}]},filePathRelative:"tips/reuse-the-environment-variable-value.md"};export{e as data};

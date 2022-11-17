@@ -1,0 +1,14 @@
+import{r as a,o as e,c as t,b as p,a as o,w as c,F as l,e as r,d as n}from"./app.ba368228.js";import{_ as i}from"./plugin-vue_export-helper.21dcd24c.js";const u={},d=r(`<h1 id="except" tabindex="-1"><a class="header-anchor" href="#except" aria-hidden="true">#</a> except</h1><p>\u8FD4\u56DE\u96C6\u5408\u4E2D\u9664\u4E86\u6307\u5B9A\u952E\u4EE5\u5916\u7684\u6240\u6709\u9879\u76EE\u3002</p><div class="language-php ext-php line-numbers-mode"><pre class="language-php"><code><span class="token function">collect</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&#39;product_id&#39;</span> <span class="token operator">=&gt;</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">&#39;price&#39;</span> <span class="token operator">=&gt;</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">&#39;discount&#39;</span> <span class="token operator">=&gt;</span> <span class="token constant boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">except</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token string single-quoted-string">&#39;price&#39;</span><span class="token punctuation">,</span>
+  <span class="token string single-quoted-string">&#39;discount&#39;</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// output</span>
+<span class="token doc-comment comment">/**
+=&gt; Illuminate\\Support\\Collection <span class="token punctuation">{</span>#1085
+     all: [
+       &quot;product_id&quot; =&gt; 1,
+     ],
+   <span class="token punctuation">}</span>
+ */</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div>`,3),m=n("\u4E0E\u4E4B\u76F8\u53CD\u64CD\u4F5C\u662F "),k=n("only"),b=n(" \u65B9\u6CD5\u3002");function g(_,h){const s=a("RouterLink");return e(),t(l,null,[d,p("p",null,[m,o(s,{to:"/collections/only.html"},{default:c(()=>[k]),_:1}),b])],64)}var q=i(u,[["render",g]]);export{q as default};
