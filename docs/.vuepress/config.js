@@ -17,7 +17,7 @@ module.exports = {
         navbar: [
             {text: '首页', link: '/'},
             {text: '基础', children: ['/collections/', '/model/']},
-            {text: "其它", children: ['/partials/', '/tests/', '/others/']},
+            {text: "其它", children: ['/partials/', '/tests/', '/tips/', '/others/']},
             {
                 text: "📖📚", children: [
                     {text: 'Bolg', link: 'https://curder.github.io/blog/'},
@@ -63,6 +63,15 @@ module.exports = {
                     isGroup: true,
                     text: "代码片段",
                     children: getFiles('partials'),
+                }
+            ],
+            '/tips/': [
+                {
+                    isGroup: true,
+                    text: 'Tips',
+                    children: [
+                        {text: "优化 Factory 数据库批量插入", link: '/tips/optimize-factory-database-batch-insert'},
+                    ]
                 }
             ],
             '/others/': [
