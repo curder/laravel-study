@@ -3,14 +3,14 @@ export default {
         {
             text: '一些示例',
             items: [
-                {text: "计算 GitHub 事件得分总和", link: "/collections/demo/format-github-events-score"},
-                {text: "格式化计算两个数组的数据", link: "/collections/demo/format-two-array"},
-                {text: "通过值获取对应key", link: "/collections/demo/get-key-by-value"},
-                {text: "map 格式化数据", link: "/collections/demo/map-format"},
-                {text: "格式化 Markdown 数据列表", link: "/collections/demo/markdown-format"},
-                {text: "订单数据汇总", link: "/collections/demo/order_info_summary"},
-                {text: "通过原数组组装成其他数组格式", link: "/collections/demo/using-reduce-create-lookup-array"},
-                {text: "sum 求和数组项", link: "/collections/demo/using-sum-method"},
+                {text: "计算 GitHub 事件得分总和", link: "/collections/examples/format-github-events-score"},
+                {text: "格式化计算两个数组的数据", link: "/collections/examples/format-two-array"},
+                {text: "通过值获取对应key", link: "/collections/examples/get-key-by-value"},
+                {text: "map 格式化数据", link: "/collections/examples/map-format"},
+                {text: "格式化 Markdown 数据列表", link: "/collections/examples/markdown-format"},
+                {text: "订单数据汇总", link: "/collections/examples/order_info_summary"},
+                {text: "通过原数组组装成其他数组格式", link: "/collections/examples/using-reduce-create-lookup-array"},
+                {text: "sum 求和数组项", link: "/collections/examples/using-sum-method"},
             ],
         },
         {

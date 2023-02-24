@@ -2,7 +2,7 @@
 
 首先，通过 API 接口地址 https://api.github.com/users/YOUR_USRE_NAME/events 获取到个人事件数据，其中 `YOUR_USER_NAME` 为 GitHub 个人账号。
 
-假如：一个 `PushEvent` 计 5 分，一个 `CreateEvent` 计 4 分，一个`IssueCommentEvent`计 3 分，一个 `IssueCommentEvent` 计 2 分，除此之外的其它类型的事件计 1 分，计算当前用户的时间得分总和。
+假如：一个 `PushEvent` 计 5 分，一个 `CreateEvent` 计 4 分，一个`IssueCommentEvent`计 3 分，一个 `IssueCommentEvent` 计 2 分，除此之外的其它类型的事件计 1 分，计算当前用户的得分总和。
 
 > GitHub 用户名以 `Curder` 为例。
 
