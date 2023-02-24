@@ -6,5 +6,5 @@
 - [格式化 Markdown 数据列表](./markdown-format.md)
 - [格式化计算两个数组的数据](./formatically-calculate-the-data-of-the-two-arrays.md)
 - [通过原数组组装成其他数组格式](./using-reduce-create-lookup-array.md)
-- [通过值获取对应key](./get-key-by-value.md)
+- [通过值获取对应key](./get-the-corresponding-key-by-value.md)
 - [订单数据汇总](./order_info_summary.md)
