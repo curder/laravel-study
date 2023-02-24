@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as l,a as n}from"./app.b2983bf2.js";const A=JSON.parse('{"title":"pull","description":"","frontmatter":{},"headers":[],"relativePath":"collections/pull.md","lastUpdated":1616865921000}'),p={name:"collections/pull.md"},o=n("",3),e=[o];function t(c,r,D,F,y,i){return l(),a("div",null,e)}const C=s(p,[["render",t]]);export{A as __pageData,C as default};

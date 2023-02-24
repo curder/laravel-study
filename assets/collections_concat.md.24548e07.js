@@ -1,0 +1,25 @@
+import{_ as s,c as a,o as n,a as l}from"./app.01bb702b.js";const u=JSON.parse('{"title":"concat","description":"","frontmatter":{},"headers":[],"relativePath":"collections/concat.md","lastUpdated":1616865921000}'),o={name:"collections/concat.md"},p=l(`<h1 id="concat" tabindex="-1">concat <a class="header-anchor" href="#concat" aria-hidden="true">#</a></h1><p>将给定数组或集合的值附加到另一个集合的末尾。</p><div class="language-php"><button title="Copy Code" class="copy"></button><span class="lang">php</span><pre class="shiki material-theme-palenight" tabindex="0"><code><span class="line"><span style="color:#89DDFF;">$</span><span style="color:#A6ACCD;">collection </span><span style="color:#89DDFF;">=</span><span style="color:#A6ACCD;"> </span><span style="color:#82AAFF;">collect</span><span style="color:#89DDFF;">([</span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">value1</span><span style="color:#89DDFF;">&#39;</span><span style="color:#89DDFF;">]);</span></span>
+<span class="line"><span style="color:#89DDFF;">$</span><span style="color:#A6ACCD;">collection</span><span style="color:#89DDFF;">-&gt;</span><span style="color:#82AAFF;">concat</span><span style="color:#89DDFF;">([</span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">key1</span><span style="color:#89DDFF;">&#39;</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">=&gt;</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">value2</span><span style="color:#89DDFF;">&#39;</span><span style="color:#89DDFF;">]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">// output</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">/**</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">=&gt; Illuminate\\Support\\Collection {#1080</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">     all: [</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">       &quot;value1&quot;,</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">       &quot;value2&quot;,</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">     ],</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   }</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;"> */</span></span>
+<span class="line"></span></code></pre></div><p><code>concat</code> 方法会忽略掉附加的元素的 key。</p><div class="language-php"><button title="Copy Code" class="copy"></button><span class="lang">php</span><pre class="shiki material-theme-palenight" tabindex="0"><code><span class="line"><span style="color:#89DDFF;">$</span><span style="color:#A6ACCD;">collection </span><span style="color:#89DDFF;">=</span><span style="color:#A6ACCD;"> </span><span style="color:#82AAFF;">collect</span><span style="color:#89DDFF;">([</span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">key2</span><span style="color:#89DDFF;">&#39;</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">=&gt;</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">value1</span><span style="color:#89DDFF;">&#39;</span><span style="color:#89DDFF;">]);</span></span>
+<span class="line"><span style="color:#89DDFF;">$</span><span style="color:#A6ACCD;">collection</span><span style="color:#89DDFF;">-&gt;</span><span style="color:#82AAFF;">concat</span><span style="color:#89DDFF;">([</span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">key1</span><span style="color:#89DDFF;">&#39;</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">=&gt;</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">value2</span><span style="color:#89DDFF;">&#39;</span><span style="color:#89DDFF;">]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">// output</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">/**</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">=&gt; Illuminate\\Support\\Collection {#1081</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">     all: [</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">       &quot;key2&quot; =&gt; &quot;value1&quot;,</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">       0 =&gt; &quot;value2&quot;,</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">     ],</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   }</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;"> */</span></span>
+<span class="line"></span></code></pre></div>`,5),t=[p];function e(c,r,i,y,D,F){return n(),a("div",null,t)}const A=s(o,[["render",e]]);export{u as __pageData,A as default};

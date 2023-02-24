@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as l}from"./app.01bb702b.js";const A=JSON.parse('{"title":"values","description":"","frontmatter":{},"headers":[],"relativePath":"collections/values.md","lastUpdated":1616999641000}'),p={name:"collections/values.md"},o=l("",3),t=[o];function e(c,r,y,D,i,F){return n(),a("div",null,t)}const u=s(p,[["render",e]]);export{A as __pageData,u as default};
