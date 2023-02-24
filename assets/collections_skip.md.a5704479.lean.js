@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as l}from"./app.ffb5f3c8.js";const _=JSON.parse('{"title":"skip","description":"","frontmatter":{},"headers":[],"relativePath":"collections/skip.md","lastUpdated":1616982940000}'),p={name:"collections/skip.md"},o=l("",3),t=[o];function e(c,i,r,y,C,F){return n(),a("div",null,t)}const d=s(p,[["render",e]]);export{_ as __pageData,d as default};

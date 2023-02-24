@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,a as l}from"./app.ffb5f3c8.js";const u=JSON.parse('{"title":"times","description":"","frontmatter":{},"headers":[],"relativePath":"collections/times.md","lastUpdated":1616865921000}'),t={name:"collections/times.md"},o=l("",6),p=[o];function e(c,i,y,r,D,A){return a(),n("div",null,p)}const C=s(t,[["render",e]]);export{u as __pageData,C as default};

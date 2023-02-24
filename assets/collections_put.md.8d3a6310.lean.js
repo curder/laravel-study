@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as p}from"./app.ffb5f3c8.js";const A=JSON.parse('{"title":"put","description":"","frontmatter":{},"headers":[],"relativePath":"collections/put.md","lastUpdated":1616865921000}'),l={name:"collections/put.md"},o=p("",3),t=[o];function e(c,r,D,F,y,i){return n(),a("div",null,t)}const d=s(l,[["render",e]]);export{A as __pageData,d as default};

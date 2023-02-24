@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,a as l}from"./app.ffb5f3c8.js";const A=JSON.parse('{"title":"union","description":"","frontmatter":{},"headers":[],"relativePath":"collections/union.md","lastUpdated":1616986747000}'),o={name:"collections/union.md"},p=l("",3),t=[p];function e(c,r,i,y,D,F){return a(),n("div",null,t)}const _=s(o,[["render",e]]);export{A as __pageData,_ as default};

@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as l,a}from"./app.ffb5f3c8.js";const A=JSON.parse('{"title":"pipeInto","description":"","frontmatter":{},"headers":[],"relativePath":"collections/pipeInto.md","lastUpdated":1617000430000}'),p={name:"collections/pipeInto.md"},o=a("",3),t=[o];function e(c,i,r,y,C,D){return l(),n("div",null,t)}const f=s(p,[["render",e]]);export{A as __pageData,f as default};

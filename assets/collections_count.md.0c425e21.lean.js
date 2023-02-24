@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,a as l}from"./app.ffb5f3c8.js";const C=JSON.parse('{"title":"count","description":"","frontmatter":{},"headers":[],"relativePath":"collections/count.md","lastUpdated":1616865921000}'),o={name:"collections/count.md"},t=l("",3),p=[t];function e(c,r,i,y,D,F){return a(),n("div",null,p)}const d=s(o,[["render",e]]);export{C as __pageData,d as default};

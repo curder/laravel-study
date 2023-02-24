@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as l}from"./app.ffb5f3c8.js";const i=JSON.parse('{"title":"sum","description":"","frontmatter":{},"headers":[],"relativePath":"collections/sum.md","lastUpdated":1616986055000}'),p={name:"collections/sum.md"},o=l("",7),e=[o];function t(c,D,r,F,y,C){return n(),a("div",null,e)}const d=s(p,[["render",t]]);export{i as __pageData,d as default};

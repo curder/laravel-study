@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,a as l}from"./app.ffb5f3c8.js";const i=JSON.parse('{"title":"min","description":"","frontmatter":{},"headers":[],"relativePath":"collections/min.md","lastUpdated":1616865921000}'),p={name:"collections/min.md"},o=l("",9),t=[o];function e(c,D,r,y,F,C){return a(),n("div",null,t)}const d=s(p,[["render",e]]);export{i as __pageData,d as default};
