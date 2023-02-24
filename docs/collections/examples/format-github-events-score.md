@@ -2,11 +2,19 @@
 
 首先，通过 API 接口地址 https://api.github.com/users/YOUR_USRE_NAME/events 获取到个人事件数据，其中 `YOUR_USER_NAME` 为 GitHub 个人账号。
 
-假如：一个 `PushEvent` 计 5 分，一个 `CreateEvent` 计 4 分，一个`IssueCommentEvent`计 3 分，一个 `IssueCommentEvent` 计 2 分，除此之外的其它类型的事件计 1 分，计算当前用户的得分总和。
+**计分规则如下：**
+
+- 每个 `PushEvent` 计 **5** 分
+- 每个 `CreateEvent` 计 **4** 分
+- 每个 `IssueCommentEvent` 计 **3** 分
+- 每个 `IssueCommentEvent` 计 **2** 分
+- 除此之外的其它类型的事件计 **1** 分
+
+计算当前用户的得分总和？
 
 > GitHub 用户名以 `Curder` 为例。
 
-## 用 foreach 方法
+## 使用 `foreach`
 
 ```php
 $events = Http::get('https://api.github.com/users/curder/events')->json();
@@ -35,19 +43,13 @@ foreach ($eventTypes as $eventType) {
   }
 }
 
-dd($score);
-
-/**
-134
- */
+dd($score); // 输出 134
 ```
 
 ## 使用 [pluck](../pluck.md)、[map](../map.md) 和 [sum](../sum.md) 方法
 
-<CodeGroup>
-  <CodeGroupItem title="PHP < 8.0  switch" active>
-
-```php
+::: code-group
+```php [PHP switch]
 $events = collect(
   Http::get('https://api.github.com/users/curder/events')->json()
 );
@@ -74,16 +76,9 @@ $score = $events
     }
   })
   ->sum();
-
-/**
-=> 134
- */
 ```
-  </CodeGroupItem>
 
-  <CodeGroupItem title="PHP > 8.0  match">
-
-```php
+```php [PHP great than 8.0 match]
 $events = collect(
   Http::get('https://api.github.com/users/curder/events')->json()
 );
@@ -99,16 +94,13 @@ $score = $events
   })
   ->sum();
 ```
-
-  </CodeGroupItem>
-
-</CodeGroup>
+:::
 
 ## 使用 [pluck](../pluck.md)、[map](../map.md)、[get](../get.md) 和 [sum](../sum.md) 方法
 
 ```php
 $events = collect(
-  Http::get('https://api.github.com/users/curder/events')->json()
+    Http::get('https://api.github.com/users/curder/events')->json()
 );
 
 $score = $events
@@ -122,44 +114,40 @@ $score = $events
     ])->get($eventType, 1); // 如果不存在则默认等于1
   })
   ->sum();
-
-/**
-=> 134
- */
 ```
 
 ## 封装 GitHubScore 类
 
-```php
+::: code-group
+```php [获取总分]
 $events = collect(
-  Http::get('https://api.github.com/users/curder/events')->json()
+    Http::get('https://api.github.com/users/curder/events')->json()
 );
 
+echo GithubScore::make($events)->score(); // 输出 134
+```
+
+```php [封装 GithubScore 类]
 class GithubScore
 {
-  private $events;
+  private function __construct(private array $events) { }
 
-  private function __construct($events)
+  public static function make($events)
   {
-    $this->events = $events;
+    return new static($events);
   }
 
-  public static function score($events)
-  {
-    return (new static($events))->scoreEvents();
-  }
-
-  private function scoreEvents()
+  public function score()
   {
     return $this->events
       ->pluck('type')
-      ->map(function ($eventType) {
-        return $this->lookupEventScore($eventType, 1);
-      })
+      ->map(
+        fn ($eventType) => $this->lookupEventScore($eventType, 1)
+      )
       ->sum();
   }
 
-  public function lookupEventScore($eventType, $default_value)
+  protected function lookupEventScore($eventType, $default_value)
   {
     return collect([
       'PushEvent' => 5,
@@ -169,10 +157,5 @@ class GithubScore
     ])->get($eventType, $default_value); // 如果不存在则默认等于1
   }
 }
-
-GithubScore::score($events);
-
-/**
-=> 134
- */
 ```
+:::
