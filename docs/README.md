@@ -1,21 +1,6 @@
----
-home: true
-title: 首页
-heroImage: /images/laravel-logo.min.svg
-heroText: Laravel 学习记录
-tagline: Study one by one.
-actions:
-- text: 集合
-  link: ./
-  type: primary
-- text: 模型
-  link: /model/
-  type: secondary
+# Laravel 学习记录
 
-footer: MIT Licensed |Copyright ©2021-present Curder
----
-
-### 开发
+## 开发
 
 ::: code-group
 ```bash yarn

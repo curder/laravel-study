@@ -6,9 +6,16 @@ export default defineConfig({
     title: 'Laravel 学习记录',
     description: 'Laravel学习点滴',
     lastUpdated: true,
+    head: [
+        ['link', {rel: 'icon', href: '/laravel-study/images/favicon.ico'}],
+    ],
     themeConfig: {
-        logo: '/images/laravel-logo.min.svg',
+        logo: {
+            src: '/images/logomark.min.svg',
+            alt: "Laravel Logo",
+        },
         siteTitle: "Laravel 学习记录",
+        outlineBadges: false,
         outline: {
             label: "章节导航",
             level: 'deep',
