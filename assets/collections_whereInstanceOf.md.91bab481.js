@@ -1,0 +1,15 @@
+import{_ as s,c as n,o as a,a as l}from"./app.d08fb6b1.js";const D=JSON.parse('{"title":"whereInstanceOf","description":"","frontmatter":{},"headers":[],"relativePath":"collections/whereInstanceOf.md","lastUpdated":1616865921000}'),e={name:"collections/whereInstanceOf.md"},p=l(`<h1 id="whereinstanceof" tabindex="-1">whereInstanceOf <a class="header-anchor" href="#whereinstanceof" aria-hidden="true">#</a></h1><p>该方法按给定的类类型过滤集合。</p><div class="language-php"><button title="Copy Code" class="copy"></button><span class="lang">php</span><pre class="shiki material-theme-palenight" tabindex="0"><code><span class="line"><span style="color:#C792EA;">class</span><span style="color:#A6ACCD;"> </span><span style="color:#FFCB6B;">Article</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">{}</span></span>
+<span class="line"><span style="color:#C792EA;">class</span><span style="color:#A6ACCD;"> </span><span style="color:#FFCB6B;">Post</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">{}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#82AAFF;">collect</span><span style="color:#89DDFF;">([</span><span style="color:#F78C6C;">new</span><span style="color:#A6ACCD;"> </span><span style="color:#FFCB6B;">Article</span><span style="color:#89DDFF;">(),</span><span style="color:#A6ACCD;"> </span><span style="color:#F78C6C;">new</span><span style="color:#A6ACCD;"> </span><span style="color:#FFCB6B;">Article</span><span style="color:#89DDFF;">(),</span><span style="color:#A6ACCD;"> </span><span style="color:#F78C6C;">new</span><span style="color:#A6ACCD;"> </span><span style="color:#FFCB6B;">Post</span><span style="color:#89DDFF;">()])</span></span>
+<span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#89DDFF;">-&gt;</span><span style="color:#82AAFF;">whereInstanceOf</span><span style="color:#89DDFF;">(</span><span style="color:#FFCB6B;">Post</span><span style="color:#89DDFF;">::</span><span style="color:#F78C6C;">class</span><span style="color:#89DDFF;">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">// output</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">/**</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">=&gt; Illuminate\\Support\\Collection {#1214</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">     all: [</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">       2 =&gt; Post {#1217},</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">     ],</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   }</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;"> */</span></span>
+<span class="line"></span></code></pre></div>`,3),o=[p];function t(c,r,i,y,C,F){return a(),n("div",null,o)}const _=s(e,[["render",t]]);export{D as __pageData,_ as default};

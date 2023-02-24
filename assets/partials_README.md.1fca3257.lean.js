@@ -1,0 +1,1 @@
+import{_ as a,c as t,o as e,a as l}from"./app.d08fb6b1.js";const p=JSON.parse('{"title":"代码片段","description":"","frontmatter":{},"headers":[],"relativePath":"partials/README.md","lastUpdated":1648089272000}'),i={name:"partials/README.md"},r=l("",2),o=[r];function s(n,_,d,h,c,m){return e(),t("div",null,o)}const u=a(i,[["render",s]]);export{p as __pageData,u as default};

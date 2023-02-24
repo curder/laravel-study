@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,a as l}from"./app.fec078ba.js";const A=JSON.parse('{"title":"flatten","description":"","frontmatter":{},"headers":[],"relativePath":"collections/flatten.md","lastUpdated":1648089437000}'),p={name:"collections/flatten.md"},o=l("",7),t=[o];function e(c,r,y,D,i,F){return n(),a("div",null,t)}const u=s(p,[["render",e]]);export{A as __pageData,u as default};

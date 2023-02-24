@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as l}from"./app.d08fb6b1.js";const C=JSON.parse('{"title":"tap","description":"","frontmatter":{},"headers":[],"relativePath":"collections/tap.md","lastUpdated":1616865921000}'),p={name:"collections/tap.md"},o=l("",3),t=[o];function e(c,r,y,i,D,F){return n(),a("div",null,t)}const d=s(p,[["render",e]]);export{C as __pageData,d as default};

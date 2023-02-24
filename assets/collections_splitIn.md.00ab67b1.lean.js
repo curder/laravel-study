@@ -1,1 +1,0 @@
-import{_ as s,c as n,o as a,a as l}from"./app.fec078ba.js";const f=JSON.parse('{"title":"splitIn","description":"","frontmatter":{},"headers":[],"relativePath":"collections/splitIn.md","lastUpdated":1616984938000}'),p={name:"collections/splitIn.md"},t=l("",3),o=[t];function e(c,i,r,y,C,F){return a(),n("div",null,o)}const E=s(p,[["render",e]]);export{f as __pageData,E as default};

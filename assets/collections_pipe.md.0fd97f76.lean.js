@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as p}from"./app.d08fb6b1.js";const _=JSON.parse('{"title":"pip","description":"","frontmatter":{},"headers":[],"relativePath":"collections/pipe.md","lastUpdated":1616865921000}'),l={name:"collections/pipe.md"},o=p("",3),e=[o];function t(c,r,i,y,D,F){return n(),a("div",null,e)}const A=s(l,[["render",t]]);export{_ as __pageData,A as default};
