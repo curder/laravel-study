@@ -1,1 +1,0 @@
-const t={key:"v-02a10ee6",path:"/collections/skipUntil.html",title:"skipUntil",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616983174e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:1}]},filePathRelative:"collections/skipUntil.md"};export{t as data};

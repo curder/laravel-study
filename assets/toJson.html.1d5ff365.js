@@ -1,1 +1,0 @@
-const t={key:"v-bfb83fba",path:"/collections/toJson.html",title:"toJson",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616865921e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:4}]},filePathRelative:"collections/toJson.md"};export{t as data};

@@ -1,1 +1,0 @@
-const t={key:"v-129754f2",path:"/collections/split.html",title:"split",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616984714e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:3}]},filePathRelative:"collections/split.md"};export{t as data};

@@ -1,1 +1,0 @@
-const e={key:"v-ee57da66",path:"/collections/except.html",title:"except",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1648089437e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:4}]},filePathRelative:"collections/except.md"};export{e as data};

@@ -1,1 +1,0 @@
-const t={key:"v-74c7ca71",path:"/partials/urls.html",title:"URL \u751F\u6210",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:2,title:"defaults",slug:"defaults",children:[]}],git:{updatedTime:1641524298e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:1}]},filePathRelative:"partials/urls.md"};export{t as data};

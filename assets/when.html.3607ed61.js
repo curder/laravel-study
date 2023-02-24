@@ -1,1 +1,0 @@
-const e={key:"v-630e108c",path:"/collections/when.html",title:"when",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616999694e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:3}]},filePathRelative:"collections/when.md"};export{e as data};

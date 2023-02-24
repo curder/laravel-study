@@ -1,1 +1,0 @@
-const e={key:"v-47e1253a",path:"/collections/random.html",title:"random",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616865921e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:3}]},filePathRelative:"collections/random.md"};export{e as data};

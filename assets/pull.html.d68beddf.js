@@ -1,1 +1,0 @@
-const t={key:"v-0a803c61",path:"/collections/pull.html",title:"pull",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616865921e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:3}]},filePathRelative:"collections/pull.md"};export{t as data};

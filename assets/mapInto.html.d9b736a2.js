@@ -1,1 +1,0 @@
-const t={key:"v-3adff6b0",path:"/collections/mapInto.html",title:"mapInto",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616865921e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:3}]},filePathRelative:"collections/mapInto.md"};export{t as data};

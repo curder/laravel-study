@@ -1,1 +1,0 @@
-const t={key:"v-13f7fb04",path:"/collections/containsStrict.html",title:"containsStrict",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1648089437e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:4}]},filePathRelative:"collections/containsStrict.md"};export{t as data};

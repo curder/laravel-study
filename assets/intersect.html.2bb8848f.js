@@ -1,1 +1,0 @@
-const t={key:"v-3214d48d",path:"/collections/intersect.html",title:"intersect",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1616865921e3,contributors:[{name:"curder",email:"q.curder@gmail.com",commits:3}]},filePathRelative:"collections/intersect.md"};export{t as data};
