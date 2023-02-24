@@ -1,0 +1,23 @@
+import{_ as s,c as n,o as a,a as l}from"./app.b2983bf2.js";const d=JSON.parse('{"title":"skipUntil","description":"","frontmatter":{},"headers":[],"relativePath":"collections/skipUntil.md","lastUpdated":1616983429000}'),p={name:"collections/skipUntil.md"},o=l(`<h1 id="skipuntil" tabindex="-1">skipUntil <a class="header-anchor" href="#skipuntil" aria-hidden="true">#</a></h1><p>跳过集合中的项目，直到给定的回调返回 <code>true</code> ，然后将集合中的其余项目作为新集合实例返回。</p><div class="language-php"><button title="Copy Code" class="copy"></button><span class="lang">php</span><pre class="shiki material-theme-palenight" tabindex="0"><code><span class="line"><span style="color:#82AAFF;">collect</span><span style="color:#89DDFF;">([</span><span style="color:#F78C6C;">1</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> </span><span style="color:#F78C6C;">2</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> </span><span style="color:#F78C6C;">3</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> </span><span style="color:#F78C6C;">4</span><span style="color:#89DDFF;">])-&gt;</span><span style="color:#82AAFF;">skipUntil</span><span style="color:#89DDFF;">(</span><span style="color:#C792EA;">function</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">($</span><span style="color:#A6ACCD;">item</span><span style="color:#89DDFF;">)</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#89DDFF;font-style:italic;">return</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">$</span><span style="color:#A6ACCD;">item </span><span style="color:#89DDFF;">&gt;=</span><span style="color:#A6ACCD;"> </span><span style="color:#F78C6C;">3</span><span style="color:#89DDFF;">;</span></span>
+<span class="line"><span style="color:#89DDFF;">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">/**</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">=&gt; Illuminate\\Support\\Collection {#1080</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">     all: [</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">       2 =&gt; 3,</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">       3 =&gt; 4,</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">     ],</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   }</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;"> */</span></span>
+<span class="line"></span></code></pre></div><p>也可以将简单的值传递给 <code>skipUntil</code> 方法以跳过所有项目，直到找到给定的值。</p><div class="language-php"><button title="Copy Code" class="copy"></button><span class="lang">php</span><pre class="shiki material-theme-palenight" tabindex="0"><code><span class="line"><span style="color:#82AAFF;">collect</span><span style="color:#89DDFF;">([</span><span style="color:#F78C6C;">1</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> </span><span style="color:#F78C6C;">2</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> </span><span style="color:#F78C6C;">3</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> </span><span style="color:#F78C6C;">4</span><span style="color:#89DDFF;">])-&gt;</span><span style="color:#82AAFF;">skipUntil</span><span style="color:#89DDFF;">(</span><span style="color:#F78C6C;">3</span><span style="color:#89DDFF;">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">/**</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">=&gt; Illuminate\\Support\\Collection {#1075</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">     all: [</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">       2 =&gt; 3,</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">       3 =&gt; 4,</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">     ],</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   }</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;"> */</span></span>
+<span class="line"></span></code></pre></div><blockquote><p><strong>注意：</strong> 如果找不到给定的值，或者回调从未返回 <code>true</code> ，则 <code>skipUntil</code> 方法将返回一个空集合。</p></blockquote>`,6),t=[o];function e(c,i,r,y,F,D){return a(),n("div",null,t)}const A=s(p,[["render",e]]);export{d as __pageData,A as default};

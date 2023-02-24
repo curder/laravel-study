@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as l}from"./app.b2983bf2.js";const m=JSON.parse('{"title":"isEmpty","description":"","frontmatter":{},"headers":[],"relativePath":"collections/isEmpty.md","lastUpdated":1648089437000}'),p={name:"collections/isEmpty.md"},t=l("",8),e=[t];function o(c,i,r,y,d,F){return n(),a("div",null,e)}const D=s(p,[["render",o]]);export{m as __pageData,D as default};

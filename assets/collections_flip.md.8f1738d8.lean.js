@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as l}from"./app.b2983bf2.js";const _=JSON.parse('{"title":"flip","description":"","frontmatter":{},"headers":[],"relativePath":"collections/flip.md","lastUpdated":1616865921000}'),t={name:"collections/flip.md"},o=l("",3),p=[o];function e(c,r,i,y,D,F){return n(),a("div",null,p)}const d=s(t,[["render",e]]);export{_ as __pageData,d as default};
