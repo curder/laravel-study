@@ -99,9 +99,10 @@ $gates = [
   'BaiYun_B_B230',
 ];
 
-collect($gates)->map(function ($gate) {
-  return collect(explode('_', $gate))->last();
-});
+collect($gates)->map(fn ($gate) => collect(explode('_', $gate))->last());
+
+// 或者使用 Str 也可以达到目的
+collect($gates)->map(fn ($gate) => Str::of($gate)->split('/_/')->last())
 
 /**
 => Illuminate\Support\Collection {#1096

@@ -78,7 +78,7 @@ $result = collect($orders)->groupBy('date')->map(function($item){
 });
 ```
 
-# 计算每日销售金额
+## 计算每日销售金额
 
 ```php
 $result = collect($orders)->groupBy('date')->map(function($item){

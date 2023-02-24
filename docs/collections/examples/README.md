@@ -7,4 +7,4 @@
 - [格式化计算两个数组的数据](./format-calculate-the-data-of-the-two-arrays.md)
 - [通过原数组组装成其他数组格式](./using-reduce-create-lookup-array.md)
 - [通过值获取对应key](./get-the-corresponding-key-by-value.md)
-- [订单数据汇总](./order_info_summary.md)
+- [订单数据汇总](./order-info-summary.md)

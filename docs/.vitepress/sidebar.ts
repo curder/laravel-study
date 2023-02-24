@@ -8,7 +8,7 @@ export default {
                 {text: "通过值获取对应key", link: "/collections/examples/get-the-corresponding-key-by-value"},
                 {text: "map 格式化数据", link: "/collections/examples/map-format"},
                 {text: "格式化 Markdown 数据列表", link: "/collections/examples/markdown-format"},
-                {text: "订单数据汇总", link: "/collections/examples/order_info_summary"},
+                {text: "订单数据汇总", link: "/collections/examples/order-info-summary"},
                 {text: "通过原数组组装成其他数组格式", link: "/collections/examples/using-reduce-create-lookup-array"},
                 {text: "sum 求和数组项", link: "/collections/examples/using-sum-method"},
             ],

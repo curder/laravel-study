@@ -54,9 +54,7 @@ $messages = [
 ];
 
 $comment = collect($messages)
-  ->map(function ($message) {
-    return '- ' . $message;
-  })
+  ->map(fn ($message) => '- ' . $message)
   ->implode("\n");
 
 dd($comment);
