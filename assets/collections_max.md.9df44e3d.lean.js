@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,a as l}from"./app.ffb5f3c8.js";const i=JSON.parse('{"title":"max","description":"","frontmatter":{},"headers":[],"relativePath":"collections/max.md","lastUpdated":1616865921000}'),p={name:"collections/max.md"},o=l("",9),t=[o];function e(c,D,r,y,F,C){return n(),a("div",null,t)}const u=s(p,[["render",e]]);export{i as __pageData,u as default};

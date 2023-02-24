@@ -1,1 +1,0 @@
-import{_ as s,c as n,o as a,a as l}from"./app.ffb5f3c8.js";const d=JSON.parse('{"title":"unwrap","description":"","frontmatter":{},"headers":[],"relativePath":"collections/unwrap.md","lastUpdated":1616865921000}'),p={name:"collections/unwrap.md"},t=l("",5),o=[t];function e(c,i,r,y,F,D){return a(),n("div",null,o)}const C=s(p,[["render",e]]);export{d as __pageData,C as default};

@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as l}from"./app.4f96a5c9.js";const C=JSON.parse('{"title":"flatMap","description":"","frontmatter":{},"headers":[],"relativePath":"collections/flatMap.md","lastUpdated":1616865921000}'),p={name:"collections/flatMap.md"},o=l("",3),t=[o];function e(c,r,D,y,F,i){return n(),a("div",null,t)}const u=s(p,[["render",e]]);export{C as __pageData,u as default};

@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,a as l}from"./app.4f96a5c9.js";const A=JSON.parse('{"title":"unless","description":"","frontmatter":{},"headers":[],"relativePath":"collections/unless.md","lastUpdated":1648089437000}'),p={name:"collections/unless.md"},o=l("",4),e=[o];function t(c,r,y,i,D,F){return a(),n("div",null,e)}const u=s(p,[["render",t]]);export{A as __pageData,u as default};

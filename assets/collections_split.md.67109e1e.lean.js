@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,a as l}from"./app.4f96a5c9.js";const F=JSON.parse('{"title":"split","description":"","frontmatter":{},"headers":[],"relativePath":"collections/split.md","lastUpdated":1616984714000}'),t={name:"collections/split.md"},p=l("",3),o=[p];function e(c,i,r,y,f,C){return a(),n("div",null,o)}const d=s(t,[["render",e]]);export{F as __pageData,d as default};

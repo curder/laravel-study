@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,a as l}from"./app.ffb5f3c8.js";const i=JSON.parse('{"title":"reduce","description":"","frontmatter":{},"headers":[],"relativePath":"collections/reduce.md","lastUpdated":1648089437000}'),o={name:"collections/reduce.md"},p=l("",7),e=[p];function t(c,r,D,y,F,C){return n(),a("div",null,e)}const d=s(o,[["render",t]]);export{i as __pageData,d as default};

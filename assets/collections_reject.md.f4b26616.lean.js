@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as l}from"./app.4f96a5c9.js";const A=JSON.parse('{"title":"reject","description":"","frontmatter":{},"headers":[],"relativePath":"collections/reject.md","lastUpdated":1648089437000}'),e={name:"collections/reject.md"},p=l("",4),o=[p];function t(c,r,i,y,D,F){return n(),a("div",null,o)}const d=s(e,[["render",t]]);export{A as __pageData,d as default};

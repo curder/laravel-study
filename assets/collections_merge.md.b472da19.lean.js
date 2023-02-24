@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,a as l}from"./app.4f96a5c9.js";const d=JSON.parse('{"title":"merge","description":"","frontmatter":{},"headers":[],"relativePath":"collections/merge.md","lastUpdated":1616865921000}'),p={name:"collections/merge.md"},o=l("",6),t=[o];function e(c,r,i,y,D,F){return a(),n("div",null,t)}const A=s(p,[["render",e]]);export{d as __pageData,A as default};
