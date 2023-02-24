@@ -4,7 +4,7 @@ export default {
             text: '一些示例',
             items: [
                 {text: "计算 GitHub 事件得分总和", link: "/collections/examples/format-github-events-score"},
-                {text: "格式化计算两个数组的数据", link: "/collections/examples/format-two-array"},
+                {text: "格式化计算两个数组的数据", link: "/collections/examples/formatically-calculate-the-data-of-the-two-arrays"},
                 {text: "通过值获取对应key", link: "/collections/examples/get-key-by-value"},
                 {text: "map 格式化数据", link: "/collections/examples/map-format"},
                 {text: "格式化 Markdown 数据列表", link: "/collections/examples/markdown-format"},
