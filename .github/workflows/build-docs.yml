@@ -38,7 +38,7 @@ jobs:
 
       # run build script
       - name: Build VitePress site
-        run: yarn docs:d
+        run: yarn docs:build
 
       - name: Deployment
         uses: peaceiris/actions-gh-pages@v3
