@@ -6,7 +6,7 @@
 
 例如，一个 `User` 模型可能与许多 `Order` 模型相关，但想定义一种方便的方式来获取用户最近下的订单。
 
-可以使用 [hasOne](/docs/model/relationships/01-has-one.md) 关系类型结合 ofMany 方法来完成此操作。
+可以使用 [hasOne](./01-has-one.md) 关系类型结合 ofMany 方法来完成此操作。
 
 下面是对应的表结构：
 

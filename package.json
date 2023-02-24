@@ -6,10 +6,11 @@
   "author": "curder <q.curder@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "watch": "vuepress dev docs",
-    "prod": "vuepress build docs"
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "vuepress": "^2.0.0-beta.36"
+    "vitepress": "^1.0.0-alpha.47"
   }
 }

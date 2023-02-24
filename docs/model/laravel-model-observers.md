@@ -21,7 +21,7 @@ touch database/database.sqlite
 
 修改项目本地环境文件 `.env` 文件中的数据库连接
 
-```dotenv
+```
 DB_CONNECTION=sqlite
 ```
 

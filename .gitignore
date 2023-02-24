@@ -5,4 +5,5 @@ _book
 .temp
 .cache
 
-docs/.vuepress/dist
+docs/.vitepress/dist
+docs/.vitepress/cache

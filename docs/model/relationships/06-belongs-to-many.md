@@ -47,7 +47,7 @@ role_user
 
 数据操作之前请先配置好，数据库的一些连接信息。例如下面使用 `sqlite` 数据库，修改项目根目录下的 `.env` 文件内容。
 
-```dotenv
+```
 DB_CONNECTION=sqlite
 ```
 

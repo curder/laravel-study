@@ -17,10 +17,8 @@ footer: MIT Licensed |Copyright ©2021-present Curder
 
 ### 开发
 
-<CodeGroup>
-  <CodeGroupItem title="YARN" active>
-
-```bash
+::: code-group
+```bash yarn
 # install in your project
 yarn
 
@@ -31,11 +29,7 @@ yarn watch
 yarn prod
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="NPM">
-
-```bash
+```bash npm
 # install in your project
 npm install
 
@@ -45,6 +39,4 @@ npx watch
 # build to static files
 npx prod
 ```
-
-  </CodeGroupItem>
-</CodeGroup>
+:::

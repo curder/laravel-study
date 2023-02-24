@@ -91,7 +91,7 @@ array:12 [
  */
 ```
 
-## 使用 [zip](./zip.md)、[first](./first.md) 和 [last](collections/last.md) 方法
+## 使用 [zip](../zip.md)、[first](../first.md) 和 [last](../last.md) 方法
 
 ```php
 $lastYear = [

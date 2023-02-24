@@ -12,7 +12,7 @@
 
 ## 技术要求
 
-- PHP 7.3 或更高版本。Pest需要PHP 7.3+才能运行。
+- PHP 7.3 或更高版本。Pest 需要 PHP 7.3+ 才能运行。
 - [Laravel 8](https://laravel.com/docs/8.x/installation)
 - [Composer](https://getcomposer.org/)
 - 对 [PHPUnit](https://phpunit.readthedocs.io/en/9.0/index.html) 的基本了解
@@ -32,7 +32,7 @@ composer create-project --prefer-dist laravel/laravel:^8.0 laravel-pest-todo-tes
 
 ## 安装 Pest
 
-现在已经建立了一个新的 Laravel 8 项目，还需要执行几个额外的步骤来与 Laravel 一起建立 [Pest]()。
+现在已经建立了一个新的 Laravel 8 项目，还需要执行几个额外的步骤来与 Laravel 一起建立 [Pest](https://pestphp.com)。
 
 进入 `laravel-pest-todo-test-demo` 目录，然后运行以下命令安装 [Laravel Pest插件](https://pestphp.com/docs/plugins/laravel/)。
 
@@ -450,7 +450,7 @@ Route::delete('/todos/{todo}', [TodoController::class, 'delete']);
 ./vendor/bin/pest --filter TodoTest
 ```
 
-![Run pest test passed](./images/unit-test-laravel-api-pest-framework/run-pest-test-pass.jpg)
+![Run pest test passed](./images/unit-test-laravel-api-pest-framework/init-run-pest-test-pass.jpg)
 
 ## 结论
 

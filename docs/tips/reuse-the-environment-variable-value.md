@@ -5,13 +5,13 @@
 可以使用此语法重用它们，而不是重写这些值。
 
 - :x:
-    ```dotenv
+    ```
     APP_URL=https://laravel-tips.test
     ADMIN_URL=https://laravel-tips.test
     ```
 
 - :white_check_mark:
-  ```dotenv {2}
+  ```
   APP_URL=https://laravel-tips.test
   ADMIN_URL="${APP_URL}"
   ```

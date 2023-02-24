@@ -70,7 +70,7 @@ array:3 [
  */ 
 ```
 
-## 使用 [reduce](./reduce.md) 方法
+## 使用 [reduce](../reduce.md) 方法
 
 ```php
 $employees = [
@@ -107,7 +107,7 @@ array:3 [
  */
 ```
 
-## 使用 [pluck](./pluck.md) 方法
+## 使用 [pluck](../pluck.md) 方法
 
 ```php
 $employees = [

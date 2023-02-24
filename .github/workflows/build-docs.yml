@@ -37,8 +37,8 @@ jobs:
         run: yarn --frozen-lockfile
 
       # run build script
-      - name: Build VuePress site
-        run: yarn prod
+      - name: Build VitePress site
+        run: yarn docs:buid
 
       - name: Deployment
         uses: peaceiris/actions-gh-pages@v3

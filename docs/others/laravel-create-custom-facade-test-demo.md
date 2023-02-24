@@ -1,8 +1,5 @@
 # Laravel 创建自定义 Facade
 
-[![GitHub Tests Action Status](https://github.com/curder/laravel-create-custom-facade-test-demo/actions/workflows/run-test.yml/badge.svg)](https://github.com/curder/laravel-create-custom-facade-test-demo/actions?query=run-test%3Amaster)
-[![GitHub Code Style Action Status](https://github.com/curder/laravel-create-custom-facade-test-demo/actions/workflows/php-cs-fixer.yml/badge.svg)](https://github.com/curder/laravel-create-custom-facade-test-demo/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
-
 [GitHub 源代码](https://github.com/curder/laravel-create-custom-facade-test-demo)
 
 在 Laravel 应用程序中，[Facade](https://laravel.com/docs/8.x/facades) 是提供从容器访问对象的类。
