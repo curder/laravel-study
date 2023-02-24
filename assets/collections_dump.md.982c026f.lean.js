@@ -1,1 +1,0 @@
-import{_ as s,c as n,o as a,a as l}from"./app.01bb702b.js";const C=JSON.parse('{"title":"dump","description":"","frontmatter":{},"headers":[],"relativePath":"collections/dump.md","lastUpdated":1648089437000}'),p={name:"collections/dump.md"},o=l("",5),t=[o];function e(c,r,y,i,F,D){return a(),n("div",null,t)}const d=s(p,[["render",e]]);export{C as __pageData,d as default};

@@ -1,1 +1,0 @@
-import{_ as s,c as n,o as a,a as l}from"./app.01bb702b.js";const A=JSON.parse('{"title":"prepend","description":"","frontmatter":{},"headers":[],"relativePath":"collections/prepend.md","lastUpdated":1616865921000}'),p={name:"collections/prepend.md"},o=l("",5),t=[o];function e(c,r,i,y,F,D){return a(),n("div",null,t)}const d=s(p,[["render",e]]);export{A as __pageData,d as default};

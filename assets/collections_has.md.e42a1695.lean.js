@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,a as l}from"./app.01bb702b.js";const C=JSON.parse('{"title":"has","description":"","frontmatter":{},"headers":[],"relativePath":"collections/has.md","lastUpdated":1616865921000}'),p={name:"collections/has.md"},o=l("",3),t=[o];function e(c,r,D,F,y,i){return n(),a("div",null,t)}const d=s(p,[["render",e]]);export{C as __pageData,d as default};

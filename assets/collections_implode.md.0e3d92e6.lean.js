@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as l}from"./app.fec078ba.js";const d=JSON.parse('{"title":"implode","description":"","frontmatter":{},"headers":[],"relativePath":"collections/implode.md","lastUpdated":1616865921000}'),p={name:"collections/implode.md"},o=l("",6),t=[o];function e(c,r,D,y,F,i){return n(),a("div",null,t)}const A=s(p,[["render",e]]);export{d as __pageData,A as default};

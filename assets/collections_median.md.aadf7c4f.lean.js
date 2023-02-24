@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,a as l}from"./app.01bb702b.js";const d=JSON.parse('{"title":"median","description":"","frontmatter":{},"headers":[],"relativePath":"collections/median.md","lastUpdated":1616865921000}'),p={name:"collections/median.md"},o=l("",4),e=[o];function t(c,r,i,y,D,F){return n(),a("div",null,e)}const A=s(p,[["render",t]]);export{d as __pageData,A as default};

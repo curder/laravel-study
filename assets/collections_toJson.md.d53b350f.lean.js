@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as o}from"./app.fec078ba.js";const A=JSON.parse('{"title":"toJson","description":"","frontmatter":{},"headers":[],"relativePath":"collections/toJson.md","lastUpdated":1616865921000}'),p={name:"collections/toJson.md"},l=o("",9),t=[l];function e(c,r,D,y,F,i){return n(),a("div",null,t)}const d=s(p,[["render",e]]);export{A as __pageData,d as default};

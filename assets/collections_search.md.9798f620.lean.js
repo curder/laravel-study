@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,a as l}from"./app.01bb702b.js";const i=JSON.parse('{"title":"search","description":"","frontmatter":{},"headers":[],"relativePath":"collections/search.md","lastUpdated":1616865921000}'),p={name:"collections/search.md"},o=l("",8),e=[o];function t(c,r,D,F,y,C){return n(),a("div",null,e)}const d=s(p,[["render",t]]);export{i as __pageData,d as default};

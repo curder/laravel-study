@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as l}from"./app.fec078ba.js";const _=JSON.parse('{"title":"push","description":"","frontmatter":{},"headers":[],"relativePath":"collections/push.md","lastUpdated":1616865921000}'),p={name:"collections/push.md"},o=l("",3),e=[o];function t(c,r,F,D,i,y){return n(),a("div",null,e)}const d=s(p,[["render",t]]);export{_ as __pageData,d as default};
