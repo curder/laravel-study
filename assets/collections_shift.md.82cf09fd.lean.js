@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,a as l}from"./app.4f96a5c9.js";const A=JSON.parse('{"title":"shift","description":"","frontmatter":{},"headers":[],"relativePath":"collections/shift.md","lastUpdated":1616865921000}'),o={name:"collections/shift.md"},p=l("",3),t=[p];function e(c,r,i,D,F,y){return n(),a("div",null,t)}const _=s(o,[["render",e]]);export{A as __pageData,_ as default};

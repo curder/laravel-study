@@ -1,1 +1,0 @@
-import{_ as s,c as n,o as a,a as l}from"./app.4f96a5c9.js";const A=JSON.parse('{"title":"mapInto","description":"","frontmatter":{},"headers":[],"relativePath":"collections/mapInto.md","lastUpdated":1616865921000}'),p={name:"collections/mapInto.md"},o=l("",3),t=[o];function e(c,r,y,i,D,F){return a(),n("div",null,t)}const f=s(p,[["render",e]]);export{A as __pageData,f as default};

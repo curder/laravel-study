@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,a as l}from"./app.4f96a5c9.js";const f=JSON.parse('{"title":"diff","description":"","frontmatter":{},"headers":[],"relativePath":"collections/diff.md","lastUpdated":1616865921000}'),p={name:"collections/diff.md"},o=l("",4),t=[o];function e(c,i,r,y,D,F){return n(),a("div",null,t)}const d=s(p,[["render",e]]);export{f as __pageData,d as default};

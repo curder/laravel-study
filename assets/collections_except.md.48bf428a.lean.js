@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,a as l}from"./app.4f96a5c9.js";const d=JSON.parse('{"title":"except","description":"","frontmatter":{},"headers":[],"relativePath":"collections/except.md","lastUpdated":1648089437000}'),p={name:"collections/except.md"},o=l("",4),t=[o];function e(c,r,i,y,D,F){return n(),a("div",null,t)}const _=s(p,[["render",e]]);export{d as __pageData,_ as default};
