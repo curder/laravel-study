@@ -2,7 +2,7 @@
 
 [GitHub 源代码](https://github.com/curder/laravel-create-custom-facade-test-demo)
 
-在 Laravel 应用程序中，[Facade](https://laravel.com/docs/8.x/facades) 是提供从容器访问对象的类。
+在 Laravel 应用程序中，[Facade](https://laravel.com/docs/master/facades) 是提供从容器访问对象的类。
 
 Laravel 的外观以及您创建的任何自定义外观都将扩展基础 `Illuminate\Support\Facades\Facade` 类。
 

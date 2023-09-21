@@ -413,7 +413,7 @@ $post = \App\Models\Post::with([
 ])->get();
 ```
 
-> `withDefault()` 还可以添加参数，[源代码查看这里](https://github.com/laravel/framework/blob/8.x/src/Illuminate/Database/Eloquent/Relations/Concerns/SupportsDefaultModels.php#L32)
+> `withDefault()` 还可以添加参数，[源代码查看这里](https://github.com/laravel/framework/blob/master/src/Illuminate/Database/Eloquent/Relations/Concerns/SupportsDefaultModels.php#L32)
                                
 ### 关联删除
 

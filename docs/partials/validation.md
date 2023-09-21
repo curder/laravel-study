@@ -141,7 +141,7 @@ $request->validate([
 protected $stopOnFirstFailure = true;
 ```
 
-[Stopping on first validation failure](https://laravel.com/docs/9.x/validation#stopping-on-first-validation-failure)
+[Stopping on first validation failure](https://laravel.com/docs/master/validation#stopping-on-first-validation-failure)
 
 ## 在不使用 `validate()` 或 `FormRequest` 的情况下抛出 422 状态码
 
@@ -379,4 +379,4 @@ class CreateProductRequest extends FormRequest
 }
 ```
 
-[Error message indexes and positions](https://laravel.com/docs/9.x/validation#error-message-indexes-and-positions)
+[Error message indexes and positions](https://laravel.com/docs/master/validation#error-message-indexes-and-positions)

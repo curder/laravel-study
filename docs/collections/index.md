@@ -24,7 +24,7 @@ collect(['taylor', 'abigail', null])
 collect([1, 2, 3]);
 ```
 
-> 默认情况下， [Eloquent](https://laravel.com/docs/8.x/eloquent) 查询的结果返回的内容都是 `Collection` 实例。
+> 默认情况下， [Eloquent](https://laravel.com/docs/master/eloquent) 查询的结果返回的内容都是 `Collection` 实例。
 
 ## 可用的方法
 

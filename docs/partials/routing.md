@@ -173,7 +173,7 @@ Route::get('reset-password', function() {
 })->middleware(['throttle:reset-password']);
 ```
 
-更多官方文档[查看这里](https://laravel.com/docs/8.x/routing#rate-limiting)。
+更多官方文档[查看这里](https://laravel.com/docs/master/routing#rate-limiting)。
 
 
 ## 速率限制：全局和针对访客/用户
@@ -430,7 +430,7 @@ public function boot()
 }
 ```
 
-[Authorization](https://laravel.com/docs/9.x/authorization)
+[Authorization](https://laravel.com/docs/master/authorization)
 
 
 ## 优化路由文件

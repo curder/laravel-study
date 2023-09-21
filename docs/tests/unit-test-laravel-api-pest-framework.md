@@ -13,7 +13,7 @@
 ## 技术要求
 
 - PHP 7.3 或更高版本。Pest 需要 PHP 7.3+ 才能运行。
-- [Laravel 8](https://laravel.com/docs/8.x/installation)
+- [Laravel 8](https://laravel.com/docs/master/installation)
 - [Composer](https://getcomposer.org/)
 - 对 [PHPUnit](https://phpunit.readthedocs.io/en/9.0/index.html) 的基本了解
 - 对 SQLite 基本了解，本文将使用 SQLite，因为它可以更快地运行测试。
@@ -155,7 +155,7 @@ class Todo extends Model
 }
 ```
 
-将模型的 `name` 和 `completed` 属性分配为 [允许填充](https://laravel.com/docs/8.x/eloquent#mass-assignment) 。
+将模型的 `name` 和 `completed` 属性分配为 [允许填充](https://laravel.com/docs/master/eloquent#mass-assignment) 。
 
 ## 修改模型工厂
 

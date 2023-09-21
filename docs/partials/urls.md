@@ -35,4 +35,4 @@ class ApplyDefaultRouteValues
 <a href="{{ route('users.index')}}">Users</a>
 ```
 
-更多官方文档[查看这里](https://laravel.com/docs/8.x/urls#default-values)。
+更多官方文档[查看这里](https://laravel.com/docs/master/urls#default-values)。
