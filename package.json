@@ -5,6 +5,7 @@
   "repository": "git@github.com:curder/laravel-study.git",
   "author": "curder <q.curder@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
