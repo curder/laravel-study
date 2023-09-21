@@ -228,8 +228,7 @@ class Kernel extends ConsoleKernel
 }
 ```
 
-```php
-// Tests\Integrations\Console\KernelTest.php
+```php [Tests\Integrations\Console\KernelTest.php]
 <?php
 namespace Tests\Integrations\Console;
 
