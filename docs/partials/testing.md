@@ -4,16 +4,15 @@
 
 这里以一个路由中间件作为示例。[源代码查看](https://github.com/curder/laravel-testing-demo/tree/middleware)
 
-<CodeGroup>
-  <CodeGroupItem title="测试">
+::: code-group
 
-```php
+```php [测试]
 <?php
 // tests/Unit/Http/Middleware/RedirectMiddlewareTest.php
 
-use App\Http\Middleware\RedirectMiddleware;
 use App\Models\Redirect;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\RedirectMiddleware;
 use Symfony\Component\HttpFoundation\Response;
 
 // 测试中间件逻辑是否正确
@@ -58,11 +57,8 @@ function createRequest($method, $uri): \Illuminate\Http\Request
     return \Illuminate\Http\Request::createFromBase($symfony_request);
 }
 ```
-  </CodeGroupItem>
 
-  <CodeGroupItem title="定义">
-
-```php {20-28}
+```php {20-28} [定义]
 <?php
 // app\Http\Middleware\RedirectMiddleware.php
 
@@ -95,11 +91,8 @@ class RedirectMiddleware
     }
 }
 ```
-  </CodeGroupItem>
 
-  <CodeGroupItem title="模型文件">
-
-```php
+```php [模型文件]
 <?php
 // app/Models/Redirect.php
 
@@ -113,11 +106,8 @@ class Redirect extends Model
     use HasFactory;
 }
 ```
-  </CodeGroupItem>
 
-  <CodeGroupItem title="迁移文件">
-
-```php
+```php [迁移文件]
 <?php
 // database/migrations/2022_03_23_121330_create_redirects_table.php
 
@@ -154,11 +144,7 @@ class CreateRedirectsTable extends Migration
 }
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="Factory文件">
-
-```php
+```php [Factory工厂文件]
 <?php
 // database/factories/RedirectFactory.php
 
@@ -182,8 +168,7 @@ class RedirectFactory extends Factory
     }
 }
 ```
-  </CodeGroupItem>
-</CodeGroup>
+:::
 
 
 ## 测试是否将正确的数据传递给视图
@@ -220,11 +205,8 @@ public function it_returns_the_correct_amount_of_records()
 
 断言定时任务一定会按照指定的规则执行。
 
-<CodeGroup>
-
-  <CodeGroupItem title="App\Console\Kernel.php">
-
-```php
+::: code-group
+```php [App\Console\Kernel.php]
 // App\Console\Kernel
 <?php
 
@@ -246,11 +228,8 @@ class Kernel extends ConsoleKernel
 }
 ```
 
-  </CodeGroupItem>
-  <CodeGroupItem title="Tests\Integrations\Console\KernelTest.php">
-
 ```php
-// Test
+// Tests\Integrations\Console\KernelTest.php
 <?php
 namespace Tests\Integrations\Console;
 
@@ -277,8 +256,6 @@ class KernelTest extends TestCase
     }
 }
 ```
-
-  </CodeGroupItem>
-</CodeGroup>
+:::
 
 其他的简单测试示例代码 [curder/laravel-console-command-test-demo](https://github.com/curder/laravel-console-command-test-demo) 。
