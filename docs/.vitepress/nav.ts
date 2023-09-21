@@ -11,10 +11,11 @@ export default [
         ]
     },
     {
-        text: "更多", items: [
-            {text: 'Bolg', link: 'https://curder.github.io/blog/'},
-            {text: 'What is new in PHP', link: 'https://curder.github.io/what-is-new-in-php/'},
-            {text: 'Setup mac for developer', link: 'https://curder.github.io/setup-mac-for-developer/'},
+        text: "更多",
+        items: [
+            {text: 'Bolg', link: 'https://curder.github.io/blog/', target: '_blank', rel: 'blog'},
+            {text: 'What is new in PHP', link: 'https://curder.github.io/what-is-new-in-php/', target: '_blank', rel: 'what is new in php'},
+            {text: 'Setup mac for developer', link: 'https://curder.github.io/setup-mac-for-developer/', target: '_blank', rel: 'setup mac for developer'},
         ]
     },
 ];

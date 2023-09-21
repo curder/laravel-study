@@ -134,12 +134,12 @@ export default {
         {
             text: '关联关系',
             items: [
-                {text: "一对一", link: "/model/relationship/01-has-one"},
-                {text: "一对多", link: "/model/relationship/02-has-many"},
-                {text: "许多之一", link: "/model/relationship/03-has-one-of-many"},
-                {text: "远层一对一", link: "/model/relationship/04-has-one-through"},
-                {text: "远层一对多", link: "/model/relationship/05-has-many-through"},
-                {text: "多对多", link: "/model/relationship/05-belongs-to-many"},
+                {text: "一对一", link: "/model/relationships/01-has-one"},
+                {text: "一对多", link: "/model/relationships/02-has-many"},
+                {text: "许多之一", link: "/model/relationships/03-has-one-of-many"},
+                {text: "远层一对一", link: "/model/relationships/04-has-one-through"},
+                {text: "远层一对多", link: "/model/relationships/05-has-many-through"},
+                {text: "多对多", link: "/model/relationships/06-belongs-to-many"},
                 {text: "多态一对一", link: "/model/relationships/07-morph-one"},
                 {text: "多态一对多", link: "/model/relationships/08-morph-many"},
                 {text: "多态其中之一", link: "/model/relationships/09-one-of-many"},
@@ -160,7 +160,6 @@ export default {
         {
             text: '测试',
             items: [
-                {text: "测试", link: "/tests/README"},
                 {text: "使用 pest 测试 Laravel API", link: "/tests/unit-test-laravel-api-pest-framework"},
             ],
         }
