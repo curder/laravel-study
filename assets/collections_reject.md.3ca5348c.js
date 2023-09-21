@@ -1,0 +1,23 @@
+import{_ as s,o as n,c as a,Q as l}from"./chunks/framework.5499cfac.js";const f=JSON.parse('{"title":"reject","description":"","frontmatter":{},"headers":[],"relativePath":"collections/reject.md","filePath":"collections/reject.md","lastUpdated":1648089437000}'),p={name:"collections/reject.md"},e=l(`<h1 id="reject" tabindex="-1">reject <a class="header-anchor" href="#reject" aria-label="Permalink to &quot;reject&quot;">​</a></h1><p>使用指定的回调过滤集合。如果回调返回 <code>true</code> ，就会把对应的项目从集合中移除。</p><div class="language-php vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">php</span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#E1E4E8;">$collection </span><span style="color:#F97583;">=</span><span style="color:#E1E4E8;"> </span><span style="color:#B392F0;">collect</span><span style="color:#E1E4E8;">([</span><span style="color:#79B8FF;">1</span><span style="color:#E1E4E8;">, </span><span style="color:#79B8FF;">2</span><span style="color:#E1E4E8;">, </span><span style="color:#79B8FF;">3</span><span style="color:#E1E4E8;">, </span><span style="color:#79B8FF;">4</span><span style="color:#E1E4E8;">])</span><span style="color:#F97583;">-&gt;</span><span style="color:#B392F0;">reject</span><span style="color:#E1E4E8;">(</span><span style="color:#F97583;">function</span><span style="color:#E1E4E8;"> ($value, $key) {</span></span>
+<span class="line"><span style="color:#E1E4E8;">  </span><span style="color:#F97583;">return</span><span style="color:#E1E4E8;"> $value </span><span style="color:#F97583;">&gt;</span><span style="color:#E1E4E8;"> </span><span style="color:#79B8FF;">2</span><span style="color:#E1E4E8;">;</span></span>
+<span class="line"><span style="color:#E1E4E8;">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;">/**</span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic;">=&gt; Illuminate\\Support\\Collection {#1085</span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic;">     all: [</span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic;">       1,</span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic;">       2,</span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic;">     ],</span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic;">   }</span></span>
+<span class="line"><span style="color:#6A737D;"> */</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292E;">$collection </span><span style="color:#D73A49;">=</span><span style="color:#24292E;"> </span><span style="color:#6F42C1;">collect</span><span style="color:#24292E;">([</span><span style="color:#005CC5;">1</span><span style="color:#24292E;">, </span><span style="color:#005CC5;">2</span><span style="color:#24292E;">, </span><span style="color:#005CC5;">3</span><span style="color:#24292E;">, </span><span style="color:#005CC5;">4</span><span style="color:#24292E;">])</span><span style="color:#D73A49;">-&gt;</span><span style="color:#6F42C1;">reject</span><span style="color:#24292E;">(</span><span style="color:#D73A49;">function</span><span style="color:#24292E;"> ($value, $key) {</span></span>
+<span class="line"><span style="color:#24292E;">  </span><span style="color:#D73A49;">return</span><span style="color:#24292E;"> $value </span><span style="color:#D73A49;">&gt;</span><span style="color:#24292E;"> </span><span style="color:#005CC5;">2</span><span style="color:#24292E;">;</span></span>
+<span class="line"><span style="color:#24292E;">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;">/**</span></span>
+<span class="line"><span style="color:#B31D28;font-style:italic;">=&gt; Illuminate\\Support\\Collection {#1085</span></span>
+<span class="line"><span style="color:#B31D28;font-style:italic;">     all: [</span></span>
+<span class="line"><span style="color:#B31D28;font-style:italic;">       1,</span></span>
+<span class="line"><span style="color:#B31D28;font-style:italic;">       2,</span></span>
+<span class="line"><span style="color:#B31D28;font-style:italic;">     ],</span></span>
+<span class="line"><span style="color:#B31D28;font-style:italic;">   }</span></span>
+<span class="line"><span style="color:#6A737D;"> */</span></span></code></pre></div><p>与 <code>reject</code> 相反的方法，查看 <a href="./filter.html">filter</a> 方法。</p>`,4),o=[e];function t(c,r,i,y,E,d){return n(),a("div",null,o)}const u=s(p,[["render",t]]);export{f as __pageData,u as default};
