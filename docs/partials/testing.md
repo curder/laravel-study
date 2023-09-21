@@ -192,6 +192,7 @@ it('allowed user can delete task', function() {
 
 ## 验证 Validation
 
+### Http请求
 验证是许多应用程序的关键部分。在处理请求时候需要确保只能提交满足规则的数据。
 
 默认情况下，Laravel 会将验证错误发送回用户，可以使用 [`assertInvalid`](https://laravel.com/docs/master/http-tests#assert-invalid) 方法进行检查。
@@ -228,6 +229,44 @@ it('requires title and description tested with a dataset', function($data, $erro
 :::
 
 可以在[官网](https://laravel.com/docs/master/http-tests#response-assertions)了解更多有关测试页面响应的信息。
+
+### 自定义规则
+可以安装[spatie/pest-expectations](https://github.com/spatie/pest-expectations)扩展辅助验证。
+
+::: code-group 
+```php [test]
+it('has valid phone number for chinesePhoneNumber rule',
+    fn ($value) => expect(new ChinesePhoneNumberRule())->toPassWith($value)
+)->with([
+    [13800138000],
+    [16735219276],
+    // ...
+]);
+
+it('has invalid phone number for chinesePhoneNumber rule',
+    fn ($value) => expect(new ChinesePhoneNumberRule())->toFailWith($value)
+)->with([
+    [''],
+    [16000138000],
+    // ...
+]);
+```
+
+```php [validation]
+class ChinesePhoneNumberRule implements ValidationRule
+{
+    public function validate(string $attribute, mixed $value, Closure $fail): void
+    {
+        $regex = '/^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[0-35-9]\d{2}|4(?:0\d|1[0-2]|9\d))|9[0-35-9]\d{2}|6[2567]\d{2}|4(?:(?:10|4[01])\d{3}|[68]\d{4}|[56789]\d{2}))\d{6}$/';
+
+        if (preg_match($regex, $value) === 0) {
+            $fail(__('validation.invalid_chinese_phone_number'));
+        }
+    }
+}    
+```
+
+:::
 
 ## 模型关联关系 Relationships
 
