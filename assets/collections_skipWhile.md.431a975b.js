@@ -1,0 +1,21 @@
+import{_ as s,o as n,c as a,Q as l}from"./chunks/framework.aefb929a.js";const _=JSON.parse('{"title":"skipWhile","description":"","frontmatter":{},"headers":[],"relativePath":"collections/skipWhile.md","filePath":"collections/skipWhile.md","lastUpdated":1616983602000}'),p={name:"collections/skipWhile.md"},o=l(`<h1 id="skipwhile" tabindex="-1">skipWhile <a class="header-anchor" href="#skipwhile" aria-label="Permalink to &quot;skipWhile&quot;">​</a></h1><p>跳过集合中的项目，同时给定的回调返回 <code>true</code> ，然后将集合中的其余项目作为新集合返回。</p><div class="language-php vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">php</span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#B392F0;">collect</span><span style="color:#E1E4E8;">([</span><span style="color:#79B8FF;">1</span><span style="color:#E1E4E8;">, </span><span style="color:#79B8FF;">2</span><span style="color:#E1E4E8;">, </span><span style="color:#79B8FF;">3</span><span style="color:#E1E4E8;">, </span><span style="color:#79B8FF;">4</span><span style="color:#E1E4E8;">])</span><span style="color:#F97583;">-&gt;</span><span style="color:#B392F0;">skipWhile</span><span style="color:#E1E4E8;">(</span><span style="color:#F97583;">function</span><span style="color:#E1E4E8;"> ($item) {</span></span>
+<span class="line"><span style="color:#E1E4E8;">  </span><span style="color:#F97583;">return</span><span style="color:#E1E4E8;"> $item </span><span style="color:#F97583;">&lt;=</span><span style="color:#E1E4E8;"> </span><span style="color:#79B8FF;">3</span><span style="color:#E1E4E8;">;</span></span>
+<span class="line"><span style="color:#E1E4E8;">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;">/**</span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic;">=&gt; Illuminate\\Support\\Collection {#1080</span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic;">     all: [</span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic;">       3 =&gt; 4,</span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic;">     ],</span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic;">   }</span></span>
+<span class="line"><span style="color:#6A737D;"> */</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#6F42C1;">collect</span><span style="color:#24292E;">([</span><span style="color:#005CC5;">1</span><span style="color:#24292E;">, </span><span style="color:#005CC5;">2</span><span style="color:#24292E;">, </span><span style="color:#005CC5;">3</span><span style="color:#24292E;">, </span><span style="color:#005CC5;">4</span><span style="color:#24292E;">])</span><span style="color:#D73A49;">-&gt;</span><span style="color:#6F42C1;">skipWhile</span><span style="color:#24292E;">(</span><span style="color:#D73A49;">function</span><span style="color:#24292E;"> ($item) {</span></span>
+<span class="line"><span style="color:#24292E;">  </span><span style="color:#D73A49;">return</span><span style="color:#24292E;"> $item </span><span style="color:#D73A49;">&lt;=</span><span style="color:#24292E;"> </span><span style="color:#005CC5;">3</span><span style="color:#24292E;">;</span></span>
+<span class="line"><span style="color:#24292E;">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;">/**</span></span>
+<span class="line"><span style="color:#B31D28;font-style:italic;">=&gt; Illuminate\\Support\\Collection {#1080</span></span>
+<span class="line"><span style="color:#B31D28;font-style:italic;">     all: [</span></span>
+<span class="line"><span style="color:#B31D28;font-style:italic;">       3 =&gt; 4,</span></span>
+<span class="line"><span style="color:#B31D28;font-style:italic;">     ],</span></span>
+<span class="line"><span style="color:#B31D28;font-style:italic;">   }</span></span>
+<span class="line"><span style="color:#6A737D;"> */</span></span></code></pre></div><blockquote><p><strong>注意：</strong> 如果回调从不返回 <code>true</code> ，则 <code>skipWhile</code> 方法将返回一个空集合。</p></blockquote>`,4),e=[o];function t(c,i,r,y,E,d){return n(),a("div",null,e)}const u=s(p,[["render",t]]);export{_ as __pageData,u as default};
