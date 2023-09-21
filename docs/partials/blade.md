@@ -33,10 +33,9 @@
 | `$loop->depth`     | 当前循环的嵌套级别。         |
 | `$loop->parent`    | 在嵌套循环中时，父循环变量。     |
 
-[官方文档](https://laravel.com/docs/master/blade#the-loop-variable) 查看更多。                                                     
-        
-## 判断模版是否存在
+[官方文档](https://laravel.com/docs/master/blade#the-loop-variable) 查看更多。
 
+## 判断模版是否存在
 
 可以在实际加载之前检查视图文件是否存在。
 
@@ -54,12 +53,12 @@ return view()->first(['custom.dashboard', 'dashboard'], $data);
 
 ## 自定义错误页面
 
-如果想为某些 HTTP 代码创建一个特定的错误页面，例如 `500` 或 `403` - 只需在 `resources/views/errors/500.blade.php` 或 `resources/views/errors/403.blade.php` 等中创建一个将此代码作为文件名的 blade 文件。
+如果想为某些 HTTP 代码创建一个特定的错误页面，例如 `500` 或 `403` - 只需在 `resources/views/errors/500.blade.php`
+或 `resources/views/errors/403.blade.php` 等中创建一个将此代码作为文件名的 blade 文件。
 
 当出现该错误代码，它将自动加载。
 
 [官方文档](https://laravel.com/docs/master/errors#custom-http-error-pages) 查看更多。
-
 
 ## 没有控制器的视图
 
@@ -84,38 +83,34 @@ class PagesController extends Controller
     }
 } 
 ```
-:::
 
+:::
 
 ## `@auth` 模版指令
 
 使用 `@auth` 指令代替 `@if` 语句来检查登录用户。
 
-### 典型方式
-
-```php
+::: code-group
+```php [@if]
 @if(auth()->user())
 // 用户已验证身份
 @endif
 ```
 
-### 简洁
-
-```php
+```php [@auth]
 @auth
 // 用户已验证身份
 @endauth
 ```
 
-### 与之相反的是 `@guest` 指令
-
-```php
+```php [@guest]
 @guest
 // 用户未验证
 @endguest
 ```
-                
-## 父级 $loop 变量 
+:::
+
+## 父级 $loop 变量
 
 在 `Blade` 的 `@foreach` 指令中，甚至可以在两级循环中使用 `$loop` 变量来访问父变量。
 
@@ -128,7 +123,6 @@ class PagesController extends Controller
     @endforeach
 @endforeach
 ```
-
 
 ## 自定义模版指令
 
@@ -181,48 +175,43 @@ public function boot()
 // 该应用程序不接受常规注册
 @endenabled
 ```
-           
+
 ## `IncludeIf`, `IncludeWhen`, `IncludeFirst` 指令
 
 如果不确定模版文件是否真的存在，可以使用这些条件命令：
 
-### 当模版文件存在时加载
-
-```php
+::: code-group
+```php [当模版文件存在时加载]
 @includeIf('partials.header')
 ```
 
-### 当满足条件是加载
-
-```php
+```php [当满足条件是加载]
+// 将仅为角色 ID 为 1 的用户加载对应模版 `partials.header`
 @includeWhen(auth()->user()->role_id == 1, 'partials.header')
 ```
-> 将仅为角色 ID 为 1 的用户加载对应模版 `partials.header`
 
-### 加载第一个存在的文件
-
-```php
+```php [加载第一个存在的文件]
+// 尝试加载 `adminlte.header`，如果不存在，将加载 `default.header`
 @includeFirst('adminlte.header', 'default.header')
 ```
-> 尝试加载 `adminlte.header`，如果不存在，将加载 `default.header`
+:::
 
 ## 使用 Blade-X 变量绑定来节省更多空间
-              
-### 使用 `@include`
-```php
+
+::: code-group
+```php [使用 @include]
 @include("components.post", ["title" => $post->title])
 ```
-   
-### 使用 `blade-x`
 
-```html
+```html [使用 blade-x]
 <!--使用 Blade-X-->
-<x-post link="{{ $post->title }}" />
+<x-post link="{{ $post->title }}"/>
 
 <!--使用 Blade-X 绑定变量-->
-<x-post :link="$post->title" />
+<x-post :link="$post->title"/>
 ```
-                      
+:::
+
 ## 组件属性
 
 ```php
@@ -243,8 +232,8 @@ public function boot()
 // 传递 rounded 属性
 <x-button rounded>Submit</x-button>
 ```
-              
-## 自动完成类型提示 
+
+## 自动完成类型提示
 
 ```php
 @php
@@ -266,14 +255,25 @@ public function boot()
 
 // 使用下面的语法替代
 <x-navbar :title="$title"/>
+
+// 从 Laravel 9.32 开始可用
+<x-navbar :$title />
 ```
-   
+
 ## 自动高亮导航链接
 
 当精确的 URL 匹配时自动高亮显示导航链接，或者传递路径或路由名称，带有请求和 CSS 类的模版组件使得显示活动/非活动状态变得简单。
-                   
-- 组件代码
-```php
+
+::: code-group
+```php [Usage]
+// 在模版中使用
+<x-nav-link :href="route('projects.index')">Projects</x-nav-link>
+<x-nav-link :href="route('projects.index')" active="projects.*">Projects</x-nav-link>
+<x-nav-link :href="route('projects.index')" active="projects/*">Projects</x-nav-link>
+<x-nav-link :href="route('projects.index')" :active="$tab = 'projects'">Projects</x-nav-link>
+```
+
+```php [NavLink]
 class NavLink extends Component
 {
     public function __construct($href, $active = null)
@@ -309,26 +309,19 @@ class NavLink extends Component
     }
 }
 ```
-          
 
-```php
+```php [nav-link.blade.php]
 // resources/views/components/nav-link.blade.php
 <a href="{{ $href }}" {{ $attributes->class($class) }}>
     {{ $slot }}
 </a>
 ```
+:::
 
-```php
-// 在模版中使用
-<x-nav-link :href="route('projects.index')">Projects</x-nav-link>
-<x-nav-link :href="route('projects.index')" active="projects.*">Projects</x-nav-link>
-<x-nav-link :href="route('projects.index')" active="projects/*">Projects</x-nav-link>
-<x-nav-link :href="route('projects.index')" :active="$tab = 'projects'">Projects</x-nav-link>
-```
-                     
 ## `@each` 循环
 
 ::: code-group
+
 ```php [@foreach写法]
 // 1. 定义公共模版 resources/views/partials/item.blade.php
 <div>
@@ -352,11 +345,13 @@ class NavLink extends Component
 // 2. 使用
 @each('partials.item', $items, 'item')
 ```
+
 :::
 
 ## 整理模版的简单方法
 
 ::: code-group
+
 ```php [@if/loop 组合]
 // if/loop 组合
 @if ($orders->count())
@@ -369,6 +364,7 @@ class NavLink extends Component
     <p>You haven't placed any orders yet.</p>
 @endif
 ```
+
 ```php [@forelse 选择]
 // forelse 选择
 @forelse($orders as $order)
@@ -379,6 +375,7 @@ class NavLink extends Component
     <p>You haven't placed any orders yet.</p>
 @endforelse
 ```
+
 :::
 
 ## 环境变量指令 `@env` `@production`
@@ -387,14 +384,14 @@ class NavLink extends Component
 
 ```php
 @production
-// 生产环境代码
+// 生产环境
 @endproduction
 
 @env('staging')
-// 测试环境代码
+// 测试环境
 @endenv
 
 @env(['staging', 'production'])
-// 测试环境和生产环境代码
+// 测试环境或生产环境
 @endenv
 ```
