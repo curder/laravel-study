@@ -979,59 +979,35 @@ test('no forgotten debug statements')
 
 还可以参考 [cachethq/core](https://github.com/cachethq/core/tree/main/tests/Architecture) 仓库的测试代码风格。
 
-## 定时任务
+## 定时任务 Schedules
 
 断言定时任务一定会按照指定的规则执行。
 
 ::: code-group
 ```php [App\Console\Kernel.php]
 // App\Console\Kernel
-<?php
-
-namespace App\Console;
-
-use Illuminate\Console\Scheduling\Schedule;
-use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use Illuminate\Support\Str;
-
-class Kernel extends ConsoleKernel
+protected function schedule(Schedule $schedule)
 {
-    use Illuminate\Console\Scheduling\Schedule;
-    use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-    
-    protected function schedule(Schedule $schedule)
-    {
-        $schedule->command('check:api-token')->dailyAt('10:00'); // 检查是否需要发送apiToken到期通知
-    }
+    $schedule->command('check:api-token')->dailyAt('10:00'); // 检查是否需要发送apiToken到期通知
 }
 ```
 
 ```php [Tests\Integrations\Console\KernelTest.php]
-<?php
-namespace Tests\Integrations\Console;
+it('has some schedules', function (string $command, $expression) {
+    $schedule = app(Schedule::class);
 
-use Tests\TestCase;
-use Illuminate\Support\Str;
-use Illuminate\Console\Scheduling\Event;
-use Illuminate\Console\Scheduling\Schedule;
+    /** @var Event $event */
+    $event = collect($schedule->events())
+        ->filter(
+            fn (Event $event) => Str::containsAll($event->command, [$command]),
+        )->first();
 
-class KernelTest extends TestCase
-{
-    /** @test */
-    public function check_api_token_command_is_scheduled_at_10am(): void
-    {
-        $schedule = app(Schedule::class);
-
-        /** @var Event $event */
-        $event = collect($schedule->events())
-            ->filter(
-                fn (Event $event) =>  Str::containsAll($event->command, ['check:api_token']),
-            )->first();
-
-        $this->assertInstanceOf(Event::class, $event);
-        $this->assertEquals('0 10 * * *', $event->expression);
-    }
-}
+    expect($event)
+        ->toBeInstanceOf(Event::class)
+        ->expression->toEqual($expression);
+})->with([
+    'check api token command is scheduled at 10 am' => ['check:api_token', '0 10 * * *'],
+]);
 ```
 :::
 
