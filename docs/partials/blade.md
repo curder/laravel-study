@@ -395,3 +395,38 @@ class NavLink extends Component
 // 测试环境或生产环境
 @endenv
 ```
+
+## @checked 指令
+在 Laravel 9 中，可以使用 `@checked` 指令来选择 HTML 元素。
+
+::: code-group
+```php [ >= Laravel 9]
+<input type="radio" name="active" value="1" @checked(old('active', $user->active))/>
+<input type="radio" name="active" value="0" @checked(!old('active', $user->active))/>
+```
+
+```php [Laravel9 之前]
+<input type="radio" name="active" value="1" {{ old('active', $user->active) ? 'checked' : '' }}/>
+<input type="radio" name="active" value="0" {{ old('active', $user->active) ? '' : 'checked' }}/>
+```
+:::
+
+## @selected 指令
+
+在 Laravel 9 中，可以使用 `@selected` 指令来选择 HTML 元素。
+
+::: code-group
+```php [ >= Laravel 9]
+<select name="country">
+    <option value="India" @selected(old('country') ?? $country == 'India')>India</option>
+    <option value="Pakistan" @selected(old('country') ?? $country == 'Pakistan')>Pakistan</option>
+</select>
+```
+
+```php [Laravel9 之前]
+<select name="country">
+    <option value="India" {{ old('country') ?? $country == 'India' ? 'selected' : '' }}>India</option>
+    <option value="Pakistan" {{ old('country') ?? $country == 'Pakistan' ? 'selected' : '' }}>Pakistan</option>
+</select>
+```
+:::
