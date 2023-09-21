@@ -14,9 +14,8 @@ export default {
             ],
         },
         {
-            text: '集合',
+            text: '集合方法',
             items: [
-                {text: "Collection 集合", link: "/collections/"},
                 {text: "all", link: "/collections/all"},
                 {text: "avg", link: "/collections/avg"},
                 {text: "chuck", link: "/collections/chuck"},
