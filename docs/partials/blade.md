@@ -399,6 +399,7 @@ class NavLink extends Component
 ## @checked 指令
 在 Laravel 9 中，可以使用 `@checked` 指令来选择 HTML 元素。
 
+
 ::: code-group
 ```php [ >= Laravel 9]
 <input type="radio" name="active" value="1" @checked(old('active', $user->active))/>
@@ -430,3 +431,19 @@ class NavLink extends Component
 </select>
 ```
 :::
+
+## 多个视图共享变量
+
+下面的示例是将数据传递给所有模版。
+
+```php
+class AppServiceProvider extends ServiceProvider
+{
+    public function boot()
+    {
+        if (Schema::hasTable('posts')) {
+            View::share('recentPosts', Post::latest()->take(3)->get());
+        }
+    }
+}
+```
