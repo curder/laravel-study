@@ -379,4 +379,4 @@ class CreateProductRequest extends FormRequest
 }
 ```
 
-[Error message indexes and positions](https://laravel.com/docs/master/validation#error-message-indexes-and-positions)
+更多错误消息索引和位置可以查看[官网](https://laravel.com/docs/master/validation#error-message-indexes-and-positions)说明。
