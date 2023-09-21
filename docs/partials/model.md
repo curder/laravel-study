@@ -630,11 +630,8 @@ $flight->updateQuietly(['departed' => false]);
 
 有了这个特性，Laravel会自动执行此操作，只需要在 Kernel 类中调整 `model:prune` 命令的频率即可。
 
-<CodeGroup>
-
-  <CodeGroupItem title="模型定义">   
-
-```php
+::: code-group
+```php [模型定义]
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Prunable;
 class Flight extends Model
@@ -659,11 +656,7 @@ class Flight extends Model
 }
 ```
 
-</CodeGroupItem>
-
-<CodeGroupItem title="定时任务">
-
-```php
+```php [定时任务]
 // App\Console\Kernel.php
 /**
  * Define the application's command schedule.
@@ -677,9 +670,7 @@ protected function schedule(Schedule $schedule)
     // $schedule->command('model:prune', ['--model' => [Address::class, Flight::class]])->daily(); // 指定特定模型参数
 }
 ```
-
-</CodeGroupItem>
-</CodeGroup>
+:::
 
 ## 不可变的日期
 

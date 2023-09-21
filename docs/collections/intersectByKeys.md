@@ -2,10 +2,8 @@
 
 删除原集合中不存在于给定数组或集合中的任何键。
 
-<CodeGroup>
-  <CodeGroupItem title="PHP" active>
-
-```php
+::: code-group
+```php [PHP]
 collect([
   'serial' => 'UX301',
   'type' => 'screen',
@@ -17,11 +15,7 @@ collect([
 ]);
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="Result">
-
-```php
+```php [Result]
 /**
 => Illuminate\Support\Collection {#1089
      all: [
@@ -31,6 +25,4 @@ collect([
    }
  */
 ```
-
-  </CodeGroupItem>
-</CodeGroup>
+:::

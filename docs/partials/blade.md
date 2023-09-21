@@ -65,18 +65,13 @@ return view()->first(['custom.dashboard', 'dashboard'], $data);
 
 如果希望路由仅显示某个视图，不用创建 Controller 方法，只需使用 `Route::view()` 函数。
 
-<CodeGroup>
+::: code-group
 
-  <CodeGroupItem title="view" active>
-
-```php
+```php [view]
 Route::view('about', 'pages.about'); // 视图在 `resources/pages/about.blade.php`
 ```
-  </CodeGroupItem>
 
-  <CodeGroupItem title="normal">
-
-```php
+```php [normal]
 // 1. 路由定义
 Route::get('about', [\App\Https\Controllers\PagesController::class, 'about']);
 
@@ -89,9 +84,7 @@ class PagesController extends Controller
     }
 } 
 ```
-  </CodeGroupItem>
-
-</CodeGroup>
+:::
 
 
 ## `@auth` 模版指令
@@ -335,11 +328,8 @@ class NavLink extends Component
                      
 ## `@each` 循环
 
-<CodeGroup>
-
-  <CodeGroupItem title="@foreach写法">
-
-```php
+::: code-group
+```php [@foreach写法]
 // 1. 定义公共模版 resources/views/partials/item.blade.php
 <div>
     <p>Name: {{ $item->name }}
@@ -351,11 +341,8 @@ class NavLink extends Component
     @include('partials.item', $item)
 @endforeach
 ```
-  </CodeGroupItem>
 
-  <CodeGroupItem title="@each 优化写法" active>
-
-```php {8}
+```php {8} [@each 优化写法]
 // 1. 定义公共模版 resources/views/partials/item.blade.php
 <div>
     <p>Name: {{ $item->name }}
@@ -365,17 +352,12 @@ class NavLink extends Component
 // 2. 使用
 @each('partials.item', $items, 'item')
 ```
-  </CodeGroupItem>
-
-</CodeGroup>
+:::
 
 ## 整理模版的简单方法
 
-<CodeGroup>
-
-  <CodeGroupItem title="@if/loop 组合">
-
-```php
+::: code-group
+```php [@if/loop 组合]
 // if/loop 组合
 @if ($orders->count())
     @foreach($orders as $order)
@@ -387,12 +369,7 @@ class NavLink extends Component
     <p>You haven't placed any orders yet.</p>
 @endif
 ```
-
-  </CodeGroupItem>
-
-  <CodeGroupItem title="@forelse 选择" active>
-
-```php
+```php [@forelse 选择]
 // forelse 选择
 @forelse($orders as $order)
     <div>
@@ -402,9 +379,7 @@ class NavLink extends Component
     <p>You haven't placed any orders yet.</p>
 @endforelse
 ```
-
-  </CodeGroupItem>
-</CodeGroup>
+:::
 
 ## 环境变量指令 `@env` `@production`
 
