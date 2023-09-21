@@ -151,7 +151,9 @@ it('returns all products as JSON', function () {
 
 这就是 Laravel 可以通过一些断言助手来提供帮助。
 
-```php
+::: code-group
+```php [assertDatabaseCount/Has]
+// 该示例确保 post 请求成功并将数据正确的存储在数据库中。
 it('stores a product', function () {
     // Act
     $this->actingAs(User::factory()->create())
@@ -169,8 +171,21 @@ it('stores a product', function () {
 });
 ```
 
-该示例确保 post 请求成功并将数据正确的存储在数据库中。
+```php [assertDatabaseMissing/ModelMissing]
+it('allowed user can delete task', function() {
+    $task = Task::factory()->for($this->project)->create();
 
+     $this->deleteJson($task->path())
+          ->assertNoContent();
+
+     // Instead of assertDatabaseMissing to check if the model missing from the database
+     $this->assertDatabaseMissing('tasks', ['id' => $task->id]);
+
+     // use directly assertModelMissing
+     $this->assertModelMissing($task);
+});
+```
+:::
 
 
 可以在[官网](https://laravel.com/docs/master/database-testing#available-assertions)了解有关测试数据库的更多信息。
