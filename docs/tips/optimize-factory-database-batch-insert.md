@@ -2,18 +2,18 @@
 
 在创建测试数据时，使用批量插入数据库记录，而不是在单独的插入每一行，因为这将使您的测试更快。
 
-- :x:
-    ```php
-    Post::factory()->count(1000)->create();
-    ```
-  > 如果还在使用这种方式批量写入测试数据，建议采用下面的方式批量插入数据库记录。
+::: code-group
 
-- :white_check_mark:
-    ```php
-    Post::query()->insert(
-        Post::factory()->count(1000)->make()->toArray()
-    );
-    ```
+  ```php [错误 ❌]
+  // 如果使用这种方式批量写入大量测试数据，建议采用下面的方式批量插入数据库记录。
+  Post::factory()->count(1000)->create();
+  ```
+  ```php [正确 ✅]
+  Post::query()->insert(
+      Post::factory()->count(1000)->make()->toArray()
+  );
+  ```
+:::
 
 具体代码查看仓库地址[github.com/curder/laravel-tips](https://github.com/curder/laravel-tips/tree/optimize-factory-database-batch-insert)
 

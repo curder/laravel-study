@@ -4,14 +4,15 @@
 
 可以使用此语法重用它们，而不是重写这些值。
 
-- :x:
-    ```
-    APP_URL=https://laravel-tips.test
-    ADMIN_URL=https://laravel-tips.test
-    ```
+:::code-group
 
-- :white_check_mark:
-  ```
-  APP_URL=https://laravel-tips.test
-  ADMIN_URL="${APP_URL}"
-  ```
+```dotenv [错误 ❌]
+APP_URL=https://laravel-tips.test
+ADMIN_URL=https://laravel-tips.test
+```
+
+```dotenv [正确 ✅]
+APP_URL=https://laravel-tips.test
+ADMIN_URL="${APP_URL}"
+```
+:::
