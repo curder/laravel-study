@@ -171,7 +171,7 @@ export default {
                 {text: "Blade 模版", link: "/partials/blade"},
                 {text: "Model 模型", link: "/partials/model"},
                 {text: "Validation 验证", link: "/partials/validation"},
-                {text: "URL 生成", link: "/partials/url"},
+                {text: "URL 生成", link: "/partials/urls"},
                 {text: "Routing 路由", link: "/partials/routing"},
                 {text: "Testing 测试", link: "/partials/testing"},
             ],
