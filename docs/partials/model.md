@@ -1,24 +1,5 @@
 # Model 模型
 
-## 判断对象是否新增 `wasRecentlyCreated`
-
-在 Laravel 中，有时可能需要检查模型是从数据库中获取的还是刚刚在当前请求生命周期中创建的——比如使用 `firstOrCreate()` 时。
-
-为此，您可以在模型上使用 `->wasRecentlyCreated` 字段。
-
-```php
-$user = User::createOrUpdate(
-['email' => request('email')],
-['name' => request('name')]
-);
-
-if ($user->wasRecentlyCreated) {
-    // 用户新增逻辑代码
-} else {
-    // 用户已存在并从数据库中获取
-}
-```
-
 ## 重用或克隆查询
 
 通常，需要从过滤后的查询再进行多次查询。大多数时候使用 `query()` 方法，编写一个查询来获取创建的活跃和非活跃产品。
@@ -905,30 +886,386 @@ protected function title(): Attribute
 }
 ```
 
+## 自定义访问/修改器
+
+如果要在许多模型中使用相同的访问器和修改器，可以使用自定义强制转换。
+
+只需创建一个实现 `CastsAttributes` 接口的类，该类应该有两个方法，第一个是 get 指定如何从数据库检索模型，第二个是 set 指定如何将值存储在数据库中。
+
+::: code-group
+```php [model]
+// 在模型类中使用强制转换
+
+class User extends Authenticatable
+{
+    protected $casts = [
+        'updated_at' => TimestampsCast::class,
+        'created_at' => TimestampsCast::class,
+    ];
+}
+```
+
+```php [cast]
+<?php
+
+namespace App\Casts;
+
+use Carbon\Carbon;
+use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
+
+class TimestampsCast implements CastsAttributes
+{
+    public function get($model, string $key, $value, array $attributes)
+    {
+        return Carbon::parse($value)->diffForHumans();
+    }
+
+    public function set($model, string $key, $value, array $attributes)
+    {
+        return Carbon::parse($value)->format('Y-m-d h:i:s');
+    }
+}
+```
+:::
+
+## 搜索第一条记录时执行代码逻辑
+
+使用 `firstOrFail()` 方法搜索第一条记录时，如果找不到它，则会抛出 404 异常，如果想要执行一些操作，可以使用 `firstOr(function() {})` 代替。
+
+```php
+Book::whereCount('authors')
+        ->orderBy('authors_count', 'DESC')
+        ->having('modules_count', '>', 10)
+        ->firstOr(function() {
+            // You can perform any action here
+        });
+```
+
+## 直接将日期转换为人类可读的格式
+
+可以使用 `diffForHumans()` 方法直接将 `created_at` 或 `updated_at` 日期转换为人类可读的格式。
+
+例如：1分钟前、1个月前。Laravel 模型默认在 `created_at` 和 `updated_at` 字段上启用 Carbon 实例。
+
+```php
+$post = Post::whereId($id)->first();
+$post->created_at->diffForHumans();
+```
+
+## 通过模型访问器进行排序
+
+不是按数据库级别的访问器进行排序，而是按返回的 Collection 的访问器进行排序。
+
+::: code-group
+```php [model]
+class User extends Model
+{
+    // ...
+    protected $appends = ['full_name'];
+
+    // Since Laravel 9
+    protected function full_name(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value, $attributes) => $attributes['first_name'] . ' ' . $attributes['last_name'];),
+        );
+    }
+
+    // Laravel 8 and lower
+    public function getFullNameAttribute()
+    {
+        return $this->attribute['first_name'] . ' ' . $this->attributes['last_name'];
+    }
+    // ..
+}
+```
+
+```php [controller]
+$users = User::all(); // 返回 Collection
+
+// order by full_name desc
+$users->sortByDesc('full_name');
+
+// or
+
+// order by full_name asc
+$users->sortBy('full_name');
+```
+:::
+
+
+## 判断对象是否新增 `wasRecentlyCreated`
+
+在 Laravel 中，有时可能需要检查模型是从数据库中获取的还是刚刚在当前请求生命周期中创建的——比如使用 `createOrUpdate()` 时。
+
+为此，可以在模型上使用 `->wasRecentlyCreated` 字段。
+
+```php
+$user = User::createOrUpdate(
+    ['email' => request('email')],
+    ['name' => request('name')]
+);
+
+if ($user->wasRecentlyCreated) {
+    // 用户新增逻辑代码
+} else {
+    // 用户已存在并从数据库中获取
+}
+```
+
+## 数据库驱动程序 Laravel Scout
+使用 Laravel9 及以上版本的 Laravel，可以将 [Laravel Scout（搜索）](https://laravel.com/docs/master/scout#database-engine)与数据库驱动程序一起使用。
+
+```php
+Company::search(request()->get('search'))->paginate(15);
+```
+
+## 使用查询生成器上的 value 方法
+
+当只需要查询单个列时，请使用查询生成器上的 value 方法来执行更有效的查询。
+
+```php
+Statistic::where('user_id', 4)->first()->post_count; // [!code --]
+Statistic::where('user_id', 4)->value('post_count');  // [!code ++]
+```
+
+## 将数组传递给 where 方法
+
+在使用模型查询数据时，允许将数组传递给 `where` 方法。
+
+::: code-group
+```php [after]
+// You can pass an array
+JobPost::where([
+    'company' => 'laravel',
+    'job_type' => 'full time'
+])->get();
+```
+
+```php [before]
+// Instead of this
+JobPost::where('company', 'laravel')
+        ->where('job_type', 'full time')
+        ->get();
+```
+:::
+
+## 从模型集合中返回主键
+
+使用集合方法 `modelsKeys()` 可以从模型集合中返回主键。
+
+```php
+$users = User::active()->limit(3)->get();
+
+$users->modelsKeys(); // [1, 2, 3]
+```
+
+## 强制 Laravel 使用预加载
+
+如果想防止应用程序中的延迟加载，只需将以下行添加到 `AppServiceProvider` 中的 `boot()` 方法中
+
+```php
+public function boot ()
+{
+    Model::preventLazyLoading();
+}
+```
+
+如果只想在本地开发中启用此功能，可以更改上面的代码：
+
+```php
+Model::preventLazyLoading(!app()->isProduction());
+```
+
+## 设置所有模型字段均允许填充
+
+出于安全原因，这不是推荐的方法，但它是可能的。
+
+当想要这样做时，不需要为每个模型设置 `protected $guarded = []` 属性为空数组。
+
+只需将以下行添加到 `AppServiceProvider` 中的 `boot()` 方法即可：
+
+```php
+\Illuminate\Database\Eloquent\Model::unguard();
+```
+
+现在所有模型字段都可以批量填充。
+
+## 隐藏 select all 语句中的列
+
+如果当前使用 Laravel v8.78 和 MySQL 8.0.23 及更高版本，可以将选择的列定义为"不可见"。这样的话定义的字段为不可见的列将从 select * 语句中隐藏。
+
+必须在迁移中使用 `invisible()` 方法，如下所示：
+
+```php
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+Schema::table('table', function (Blueprint $table) {
+    $table->string('secret')->nullable()->invisible(); // [!code ++]
+});
+```
+
+## Json where 子句
+
+Laravel 提供了帮助程序来查询支持 JSON 列的数据库。
+
+**目前，MySQL 5.7+、PostgreSQL、SQL Server 2016 和 SQLite 3.9.0（使用 JSON1 扩展）**
+
+```php
+// To query a json column you can use the -> operator
+$users = User::query()
+            ->where('preferences->dining->meal', 'salad')
+            ->get();
+
+// You can check if a JSON array contains a set of values
+$users = User::query()
+            ->whereJsonContains('options->languages', [
+                'en', 'de'
+               ])
+            ->get();
+
+// You can also query by the length a JSON array
+$users = User::query()
+            ->whereJsonLength('options->languages', '>', 1)
+            ->get();
+```
+
+## 获取表的所有列名
+
+```php
+DB::getSchemaBuilder()->getColumnListing('users');
+/*
+returns [
+    'id',
+    'name',
+    'email',
+    'email_verified_at',
+    'password',
+    'remember_token',
+    'created_at',
+    'updated_at',
+];
+*/
+```
+
+## 比较两列的值
+
+可以使用 `whereColumn` 方法来比较两列的值。
+
+```php
+Task::whereColumn('created_at', 'updated_at')->get();
+
+// 传递比较运算符参数
+Task::whereColumn('created_at', '>', 'updated_at')->get();
+```
+
+## 缓存自定义访问器
+
+从 Laravel 9.6 开始，如果在编写自定义访问器时有计算密集型计算，则可以使用 `shouldCache` 方法。
+
+```php
+public function hash(): Attribute
+{
+    return Attribute::make(
+        get: fn($value) => bcrypt(gzuncompress($value)),
+    )->shouldCache();
+}
+```
+
+## 检索第一行的第一列
+
+从 Laravel 9.8.0 开始，模型添加了 `scalar()` 方法，允许从查询结果中检索第一行的第一列。
+
+```php
+DB::selectOne("SELECT COUNT(CASE WHEN food = 'burger' THEN 1 END) AS burgers FROM menu_items;")->burgers // [!code --]
+
+DB::scalar("SELECT COUNT(CASE WHEN food = 'burger' THEN 1 END) FROM menu_items;") // [!code ++]
+```
+
+## 选择特定列
+
+要选择模型上的特定列，可以使用 `select` 方法指定要获取的列，或者可以将数组直接传递给 `get` 方法。
+
+```php
+$employees = Employee::select(['name', 'title', 'email'])->get(); // [!code --]
+
+$employees = Employee::get(['name', 'title', 'email']); // [!code ++]
+```
+
+
+
+查询生成器中的 "when" 可以将条件子句链接到查询，而无需编写 if-else 语句。这将使的查询非常清楚：
+
+```php
+Product::query()
+    ->when(
+        $this->direction === SortDirections::Desc,
+        fn () => $query->orderByDesc('created_at')
+        fn () => $query->orderBy('created_at'),
+    );
+```
+
+
+## 动态Where子句
+
+可以在 where 子句中使用列名来创建动态 where 子句。
+
+在下面的示例中，使用 `whereName('John')` 而不是 `where('name', 'John')`。
+
+```php
+User::where('name', 'John')->first(); // [!code --]
+User::whereName('John')->first(); // [!code ++]
+```
+
+## 使用 firstOrCreate()
+
+可以使用 `firstOrCreate()` 查找与属性匹配的第一条记录，如果不存在则创建它。
+
+假如正在导入 CSV 文件，并且想要创建一个类别（如果该类别不存在）。
+
+```php
+// instead of
+$category = Category::whereName($request->name)->first();
+if (!$category) {
+    $category = Category::create([
+        'name' => $request->name,
+        'slug' => Str::slug($request->name),
+    ]);
+}
+
+// you can use
+$category = Category::firstOrCreate(
+    ['name' => $request->name],
+    ['slug' => Str::slug($request->name)]
+);
+```
 
 ## 保存模型及其所有关系
 
 使用 `push()` 方法更新数据库中的主模型和相关模型。
 
-```php
+::: code-group
+```php {4} [logic]
+$user = \App\Models\User::first();
+$user->name = "John";
+$user->phone->number = '1234567890';
+$user->push(); // 更新数据库中的用户表中的记录和用户关联表中的电话号码记录
+```
+
+```php [model]
 /**
  * 使用 `push()` 将主模型与任何更改关系一起保存
  */
 class User extends Model
 {
-    public function phone( )
+    public function phone(): HasOne
     {
-        return $this->has0ne('App\Models\Phone');
+        return $this->hasOne('App\Models\Phone');
     }
 }
 ```
-
-```php {4}
-$user = \App\Models\User::first();
-$user->name = "John";
-$user->phone->number = '1234567890';
-$user->push(); // 这会更新数据库中的用户记录和相关的用户电话号码记录
-```
+:::
 
 ## 获取查询日志
 
