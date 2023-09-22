@@ -33,7 +33,7 @@ collect([1, 2, 3]);
 | [avg](avg.md)                           | 返回给定键的**平均值**                                                                     |
 | [chunk](chunk.md)                       | 将集合拆分为多个指定大小的集合组                                                                  |
 | [chunkWhile](chunkWhile.md)             | 根据给定的回调将集合分成多个较小的集合                                                               | 
-| [collapse](collapse.md)                 | 将多个数组合并成一个                                                                        |
+| [collapse](collapse.md)                 | 将数组集合折叠成单个集合                                                                      |
 | [collect](collect.md)                   | TODO                                                                              |
 | [combine](combine.md)                   | 将一个集合的值作为「键」，再将另一个数组或者集合的值作为「值」合并成一个集合                                            |
 | [concat](concat.md)                     | 将给定数组或集合的值附加到另一个集合的末尾                                                             |
