@@ -74,7 +74,7 @@ collect($orders)->groupBy('date');
 
 ```php [根据日期和供应商分组]
 collect($orders)->groupBy('date')->map(
-    fn ($item)=> $item->groupBy('supplier')
+    fn ($item) => $item->groupBy('supplier')
 );
 ```
 
