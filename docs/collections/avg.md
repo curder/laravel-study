@@ -43,3 +43,7 @@ collect($collections)->filter(fn ($item) => $item['active'])
 ); // 20750
 ```
 :::
+
+## 关联方法
+
+- [filter](filter.md)
