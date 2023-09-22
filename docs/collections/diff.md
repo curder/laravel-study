@@ -1,32 +1,11 @@
 # diff
 
-将集合与其它集合或纯 PHP 数组进行值的比较，然后返回原集合中存在而给定集合中不存在的值。
+> 将集合与其它集合或纯 PHP 数组进行值的比较，然后返回原集合中存在而给定集合中不存在的值。
+
+## 求差集
 
 ```php
-$collection = collect([1, 2, 3]);
-$collection->diff([2, 4, 6]);
+collect([1, 2, 3])->diff([2, 4, 6]); // [1, 3]
 
-// output
-/**
-=> Illuminate\Support\Collection {#1087
-     all: [
-       0 => 1,
-       2 => 3,
-     ],
-   }
- */
-```
-       
-```php
-$collection = collect(['apples', 'bananas']);
-$collection->diff(['pears', 'bananas']);
-
-// output
-/**
-=> Illuminate\Support\Collection {#1083
-     all: [
-       "apples",
-     ],
-   }
- */
+collect(['apples', 'bananas'])->diff(['pears', 'bananas']); // ["apples"]
 ```
