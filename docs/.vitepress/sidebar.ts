@@ -49,6 +49,7 @@ export default {
                 {text: "except", link: "/collections/except"},
                 {text: "filter", link: "/collections/filter"},
                 {text: "first", link: "/collections/first"},
+                {text: "firstOrFail", link: "/collections/firstOrFail"},
                 {text: "firstWhere", link: "/collections/firstWhere"},
                 {text: "flatMap", link: "/collections/flatMap"},
                 {text: "flatten", link: "/collections/flatten"},

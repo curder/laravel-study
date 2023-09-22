@@ -60,7 +60,7 @@ collect([1, 2, 3]);
 | [except](except.md)                     | 返回集合中除了指定键以外的所有项目                                                                 |
 | [filter](filter.md)                     | 使用给定的回调函数过滤集合的内容，只留下那些通过给定值为真的集合项                                                 |
 | [first](first.md)                       | 返回集合中第一个元素                                                                        |
-| [firstOrFail](firstOrFail.md)           | TODO                                                                              |
+| [firstOrFail](firstOrFail.md)           | 返回集合中第一个元素，如果没有匹配到则回抛出 ItemNotFoundException 错误                                   |
 | [firstWhere](firstWhere.md)             | 返回给定键值对的第一个元素                                                                     |
 | [flatMap](flatMap.md)                   | 遍历集合并将其中的每个值传递到给定的回调                                                              |
 | [flatten](flatten.md)                   | 将多维集合转为一维                                                                         |
