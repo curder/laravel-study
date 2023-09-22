@@ -10,3 +10,4 @@ collect([10 => 'apples', 20 => 'bananas'])
 ## 相关方法
 
 - [diff](diff.md)
+- [diffAssocUsing](diffAssocUsing.md)
