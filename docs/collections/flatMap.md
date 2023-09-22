@@ -8,18 +8,11 @@ collect([
   ['name' => 'Sally'],
   ['school' => 'Arkansas'],
   ['age' => 28],
-])->flatMap(function ($values) {
-  return array_map('strtoupper', $values);
-});
-
-// output
-/**
-=> Illuminate\Support\Collection {#1093
-     all: [
-       "name" => "SALLY",
-       "school" => "ARKANSAS",
-       "age" => "28",
-     ],
-   }
- */
+])->flatMap(
+    fn ($values) => array_map('strtoupper', $values)
+); // ["name" => "SALLY", "school" => "ARKANSAS", "age" => "28"]
 ```
+
+## 相关方法
+
+- [map](map.md)
