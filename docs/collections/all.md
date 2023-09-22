@@ -14,83 +14,35 @@ collect([1, 2, 3, 4])->toArray(); // [1, 2, 3, 4]
 
 ## 与 toArray 的区别
 
-all 方法与 toArray 方法的区别在于嵌套集合在调用方法后生成的结果不同。
+`all` 方法与 `toArray` 方法的区别在于嵌套集合在调用方法后生成的结果不同。
 
-### 嵌套集合 all
-```php
+::: code-group
+```php [all]
+// 使用 all 方法只会将集合中首层的元素格式化为数组
 collect([collect([1, 2, 3, 4]), collect([1, 2, 3, 4])])->all();
 
-// output
 /**
 [
  Illuminate\Support\Collection {#1092
-   all: [
-     1,
-     2,
-     3,
-     4,
-   ],
+   all: [1, 2, 3, 4],
  },
  Illuminate\Support\Collection {#1091
-   all: [
-     1,
-     2,
-     3,
-     4,
-   ],
+   all: [1, 2, 3, 4],
  },
 ]
 */
 ```
 
-使用 all 方法只会将第一层的格式化数组。
 
-### 嵌套集合 toArray
-```php
+```php [toArray]
+// 使用 toArray 方法会将所有层级的集合都格式化为数组
 collect([collect([1, 2, 3, 4]), collect([1, 2, 3, 4])])->toArray();
 
-// output
 /**
 [
- [
-   1,
-   2,
-   3,
-   4,
- ],
- [
-   1,
-   2,
-   3,
-   4,
- ],
+ [1, 2, 3, 4],
+ [1, 2, 3, 4],
 ]
 */
 ```
-使用 toArray 方法会将所有集合都格式化成数组。
-
-同时对于多层级也是有效的
-
-```php
-collect([collect([collect([1, 2, 3, 4])]), collect([1, 2, 3, 4])])->toArray();
-
-// output
-/**
-[
- [
-   [
-     1,
-     2,
-     3,
-     4,
-   ],
- ],
- [
-   1,
-   2,
-   3,
-   4,
- ],
-]
-*/
-```
+:::
