@@ -12,4 +12,6 @@ collect(['apples', 'bananas'])->diff(['pears', 'bananas']); // ["apples"]
 
 ## 相关方法
 
+- [diffKeys](diffKeys.md)
 - [diffAssoc](diffAssoc.md)
+- [diffAssocUsing](diffAssocUsing.md)
