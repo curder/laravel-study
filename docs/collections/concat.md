@@ -1,35 +1,20 @@
 # concat
 
-将给定数组或集合的值附加到另一个集合的末尾。
+> 将给定数组或集合的值附加到另一个集合的末尾
+
+## 相关示例
 
 ```php
-$collection = collect(['value1']);
-$collection->concat(['key1' => 'value2']);
+// 合并简单数组
+collect(['value1'])->concat(['key2' => 'value2']); // ["value1", "value2"]
 
-// output
-/**
-=> Illuminate\Support\Collection {#1080
-     all: [
-       "value1",
-       "value2",
-     ],
-   }
- */
+// `concat` 方法会忽略掉附加的元素的 key
+collect(['key1' => 'value1'])->concat(['key2' => 'value2']); // ["key1" => "value1", 0 => "value2"],
+
+// 如果需要保持附加元素的key，可以使用 merge 方法
+collect(['key1' => 'value1'])->merge(['key2' => 'value2']); // ["key1" => "value1", "key2" => "value2"]
 ```
 
+## 关联方法
 
-`concat` 方法会忽略掉附加的元素的 key。
-```php
-$collection = collect(['key2' => 'value1']);
-$collection->concat(['key1' => 'value2']);
-
-// output
-/**
-=> Illuminate\Support\Collection {#1081
-     all: [
-       "key2" => "value1",
-       0 => "value2",
-     ],
-   }
- */
-```
+- [merge](merge.md)
