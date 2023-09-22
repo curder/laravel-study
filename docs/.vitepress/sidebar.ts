@@ -40,6 +40,7 @@ export default {
                 {text: "diffUsing", link: "/collections/diffUsing"},
                 {text: "doesntContain", link: "/collections/doesntContain"},
                 {text: "dump", link: "/collections/dump"},
+                {text: "duplicates", link: "/collections/duplicates"},
                 {text: "each", link: "/collections/each"},
                 {text: "eachSpread", link: "/collections/eachSpread"},
                 {text: "every", link: "/collections/every"},

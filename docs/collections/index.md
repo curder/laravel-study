@@ -52,7 +52,7 @@ collect([1, 2, 3]);
 | [diffUsing](diffUsing.md)               | 获取集合中不存在给定项目的项目                                                                   |
 | [doesntContain](doesntContain.md)       | 判断集合是否不包含给定的项目                                                                    |
 | [dump](dump.md)                         | 打印集合的元素                                                                           |
-| [duplicates](duplicates.md)             | TODO                                                                              |
+| [duplicates](duplicates.md)             | 从集合中检索并返回重复值                                                                      |
 | [duplicatesStrict](duplicatesStrict.md) | TODO                                                                              |
 | [each](each.md)                         | 迭代集合中的内容，同时将其传递到回调函数中                                                             |
 | [eachSpread](eachSpread.md)             | 迭代集合中的内容，同时将其传递到回调函数中                                                             |
