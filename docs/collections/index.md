@@ -50,7 +50,7 @@ collect([1, 2, 3]);
 | [diffKeys](diffKeys.md)                 | 基于键求差集                                                                            |
 | [diffKeysUsing](diffKeysUsing.md)       | 使用回调获取集合中键不存在于给定项中的项                                                              |
 | [diffUsing](diffUsing.md)               | 获取集合中不存在给定项目的项目                                                                   |
-| [doesntContain](doesntContain.md)       | TODO                                                                              |
+| [doesntContain](doesntContain.md)       | 判断集合是否不包含给定的项目                                                                    |
 | [dump](dump.md)                         | 打印集合的元素，调试时很有帮助                                                                   |
 | [duplicates](duplicates.md)             | TODO                                                                              |
 | [duplicatesStrict](duplicatesStrict.md) | TODO                                                                              |

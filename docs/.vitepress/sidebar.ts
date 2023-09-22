@@ -38,6 +38,7 @@ export default {
                 {text: "diffKeys", link: "/collections/diffKeys"},
                 {text: "diffKeysUsing", link: "/collections/diffKeysUsing"},
                 {text: "diffUsing", link: "/collections/diffUsing"},
+                {text: "doesntContain", link: "/collections/doesntContain"},
                 {text: "dump", link: "/collections/dump"},
                 {text: "each", link: "/collections/each"},
                 {text: "eachSpread", link: "/collections/eachSpread"},
