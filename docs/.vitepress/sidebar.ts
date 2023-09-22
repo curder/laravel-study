@@ -41,6 +41,8 @@ export default {
                 {text: "doesntContain", link: "/collections/doesntContain"},
                 {text: "dump", link: "/collections/dump"},
                 {text: "duplicates", link: "/collections/duplicates"},
+                {text: "duplicates", link: "/collections/duplicates"},
+                {text: "duplicatesStrict", link: "/collections/duplicatesStrict"},
                 {text: "each", link: "/collections/each"},
                 {text: "eachSpread", link: "/collections/eachSpread"},
                 {text: "every", link: "/collections/every"},

@@ -53,7 +53,7 @@ collect([1, 2, 3]);
 | [doesntContain](doesntContain.md)       | 判断集合是否不包含给定的项目                                                                    |
 | [dump](dump.md)                         | 打印集合的元素                                                                           |
 | [duplicates](duplicates.md)             | 从集合中检索并返回重复值                                                                      |
-| [duplicatesStrict](duplicatesStrict.md) | TODO                                                                              |
+| [duplicatesStrict](duplicatesStrict.md) | 使用严格模式从集合中检索并返回重复值                                                                |
 | [each](each.md)                         | 迭代集合中的内容，同时将其传递到回调函数中                                                             |
 | [eachSpread](eachSpread.md)             | 迭代集合中的内容，同时将其传递到回调函数中                                                             |
 | [every](every.md)                       | 可用于验证集合中每一个元素都通过给定的真实测试                                                           |
