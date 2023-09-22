@@ -65,7 +65,7 @@ collect([1, 2, 3]);
 | [flatMap](flatMap.md)                   | 遍历集合并将其中的每个值传递到给定的回调                                                              |
 | [flatten](flatten.md)                   | 将多维集合转为一维                                                                         |
 | [flip](flip.md)                         | 将集合中的键和对应的数值进行互换                                                                  |
-| [forget](forget.md)                     | **改变原集合**，通过给定的键来移除掉集合中对应的内容                                                      |
+| [forget](forget.md)                     | **改变原集合**，通过给定的键来移除掉集合中对应的项                                                       |
 | [forPage](forPage.md)                   | 返回给定页码上显示的项目的新集合                                                                  |
 | [get](get.md)                           | 返回给定键的项目                                                                          |
 | [groupBy](groupBy.md)                   | 根据给定的键对集合内的项目进行分组                                                                 |
