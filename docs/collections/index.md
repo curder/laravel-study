@@ -67,7 +67,7 @@ collect([1, 2, 3]);
 | [flip](flip.md)                         | 将集合中的键和对应的数值进行互换                                                                  |
 | [forget](forget.md)                     | **改变原集合**，通过给定的键来移除掉集合中对应的项                                                       |
 | [forPage](forPage.md)                   | 返回给定页码上显示的项目的新集合                                                                  |
-| [get](get.md)                           | 返回给定键的项目                                                                          |
+| [get](get.md)                           | 获取一维数组给定键的集合项                                                                     |
 | [groupBy](groupBy.md)                   | 根据给定的键对集合内的项目进行分组                                                                 |
 | [has](has.md)                           | 判断集合中是否存在给定的键                                                                     |
 | [hasAny](hasAny.md)                     | TODO                                                                              |
