@@ -29,6 +29,7 @@ export default {
                 {text: 'containsOneItem', link: '/collections/containsOneItem'},
                 {text: "containsStrict", link: "/collections/containsStrict"},
                 {text: "count", link: "/collections/count"},
+                {text: "countBy", link: "/collections/countBy"},
                 {text: "crossJoin", link: "/collections/crossJoin"},
                 {text: "dd", link: "/collections/dd"},
                 {text: "diff", link: "/collections/diff"},
