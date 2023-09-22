@@ -75,4 +75,5 @@ collect([
 ## 相关方法
 
 - [map](map.md)
+- [mapSpread](mapSpread.md)
 - [eachSpread](eachSpread.md)

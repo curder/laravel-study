@@ -11,36 +11,14 @@ collect([
   dump("We have {$product} {$qty} in our {$location} store.");
 });
 
-// output
-/**
-"We have banners 45 in our California store."
-"We have apples 20 in our Florida store."
-"We have coconuts 60 in our Texas store."
-=> Illuminate\Support\Collection {#1249
-     all: [
-       [
-         "banners",
-         45,
-         "California",
-       ],
-       [
-         "apples",
-         20,
-         "Florida",
-       ],
-       [
-         "coconuts",
-         60,
-         "Texas",
-       ],
-     ],
-   }
-*/
+// "We have banners 45 in our California store."
+// "We have apples 20 in our Florida store."
+// "We have coconuts 60 in our Texas store."
 ```
 
-### Condition
+### 中断迭代
 
-跟 [each](./each.md) 方法的使用一致，也可以在回调函数中编写逻辑，当返回 `false` 后会停止循环。
+跟 [each](each.md) 方法的使用一致，也可以在回调函数中编写逻辑，当返回 `false` 后会停止循环。
 
 ```php
 collect([
@@ -54,29 +32,13 @@ collect([
   dump("We have {$product} {$qty} in our {$location} store.");
 });
 
-// output
-/**
-"We have banners 45 in our California store."
-=> Illuminate\Support\Collection {#1253
-     all: [
-       [
-         "banners",
-         45,
-         "California",
-       ],
-       [
-         "apples",
-         20,
-         "Florida",
-       ],
-       [
-         "coconuts",
-         60,
-         "Texas",
-       ],
-     ],
-   }
-*/
+// "We have banners 45 in our California store."
 ```
 
-> 可以看到当返回 `false` 时，循环终止。
+> 可以看到当在回掉函数中当返回 `false` 时，循环终止。
+
+## 相关方法
+
+- [each](each.md)
+- [map](map.md)
+- [mapSpread](mapSpread.md)
