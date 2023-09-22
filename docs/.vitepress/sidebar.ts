@@ -22,6 +22,7 @@ export default {
                 {text: "chunk", link: "/collections/chunk"},
                 {text: "chunkWhile", link: "/collections/chunkWhile"},
                 {text: "collapse", link: "/collections/collapse"},
+                {text: "collect", link: "/collections/collect"},
                 {text: "combine", link: "/collections/combine"},
                 {text: "concat", link: "/collections/concat"},
                 {text: "contains", link: "/collections/contains"},
