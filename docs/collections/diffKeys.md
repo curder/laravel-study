@@ -11,4 +11,6 @@ collect([10 => 'apples', 20 => 'pears'])
 
 - [diff](diff.md)
 - [diffAssoc](diffAssoc.md)
+- [diffUsing](diffUsing.md)
+- [diffKeysUsing](diffKeysUsing.md)
 - [diffAssocUsing](diffAssocUsing.md)

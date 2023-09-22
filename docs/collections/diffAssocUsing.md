@@ -18,4 +18,9 @@ collect(['123A-G' => 10, '456A-G' => 25])
 ```
 
 ## 相关方法
+
+- [diff](diff.md)
+- [diffKeys](diffKeys.md)
 - [diffAssoc](diffAssoc.md)
+- [diffUsing](diffUsing.md)
+- [diffKeysUsing](diffKeysUsing.md)

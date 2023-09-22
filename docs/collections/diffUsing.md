@@ -2,41 +2,26 @@
 
 获取集合中不存在给定项目的项目。
 
-
 ```php
-$collection = collect([10, 25, 50]);
+collect([10, 25, 50])
+    ->diffUsing(
+        [0.1, 0.25],
+        fn ($a, $b) => $a === (int) ($b * 100) ? 0 : -1 // 在回调函数中返回 0 或者 -1 ，当返回 -1 时保留，当返回 0 时移除
+    ); // [2 => 50]
 
-$collection->diffUsing([0.1, 0.25], function ($a, $b) {
-  // 在回调函数中返回 0 或者 -1 ，当返回 -1 时保留，当返回 0 时移除
-  return $a === (int) ($b * 100) ? 0 : -1;
-});
+// diffUsing 关注 value 是否匹配。
 
-// output
-/**
-=> Illuminate\Support\Collection {#1101
-     all: [
-       2 => 50,
-     ],
-   }
- */
+collect(['123A-G', '456A-G'])
+    ->diffUsing(
+        ['123AG'],
+        fn ($a, $b) => (str_replace('-', '', $a) === $b) ? 0 : -1
+    ); // [1 => "456A-G"]
 ```
 
-diffUsing 关注 value 是否匹配。
+## 相关方法
 
-```php
-$collection = collect(['123A-G', '456A-G']);
-
-$collection->diffUsing(['123AG'], function ($a, $b) {
-  $code = str_replace('-', '', $a);
-  return $code === $b ? 0 : -1;
-});
-
-// output
-/**
-=> Illuminate\Support\Collection {#1105
-     all: [
-       1 => "456A-G",
-     ],
-   }
- */
-```
+- [diff](diff.md)
+- [diffKeys](diffKeys.md)
+- [diffAssoc](diffAssoc.md)
+- [diffKeysUsing](diffKeysUsing.md)
+- [diffAssocUsing](diffAssocUsing.md)
