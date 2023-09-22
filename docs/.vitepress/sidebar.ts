@@ -26,6 +26,7 @@ export default {
                 {text: "combine", link: "/collections/combine"},
                 {text: "concat", link: "/collections/concat"},
                 {text: "contains", link: "/collections/contains"},
+                {text: 'containsOneItem', link: '/collections/containsOneItem'},
                 {text: "containsStrict", link: "/collections/containsStrict"},
                 {text: "count", link: "/collections/count"},
                 {text: "crossJoin", link: "/collections/crossJoin"},
