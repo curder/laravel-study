@@ -31,7 +31,7 @@ collect([1, 2, 3]);
 | [all](all.md)                           | 返回该集合表示的底层**数组**                                                                  |
 | [average](avg.md)                       | 方法`avg()`的别名                                                                      |
 | [avg](avg.md)                           | 返回给定键的**平均值**                                                                     |
-| [chunk](chuck.md)                       | 将集合拆成多个指定大小的小集合                                                                   |
+| [chunk](chuck.md)                       | 将集合拆分为多个指定大小的集合组                                                                  |
 | [chunkWhile](chunkWhile.md)             | TODO                                                                              | 
 | [collapse](collapse.md)                 | 将多个数组合并成一个                                                                        |
 | [collect](collect.md)                   | TODO                                                                              |

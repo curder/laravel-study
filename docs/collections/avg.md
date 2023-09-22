@@ -1,62 +1,45 @@
 # avg
 
-返回给定键的**平均值**。
+> 返回数组中给定键的值的**平均值**。
 
-* 获取数组的平均值
 
-```php
-collect([10, 20, 30])->average();
+## 一些示例
 
-// output
-/**
-=> 20
- */
+::: code-group
+```php [获取数组的平均值]
+// 获取一维数组
+collect([10, 20, 30])->average(); // 20
+
+// 获取二维数组的平均值
+collect([['price' => 10000], ['price' => 20000], ['price' => 30000]])
+    ->average('price'); // 20000
 ```
 
-* 获取二维数组的平均值
-
-```php
-collect([['price' => 10000], ['price' => 20000], ['price' => 30000]])->average(
-  'price'
-);
-
-// output
-/**
-=> 20000
- */
-```
-
-* 使用回调函数
-
-```php
+```php [使用回调函数]
 collect([
   ['price' => 10000, 'tax' => 500],
   ['price' => 20000, 'tax' => 700],
   ['price' => 30000, 'tax' => 900],
-])->average(function ($value) {
-  return $value['price'] + $value['tax'];
-});
-
-// output
-/**
-=> 20700
- */
+])->average(
+    fn ($item) => $item['price'] + $item['tax']
+); // 20700
 ```
 
-```php
-collect([
-  ['price' => 10000, 'tax' => 500, 'active' => true],
-  ['price' => 20000, 'tax' => 700, 'active' => false],
-  ['price' => 30000, 'tax' => 900, 'active' => true],
-])->average(function ($value) {
-  if (!$value['active']) {
-    return null;
-  }
-  return $value['price'] + $value['tax'];
-});
+```php [回调函数添加条件]
+$collections = [
+    ['price' => 10000, 'tax' => 500, 'active' => true],
+    ['price' => 20000, 'tax' => 700, 'active' => false],
+    ['price' => 30000, 'tax' => 1000, 'active' => true],
+];
 
-// output
-/**
-=> 20700
- */
+collect($collections)->average(
+    fn ($item) => $item['active'] ? $item['price'] + $item['tax'] : null
+); // 20750
+
+// 也可以使用 filter 方法先过滤掉"脏数据"
+collect($collections)->filter(fn ($item) => $item['active'])
+  ->average(
+    fn ($value) => $value['price'] + $value['tax']
+); // 20750
 ```
+:::
