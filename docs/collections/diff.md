@@ -9,3 +9,7 @@ collect([1, 2, 3])->diff([2, 4, 6]); // [1, 3]
 
 collect(['apples', 'bananas'])->diff(['pears', 'bananas']); // ["apples"]
 ```
+
+## 相关方法
+
+- [diffAssoc](diffAssoc.md)
