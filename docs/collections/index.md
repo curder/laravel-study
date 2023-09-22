@@ -42,7 +42,7 @@ collect([1, 2, 3]);
 | [containsStrict](containsStrict.md)     | 使用「严格模式」来判断集合中是否包含给定的项目                                                           |
 | [count](count.md)                       | 返回该集合内的项目总数                                                                       |
 | [countBy](countBy.md)                   | 计算集合中值的出现次数                                                                       | 
-| [crossJoin](crossJoin.md)               | 将集合的值交叉连接到给定的数组或集合中，返回具有所有可能排列的笛卡尔积                                               |
+| [crossJoin](crossJoin.md)               | 返回集合中所有可能排列的笛卡尔积                                                                  |
 | [dd](dd.md)                             | 打印集合的元素并终止脚本的执行                                                                   |
 | [diff](diff.md)                         | 基于值求差集                                                                            |
 | [diffAssoc](diffAssoc.md)               | 基于键值对求差集                                                                          |
