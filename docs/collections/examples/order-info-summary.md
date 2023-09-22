@@ -2,6 +2,7 @@
 
 有如下订单数据，计算汇总数据。
 
+::: details 订单信息列表
 ```php
 $orders = [
     [
@@ -62,28 +63,26 @@ $orders = [
     ],
 ];
 ```
+:::
 
 
-## 根据日期汇总订单
 
-```php
-$result = collect($orders)->groupBy('date');
+::: code-group
+```php [根据日期汇总订单]
+collect($orders)->groupBy('date');
 ```
 
-## 根据日期和供应商分组
-
-```php
-$result = collect($orders)->groupBy('date')->map(function($item){
-    return $item->groupBy('supplier');
-});
+```php [根据日期和供应商分组]
+collect($orders)->groupBy('date')->map(
+    fn ($item)=> $item->groupBy('supplier')
+);
 ```
 
-## 计算每日销售金额
-
-```php
-$result = collect($orders)->groupBy('date')->map(function($item){
-    return $item->sum(function($item){
-        return $item['item_unit_price'] * $item['qty'];
-    });
-});
+```php [计算每日销售金额]
+collect($orders)->groupBy('date')->map(
+    fn ($item) => $item->sum(
+        fn ($item) => $item['item_unit_price'] * $item['qty']
+    )
+);
 ```
+:::
