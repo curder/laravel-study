@@ -4,12 +4,7 @@
 
 不传入参数调用 `last` 方法来获取集合中最后一个元素。如果集合是空的，返回 `null`。
 ```php
-collect([1, 2, 3, 4])->last();
-
-// output
-/**
-=> 4
- */
+collect([1, 2, 3, 4])->last(); // 4
 ```
 
 ## 使用回调
@@ -17,12 +12,7 @@ collect([1, 2, 3, 4])->last();
 从集合右往左遍历，满足条件元素被返回。
 
 ```php
-collect([1, 2, 3, 4])->last(fn ($element) => $element < 2);
-
-// output
-/**
-=> 1
- */
+collect([1, 2, 3, 4])->last(fn ($element) => $element < 2); // 1
 ```
 
 ## 使用默认值
@@ -31,12 +21,12 @@ collect([1, 2, 3, 4])->last(fn ($element) => $element < 2);
 
 ```php
 collect([1, 2, 3, 4])->last(fn ($element) => $element < 1, 1000);
-collect([])->last(null, 1000);
 
-// output
-/**
-=> 1000
- */
+collect([])->last(null, 1000); // 1000
 ```
 
-> 如果需要返回第一个元素可以使用[first()](./first.md)方法。
+> 如果需要返回第一个元素可以使用[first()](first.md)方法。
+
+## 相关方法
+
+- [first](first.md)
