@@ -5,29 +5,9 @@
 ```php
 collect([1, 2, 3, 4, 5, 6, 7, 8])
   ->chunk(2) // 将集合拆成多个指定大小的小集合
-  ->mapSpread(function ($a, $b) {
-    return [$a => $b];
-  });
+  ->mapSpread(fn ($a, $b) => [$a => $b]);
 
-// output
-/**
-=> Illuminate\Support\Collection {#1094
-     all: [
-       [
-         1 => 2,
-       ],
-       [
-         3 => 4,
-       ],
-       [
-         5 => 6,
-       ],
-       [
-         7 => 8,
-       ]
-     ],
-   }
- */
+// [[1 => 2], [3 => 4], [5 => 6], [7 => 8]]
 ```
 
 值得注意的是，一定要保证对应的值有数据，否则将跟产生预期不符合的错误。
@@ -41,7 +21,8 @@ collect([1, 2, 3, 4, 5, 6, 7])
 
 // output
 /**
-  TypeError: Too few arguments to function {closure}(), 2 passed in /Users/curder/Codes/laravel8/vendor/laravel/framework/src/Illuminate./Traits/EnumeratesValues.php on line 316 and exactly 3 expected
+ * TypeError: Too few arguments to function {closure}(), 2 passed in ../xx/../vendor/laravel/framework/src/Illuminate./Traits/EnumeratesValues.php
+ * on line 316 and exactly 3 expected
  */
 ```
 
@@ -49,71 +30,9 @@ collect([1, 2, 3, 4, 5, 6, 7])
 
 ```php
 $collection = collect([1, 2, 3, 4, 5, 6, 7, 8, 9])->chunk(3);
+// [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
-$collection->dump();
+$newCollection = $collection->mapSpread(fn ($a, $b, $c) => $a * $b - $c); // [-1, 14, 47]
 
-$newCollection = $collection->mapSpread(function ($a, $b, $c) {
-  return $a * $b - $c;
-});
-
-$newCollection->dump();
-$collection->dd();
-
-// output
-/**
-array:3 [
-  0 => Illuminate\Support\Collection {#1123
-    #items: array:3 [
-      0 => 1
-      1 => 2
-      2 => 3
-    ]
-  }
-  1 => Illuminate\Support\Collection {#1122
-    #items: array:3 [
-      3 => 4
-      4 => 5
-      5 => 6
-    ]
-  }
-  2 => Illuminate\Support\Collection {#1121
-    #items: array:3 [
-      6 => 7
-      7 => 8
-      8 => 9
-    ]
-  }
-]
-array:3 [
-  0 => -1
-  1 => 14
-  2 => 47
-]
-array:3 [
-  0 => Illuminate\Support\Collection {#1123
-    #items: array:4 [
-      0 => 1
-      1 => 2
-      2 => 3
-      3 => 0
-    ]
-  }
-  1 => Illuminate\Support\Collection {#1122
-    #items: array:4 [
-      3 => 4
-      4 => 5
-      5 => 6
-      6 => 1
-    ]
-  }
-  2 => Illuminate\Support\Collection {#1121
-    #items: array:4 [
-      6 => 7
-      7 => 8
-      8 => 9
-      9 => 2
-    ]
-  }
-] 
- */
+$collection; // [[1, 2, 3, 0], [4, 5, 6, 1], [7, 8, 9, 2]]
 ```
