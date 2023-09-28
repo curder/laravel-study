@@ -76,7 +76,7 @@ collect([1, 2, 3]);
 | [intersectByKeys](intersectByKeys.md)   | 删除原集合中不存在于给定数组或集合中的任何键                                                            |
 | [isEmpty](isEmpty.md)                   | 判断集合是否为空                                                                          |
 | [isNotEmpty](isNotEmpty.md)             | 判断集合是否不为空                                                                         |
-| [join](join.md)                         | TODO                                                                              |
+| [join](join.md)                         | 将集合的值与字符串连接起来                                                                     |
 | [keyBy](keyBy.md)                       | 以给定的键作为集合的键                                                                       |
 | [keys](keys.md)                         | 返回集合的所有键                                                                          |
 | [last](last.md)                         | 返回集合中通过给定真实测试的最后一个元素                                                              |
