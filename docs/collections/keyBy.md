@@ -9,20 +9,12 @@ collect([
   ['product_id' => 'prod-200', 'name' => 'chair'],
 ])->keyBy('product_id');
 
-/**
-=> Illuminate\Support\Collection {#1086
-     all: [
-       "prod-100" => [
-         "product_id" => "prod-100",
-         "name" => "desk",
-       ],
-       "prod-200" => [
-         "product_id" => "prod-200",
-         "name" => "chair",
-       ],
-     ],
-   }
- */
+/*
+[
+   "prod-100" => ["product_id" => "prod-100", "name" => "desk"],
+   "prod-200" => ["product_id" => "prod-200", "name" => "chair"]
+]
+*/
 ```
 
 也可以传入一个回调方法，回调返回的值会作为该集合的键
@@ -31,22 +23,12 @@ collect([
 collect([
   ['product_id' => 'prod-100', 'name' => 'desk'],
   ['product_id' => 'prod-200', 'name' => 'chair'],
-])->keyBy(function ($item) {
-    return strtoupper($item['product_id']);
-});
+])->keyBy(fn ($item) => strtoupper($item['product_id']));
 
-/**
-=> Illuminate\Support\Collection {#1095
-     all: [
-       "PROD-100" => [
-         "product_id" => "prod-100",
-         "name" => "desk",
-       ],
-       "PROD-200" => [
-         "product_id" => "prod-200",
-         "name" => "chair",
-       ],
-     ],
-   } 
+/*
+[
+  "PROD-100" => ["product_id" => "prod-100", "name" => "desk"],
+  "PROD-200" => ["product_id" => "prod-200", "name" => "chair"]
+]
 */
 ```
