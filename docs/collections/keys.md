@@ -1,6 +1,6 @@
 # keys
 
-返回集合的所有键。
+> 返回集合的所有键
 
 ```php
 collect([
@@ -8,12 +8,9 @@ collect([
   'prod-200' => ['product_id' => 'prod-200', 'name' => 'Chair'],
 ])->keys();
 
-/**
-=> Illuminate\Support\Collection {#1087
-     all: [
-       "prod-100",
-       "prod-200",
-     ],
-   }
- */
+// ["prod-100", "prod-200"]
 ```
+
+## 相关方法
+
+- [values](values.md)
