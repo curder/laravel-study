@@ -1,8 +1,7 @@
 # intersectByKeys
 
-删除原集合中不存在于给定数组或集合中的任何键。
+> 删除原集合中不存在于给定集合中的任何键。
 
-::: code-group
 ```php [PHP]
 collect([
   'serial' => 'UX301',
@@ -12,17 +11,11 @@ collect([
   'reference' => 'UX404',
   'type' => 'tab',
   'year' => 2011,
-]);
+]); // ["type" => "screen", "year" => 2009]
 ```
 
-```php [Result]
-/**
-=> Illuminate\Support\Collection {#1089
-     all: [
-       "type" => "screen",
-       "year" => 2009,
-     ],
-   }
- */
-```
-:::
+## 相关方法
+
+- [intersect](intersect.md)
+- [union](union.md)
+- [diff](diff.md)
