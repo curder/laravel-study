@@ -69,6 +69,7 @@ export default {
                 {text: "keys", link: "/collections/keys"},
                 {text: "last", link: "/collections/last"},
                 {text: "lazy", link: "/collections/lazy"},
+                {text: "macro", link: "/collections/macro"},
                 {text: "map", link: "/collections/map"},
                 {text: "mapInto", link: "/collections/mapInto"},
                 {text: "mapSpread", link: "/collections/mapSpread"},
