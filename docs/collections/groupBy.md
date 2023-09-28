@@ -12,44 +12,19 @@ collect([
   'key5' => ['product' => 'coconuts', 'price' => 50],
 ])->groupBy('product');
 
-// output
 /*
-=> Illuminate\Support\Collection {#1254
-     all: [
-       "apples" => Illuminate\Support\Collection {#1256
-         all: [
-           [
-             "product" => "apples",
-             "price" => 10,
-           ],
-           [
-             "product" => "apples",
-             "price" => 10,
-           ],
-           [
-             "product" => "apples",
-             "price" => 20,
-           ],
-           [
-             "product" => "apples",
-             "price" => 30,
-           ],
-         ],
-       },
-       "coconuts" => Illuminate\Support\Collection {#1255
-         all: [
-           [
-             "product" => "coconuts",
-             "price" => 40,
-           ],
-           [
-             "product" => "coconuts",
-             "price" => 50,
-           ],
-         ],
-       },
-     ],
-   }
+[
+   "apples" => [
+       ["product" => "apples", "price" => 10],
+       ["product" => "apples", "price" => 10],
+       ["product" => "apples", "price" => 20],
+       ["product" => "apples", "price" => 30],
+   ],
+   "coconuts" => [
+       ["product" => "coconuts", "price" => 40],
+       ["product" => "coconuts", "price" => 50],
+   ],
+ ]
 */
 ```
 
@@ -65,44 +40,19 @@ collect([
   'key5' => ['product' => 'coconuts', 'price' => 50],
 ])->groupBy('product', true); // 添加 true 参数，保留key
 
-// output
-/**
-=> Illuminate\Support\Collection {#1257
-     all: [
-       "apples" => Illuminate\Support\Collection {#1259
-         all: [
-           "key0" => [
-             "product" => "apples",
-             "price" => 10,
-           ],
-           "key1" => [
-             "product" => "apples",
-             "price" => 10,
-           ],
-           "key2" => [
-             "product" => "apples",
-             "price" => 20,
-           ],
-           "key3" => [
-             "product" => "apples",
-             "price" => 30,
-           ],
-         ],
-       },
-       "coconuts" => Illuminate\Support\Collection {#1258
-         all: [
-           "key4" => [
-             "product" => "coconuts",
-             "price" => 40,
-           ],
-           "key5" => [
-             "product" => "coconuts",
-             "price" => 50,
-           ],
-         ],
-       },
-     ],
-   }
+/*
+[
+   "apples" => [
+       "key0" => ["product" => "apples", "price" => 10],
+       "key1" => ["product" => "apples", "price" => 10],
+       "key2" => ["product" => "apples", "price" => 20],
+       "key3" => ["product" => "apples", "price" => 30]
+   ], 
+   "coconuts" => [
+       "key4" => ["product" => "coconuts", "price" => 40],
+       "key5" => ["product" => "coconuts", "price" => 50],
+   ]
+]
  */
 ```
 
@@ -118,28 +68,14 @@ collect([
   return str_replace(['-', ' '], [], $element['code']);
 });
 
-// output
-/**
-=> Illuminate\Support\Collection {#1242
-     all: [
-       "123VG" => Illuminate\Support\Collection {#1243
-         all: [
-           [
-             "code" => "123VG",
-             "name" => "string1",
-           ],
-           [
-             "code" => "123-VG",
-             "name" => "string2",
-           ],
-           [
-             "code" => "123 VG",
-             "name" => "string3",
-           ],
-         ],
-       },
-     ],
-   }
+/*
+[
+   "123VG" => [
+       ["code" => "123VG", "name" => "string1"],
+       ["code" => "123-VG","name" => "string2"],
+       ["code" => "123 VG","name" => "string3"],
+   ],
+]
  */
 ```
 
@@ -159,39 +95,22 @@ $newCollection = $collection->groupBy(function ($element) {
 $collection->dump();
 $newCollection->dd();
 
-// output
-/**
-array:3 [
-  0 => array:2 [
-    "code" => "123VG"
-    "name" => "string1"
-  ]
-  1 => array:2 [
-    "code" => "123-VG"
-    "name" => "string2"
-  ]
-  2 => array:2 [
-    "code" => "123 VG"
-    "name" => "string3"
-  ]
+/*
+[
+  ["code" => "123VG", "name" => "string1"]
+  ["code" => "123-VG", "name" => "string2"]
+  ["code" => "123 VG", "name" => "string3"]
 ]
-array:1 [
-  "123VG" => Illuminate\Support\Collection {#1257
-    #items: array:3 [
-      0 => array:2 [
-        "code" => "123VG"
-        "name" => "string1"
-      ]
-      1 => array:2 [
-        "code" => "123-VG"
-        "name" => "string2"
-      ]
-      2 => array:2 [
-        "code" => "123 VG"
-        "name" => "string3"
-      ]
-    ]
-  }
+[
+  "123VG" => [
+      [ "code" => "123VG", "name" => "string1"]
+      [ "code" => "123-VG", "name" => "string2"]
+      [ "code" => "123 VG", "name" => "string3"]
+  ] 
 ]
- */
+*/
 ```
+
+## 相关方法
+
+- [mapToGroup](mapToGroup.md)
