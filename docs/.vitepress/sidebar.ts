@@ -59,6 +59,7 @@ export default {
                 {text: "get", link: "/collections/get"},
                 {text: "groupBy", link: "/collections/groupBy"},
                 {text: "has", link: "/collections/has"},
+                {text: "hasAny", link: "/collections/hasAny"},
                 {text: "implode", link: "/collections/implode"},
                 {text: "intersect", link: "/collections/intersect"},
                 {text: "intersectByKeys", link: "/collections/intersectByKeys"},

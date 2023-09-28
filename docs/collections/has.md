@@ -12,6 +12,7 @@ $collection->has(['amount', 'price']); // false
 
 ## 相关方法
 
+- [hasAny](hasAny.md)
 - [contains](contains.md)
 - [doesntContain](doesntContain.md)
 - [containsStrict](containsStrict.md)

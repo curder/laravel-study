@@ -70,7 +70,7 @@ collect([1, 2, 3]);
 | [get](get.md)                           | 获取一维数组给定键的集合项                                                                     |
 | [groupBy](groupBy.md)                   | 根据给定的键对集合内的项目进行分组                                                                 |
 | [has](has.md)                           | 判断集合中是否存在给定的键                                                                     |
-| [hasAny](hasAny.md)                     | TODO                                                                              |
+| [hasAny](hasAny.md)                     | 确定集合中是否存在任何指定的键                                                                   |
 | [implode](implode.md)                   | 合并集合中的项目                                                                          |
 | [intersect](intersect.md)               | 从原集合中删除不在给定数组或集合中的任何值                                                             |
 | [intersectByKeys](intersectByKeys.md)   | 删除原集合中不存在于给定数组或集合中的任何键                                                            |
