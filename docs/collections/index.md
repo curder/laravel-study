@@ -80,7 +80,7 @@ collect([1, 2, 3]);
 | [keyBy](keyBy.md)                       | 以给定的键作为集合的键                                                                       |
 | [keys](keys.md)                         | 返回集合的所有键                                                                          |
 | [last](last.md)                         | 返回集合中通过给定真实测试的最后一个元素                                                              |
-| [lazy](lazy.md)                         | TODO                                                                              |
+| [lazy](lazy.md)                         | 返回一个新的 LazyCollection 实例                                                          |
 | [macro](macro.md)                       | TODO                                                                              |
 | [make](make.md)                         | TODO                                                                              |
 | [map](map.md)                           | 遍历集合并将每一个值传入给定的回调                                                                 |
