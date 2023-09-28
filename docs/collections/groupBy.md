@@ -88,9 +88,7 @@ $collection = collect([
   ['code' => '123 VG', 'name' => 'string3'],
 ]);
 
-$newCollection = $collection->groupBy(function ($element) {
-  return str_replace(['-', ' '], [], $element['code']);
-});
+$newCollection = $collection->groupBy(fn ($element) => str_replace(['-', ' '], [], $element['code']));
 
 $collection->dump();
 $newCollection->dd();
