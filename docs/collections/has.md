@@ -5,16 +5,14 @@
 ```php
 $collection = collect(['account_id' => 1, 'product' => 'Desk', 'amount' => 5]);
 
-dump($collection->has('product'));
-dump($collection->has(['product', 'amount']));
-dd($collection->has(['amount', 'price']));
-
-// output
-/**
-true
-
-true 
-
-false
- */
+$collection->has('product'); // true
+$collection->has(['product', 'amount']); // true
+$collection->has(['amount', 'price']); // false
 ```
+
+## 相关方法
+
+- [contains](contains.md)
+- [doesntContain](doesntContain.md)
+- [containsStrict](containsStrict.md)
+- [containsOneItem](containsOneItem.md)
