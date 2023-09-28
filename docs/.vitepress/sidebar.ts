@@ -70,6 +70,7 @@ export default {
                 {text: "last", link: "/collections/last"},
                 {text: "lazy", link: "/collections/lazy"},
                 {text: "macro", link: "/collections/macro"},
+                {text: 'make', link: '/collections/make'},
                 {text: "map", link: "/collections/map"},
                 {text: "mapInto", link: "/collections/mapInto"},
                 {text: "mapSpread", link: "/collections/mapSpread"},

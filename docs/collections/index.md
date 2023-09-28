@@ -82,7 +82,7 @@ collect([1, 2, 3]);
 | [last](last.md)                         | 返回集合中通过给定真实测试的最后一个元素                                                              |
 | [lazy](lazy.md)                         | 返回一个新的 LazyCollection 实例                                                          |
 | [macro](macro.md)                       | 在运行时向 Collection 类添加自定义方法                                                         |
-| [make](make.md)                         | TODO                                                                              |
+| [make](make.md)                         | 创建一个新的集合实例                                                                        |
 | [map](map.md)                           | 遍历集合并将每一个值传入给定的回调                                                                 |
 | [mapInto](mapInto.md)                   | 遍历集合，通过将值传递给构造函数来创建给定类的新实例                                                        |
 | [mapSpread](mapSpread.md)               | **改变原集合**，迭代集合的项目，将每个嵌套的项目值传递到给定的闭包中。 闭包可以自由修改并返回它，从而形成一个新的修改后的集合。                |

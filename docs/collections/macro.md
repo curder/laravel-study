@@ -29,3 +29,7 @@ Collection::macro('toLocale', function (string $locale) {
  
 collect(['first', 'second'])->toLocale('es');
 ```
+
+## 相关方法
+
+- [make](make.md)
