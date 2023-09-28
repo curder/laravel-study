@@ -72,7 +72,7 @@ collect([1, 2, 3]);
 | [has](has.md)                           | 判断集合中是否存在给定的键                                                                     |
 | [hasAny](hasAny.md)                     | 确定集合中是否存在任何指定的键                                                                   |
 | [implode](implode.md)                   | 合并集合中的项目                                                                          |
-| [intersect](intersect.md)               | 从原集合中删除不在给定数组或集合中的任何值                                                             |
+| [intersect](intersect.md)               | 两个集合的交集                                                                           |
 | [intersectByKeys](intersectByKeys.md)   | 删除原集合中不存在于给定数组或集合中的任何键                                                            |
 | [isEmpty](isEmpty.md)                   | 判断集合是否为空                                                                          |
 | [isNotEmpty](isNotEmpty.md)             | 判断集合是否不为空                                                                         |
@@ -145,7 +145,7 @@ collect([1, 2, 3]);
 | [toJson](toJson.md)                     | 将集合转换成 JSON 字符串                                                                   |
 | [transform](transform.md)               | **改变原集合**，迭代集合并对集合内的每个项目调用给定的回调                                                   |
 | [undot](undot.md)                       | TODO                                                                              |
-| [union](union.md)                       | 将给定的数组添加到集合中                                                                      |
+| [union](union.md)                       | 将给定的数组添加到集合中，**求并集**                                                              |
 | [unique](unique.md)                     | 返回集合中所有唯一的项目                                                                      |
 | [uniqueStrict](uniqueStrict.md)         | 使用严格模式返回集合中所有唯一的项目                                                                |
 | [unless](unless.md)                     | 除非方法的第一个参数的计算结果为true，否则该方法将执行给定的回调                                                |
