@@ -27,3 +27,4 @@ $collection->dd(); // ["framework" => "laravel"]
 
 - [map](map.md)
 - [pluck](pluck.md)
+- [pull](pull.md)

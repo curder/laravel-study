@@ -1,12 +1,15 @@
 # pull
 
-把给定键对应的值从集合中移除并返回。
+> 把给定键对应的值从集合中移除并返回。
 
 ```php
-$collection = collect(['product_id' => 'prod-100', 'name' => 'Desk']);
+$collect = collect(['product_id' => 'prod-100', 'name' => 'Desk']);
 
-$collection->pull('name'); // 'Desk'
+$collect->pull('name'); // 'Desk'
 
-$collection->all(); // ['product_id' => 'prod-100']
+$collect->all(); // ['product_id' => 'prod-100']
 ```
 
+## 相关方法
+
+- [forget](forget.md)
