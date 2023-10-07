@@ -87,7 +87,7 @@ export default {
                 {text: "only", link: "/collections/only"},
                 {text: "pad", link: "/collections/pad"},
                 {text: "partition", link: "/collections/partition"},
-                {text: "pip", link: "/collections/pip"},
+                {text: "pipe", link: "/collections/pipe"},
                 {text: "pipeInto", link: "/collections/pipeInto"},
                 {text: "pluck", link: "/collections/pluck"},
                 {text: "pop", link: "/collections/pop"},
