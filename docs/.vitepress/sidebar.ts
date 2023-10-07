@@ -75,7 +75,7 @@ export default {
                 {text: "mapInto", link: "/collections/mapInto"},
                 {text: "mapSpread", link: "/collections/mapSpread"},
                 {text: "mapToDictionary", link: "/collections/mapToDictionary"},
-                {text: "mapToGroup", link: "/collections/mapToGroup"},
+                {text: "mapToGroups", link: "/collections/mapToGroups"},
                 {text: "mapWithKeys", link: "/collections/mapWithKeys"},
                 {text: "max", link: "/collections/max"},
                 {text: "median", link: "/collections/median"},
