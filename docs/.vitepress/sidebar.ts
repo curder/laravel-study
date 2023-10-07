@@ -100,6 +100,7 @@ export default {
                 {text: "reduce", link: "/collections/reduce"},
                 {text: "reduceSpread", link: "/collections/reduceSpread"},
                 {text: "reject", link: "/collections/reject"},
+                {text: "replace", link: "/collections/replace"},
                 {text: "reverse", link: "/collections/reverse"},
                 {text: "search", link: "/collections/search"},
                 {text: "shift", link: "/collections/shift"},
