@@ -32,6 +32,7 @@ $collection->contains(fn ($value, $key) => $value > 5); // false
 ## 相关方法
 
 - [has](has.md)
+- [search](search.md)
 - [doesntContain](doesntContain.md)
 - [containsStrict](containsStrict.md)
 - [containsOneItem](containsOneItem.md)
