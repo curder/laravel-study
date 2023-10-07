@@ -111,4 +111,4 @@ $newCollection->dd();
 
 ## 相关方法
 
-- [mapToGroup](mapToGroup.md)
+- [mapToGroups](mapToGroups.md)

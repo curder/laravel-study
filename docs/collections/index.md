@@ -87,7 +87,7 @@ collect([1, 2, 3]);
 | [mapInto](mapInto.md)                   | 遍历集合，通过将值传递给构造函数来创建给定类的新实例                                                        |
 | [mapSpread](mapSpread.md)               | **改变原集合**，迭代集合的项目，将每个嵌套的项目值传递到给定的闭包中。 闭包可以自由修改并返回它，从而形成一个新的修改后的集合。                |
 | [mapToDirectory](mapToDictionary.md)    | 通过给定的闭包对集合的项目进行分组。该闭包应返回一个包含单个键/值对的关联数组，从而形成一个新的分组值数组                             |
-| [mapToGroup](mapToGroup.md)             | 通过给定的闭包对集合的项目进行分组。 该闭包应返回一个包含单个键/值对的关联数组，从而形成一个新的分组值集合                            |
+| [mapToGroups](mapToGroups.md)           | 通过给定的闭包对集合的项目进行分组。 该闭包应返回一个包含单个键/值对的关联数组，从而形成一个新的分组值集合                            |
 | [mapWithKeys](mapWithKeys.md)           | 遍历集合并将每个值传入给定的回调                                                                  |
 | [max](max.md)                           | 返回给定**键**的最大值                                                                     |
 | [median](median.md)                     | 方法返回给定**键**的中间值                                                                   |
