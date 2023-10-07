@@ -110,7 +110,7 @@ collect([1, 2, 3]);
 | [put](put.md)                           | **改变原集合**，在集合内设置给定的键值对                                                            |
 | [random](random.md)                     | 从集合中返回一个随机项                                                                       |
 | [reduce](reduce.md)                     | 将每次迭代的结果传递给下一次迭代直到集合减少为单个值                                                        |
-| [reduceSpread](reduceSpread.md)         | TODO                                                                              |
+| [reduceSpread](reduceSpread.md)         | 将集合缩减为值数组，将每次迭代的结果传递到后续迭代中                                                        |
 | [reject](reject.md)                     | 使用指定的回调过滤集合                                                                       |
 | [replace](replace.md)                   | TODO                                                                              |
 | [replaceRecursive](replaceRecursive.md) | TODO                                                                              |

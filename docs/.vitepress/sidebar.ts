@@ -98,6 +98,7 @@ export default {
                 {text: "put", link: "/collections/put"},
                 {text: "random", link: "/collections/random"},
                 {text: "reduce", link: "/collections/reduce"},
+                {text: "reduceSpread", link: "/collections/reduceSpread"},
                 {text: "reject", link: "/collections/reject"},
                 {text: "reverse", link: "/collections/reverse"},
                 {text: "search", link: "/collections/search"},
