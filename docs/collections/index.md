@@ -97,7 +97,7 @@ collect([1, 2, 3]);
 | [mode](mode.md)                         | 返回给定**键**的[众数值](https://baike.baidu.com/item/%E4%BC%97%E6%95%B0/44796 "百度百科-众数值") |
 | [nth](nth.md)                           | 创建由每隔`n`个元素组成一个新集合                                                                |
 | [only](only.md)                         | 返回集合中给定键的所有项目                                                                     |
-| [pad](pad.md)                           | TODO                                                                              |
+| [pad](pad.md)                           | 将用给定的值填充数组，直到数组达到指定的大小                                                            |
 | [partition](partition.md)               | 配合`list()`方法区分回调函数满足和不满足的数据                                                       |
 | [pipe](pipe.md)                         | 将集合传给给定的回调并返回结果                                                                   |
 | [pipeInto](pipeInto.md)                 | 创建给定类的新实例，并将集合传递给构造函数                                                             |
