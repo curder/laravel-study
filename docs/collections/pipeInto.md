@@ -26,3 +26,4 @@ $collection->pipeInto(ResourceCollection::class);
 ## 相关方法
 
 - [pipe](pipe.md)
+- [pipeThrough](pipeThrough.md)

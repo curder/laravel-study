@@ -18,3 +18,4 @@ collect([1, 2, 3])->sum();
 
 - [sum](sum.md)
 - [pipeInto](pipeInto.md)
+- [pipeThrough](pipeThrough.md)

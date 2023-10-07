@@ -101,7 +101,7 @@ collect([1, 2, 3]);
 | [partition](partition.md)               | 配合`list()`方法区分回调函数满足和不满足的数据                                                       |
 | [pipe](pipe.md)                         | 将集合传给给定的回调并返回结果                                                                   |
 | [pipeInto](pipeInto.md)                 | 创建给定类的新实例，并将集合传递给构造函数                                                             |
-| [pipeThrough](pipeThrough.md)           | TODO                                                                              |
+| [pipeThrough](pipeThrough.md)           | 将集合传递给给定的闭包数组并返回执行闭包的结果                                                           |
 | [pluck](pluck.md)                       | 获取集合中给定键对应的所有值                                                                    |
 | [pop](pop.md)                           | **改变原集合**，移除并返回集合中的最后一个项目                                                         |
 | [prepend](prepend.md)                   | **改变原集合**，将给定的值添加到集合的开头                                                           |
