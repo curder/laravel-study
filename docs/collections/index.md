@@ -113,7 +113,7 @@ collect([1, 2, 3]);
 | [reduceSpread](reduceSpread.md)         | 将集合缩减为值数组，将每次迭代的结果传递到后续迭代中                                                        |
 | [reject](reject.md)                     | 使用指定的回调过滤集合                                                                       |
 | [replace](replace.md)                   | 通过指定格式替换集合元素                                                                      |
-| [replaceRecursive](replaceRecursive.md) | TODO                                                                              |
+| [replaceRecursive](replaceRecursive.md) | 将集合递归到数组中并且对内部的值应用相同的替换                                                           |
 | [reverse](reverse.md)                   | 倒转集合中项目的顺序                                                                        |
 | [search](search.md)                     | 搜索给定的值并返回它的键                                                                      |
 | [shift](shift.md)                       | **改变原集合**，移除并返回集合的第一个项目                                                           |
