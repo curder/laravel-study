@@ -64,3 +64,4 @@ $newCollection->dd(); // ["product" => "coconuts", "qty" => 45]
 ## 相关方法
 
 - [except](except.md)
+- [pluck](pluck.md)
