@@ -19,3 +19,7 @@ collect([1, 2, 3, 4, 5])->random(3);
 ```
 
 > 如果传入的值大于当前集合中的值，则会抛出 `InvalidArgumentException` 错误。
+
+## 相关方法
+
+- [shuffle](shuffle.md)
