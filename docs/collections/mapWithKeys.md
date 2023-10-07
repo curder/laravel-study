@@ -65,3 +65,4 @@ $collection->dd(); // [ 1,  2,  3,  4,  5]
 ## 相关方法
 
 - [map](map.md)
+- [reduce](reduce.md)
