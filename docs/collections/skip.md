@@ -11,3 +11,4 @@ collect([1, 2, 3, 4, 5, 6])->skip(4);
 ## 相关方法
 
 - [take](take.md)
+- [skipUntil](skipUntil.md)
