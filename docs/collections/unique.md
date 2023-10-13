@@ -5,17 +5,10 @@
 ```php
 collect([1, 1, 2, 2, 3, 4, 2])->unique();
 
-/**
-=> Illuminate\Support\Collection {#1076
-     all: [
-       0 => 1,
-       2 => 2,
-       4 => 3,
-       5 => 4,
-     ],
-   }
- */
+// [ 0 => 1, 2 => 2, 4 => 3, 5 => 4]
 ```
+
+## 自定义键
 
 处理嵌套数组或对象时，可以指定用来决定唯一性的键
 
@@ -28,24 +21,15 @@ collect([
   ['name' => 'Galaxy Gear', 'brand' => 'Samsung', 'type' => 'watch'],
 ])->unique('brand');
 
-
 /*
-=> Illuminate\Support\Collection {#1119
-     all: [
-       0 => [
-         "name" => "iPhone 6",
-         "brand" => "Apple",
-         "type" => "phone",
-       ],
-       3 => [
-         "name" => "Galaxy S6",
-         "brand" => "Samsung",
-         "type" => "phone",
-       ],
-     ],
-   }
+[
+    ["name" => "iPhone 6", "brand" => "Apple", "type" => "phone"],
+    ["name" => "Galaxy S6", "brand" => "Samsung", "type" => "phone"]
+]
 */
 ```
+
+## 自定义回调
 
 也可以传入自己的回调来确定项目的唯一性：
 
@@ -56,40 +40,23 @@ collect([
   ['name' => 'Apple Watch', 'brand' => 'Apple', 'type' => 'watch'],
   ['name' => 'Galaxy S6', 'brand' => 'Samsung', 'type' => 'phone'],
   ['name' => 'Galaxy Gear', 'brand' => 'Samsung', 'type' => 'watch'],
-])->unique(function ($item) {
-  return $item['brand'] . $item['type'];
-});
+])->unique(fn ($item) => $item['brand'] . $item['type']);
 
 /*
-=> Illuminate\Support\Collection {#1129
-     all: [
-       0 => [
-         "name" => "iPhone 6",
-         "brand" => "Apple",
-         "type" => "phone",
-       ],
-       2 => [
-         "name" => "Apple Watch",
-         "brand" => "Apple",
-         "type" => "watch",
-       ],
-       3 => [
-         "name" => "Galaxy S6",
-         "brand" => "Samsung",
-         "type" => "phone",
-       ],
-       4 => [
-         "name" => "Galaxy Gear",
-         "brand" => "Samsung",
-         "type" => "watch",
-       ],
-     ],
-   }
+[
+    ["name" => "iPhone 6", "brand" => "Apple", "type" => "phone"],
+    ["name" => "Apple Watch", "brand" => "Apple", "type" => "watch"],
+    ["name" => "Galaxy S6", "brand" => "Samsung", "type" => "phone"],
+    ["name" => "Galaxy Gear", "brand" => "Samsung", "type" => "watch"]
+]
 */
 ```
 
 > 在检查项目值时 `unique` 方法使用的是「宽松」比较，意味着具有整数值的字符串将被视为等于相同值的整数。
 > 
-> 使用 [uniqueStrict](./uniqueStrict.md) 可以进行「严格」比较 。
+> 使用 [uniqueStrict](uniqueStrict.md) 可以进行「严格」比较 。
 
 
+## 相关方法
+
+- [uniqueStrict](uniqueStrict.md)
