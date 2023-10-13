@@ -4,49 +4,31 @@
 
 ```php
 collect(['Michael', 'Tom'])
-  ->whenEmpty(function ($collection) {
-    return $collection->push('Adam');
-  })
-  ->dump();
+  ->whenEmpty(fn ($item) => $item->push('Adam'));
+// ["Michael", "Tom"]
 
 collect()
-  ->whenEmpty(function ($collection) {
-    return $collection->push('Adam');
-  })
-  ->dd();
-
-/**
-array:2 [
-  0 => "Michael"
-  1 => "Tom"
-]
-
-array:1 [
-  0 => "Adam"
-]
- */
+  ->whenEmpty(fn ($item) => $item->push('Adam'));
+// ["Adam"]
 ```
+
+## 默认回调
 
 第二个闭包可以传递给 `whenEmpty` 方法，当集合不为空时将执行该方法。
 
 ```php
 collect(['Michael', 'Tom'])
   ->whenEmpty(
-    function ($collection) {
-      return $collection->push('Adam');
-    },
-    function ($collection) {
-      return $collection->push('Taylor');
-    }
-  )
-  ->dd();
-/**
-array:3 [
-  0 => "Michael"
-  1 => "Tom"
-  2 => "Taylor"
-]
- */
+    fn ($item) => $item->push('Adam'),
+    fn ($item) => $item->push('Taylor')
+  );
+// ["Michael", "Tom", "Taylor"]
 ```
 
-如果需要和 `whenEmpty` 方法相反的操作，可以使用 [whereNotEmpty](./whenNotEmpty.md) 方法。
+如果需要和 `whenEmpty` 方法相反的操作，可以使用 [whereNotEmpty](whenNotEmpty.md) 方法。
+
+## 相关方法
+
+- [isEmpty](isEmpty.md)
+- [isNotEmpty](isNotEmpty.md)
+- [whenNotEmpty](whenNotEmpty.md)
