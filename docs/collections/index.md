@@ -122,7 +122,7 @@ collect([1, 2, 3]);
 | [skipUntil](skipUntil.md)               | 跳过集合中的项目，直到给定的回调返回 `true` ，然后将集合中的其余项目作为新集合实例返回                                   |
 | [skipWhile](skipWhile.md)               | 跳过集合中的项目，同时给定的回调返回 `true` ，然后将集合中的其余项目作为新集合返回                                     |
 | [slice](slice.md)                       | 返回集合中给定值后面的部分                                                                     |
-| [sliding](sliding.md)                   | TODO                                                                              |
+| [sliding](sliding.md)                   | sliding 方法返回一个新分组的块集合                                                             |
 | [sole](sole.md)                         | TODO                                                                              |
 | [some](contains.md)                     | [contains](contains.md) 方法的别名                                                     |
 | [sort](sort.md)                         | 保留原数组的键，对集合进行排序                                                                   |

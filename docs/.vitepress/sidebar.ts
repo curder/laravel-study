@@ -110,6 +110,7 @@ export default {
                 {text: "skipUntil", link: "/collections/skipUntil"},
                 {text: "skipWhile", link: "/collections/skipWhile"},
                 {text: "slice", link: "/collections/slice"},
+                {text: "sliding", link: "/collections/sliding"},
                 {text: "sort", link: "/collections/sort"},
                 {text: "sortBy", link: "/collections/sortBy"},
                 {text: "sortByDesc", link: "/collections/sortByDesc"},
