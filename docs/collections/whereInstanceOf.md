@@ -9,12 +9,10 @@ class Post {}
 collect([new Article(), new Article(), new Post()])
     ->whereInstanceOf(Post::class);
 
-// output
-/**
-=> Illuminate\Support\Collection {#1214
-     all: [
-       2 => Post {#1217},
-     ],
-   }
- */
+// [2 => Post]
 ```
+
+## 相关方法
+
+- [whereIn](whereIn.md)
+- [whereNotIn](whereNotIn.md)
