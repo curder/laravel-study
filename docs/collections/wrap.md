@@ -1,42 +1,15 @@
 # wrap 
 
-静态 wrap 方法在适用时将给定值包装在集合中
+> 静态 wrap 方法可以将给定值包装在集合中
 
 ```php
-Illuminate\Support\Collection::wrap(['string']);
+collect()->wrap(['string']); // ["string"]
 
-// output
-/**
-=> Illuminate\Support\Collection {#1203
-     all: [
-       "string",
-     ],
-   }
- */
+collect()->wrap('string'); // ["string"]     
+
+collect()->wrap(collect('string')); // ["string"]
 ```
 
-```php
-Illuminate\Support\Collection::wrap('string');
+## 相关方法
 
-// output
-/**
-=> Illuminate\Support\Collection {#1201
-     all: [
-       "string",
-     ],
-   }
- */
-```
-
-```php
-Illuminate\Support\Collection::wrap(collect('string'));
-
-//output
-/**
-=> Illuminate\Support\Collection {#1203
-     all: [
-       "string",
-     ],
-   }
- */
-```
+- [unwrap](unwrap.md)
