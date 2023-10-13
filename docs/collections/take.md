@@ -27,3 +27,8 @@ collect([1, 2, 3, 4])->take(-2);
 - `take(1)` 默认返回的是集合，且包含原集合中第一个值，如果需要直接获取第一个值的话可以使用 [first](first.md) 方法。
 
 - `take(-1)` 默认返回的是集合，且包含原集合中最后的一个值，如果需要直接获取最后一个值的话可以使用 [last](last.md) 方法。
+
+## 相关方法
+
+- [takeUntil](takeUntil.md)
+- [takeWhile](takeWhile.md)
