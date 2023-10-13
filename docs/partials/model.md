@@ -1299,3 +1299,19 @@ Post::whereBelongsTo($user)
     ->whereBelongsTo($category)
     ->first(); 
 ```
+
+## `isDirty()` 方法
+
+可以通过 `isDirty()` 方法检查模型指定的属性是否已更改。
+
+```php
+class UserObserver
+{
+    public function updating(User $user)
+    {
+        if ($user->isDirty('email')) {
+            $user->email_verified_at = null;
+        }
+    }
+}
+```
