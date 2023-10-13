@@ -5,14 +5,15 @@
 ```php
 collect(['name' => 'Desk', 'price' => 200])->toArray();
 
-// output
-/**
-[
-    ['name' => 'Desk', 'price' => 200],
-]
-*/
+// [['name' => 'Desk', 'price' => 200]]
 ```
 
 > `toArray()` 也会将所有集合的嵌套对象转换为数组。
 >
-> 如果获取原数组，应该使用 [all](./all.md) 方法。
+> 如果获取原数组，可以使用 [all](all.md) 方法。
+
+
+## 相关方法
+
+- [all](all.md)
+- [toJson](toJson.md)
