@@ -167,7 +167,7 @@ collect([1, 2, 3]);
 | [whereNotIn](whereNotIn.md)             | 集合中不包含的给定键值对进行匹配                                                                  |
 | [whereNotInStrict](whereNotInStrict.md) | 使用严格模式通过集合中不包含的给定键值对进行匹配                                                          |
 | [whereNotNull](whereNotNull.md)         | 返回集合中给定键不为 `null` 的项目                                                             |
-| [whereNull](whereNull.md)               | TODO                                                                              |
+| [whereNull](whereNull.md)               | 返回集合中给定键为 `null` 的项目                                                              |
 | [wrap](wrap.md)                         | 静态 wrap 方法在适用时将给定值包装在集合中                                                          |
 | [zip](zip.md)                           | 将给定数组的值与相应索引处的原集合的值合并在一起                                                          |
 
