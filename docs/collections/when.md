@@ -4,23 +4,10 @@
 
 ```php
 collect([1, 2, 3])
-  ->when(true, function ($collection) {
-    return $collection->push(4);
-  })
-  ->when(false, function ($collection) {
-    return $collection->push(5);
-  });
+  ->when(true, fn ($item) => $item->push(4))
+  ->when(false, fn ($item) => $item->push(5));
 
-/**
-=> Illuminate\Support\Collection {#1085
-     all: [
-       1,
-       2,
-       3,
-       4,
-     ],
-   }
- */
+// [1, 2, 3, 4]
 ```
 
 ## 相关方法
