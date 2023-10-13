@@ -118,6 +118,7 @@ export default {
                 {text: "sortDesc", link: "/collections/sortDesc"},
                 {text: "sortKeys", link: "/collections/sortKeys"},
                 {text: "sortKeysDesc", link: "/collections/sortKeysDesc"},
+                {text: "sortKeysUsing", link: "/collections/sortKeysUsing"},
                 {text: "splice", link: "/collections/splice"},
                 {text: "split", link: "/collections/split"},
                 {text: "splitIn", link: "/collections/splitIn"},

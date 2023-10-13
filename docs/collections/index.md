@@ -131,7 +131,7 @@ collect([1, 2, 3]);
 | [sortDesc](sortDesc.md)                 | 对集合进行倒序排序                                                                         |
 | [sortKeys](sortKeys.md)                 | 按底层关联数组的键对集合进行排序                                                                  |
 | [sortKeysDesc](sortKeysDesc.md)         | 按底层关联数组的键对集合进行倒序排序                                                                |
-| [sortKeysUsing](sortKeysUsing.md)       | TODO                                                                              |
+| [sortKeysUsing](sortKeysUsing.md)       | 使用回调按底层关联数组的键对集合进行排序                                                              |
 | [splice](splice.md)                     | 删除并返回从给定值后的内容，原集合也会受到影响                                                           |
 | [split](split.md)                       | 将集合按给定的值拆分                                                                        |
 | [splitIn](splitIn.md)                   | 将集合分为给定数量的组                                                                       |
