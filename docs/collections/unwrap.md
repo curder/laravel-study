@@ -1,35 +1,15 @@
 # unwrap
 
-静态 `unwrap` 方法在适用时从给定值返回集合的基础项。
-
-
-```php
-Illuminate\Support\Collection::unwrap(['string']);
-
-// output
-/**
-=> [
-     "string",
-   ]
- */
-```
+静态 `unwrap` 方法可以从给定值返回集合的基础项。
 
 ```php
-Illuminate\Support\Collection::unwrap('string');
+collect()->unwrap(['string']); // ["string"]
 
-// output
-/**
-=> "string"
- */
+collect()->unwrap('string'); // "string"
+
+collect()->unwrap(collect('string')); // ["string"]
 ```
 
-```php
-Illuminate\Support\Collection::unwrap(collect('string'));
+## 相关方法
 
-// output
-/**
-=> [
-     "string",
-   ]
- */
-```
+- [wrap](wrap.md)
