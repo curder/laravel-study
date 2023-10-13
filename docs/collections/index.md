@@ -129,7 +129,7 @@ collect([1, 2, 3]);
 | [sortBy](sortBy.md)                     | 以给定的键对集合进行正序排序                                                                    |
 | [sortByDesc](sortByDesc.md)             | 与 [sortBy](sortBy.md) 一样，以相反的顺序来对集合进行排序                                           |
 | [sortDesc](sortDesc.md)                 | 对集合进行倒序排序                                                                         |
-| [sortKeys](sortKeys.md)                 | TODO                                                                              |
+| [sortKeys](sortKeys.md)                 | 按底层关联数组的键对集合进行排序                                                                  |
 | [sortKeysDesc](sortKeysDesc.md)         | TODO                                                                              |
 | [sortKeysUsing](sortKeysUsing.md)       | TODO                                                                              |
 | [splice](splice.md)                     | 删除并返回从给定值后的内容，原集合也会受到影响                                                           |
