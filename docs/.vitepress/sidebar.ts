@@ -150,6 +150,7 @@ export default {
                 {text: "whereNotBetween", link: "/collections/whereNotBetween"},
                 {text: "whereNotIn", link: "/collections/whereNotIn"},
                 {text: "whereNotInStrict", link: "/collections/whereNotInStrict"},
+                {text: "whereNotNull", link: "/collections/whereNotNull"},
                 {text: "whereStrict", link: "/collections/whereStrict"},
                 {text: "wrap", link: "/collections/wrap"},
                 {text: "zip", link: "/collections/zip"},
