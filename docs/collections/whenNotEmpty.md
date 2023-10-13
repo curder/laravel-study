@@ -3,27 +3,27 @@
 当集合不为空时，`whenNotEmpty` 方法将执行给定的回调。
 
 ```php
-collect(['michael', 'tom'])->whenNotEmpty(function ($collection) {
-    return $collection->push('adam');
-});
+collect(['michael', 'tom'])
+    ->whenNotEmpty(
+        fn ($items) => $items->push('adam')
+    );
 
-/**
-=> Illuminate\Support\Collection {#1080
-     all: [
-       "michael",
-       "tom",
-       "adam",
-     ],
-   }
- */
+// ["michael", "tom", "adam"]
 ```
+
+## 默认回调
 
 ```php
-$collection = collect();
+collect()->whenNotEmpty(
+    fn ($items) => $items->push('adam'),
+    fn ($items) => $items->push('curder')
+);
 
-$collection->whenNotEmpty(function ($collection) {
-    return $collection->push('adam');
-});
-
-$collection->all();
+// ["curder"]
 ```
+
+## 相关方法
+
+- [isEmpty](isEmpty.md)
+- [isNotEmpty](isNotEmpty.md)
+- [whenEmpty](whenEmpty.md)
