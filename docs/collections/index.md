@@ -128,7 +128,7 @@ collect([1, 2, 3]);
 | [sort](sort.md)                         | 保留原数组的键，对集合进行排序                                                                   |
 | [sortBy](sortBy.md)                     | 以给定的键对集合进行正序排序                                                                    |
 | [sortByDesc](sortByDesc.md)             | 与 [sortBy](sortBy.md) 一样，以相反的顺序来对集合进行排序                                           |
-| [sortDesc](sortDesc.md)                 | TODO                                                                              |
+| [sortDesc](sortDesc.md)                 | 对集合进行倒序排序                                                                         |
 | [sortKeys](sortKeys.md)                 | TODO                                                                              |
 | [sortKeysDesc](sortKeysDesc.md)         | TODO                                                                              |
 | [sortKeysUsing](sortKeysUsing.md)       | TODO                                                                              |
