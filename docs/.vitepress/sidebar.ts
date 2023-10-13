@@ -137,6 +137,7 @@ export default {
                 {text: "uniqueStrict", link: "/collections/uniqueStrict"},
                 {text: "unless", link: "/collections/unless"},
                 {text: "unwrap", link: "/collections/unwrap"},
+                {text: "value", link: "/collections/value"},
                 {text: "values", link: "/collections/values"},
                 {text: "when", link: "/collections/when"},
                 {text: "whenEmpty", link: "/collections/whenEmpty"},
