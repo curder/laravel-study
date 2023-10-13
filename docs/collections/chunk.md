@@ -40,3 +40,8 @@ collect([1, 2, 3, 4, 5, 6, 7, 8])->chunk(3); // [!code focus]
 */
 ```
 :::
+
+## 相关方法
+
+- [splice](splice.md)
+- [slice](slice.md)
