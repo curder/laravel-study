@@ -123,7 +123,7 @@ collect([1, 2, 3]);
 | [skipWhile](skipWhile.md)               | 跳过集合中的项目，同时给定的回调返回 `true` ，然后将集合中的其余项目作为新集合返回                                     |
 | [slice](slice.md)                       | 返回集合中给定值后面的部分                                                                     |
 | [sliding](sliding.md)                   | sliding 方法返回一个新分组的块集合                                                             |
-| [sole](sole.md)                         | TODO                                                                              |
+| [sole](sole.md)                         | 返回集合中通过给定真值测试的第一个元素                                                               |
 | [some](contains.md)                     | [contains](contains.md) 方法的别名                                                     |
 | [sort](sort.md)                         | 保留原数组的键，对集合进行排序                                                                   |
 | [sortBy](sortBy.md)                     | 以给定的键对集合进行正序排序                                                                    |
