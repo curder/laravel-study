@@ -131,6 +131,7 @@ export default {
                 {text: "toArray", link: "/collections/toArray"},
                 {text: "toJson", link: "/collections/toJson"},
                 {text: "transform", link: "/collections/transform"},
+                {text: "undot", link: "/collections/undot"},
                 {text: "union", link: "/collections/union"},
                 {text: "unique", link: "/collections/unique"},
                 {text: "uniqueStrict", link: "/collections/uniqueStrict"},
