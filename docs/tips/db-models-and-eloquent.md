@@ -716,3 +716,11 @@ $billing = $shipping->replicate()->fill([
  
 $billing->save();
 ```
+
+## forceFill 强制填充
+
+忽略 `$fillable` 的配置并无论如何都会执行。
+
+```php
+$team->forceFill(['name' => $request->name])
+```
