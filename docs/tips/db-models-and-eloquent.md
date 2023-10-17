@@ -454,3 +454,10 @@ User::find(1, ['first_name', 'email']);
 User::find([1,2,3], ['first_name', 'email']);
 ```
 
+## whereKey 按主键查找
+
+使用 `whereKey()` 方法查找多个记录，该方法负责确定哪个字段正是您的主键（id 是默认值，但可以在 Eloquent 模型中覆盖它）
+
+```php
+User::whereKey([1, 2, 3])->get();
+```
