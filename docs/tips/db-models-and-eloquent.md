@@ -781,3 +781,18 @@ if (! $model->whereStatus('pending')->exists()) {}
 // 3. 使用更简洁的方式
 if ($model->whereStatus('pending')->doesntExist()) {}
 ```
+
+
+## getOriginal 获取原始属性
+
+修改 Eloquent 记录后获取原始属性，可以通过调用 `getOriginal()` 获取原始属性。
+
+```php
+$user = \App\Models\User::query()->first();
+$user->name; // John
+$user->name = "Peter"; // Peter
+
+$user->getOriginal('name'); // John
+$user->getOriginal(); // Original $user record
+```
+
