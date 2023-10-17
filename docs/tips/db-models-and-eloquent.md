@@ -885,3 +885,37 @@ User::orderBy('name')->chunkMap(fn ($user) => [
 ```php
 $flight->updateQuietly(['departed' => false]);
 ```
+
+## prunable 定期清理过时记录中的模型
+
+定期清理模型中的过时记录。Laravel 会自动执行此操作，只需在 Console Kernel 类中使用 `model:prune` 命令即可。
+
+```php
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Prunable;
+class Flight extends Model
+{
+    use Prunable;
+    /**
+     * Get the prunable model query.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function prunable()
+    {
+        return static::where('created_at', '<=', now()->subMonth());
+    }
+}
+```
+
+另外在 `pruning` 方法中可以设置删除模型之前必须执行的操作：
+
+```php
+protected function pruning()
+{
+    // Removing additional resources,
+    // associated with the model. For example, files.
+ 
+    Storage::disk('s3')->delete($this->filename);
+}
+```
