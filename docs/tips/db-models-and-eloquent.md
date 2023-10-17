@@ -422,3 +422,22 @@ class User extends Model
 }
 ```
 :::
+
+## 查找数组
+
+`find()` 可以接受多个参数，然后它返回找到的所有记录的 Collection，而不仅仅是一个 Model：
+
+```php
+// 返回 Eloquent 模型
+$user = User::find(1);
+
+// 返回 Eloquent 集合
+$users = User::find([1, 2, 3]);
+```
+
+使用 `find()` 替换 `whereIn()`：
+
+```php
+Product::whereIn('id', $this->productIDs)->get(); // [!code --]
+Product::find($this->productIDs); // [!code ++]
+```
