@@ -317,3 +317,22 @@ User::oldest()->get();
 User::latest('id')->first();
 ```
 
+## 创建记录时自动列值
+
+如果想在创建记录时生成一些数据库列值，请将其添加到模型的 `boot()` 方法中。
+
+例如，如果有一个 `position` 字段并且想要将下一个可用位置分配给新记录（例如 `Country::max('position') + 1`）。
+
+```php
+class Country extends Model
+{
+    protected static function boot()
+    {
+        parent::boot();
+
+        Country::creating(function($model) {
+            $model->position = Country::max('position') + 1;
+        });
+    }
+}
+```
