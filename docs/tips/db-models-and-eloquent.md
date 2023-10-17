@@ -256,4 +256,10 @@ Post::onlyTrashed()->where('author_id', 1)->restore();
 User::all(['id', 'name', 'email']);
 ```
 
+## firstOrFail
 
+firstOrFail()方法，如果没有找到查询的记录，它会返回404页面。
+
+```php
+User::where('email', 'example@example.com')->firstOrFail();
+```
