@@ -926,3 +926,28 @@ protected function pruning()
     Storage::disk('s3')->delete($this->filename);
 }
 ```
+
+## withAggregate 子查询
+
+可以使用 `withAggregate` 方法根据关联关系添加子查询。
+
+
+```php
+// Eloquent Model
+class Post extends Model
+{
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}
+ 
+// Instead of eager loading all users...
+$posts = Post::with('user')->get();
+ 
+// You can add a subselect to only retrieve the user's name...
+$posts = Post::withAggregate('user', 'name')->get();
+ 
+// This will add a 'user_name' attribute to the Post instance:
+$posts->first()->user_name;
+```
