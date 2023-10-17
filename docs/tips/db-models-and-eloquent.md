@@ -1003,3 +1003,16 @@ class User extends Model
     ];
 }
 ```
+
+## withAvg 根据关联模型的平均值排序
+
+
+
+```php
+public function bestBooks()
+{
+    Book::query()
+        ->withAvg('ratings as average_rating', 'rating')
+        ->orderByDesc('average_rating');
+}
+```
