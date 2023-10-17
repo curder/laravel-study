@@ -1146,3 +1146,14 @@ returns [
 */
 ```
 
+
+## whereColumn 比较两列的值
+
+可以使用 `whereColumn` 方法来比较两列的值。
+
+```php
+Task::whereColumn('created_at', 'updated_at')->get();
+
+// 使用比较运算符
+Task::whereColumn('created_at', '>', 'updated_at')->get();
+```
