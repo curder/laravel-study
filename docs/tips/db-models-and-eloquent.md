@@ -122,3 +122,23 @@ User::withoutTimestamps(
      fn () => $user->update(['reserved_at' => now()])
 );
 ```
+
+
+## toBase() 合并集合
+
+Eloquent 集合的 `merge` 方法使用 `id` 来避免重复的模型。 
+
+但如果合并不同模型的集合，可能会导致意想不到的结果。
+
+建议改用 `toBase()` 方法。
+
+```php
+$videos = Video::all();
+$images = Image::all();
+
+// 如果存在与图像具有相同 ID 的视频，它们将被替换，最终会丢失视频
+$allMedia = $videos->merge($images);
+
+// 在 Eloquent 集合中调用 `toBase()` 以使用基本合并方法
+$allMedia = $videos->toBase()->merge($images);
+```
