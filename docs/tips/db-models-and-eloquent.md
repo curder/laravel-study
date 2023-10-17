@@ -252,6 +252,15 @@ Product::whereDate('created_at', '2018-01-31')->get();
 Product::whereTime('created_at', '=', '14:13:58')->get();
 ```
 
+## whereDate 
+
+使用 `whereDate()` 获取今天的记录，可以使用 `Carbon` 的 `now()` ，它会自动转换为日期。无需执行 `->toDateString()` 方法进行日期格式的转换。
+
+```php
+User::whereDate('created_at', now()->toDateString())->get(); // [!code --]
+User::whereDate('created_at', now())->get(); // [!code ++]
+```
+
 
 ## increments 和 decrements 增减某个字段
 
