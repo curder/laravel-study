@@ -551,3 +551,13 @@ Destination::addSelect([
         ->limit(1)
 ])->get();
 ```
+
+
+## makeHidden 隐藏列
+
+在进行 Eloquent 查询时，如果想隐藏特定字段不被返回，最快的方法之一是在 Collection 结果上添加 `->makeHidden()` 方法。
+
+```php
+User::all()->makeHidden(['email_verified_at', 'deleted_at']);
+```
+
