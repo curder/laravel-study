@@ -1041,3 +1041,19 @@ DB::transaction(function () use (&$invoice) {
 })
 ```
 :::
+
+
+## 从查询中删除多个全局范围
+
+使用 Eloquent 全局作用域时，不仅可以使用多个作用域，还可以在不需要时通过向 `withoutGlobalScopes()` 提供数组来删除某些作用域。
+
+
+```php
+// 1. 删除所有全局范围
+User::withoutGlobalScopes()->get();
+ 
+// 2. 删除一些全局范围
+User::withoutGlobalScopes([
+    FirstScope::class, SecondScope::class
+])->get();
+```
