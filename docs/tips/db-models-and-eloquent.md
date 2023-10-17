@@ -240,6 +240,18 @@ class Post extends Model
 }
 ```
 
+## 更改默认时间戳字段
+
+如果使用非 Laravel 数据库并且时间戳列的命名不同怎么办？比如有 `create_time` 和 `update_time`。可以在模型中指定它们：
+
+```php
+class Post extends Model
+{
+    const CREATED_AT = 'create_time';
+    const UPDATED_AT = 'update_time';
+}
+```
+
 ## 软删除数据的恢复
 
 在使用模型的软删除时，可以使用 `restore()` 方法恢复多行。
