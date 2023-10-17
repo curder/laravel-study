@@ -875,3 +875,13 @@ User::orderBy('name')->chunkMap(fn ($user) => [
 ]), 25);
 ```
 
+## updateQuietly 更新模型而不分派事件
+
+有时需要更新模型而不发送任何事件。
+
+
+可以使用 `updateQuietly()` 方法来执行此操作，该方法在幕后使用 `saveQuietly()` 方法。
+
+```php
+$flight->updateQuietly(['departed' => false]);
+```
