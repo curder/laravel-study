@@ -50,3 +50,29 @@ $last = TripModel::orderBy('date_at', 'DESC')
 $fullname = UserModel::where('id', $id)
      ->rawValue('CONCAT(`first_name`, " ", `last_name`)');
 ```
+
+
+## scope 其他关系的模型范围
+
+可以使用模型范围来定义一个相关的模型关联关系。
+
+::: code-group
+```php [app/Models/Course.php] {8}
+public function lessons(): HasMany
+{
+    return $this->hasMany(Lesson::class);
+}
+ 
+public function publishedLessons(): HasMany
+{
+    return $this->lessons()->published();
+}
+```
+
+```php [app/Models/Lesson.php]
+public function scopePublished($query)
+{
+    return $query->where('is_published', true);
+}
+```
+:::
