@@ -295,3 +295,25 @@ User::query()->where('active', true)->get()->map(function (User $user) {
     return $user;
 });
 ```
+
+## latest 或 oldest 排序
+
+```php
+User::orderBy('created_at', 'desc')->get(); // [!code --]
+User::latest()->get(); //[!code ++]
+```
+
+默认情况下，`latest()` 方法将按 `created_at` 字段进行排序。
+
+有一个相反的方法 `oldest()`，它会按 `created_at` 升序排序：
+
+```php
+User::oldest()->get();
+```
+
+此外，还可以指定另一个数据列来排序。使用 `id`，可以这样做：
+
+```php
+User::latest('id')->first();
+```
+
