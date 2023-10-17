@@ -24,3 +24,14 @@ Task::whereBetween('completed_at', [
     $request->to ??  today()->toDateTimeString(),
 ]);
 ```
+
+## whereIntegerInRaw
+
+当目标值为**整型**时，不要使用 `𝘄𝗵𝗲𝗿𝗲𝗜𝗻()` 方法加载大范围数据，而是使用  `𝘄𝗵𝗲𝗿𝗲𝗜𝗻𝘁𝗲𝗴𝗲𝗿𝗜𝗻𝗥𝗮𝘄()` 比 `𝘄𝗵𝗲𝗿𝗲𝗜𝗻()` 更快。
+
+```php
+<?php
+
+    Product::whereIn('id', range(1, 50))->get(); // [!code --]
+    Product::whereIntegerInRaw('id', range(1, 50))->get(); // [!code ++]
+```
