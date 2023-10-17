@@ -584,3 +584,15 @@ try {
     }
 }
 ```
+
+## DB::statement() 查询方式
+
+如果需要执行一个简单的 SQL 查询，但没有得到任何结果。
+
+比如更改数据库中的某些内容，可以只执行 `DB::statement()`
+
+```php
+DB::statement('DROP TABLE users');
+
+DB::statement('ALTER TABLE projects AUTO_INCREMENT=123');
+```
