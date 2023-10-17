@@ -895,7 +895,7 @@ $flight->updateQuietly(['departed' => false]);
 
 ## prunable 定期清理过时记录中的模型
 
-定期清理模型中的过时记录。Laravel 会自动执行此操作，只需在 Console Kernel 类中使用 `model:prune` 命令即可。
+定期清理模型中的过时记录。Laravel 会自动执行此操作，只需在 Console Kernel 类中使用 `model:prune` 命令 `$schedule->command(PruneCommand::class)->daily();` 即可。
 
 ```php
 use Illuminate\Database\Eloquent\Model;
