@@ -306,6 +306,43 @@ class Post extends Model
 }
 ```
 
+## 更改 created_at 和 updated_at 的格式
+
+可以在模型中添加一个方法，如下所示
+
+::: code-group
+```php [&gt;= Laravel 9]
+protected function createdAtFormatted(): Attribute
+{
+    return Attribute::make(
+        get: fn ($value, $attributes) => $attributes['created_at']->format('Y-m-d H:i:s'),
+    );
+}
+
+protected function updatedAtFormatted(): Attribute
+{
+    return Attribute::make(
+        get: fn ($value, $attributes) => $attributes['updated_at']->format('Y-m-d H:i:s'),
+    );
+}
+```
+
+```php [&lt;= Laravel 8]
+public function getCreatedAtFormattedAttribute()
+{
+   return $this->created_at->format('Y-m-d H:i:s');
+}
+
+public function getUpdatedAtFormattedAttribute()
+{
+   return $this->updated_at->format('Y-m-d H:i:s');
+}
+```
+:::
+
+可以在需要时使用 `$entry->created_at_formatted`  或者 `$entry->updated_at_formatted`。
+
+
 ## 软删除数据的恢复
 
 在使用模型的软删除时，可以使用 `restore()` 方法恢复多行。
