@@ -35,3 +35,18 @@ Task::whereBetween('completed_at', [
     Product::whereIn('id', range(1, 50))->get(); // [!code --]
     Product::whereIntegerInRaw('id', range(1, 50))->get(); // [!code ++]
 ```
+
+## rawValue
+
+Laravel 9.37 有一个新的 `rawValue()` 方法来从 SQL 表达式中获取值。
+
+```php
+$first = TripModel::orderBy('date_at', 'ASC')
+     ->rawValue('YEAR(`date_at`)');
+
+$last = TripModel::orderBy('date_at', 'DESC')
+     ->rawValue('YEAR(`date_at`)');
+
+$fullname = UserModel::where('id', $id)
+     ->rawValue('CONCAT(`first_name`, " ", `last_name`)');
+```
