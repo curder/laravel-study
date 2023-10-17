@@ -441,3 +441,16 @@ $users = User::find([1, 2, 3]);
 Product::whereIn('id', $this->productIDs)->get(); // [!code --]
 Product::find($this->productIDs); // [!code ++]
 ```
+
+## 查找多个并返回特定列
+ 
+`find()` 可以接受多个参数，然后返回指定列找到的所有记录的集合，而不是模型的所有列：
+
+```php
+// 将仅返回包含名字和电子邮件的 Eloquent 模型
+User::find(1, ['first_name', 'email']);
+
+// 将仅返回包含名字和电子邮件的 Eloquent Collection
+User::find([1,2,3], ['first_name', 'email']);
+```
+
