@@ -830,6 +830,25 @@ $user->getOriginal('name'); // John
 $user->getOriginal(); // Original $user record
 ```
 
+## originalIsEquivalent 检查更改后的值是否更改了键
+
+是否想知道对模型所做的更改是否改变了键的值？只需调用 `originalIsEquivalent` 方法即可。
+
+```php
+$user = User::first(); // ['name' => "John']
+ 
+$user->name = 'John';
+ 
+$user->originalIsEquivalent('name'); // true
+ 
+$user->name = 'David'; // Set directly
+$user->fill(['name' => 'David']); // Or set via fill
+ 
+$user->originalIsEquivalent('name'); // false
+```
+
+
+
 ## 简单的数据库恢复方法
 
 使用 .sql 转储文件在 Laravel 中植入数据库的简单方法：
