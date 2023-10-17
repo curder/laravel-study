@@ -168,3 +168,17 @@ Comment::whereFulltext(['title', 'description'], 'something', ['expanded' => tru
 Comment::whereFulltext(['title', 'description'], '+something -else', ['mode' => 'boolean'])->get();
 ```
 :::
+
+
+## 原始查询中使用绑定
+
+可以将绑定数组传递给大多数原始查询方法以避免 SQL 注入。
+
+```php
+// 下面的方式容易受到 SQL 注入攻击
+$fullname = request('full_name'); // [!code --]
+User::whereRaw("CONCAT(first_name, last_name) = $fullName")->get(); // [!code --]
+ 
+// 使用参数绑定
+User::whereRaw("CONCAT(first_name, last_name) = ?", [request('full_name')])->get(); // [!code ++]
+```
