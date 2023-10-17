@@ -951,3 +951,27 @@ $posts = Post::withAggregate('user', 'name')->get();
 // This will add a 'user_name' attribute to the Post instance:
 $posts->first()->user_name;
 ```
+
+
+## upsert() 批量新增或更新
+
+`upsert()` 方法将插入或更新多条记录。
+
+
+```php
+Flight::upsert([
+    ['departure' => 'Oakland', 'destination' => 'San Diego', 'price' => 99],
+    ['departure' => 'Chicago', 'destination' => 'New York', 'price' => 150],
+  ],
+  ['departure', 'destination'], 
+  ['price']
+);
+```
+
+- 数组1：要插入或更新的值
+
+- 数组2：select 语句中使用的唯一标识符列
+
+- 数组3：如果记录存在则要更新的列
+
+
