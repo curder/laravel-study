@@ -1126,3 +1126,23 @@ User::active()
     ->get()
     ->modelsKeys(); // [1, 2, 3]
 ```
+
+## getColumnListing 获取表的所有列名
+
+```php
+DB::getSchemaBuilder()->getColumnListing('users');
+
+/*
+returns [
+    'id',
+    'name',
+    'email',
+    'email_verified_at',
+    'password',
+    'remember_token',
+    'created_at',
+    'updated_at',
+];
+*/
+```
+
