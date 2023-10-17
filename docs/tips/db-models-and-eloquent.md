@@ -110,6 +110,18 @@ public function scopeRegisteredWithinDays($query, $days) {
 ```
 :::
 
+## 使用数据库事务
+
+如果执行了两个数据库操作，它们中的一个可能会出错，此时应该将业务逻辑回滚，建议使用 `DB::transaction()`。
+
+```php
+DB::transaction(function () {
+    DB::table('users')->update(['votes' => 1]);
+ 
+    DB::table('posts')->delete();
+});
+```
+
 
 ## DB::afterCommit 事务处理
 
