@@ -1016,3 +1016,28 @@ public function bestBooks()
         ->orderByDesc('average_rating');
 }
 ```
+
+
+## 返回事务结果
+
+
+如果有一个数据库事务并希望返回其结果：
+
+::: code-group
+```php [更简洁的方式]
+$invoice = DB::transaction(function () {
+    $invoice = Invoice::create(...);
+    $invoice->items()->attach(...);
+ 
+    return $invoice;
+});
+```
+
+```php [常规变量引用方式]
+$invoice = NULL;
+DB::transaction(function () use (&$invoice) {
+    $invoice = Invoice::create(...);
+    $invoice->items()->attach(...);
+})
+```
+:::
