@@ -142,3 +142,29 @@ $allMedia = $videos->merge($images);
 // 在 Eloquent 集合中调用 `toBase()` 以使用基本合并方法
 $allMedia = $videos->toBase()->merge($images);
 ```
+
+## 在 MySQL 上使用 Laravel 进行全文搜索
+
+
+::: code-group
+```php {6} [迁移文件]
+Schema::create('comments', function (Blueprint $table) {
+     $table->id();
+     $table->string('title');
+     $table->text('description');
+ 
+     $table->fullText(['title', 'description']);
+});
+```
+
+```php [使用方法]
+// 全文搜索
+Comment::whereFulltext(['title', 'description'], 'something')->get();
+
+// 使用 expanded 执行更大的查询
+Comment::whereFulltext(['title', 'description'], 'something', ['expanded' => true])->get();
+
+// 搜索 something 内容并排除 other 内容
+Comment::whereFulltext(['title', 'description'], '+something -else', ['mode' => 'boolean'])->get();
+```
+:::
