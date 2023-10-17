@@ -796,3 +796,13 @@ $user->getOriginal('name'); // John
 $user->getOriginal(); // Original $user record
 ```
 
+## 简单的数据库恢复方法
+
+使用 .sql 转储文件在 Laravel 中植入数据库的简单方法：
+
+```php
+DB::unprepared(
+    file_get_contents(__DIR__ . './dump.sql')
+);
+```
+
