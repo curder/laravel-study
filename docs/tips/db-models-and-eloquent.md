@@ -76,3 +76,35 @@ public function scopePublished($query)
 }
 ```
 :::
+
+
+## DB::afterCommit 事务处理
+
+使用 `DB::afterCommit()` 方法，可以编写仅在事务提交时执行的代码，以及在事务回滚时丢弃的代码。
+
+如果没有事务时，代码会立即执行。
+
+::: code-group
+```php [模型逻辑]
+class User extends Model
+{
+    protected static function booted()
+    {
+        static::created(function (self $user) {
+            // 仅当满足事务已提交条件时才会发送电子邮件
+            DB::afterCommit(function () use ($user) {
+                Mail::send(new WelcomeEmail($user));
+            });
+        });
+    }
+}
+```
+
+```php [业务逻辑]
+DB::transaction(function () {
+    $user = User::create([...]);
+ 
+    $user->teams()->create([...]);
+});
+```
+:::
