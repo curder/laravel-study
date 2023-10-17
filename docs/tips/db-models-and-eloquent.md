@@ -806,3 +806,16 @@ DB::unprepared(
 );
 ```
 
+## 查询构造函数的 crossJoin 子查询
+
+```php
+use Illuminate\Support\Facades\DB;
+ 
+$totalQuery = DB::table('orders')->selectRaw('SUM(price) as total');
+ 
+DB::table('orders')
+    ->select('*')
+    ->crossJoinSub($totalQuery, 'overall')
+    ->selectRaw('(price / overall.total) * 100 AS percent_of_total')
+    ->get();
+```
