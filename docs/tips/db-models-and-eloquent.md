@@ -1157,3 +1157,17 @@ Task::whereColumn('created_at', 'updated_at')->get();
 // 使用比较运算符
 Task::whereColumn('created_at', '>', 'updated_at')->get();
 ```
+
+## shouldCache 访问器缓存
+
+从 Laravel 9.6 开始，如果您有计算密集型访问器，则可以使用 `shouldCache` 方法。
+
+```php
+public function hash(): Attribute
+{
+    return Attribute::make(
+        get: fn($value) => bcrypt(gzuncompress($value)),
+    )->shouldCache();
+}
+```
+
