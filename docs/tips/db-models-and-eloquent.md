@@ -108,3 +108,17 @@ DB::transaction(function () {
 });
 ```
 :::
+
+
+## `withoutTimestamps` 执行操作时不修改 `updated_at` 字段
+
+从 Laravel 9.31 开始可用，如果想在执行模型操作的情况下让模型的 `Updated_at` 时间戳不被修改，可以在给定的模型方法 `withoutTimestamps` 的闭包内对模型进行操作。
+
+```php
+$user = User::query()->first();
+
+// `updated_at` 字段将不会变更
+User::withoutTimestamps(
+     fn () => $user->update(['reserved_at' => now()])
+);
+```
