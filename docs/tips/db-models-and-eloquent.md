@@ -461,3 +461,78 @@ User::find([1,2,3], ['first_name', 'email']);
 ```php
 User::whereKey([1, 2, 3])->get();
 ```
+
+
+## 使用 UUID 代替自动递增
+
+
+在模型中使用自动递增 ID。
+
+迁移文件：
+
+```php
+Schema::create('users', function (Blueprint $table) {
+    // $table->increments('id');
+    $table->uuid('id')->unique();
+});
+```
+
+::: code-group
+```php {6} [&gt;= Laravel 9]
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Model;
+ 
+class Article extends Model
+{
+    use HasUuids;
+ 
+    // ...
+}
+ 
+$article = Article::create(['title' => 'Traveling to Europe']);
+ 
+$article->id; // "8f8e8478-9035-4d23-b9a7-62f4d2612ce5"
+```
+
+```php [&lt;= Laravel 8 and PHP &gt;= 7.4.0]
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Model;
+ 
+class User extends Model
+{
+    public $incrementing = false;
+    protected $keyType = 'string';
+ 
+    protected static function boot()
+    {
+        parent::boot();
+ 
+        self::creating(fn (User $model) => $model->attributes['id'] = Str::uuid());
+        self::saving(fn (User $model) => $model->attributes['id'] = Str::uuid());
+    }
+}
+```
+
+```php [&lt;= Laravel 8 and PHP &lt; 7.4.0]
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Model;
+ 
+class User extends Model
+{
+    public $incrementing = false;
+    protected $keyType = 'string';
+ 
+    protected static function boot()
+    {
+        parent::boot();
+ 
+        self::creating(function ($model) {
+             $model->attributes['id'] = Str::uuid();
+        });
+        self::saving(function ($model) {
+             $model->attributes['id'] = Str::uuid();
+        });
+    }
+}
+```
+:::
