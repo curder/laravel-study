@@ -205,3 +205,16 @@ $inactive_products = $query->clone()->where('status', 0)->get(); // 所以我们
 通过重用这个 `$query` 对象来进行多次查询。
 
 因此需要在执行任何 `$query` 修改操作之前克隆此 `$query`。
+
+
+## where 日期方法
+
+在 Eloquent 中，使用函数 `whereDay()`、`whereMonth()`、`whereYear()`、`whereDate()` 和 `whereTime()` 来过滤日期。
+
+```php
+Product::whereDay('created_at', '31')->get();
+Product::whereMonth('created_at', '12')->get();
+Product::whereYear('created_at', date('Y'))->get();
+Product::whereDate('created_at', '2018-01-31')->get();
+Product::whereTime('created_at', '=', '14:13:58')->get();
+```
