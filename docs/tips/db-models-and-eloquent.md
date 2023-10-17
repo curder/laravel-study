@@ -819,3 +819,35 @@ DB::table('orders')
     ->selectRaw('(price / overall.total) * 100 AS percent_of_total')
     ->get();
 ```
+
+## orderByPivot 根据中间表排序
+
+`BelongsToMany::orderByPivot()` 允许直接对 `BelongsToMany` 关系查询的结果进行排序。
+
+```php
+class Tag extends Model
+{
+    public $table = 'tags';
+}
+ 
+class Post extends Model
+{
+    public $table = 'posts';
+ 
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'post_tag', 'post_id', 'tag_id')
+            ->using(PostTagPivot::class)
+            ->withTimestamps()
+            ->withPivot('flag');
+    }
+}
+ 
+class PostTagPivot extends Pivot
+{
+    protected $table = 'post_tag';
+}
+ 
+
+Post::findOrFail($id)->tags()->orderByPivot('flag', 'desc')->get();
+```
