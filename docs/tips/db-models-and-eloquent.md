@@ -90,6 +90,26 @@ public function scopePublished($query)
 ```
 :::
 
+## 多个查询范围
+
+可以在 Eloquent 查询中使用多个范围。
+
+::: code-group
+```php [控制器逻辑]
+User::registeredWithinDays(30)->active()->get();
+```
+
+```php [模型定义]
+public function scopeActive($query) {
+    return $query->where('active', 1);
+}
+ 
+public function scopeRegisteredWithinDays($query, $days) {
+    return $query->where('created_at', '>=', now()->subDays($days));
+}
+```
+:::
+
 
 ## DB::afterCommit 事务处理
 
