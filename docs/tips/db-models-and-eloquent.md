@@ -60,6 +60,21 @@ User::where('active', 1)
     ->get();
 ```
 
+## value 从第一个结果中获取单列的值
+
+使用 `value()` 方法从查询的第一个结果中获取单列的值
+
+```php
+// 常规方式这样获取 active 的值
+Integration::where('name', 'foo')->first()->active;
+ 
+// 更直观的可以这样获取 active 的值
+Integration::where('name', 'foo')->value('active');
+ 
+// 或者如果没有找到记录则抛出异常
+Integration::where('name', 'foo')->valueOrFail('active')';
+```
+
 
 ## rawValue
 
