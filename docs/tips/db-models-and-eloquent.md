@@ -442,6 +442,18 @@ User::findOrFail([1, 2, 3, 99]);
 DB::table('users')->select('name', 'email as user_email')->get();
 ```
 
+## get 选择特定列
+
+要选择模型上的特定列，可以使用 `select` 方法，也可以使用 get 方法传递特定列。
+
+```php
+// 从所有数据中选择指定列
+$employees = Employee::select(['name', 'title', 'email'])->get();
+
+// 从所有数据中选择指定列
+$employees = Employee::get(['name', 'title', 'email']);
+```
+
 
 ## 修改查询结果
 
