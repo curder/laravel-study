@@ -302,6 +302,16 @@ class Post extends Model
 Post::onlyTrashed()->where('author_id', 1)->restore();
 ```
 
+## 使用软删除查询生成器
+
+```php
+// 不排除软删除的条目
+User::withTrashed()->get();
+
+// 仅软删除条目
+User::onlyTrashed()->get();
+```
+
 ## all 数据列
 
 当调用 Eloquent 的 Model::all() 时，可以指定返回哪些列。
@@ -574,4 +584,3 @@ try {
     }
 }
 ```
-
