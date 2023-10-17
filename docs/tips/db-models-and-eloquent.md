@@ -388,3 +388,37 @@ Company::all()->groupBy(
     fn ($item) => $item->name[0]
 );
 ```
+
+## 从不更新列
+
+如果有一个数据库列，只想设置一次并且不再更新，可以使用 mutator 对模型设置。
+
+::: code-group
+
+```php [&gt;= Laravel 9]
+use Illuminate\Database\Eloquent\Casts\Attribute;
+ 
+class User extends Model
+{
+    protected function email(): Attribute
+    {
+        return Attribute::make(
+            set: fn ($value, $attributes) => $attributes['email'] ?? $value,
+        );
+    }
+}
+```
+
+```php [&lt; Laravel 9]
+class User extends Model
+{
+    public function setEmailAttribute($value)
+    {
+        if (isset($this->attributes['email']) && ! is_null($this->attributes['email'])) {
+            return;
+        }
+        $this->attributes['email'] = $value;
+    }
+}
+```
+:::
