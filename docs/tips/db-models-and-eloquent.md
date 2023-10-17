@@ -561,3 +561,17 @@ Destination::addSelect([
 User::all()->makeHidden(['email_verified_at', 'deleted_at']);
 ```
 
+## 捕获SQL错误
+
+如果想捕获 Eloquent Query 异常，请使用特定的 QueryException 而不是默认的 Exception 类，将能够获得错误的确切 SQL 代码
+
+```php
+try {
+    // Some Eloquent/SQL statement
+} catch (\Illuminate\Database\QueryException $e) {
+    if ($e->getCode() === '23000') { // integrity constraint violation
+        return back()->withError('Invalid data');
+    }
+}
+```
+
