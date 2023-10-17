@@ -390,6 +390,16 @@ Flight::where('legs', '>', 3)->firstOr(function () {
 })
 ```
 
+## findOrFail 
+
+使用 `firstOrFail()` 方法检查记录是否存在。
+
+```php
+$product = Product::findOrFail($id); // shows 404 if not found
+
+$product->update($productDataArray);
+```
+
 ## 更改列名
 
 在 Eloquent 查询生成器中，可以通过“as”来返回具有不同名称的任何列，就像在普通 SQL 查询中一样。
