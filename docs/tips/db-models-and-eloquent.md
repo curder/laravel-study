@@ -862,3 +862,16 @@ Post::findOrFail($id)->tags()->orderByPivot('flag', 'desc')->get();
 ```php
 Product::query()->whereRef('#123')->sole();
 ```
+
+## chunkMap 分割块
+
+与 `each()` 方法类似，但更容易使用。自动将结果分割成多个部分。
+
+
+```php
+User::orderBy('name')->chunkMap(fn ($user) => [
+    'id' => $user->id,
+    'name' => $user->name,
+]), 25);
+```
+
