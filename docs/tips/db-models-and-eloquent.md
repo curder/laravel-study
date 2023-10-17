@@ -240,3 +240,11 @@ class Post extends Model
 }
 ```
 
+## 软删除数据的恢复
+
+在使用模型的软删除时，可以使用 `restore()` 方法恢复多行。
+
+```php
+Post::onlyTrashed()->where('author_id', 1)->restore();
+```
+
