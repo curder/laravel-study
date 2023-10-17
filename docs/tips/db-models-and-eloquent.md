@@ -218,3 +218,14 @@ Product::whereYear('created_at', date('Y'))->get();
 Product::whereDate('created_at', '2018-01-31')->get();
 Product::whereTime('created_at', '=', '14:13:58')->get();
 ```
+
+
+## increments 和 decrements 增减某个字段
+
+如果需要某个表中的某些数据库列，只需使用 `increment()` 函数。
+
+```php
+Post::find($post_id)->increment('view_count');
+User::find($user_id)->increment('points', 50); // 一次增加 50
+```
+
