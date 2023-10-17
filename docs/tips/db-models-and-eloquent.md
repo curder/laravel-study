@@ -248,3 +248,12 @@ class Post extends Model
 Post::onlyTrashed()->where('author_id', 1)->restore();
 ```
 
+## all 数据列
+
+当调用 Eloquent 的 Model::all() 时，可以指定返回哪些列。
+
+```php
+User::all(['id', 'name', 'email']);
+```
+
+
