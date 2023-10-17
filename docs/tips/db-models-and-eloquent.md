@@ -1057,3 +1057,17 @@ User::withoutGlobalScopes([
     FirstScope::class, SecondScope::class
 ])->get();
 ```
+
+
+## 根据 JSON 列属性排序
+
+可以通过 JSON 列属性对结果进行排序。
+
+```php
+Bike::where('athlete_id', $this->athleteId)
+    ->orderBy('name')
+    ->orderByDesc('settings->is_retired')
+    ->get();
+```
+
+
