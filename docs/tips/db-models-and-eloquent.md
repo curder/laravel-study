@@ -271,3 +271,15 @@ User::where('email', 'example@example.com')->firstOrFail();
 ```php
 DB::table('users')->select('name', 'email as user_email')->get();
 ```
+
+
+## 修改查询结果
+
+Eloquent 查询后，可以使用集合中的 `map()` 方法修改行。
+
+```php
+User::query()->where('active', true)->get()->map(function (User $user) {
+    $user->some_column = some_function($user);
+    return $user;
+});
+```
