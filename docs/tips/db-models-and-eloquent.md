@@ -229,3 +229,14 @@ Post::find($post_id)->increment('view_count');
 User::find($user_id)->increment('points', 50); // 一次增加 50
 ```
 
+## 没有时间戳列
+
+如果数据库表不包含时间戳字段 `created_at` 和 `updated_at`，可以设置模型属性 `$timestamps = false` 。
+
+```php
+class Post extends Model
+{
+    public $timestamps = false;
+}
+```
+
