@@ -851,3 +851,14 @@ class PostTagPivot extends Pivot
 
 Post::findOrFail($id)->tags()->orderByPivot('flag', 'desc')->get();
 ```
+
+## sole 查找单个记录
+
+`sole()` 方法将仅返回一条符合条件的记录。
+
+- 如果没有找到这样的条目，则将抛出 `NoRecordsFoundException`。
+- 如果找到多个记录，则会抛出 `MultipleRecordsFoundException`。
+
+```php
+Product::query()->whereRef('#123')->sole();
+```
