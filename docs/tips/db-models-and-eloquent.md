@@ -608,3 +608,34 @@ DB::statement('DROP TABLE users');
 
 DB::statement('ALTER TABLE projects AUTO_INCREMENT=123');
 ```
+
+## `updateOrCreate` 更新或创建
+
+需要检查记录是否存在，然后更新它，或者创建一条新记录。
+
+::: code-group
+
+```php [updateOrCreate 方法]
+Flight::updateOrCreate(
+    ['departure' => 'Oakland', 'destination' => 'San Diego'],
+    ['price' => 99, 'discounted' => 1]
+);
+```
+
+```php [旧的方式]
+Flight::where('departure', 'Oakland')
+    ->where('destination', 'San Diego')
+    ->first();
+
+if ($flight) {
+    $flight->update(['price' => 99, 'discounted' => 1]);
+} else {
+    $flight = Flight::create([
+        'departure' => 'Oakland',
+        'destination' => 'San Diego',
+        'price' => 99,
+        'discounted' => 1
+    ]);
+}
+```
+:::
