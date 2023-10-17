@@ -36,6 +36,19 @@ Task::whereBetween('completed_at', [
     Product::whereIntegerInRaw('id', range(1, 50))->get(); // [!code ++]
 ```
 
+## whereRaw 原始查询
+
+使用像 `whereRaw()` 方法这样的 SQL 原始查询，直接在查询中进行一些特定于数据库的计算，而不是在 Laravel 中，通常结果会更快。
+
+例如，如果想获得注册后 30 天以上活跃的用户
+
+```php
+User::where('active', 1)
+    ->whereRaw('TIMESTAMPDIFF(DAY, created_at, updated_at) > ?', 30)
+    ->get();
+```
+
+
 ## rawValue
 
 Laravel 9.37 有一个新的 `rawValue()` 方法来从 SQL 表达式中获取值。
