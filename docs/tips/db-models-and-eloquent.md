@@ -696,3 +696,23 @@ class Post extends Model
     }
 }
 ```
+
+## replicate 复制模型
+
+如果有两个非常相似的模型（例如送货地址和帐单地址）并且需要将一个模型复制到另一个模型，则可以使用 `replicate()` 方法并随后更改一些属性。
+
+```php
+$shipping = Address::create([
+    'type' => 'shipping',
+    'line_1' => '123 Example Street',
+    'city' => 'Victorville',
+    'state' => 'CA',
+    'postcode' => '90001',
+]);
+ 
+$billing = $shipping->replicate()->fill([
+    'type' => 'billing'
+]);
+ 
+$billing->save();
+```
