@@ -378,3 +378,13 @@ class Country extends Model
     }
 }
 ```
+
+## groupBy 按首字母分组
+
+可以在 `groupBy` 接收自定义回调中按任何自定义条件对查询结果进行分组，以下是如何按公司名的首字母进行分组
+
+```php
+Company::all()->groupBy(
+    fn ($item) => $item->name[0]
+);
+```
