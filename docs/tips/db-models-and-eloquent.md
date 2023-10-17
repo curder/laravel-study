@@ -766,3 +766,18 @@ abort_if ($product->user_id != auth()->user()->id, 403)
 ```php
 Book::where('name', 'Ruskin Bond')->explain()->dd();
 ```
+
+
+## `donstExist()` 方法
+
+
+```php
+// 1. 如果它为真
+if (0 === $model->whereStatus('pending')->count()) {}
+
+// 2. 也可以使用这种方式
+if (! $model->whereStatus('pending')->exists()) {}
+
+// 3. 使用更简洁的方式
+if ($model->whereStatus('pending')->doesntExist()) {}
+```
