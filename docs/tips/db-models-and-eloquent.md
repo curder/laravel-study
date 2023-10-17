@@ -639,3 +639,23 @@ if ($flight) {
 }
 ```
 :::
+
+
+## 保存时清空缓存
+
+如果有像提供集合的帖子这样的缓存键，并且想在新建或更新时忘记该缓存键，可以在模型上调用静态保存的函数：
+
+```php
+class Post extends Model
+{
+    // 存储或更新时忘记缓存键
+    public static function boot()
+    {
+        parent::boot();
+
+        static::saved(function () {
+           Cache::forget('posts');
+        });
+    }
+}
+```
