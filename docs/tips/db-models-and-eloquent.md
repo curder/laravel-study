@@ -724,3 +724,16 @@ $billing->save();
 ```php
 $team->forceFill(['name' => $request->name])
 ```
+
+
+## 失败时执行任何操作
+
+查找记录时，如果未找到，可能需要执行一些自定义的操作。
+
+除了 `->firstOrFail()`方法抛出 404 之外，还可以在失败时使用 `->firstOr(function() { ... })`。
+
+```php
+Flight::where('legs', '>', 3)->firstOr(function () {
+    // ...
+})
+```
