@@ -975,3 +975,31 @@ Flight::upsert([
 - 数组3：如果记录存在则要更新的列
 
 
+## 自定义 Cast 类
+
+可以创建自定义转换，让 Laravel 自动格式化您的 Eloquent 模型数据。
+
+下面是一个在检索或更改用户名时将其大写的示例。
+
+```php
+class CapitalizeWordsCast implements CastsAttributes
+{
+    public function get($model, string $key, $value, array $attributes)
+    {
+        return ucwords($value);
+    }
+ 
+    public function set($model, string $key, $value, array $attributes)
+    {
+        return ucwords($value);
+    }
+}
+ 
+class User extends Model
+{
+    protected $casts = [
+        'name'  => CapitalizeWordsCast::class,
+        'email' => 'string',
+    ];
+}
+```
