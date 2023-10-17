@@ -1116,4 +1116,13 @@ Bike::where('athlete_id', $this->athleteId)
     ->get();
 ```
 
+## modelsKeys 从模型集合中返回主键
 
+`modelsKeys()` 从模型集合中返回主键。
+
+```php
+User::active()
+    ->limit(3)
+    ->get()
+    ->modelsKeys(); // [1, 2, 3]
+```
