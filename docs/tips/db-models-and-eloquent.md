@@ -182,3 +182,26 @@ User::whereRaw("CONCAT(first_name, last_name) = $fullName")->get(); // [!code --
 // 使用参数绑定
 User::whereRaw("CONCAT(first_name, last_name) = ?", [request('full_name')])->get(); // [!code ++]
 ```
+
+## clone 重用或克隆查询
+
+通常，在处理实际查询请求时需要从过滤查询中进行多次查询。
+
+所以，大多数时候会使用 `query()` 方法， 比如编写一个查询来获取今天创建的活跃和非活跃产品：
+
+```php {9,10}
+$query = Product::query();
+ 
+ 
+$today = request()->q_date ?? today();
+if ($today) {
+    $query->where('created_at', $today);
+}
+
+$active_products = $query->clone()->where('status', 1)->get(); // 它不会修改 $query
+$inactive_products = $query->clone()->where('status', 0)->get(); // 所以我们将从 $query 获取非活跃的产品
+```
+
+通过重用这个 `$query` 对象来进行多次查询。
+
+因此需要在执行任何 `$query` 修改操作之前克隆此 `$query`。
