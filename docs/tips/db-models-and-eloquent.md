@@ -263,3 +263,11 @@ firstOrFail()方法，如果没有找到查询的记录，它会返回404页面�
 ```php
 User::where('email', 'example@example.com')->firstOrFail();
 ```
+
+## 更改列名
+
+在 Eloquent 查询生成器中，可以通过“as”来返回具有不同名称的任何列，就像在普通 SQL 查询中一样。
+
+```php
+DB::table('users')->select('name', 'email as user_email')->get();
+```
