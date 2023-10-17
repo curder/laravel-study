@@ -207,7 +207,7 @@ export default {
     ],
     '/tips/': [
         {
-            text: 'Tips',
+            text: '',
             items: [
                 {text: "优化 Factory 数据库批量插入", link: '/tips/optimize-factory-database-batch-insert'},
                 {text: "重用环境变量值", link: '/tips/reuse-the-environment-variable-value'},
@@ -217,8 +217,8 @@ export default {
     '/others/': [
         {
             items: [
-                {text: "Laravel 创建自定义 Facade", link: "/others/laravel-create-custom-facade-test-demo"},
-                {text: "Laravel 添加全局函数", link: "/others/laravel-import-custom-function-file"},
+                {text: "创建自定义 Facade", link: "/others/laravel-create-custom-facade-test-demo"},
+                {text: "添加全局函数", link: "/others/laravel-import-custom-function-file"},
             ],
         }
     ],
