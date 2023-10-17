@@ -400,6 +400,13 @@ $product = Product::findOrFail($id); // shows 404 if not found
 $product->update($productDataArray);
 ```
 
+findOrFail 方法还接受 id 列表。如果没有找到这些 id 中的任何一个，则它“失败”。 
+
+```php
+// 当无法找到所有用户时，会抛出错误
+User::findOrFail([1, 2, 3, 99]);
+```
+
 ## 更改列名
 
 在 Eloquent 查询生成器中，可以通过“as”来返回具有不同名称的任何列，就像在普通 SQL 查询中一样。
