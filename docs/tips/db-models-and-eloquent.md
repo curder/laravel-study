@@ -748,3 +748,21 @@ $billing->save();
 $team->forceFill(['name' => $request->name])
 ```
 
+## 如果条件失败则中止
+
+`abort_if()` 可以用作检查条件并抛出错误页面的更短方法。
+
+```php
+$product = Product::findOrFail($id);
+
+/* abort_if(CONDITION, ERROR_CODE) */
+abort_if ($product->user_id != auth()->user()->id, 403)
+```
+
+## explain() 有关查询的额外信息
+
+可以对查询调用 `explain()` 方法来了解有关查询的额外信息。
+
+```php
+Book::where('name', 'Ruskin Bond')->explain()->dd();
+```
