@@ -36,6 +36,7 @@ export default defineConfig({
         socialLinks: [
             {icon: 'github', link: 'https://github.com/curder/laravel-study'}
         ],
+        // @ts-ignore
         nav,
         sidebar,
     }
