@@ -985,7 +985,10 @@ test('no forgotten debug statements')
 
 ::: code-group
 ```php [App\Console\Kernel.php]
+<?php
 // App\Console\Kernel
+
+// ...
 protected function schedule(Schedule $schedule)
 {
     $schedule->command('check:api-token')->dailyAt('10:00'); // 检查是否需要发送apiToken到期通知
@@ -993,6 +996,11 @@ protected function schedule(Schedule $schedule)
 ```
 
 ```php [Tests\Integrations\Console\KernelTest.php]
+<?php
+
+use Illuminate\Console\Scheduling\Event;
+use Illuminate\Console\Scheduling\Schedule;
+
 it('has some schedules', function (string $command, $expression) {
     $schedule = app(Schedule::class);
 
