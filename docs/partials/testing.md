@@ -129,7 +129,7 @@ it('returns all products as JSON', function () {
     $anotherProduct = Product::factory()->create();
 
     // Act & Assert
-    $this->post('api/products')
+    $this->postJson('api/products')
         ->assertOk()
         ->assertJson([
             [
