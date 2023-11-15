@@ -141,3 +141,22 @@ $post->comments()->saveMany([
 
 $users = Book::with('author.country')->get();
 ```
+
+## 使用精确列进行预加载
+
+执行预加载时可以指定想要从关系中获取的确切列。
+
+```php
+// Book -> belongsTo(Author::class)
+
+$users = Book::with('author:id,name')->get();
+```
+
+即使在更深层次的嵌套关系中也可以获取确切列：
+
+```php
+// Book -> belongsTo(Author::class)
+// Author -> belongsTo(Country::class)
+
+$users = Book::with('author.country:id,name')->get();
+```
