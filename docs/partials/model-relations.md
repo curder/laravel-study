@@ -38,6 +38,22 @@ public function productsByName()
 }
 ```
 
+## 条件关系
+
+如果发现经常使用相同的关系和附加 `where` 条件，则可以创建单独的关系方法。
+
+```php
+public function comments()
+{
+    return $this->hasMany(Comment::class);
+}
+ 
+public function approvedComments()
+{
+    return $this->hasMany(Comment::class)->where('approved', 1);
+}
+```
+
 ## 将条件语句添加到多对多关系
 
 在多对多关系中，可以使用 `wherePivot` 方法将 where 语句添加到数据中间表。
