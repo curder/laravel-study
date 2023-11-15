@@ -76,6 +76,25 @@ class Developer extends Model
 }
 ```
 
+## 重命名数据中间表
+
+如果想重命名 `pivot` 并指定关联的名称，只需在关系中使用 `->as('name')` 即可。
+
+```php
+public function podcasts() {
+    return $this->belongsToMany(Podcast::class)
+        ->as('subscription') // [!code ++]
+        ->withTimestamps();
+}
+
+// 使用
+$podcasts = $user->podcasts();
+foreach ($podcasts as $podcast) {
+    // 使用下面的方式替换 $podcast->pivot->created_at ...
+    echo $podcast->subscription->created_at; // [!code ++]
+}
+```
+
 ## `havingRaw` 查询语句
 
 可以在各个地方使用 RAW 数据库查询，包括在 `groupBy()` 之后使用 `havingRaw()` 函数。
