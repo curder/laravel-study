@@ -1,6 +1,6 @@
 # 模型关系
 
-## 获取关联关系的最新/旧项
+## 关联关系的最新/旧项
 
 从 Laravel 8.42 开始，在 Eloquent 模型中，可以定义一个关系，该关系将获取另一个关系的最新（或最旧）项目。
 
@@ -19,6 +19,22 @@ public function latestOrder()
 public function oldestOrder()
 {
     return $this->hasOne(Order::class)->oldestOfMany();
+}
+```
+
+## 关联数据排序
+
+可以直接在 Eloquent 关系上指定 `orderBy()` 对数据进行默认排序。
+
+```php
+public function products()
+{
+    return $this->hasMany(Product::class);
+}
+ 
+public function productsByName()
+{
+    return $this->hasMany(Product::class)->orderBy('name');
 }
 ```
 
