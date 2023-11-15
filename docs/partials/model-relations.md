@@ -83,3 +83,14 @@ class Developer extends Model
 ```php
 Product::groupBy('category_id')->havingRaw('COUNT(*) > 1')->get();
 ```
+
+## `has` 多种关联关系查询
+
+可以使用模型 `has()` 方法来查询两层甚至更深的关联关系。
+
+```php
+// Author -> hasMany(Book::class);
+// Book -> hasMany(Rating::class);
+
+Author::has('books.ratings')->get();
+```
