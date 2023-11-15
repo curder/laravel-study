@@ -94,3 +94,13 @@ Product::groupBy('category_id')->havingRaw('COUNT(*) > 1')->get();
 
 Author::has('books.ratings')->get();
 ```
+
+## `has` 条件
+
+在 `hasMany()` 关联关系中，可以过滤掉具有指定数量的记录。
+
+```php
+// Author -> hasMany(Book::class)
+
+$authors = Author::has('books', '>', 5)->get();
+```
