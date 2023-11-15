@@ -178,3 +178,25 @@ class Comment extends Model
     }
 }
 ```
+
+## withCount() 计算子关系记录
+
+如果有 `hasMany()` 关系，并且想要计算“子”条目，请不要编写特殊查询。
+
+例如，如果在 `User` 模型上有帖子和评论，请用 `withCount()` 编写：
+
+```php
+// User => hasMany(Post::class)
+// Post => hasMany(Commend::clas)
+
+User::withCount(['posts', 'comments'])->get();
+
+// 使用 {relationship}_count 属性访问这些值
+$user->posts_count
+$user->comments_count
+
+// 还可以按该字段进行排序
+User::withCount('comments')->orderBy('comments_count', 'desc')->get();
+```
+
+
