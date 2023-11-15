@@ -274,3 +274,13 @@ auth()->user()->posts()->create([
     'post_text' => request('post_text'),
 ]);
 ```
+
+## 更新父级
+
+如果有 `belongsTo()` 关系，则可以这样更新模型关系数据：
+
+```php
+// Project -> belongsTo(User::class)
+
+$project->user->update(['email' => 'some@gmail.com']);
+```
