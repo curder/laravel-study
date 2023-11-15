@@ -214,3 +214,22 @@ Country::with([
     }
 ])->get();
 ```
+
+## 动态加载关系
+
+不仅可以指定始终随模型加载的关系，还可以在模型的构造方法中动态执行此操作：
+
+```php
+class Tag extends Model
+{
+    protected $with = ['product']; // [!code focus] // [!code ++]
+ 
+    public function __construct() {
+        parent::__construct();
+ 
+        if (auth()->check()) {// [!code focus] // [!code ++]
+            $this->with[] = 'user';// [!code focus] // [!code ++]
+        }// [!code focus] // [!code ++]
+    }
+}
+```
