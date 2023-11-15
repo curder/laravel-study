@@ -233,3 +233,25 @@ class Tag extends Model
     }
 }
 ```
+
+## 使用 hasMany 代替 belongsTo
+
+对于 `belongsTo` 关系，在创建子记录时不要传递父记录的ID，而是使用 `hasMany` 关系来使得逻辑更加简单。
+
+```php
+// Post -> belongsTo(User)
+// User -> hasMany(Post)
+
+// 创建文章，使用当前登录的用户
+Post::create([
+    'user_id' => auth()->id(),
+    'title' => request('title'),
+    'post_text' => request('post_text'),
+]);
+
+// 使用 hasMany 关系替代
+auth()->user()->posts()->create([
+    'title' => request('title'),
+    'post_text' => request('post_text'),
+]);
+```
