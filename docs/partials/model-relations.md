@@ -117,3 +117,16 @@ public function user()
     return $this->belongsTo(User::class)->withDefault();
 }
 ```
+
+## saveMany 批量创建
+
+如果有 `hasMany()` 关系，可以使用 `saveMany()` 从父对象中保存多个子项。
+
+```php
+$post = Post::find(1);
+
+$post->comments()->saveMany([
+    new Comment(['message' => 'First comment']),
+    new Comment(['message' => 'Second comment']),
+]);
+```
