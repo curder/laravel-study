@@ -21,3 +21,25 @@ public function oldestOrder()
     return $this->hasOne(Order::class)->oldestOfMany();
 }
 ```
+
+## 将条件语句添加到多对多关系
+
+在多对多关系中，可以使用 `wherePivot` 方法将 where 语句添加到数据中间表。
+
+```php
+class Developer extends Model
+{
+     // Get all clients related to this developer
+     public function clients()
+     {
+          return $this->belongsToMany(Clients::class);
+     }
+ 
+     // Get only local clients
+     public function localClients()
+     {
+          return $this->belongsToMany(Clients::class)
+               ->wherePivot('is_local', true);
+     }
+}
+```
