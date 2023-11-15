@@ -284,3 +284,15 @@ auth()->user()->posts()->create([
 
 $project->user->update(['email' => 'some@gmail.com']);
 ```
+
+## 组合两个 `whereHas`
+
+在模型关系中，可以将 `whereHas()` 和 `orDoesntHave()` 组合在一个查询中。
+
+```php
+User::whereHas('roles', function($query) {
+    $query->where('id', 1);
+})
+->orDoesntHave('roles')
+->get();
+```
