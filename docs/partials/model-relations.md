@@ -160,3 +160,21 @@ $users = Book::with('author:id,name')->get();
 
 $users = Book::with('author.country:id,name')->get();
 ```
+
+## 更新父级
+
+如果正在更新记录并想要更新 belongsTo 关系的 `updated_at` 列。
+
+例如，添加新的帖子评论并希望 `posts.updated_at` 更新，只需要在 `Comment` 模型上定义 `$touches` 属性。
+
+```php
+class Comment extends Model
+{
+    protected $touches = ['post'];
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class); 
+    }
+}
+```
