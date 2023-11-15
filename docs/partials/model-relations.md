@@ -130,3 +130,14 @@ $post->comments()->saveMany([
     new Comment(['message' => 'Second comment']),
 ]);
 ```
+
+## 多层预加载
+
+可以在一条语句中预加载多个级别，在下面的示例中，不仅加载作者关系，还加载作者模型上的国家关系。
+
+```php
+// Book -> belongsTo(Author::class)
+// Author -> belongsTo(Country::class)
+
+$users = Book::with('author.country')->get();
+```
