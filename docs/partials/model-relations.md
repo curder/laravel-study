@@ -199,4 +199,18 @@ $user->comments_count
 User::withCount('comments')->orderBy('comments_count', 'desc')->get();
 ```
 
+## 对关系的额外过滤
 
+如果要加载关系数据，可以在闭包函数中指定一些限制或排序。
+
+例如想获取只有三个最大城市的国家/地区，可以使用以下代码：
+
+```php
+// Country => hasMany(City::class)
+
+Country::with([
+    'cities' => function ($query) {
+        $query->orderBy('population', 'desc')->limit(3);
+    }
+])->get();
+```
