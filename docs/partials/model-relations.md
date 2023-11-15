@@ -75,3 +75,11 @@ class Developer extends Model
      }
 }
 ```
+
+## `havingRaw` 查询语句
+
+可以在各个地方使用 RAW 数据库查询，包括在 `groupBy()` 之后使用 `havingRaw()` 函数。
+
+```php
+Product::groupBy('category_id')->havingRaw('COUNT(*) > 1')->get();
+```
