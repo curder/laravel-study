@@ -104,3 +104,16 @@ Author::has('books.ratings')->get();
 
 $authors = Author::has('books', '>', 5)->get();
 ```
+
+## `withDefault` 默认模型
+
+可以在 `belongsTo` 关系中指定默认模型，以避免在调用它时出现致命错误。
+
+例如：`$post->user` 不存在，当 `$post->user->name` 获取 `name` 时会抛出致命错误。
+
+```php
+public function user()
+{
+    return $this->belongsTo(User::class)->withDefault();
+}
+```
