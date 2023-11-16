@@ -300,10 +300,10 @@ request()->validate([
 当使用表单请求进行验证时，默认情况下验证错误将重定向回上一步，可以通过定义 `$redirect` 或 `$redirectRoute` 的属性即可覆盖它。
 
 ```php
-// The URI that users should be redirected to if validation fails./
+// 验证失败时用户应重定向到的 URI
 protected $redirect = '/dashboard';
 
-// The route that users should be redirected to if validation fails.
+// 验证失败时应将用户重定向到的路由
 protected $redirectRoute = 'dashboard';
 ```
 
