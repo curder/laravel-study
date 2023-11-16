@@ -24,6 +24,15 @@ Schema::create('employees', function (Blueprint $table) {
 
 此外，还有 `dateTimeTz()`、`timeTz()`、`timestampTz()`、`softDeletesTz()` 列。
 
+## 默认时间戳
+
+创建迁移时，可以使用带有选项 `useCurrent()` 和 `useCurrentOnUpdate()` 的 `timestamp()` 列类型，它将把 `CURRENT_TIMESTAMP` 设置为默认值。
+
+```php
+$table->timestamp('created_at')->useCurrent();
+$table->timestamp('updated_at')->useCurrentOnUpdate();
+```
+
 ## 更多数据库迁移列类型
 
 有一些有趣的迁移列类型，以下是一些示例。
