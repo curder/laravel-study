@@ -312,3 +312,15 @@ $questions = Question::with(['answers' => function ($q) {
     $q->inRandomOrder();
 }])->inRandomOrder()->get();
 ```
+
+## whereRelation 语句
+
+```php
+// Laravel 8.57 之前
+User::whereHas('posts', function ($query) {
+    $query->where('published_at', '>', now());
+})->get();
+ 
+// Laravel 8.57 之后
+User::whereRelation('posts', 'published_at', '>', now())->get();
+```
