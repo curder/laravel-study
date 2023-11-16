@@ -296,3 +296,19 @@ User::whereHas('roles', function($query) {
 ->orDoesntHave('roles')
 ->get();
 ```
+
+## inRandomOrder 随机排序
+
+可以使用 `inRandomOrder()` 来随机化模型查询结果，还可以使用它来随机查询加载的关系数据。
+
+比如有一个问答系统，需要随机问题：
+
+```php
+// 1. 如果想以随机获得问题
+$questions = Question::inRandomOrder()->get();
+
+// 2. 同时想以随机顺序获得问题选项，可以这样编写查询:
+$questions = Question::with(['answers' => function ($q) {
+    $q->inRandomOrder();
+}])->inRandomOrder()->get();
+```
