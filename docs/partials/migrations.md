@@ -237,3 +237,16 @@ return new class extends Migration
     };
     ```
     :::
+
+    ## 运行迁移之前输出 SQL
+
+    当输入 `php artisan migrate --pretend` 命令时，在终端中会列出待执行的 SQL 查询。
+    
+    如果需要的话，这是一种调试 SQL 的有趣方法。
+
+    ```
+    php artisan migrate --pretend
+
+    # 2023_11_16_025540_whatever_you_want ....................................
+    # ⇂ alter table `products` add `description` varchar(255) null after `name`
+    ```
