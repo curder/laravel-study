@@ -1,5 +1,20 @@
 # Migrations 迁移
 
+## 创建迁移时使用空格
+
+当输入 `make:migration` 命令时，不一定必须在各部分之间使用下划线 `_` 符号，例如 `create_transactions_table`。
+
+可以将名称放在引号中，然后使用空格而不是下划线。
+
+```php
+// 能正常工作
+php artisan make:migration create_transactions_table
+ 
+// 这样也能正常工作
+php artisan make:migration "create transactions table"
+```
+
+
 ## 迁移顺序
 
 使用命令 `php artisan make:migration create_posts_table --table=posts` 可以快速创建迁移文件，创建的迁移文件名有一个特点，就是以时间命名的。
