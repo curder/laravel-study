@@ -23,3 +23,17 @@ Schema::create('employees', function (Blueprint $table) {
 ```
 
 此外，还有 `dateTimeTz()`、`timeTz()`、`timestampTz()`、`softDeletesTz()` 列。
+
+## 更多数据库迁移列类型
+
+有一些有趣的迁移列类型，以下是一些示例。
+
+```php
+$table->uuid('id');
+$table->geometry('positions');
+$table->ipAddress('visitor');
+$table->macAddress('device');
+$table->point('position');
+```
+
+请参阅[官方文档](https://laravel.com/docs/master/migrations#available-column-types)中的所有列类型。
