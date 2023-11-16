@@ -250,3 +250,17 @@ return new class extends Migration
     # 2023_11_16_025540_whatever_you_want ....................................
     # ⇂ alter table `products` add `description` varchar(255) null after `name`
     ```
+
+    ## 添加列的描述
+
+    可以在迁移中添加有关列的描述并提供有用的信息。
+
+    如果数据库由开发人员以外的其他人管理，可以在执行任何操作之前查看表结构中的注释。
+
+
+    ```php
+    $table->unsignedInteger('interval')
+        ->index()
+        ->comment('This column is used for indexing.')
+    ```
+
