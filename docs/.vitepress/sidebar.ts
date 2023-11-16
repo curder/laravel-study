@@ -196,10 +196,10 @@ export default {
         {
             text: "代码片段",
             items: [
-                {text: "Blade 模版", link: "/partials/blade"},
                 {text: 'Migrations 迁移', link: "/partials/migrations"},
                 {text: "Model 模型", link: "/partials/model"},
                 {text: "Model Relations 模型关系", link: "/partials/model-relations"},
+                {text: "Views 视图", link: "/partials/views"},
                 {text: "Validation 验证", link: "/partials/validation"},
                 {text: "URL 生成", link: "/partials/urls"},
                 {text: "Routing 路由", link: "/partials/routing"},
