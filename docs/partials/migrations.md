@@ -264,3 +264,12 @@ return new class extends Migration
         ->comment('This column is used for indexing.')
     ```
 
+## 检查表是否存在
+
+使用 `hasTable` 方法检查表是否存在：
+
+```php
+if (Schema::hasTable('users')) {
+    // users 表存在
+}
+```
