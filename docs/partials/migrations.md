@@ -126,3 +126,114 @@ Migration name .............................................. Batch / Status
 2019_08_19_000000_create_failed_jobs_table ......................... [1] Ran
 2019_12_14_000001_create_personal_access_tokens_table .............. [1] Ran
 ```
+
+
+## 对存在表进行迁移
+
+如果对现有表进行迁移，并且希望生成 `Schema::table()`，请在末尾添加`_in_xxxxx_table` 或 `_to_xxxxx_table`，或指定 `--table`参数。
+
+### 空迁移文件
+
+::: code-group 
+```bash [迁移命令]
+php artisan make:migration change_fields_products_table
+
+# INFO  Migration [database/migrations/2023_11_16_025034_change_fields_products_table.php] created successfully.
+```
+
+```php [命令生成的迁移文件]
+// database/migrations/2023_11_16_025034_change_fields_products_table.php
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        //
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        //
+    }
+};
+```
+:::
+
+### 指定表
+
+- 方式一：使用 `--table` 参数指定表则会生成预填充 `Schema::table('xxx', function() {})` 的类
+
+    :::code-group
+    ```bash [迁移命令]
+    php artisan make:migration whatever_you_want --table=products
+
+    # INFO  Migration [database/migrations/2023_11_16_025540_whatever_you_want.php] created successfully.
+    ```
+
+    ```php [执行命令后生成的迁移文件]
+    // database/migrations/2023_11_16_025540_whatever_you_want.php
+    return new class extends Migration
+    {
+        /**
+        * Run the migrations.
+        */
+        public function up(): void
+        {
+            Schema::table('products', function (Blueprint $table) {
+                //
+            });
+        }
+
+        /**
+        * Reverse the migrations.
+        */
+        public function down(): void
+        {
+            Schema::table('products', function (Blueprint $table) {
+                //
+            });
+        }
+    };
+    ```
+    :::
+
+- 方式二：添加 `in_xxxxx_table` 语句
+
+    ::: code-group
+    ```bash [迁移命令]
+    php artisan make:migration change_fields_in_products_table
+
+    # INFO  Migration [database/migrations/2023_11_16_025304_change_fields_in_products_table.php] created successfully.
+    ```
+
+    ```php [执行命令后生成的迁移文件]
+    // database/migrations/2023_11_16_025304_change_fields_in_products_table.php
+    return new class extends Migration
+    {
+        /**
+         * Run the migrations.
+         */
+        public function up(): void
+        {
+            Schema::table('products', function (Blueprint $table) {
+                //
+            });
+        }
+
+        /**
+         * Reverse the migrations.
+         */
+        public function down(): void
+        {
+            Schema::table('products', function (Blueprint $table) {
+                //
+            });
+        }
+    };
+    ```
+    :::
