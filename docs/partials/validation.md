@@ -380,3 +380,43 @@ class CreateProductRequest extends FormRequest
 ```
 
 更多错误消息索引和位置可以查看[官网](https://laravel.com/docs/master/validation#error-message-indexes-and-positions)说明。
+
+
+## 排除验证值
+
+当需要验证某个字段，但实际上并不需要它进行任何操作时，比如“接受条款和条件”，使用 `exclude` 规则。
+
+这样，调用验证的方法 `validated` 就不会返回它。
+
+
+
+::: code-group
+```php [请求验证类]
+class UserStoreRequest extends FormRequest
+{
+    public function rules(): array
+    {
+        return [
+            'name' => 'required|string',
+            'email_address' => 'required|email',
+            'terms_and_conditions' => 'required|accepted|exclude',
+        ];
+    }
+    // ...
+}
+```
+
+```php [控制器逻辑]
+public function store(StoreRequest $request)
+{
+    $payload = $request->validated(); // 仅返回经过验证的 `name` 和 `email` 字段 //[!code focus]
+
+    $user = User::create($payload);
+
+    Auth::login($user);
+
+    return redirect()->route('dashboard');
+}
+```
+
+:::
