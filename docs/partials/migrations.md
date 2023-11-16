@@ -283,3 +283,30 @@ if (Schema::hasColumn('users', 'email')) {
     // users 表存在并且表包含 `email` 字段
 }
 ```
+
+
+## 
+
+从 Laravel 9.6.0 开始添加了 `whenTableDoesntHaveColumn` 方法，仅当该列不存在时，才可以在数据库表中添加该列；
+
+`whenTableHasColumn` 方法判断列存在，如果存在，则可以将其删除。
+
+```php
+return new class extends Migration {
+    public function up()
+    {
+        // 仅当该列不存在时，才可以在数据库表中添加该列
+        Schema::whenTableDoesntHaveColumn('users', 'name', function (Blueprint $table) {
+            $table->string('name', 30);
+        });
+    }
+ 
+    public function down()
+    {
+        // 判断列存在，如果存在，则可以将其删除。
+        Schema::whenTableHasColumn('users', 'name', function (Blueprint $table) {
+            $table->dropColumn('name');
+        });
+    }
+}
+```
