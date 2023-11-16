@@ -24,6 +24,55 @@ php artisan make:migration "create transactions table"
 例如从 **`2018_08_04_070443_create_posts_table.php`** 到 **`2018_07_04_070443_create_posts_table.php`**（从 **`2018_08_04`** 更改为 **`2018_07_04`**）
 
 
+## 指定列的创建顺序
+
+如果要向现有表添加新列，则它不一定必须成为列表中的最后一个。
+
+### `after()`
+
+可以指定应在哪一列之后创建它：
+
+```php
+Schema::table('users', function (Blueprint $table) {
+    $table->string('phone')->after('email');
+});
+```
+
+也可以使用 `after()` 方法添加多个字段：
+
+```php
+Schema::table('users', function (Blueprint $table) {
+    $table->after('remember_token', function ($table) {
+        $table->string('card_brand')->nullable();
+        $table->string('card_last_four', 4)->nullable();
+    });
+});
+```
+
+如果要向现有表添加新列，则它不一定必须成为列表中的最后一个。
+
+
+### `before()`
+
+可以指定应在哪一列之前创建它：
+
+```php
+Schema::table('users', function (Blueprint $table) {
+    $table->string('phone')->before('created_at');
+});
+```
+
+### `first()`
+
+如果希望新增的列成为表中的第一列，可以使用 `first` 方法。
+
+```php
+Schema::table('users', function (Blueprint $table) {
+    $table->string('uuid')->first();
+});
+```
+
+
 ## 具有时区的迁移字段
 
 在迁移中不仅有 `timestamps()`，还有用于时区的 `timestampsTz()`。
