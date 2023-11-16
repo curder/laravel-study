@@ -46,3 +46,16 @@ $table->point('position');
 ```
 
 请参阅[官方文档](https://laravel.com/docs/master/migrations#available-column-types)中的所有列类型。
+
+
+## 迁移状态
+
+如果想检查哪些迁移已执行或尚未执行，无需查看数据库 `migrations` 表，可以使用 `php artisan migrate:status` 命令。
+
+```text
+Migration name .............................................. Batch / Status
+2014_10_12_000000_create_users_table ............................... [1] Ran
+2014_10_12_100000_create_password_reset_tokens_table ............... [1] Ran
+2019_08_19_000000_create_failed_jobs_table ......................... [1] Ran
+2019_12_14_000001_create_personal_access_tokens_table .............. [1] Ran
+```
