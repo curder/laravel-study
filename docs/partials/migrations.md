@@ -273,3 +273,13 @@ if (Schema::hasTable('users')) {
     // users 表存在
 }
 ```
+
+## 检查列是否存在
+
+使用 `hasColumn` 方法检查列是否存在：
+
+```php
+if (Schema::hasColumn('users', 'email')) {
+    // users 表存在并且表包含 `email` 字段
+}
+```
