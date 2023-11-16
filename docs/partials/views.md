@@ -1,4 +1,4 @@
-# Blade 模版
+# Views 视图
 
 ## `@foreach` 循环中的 `$loop` 变量
 
@@ -248,7 +248,7 @@ public function boot()
 
 ## 组件语法提示
 
-如果在组件参数前传递冒号 `:` ，就可以直接传递变量而不用 `{{ }}` 吗？
+如果在组件参数前使用冒号 `:` 传递变量。
 
 ```php
 <x-navbar title="{{ $title }}"/>
@@ -446,4 +446,21 @@ class AppServiceProvider extends ServiceProvider
         }
     }
 }
+```
+
+## 使用 Blade 生成 HTML 以外的内容
+
+使用 `render()` 生成任何想要的动态字符串或文件。
+
+例如，shell 脚本或站点地图文件。
+
+只需在视图 `view` 方法上调用 `render()` 方法即可获取字符串形式的结果。
+
+```php
+$script = view('deploy-script')->render();
+ 
+$ssh = $this->createSshConnection();
+ 
+info("Executing deploy script...");
+$process = $ssh->execute(explode("\n", $script));
 ```

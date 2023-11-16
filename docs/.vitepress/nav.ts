@@ -4,7 +4,7 @@ export default [
     {
         text: "其它",
         items: [
-            {text: "代码片段", link: '/partials/blade'},
+            {text: "代码片段", link: '/partials/migrations'},
             {text: '测试', link: '/tests/unit-test-laravel-api-pest-framework'},
             {text: "小技巧", link: '/tips/db-models-and-eloquent'},
             {text: '其他', link: '/others/laravel-create-custom-facade-test-demo'},
