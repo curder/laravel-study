@@ -199,6 +199,7 @@ export default {
                 {text: "Blade 模版", link: "/partials/blade"},
                 {text: "Model 模型", link: "/partials/model"},
                 {text: "Model Relations 模型关系", link: "/partials/model-relations"},
+                {text: 'Migrations 迁移', link: "/partials/migrations"},
                 {text: "Validation 验证", link: "/partials/validation"},
                 {text: "URL 生成", link: "/partials/urls"},
                 {text: "Routing 路由", link: "/partials/routing"},

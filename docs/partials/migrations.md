@@ -26,6 +26,8 @@ php artisan make:migration "create transactions table"
 
 ## 指定列的创建顺序
 
+> 注意下下面的方法，**仅支持 `MySQL`**
+
 如果要向现有表添加新列，则它不一定必须成为列表中的最后一个。
 
 ### `after()`
@@ -49,10 +51,11 @@ Schema::table('users', function (Blueprint $table) {
 });
 ```
 
-如果要向现有表添加新列，则它不一定必须成为列表中的最后一个。
-
 
 ### `before()`
+
+如果要向现有表添加新列，则它不一定必须成为列表中的最后一个。
+
 
 可以指定应在哪一列之前创建它：
 
