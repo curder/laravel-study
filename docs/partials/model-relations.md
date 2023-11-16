@@ -324,3 +324,22 @@ User::whereHas('posts', function ($query) {
 // Laravel 8.57 之后
 User::whereRelation('posts', 'published_at', '>', now())->get();
 ```
+
+## updateExistingPivot 更新中间表
+
+如果要更新表上的现有中间表的数据记录，使用 `updateExistingPivot` 而不是 `syncWithPivotValues`。
+
+```php
+// 中间表迁移文件
+Schema::create('role_user', function ($table) {
+    $table->unsignedId('user_id');
+    $table->unsignedId('role_id');
+    $table->timestamp('assigned_at');
+})
+ 
+// 第一个参数为记录ID
+// 第二个参数为中间表更新的字段和值的数组
+$user->roles()->updateExistingPivot(
+    $id, ['assigned_at' => now()],
+);
+```
