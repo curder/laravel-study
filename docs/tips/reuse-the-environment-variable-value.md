@@ -6,12 +6,12 @@
 
 :::code-group
 
-```dotenv [错误 ❌]
+```txt [错误 ❌]
 APP_URL=https://laravel-tips.test
 ADMIN_URL=https://laravel-tips.test
 ```
 
-```dotenv [正确 ✅]
+```txt [正确 ✅]
 APP_URL=https://laravel-tips.test
 ADMIN_URL="${APP_URL}"
 ```
