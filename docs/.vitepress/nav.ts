@@ -6,6 +6,7 @@ export default [
         items: [
             {text: "代码片段", link: '/partials/migrations'},
             {text: "小技巧", link: '/tips/db-models-and-eloquent'},
+            {text: "常用扩展", link: "/packages/pail"},
             {text: '其他', link: '/others/laravel-create-custom-facade-test-demo'},
         ]
     },

@@ -184,11 +184,11 @@ export default {
             ],
         },
     ],
-    '/tests/': [
+    '/packages/': [
         {
-            text: '测试',
+            text: '',
             items: [
-                {text: "使用 pest 测试 Laravel API", link: "/tests/unit-test-laravel-api-pest-framework"},
+                {text: "Laravel Pail", link: "/packages/pail"},
             ],
         }
     ],
