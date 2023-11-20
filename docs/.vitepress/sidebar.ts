@@ -189,6 +189,7 @@ export default {
             text: '',
             items: [
                 {text: "Laravel Pail", link: "/packages/pail"},
+                {text: "Laravel Pint", link: "/packages/pint"},
             ],
         }
     ],
