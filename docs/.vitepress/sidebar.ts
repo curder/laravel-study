@@ -224,6 +224,7 @@ export default {
                 {text: "添加全局函数", link: "/others/laravel-import-custom-function-file"},
                 {text: "自定义异常", link: "/others/using-custom-exceptions-to-write-better-and-clearer-code"},
                 {text: "使用 pest 测试 Laravel API", link: "/others/unit-test-laravel-api-pest-framework.md"},
+                {text: "自定义逻辑 Macros", link: "/others/macros.md"},
             ],
         }
     ],

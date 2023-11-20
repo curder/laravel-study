@@ -1,4 +1,4 @@
-# Laravel Macros
+# 自定义逻辑 Macros
 
 Laravel 从 4.2 版本开始就有了宏的概念，本文将展示如何创建它们。
 
