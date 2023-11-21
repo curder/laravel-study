@@ -579,6 +579,42 @@ it('asks for user ids', function() {
 可以在[官网](https://laravel.com/docs/master/console-tests#main-content)了解更多有关测试命令的信息。
 
 
+## 测试视图 Views
+
+Laravel 10.x 支持使用命令创建视图。
+
+::: code-group
+```php [测试]
+<?php
+// tests/Feature/View/Posts/IndexTest.php
+
+use App\Models\Post;
+
+it('can render', function () {
+    $contents = $this->view('posts.index', [
+        'posts' => Post::factory()->count(5)->create(),
+    ]);
+
+    $contents->assertSeeText('Posts')
+        ->assertViewHas('posts');
+});
+```
+
+```php [视图文件]
+// views/posts/index.blade.php
+
+<div>
+    <h2>Posts</h2>
+    <ul>
+        @foreach($posts as $post)
+            <li>{{ $post->name }}</li>
+        @endforeach
+    </ul>
+</div>
+```
+:::
+
+
 ## 中间件 Middlewares
 
 这里以一个路由中间件作为示例。[源代码查看](https://github.com/curder/laravel-testing-demo/tree/middleware)
