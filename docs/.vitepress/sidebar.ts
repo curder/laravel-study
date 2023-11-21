@@ -227,6 +227,7 @@ export default {
                 {text: "使用 pest 测试 Laravel API", link: "/others/unit-test-laravel-api-pest-framework.md"},
                 {text: "自定义逻辑 Macros", link: "/others/macros.md"},
                 {text: '使用 Alpine.js 滚动到验证错误', link: "/others/scroll-to-validation-error-in-laravel-using-alpinejs"},
+                {text: '生成视图的 Artisan 命令', link: "/others/artisan-command-to-generate-views-in-laravel"},
             ],
         }
     ],
