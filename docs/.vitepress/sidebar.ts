@@ -229,6 +229,12 @@ export default {
                 {text: '使用 Alpine.js 滚动到验证错误', link: "/others/scroll-to-validation-error-in-laravel-using-alpinejs"},
                 {text: '生成视图的 Artisan 命令', link: "/others/artisan-command-to-generate-views-in-laravel"},
             ],
+        },
+        {
+            text: '帮助方法 Helpers',
+            items: [
+                {text: "数字 Numbers", link: '/others/helpers/numbers'},
+            ]
         }
     ],
 };
