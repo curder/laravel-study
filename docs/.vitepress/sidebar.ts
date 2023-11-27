@@ -231,9 +231,10 @@ export default {
             ],
         },
         {
-            text: '帮助方法 Helpers',
+            text: 'Helpers',
             items: [
                 {text: "数字 Numbers", link: '/others/helpers/numbers'},
+                {text: "暂停执行 Sleep", link: '/others/helpers/sleep'},
             ]
         }
     ],
