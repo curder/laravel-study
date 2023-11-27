@@ -418,5 +418,16 @@ public function store(StoreRequest $request)
     return redirect()->route('dashboard');
 }
 ```
-
 :::
+
+## hex_color 验证颜色
+
+在 Laravel 10.33.0 开始默认支持了 `hex_color` 规则用于验证十六进制的颜色校验。
+
+```php
+Validator::make(['color' => '#ff0000'], ['color' => 'hex_color'])->passes(); // true
+
+Validator::make(['color' => '#f00'], ['color' => 'hex_color'])->passes(); // true
+
+Validator::make(['color' => '#ggg'], ['color' => 'hex_color'])->passes(); // false
+```
