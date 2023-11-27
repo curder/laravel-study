@@ -211,3 +211,79 @@ class AppServiceProvider extends ServiceProvider
 ```
 
 现在，如果在 `Str` 类上测试 `isLength()` 和 `appendTo()` 方法，将得到相同的结果。
+
+## 一些示例
+
+### `whereLike()`
+
+::: code-group 
+```php [定义]
+<?php
+
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Arr;
+
+class AppServiceProvider extends ServiceProvider
+{
+    // ...
+
+    public function boot()
+    {
+        // Define the 'whereLike' macro
+        Builder::macro('whereLike', function ($attributes, string $searchTerm) {
+            $this->where(function (Builder $query) use ($attributes, $searchTerm) {
+                foreach (Arr::wrap($attributes) as $attribute) {
+                    $query->when(
+                        // Check if the attribute is not an expression and contains a dot (indicating a related model)
+                        !($attribute instanceof \Illuminate\Contracts\Database\Query\Expression) &&
+                        str_contains((string) $attribute, '.'),
+                        function (Builder $query) use ($attribute, $searchTerm) {
+                            // Split the attribute into a relation and related attribute
+                            [$relation, $relatedAttribute] = explode('.', (string) $attribute);
+
+                            // Perform a 'LIKE' search on the related model's attribute
+                            $query->orWhereHas($relation, function (Builder $query) use ($relatedAttribute, $searchTerm) {
+                                $query->where($relatedAttribute, 'LIKE', "%{$searchTerm}%");
+                            });
+                        },
+                        function (Builder $query) use ($attribute, $searchTerm) {
+                            // Perform a 'LIKE' search on the current model's attribute
+                            // also attribute can be an expression
+                            $query->orWhere($attribute, 'LIKE', "%{$searchTerm}%");
+                        }
+                    );
+                }
+            });
+        });
+    }
+    //...
+}
+
+```
+
+```php [使用]
+Post::query()
+    ->whereLike([
+        'title',
+        // search in the current model's 'title' attribute
+        'description',
+        // search in the current model's 'description' attribute
+        'user.name',
+        // search in the related model's 'name' attribute
+        'user.email',
+        // search in the related model's 'email' attribute
+        DB::raw('DATE_FORMAT(created_at, "%d/%m/%Y")'),
+        // search in the formatted 'created_at' attribute
+        DB::raw('CONCAT(user.first_name, " ", user.last_name)'),
+        // search in the concatenated 'first_name' and 'last_name' attributes
+    ], request()->search)
+        // search for the request's 'search' query parameter
+    ->with('user')
+    ->get();
+```
+:::
+
+- 原始地址：[@MrPunyapal twitter](https://twitter.com/MrPunyapal/status/1717939956616941926)
+- Gist 地址：[
+  mr-punyapal/LaravelWhereLikeMacro.php](https://gist.github.com/mr-punyapal/31433fdd415518f8510385b86178ff1f)
