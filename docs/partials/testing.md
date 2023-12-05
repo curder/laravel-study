@@ -268,6 +268,79 @@ class ChinesePhoneNumberRule implements ValidationRule
 
 :::
 
+或者通过使用 `Mockery::spy`模拟验证。
+
+::: code-group
+
+```php [tests]
+<?php
+
+use App\Rules\PhoneNumber;
+
+it('has valid phone number for chinesePhoneNumber rule', function (string $value) {
+    $mock = Mockery::spy(function (string $message): void {
+    });
+
+    $rule = new PhoneNumber();
+
+    $rule->validate('', $value, $mock(...));
+
+    $mock->shouldNotHaveBeenCalled();
+})->with([
+    ['13800138000'],
+    ['16735219276'],
+    // ...
+]);
+
+it('has invalid phone number for chinesePhoneNumber rule', function (string $value) {
+    $expect = '';
+
+    $mock = Mockery::spy(function (string $message) use (&$expect): void {
+        $expect = $message;
+    });
+
+    $rule = new PhoneNumber();
+
+    $rule->validate('', $value, $mock(...));
+
+    $mock->shouldHaveBeenCalled();
+    expect($expect)->toEqual('Failed');
+})->with([
+    [''],
+    ['16000138000'],
+    // ...
+]);
+```
+
+```php [validation]
+<?php
+
+namespace App\Rules;
+
+use Closure;
+use Illuminate\Contracts\Validation\ValidationRule;
+use Illuminate\Translation\PotentiallyTranslatedString;
+
+class ChinesePhoneNumberRule implements ValidationRule
+{
+    /**
+     * Run the validation rule.
+     *
+     * @param Closure(string): PotentiallyTranslatedString $fail
+     */
+    public function validate(string $attribute, mixed $value, Closure $fail): void
+    {
+        $regex = '/^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[0-35-9]\d{2}|4(?:0\d|1[0-2]|9\d))|9[0-35-9]\d{2}|6[2567]\d{2}|4(?:(?:10|4[01])\d{3}|[68]\d{4}|[56789]\d{2}))\d{6}$/';
+
+        if (!preg_match($regex, $value)) {
+            $fail('Failed');
+        }
+    }
+}
+
+```
+:::
+
 ## 模型关联关系 Relationships
 
 例如测试用户包含很多产品的一对多的关联关系。
