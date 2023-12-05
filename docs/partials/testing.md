@@ -278,8 +278,7 @@ class ChinesePhoneNumberRule implements ValidationRule
 use App\Rules\PhoneNumber;
 
 it('has valid phone number for chinesePhoneNumber rule', function (string $value) {
-    $mock = Mockery::spy(function (string $message): void {
-    });
+    $mock = Mockery::spy(function (string $message): void {}); //[!code ++]
 
     $rule = new PhoneNumber();
 
@@ -295,9 +294,9 @@ it('has valid phone number for chinesePhoneNumber rule', function (string $value
 it('has invalid phone number for chinesePhoneNumber rule', function (string $value) {
     $expect = '';
 
-    $mock = Mockery::spy(function (string $message) use (&$expect): void {
-        $expect = $message;
-    });
+    $mock = Mockery::spy(function (string $message) use (&$expect): void { // [!code ++]
+        $expect = $message; // [!code ++]
+    }); // [!code ++]
 
     $rule = new PhoneNumber();
 
