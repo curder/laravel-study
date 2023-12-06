@@ -120,17 +120,23 @@ it('returns the correct amount of records', function() {
 
 ### 响应 Json
 
-通常希望从 API 返回 JSON 数据。可以在此处使用 Laravel 的 JSON 帮助器，例如[`assertJson`](https://laravel.com/docs/master/http-tests#assert-json) 方法。
+通常希望从 API 返回 JSON 数据。可以在此处使用 Laravel 的 JSON 帮助器，例如[`assertJson`](https://laravel.com/docs/master/http-tests#assert-json) 、[`assertJsonCount`](https://laravel.com/docs/master/http-tests#assert-json-count)和 [`assertJsonStructure`](https://laravel.com/docs/master/http-tests#assert-json-structure) 等方法。
 
 ```php
+use function Pest\Laravel\postJson;
+
 it('returns all products as JSON', function () {
     // Arrange
     $product = Product::factory()->create();
     $anotherProduct = Product::factory()->create();
 
     // Act & Assert
-    $this->postJson('api/products')
+    postJson('api/products')
         ->assertOk()
+        ->assertJsonCount(2)
+        ->assertJsonStructure([
+            'title', 'description',
+        ])
         ->assertJson([
             [
                 'title' => $product->title,
@@ -143,6 +149,10 @@ it('returns all products as JSON', function () {
         ]);
 });
 ```
+
+- `assertJsonCount()` 第二个参数支持传入指定键，比如 `->assertJsonCount(10, 'data')`
+- `assertJsonStructure()` 支持使用 `*` 对数组进行匹配，比如：`assertJsonStructure(['data' => ['*' => ['title', 'description']]])`
+
 可以在[官网](https://laravel.com/docs/master/http-tests#response-assertions)了解更多有关测试页面响应的信息。
 
 ## 数据库 Database
@@ -189,6 +199,63 @@ it('allowed user can delete task', function() {
 
 
 可以在[官网](https://laravel.com/docs/master/database-testing#available-assertions)了解有关测试数据库的更多信息。
+
+## 资源 Resources
+
+::: code-group
+
+```php [资源测试类]
+// tests/Feature/Http/Resources/UsersResourceTest.php
+<?php
+
+use App\Http\Resources\UsersResource;
+use App\Models\User;
+
+it('can returns correct data', function () {
+    $user = User::factory()->create();
+    $resource = UsersResource::make($user)->jsonSerialize();
+
+    expect($resource)
+        ->toHaveKeys(['name', 'email', 'created_at'])
+        ->toMatchArray([
+            'name' => $user->name,
+            'email' => $user->email,
+            'created_at' => $user->created_at->toDateTimeString(),
+        ]);
+});
+```
+
+```php [资源类]
+// app/Http/Resources/UsersResource.php
+<?php
+
+namespace App\Http\Resources;
+
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
+
+/**
+ * @property-read User $resource
+ */
+class UsersResource extends JsonResource
+{
+    /**
+     * Transform the resource into an array.
+     *
+     * @return array<string, mixed>
+     */
+    public function toArray(Request $request): array
+    {
+        return [
+            'name' => $this->resource->name,
+            'email' => $this->resource->email,
+            'created_at' => $this->resource->created_at->toDateTimeString(),
+        ];
+    }
+}
+```
+:::
 
 ## 验证 Validation
 
