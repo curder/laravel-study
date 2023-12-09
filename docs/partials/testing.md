@@ -257,6 +257,99 @@ class UsersResource extends JsonResource
 ```
 :::
 
+## 请求 Requests
+
+有时候需要单独测试自定义请求规则，可以直接对自定义请求类进行测试。
+
+::: code-group
+
+```php [测试用例]
+<?php
+
+// tests\Feature\Http\Requests\SiteStoreRequestTest
+
+use App\Rules\ValidProtocol;
+use App\Http\Requests\SiteStoreRequest;
+
+it('has correct rules for site.store route', function () {
+    $request = new SiteStoreRequest();
+
+    expect($request->rules())->toEqual([
+        'name' => ['required', 'string'],
+        'url' => ['required', 'string', new ValidProtocol],
+    ]);
+});
+
+it('will return true for anthorizes method forever', function () {
+    $request = new SiteStoreRequest();
+
+    expect($request->authorize())->toBeTrue();
+});
+```
+
+
+```php [自定义请求验证类 SiteStoreRequest]
+<?php
+// app/Http/Requests/SiteStoreRequest.php
+
+namespace App\Http\Requests;
+
+use App\Rules\ValidProtocol;
+use Illuminate\Foundation\Http\FormRequest;
+
+class SiteStoreRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     */
+    public function rules(): array
+    {
+        return [
+            'name' => ['required', 'string'],
+            'url' => ['required', 'string', new ValidProtocol],
+        ];
+    }
+}
+```
+
+```php [自定义验证规则 ValidProtocol]
+<?php
+// app/Rules/ValidProtocol.php
+
+namespace App\Rules;
+
+use Closure;
+use Illuminate\Support\Str;
+use Illuminate\Contracts\Validation\ValidationRule;
+use Illuminate\Translation\PotentiallyTranslatedString;
+
+class ValidProtocol implements ValidationRule
+{
+    /**
+     * Run the validation rule.
+     *
+     * @param  Closure(string): PotentiallyTranslatedString  $fail
+     */
+    public function validate(string $attribute, mixed $value, Closure $fail): void
+    {
+        if (! Str::startsWith($value, ['http://', 'https://'])) {
+            $fail('URL 必须包含协议，例如：http:// 或 https://');
+        }
+    }
+}
+```
+:::
+
 ## 验证 Validation
 
 ### Http请求
