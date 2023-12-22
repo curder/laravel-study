@@ -214,7 +214,7 @@ class AppServiceProvider extends ServiceProvider
 
 ## 一些示例
 
-### `whereLike()`
+### `Model`
 
 ::: code-group 
 ```php [定义]
@@ -285,5 +285,91 @@ Post::query()
 :::
 
 - 原始地址：[@MrPunyapal twitter](https://twitter.com/MrPunyapal/status/1717939956616941926)
-- Gist 地址：[
-  mr-punyapal/LaravelWhereLikeMacro.php](https://gist.github.com/mr-punyapal/31433fdd415518f8510385b86178ff1f)
+- Gist 地址：[mr-punyapal/LaravelWhereLikeMacro.php](https://gist.github.com/mr-punyapal/31433fdd415518f8510385b86178ff1f)
+
+### `Http`
+
+```php
+use Illuminate\Support\Facades\Http;
+
+Http::micro('api-local', function() {
+    return Http::withHeaders([
+        'X-Header' => 'Value',
+    ])->baseUrl('https://example.com');
+});
+```
+
+### `Str`
+
+```php
+use Illuminate\Support\Str;
+
+Str::micro('slugify', function($value) {
+    return Str::slug($value);
+});
+```
+
+### `Response`
+
+```php
+use Illuminate\Support\Facades\Response;
+
+Response::micro('api', function($data) {
+    return response()->json($data); 
+})
+```
+
+### `Validation`
+
+注意 `Validator` 使用是 **`extend`** 方法来自定义宏，并不是 `micro` 方法。
+
+```php
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
+
+Validator::extend('adult', function($attribute, $value) {
+    return Caron::parse($value)->age >= 18;
+});
+```
+
+### `Cache`
+
+```php
+use Illuminate\Support\Facades\Cache;
+
+Cache::micro('rememberForeverJson', function($key, $callback) {
+    return Cache::rememberForever($key, function() use ($callback) {
+        return json_decode($callback());
+    }); 
+});
+```
+
+### `View`
+
+```php
+use Illuminate\Support\Facades\Blade;
+
+Blade::micro('datetime', function($expression) {
+    return "<?php echo with[$expression]->format('Y-m-d H:i:s'); ?>";
+});
+```
+
+### `Event`
+
+```php
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Event;
+
+Event::micro('logAndDispatch', function($event) {
+    Log::info("Event: {$event} dispatched");
+    event($event);
+});
+```
+
+### `Form`
+
+```php
+Form::micro('customInput', function($name, $value) {
+    return "<input type='text' name='{$name}' value='{$value}' />";
+});
+```
