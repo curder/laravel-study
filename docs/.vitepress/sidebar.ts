@@ -215,6 +215,7 @@ export default {
                 {text: "DB 模型和 Eloquent", link: "/tips/db-models-and-eloquent"},
                 {text: "优化 Factory 数据库批量插入", link: '/tips/optimize-factory-database-batch-insert'},
                 {text: "重用环境变量值", link: '/tips/reuse-the-environment-variable-value'},
+                {text: "使用 Laravel simple-excel 处理大型 CSV 文件", link: '/tips/process-large-csv-files-with-laravel-using-simple-excel'},
             ]
         }
     ],
