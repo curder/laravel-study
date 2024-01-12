@@ -1239,7 +1239,7 @@ class PaymentController extends Controller
 
 ```php
 test('no forgotten debug statements')
-    ->expect(['dd', 'dump'])
+    ->expect(['dd', 'dump', 'var_dump', 'ray'])
     ->not->toBeUsed();
 ```
 
