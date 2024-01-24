@@ -190,6 +190,7 @@ export default {
             items: [
                 {text: "Laravel Pail", link: "/packages/pail"},
                 {text: "Laravel Pint", link: "/packages/pint"},
+                {text: "快速登录", link: "/packages/laravel-login-link"},
             ],
         }
     ],
