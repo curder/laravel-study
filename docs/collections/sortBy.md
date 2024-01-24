@@ -40,6 +40,18 @@ collect([
 */
 ```
 
+### 通过数组进行排序
+```php
+use Illuminate\Support\Collection;
+
+$fields = ['agent_number', 'sale_id', 'agent_extras->attachments', 'id', 'automatic_grouping'];
+
+Collection::make([
+  'agent_extras->IB_Campaign', 'id', 'sale_id', 'automatic_grouping', 'agent_extras->attachments', 'agent_number'
+])->sortBy(
+    fn ($item) => array_search($item, $fields)
+);
+```
 ## 相关方法
 
 - [sort](sort.md)
