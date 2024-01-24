@@ -192,6 +192,7 @@ export default {
                 {text: "Laravel Pint", link: "/packages/pint"},
                 {text: "Laravel Login Link", link: "/packages/laravel-login-link"},
                 {text: "Sushi 🍣", link: "/packages/sushi"},
+                {text: "Livewire Missing Assertions", link: "/packages/missing-livewire-assertions"},
             ],
         }
     ],
