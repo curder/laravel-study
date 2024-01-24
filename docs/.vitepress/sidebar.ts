@@ -191,6 +191,7 @@ export default {
                 {text: "Laravel Pail", link: "/packages/pail"},
                 {text: "Laravel Pint", link: "/packages/pint"},
                 {text: "Laravel Login Link", link: "/packages/laravel-login-link"},
+                {text: "Sushi 🍣", link: "/packages/sushi"},
             ],
         }
     ],
