@@ -194,6 +194,7 @@ export default {
                 {text: "Sushi 🍣", link: "/packages/sushi"},
                 {text: "Livewire Missing Assertions", link: "/packages/missing-livewire-assertions"},
                 {text: "Laravel Backup", link: "/packages/backup"},
+                {text: "Laravel Data", link: "/packages/laravel-data"},
             ],
         }
     ],
