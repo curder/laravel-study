@@ -390,6 +390,8 @@ it('requires title and description tested with a dataset', function($data, $erro
 
 可以在[官网](https://laravel.com/docs/master/http-tests#response-assertions)了解更多有关测试页面响应的信息。
 
+也可以在此基础上引入 [RequestsFactories](https://github.com/worksome/request-factories) 请求工厂，更加规范的进行测试，详细内容可以[查看这里](https://downing.tech/posts/my-favourite-way-to-test-laravel-validation)。
+
 ### 自定义规则
 可以安装[spatie/pest-expectations](https://github.com/spatie/pest-expectations)扩展辅助验证。
 
