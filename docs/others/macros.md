@@ -52,7 +52,7 @@ Laravel 从 4.2 版本开始就有了宏的概念，本文将展示如何创建�
 - [`Illuminate\Validation\Rule`](https://github.com/laravel/framework/blob/master/src/Illuminate/Validation/Rule.php)
 - [`Illuminate\View\Factory`](https://github.com/laravel/framework/blob/master/src/Illuminate/View/Factory.php)
 - [`Illuminate\View\View`](https://github.com/laravel/framework/blob/master/src/Illuminate/View/View.php)
-
+- [`Illuminate\Validation\Rules\File`](https://github.com/laravel/framework/blob/master/src/Illuminate/Validation/Rules/File.php)
 
 ## 自定义宏
 
@@ -373,3 +373,30 @@ Form::micro('customInput', function($name, $value) {
     return "<input type='text' name='{$name}' value='{$value}' />";
 });
 ```
+
+### `File`
+
+通过 `File` 提供的宏，可以方便的自定义文件类型验证规则。
+
+::: code-group
+```php [定义]
+// AppServiceProvider.php
+use Illuminate\Validation\Rules\File;
+
+File::macro('document', fn() => File::types(['pdf', 'rtf', 'doc', 'docx']));
+```
+
+```php [使用]
+// UploadController.php
+use Illuminate\Validation\Rules\File;
+
+public function store($request)
+{
+  $request->validate([
+    'file' => [File::document()->max(20 * 1024)], 
+  ]);
+  
+  // ...
+}
+```
+:::
