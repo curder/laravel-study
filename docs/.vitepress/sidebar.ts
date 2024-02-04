@@ -4,7 +4,10 @@ export default {
             text: '一些示例',
             items: [
                 {text: "计算 GitHub 事件得分总和", link: "/collections/examples/format-github-events-score"},
-                {text: "格式化计算两个数组的数据", link: "/collections/examples/format-calculate-the-data-of-the-two-arrays"},
+                {
+                    text: "格式化计算两个数组的数据",
+                    link: "/collections/examples/format-calculate-the-data-of-the-two-arrays"
+                },
                 {text: "通过值获取对应key", link: "/collections/examples/get-the-corresponding-key-by-value"},
                 {text: "map 格式化数据", link: "/collections/examples/map-format"},
                 {text: "格式化 Markdown 数据列表", link: "/collections/examples/markdown-format"},
@@ -186,17 +189,27 @@ export default {
     ],
     '/packages/': [
         {
-            text: '',
+            text: 'Laravel',
             items: [
-                {text: "Laravel Pail", link: "/packages/pail"},
-                {text: "Laravel Pint", link: "/packages/pint"},
-                {text: "Laravel Login Link", link: "/packages/laravel-login-link"},
-                {text: "Sushi 🍣", link: "/packages/sushi"},
-                {text: "Livewire Missing Assertions", link: "/packages/missing-livewire-assertions"},
-                {text: "Laravel Backup", link: "/packages/backup"},
-                {text: "Laravel Data", link: "/packages/laravel-data"},
+                {text: "Pail", link: "/packages/laravel/pail"},
+                {text: "Pint", link: "/packages/laravel/pint"},
+            ]
+        },
+        {
+            text: 'Spatie',
+            items: [
+                {text: "Login Link", link: "/packages/spatie/laravel-login-link"},
+                {text: "Backup", link: "/packages/spatie/laravel-backup"},
+                {text: "Data", link: "/packages/spatie/laravel-data"},
+            ]
+        },
+        {
+            text: 'Others',
+            items: [
+                {text: "Sushi 🍣", link: "/packages/others/sushi"},
+                {text: "Livewire Missing Assertions", link: "/packages/others/missing-livewire-assertions"},
             ],
-        }
+        },
     ],
     '/partials/': [
         {
@@ -220,7 +233,10 @@ export default {
                 {text: "DB 模型和 Eloquent", link: "/tips/db-models-and-eloquent"},
                 {text: "优化 Factory 数据库批量插入", link: '/tips/optimize-factory-database-batch-insert'},
                 {text: "重用环境变量值", link: '/tips/reuse-the-environment-variable-value'},
-                {text: "使用 Laravel simple-excel 处理大型 CSV 文件", link: '/tips/process-large-csv-files-with-laravel-using-simple-excel'},
+                {
+                    text: "使用 Laravel simple-excel 处理大型 CSV 文件",
+                    link: '/tips/process-large-csv-files-with-laravel-using-simple-excel'
+                },
             ]
         }
     ],
@@ -232,7 +248,10 @@ export default {
                 {text: "自定义异常", link: "/others/using-custom-exceptions-to-write-better-and-clearer-code"},
                 {text: "使用 pest 测试 Laravel API", link: "/others/unit-test-laravel-api-pest-framework.md"},
                 {text: "自定义逻辑 Macros", link: "/others/macros.md"},
-                {text: '使用 Alpine.js 滚动到验证错误', link: "/others/scroll-to-validation-error-in-laravel-using-alpinejs"},
+                {
+                    text: '使用 Alpine.js 滚动到验证错误',
+                    link: "/others/scroll-to-validation-error-in-laravel-using-alpinejs"
+                },
                 {text: '生成视图的 Artisan 命令', link: "/others/artisan-command-to-generate-views-in-laravel"},
             ],
         },

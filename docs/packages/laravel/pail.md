@@ -21,7 +21,7 @@ composer require laravel/pail
 php artisan pail
 ```
 
-![](./images/pail-logs.png)
+![](images/pail-logs.png)
 
 上面是基本的使用方式，同时 Laravel Pail 有一些标志允许以有用的方式过滤日志消息。
 
