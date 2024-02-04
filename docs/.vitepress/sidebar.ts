@@ -237,6 +237,7 @@ export default {
                     text: "使用 Laravel simple-excel 处理大型 CSV 文件",
                     link: '/tips/process-large-csv-files-with-laravel-using-simple-excel'
                 },
+                {text: "Laravel 模块化开发", link: 'tips/modular-laravel'}
             ]
         }
     ],
