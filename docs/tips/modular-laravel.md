@@ -266,3 +266,11 @@ uses(TestCase::class, RefreshDatabase::class)->in('Feature');
 uses(TestCase::class, LazilyRefreshDatabase::class)->in(__DIR__.'/../modules/module/tests/Feature'); // [!code ++]
 /*
 ```
+
+## Laravel Idea
+
+Laravel Idea 是一个基于 Laravel 的项目，它可以在编写 Laravel 代码时提供很多帮助。
+
+对于非常规的 Laravel 项目，需要简单设置，使用快捷键 `command + ,` 打开项目设置，找到 `语言和设置` --> `Laravel Idea` --> `Module System` --> 选择 `Directory modules as composer.json packages` 即可。
+
+这样使用快捷键 `Command + Shift + ,` 就可以在新建 Laravel 类时选择对应的模块进行创建，这或许能增加开发效率。
