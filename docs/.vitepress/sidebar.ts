@@ -223,6 +223,7 @@ export default {
                 {text: "URL 生成", link: "/partials/urls"},
                 {text: "Routing 路由", link: "/partials/routing"},
                 {text: "Testing 测试", link: "/partials/testing"},
+                {text: "Factories 工厂", link: "/partials/factories"},
             ],
         }
     ],

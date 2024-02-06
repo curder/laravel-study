@@ -8,3 +8,4 @@
 - [URL 生成](urls.md)
 - [Routing 路由](routing.md)
 - [Testing 测试](testing.md)
+- [Factories 工厂](factories.md)
