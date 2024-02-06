@@ -6,6 +6,19 @@
 
 更多关于 `Number` 的官方文档地址[请点击这里](https://laravel.com/docs/master/helpers#numbers)。
 
+## `abbreviate()` 人类可读
+`Number::abbreviate()` 方法返回所提供数值的人类可读格式，以及单位缩写，它是 `forHumans` 方法的封装：
+
+```php
+use Illuminate\Support\Number;
+ 
+Number::abbreviate(1000); // 1K
+ 
+Number::abbreviate(489939); // 490K
+ 
+Number::abbreviate(1230000, precision: 2); // 1.23M
+```
+
 ## `format()` 格式化
 
 `Number::format()` 方法将给定的数字格式化为区域设置特定的分割符，一般会用于格式化金额的情况：
@@ -82,7 +95,7 @@ Number::fileSize(1024 * 1024 * 56); // 56 MB
 Number::fileSize(1024 * 5566, precision: 2); // 5.44 MB
 ```
 
-## `forHumans()` 人类可度
+## `forHumans()` 人类可读
 
 `Number::forHumans()` 方法返回所提供数值的人类可读格式：
 
@@ -98,3 +111,57 @@ Number::forHumans(1234000, precision: 2); // 1.23 million
 Number::forHumans(1234000, maxPrecision: 2); // 1.23 million
 ```
 
+## `ordinal()` 序列
+
+`Number::ordinal()` 方法返回数字的序数表示形式：
+
+```php
+use Illuminate\Support\Number;
+
+Number::ordinal(1); // 1st
+
+Number::ordinal(2); // 2nd
+
+Number::ordinal(21); // 21st
+```
+
+## `spell()` 单词字符串
+
+`Number::spell()` 方法将给定的数字转换为单词字符串：
+
+```php
+use Illuminate\Support\Number;
+ 
+Number::spell(102); // one hundred and two
+ 
+Number::spell(808, locale: 'zh_CN'); // 八百〇八
+Number::spell(808, locale: 'zh_TW');// 八百零八
+```
+
+
+## 其它方法
+
+### `useLocale()`
+
+`Number::useLocale()` 方法全局设置默认数字区域设置，这会影响后续 `Number` 调用该类方法时如何格式化数字和货币：
+
+```php
+use Illuminate\Support\Number;
+
+public function boot(): void
+{
+    Number::useLocale('de');
+}
+```
+
+### `withLocale()`
+
+`Number::withLocale()` 方法使用指定的语言环境执行给定的闭包，然后在回调执行后恢复原始语言环境：
+
+```php
+use Illuminate\Support\Number;
+ 
+Number::withLocale('zh_CN', function () {
+    return Number::format(1500);
+});
+```
