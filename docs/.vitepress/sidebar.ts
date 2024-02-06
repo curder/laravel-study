@@ -213,7 +213,7 @@ export default {
     ],
     '/partials/': [
         {
-            text: "代码片段",
+            text: "",
             items: [
                 {text: 'Migrations 迁移', link: "/partials/migrations"},
                 {text: "Model 模型", link: "/partials/model"},
