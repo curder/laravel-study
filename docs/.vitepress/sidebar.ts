@@ -264,6 +264,7 @@ export default {
                 {text: "数字 Numbers", link: '/others/helpers/numbers'},
                 {text: "暂停执行 Sleep", link: '/others/helpers/sleep'},
                 {text: "路径 Paths", link: '/others/helpers/paths'},
+                {text: "网址 URLs", link: '/others/helpers/urls'},
             ]
         }
     ],
