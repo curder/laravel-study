@@ -263,6 +263,7 @@ export default {
                 {text: "数组 Arrays", link: '/others/helpers/arrays'},
                 {text: "数字 Numbers", link: '/others/helpers/numbers'},
                 {text: "暂停执行 Sleep", link: '/others/helpers/sleep'},
+                {text: "路径 Paths", link: '/others/helpers/paths'},
             ]
         }
     ],
