@@ -116,6 +116,7 @@ collect([1, 2, 3]);
 | [replaceRecursive](replaceRecursive.md) | 将集合递归到数组中并且对内部的值应用相同的替换                                                           |
 | [reverse](reverse.md)                   | 倒转集合中项目的顺序                                                                        |
 | [search](search.md)                     | 搜索给定的值并返回它的键                                                                      |
+| [select](select.md)                     | 从多维数组中选择一定数量的键                                                                    |
 | [shift](shift.md)                       | **改变原集合**，移除并返回集合的第一个项目                                                           |
 | [shuffle](shuffle.md)                   | 随机排序集合中的项目                                                                        |
 | [skip](skip.md)                         | 返回一个新的集合，其中给定数量的元素从集合的开头删除                                                        |

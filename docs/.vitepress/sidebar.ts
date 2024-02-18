@@ -107,6 +107,7 @@ export default {
                 {text: "replaceRecursive", link: "/collections/replaceRecursive"},
                 {text: "reverse", link: "/collections/reverse"},
                 {text: "search", link: "/collections/search"},
+                {text: "select", link: "/collections/select"},
                 {text: "shift", link: "/collections/shift"},
                 {text: "shuffle", link: "/collections/shuffle"},
                 {text: "skip", link: "/collections/skip"},
