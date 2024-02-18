@@ -625,6 +625,24 @@ Arr::sortRecursive($array);
 Arr::sortRecursiveDesc($array);
 ```
 
+## `take()`
+
+自 Laravel 10.44 开始，提供了 `Arr::take()` 方法从数组中获取指定数量项目的方法。
+
+如果提供的是正整数它将从数组的前面获取，如果提供的是负整数并从数组的末尾获取：
+
+```php
+$data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+Arr::take($data, 3);  // [1, 2, 3]
+Arr::take($data, -3); // [7, 8, 9]
+Arr::take($data, 0);  // []
+Arr::take($data, 1);  // [1]
+Arr::take($data, -1); // [9]
+```
+
+它的作用跟 [`Collection::take()`](/collections/take.md) 一致。
+
 ## `toCssClasses()`
 
 `Arr::toCssClasses()` 方法将数组转换为空格分隔的 CSS 类字符串。
