@@ -2,7 +2,7 @@ export default [
     {text: '集合', link: '/collections/'},
     {text: '模型', link: '/model/'},
     {
-        text: "其它",
+        text: "更多",
         items: [
             {text: "代码片段", link: '/partials/migrations'},
             {text: "小技巧", link: '/tips/db-models-and-eloquent'},
@@ -11,7 +11,7 @@ export default [
         ]
     },
     {
-        text: "更多",
+        text: "",
         items: [
             {text: 'Bolg', link: 'https://curder.github.io/blog/', target: '_blank', rel: 'blog'},
             {text: 'What is new in PHP', link: 'https://curder.github.io/what-is-new-in-php/', target: '_blank', rel: 'what is new in php'},
