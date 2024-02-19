@@ -259,7 +259,7 @@ export default {
             ],
         },
         {
-            text: 'Helpers',
+            text: '工具助手 Helpers',
             items: [
                 {text: "数组 Arrays", link: '/others/helpers/arrays'},
                 {text: "字符串 Strings", link: '/others/helpers/strings'},
