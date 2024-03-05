@@ -56,6 +56,7 @@ collect([1, 2, 3]);
 | [duplicatesStrict](duplicatesStrict.md) | 使用严格模式从集合中检索并返回重复值                                                                |
 | [each](each.md)                         | 迭代集合中的内容，同时将其传递到回调函数中                                                             |
 | [eachSpread](eachSpread.md)             | 迭代集合中的内容，同时将其传递到回调函数中                                                             |
+| [ensure](ensure.md)                     | 确保集合中的项目属于特定数据类型                                                                  |
 | [every](every.md)                       | 可用于验证集合中每一个元素都通过回调测试                                                              |
 | [except](except.md)                     | 返回集合中除了指定键以外的所有项目                                                                 |
 | [filter](filter.md)                     | 使用给定的回调函数过滤集合的内容，只留下那些通过给定值为真的集合项                                                 |

@@ -48,6 +48,7 @@ export default {
                 {text: "duplicatesStrict", link: "/collections/duplicatesStrict"},
                 {text: "each", link: "/collections/each"},
                 {text: "eachSpread", link: "/collections/eachSpread"},
+                {text: "ensure", link: "/collections/ensure"},
                 {text: "every", link: "/collections/every"},
                 {text: "except", link: "/collections/except"},
                 {text: "filter", link: "/collections/filter"},
