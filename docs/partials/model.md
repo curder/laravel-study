@@ -1315,3 +1315,106 @@ class UserObserver
     }
 }
 ```
+
+## `whereAll()` 和 `orWhereAll()` 方法
+
+自 [Laravel 10.47](https://github.com/laravel/framework/pull/50344) 起开始支持 `whereAll()` 方法和 `orWhereAll()` 方法用于搜索多列。
+
+::: code-group
+```php [whereAll]
+$search = '%Laravel%';
+
+User::query()
+    ->whereAll([
+        'first_name',
+        'last_name',
+        'email',
+        'phone'
+    ],
+        'LIKE',
+        $search
+    );
+```
+
+```php [where]
+$search = '%Laravel%';
+
+User::query()
+  ->where(function ($query) use ($search) {
+      $query
+          ->where('first_name', 'LIKE', $search)
+          ->where('last_name', 'LIKE', $search)
+          ->where('email', 'LIKE', $search)
+          ->where('phone', 'LIKE', $search);
+  })
+```
+
+```sql [Raw SQL]
+select
+  *
+from
+  `users`
+where
+  (
+    `first_name` LIKE '%Laravel%'
+    and `last_name` LIKE '%Laravel%'
+    and `email` LIKE '%Laravel%'
+    and `phone` LIKE '%Laravel%'
+)
+```
+:::
+
+可以看到生成同样的查询语句，使用 `whereAll()` 构建的查询会更加简洁清晰。
+
+
+## `whereAny()` 和 `orWhereAny()` 方法
+
+自 [Laravel 10.47](https://github.com/laravel/framework/pull/50344) 起开始支持 `whereAny()` 方法和 `orWhereAny()` 方法用于搜索多列。
+
+::: code-group
+```php [whereAny]
+$search = '%Laravel%';
+
+User::query()
+    ->whereAny([
+        'first_name',
+        'last_name',
+        'email',
+        'phone'
+    ],
+        'LIKE',
+        $search
+    );
+```
+
+```php [orWhere]
+$search = '%Laravel%';
+
+User::query()
+  ->where(function ($query) use ($search) {
+      $query
+          ->orWhere('first_name', 'LIKE', $search)
+          ->orWhere('last_name', 'LIKE', $search)
+          ->orWhere('email', 'LIKE', $search)
+          ->orWhere('phone', 'LIKE', $search);
+  })
+```
+
+
+```sql [Raw SQL]
+select
+  *
+from
+  `users`
+where
+  (
+    `first_name` LIKE '%Laravel%'
+    or `last_name` LIKE '%Laravel%'
+    or `email` LIKE '%Laravel%'
+    or `phone` LIKE '%Laravel%'
+  )
+```
+:::
+
+可以看到生成同样的查询语句，相比 `orWhere()` 使用 `whereAny()` 构建的查询会更加简洁清晰。
+
