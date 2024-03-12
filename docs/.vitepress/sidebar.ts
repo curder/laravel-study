@@ -269,6 +269,7 @@ export default {
                 {text: "暂停执行 Sleep", link: '/others/helpers/sleep'},
                 {text: "路径 Paths", link: '/others/helpers/paths'},
                 {text: "网址 URLs", link: '/others/helpers/urls'},
+                {text: "日期时间 Carbon",link: '/others/helpers/carbon'},
             ]
         }
     ],
