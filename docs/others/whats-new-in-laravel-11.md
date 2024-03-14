@@ -655,6 +655,29 @@ it('rate limit decreases remaining', function () {
 
 当向此路由发出 HTTP 请求时，Laravel 还将调度 `DiagnosingHealth` 事件，允许执行与应用程序相关的其他运行状况检查。
 
+### Prompts 验证
+
+[Laravel Prompts](https://laravel.com/docs/11.x/prompts) 用于向命令行应用程序添加美观且用户友好的表单，具有类似浏览器的功能，包括占位符文本和验证。
+
+::: code-group
+
+```php [验证规则 - New]
+$name = text('What is your name?', validate: [
+    'name' => 'required|min:3|max:255',
+]);
+```
+
+```php [闭包验证 - Old]
+$name = text(
+    label: 'What is your name?',
+    validate: fn (string $value) => match (true) {
+        strlen($value) < 3 => 'The name must be at least 3 characters.',
+        strlen($value) > 255 => 'The name must not exceed 255 characters.',
+        default => null
+    }
+);
+```
+:::
 
 ### 异步请求的重试
 
