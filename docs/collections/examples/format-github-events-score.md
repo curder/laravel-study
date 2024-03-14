@@ -1,6 +1,6 @@
 # 计算 GitHub 事件得分总和
 
-首先，通过 API 接口地址 https://api.github.com/users/YOUR_USRE_NAME/events 获取到个人事件数据，其中 `YOUR_USER_NAME` 为 GitHub 个人账号。
+首先，通过 API 接口地址 `https://api.github.com/users/GITHUB_USRE_NAME/events` 获取到个人事件数据，其中 `GITHUB_USRE_NAME` 为 GitHub 个人账号。
 
 **计分规则如下：**
 
@@ -43,20 +43,17 @@ foreach ($eventTypes as $eventType) {
   }
 }
 
-dd($score); // 输出 134
+dd($score); // 输出 132
 ```
 
 ## 使用 [pluck](../pluck.md)、[map](../map.md) 和 [sum](../sum.md) 方法
 
 ::: code-group
 ```php [PHP switch]
-$events = collect(
-  Http::get('https://api.github.com/users/curder/events')->json()
-);
-
-$score = $events
+$score = Http::get('https://api.github.com/users/curder/events')
+  ->collect()
   ->pluck('type')
-  ->map(function ($eventType) {
+  ->map(function (string $eventType) {
     switch ($eventType) {
       case 'PushEvent':
         return 5;
@@ -79,13 +76,10 @@ $score = $events
 ```
 
 ```php [PHP great than 8.0 match]
-$events = collect(
-  Http::get('https://api.github.com/users/curder/events')->json()
-);
-
-$score = $events
+$score = Http::get('https://api.github.com/users/curder/events')
+  ->collect()
   ->pluck('type')
-  ->map(fn ($eventType) => match ($eventType) { 
+  ->map(fn (string $eventType) => match ($eventType) { 
     'PushEvent' => 5,
     'CreateEvent' => 4,
     'IssueEvent' => 3,
@@ -99,63 +93,56 @@ $score = $events
 ## 使用 [pluck](../pluck.md)、[map](../map.md)、[get](../get.md) 和 [sum](../sum.md) 方法
 
 ```php
-$events = collect(
-    Http::get('https://api.github.com/users/curder/events')->json()
-);
-
-$score = $events
-  ->pluck('type')
-  ->map(function ($eventType) {
-    return collect([
-      'PushEvent' => 5,
-      'CreateEvent' => 4,
-      'IssueEvent' => 3,
-      'IssueCommentEvent' => 2,
-    ])->get($eventType, 1); // 如果不存在则默认等于1
-  })
-  ->sum();
+$score = Http::get('https://api.github.com/users/curder/events')
+        ->collect()
+        ->pluck('type')
+        ->map(fn (string $eventType) => collect([
+            'PushEvent' => 5,
+            'CreateEvent' => 4,
+            'IssueEvent' => 3,
+            'IssueCommentEvent' => 2,
+        ])->get($eventType, 1))
+        ->sum();
 ```
 
 ## 封装 GitHubScore 类
 
 ::: code-group
 ```php [获取总分]
-$events = collect(
-    Http::get('https://api.github.com/users/curder/events')->json()
-);
+$events = Http::get('https://api.github.com/users/curder/events')->collect();
 
-echo GithubScore::make($events)->score(); // 输出 134
+echo GithubScore::make($events)->score(); // 输出 132
 ```
 
 ```php [封装 GithubScore 类]
-class GithubScore
+use Illuminate\Support\Collection;
+
+readonly class GithubScore
 {
-  private function __construct(private array $events) { }
+    private function __construct(private Collection $events) { }
 
-  public static function make($events)
-  {
-    return new static($events);
-  }
+    public static function make($events): self
+    {
+        return new self($events);
+    }
 
-  public function score()
-  {
-    return $this->events
-      ->pluck('type')
-      ->map(
-        fn ($eventType) => $this->lookupEventScore($eventType, 1)
-      )
-      ->sum();
-  }
+    public function score(): int
+    {
+        return $this->events
+            ->pluck('type')
+            ->map($this->lookupEventScore(...))
+            ->sum();
+    }
 
-  protected function lookupEventScore($eventType, $default_value)
-  {
-    return collect([
-      'PushEvent' => 5,
-      'CreateEvent' => 4,
-      'IssueEvent' => 3,
-      'IssueCommentEvent' => 2,
-    ])->get($eventType, $default_value); // 如果不存在则默认等于1
-  }
+    protected function lookupEventScore(string $eventType): int
+    {
+        return collect([
+            'PushEvent' => 5,
+            'CreateEvent' => 4,
+            'IssueEvent' => 3,
+            'IssueCommentEvent' => 2,
+        ])->get($eventType, 1); // 如果类型不存在则默认等于1
+    }
 }
 ```
 :::
