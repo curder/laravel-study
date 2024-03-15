@@ -195,6 +195,7 @@ export default {
             items: [
                 {text: "Pail", link: "/packages/laravel/pail"},
                 {text: "Pint", link: "/packages/laravel/pint"},
+                {text: "Prompts", link: "/packages/laravel/prompts"},
             ]
         },
         {
