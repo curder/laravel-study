@@ -656,6 +656,18 @@ pause('Press ENTER to continue.');
 
 ## 输出类型
 
+Laravel Prompts 当前支持在终端输出常见的输出类型，例如：
+
+- 消息 `note(string $message, ?string $type = null)`
+  - 信息 `info(string $message)`
+  - 警告 `warning(string $message)`
+  - 错误 `error(string $message)`
+  - 提示 `alert(string $message)`
+- 表格 `table(array|Collection $headers = [], array|Collection|null $rows = null)`
+- 转动 `spin(Closure $callback, string $message = '')`
+- 进度条 `progress(string $label, iterable|int $steps, ?Closure $callback = null, string $hint = '')`
+
+
 ### 消息 Note
 
 使用 `note`、`info`、`warning`、`error` 和 `alert` 函数可用于显示信息性消息：
