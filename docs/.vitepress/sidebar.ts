@@ -211,6 +211,7 @@ export default {
             items: [
                 {text: "Sushi 🍣", link: "/packages/others/sushi"},
                 {text: "Livewire Missing Assertions", link: "/packages/others/missing-livewire-assertions"},
+                {text: 'Saloon', link: '/packages/others/saloon'},
             ],
         },
     ],
