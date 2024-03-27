@@ -11,7 +11,11 @@ export default defineConfig({
     head: [
         ['link', {rel: 'icon', href: '/laravel-study/images/favicon.ico'}],
     ],
+
     themeConfig: {
+        search: {
+            provider: 'local',
+        },
         logo: {
             src: '/images/logomark.min.svg',
             alt: "Laravel Logo",
