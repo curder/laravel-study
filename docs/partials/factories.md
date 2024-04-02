@@ -145,6 +145,38 @@ public function definition(): array
 }
 ```
 
+
+或者使用自定义方法 `withAvatar()` 配合工厂回调 `afterCreating()` 精确的创建头像。
+
+```php
+<?php
+
+// ...
+final class UserFactory extends Factory
+{
+    //...
+    public function withAvatar(): static
+    {
+        return $this->afterCreating(function (User $user) {
+            $avatar_path = storage_path('app/public/images/users/avatar');
+            File::isDirectory($avatar_path) || File::makeDirectory($avatar_path, recursive: true);
+
+            $avatar = fake()->image(dir: $avatar_path, width: 128, height: 128);
+            $user->update(['avatar' => $avatar]);
+        });
+    }
+}
+```
+
+在使用工厂类创建数据的时候需要调用 `withAvatar()` 方法。
+
+```php
+User::factory()
+    ->count(10)
+    ->withAvatar() // [!code focus]
+    ->create();
+```
+
 ## 序列 Sequence
 
 有时可能希望为每个创建的模型替换给定模型属性的值，可以通过将状态转换定义为序列来实现此目的。
