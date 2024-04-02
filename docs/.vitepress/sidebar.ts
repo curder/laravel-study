@@ -266,6 +266,7 @@ export default {
             text: '工具助手 Helpers',
             items: [
                 {text: "数组 Arrays", link: '/others/helpers/arrays'},
+                {text: "Fluent 类", link: "/others/helpers/fluent"},
                 {text: "字符串 Strings", link: '/others/helpers/strings'},
                 {text: "字符串 Stringable", link: '/others/helpers/stringable'},
                 {text: "数字 Numbers", link: '/others/helpers/numbers'},
