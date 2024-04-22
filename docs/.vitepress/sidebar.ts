@@ -212,6 +212,7 @@ export default {
                 {text: "Sushi 🍣", link: "/packages/others/sushi"},
                 {text: "Livewire Missing Assertions", link: "/packages/others/missing-livewire-assertions"},
                 {text: 'Saloon', link: '/packages/others/saloon'},
+                {text: "Eloquent 查询缓存", 'link':'/packages/others/eloquent-query-cache'},
             ],
         },
     ],
