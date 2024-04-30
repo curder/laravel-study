@@ -258,7 +258,8 @@ export default {
                 {text: "自定义逻辑 Macros", link: "/others/macros.md"},
                 {text: '使用 Alpine.js 滚动到验证错误', link: "/others/scroll-to-validation-error-in-laravel-using-alpinejs"},
                 {text: '生成视图的 Artisan 命令', link: "/others/artisan-command-to-generate-views-in-laravel"},
-                {text: '自定义 Eloquent 模型集合', link: "/others/custom-collection-for-laravel-eloquent-model"}
+                {text: '自定义 Eloquent 模型集合', link: "/others/custom-collection-for-laravel-eloquent-model"},
+                {text: '自定义 Eloquent 模型查询构建器', link: "/others/custom-query-builder-for-laravel-eloquent-model"},
             ],
         },
         {
