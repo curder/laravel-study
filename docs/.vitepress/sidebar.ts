@@ -256,11 +256,9 @@ export default {
                 {text: "自定义异常", link: "/others/using-custom-exceptions-to-write-better-and-clearer-code"},
                 {text: "使用 pest 测试 Laravel API", link: "/others/unit-test-laravel-api-pest-framework.md"},
                 {text: "自定义逻辑 Macros", link: "/others/macros.md"},
-                {
-                    text: '使用 Alpine.js 滚动到验证错误',
-                    link: "/others/scroll-to-validation-error-in-laravel-using-alpinejs"
-                },
+                {text: '使用 Alpine.js 滚动到验证错误', link: "/others/scroll-to-validation-error-in-laravel-using-alpinejs"},
                 {text: '生成视图的 Artisan 命令', link: "/others/artisan-command-to-generate-views-in-laravel"},
+                {text: '自定义 Eloquent 模型集合', link: "/others/custom-collection-for-laravel-eloquent-model"}
             ],
         },
         {
