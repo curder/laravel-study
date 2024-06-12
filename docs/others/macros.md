@@ -53,6 +53,7 @@ Laravel 从 4.2 版本开始就有了宏的概念，本文将展示如何创建�
 - [`Illuminate\View\Factory`](https://github.com/laravel/framework/blob/master/src/Illuminate/View/Factory.php)
 - [`Illuminate\View\View`](https://github.com/laravel/framework/blob/master/src/Illuminate/View/View.php)
 - [`Illuminate\Validation\Rules\File`](https://github.com/laravel/framework/blob/master/src/Illuminate/Validation/Rules/File.php)
+- [`Illuminate\Support\Carbon`](https://github.com/laravel/framework/blob/master/src/Illuminate/Support/Carbon.php)
 
 ## 自定义宏
 
@@ -398,5 +399,57 @@ public function store($request)
   
   // ...
 }
+```
+:::
+
+### `Carbon`
+
+创建了一个名为 `toUserTimezone` 的宏，它将 Carbon 实例格式化为用户的时区或软件默认的时区。`$this` 关键字指的是调用该宏的 Carbon 实例。
+
+::: code-group
+
+```php [定义]
+// AppServiceProvider.php
+use Illuminate\Support\Carbon;
+
+Carbon::macro('toUserTimezone', fn (): Carbon => $this->tz(auth()->user()?->timezone ?? config('app.timezone')));
+```
+
+```php [使用]
+<?php
+$date = Carbon::now()->toUserTimezone();
+```
+
+```php [测试]
+it('converts carbon date to default timezone', function () {
+    // Set default timezone in config
+    config()->set('app.timezone', 'PRC');
+
+    // Create a Carbon instance
+    $date = Carbon::now('UTC');
+
+    // Apply macro
+    $defaultDate = $date->toUserTimezone();
+
+    // Check if timezone is converted correctly
+    expect($defaultDate->timezoneName)
+        ->toEqual('PRC');
+});
+
+it('converts carbon date to user timezone', function () {
+    // Create user and login
+    Auth::login($user = User::factory()->make(['timezone' => 'America/Los_Angeles']));
+
+    // Create a Carbon instance
+    $date = Carbon::now('UTC');
+
+    // Apply macro
+    $userDate = $date->toUserTimezone();
+
+    // Check if timezone is converted correctly
+    expect($userDate->timezoneName)
+        ->toBe($user->timezone)
+        ->toEqual('America/Los_Angeles');
+});
 ```
 :::
