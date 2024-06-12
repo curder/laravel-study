@@ -293,7 +293,7 @@ Post::query()
 ```php
 use Illuminate\Support\Facades\Http;
 
-Http::micro('api-local', function() {
+Http::macro('api-local', function() {
     return Http::withHeaders([
         'X-Header' => 'Value',
     ])->baseUrl('https://example.com');
@@ -305,7 +305,7 @@ Http::micro('api-local', function() {
 ```php
 use Illuminate\Support\Str;
 
-Str::micro('slugify', function($value) {
+Str::macro('slugify', function($value) {
     return Str::slug($value);
 });
 ```
@@ -315,7 +315,7 @@ Str::micro('slugify', function($value) {
 ```php
 use Illuminate\Support\Facades\Response;
 
-Response::micro('api', function($data) {
+Response::macro('api', function($data) {
     return response()->json($data); 
 })
 ```
@@ -338,7 +338,7 @@ Validator::extend('adult', function($attribute, $value) {
 ```php
 use Illuminate\Support\Facades\Cache;
 
-Cache::micro('rememberForeverJson', function($key, $callback) {
+Cache::macro('rememberForeverJson', function($key, $callback) {
     return Cache::rememberForever($key, function() use ($callback) {
         return json_decode($callback());
     }); 
@@ -350,7 +350,7 @@ Cache::micro('rememberForeverJson', function($key, $callback) {
 ```php
 use Illuminate\Support\Facades\Blade;
 
-Blade::micro('datetime', function($expression) {
+Blade::macro('datetime', function($expression) {
     return "<?php echo with[$expression]->format('Y-m-d H:i:s'); ?>";
 });
 ```
@@ -361,7 +361,7 @@ Blade::micro('datetime', function($expression) {
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Event;
 
-Event::micro('logAndDispatch', function($event) {
+Event::macro('logAndDispatch', function($event) {
     Log::info("Event: {$event} dispatched");
     event($event);
 });
@@ -370,7 +370,7 @@ Event::micro('logAndDispatch', function($event) {
 ### `Form`
 
 ```php
-Form::micro('customInput', function($name, $value) {
+Form::macro('customInput', function($name, $value) {
     return "<input type='text' name='{$name}' value='{$value}' />";
 });
 ```
