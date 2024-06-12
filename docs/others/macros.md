@@ -400,6 +400,22 @@ public function store($request)
   // ...
 }
 ```
+
+
+```php [测试]
+/**
+ * @throws ReflectionException
+ */
+it('has custom types when using document macro', function () {
+
+    $file = (new \Illuminate\Validation\Rules\File())->document();
+
+    $types = ['pdf', 'rtf', 'doc', 'docx'];
+    $allowedMimetypes = (new ReflectionClass($file))->getProperty('allowedMimetypes')->getValue($file);
+
+    expect($allowedMimetypes)->toEqual($types);
+});
+```
 :::
 
 ### `Carbon`
