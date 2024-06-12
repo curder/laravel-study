@@ -369,11 +369,30 @@ Event::macro('logAndDispatch', function($event) {
 
 ### `Form`
 
-```php
-Form::macro('customInput', function($name, $value) {
-    return "<input type='text' name='{$name}' value='{$value}' />";
-});
+Filament 中的 Form 类允许自定义宏。
+
+::: code-group
+```php [定义]
+use Filament\Forms\Form;
+
+Form::macro('customInput', fn (string $name, mixed $value): string => "<input type='text' name='{$name}' value='{$value}' />");
 ```
+
+```php [测试]
+it('has customInput method for form', function (string $name, mixed $value) {
+    
+    $output = \Filament\Forms\Form::customInput($name, $value);
+
+    $expect = "<input type='text' name='{$name}' value='{$value}' />";
+
+    expect($output)->toEqual($expect);
+})->with([
+    ['name', null],
+    ['name', ''],
+    ['name', 'value']
+]);
+```
+:::
 
 ### `File`
 
@@ -384,7 +403,7 @@ Form::macro('customInput', function($name, $value) {
 // AppServiceProvider.php
 use Illuminate\Validation\Rules\File;
 
-File::macro('document', fn() => File::types(['pdf', 'rtf', 'doc', 'docx']));
+File::macro('document', fn (): File => File::types(['pdf', 'rtf', 'doc', 'docx']));
 ```
 
 ```php [使用]
