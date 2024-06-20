@@ -466,18 +466,18 @@
     "@vue/shared" "3.4.29"
 
 "@vue/devtools-api@^7.2.1":
-  version "7.3.0"
-  resolved "https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-7.3.0.tgz#55623f9d0b956e718d5234ec39f254a820f5d832"
-  integrity sha512-EQ6DIm9AuL9q6IzjjnxeHWgzHzZTI+0ZGyLyG6faLN1e0tzLWPut58OtvFbLP/hbEhE5zPlsdUsH1uFr7RVFYw==
+  version "7.3.2"
+  resolved "https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-7.3.2.tgz#65ff03b235a61cafc39b17322ee79551f8d2c88d"
+  integrity sha512-qFCm12te9rG0XWLCHm3x8TiZLULEP5s7Ruaadi5jAogwZ5qF7QH7tKc6yXZGV96uM+y1FUlbK+QwVbWgMfXEhQ==
   dependencies:
-    "@vue/devtools-kit" "^7.3.0"
+    "@vue/devtools-kit" "^7.3.2"
 
-"@vue/devtools-kit@^7.3.0":
-  version "7.3.0"
-  resolved "https://registry.npmmirror.com/@vue/devtools-kit/-/devtools-kit-7.3.0.tgz#5049759d224e236d939f260dafb3b306d39dc7c2"
-  integrity sha512-J9C+ue3Ka8cumQY/hMsNTcbb1tczqVBBXFMw4isa5YvPjyIBgEtJBfDSUVIK3nE+YWk7UNliUuCcE1GHEKaGcw==
+"@vue/devtools-kit@^7.3.2":
+  version "7.3.2"
+  resolved "https://registry.npmmirror.com/@vue/devtools-kit/-/devtools-kit-7.3.2.tgz#c75feb0e38122ba64834beebd7e370b6fa5c9277"
+  integrity sha512-ba60JnbeLPzhfF5j0BPDGn9q5Ma9dWUV5gtVNjD+zm5uRf7LW8saAGNRnxxkRA56HZFzSAnXRGADc7YMAdrm0w==
   dependencies:
-    "@vue/devtools-shared" "^7.3.0"
+    "@vue/devtools-shared" "^7.3.2"
     birpc "^0.2.17"
     hookable "^5.5.3"
     mitt "^3.0.1"
@@ -485,12 +485,12 @@
     speakingurl "^14.0.1"
     superjson "^2.2.1"
 
-"@vue/devtools-shared@^7.3.0":
-  version "7.3.0"
-  resolved "https://registry.npmmirror.com/@vue/devtools-shared/-/devtools-shared-7.3.0.tgz#0cc1ad7ef6cbb2921bdd9fb1623bfd9b4b3cce03"
-  integrity sha512-bYw4BtZclxzVrYBeYYHzNOcLlvVZbe9tutwtrixTtdgynHvuSJa5KI2MqWiumpGYm2feFI5sHlC8Vt61v4z18g==
+"@vue/devtools-shared@^7.3.2":
+  version "7.3.2"
+  resolved "https://registry.npmmirror.com/@vue/devtools-shared/-/devtools-shared-7.3.2.tgz#db0281ed6c9cbe2588483e9bf3283a90f60d4e01"
+  integrity sha512-RpYfqStbzljD6zf9LPXF2T7kM3fMfepxJB5yjzyloFel5nEB49DUm4TeA426IH+hKvwjjRorZyh6CT1cG/H2Vw==
   dependencies:
-    rfdc "^1.3.1"
+    rfdc "^1.4.1"
 
 "@vue/reactivity@3.4.29":
   version "3.4.29"
@@ -711,7 +711,7 @@ preact@^10.0.0:
   resolved "https://registry.npmmirror.com/preact/-/preact-10.22.0.tgz#a50f38006ae438d255e2631cbdaf7488e6dd4e16"
   integrity sha512-RRurnSjJPj4rp5K6XoP45Ui33ncb7e4H7WiOHVpjbkvqvA3U+N8Z6Qbo0AE6leGYBV66n8EhEaFixvIu3SkxFw==
 
-rfdc@^1.3.1:
+rfdc@^1.4.1:
   version "1.4.1"
   resolved "https://registry.npmmirror.com/rfdc/-/rfdc-1.4.1.tgz#778f76c4fb731d93414e8f925fbecf64cce7f6ca"
   integrity sha512-q1b3N5QkRUWUl7iyylaaj3kOpIT0N2i9MqIEQXP73GVsN9cw3fdx8X63cEmWhJGi2PPCF23Ijp7ktmd39rawIA==
