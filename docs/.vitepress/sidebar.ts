@@ -1,7 +1,7 @@
 export default {
-    '/collections/': [
+    "/collections/": [
         {
-            text: '一些示例',
+            text: "一些示例",
             items: [
                 {text: "计算 GitHub 事件得分总和", link: "/collections/examples/format-github-events-score"},
                 {
@@ -17,11 +17,13 @@ export default {
             ],
         },
         {
-            text: '集合方法',
+            text: "集合方法",
             items: [
+                {text: "after", link: "collections/after"},
                 {text: "all", link: "/collections/all"},
                 {text: "average", link: "/collections/avg"},
                 {text: "avg", link: "/collections/avg"},
+                {text: "before", link: "/collections/before"},
                 {text: "chunk", link: "/collections/chunk"},
                 {text: "chunkWhile", link: "/collections/chunkWhile"},
                 {text: "collapse", link: "/collections/collapse"},
@@ -29,7 +31,7 @@ export default {
                 {text: "combine", link: "/collections/combine"},
                 {text: "concat", link: "/collections/concat"},
                 {text: "contains", link: "/collections/contains"},
-                {text: 'containsOneItem', link: '/collections/containsOneItem'},
+                {text: "containsOneItem", link: "/collections/containsOneItem"},
                 {text: "containsStrict", link: "/collections/containsStrict"},
                 {text: "count", link: "/collections/count"},
                 {text: "countBy", link: "/collections/countBy"},
@@ -74,7 +76,7 @@ export default {
                 {text: "last", link: "/collections/last"},
                 {text: "lazy", link: "/collections/lazy"},
                 {text: "macro", link: "/collections/macro"},
-                {text: 'make', link: '/collections/make'},
+                {text: "make", link: "/collections/make"},
                 {text: "map", link: "/collections/map"},
                 {text: "mapInto", link: "/collections/mapInto"},
                 {text: "mapSpread", link: "/collections/mapSpread"},
@@ -163,9 +165,9 @@ export default {
             ],
         },
     ],
-    '/model/': [
+    "/model/": [
         {
-            text: '关联关系',
+            text: "关联关系",
             items: [
                 {text: "一对一", link: "/model/relationships/01-has-one"},
                 {text: "一对多", link: "/model/relationships/02-has-many"},
@@ -180,7 +182,7 @@ export default {
             ],
         },
         {
-            text: '基础',
+            text: "基础",
             items: [
                 {text: "模型缓存", link: "/model/laravel-model-caching"},
                 {text: "模型事件", link: "/model/laravel-model-events"},
@@ -189,9 +191,9 @@ export default {
             ],
         },
     ],
-    '/packages/': [
+    "/packages/": [
         {
-            text: 'Laravel',
+            text: "Laravel",
             items: [
                 {text: "Pail", link: "/packages/laravel/pail"},
                 {text: "Pint", link: "/packages/laravel/pint"},
@@ -199,7 +201,7 @@ export default {
             ]
         },
         {
-            text: 'Spatie',
+            text: "Spatie",
             items: [
                 {text: "Login Link", link: "/packages/spatie/laravel-login-link"},
                 {text: "Backup", link: "/packages/spatie/laravel-backup"},
@@ -207,20 +209,20 @@ export default {
             ]
         },
         {
-            text: 'Others',
+            text: "Others",
             items: [
                 {text: "Sushi 🍣", link: "/packages/others/sushi"},
                 {text: "Livewire Missing Assertions", link: "/packages/others/missing-livewire-assertions"},
-                {text: 'Saloon', link: '/packages/others/saloon'},
-                {text: "Eloquent 查询缓存", 'link':'/packages/others/eloquent-query-cache'},
+                {text: "Saloon", link: "/packages/others/saloon"},
+                {text: "Eloquent 查询缓存", "link":"/packages/others/eloquent-query-cache"},
             ],
         },
     ],
-    '/partials/': [
+    "/partials/": [
         {
             text: "",
             items: [
-                {text: 'Migrations 迁移', link: "/partials/migrations"},
+                {text: "Migrations 迁移", link: "/partials/migrations"},
                 {text: "Model 模型", link: "/partials/model"},
                 {text: "Model Relations 模型关系", link: "/partials/model-relations"},
                 {text: "Views 视图", link: "/partials/views"},
@@ -232,22 +234,22 @@ export default {
             ],
         }
     ],
-    '/tips/': [
+    "/tips/": [
         {
-            text: '',
+            text: "",
             items: [
                 {text: "DB 模型和 Eloquent", link: "/tips/db-models-and-eloquent"},
-                {text: "优化 Factory 数据库批量插入", link: '/tips/optimize-factory-database-batch-insert'},
-                {text: "重用环境变量值", link: '/tips/reuse-the-environment-variable-value'},
+                {text: "优化 Factory 数据库批量插入", link: "/tips/optimize-factory-database-batch-insert"},
+                {text: "重用环境变量值", link: "/tips/reuse-the-environment-variable-value"},
                 {
                     text: "使用 Laravel simple-excel 处理大型 CSV 文件",
-                    link: '/tips/process-large-csv-files-with-laravel-using-simple-excel'
+                    link: "/tips/process-large-csv-files-with-laravel-using-simple-excel"
                 },
-                {text: "Laravel 模块化开发", link: 'tips/modular-laravel'}
+                {text: "Laravel 模块化开发", link: "tips/modular-laravel"}
             ]
         }
     ],
-    '/others/': [
+    "/others/": [
         {
             items: [
                 {text: "Laravel 11 新特性", link: "/others/whats-new-in-laravel-11"},
@@ -256,24 +258,24 @@ export default {
                 {text: "自定义异常", link: "/others/using-custom-exceptions-to-write-better-and-clearer-code"},
                 {text: "使用 pest 测试 Laravel API", link: "/others/unit-test-laravel-api-pest-framework.md"},
                 {text: "自定义逻辑 Macros", link: "/others/macros.md"},
-                {text: '使用 Alpine.js 滚动到验证错误', link: "/others/scroll-to-validation-error-in-laravel-using-alpinejs"},
-                {text: '生成视图的 Artisan 命令', link: "/others/artisan-command-to-generate-views-in-laravel"},
-                {text: '自定义 Eloquent 模型集合', link: "/others/custom-collection-for-laravel-eloquent-model"},
-                {text: '自定义 Eloquent 模型查询构建器', link: "/others/custom-query-builder-for-laravel-eloquent-model"},
+                {text: "使用 Alpine.js 滚动到验证错误", link: "/others/scroll-to-validation-error-in-laravel-using-alpinejs"},
+                {text: "生成视图的 Artisan 命令", link: "/others/artisan-command-to-generate-views-in-laravel"},
+                {text: "自定义 Eloquent 模型集合", link: "/others/custom-collection-for-laravel-eloquent-model"},
+                {text: "自定义 Eloquent 模型查询构建器", link: "/others/custom-query-builder-for-laravel-eloquent-model"},
             ],
         },
         {
-            text: '工具助手 Helpers',
+            text: "工具助手 Helpers",
             items: [
-                {text: "数组 Arrays", link: '/others/helpers/arrays'},
+                {text: "数组 Arrays", link: "/others/helpers/arrays"},
                 {text: "Fluent 类", link: "/others/helpers/fluent"},
-                {text: "字符串 Strings", link: '/others/helpers/strings'},
-                {text: "字符串 Stringable", link: '/others/helpers/stringable'},
-                {text: "数字 Numbers", link: '/others/helpers/numbers'},
-                {text: "暂停执行 Sleep", link: '/others/helpers/sleep'},
-                {text: "路径 Paths", link: '/others/helpers/paths'},
-                {text: "网址 URLs", link: '/others/helpers/urls'},
-                {text: "日期时间 Carbon",link: '/others/helpers/carbon'},
+                {text: "字符串 Strings", link: "/others/helpers/strings"},
+                {text: "字符串 Stringable", link: "/others/helpers/stringable"},
+                {text: "数字 Numbers", link: "/others/helpers/numbers"},
+                {text: "暂停执行 Sleep", link: "/others/helpers/sleep"},
+                {text: "路径 Paths", link: "/others/helpers/paths"},
+                {text: "网址 URLs", link: "/others/helpers/urls"},
+                {text: "日期时间 Carbon",link: "/others/helpers/carbon"},
             ]
         }
     ],
