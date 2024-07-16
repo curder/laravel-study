@@ -110,6 +110,47 @@ class PagesController extends Controller
 ```
 :::
 
+## `@style` 和 `@class` 指令
+
+`@class` 指令有条件地编译 CSS 类字符串，指令接受一个类数组，其中数组键包含您要添加的一个或多个类，而值是布尔表达式。
+
+如果数组元素具有数字键，它将始终包含在呈现的类列表中：
+
+```php
+@php
+    $isActive = false;
+    $hasError = true;
+@endphp
+
+<span @class([
+    'p-4',
+    'font-bold' => $isActive,
+    'text-gray-500' => ! $isActive,
+    'bg-red' => $hasError,
+])></span>
+ 
+<span class="p-4 text-gray-500 bg-red"></span>
+```
+
+`@style` 指令可用于有条件地向 HTML 元素添加内联 CSS 样式：
+
+
+```php
+@php
+    $isActive = true;
+@endphp
+
+<span @style([
+    'background-color: red',
+    'font-weight: bold' => $isActive,
+])></span>
+```
+
+<span style="background-color: red; font-weight: bold;"></span>
+
+
+
+
 ## 父级 $loop 变量
 
 在 `Blade` 的 `@foreach` 指令中，甚至可以在两级循环中使用 `$loop` 变量来访问父变量。
