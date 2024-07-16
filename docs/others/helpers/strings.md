@@ -986,3 +986,27 @@ Str::wrap('Laravel', '"');
 Str::wrap('is', before: 'This ', after: ' Laravel!');
 // This is Laravel!
 ```
+
+## `Str::chopStart()`
+
+[Laravel v11.13.0](https://github.com/laravel/framework/pull/51910) 时，`Str::chopStart()` 方法从字符串的开头删除指定的字符串。
+
+```php
+$version = 'v1.2.32-beta';
+
+Str::of($version)
+  	->chopStart('v'); // "1.2.32-beta"
+```
+
+
+## `Str::chopEnd()`
+
+[Laravel v11.13.0](https://github.com/laravel/framework/pull/51910) 时，`Str::chopEnd()` 方法从字符串的末尾删除指定的字符串。
+
+```php
+$version = 'v1.2.32-beta';
+
+Str::of($version)
+  	->chopStart('v') // "1.2.32-beta"
+	->chopEnd('-beta'); // "1.2.32"
+```
