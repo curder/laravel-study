@@ -276,6 +276,7 @@ export default {
                 {text: "路径 Paths", link: "/others/helpers/paths"},
                 {text: "网址 URLs", link: "/others/helpers/urls"},
                 {text: "日期时间 Carbon",link: "/others/helpers/carbon"},
+                {text: "其他 Others", link: "/others/helpers/others"},
             ]
         }
     ],
