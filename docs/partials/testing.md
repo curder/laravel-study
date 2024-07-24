@@ -280,7 +280,7 @@ it('has correct rules for site.store route', function () {
     ]);
 });
 
-it('will return true for anthorizes method forever', function () {
+it('will return true for authorizes method forever', function () {
     $request = new SiteStoreRequest();
 
     expect($request->authorize())->toBeTrue();
