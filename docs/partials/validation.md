@@ -1,5 +1,18 @@
 # Validation 验证
 
+## `passedValidation` 规范化验证数据
+
+在使用已验证的数据之前，Laravel 表单请求带有一个 `passedValidation` 钩子，并通过 `replace()` 方法来调整已验证的数据格式。
+
+```php
+protected function passedValidation(): void
+{
+    $this->replace([
+        'name' => ucwords(strtolower($this->name)),
+    ]);
+}
+```
+
 ## `dimensions` 图片验证
 
 在验证上传的图像时，可以指定上传图片所需的尺寸。
