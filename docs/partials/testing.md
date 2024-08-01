@@ -120,7 +120,7 @@ it('returns the correct amount of records', function() {
 
 ### 响应 Json
 
-通常希望从 API 返回 JSON 数据。可以在此处使用 Laravel 的 JSON 帮助器，例如[`assertJson`](https://laravel.com/docs/master/http-tests#assert-json) 、[`assertJsonCount`](https://laravel.com/docs/master/http-tests#assert-json-count)和 [`assertJsonStructure`](https://laravel.com/docs/master/http-tests#assert-json-structure) 等方法。
+通常希望从 API 返回 JSON 数据。可以在此处使用 Laravel 的 JSON 帮助器，例如[`assertJson`](https://laravel.com/docs/master/http-tests#assert-json) 、[`assertJsonCount`](https://laravel.com/docs/master/http-tests#assert-json-count)、[`assertExactJsonStructure`](https://github.com/laravel/framework/blob/516bf8d73d678eefce7a7ca3efea6904b83e0036/src/Illuminate/Testing/TestResponse.php#L857) 和 [`assertJsonStructure`](https://laravel.com/docs/master/http-tests#assert-json-structure) 等方法。
 
 ```php
 use function Pest\Laravel\postJson;
@@ -135,6 +135,9 @@ it('returns all products as JSON', function () {
         ->assertOk()
         ->assertJsonCount(2)
         ->assertJsonStructure([
+            'title', 'description',
+        ])
+        ->assertExactJsonStructure([
             'title', 'description',
         ])
         ->assertJson([
@@ -152,6 +155,39 @@ it('returns all products as JSON', function () {
 
 - `assertJsonCount()` 第二个参数支持传入指定键，比如 `->assertJsonCount(10, 'data')`
 - `assertJsonStructure()` 支持使用 `*` 对数组进行匹配，比如：`assertJsonStructure(['data' => ['*' => ['title', 'description']]])`
+- `assertExactJsonStructure()`
+
+    ::: details `assertExactJsonStructure()` 示例
+    ```text
+    /*
+    Given the following response:
+    {
+        "data": {
+            "id": 1,
+            "firstname": "Taylor",
+            "lastname": "Otwell"
+        }
+    }
+    */
+     
+    // This fails
+    $response->assertExactJsonStructure([
+        'data' => [
+            'firstname',
+            'lastname',
+        ],
+    ]);
+     
+    // This succeeds
+    $response->assertExactJsonStructure([
+        'data' => [
+            'id',
+            'firstname',
+            'lastname',
+        ],
+    ]);
+    ```
+    :::
 
 可以在[官网](https://laravel.com/docs/master/http-tests#response-assertions)了解更多有关测试页面响应的信息。
 
