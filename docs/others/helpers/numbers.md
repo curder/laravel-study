@@ -138,6 +138,18 @@ Number::spell(808, locale: 'zh_CN'); // 八百〇八
 Number::spell(808, locale: 'zh_TW');// 八百零八
 ```
 
+## `trim()` 去除小数点后多余的0
+
+```php
+Number::trim(12); // 12
+Number::trim(120); // 120
+Number::trim(12.0); // 12
+Number::trim(12.3); // 12.3
+Number::trim(12.30); // 12.3
+Number::trim(12.3456789); // 12.3456789
+Number::trim(12.34567890000); // 12.3456789
+```
+
 
 ## 其它方法
 
