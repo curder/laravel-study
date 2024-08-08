@@ -1010,3 +1010,16 @@ Str::of($version)
   	->chopStart('v') // "1.2.32-beta"
 	->chopEnd('-beta'); // "1.2.32"
 ```
+
+## `Str::deduplicate()`
+
+[Laravel v11.20.0](https://github.com/laravel/framework/pull/52350) 时，`Str::deduplicate()` 方法从字符串中删除重复的字符。
+
+```php
+<?php
+use Illuminate\Support\Str;
+
+Str::dedupulicate('random  double  spaces'); // 'random double spaces'
+Str::dedupulicate('/some//odd/path//', '/'); // '/some/odd/path/'
+Str::dedupulicate('zondaaaa', 'a');          // 'zonda'
+```
