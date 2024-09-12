@@ -18,4 +18,5 @@
 * [模型缓存](laravel-model-caching.md)
 * [模型事件](laravel-model-events.md)
 * [模型观察者](laravel-model-observers.md)
-* [查询优化](some-tips-for-optimize-database-queries.md)
+* [数据库优化建议](some-tips-for-optimize-database-queries.md)
+* [模型关系的泛型表示](laravel11-generics-notations-for-eloquent-relationships.md)

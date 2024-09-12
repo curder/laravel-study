@@ -188,6 +188,7 @@ export default {
                 {text: "模型事件", link: "/model/laravel-model-events"},
                 {text: "模型观察者", link: "/model/laravel-model-observers"},
                 {text: "数据库优化建议", link: "/model/some-tips-for-optimize-database-queries"},
+                {text: "模型关系的泛型表示", link: "/model/laravel11-generics-notations-for-eloquent-relationships"}
             ],
         },
     ],
