@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as t}from"./chunks/framework.BL1pH_9P.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"packages/index.md","filePath":"packages/index.md","lastUpdated":1700192396000}'),s={name:"packages/index.md"};function n(c,r,o,d,p,i){return t(),a("div")}const f=e(s,[["render",n]]);export{m as __pageData,f as default};
