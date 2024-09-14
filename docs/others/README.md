@@ -12,3 +12,4 @@
 - [生成视图的 Artisan 命令](artisan-command-to-generate-views-in-laravel.md)
 - [自定义 Eloquent 模型集合](custom-collection-for-laravel-eloquent-model.md)
 - [自定义 Eloquent 模型查询构建器](custom-query-builder-for-laravel-eloquent-model.md)
+- [Laravel 中获取下一条和上一条记录](how-to-get-the-next-and-previous-records-in-laravel.md)

@@ -264,6 +264,7 @@ export default {
                 {text: "生成视图的 Artisan 命令", link: "/others/artisan-command-to-generate-views-in-laravel"},
                 {text: "自定义 Eloquent 模型集合", link: "/others/custom-collection-for-laravel-eloquent-model"},
                 {text: "自定义 Eloquent 模型查询构建器", link: "/others/custom-query-builder-for-laravel-eloquent-model"},
+                {text: "获取下一条和上一条记录", link: '/others/how-to-get-the-next-and-previous-records-in-laravel'},
             ],
         },
         {
