@@ -254,6 +254,7 @@ export default {
         {
             items: [
                 {text: "Laravel 11 新特性", link: "/others/whats-new-in-laravel-11"},
+                {text: "Laravel 11 中为中间件设置别名", link: "/others/set-alias-for-middleware-in-laravel-11"},
                 {text: "创建自定义 Facade", link: "/others/laravel-create-custom-facade-test-demo"},
                 {text: "添加全局函数", link: "/others/laravel-import-custom-function-file"},
                 {text: "自定义异常", link: "/others/using-custom-exceptions-to-write-better-and-clearer-code"},
