@@ -5,7 +5,6 @@ Laravel 从 4.2 版本开始就有了宏的概念，本文将展示如何创建�
 在 Laravel 代码库，会发现无数对名为 `\Illuminate\Support\Traits\Macroable` 宏的引用，这个特性允许实时扩展类的公共接口。
 
 
-
 ## 什么是宏
 
 简单来说，Laravel Macro 是一种用 Laravel 类中不存在的代码向 Laravel 内部组件添加一些缺失功能的方法。
@@ -315,8 +314,12 @@ Str::macro('slugify', function($value) {
 ```php
 use Illuminate\Support\Facades\Response;
 
-Response::macro('api', function($data) {
-    return response()->json($data); 
+Response::macro('api', function(string|array $data, null|string $message = null, string $status = 'success') {
+    return response()->json([
+        'status' => $status,
+        'message' => $message ?? 'Data retrieved successfully',
+        'data' => $data
+    ]); 
 })
 ```
 
