@@ -87,12 +87,17 @@ Number::currency(1000, in: 'CNY', locale: 'zh_CN'); // ¥1,000.00
 ```php
 use Illuminate\Support\Number;
 
-# 根据当前大小转换成适合的文件大小表示
-Number::fileSize(1024 * 56); // 56 KB
-Number::fileSize(1024 * 1024 * 56); // 56 MB
+Number::fileSize(bytes: 1024); // 1 KB
+Number::fileSize(bytes: 1024 * 2); // 2 KB
+Number::fileSize(bytes: 2_000_000); // 2 MB
+Number::fileSize(bytes: 3_000_000); // 3 MB
+Number::fileSize(bytes: 4_000_000_000); // 4 GB
 
-# 保留小数点后两位
-Number::fileSize(1024 * 5566, precision: 2); // 5.44 MB
+Number::fileSize(bytes: 1024, precision: 2); // 1.00 KB
+Number::fileSize(bytes: 1024 * 2, precision: 2); // 2.00 KB
+Number::fileSize(bytes: 2_000_000, precision: 2); // 1.91 MB
+Number::fileSize(bytes: 3_000_000, precision: 2); // 2.86 MB
+Number::fileSize(bytes: 4_000_000_000, precision: 2; // 3.73 GB
 ```
 
 ## `forHumans()` 人类可读
@@ -149,8 +154,6 @@ Number::trim(12.30); // 12.3
 Number::trim(12.3456789); // 12.3456789
 Number::trim(12.34567890000); // 12.3456789
 ```
-
-
 ## 其它方法
 
 ### `useLocale()`
