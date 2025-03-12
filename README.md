@@ -1,13 +1,13 @@
 # Laravel 学习记录
 
-[![Build Status](https://github.com/curder/laravel-study/actions/workflows/build-docs.yml/badge.svg)](https://github.com/curder/laravel-study/actions?query=build-docs%3Amaster)
+[![Build Status](https://github.com/curder/laravel-study/actions/workflows/deploy.yml/badge.svg)](https://github.com/curder/laravel-study/actions?query=deploy%3Amaster)
 
 1. 通过访问地址：[github.io](https://curder.github.io/laravel-study/) 直接阅读。
 
 2. 本地下载
 
-   - `node v18.18.22`
-   - `vitepress 1.0.0-rc.31`
+   - `node v20.8.2`
+   - `vitepress 1.6.3`
 
 GitHub 仓库地址：[curder/laravel-study](https://www.github.com/curder/laravel-study)
 
