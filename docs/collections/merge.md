@@ -4,7 +4,6 @@
 
 如果给定项目中的字符串键与原集合中的字符串键匹配，给定的项目的值将会覆盖原集合中的值。
 
-
 ```php
 collect(['product_id' => 1, 'price' => 100])
     ->merge(['price' => 200, 'discount' => false]);

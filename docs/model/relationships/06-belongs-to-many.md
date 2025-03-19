@@ -6,7 +6,7 @@
 
 下面是对应的表结构：
 
-```
+```text
 users
   id - integer
   name - string
@@ -47,7 +47,7 @@ role_user
 
 数据操作之前请先配置好，数据库的一些连接信息。例如下面使用 `sqlite` 数据库，修改项目根目录下的 `.env` 文件内容。
 
-```
+```dotenv
 DB_CONNECTION=sqlite
 ```
 
@@ -140,7 +140,7 @@ class CreateRoleUserTable extends Migration
 
 ### 编辑填充文件
 
-#### 修改 `databases/factories/RoleFactory.php`，新增关联数据。
+#### 修改 `databases/factories/RoleFactory.php`，新增关联数据
 
 ```php
 <?php
@@ -167,7 +167,7 @@ class RoleFactory extends Factory
 }
 ```
 
-#### 修改 `databases/factories/RoleUserFactory.php`，新增关联数据。
+#### 修改 `databases/factories/RoleUserFactory.php`，新增关联数据
 
 ```php
 <?php
@@ -222,7 +222,7 @@ class Role extends Model
     protected $fillable = ['name', 'display_name', 'description'];
 }
 ```
-           
+
 中间表继承自 `Illuminate\Database\Eloquent\Relations\Pivot`
 
 ```php {8}
@@ -295,7 +295,7 @@ public function users() : BelongsToMany
 
 #### `attach()`
 
-- 将用户关联到角色
+* 将用户关联到角色
 
 ```php
 // 创建一条角色和用户数据行
@@ -305,7 +305,7 @@ $user = \App\Models\User::factory()->create();
 $user->roles()->attach($role); // 将用户赋予角色，如果角色没有关联给用户，如果已经存在则会抛出 Illuminate\Database\QueryException 错误
 ```
 
-- 将用户批量放入到角色
+* 将用户批量放入到角色
 
 ```php
 use App\Models\User;
@@ -322,7 +322,7 @@ $roles = Role::find([1, 3, 4]);
 $user->roles()->attach($roles); // 将ID为1、3、4的角色给到指定用户，如果角色没有关联给用户，如果已经存在则会抛出 Illuminate\Database\QueryException 错误
 ```
 
-- 赋值中间表额外数据
+* 赋值中间表额外数据
 
 ```php
 use App\Models\User;
@@ -379,7 +379,7 @@ User::first()->roles()->save($role, ['description' => 'user ID:1 value']);
 
 ### 查询数据
 
-- 查询用户所拥有的角色
+* 查询用户所拥有的角色
 
 ```php
 use App\Models\User;
@@ -394,7 +394,7 @@ RoleUser::factory()->count(3)->for($user)->create(); // 创建三个角色并赋
 User::first()->roles;
 ```
 
-- 查询角色下属的所有用户
+* 查询角色下属的所有用户
 
 ```php
 use App\Models\User;
@@ -411,7 +411,7 @@ RoleUser::factory()->count(3)->for($role)->create(); // 创建三个用户并赋
 
 ### 关联删除
 
-- 将用户从角色中移除
+* 将用户从角色中移除
 
 ```php
 use App\Models\User;
@@ -428,7 +428,7 @@ $user = User::first();
 $user->roles()->detach($role); // 如果角色跟用户没有关联关系返回 0，否则返回删除的行总数
 ```
 
-- 将用户从所有角色中移除
+* 将用户从所有角色中移除
 
 ```php
 use App\Models\User;
@@ -444,7 +444,7 @@ $user = User::first();
 $user->roles()->detach();
 ```
 
-- 删除角色下的所有用户关联数据
+* 删除角色下的所有用户关联数据
 
 ```php
 use App\Models\User;
@@ -504,8 +504,9 @@ $user->roles()->sync([
 ]); // 同步其他字段的数据关联到中间表
 ```
 
-> 如果在定义 `belongsToMany()` 关联关系的时候，同时想操作中间关联表的数据，这里指的是`role_user` 表，通过定义 `with->withPivot(array $columns)` （参数填写中间表的字段），在使用 `attach()` 或者 `sync` 等方法的时候传入第二个参数进行数据的同步更新。例如：
-> 
+> 如果在定义 `belongsToMany()` 关联关系的时候，同时想操作中间关联表的数据，这里指的是`role_user` 表。
+> 通过定义 `with->withPivot(array $columns)` （参数填写中间表的字段），在使用 `attach()` 或者 `sync` 等方法的时候传入第二个参数进行数据的同步更新。例如：
+>
 > ```php
 > use App\Models\User;
 > use App\Models\Role;
@@ -521,9 +522,9 @@ $user->roles()->sync([
 >   'created_at' => now()->subYear(), // 修改为去年今天的时间
 > ]);
 > ```
->  
+>
 > 当然，如果已经存在关联关系，仅需要更新中间表的一些字段，这里指的是 `role_user` 表的字段，可以使用 `updateExistingPivot()`，例如：
-> 
+>
 > ```php
 > use App\Models\User;
 > use App\Models\Role;
@@ -552,7 +553,7 @@ $user->roles()->sync([
 
 顾名思义，如果表中存在则删除数据，如果表中不存在则新增数据。运用场景比如：点赞、喜欢或踩等切换操作。
 
-```php{10,11}
+```php {10,11}
 use App\Models\User;
 use App\Models\Role;
 use App\Models\RoleUser;

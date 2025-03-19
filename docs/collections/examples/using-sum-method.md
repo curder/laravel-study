@@ -1,6 +1,6 @@
 # sum 求和数组项
 
-## 计算数组元素和 
+## 计算数组元素和
 
 计算数组中 `order_products` 下数组元素 `price` 的和。
 
@@ -47,7 +47,6 @@ dd($price); // 888.0
 ```
 
 > 声明临时变量记录总价格，配合两次循环获得总价并累计。
-
 
 ### 使用 [map](/collections/map.md)、[flatten](/collections/flatten.md) 和 [sum](/collections/sum.md)
 

@@ -14,7 +14,7 @@
 
 ## 表结构
 
-```
+```text
 posts
     id - integer
     name - string
@@ -44,7 +44,7 @@ images
 
 - 在 `Image` 模型中定义关联关系
 
-```
+```php
 <?php
 
 namespace App;
@@ -65,7 +65,7 @@ class Image extends Model
 
 - 在 `Post` 模型中定义一对一关联关系
 
-```
+```php
 <?php
 
 class Post extends Model
@@ -82,7 +82,7 @@ class Post extends Model
 
 - 在 `User` 模型中定义一对一关联关系
 
-```
+```php
 <?php
 
 class User extends Model
@@ -101,7 +101,7 @@ class User extends Model
 
 ### 新增关联数据
 
-```
+```php
 $user->image()->save($image); // 执行关联写入操作
 
 $post->image()->save($image);
@@ -109,7 +109,7 @@ $post->image()->save($image);
 
 ### 查询关联数据
 
-```
+```php
 $post = App\Post::find(1);
 $user = App\User::first();
 
@@ -121,7 +121,7 @@ $image = $post->image; // 通过 image 动态属性获取关联数据
 
 因此，我们可以通过动态属性的方式来访问该方法
 
-```
+```php
 $image = App\Image::find(1);
 
 $imageable = $image->imageable;
@@ -131,7 +131,7 @@ $imageable = $image->imageable;
 
 ### 更新关联数据
 
-```
+```php
 $user = \App\User::first();
 $image = $user->image; // 获取到关联信息
 $image->url = 'new url';
@@ -143,7 +143,7 @@ $image->save();
 
 ### 删除关联数据
 
-```
+```php
 $user = \App\User::first();
 $user->image->delete(); // 删除用户 users 表和 images 相关记录
 ```

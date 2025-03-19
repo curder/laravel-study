@@ -27,7 +27,7 @@ collect(['product' => 'apples', 'price' => 45])
 // {"product": "apples", "price": 45}
 ```
 
-更多参数[参考JSON 常量](https://www.php.net/manual/zh/json.constants.php) 
+更多参数[参考JSON 常量](https://www.php.net/manual/zh/json.constants.php)
 
 ## 相关方法
 

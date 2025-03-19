@@ -9,7 +9,7 @@
     * [Many To Many 多对多](./06-belongs-to-many.md)
 
 * 多态关系
-  * [Morph One 多态一对一](./07-morph-one.md)
-  * [Morph Many 多态一对多](./08-morph-many.md)
-  * [One Of Many 多态其中之一 ~ TODO](./09-one-of-many.md)
-  * [Morph To Many 多态多对多](./10-morph-to-many.md)
+    * [Morph One 多态一对一](./07-morph-one.md)
+    * [Morph Many 多态一对多](./08-morph-many.md)
+    * [One Of Many 多态其中之一 ~ TODO](./09-one-of-many.md)
+    * [Morph To Many 多态多对多](./10-morph-to-many.md)

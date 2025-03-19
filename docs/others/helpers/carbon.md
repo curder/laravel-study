@@ -90,6 +90,7 @@ use Carbon\Carbon;
 
 Carbon::now()->endOfYear();
 ```
+
 #### 月开始的日期
 
 使用 `startOfMonth()` 方法可以获取本月开始天的日期。
@@ -112,7 +113,7 @@ Carbon::now()->endOfMonth();
 
 #### 周开始的日期
 
-使用 `startOfWeek()` 方法可以获取本周开始天的时间。 
+使用 `startOfWeek()` 方法可以获取本周开始天的时间。
 
 ```php
 use Carbon\Carbon;

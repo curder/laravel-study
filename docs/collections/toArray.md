@@ -12,7 +12,6 @@ collect(['name' => 'Desk', 'price' => 200])->toArray();
 >
 > 如果获取原数组，可以使用 [all](all.md) 方法。
 
-
 ## 相关方法
 
 - [all](all.md)

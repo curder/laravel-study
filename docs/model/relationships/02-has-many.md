@@ -2,13 +2,11 @@
 
 [GitHub 源码演示 - Laravel Relationships Demo](https://github.com/curder/laravel-relationships-demo/tree/has-many)
 
-
 一个用户发表了多篇文章，一篇文章只属于一个用户。
-
 
 下面是对应的表结构：
 
-```
+```text
 users
     id - integer
     name - string
@@ -20,7 +18,6 @@ posts
     title - string
     ...
 ```
-
 
 ## 软件版本
 
@@ -38,7 +35,7 @@ posts
 
 数据操作之前请先配置好，数据库的一些连接信息。例如下面使用 sqlite 数据库，修改项目根目录下的 `.env` 文件内容。
 
-```
+```dotenv
 DB_CONNECTION=sqlite
 ```
 
@@ -48,7 +45,7 @@ DB_CONNECTION=sqlite
 
 ## 生成模型和迁移文件
 
-```shell
+```bash
 touch database/database.sqlite # 生成 sqlite 文件
 
 php artisan make:model Post -mfs # 生成模型、迁移、生成等文件
@@ -104,7 +101,7 @@ class CreatePostsTable extends Migration
 
 ### 编辑填充文件
 
-#### 修改 `/databases/factories/PostFactory.php`，新增关联数据。
+#### 修改 `/databases/factories/PostFactory.php`，新增关联数据
 
 ```php
 <?php
@@ -134,7 +131,7 @@ class PostFactory extends Factory
 
 ```
 
-#### 修改 `databases/seeders/PostSeeder.php`，执行填充。
+#### 修改 `databases/seeders/PostSeeder.php`，执行填充
 
 ```php
 <?php
@@ -161,13 +158,11 @@ class PostSeeder extends Seeder
 
 ### 执行数据库迁移和数据填充
 
-```shell
+```bash
 php artisan migrate:refresh --seeder=PostSeeder
 ```
 
 > 执行完上面的命令后，在数据库表 `users` 和 `posts` 表中分别生成一些数据。
-
-
 
 ### 修改模型的 fillable 属性
 
@@ -185,7 +180,6 @@ class Post extends Model
     protected $fillable = ['title', 'user_id', 'body', 'published_at'];
 }
 ```
-
 
 ### 定义Eloquent关联关系
 
@@ -253,7 +247,7 @@ class Post extends Model
 
 常见的新增 `posts` 数据场景是用户发布一篇文章，如下:
 
-- 使用 `create()` 方法进行关联数据的新增
+* 使用 `create()` 方法进行关联数据的新增
 ```php
 $user = User::first();
 
@@ -264,7 +258,7 @@ $user->posts()->create([
 ]);
 ```
 
-- 使用 `save()` 方法进行关联数据新增
+* 使用 `save()` 方法进行关联数据新增
 ```php
 $user = User::first();
 
@@ -278,18 +272,14 @@ $user->posts()->save($post);
 ```
 
 > 通过调用 User 模型的 `posts()` 关联方法创建文章。
-
-
 > `create()` 方法接受属性数组、 创建模型，然后写入数据库，`save()` 和 `create()` 的不同之处在于 `save()` 接收整个 Eloquent 模型实例，而 `create()` 接收原生 PHP 数组。
-> 
 > **注意：** 使用 `create()` 方法之前确保 `$fillable` 属性填充批量赋值。
-
 
 #### 批量创建关联数据
 
 如果需要保存多个关联模型，可以使用 `saveMany()` 或 `createMany()` 方法。
 
-- `saveMany()` 方法
+* `saveMany()` 方法
 
 ```php {5}
 $user = \App\Models\User::first();
@@ -309,9 +299,9 @@ $user
     ]),
   ]);
 ```
-> `saveMany()` 方法接收模型数组参数     
+> `saveMany()` 方法接收模型数组参数
 
-- `createMany()` 方法
+* `createMany()` 方法
 ```php {3}
 $user = \App\Models\User::first();
 
@@ -328,15 +318,15 @@ $user->posts()->createMany([
   ],
 ]); 
 ```
-> `createMany` 方法接收数组参数
 
+> `createMany` 方法接收数组参数
 > 执行上面的操作后将一次生成两条关联数据。
 
 ### 查询数据
 
 #### 查询所属数据
 
-- 获取指定模型的关联数据
+* 获取指定模型的关联数据
 ```php
 $user = \App\Models\User::first();
 $posts = $user->posts;
@@ -346,7 +336,7 @@ $user = \App\Models\User::first();
 $posts = $user->posts()->paginate();
 ```
 
-- 获取指定字段的关联数据
+* 获取指定字段的关联数据
 ```php
 $user = \App\Models\User::first();
 $user->with('posts:user_id,title,published_at')->get(); // 仅获取关联数据的某些指定字段，但需要注意的是 foreignKey 必须提供，比如这里的 user_id
@@ -367,22 +357,21 @@ $user
   ->get(); 
 ```
 
-- 获取用户列表并关联所属文章
+* 获取用户列表并关联所属文章
 ```php
 \App\Models\User::with('posts')
   ->get();
 ```
 
-
 #### 查询属主
 
-- 查询关联属主
+* 查询关联属主
 ```php
 $post = \App\Models\Post::find(1); // 获取文章数据
 $user = $post->user; // 获取所属用户
 ```
 
-- 查询列表并附加关联数据
+* 查询列表并附加关联数据
 ```php
 \App\Models\Post::with('user')->get();
 
@@ -399,7 +388,7 @@ $user = $post->user; // 获取所属用户
 ])->get();
 ```
 
-- 添加默认模型
+* 添加默认模型
 ```php
 $post = \App\Models\Post::with([
   'user' => function ($query) {
@@ -413,11 +402,13 @@ $post = \App\Models\Post::with([
 ])->get();
 ```
 
+<!-- markdownlint-disable MD013 -->
 > `withDefault()` 还可以添加参数，[源代码查看这里](https://github.com/laravel/framework/blob/master/src/Illuminate/Database/Eloquent/Relations/Concerns/SupportsDefaultModels.php#L32)
-                               
+<!-- markdownlint-enable MD013 -->
+
 ### 关联删除
 
-- 删除某用户下的所有文章数据。
+* 删除某用户下的所有文章数据。
 
 ```php
 $user = \App\Models\User::first();
@@ -427,7 +418,7 @@ $user->post()->delete(); // 通过关联关系删除，返回删除数据的行�
 $user->posts->each->delete(); // 通过 \Illuminate\Database\Eloquent\Collection 集合类删除，返回值为集合
 ```
 
-- 禁用某篇文章的用户
+* 禁用某篇文章的用户
 
 ```php
 $post = \App\Models\Post::first();

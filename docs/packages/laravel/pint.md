@@ -1,12 +1,10 @@
 # laravel/pint
 
-
 [Laravel Pint](https://laravel.com/docs/master/pint) 构建在 [PHP-CS-Fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer) 之上，可以轻松确保代码风格保持干净和一致。
 
 Pint 会自动随所有新的 Laravel 应用程序一起安装，因此您可以立即开始使用它。
 
 默认情况下，Pint 不需要任何配置，并且会遵循 Laravel 固有的编码风格来修复代码中的代码风格问题。
-
 
 ## 安装
 
@@ -16,11 +14,9 @@ Pint 会自动随所有新的 Laravel 应用程序一起安装，因此您可以
 composer require laravel/pint --dev
 ```
 
-
 ## 运行 pint
 
 安装后，它将直接运行，无需配置。所以可以运行命令：
-
 
 ```bash
 ./vendor/bin/pint
@@ -60,11 +56,9 @@ Pint 将显示其更新的所有文件的完整列表。可以通过在调用 Pi
 ./vendor/bin/pint --dirty
 ```
 
-
 ## 自定义配置
 
 如果希望自定义预设、规则或检查的文件夹，可以通过在项目的根目录中创建 `pint.json` 文件来实现。
-
 
 ```json
 {
@@ -100,7 +94,6 @@ pint --preset psr12
 }
 ```
 
-
 ### 规则
 
 规则是 Pint 用于修复代码中的代码样式问题的样式指南。
@@ -125,8 +118,9 @@ pint --preset psr12
 }
 ```
 
+<!-- markdownlint-disable MD013 -->
 Pint 构建在 [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) 之上，因此可以使用它的任何规则来修复项目中的代码样式问题：[PHP-CS-Fixer 配置](https://mlocati.github.io/php-cs-fixer-configurator)。
-
+<!-- markdownlint-enable MD013 -->
 
 ### 排除文件/文件夹
 
@@ -151,7 +145,6 @@ Pint 构建在 [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) 之�
     ]
 }
 ```
-
 
 如果想通过提供文件的确切路径来排除文件，可以使用 `notPath` 配置选项来执行此操作：
 

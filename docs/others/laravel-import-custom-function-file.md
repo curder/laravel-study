@@ -49,4 +49,4 @@ function limit(string $value, int $limit = 200, string $end = ''): string
 
 配置完毕后执行 `composer dump-autoload` 命令，加载配置文件。
 
-最后，可以在项目中使用 `app/Supports/helpers.php` 文件中定义的函数。 
+最后，可以在项目中使用 `app/Supports/helpers.php` 文件中定义的函数。

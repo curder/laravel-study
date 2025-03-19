@@ -2,17 +2,17 @@
 
 在 Laravel 中，可以使用队列处理大型CSV文件的上传，以避免因此引起的超时或内存使用问题，尤其是当您有大量数据需要分析、报告或移动时。
 
-
 ## 安装 spatie/simple-excel 拓展包
 
 ```bash
 composer require spatie/simple-excel
 ```
 
+<!-- markdownlint-disable MD013 -->
 使用 `SimpleExcelReader` 加载 CVS。默认情况下，它会返回一个 [`Illuminate\Support\LazyCollection`](https://laravel.com/docs/master/collections#lazy-collections)  将其视为处理数据的更周到的方式，而不会耗尽服务器的内存。这意味着可以一点一点地处理文件，使用程序保持轻松运行。
+<!-- markdownlint-enable MD013 -->
 
 > `$rows` 是 [`Illuminate\Support\LazyCollection`](https://laravel.com/docs/master/collections#lazy-collections) 的实例。
-
 
 ## 创建 Jobs
 
@@ -68,7 +68,6 @@ class ImportCsv implements ShouldQueue
 1. **对 CSV 进行分块**：将把该文件分成可管理的部分，以便可以使用 `LazyCollection`。
 2. **任务调度**：对于每个块，将发送一个任务。这样就可以批量处理，这在服务器上会更容易。
 3. **写入数据库**：每个块将被插入到数据库中，既简单又好。
-
 
 ## 处理分块Job
 

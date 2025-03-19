@@ -79,7 +79,6 @@ Auth::routes([
 ]);
 ```
 
-
 ## 路由模型绑定
 
 可以像 `Route::get('api/users/{user}', function (App\Models\User $user) { ... }` 之类的路由模型绑定，但不仅可以通过 id 字段。
@@ -153,7 +152,6 @@ Route::group([
 });
 ```
 
-
 ## 限速
 
 使用场景，发送短信验证码接口每分钟允许请求一次。
@@ -174,7 +172,6 @@ Route::get('reset-password', function() {
 ```
 
 更多官方文档[查看这里](https://laravel.com/docs/master/routing#rate-limiting)。
-
 
 ## 速率限制：全局和针对访客/用户
 
@@ -219,7 +216,6 @@ Route::get('user/{id}/profile', function ($id) {
 $url = route('profile', ['id' => 1, 'photos' => 'yes']); // Result: /user/1/profile?photos=yes
 ```
 
-
 ## 翻译资源动词
 
 如果使用资源控制器，但想将 URL 动词更改为非英语以用于 SEO 目的，可以使用 `App\Providers\RouteServiceProvider` 中的 `Route::resourceVerbs()` 方法对其进行配置。
@@ -246,14 +242,13 @@ Route::resource('p', ProductController::class)->names('products');
 
 所以上面的这段代码会生成像 `/p`、`/p/{id}`、`/p/{id}/edit` 等 URL。但可以在代码中通过 `route('products.index')`, `route('products.create')` 等生成 URL。
 
-
 ## 更具可读性的路由列表
 
 曾经运行过 `php artisan route:list`，然后意识到该列表占用了太多空间且难以阅读。
 
 这是解决方案： `php artisan route:list --compact` 然后它显示 3 列而不是默认的 6 列：仅显示 `Method` | `URI` | `Action`。
 
-```
+```text
 +----------+---------------------------------+-------------------------------------------------------------------------+
 | Method   | URI                             | Action                                                                  |
 +----------+---------------------------------+-------------------------------------------------------------------------+
@@ -283,7 +278,7 @@ Route::resource('p', ProductController::class)->names('products');
 php artisan route:list --columns=Method,URI,Name
 ```
 
-```
+```text
 +----------+---------------------------------+---------------------+
 | Method   | URI                             | Name                |
 +----------+---------------------------------+---------------------+
@@ -308,7 +303,6 @@ php artisan route:list --columns=Method,URI,Name
 ```
 
 所有支持的列包含：`domain`，`method`, `uri`, `name`, `action`, `middleware`。
-
 
 ## 关联关系
 
@@ -346,7 +340,6 @@ route('page.show', $page->id); // http://localhost/pages/1
 route('page.show', $page->id, false); // /pages/1
 ```
 
-
 ## 覆盖每个模型的路由绑定解析器
 
 可以覆盖每个模型的路由绑定解析器。在此示例中，无法控制 `URL` 中的 `@` 符号，因此使用 `resolveRouteBinding` 方法，能够删除 `@` 符号并解析模型。
@@ -369,9 +362,7 @@ public function resolveRouteBinding($value, $field = null)
 // 请求 http://localhost/@curder 时，路由参数会被转换成 `curder`
 ```
 
-
 ## 受保护的URL
-
 
 如果需要公共 URL 但又希望它们受到保护，使用 Laravel 签名 URL 。
 
@@ -399,7 +390,6 @@ class AccountController extends Controller
     }
 }
 ```
-
 
 ## 在中间件方法中使用 Gate
 
@@ -432,7 +422,6 @@ public function boot()
 
 [Authorization](https://laravel.com/docs/master/authorization)
 
-
 ## 优化路由文件
 
 创建一个 `/routes/web/` 目录，并且在 `/routes/web.php` 文件中：
@@ -444,7 +433,6 @@ foreach(glob(dirname(__FILE__).'/web/*.php', GLOB_NOSORT) as $route_file) {
 ```
 
 现在 `/routes/web/` 中的每个文件都充当路由器文件，可以将路由组织到不同的文件中。
-
 
 ## 路由资源分组
 

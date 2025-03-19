@@ -37,7 +37,7 @@ Post::find($post_id)->increment('view_count');
 User::find($user_id)->decrement('points', 50); # 减少字段 points 的值
 ```
 
-## 表不存在时间字段 
+## 表不存在时间字段
 
 如果数据库表不包含时间戳字段 `created_at` 和 `updated_at`，可以通过 `$timestamps = false` 属性指定模型不使用它们。
 ```php
@@ -54,7 +54,7 @@ class Company extends Model
 ```php
 Post::onlyTrashed()->where('author_id', 1)->restore();
 ```
-                                         
+
 ## `all` 方法值定返回字段
 
 调用模型的 `Model::all()` 时，可以指定要返回的列。
@@ -129,7 +129,7 @@ class User extends Model
 
 ## 通过某个字段快速排序
 
-通过使用 `latest()` 和 `oldest()` 代替 `->orderBy()`。       
+通过使用 `latest()` 和 `oldest()` 代替 `->orderBy()`。
 
 ```php
 User::latest()->get(); // 降序排序，代替 ->orderBy('created_at', 'desc')
@@ -139,7 +139,7 @@ User::latest('updated_at')->get(); // 指定字段，降序排序
 
 ## 数据库原始查询计算运行得更快
 
-使用 SQL 原始查询，如 `whereRaw()` 方法，直接在查询中进行一些特定于 `DB` 的计算，而不是在 `Laravel` 中，通常结果会更快。 
+使用 SQL 原始查询，如 `whereRaw()` 方法，直接在查询中进行一些特定于 `DB` 的计算，而不是在 `Laravel` 中，通常结果会更快。
 
 例如，如果想获得注册后 30 天以上仍处于活跃状态的用户，代码如下：
 
@@ -172,7 +172,7 @@ User::registeredWithinDays(30)->active()->get();
 // 无需对时间进行转换，直接使用 `now()`
 $todayUsers = User::whereDate('created_at', now())->get();
 ```
-     
+
 ## 按首字母分组
 
 可以按任何自定义条件对 Eloquent 结果进行分组。
@@ -185,7 +185,7 @@ User::all()->groupBy(function($item) {
 });
 ```
 
-## 字段仅更新一次 
+## 字段仅更新一次
 
 如果有 DB 列，只想设置一次并且不再更新，可以使用 mutator 对 Eloquent 模型设置该限制：
 
@@ -219,7 +219,7 @@ $users = User::whereKey([1,2,3])->get();
 
 ## 使用UUID代替主键自增
 
-在模型中不希望使用主键自增？可以使用UUID代替：   
+在模型中不希望使用主键自增？可以使用UUID代替：
 
 * 迁移文件
 ```php
@@ -306,7 +306,7 @@ $users = User::withTrashed()->get(); // 包含已删除的项
 $users = DB::table('users')->get(); // 包含已删除的项
 ```
 
-## SQL 查询 
+## SQL 查询
 
 如果需要执行一个简单的 SQL 查询，但没有得到任何结果——比如更改 DB 模式中的某些内容，可以执行 `DB::statement()`。
   
@@ -356,7 +356,7 @@ public function getUpdatedAtFormattedAttribute()
 $user->created_at_formatted; // `12:25 18, Jan 2021`
 ```
 
-## 在JSON字段中存储数组 
+## 在JSON字段中存储数组
 
 如果输入字段需要一个数组并且必须将其存储为 JSON，可以在模型中使用 `$casts` 属性。这里的 `images` 是一个 `JSON` 属性。
 
@@ -366,7 +366,6 @@ protected $casts = [
     'images' => 'array',
 ];
 ```
-
 
 ## 模型的副本
 
@@ -402,7 +401,6 @@ public function delete(){
     Model::delete(); // 现在执行正常删除
 }
 ```
-        
 
 ## 将数据持久化到数据库时自动填充列
 
@@ -467,7 +465,7 @@ if ( ! $model->where('status', 'pending')->exists() ) {
 if ( $model->where('status', 'pending')->doesntExist() ) {
 }
 ```
-                   
+
 ## 添加模型的Trait且自动调用它们的 `boot()` 方法
 
 如果有一个 Trait 想要添加到几个模型中以自动调用它们的 `boot()` 方法，可以在 `Trait` 中编写静态方法 boot[TraitName]。
@@ -501,7 +499,6 @@ trait MultiTenantModelTrait
 }
 ```
 
-
 ## 如何防止“非对象属性”错误
 
 ```php
@@ -520,8 +517,7 @@ public function author() {
 $post->author->name;
 ```
 
-
-## 修改模型记录后获取原始属性 `getOriginal()` 
+## 修改模型记录后获取原始属性 `getOriginal()`
 
 修改模型记录后获取原始属性，可以通过调用 `getOriginal()` 获取原始属性。
 
@@ -532,7 +528,6 @@ $user->name = "Peter"; // Peter
 $user->getOriginal('name'); // John
 $user->getOriginal(); // Original $user record
 ```
-
 
 ## 填充数据库的简单方法
 
@@ -580,9 +575,9 @@ Post::findOrFail($id)->tags()->orderByPivot('flag', 'desc')->get();
 
 `sole()` 方法将只返回一条符合条件的记录。
 
-- 如果没有找到这样的条目，则会抛出 `NoRecordsFoundException`。
+* 如果没有找到这样的条目，则会抛出 `NoRecordsFoundException`。
 
-- 如果找到多条记录，则会抛出 `MultipleRecordsFoundException`。
+* 如果找到多条记录，则会抛出 `MultipleRecordsFoundException`。
 
 ```php
 DB::table('products')->where('ref', '#123')->sole();
@@ -705,9 +700,9 @@ Flight::upsert(
  );
 ```
 
-- 第一个数组：要插入或更新的值 
-- 第二个数组：select语句中使用的唯一标识符列 
-- 第三个数组：如果记录存在则要更新的列
+* 第一个数组：要插入或更新的值
+* 第二个数组：select语句中使用的唯一标识符列
+* 第三个数组：如果记录存在则要更新的列
 
 ## 过滤结果后检索查询生成器
 
@@ -753,7 +748,6 @@ class User extends Model
     ]; 
 }
 ```
-
 
 ## 根据相关模型的平均值或计数排序
 
@@ -813,13 +807,13 @@ User::withoutGlobalScopes([
 
 Eloquent 模型上的 `$casts` 属性不适用于 JSON 属性，当前找到的唯一方法是使用 `orderByRaw`。
 
-- 数据排序
+* 数据排序
 
 ```php
 Post::orderByRaw('CAST(extra->"$.popular_order_number" AS unsigned) ASC')->get();
 ```
 
-- 数据查询
+* 数据查询
 
 ```php
 Post::whereJsonContains('extra->is_popular', 1)->get();
@@ -827,10 +821,9 @@ Post::whereJsonContains('extra->is_popular', 1)->get();
 
 参考地址：[Sort by Mysql JSON Field Value in Laravel](https://5balloons.info/sort-by-mysql-json-field-value-in-laravel/)
 
-
 ## 从第一个结果中获取单列的值 `value()`
 
-可以使用 `value()` 方法从查询的第一个结果中获取单个列的值                                                          
+可以使用 `value()` 方法从查询的第一个结果中获取单个列的值
 
 ```php
 // Instead of
@@ -842,7 +835,6 @@ Integration::where('name', 'foo')->value('active');
 // or this to throw an exception if no records found
 Integration::where('name', 'foo')->valueOrFail('active')';
 ```
-
 
 ## 检查更改的值是否更改
 
@@ -860,7 +852,6 @@ $user->fill(['name' => 'David']); // Or set via fill
 
 $user->originalIsEquivalent('name'); // false
 ```
-
 
 ## 定义访问器和修改器的新方法
 
@@ -993,7 +984,6 @@ $users->sortBy('full_name');
 ```
 :::
 
-
 ## 判断对象是否新增 `wasRecentlyCreated`
 
 在 Laravel 中，有时可能需要检查模型是从数据库中获取的还是刚刚在当前请求生命周期中创建的——比如使用 `createOrUpdate()` 时。
@@ -1014,6 +1004,7 @@ if ($user->wasRecentlyCreated) {
 ```
 
 ## 数据库驱动程序 Laravel Scout
+
 使用 Laravel9 及以上版本的 Laravel，可以将 [Laravel Scout（搜索）](https://laravel.com/docs/master/scout#database-engine)与数据库驱动程序一起使用。
 
 ```php
@@ -1108,9 +1099,7 @@ Schema::table('table', function (Blueprint $table) {
 
 ## Json where 子句
 
-Laravel 提供了帮助程序来查询支持 JSON 列的数据库。
-
-**目前，MySQL 5.7+、PostgreSQL、SQL Server 2016 和 SQLite 3.9.0（使用 JSON1 扩展）**
+Laravel 提供了帮助程序来查询支持 JSON 列的数据库。**目前，MySQL 5.7+、PostgreSQL、SQL Server 2016 和 SQLite 3.9.0（使用 JSON1 扩展）**
 
 ```php
 // To query a json column you can use the -> operator
@@ -1193,8 +1182,6 @@ $employees = Employee::select(['name', 'title', 'email'])->get(); // [!code --]
 $employees = Employee::get(['name', 'title', 'email']); // [!code ++]
 ```
 
-
-
 查询生成器中的 "when" 可以将条件子句链接到查询，而无需编写 if-else 语句。这将使的查询非常清楚：
 
 ```php
@@ -1205,7 +1192,6 @@ Product::query()
         fn () => $query->orderBy('created_at'),
     );
 ```
-
 
 ## 动态Where子句
 
@@ -1366,7 +1352,6 @@ where
 
 可以看到生成同样的查询语句，使用 `whereAll()` 构建的查询会更加简洁清晰。
 
-
 ## `whereAny()` 和 `orWhereAny()` 方法
 
 自 [Laravel 10.47](https://github.com/laravel/framework/pull/50344) 起开始支持 `whereAny()` 方法和 `orWhereAny()` 方法用于搜索多列。
@@ -1400,7 +1385,6 @@ User::query()
   })
 ```
 
-
 ```sql [Raw SQL]
 select
   *
@@ -1417,4 +1401,3 @@ where
 :::
 
 可以看到生成同样的查询语句，相比 `orWhere()` 使用 `whereAny()` 构建的查询会更加简洁清晰。
-

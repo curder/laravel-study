@@ -1,7 +1,7 @@
 # make
 
 > 静态 make 方法创建一个新的集合实例
- 
+
 ```php
 use Illuminate\Support\Collection;
 

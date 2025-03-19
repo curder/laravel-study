@@ -1,0 +1,97 @@
+#
+# Configuration file for MarkdownLint-CLI2.
+#
+# Example file with all options:
+# https://github.com/DavidAnson/markdownlint-cli2/blob/main/test/markdownlint-cli2-yaml-example/.markdownlint-cli2.yaml
+# Example file with all rules:
+# https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml
+#
+
+# Define glob expressions to use (only valid at root).
+globs:
+  - "**/*.md"
+
+# Show found files on stdout (only valid at root)
+showFound: true
+
+# Define glob expressions to ignore.
+ignores:
+  - "node_modules/"
+
+# Disable inline config comments.
+noInlineConfig: false
+
+# Disable progress on stdout (only valid at root).
+noProgress: false
+
+# Adjust the configuration for some built-in rules.
+# For full information on the options and defaults, see:
+# https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+config:
+  ######################
+  # Disable a few rules.
+  ######################
+  # MD031/blanks-around-fences - Fenced code blocks should be surrounded by blank lines.
+  MD031: false
+  # MD032/blanks-around-lists - Lists should be surrounded by blank lines.
+  MD032: false
+
+  ##############################
+  # Customize a few other rules.
+  ##############################
+  # MD003/heading-style/header-style - Heading style.
+  MD003:
+    # Heading style - Always use hashes.
+    style: "atx"
+
+  # MD007/ul-indent - Unordered list indentation.
+  MD007:
+    indent: 4
+    # Whether to indent the first level of the list.
+    start_indented: false
+
+  # MD012/no-multiple-blanks - Multiple consecutive blank lines.
+  MD012:
+    maximum: 1
+
+  # MD013/line-length - Line length.
+  MD013:
+    # Number of characters. No need for being too fussy.
+    line_length: 150
+    # Number of characters for headings.
+    heading_line_length: 80
+    # Number of characters for code blocks.
+    code_block_line_length: 200
+    # Stern length checking (applies to tables, code blocks etc which have their own max line length).
+    stern: true
+
+  # MD024/no-duplicate-heading/no-duplicate-header - Multiple headings with the same content.
+  MD024:
+    # Only check sibling headings.
+    siblings_only: true
+
+  # MD033/no-inline-html - Inline HTML.
+  MD033:
+    # Allowed elements.
+    allowed_elements:
+      - br
+      - span
+      - a
+  MD040:
+    language_only: false
+    allowed_languages:
+      - markdown
+      - text
+      - js
+      - php
+      - bash
+      - css
+      - yaml
+      - json
+      - xml
+      - html
+      - sql
+      - dotenv
+
+  # MD042/no-empty-links : No empty links : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md042.md
+  MD042: true

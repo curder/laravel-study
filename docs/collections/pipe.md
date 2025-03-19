@@ -13,7 +13,6 @@ collect([1, 2, 3])->pipe(
 collect([1, 2, 3])->sum();
 ```
 
-
 ## 相关方法
 
 - [sum](sum.md)

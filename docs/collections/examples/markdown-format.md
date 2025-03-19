@@ -18,7 +18,6 @@ $messages = [
 - But there should not have blank in the key of config or .env file.
 ```
 
-
 ## 使用 foreach 方法
 
 ```php

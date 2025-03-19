@@ -33,4 +33,4 @@ Post::query()->insert(
 ray(microtime(true) - $start); // 0.15621304512024
 ```
 
-![](./images/optimize-factory-database-batch-insert/speed-comparison-preview.png)
+![speed comparison preview](./images/optimize-factory-database-batch-insert/speed-comparison-preview.png)

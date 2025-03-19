@@ -66,6 +66,7 @@ composer update modules/module
 ## 自定义配置
 
 ### 服务提供者
+
 新建一个自定义服务提供者 `Modules\Module\ServiceProvider`，内容如下：
 
 ```php
@@ -196,7 +197,6 @@ public function boot(): void
 
 如果模块包含视图组件，可以使用 `Blade::component()` 方法将这些组件加载到应用程序中。
 
-
 ```php
 <?php
 namespace Modules\Module;
@@ -271,6 +271,8 @@ uses(TestCase::class, LazilyRefreshDatabase::class)->in(__DIR__.'/../modules/mod
 
 Laravel Idea 是一个基于 Laravel 的项目，它可以在编写 Laravel 代码时提供很多帮助。
 
+<!-- markdownlint-disable MD013 -->
 对于非常规的 Laravel 项目，需要简单设置，使用快捷键 `command + ,` 打开项目设置，找到 `语言和设置` --> `Laravel Idea` --> `Module System` --> 选择 `Directory modules as composer.json packages` 即可。
+<!-- markdownlint-enable MD013 -->
 
 这样使用快捷键 `Command + Shift + ,` 就可以在新建 Laravel 类时选择对应的模块进行创建，这或许能增加开发效率。

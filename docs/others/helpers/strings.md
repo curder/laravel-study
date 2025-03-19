@@ -177,6 +177,8 @@ $excerpt = Str::excerpt('This is my name', 'name', [
 // '(...) my name'
 ```
 
+<a id="str-finish"></a>
+
 ## `Str::finish()`
 
 `Str::finish()` 方法将给定的字符串与调用该方法的原始字符串的最后一个字符串连接起来。
@@ -193,6 +195,8 @@ Str::finish('this/string/', '/'); // this/string/
 
 ## `Str::fromBase64()`
 
+<a id="str-frombase64"></a>
+
 `Str::fromBase64()` 方法将给定的 Base64 编码字符串解码为普通字符串。
 
 ```php
@@ -205,7 +209,6 @@ Str::fromBase64('TGFyYXZlbA==');
 
 如果需要将字符串转换为 Base64 编码，可以使用 [Str::toBase64()](#str-tobase64) 方法。
 
-
 ## `Str::headline()`
 
 `Str::headline()` 方法会将由大小写、连字符或下划线分隔的字符串转换为空格分隔的字符串，每个单词的第一个字母大写。
@@ -217,6 +220,8 @@ Str::headline('steve_jobs'); // Steve Jobs
 
 Str::headline('EmailNotificationSent'); // Email Notification Sent
 ```
+
+<a id="str-inlinemarkdown"></a>
 
 ## `Str::inlineMarkdown()`
 
@@ -365,6 +370,7 @@ use Illuminate\Support\Str;
 
 Str::lower('LARAVEL'); // laravel
 ```
+<a id="str-markdown"></a>
 
 ## `Str::markdown()`
 
@@ -383,8 +389,9 @@ Str::markdown('# Hello <b>world</b>', [
 
 > 该方法与 [inlineMarkdown](#str-inlinemarkdown) 方法不同的是，它会将所有生成的 HTML 包装在块级元素中。
 
+<!-- markdownlint-disable MD013 -->
 markdown 方法的第二个参数支持一些选项，比如: `html_input`、`allow_unsafe_links`、`max_nesting_level`等，更多自定义选项可以[查看源代码](https://github.com/thephpleague/commonmark/blob/2.4/src/Environment/Environment.php#L429)。
-
+<!-- markdownlint-enable MD013 -->
 
 ## `Str::mask()`
 
@@ -468,6 +475,8 @@ Str::password(); // 'MU^Y(;%f()^FCK>BzT10-OXFr5R0Dsot'
 
 Str::password(12); // 'ZUv8:mGJYj9T'
 ```
+
+<a id="str-plural"></a>
 
 ## `Str::plural()`
 
@@ -599,7 +608,6 @@ Str::replaceArray('?', ['8:30', '9:00'], $string);
 // The event will take place between 8:30 and 9:00
 ```
 
-
 ## `Str::replaceFirst()`
 
 `Str::replaceFirst()` 方法用于在字符串中替换第一个匹配到的字符串。
@@ -642,7 +650,6 @@ Str::replaceMatches(
 ```
 
 `replaceMatches()` 方法还接受一个闭包，该闭包将被与给定模式匹配的字符串的每个部分调用，从而允许您在闭包内执行替换逻辑并返回替换的值：
-
 
 ```php
 use Illuminate\Support\Str;
@@ -704,7 +711,6 @@ Str::singular('children'); // child
 
 它正好与 [`Str::plural()`](#str-plural) 的功能相反。
 
-
 ## `Str::slug()`
 
 `Str::slug()` 方法用于生成 URL 友好的字符串。
@@ -714,7 +720,6 @@ use Illuminate\Support\Str;
 
 Str::slug('Laravel Framework', '-'); // laravel-framework
 ```
-
 
 ## `Str::snake()`
 
@@ -738,6 +743,8 @@ use Illuminate\Support\Str;
 Str::squish(' laravel  framework '); // laravel framework
 ```
 
+<a id="str-start"></a>
+
 ## `Str::start()`
 
 `Str::start()` 方法用于在字符串中替换开头部分。
@@ -753,7 +760,6 @@ Str::start('/this/string', '/'); // /this/string
 ```
 
 > 跟它功能相反的是 [Str::finish()](#str-finish)。
-
 
 ## `Str::startsWith()`
 
@@ -783,7 +789,6 @@ use Illuminate\Support\Str;
 Str::studly('foo_bar'); // FooBar
 ```
 
-
 ## `Str::substr()`
 
 `Str::substr()` 方法用于从字符串中获取子字符串。
@@ -795,8 +800,6 @@ Str::substr('The Laravel Framework', 4, 7); // Laravel
 ```
 
 ## `Str::substrCount()`
-
-
 
 `Str::substrCount()` 方法用于计算指定字符串在原字符串中出现的次数。
 
@@ -857,6 +860,7 @@ Str::title('a nice title uses the correct case');
 
 // A Nice Title Uses The Correct Case
 ```
+<a id="str-tobase64"></a>
 
 ## `Str::toBase64()`
 
@@ -902,6 +906,8 @@ use Illuminate\Support\Str;
 Str::upper('laravel'); // LARAVEL
 ```
 
+<a id="str-ulid"></a>
+
 ## `Str::ulid()`
 
 `Str::ulid()` 方法用于生成一个 ULID。
@@ -911,6 +917,8 @@ use Illuminate\Support\Str;
  
 return (string) Str::ulid(); // 01HPXVX7J7YRA6N2E5DS5GN8V3
 ```
+
+<a id="str-unwrap"></a>
 
 ## `Str::unwrap()`
 
@@ -924,6 +932,8 @@ Str::unwrap('-Laravel-', '-'); // Laravel
 Str::unwrap('{framework: "Laravel"}', '{', '}'); // framework: "Laravel"
 ```
 
+<a id="str-uuid"></a>
+
 ## `Str::uuid()`
 
 `Str::uuid()` 方法用于生成一个 UUID。
@@ -933,6 +943,8 @@ use Illuminate\Support\Str;
 
 return (string) Str::uuid();
 ```
+
+<a id="str-wordcount"></a>
 
 ## `Str::wordCount()`
 
@@ -995,9 +1007,8 @@ Str::wrap('is', before: 'This ', after: ' Laravel!');
 $version = 'v1.2.32-beta';
 
 Str::of($version)
-  	->chopStart('v'); // "1.2.32-beta"
+   ->chopStart('v'); // "1.2.32-beta"
 ```
-
 
 ## `Str::chopEnd()`
 
@@ -1007,8 +1018,8 @@ Str::of($version)
 $version = 'v1.2.32-beta';
 
 Str::of($version)
-  	->chopStart('v') // "1.2.32-beta"
-	->chopEnd('-beta'); // "1.2.32"
+   ->chopStart('v') // "1.2.32-beta"
+ ->chopEnd('-beta'); // "1.2.32"
 ```
 
 ## `Str::deduplicate()`

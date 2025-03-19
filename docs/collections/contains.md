@@ -28,7 +28,6 @@ $collection->contains(fn ($value, $key) => $value > 5); // false
 ```
 :::
 
-
 ## 相关方法
 
 - [has](has.md)

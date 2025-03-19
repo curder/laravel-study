@@ -1,6 +1,8 @@
 # Livewire 缺少的测试断言
 
+<!-- markdownlint-disable MD013 -->
 [Livewire](https://livewire.laravel.com/docs/testing#all-available-testing-utilities) 提供了很多开箱即用的测试断言，但是一些需要测试视图属性、视图方法、表单方法或 Javascript 事件的时候就可以通过 [christophrumpel/missing-livewire-assertions](https://github.com/christophrumpel/missing-livewire-assertions)扩展进行测试。
+<!-- markdownlint-enable MD013 -->
 
 ## 安装
 
@@ -18,7 +20,7 @@ composer require christophrumpel/missing-livewire-assertions --dev
 - [assertPropertyNotWired](https://github.com/christophrumpel/missing-livewire-assertions/blob/production/src/CustomLivewireAssertionsMixin.php#L31)
 - [assertPropertyEntangled](https://github.com/christophrumpel/missing-livewire-assertions/blob/production/src/CustomLivewireAssertionsMixin.php#L46)
 - [assertPropertyNotEntangled](https://github.com/christophrumpel/missing-livewire-assertions/blob/production/src/CustomLivewireAssertionsMixin.php#L70)
--  [assertMethodWired](https://github.com/christophrumpel/missing-livewire-assertions/blob/production/src/CustomLivewireAssertionsMixin.php#L94)
+- [assertMethodWired](https://github.com/christophrumpel/missing-livewire-assertions/blob/production/src/CustomLivewireAssertionsMixin.php#L94)
 - [assertMethodNotWired](https://github.com/christophrumpel/missing-livewire-assertions/blob/production/src/CustomLivewireAssertionsMixin.php#L109)
 - [assertMethodWiredToForm](https://github.com/christophrumpel/missing-livewire-assertions/blob/production/src/CustomLivewireAssertionsMixin.php#L124)
 - [assertMethodNotWiredToForm](https://github.com/christophrumpel/missing-livewire-assertions/blob/production/src/CustomLivewireAssertionsMixin.php#L139)
@@ -45,7 +47,9 @@ Livewire::test(FeedbackForm::class)
 
 测试用例在组件的视图文件中查找像 `wire:model="email"` 的字符串。
 
+<!-- markdownlint-disable MD013 -->
 它还检测诸如 `wire:model.live="email"`、`wire:model.lazy="email"`、`wire:model.debounce="email"`、`wire:model.lazy.10s="email"` 或 `wire:model.debounce.500ms="email"` 的字符串。
+<!-- markdownlint-enable MD013 -->
 
 ### 方法是否使用
 
@@ -63,7 +67,9 @@ Livewire::test(FeedbackForm::class)
     ->assertMethodWired('$toggle(\'sortAsc\')');
 ```
 
+<!-- markdownlint-disable MD013 -->
 它会查找像 `wire:click="$refresh"`、`wire:click="$toggle('sortAsc')`、`$dispatch('post-created')` 类似的字符串，以及所有其它的[魔术动作](https://livewire.laravel.com/docs/actions#magic-actions)。
+<!-- markdownlint-enable MD013 -->
 
 > **注意：** 测试魔法动作时，必须转义单引号，如上所示。
 
@@ -75,7 +81,6 @@ Livewire::test(FeedbackForm::class)
 ```
 
 它会在组件的视图文件中查找类似 `wire:submit="upload"` 或者 `wire:submit.prevent="upload"` 的字符串。
-
 
 ### 所有 js 事件
 

@@ -162,7 +162,6 @@ Str::of('This is my name.')->charAt(6);
 
 ## `classBasename()`
 
-
 `classBasename()` 方法返回给定类的类名，并删除该类的命名空间：
 
 ```php
@@ -358,7 +357,7 @@ Str::of('EmailNotificationSent')->headline();
 
 ## `inlineMarkdown()`
 
-`inlineMarkdown()` 方法将解析生成的内联 HTML，与 [`markdown`](#markdon) 方法不同的是，它不会将所有生成的 HTML 包装在块级元素中：
+`inlineMarkdown()` 方法将解析生成的内联 HTML，与 [`markdown`](#markdown) 方法不同的是，它不会将所有生成的 HTML 包装在块级元素中：
 
 ```php
 use Illuminate\Support\Str;
@@ -371,7 +370,6 @@ Str::of('**Laravel**')->inlineMarkdown();
 ## `is()`
 
 `is()` 方法确定给定字符串是否与给定模式匹配。
-
 
 ```php
 use Illuminate\Support\Str;
@@ -387,8 +385,7 @@ Str::of('foobar')->is('baz*');
 
 > 星号可以用作通配符值。
 
-
-##  `isAscii()`
+## `isAscii()`
 
 `isAscii()` 方法确定给定字符串是否仅包含 ASCII 字符：
 
@@ -823,7 +820,6 @@ Str::of('Hello, World!')->position('W');
 
 `prepend()` 方法将给定的子字符串添加到字符串的开头。
 
-
 ```php
 use Illuminate\Support\Str;
 
@@ -845,7 +841,6 @@ Str::of('Arkansas is quite beautiful!')->remove('quite');
 ```
 
 还可以将 `false` 作为第二个参数传递，以在删除字符串时忽略大小写。
-
 
 ## `repeat()`
 
@@ -919,7 +914,6 @@ Str::of('the quick brown fox jumps over the lazy dog')->replaceLast('the', 'a');
 // the quick brown fox jumps over a lazy dog
 ```
 
-
 ## `replaceMatches()`
 
 `replaceMatches()` 方法用给定的替换字符串替换与模式匹配的字符串的所有部分：
@@ -931,7 +925,6 @@ Str::of('(+1) 501-555-1000')->replaceMatches('/[^A-Za-z0-9]++/', '')
 
 // '15015551000'
 ```
-
 
 `replaceMatches` 方法还接受一个闭包，该闭包将被与给定模式匹配的字符串的每个部分调用，从而允许在闭包内执行替换逻辑并返回替换的值：
 
@@ -1539,7 +1532,6 @@ Str::of('Hello, world!')->wordCount();
 // 2
 ```
 
-
 ## `words()`
 
 `words()` 方法限制字符串中的单词数。
@@ -1554,5 +1546,3 @@ Str::of('Perfectly balanced, as all things should be.')
 
 // Perfectly balanced, as >>>
 ```
-
-

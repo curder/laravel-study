@@ -30,7 +30,6 @@ collect([collect([1, 2, 3, 4]), collect([1, 2, 3, 4])])->all();
 */
 ```
 
-
 ```php [toArray]
 // 使用 toArray 方法会将所有层级的集合都格式化为数组
 collect([collect([1, 2, 3, 4]), collect([1, 2, 3, 4])])->toArray();

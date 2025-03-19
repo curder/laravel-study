@@ -28,7 +28,6 @@
 
 现在可以在路由或控制器中的任何地方使用该别名。
 
-
 ```php
 Route::get('/protected', ProtectedController::class)
     ->middleware(['auth', 'subscribed']) // [!code ++]

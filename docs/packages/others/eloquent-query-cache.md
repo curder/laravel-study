@@ -32,9 +32,7 @@ class Post extends Model
 }
 ```
 
-
 ## 自定义配置
-
 
 ### 缓存时间 `$cacheFor`
 
@@ -52,7 +50,6 @@ public function cacheForValue(): int|DateTime
     return -1;
 }
 ```
-
 
 ### 缓存标签 `$cacheTags`
 
@@ -121,7 +118,6 @@ public function cacheUsePlainKeyValue(): bool
     return false;
 }
 ```
-
 
 ### 自动更新缓存
 

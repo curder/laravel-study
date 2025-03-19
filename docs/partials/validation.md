@@ -23,7 +23,7 @@ protected function passedValidation(): void
 ],
 ```
 
-## 自定义验证错误消息 
+## 自定义验证错误消息
 
 可以自定义每个字段、规则和语言的验证错误消息 - 只需创建具有适当数组结构的特定语言文件 `resources/lang/xx/validation.php`。
 
@@ -53,7 +53,6 @@ $rules = [
     'end_date' => 'after:start_date'
 ];
 ```
-
 
 ## `mac_address`
 
@@ -307,7 +306,6 @@ request()->validate([
 ])
 ```
 
-
 ## 验证重定向的表单请求
 
 当使用表单请求进行验证时，默认情况下验证错误将重定向回上一步，可以通过定义 `$redirect` 或 `$redirectRoute` 的属性即可覆盖它。
@@ -394,14 +392,11 @@ class CreateProductRequest extends FormRequest
 
 更多错误消息索引和位置可以查看[官网](https://laravel.com/docs/master/validation#error-message-indexes-and-positions)说明。
 
-
 ## 排除验证值
 
 当需要验证某个字段，但实际上并不需要它进行任何操作时，比如“接受条款和条件”，使用 `exclude` 规则。
 
 这样，调用验证的方法 `validated` 就不会返回它。
-
-
 
 ::: code-group
 ```php [请求验证类]

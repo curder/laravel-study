@@ -1,13 +1,12 @@
 # 一对一
- 
-[GitHub 源码演示 - Laravel Relationships Demo](https://github.com/curder/laravel-relationships-demo/tree/has-one)  
 
+[GitHub 源码演示 - Laravel Relationships Demo](https://github.com/curder/laravel-relationships-demo/tree/has-one)  
 
 一对一的关联关系是最简单的关联关系，比如一个用户对应一个账户，一个账户只属于一个用户。
 
 下面是对应的表结构：
 
-```
+```text
 users
     id - integer
     name - string
@@ -19,7 +18,6 @@ user_accounts
     qq - string
     ...
 ```
-
 
 ## 软件版本
 
@@ -37,7 +35,7 @@ user_accounts
 
 数据操作之前请先配置好，数据库的一些连接信息。例如下面使用 sqlite 数据库，修改项目根目录下的 `.env` 文件内容。
 
-```
+```dotenv
 DB_CONNECTION=sqlite
 ```
 
@@ -104,7 +102,7 @@ class CreateUserAccountsTable extends Migration
 
 ### 编辑填充文件
 
-#### 修改 `/databases/factories/UserAccountFactory.php`，新增关联数据。
+#### 修改 `/databases/factories/UserAccountFactory.php`，新增关联数据
 
 ```php
 <?php
@@ -135,7 +133,7 @@ class UserAccountFactory extends Factory
 }
 ```
 
-#### 修改 `databases/seeders/UserAccountSeeder.php`，执行填充。
+#### 修改 `databases/seeders/UserAccountSeeder.php`，执行填充
 
 ```php
 <?php
@@ -161,7 +159,7 @@ class UserAccountSeeder extends Seeder
 
 ### 执行数据库迁移和数据填充
 
-```shell
+```bash
 php artisan migrate:refresh --seeder=UserAccountSeeder
 ```
 
@@ -195,7 +193,7 @@ class UserAccount extends Model
 
 ### 定义关联关系
 
-- 在 `User` 模型中定义与 `UserAccount` 模型的一对一关联关系
+* 在 `User` 模型中定义与 `UserAccount` 模型的一对一关联关系
 
 ```php {19}
 <?php
@@ -221,7 +219,7 @@ class User extends Model
 }
 ```
 
-- 在 `UserAccount` 模型中定义与 `User` 的一对一从属关系
+* 在 `UserAccount` 模型中定义与 `User` 的一对一从属关系
 
 ```php {19}
 <?php
@@ -261,7 +259,7 @@ $user->account()->save($account); // 执行关联写入操作
 
 ### 查询数据
 
-- 通过用户获取用户关联信息
+* 通过用户获取用户关联信息
 
 ```php
 $user = \App\Models\User::find(1); // 获取用户表数据
@@ -269,7 +267,7 @@ $user = \App\Models\User::find(1); // 获取用户表数据
 $user->account; // 通过用户信息获取用户关联信息
 ```
 
-- 通过用户关联信息获取用户相关信息
+* 通过用户关联信息获取用户相关信息
 
 ```php
 $account = \App\Models\UserAccount::find(3); // 获取用户关联信息
@@ -297,7 +295,7 @@ DB::transaction(function () {
 
 #### 更新从属表
 
-- 使用 `push()`  方法
+* 使用 `push()`  方法
 
 ```php {3}
 $user = \App\Models\User::first();
@@ -307,7 +305,7 @@ $user->push();
 ```
 > 当然 `push()` 方法也可以修改主表本身的属性。比如：当修改附属表属性的同时也可以修改用户邮箱 `$user->email = 'example@example.com';`
 
-- 使用 `save()` 方法 
+* 使用 `save()` 方法
 
 ```php
 // 通过用户表 `users` 数据，更新关联 `user_accounts`
@@ -322,14 +320,14 @@ $user->account()->update(['wechat' => 'new Wechat']);
 
 #### 更新主表
 
-- 使用 `push()` 方法
+* 使用 `push()` 方法
 ```php
 $account = \App\Models\UserAccount::first();
 $account->user->email = 'push@method.com';
 $account->push();
 ```
 
-- 使用 `save()` 方法
+* 使用 `save()` 方法
 ```php
 // 通过 用户信息表 `user_accounts` 关联更新 `users` 数据表
 $account = \App\Models\UserAccount::first();
@@ -394,6 +392,7 @@ $account->user->touch();
 ## 测试
 
 ### hasOne
+
 ```php {27-29}
 <?php
 

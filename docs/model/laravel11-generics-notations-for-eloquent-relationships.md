@@ -4,7 +4,8 @@
 
 下面是 Laravel 11 中各种模型关系的泛型表示方式，包括 `Factory` 工厂类的泛型表示。
 
-### 1. **HasOne**
+## 1. **HasOne**
+
 ```php
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
@@ -18,7 +19,8 @@ public function profile(): HasOne
 ```
 - `HasOne<Profile>` 表示当前模型拥有一个 `Profile` 关系。
 
-### 2. **HasMany**
+## 2. **HasMany**
+
 ```php
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -32,7 +34,8 @@ public function comments(): HasMany
 ```
 - `HasMany<Comment>` 表示当前模型拥有多个 `Comment` 实体。
 
-### 3. **BelongsTo**
+## 3. **BelongsTo**
+
 ```php
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -46,7 +49,8 @@ public function user(): BelongsTo
 ```
 - `BelongsTo<User, Post>` 表示 `Post` 模型从属于 `User` 模型。
 
-### 4. **BelongsToMany**
+## 4. **BelongsToMany**
+
 ```php
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
@@ -60,7 +64,8 @@ public function roles(): BelongsToMany
 ```
 - `BelongsToMany<Role>` 表示当前模型与多个 `Role` 模型有多对多的关系。
 
-### 5. **HasOneThrough**
+## 5. **HasOneThrough**
+
 ```php
 use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 
@@ -74,7 +79,8 @@ public function user(): HasOneThrough
 ```
 - `HasOneThrough<User, Account>` 表示通过 `Account` 模型找到 `User` 模型的关系。
 
-### 6. **HasManyThrough**
+## 6. **HasManyThrough**
+
 ```php
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
@@ -88,7 +94,8 @@ public function posts(): HasManyThrough
 ```
 - `HasManyThrough<Post, Country>` 表示通过 `Country` 模型找到多个 `Post` 模型的关系。
 
-### 7. **MorphTo**
+## 7. **MorphTo**
+
 ```php
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
@@ -102,7 +109,8 @@ public function commentable(): MorphTo
 ```
 - `MorphTo<Model, Comment>` 表示一个多态关系，可以关联多个不同类型的模型。
 
-### 8. **MorphOne**
+## 8. **MorphOne**
+
 ```php
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 
@@ -116,7 +124,8 @@ public function image(): MorphOne
 ```
 - `MorphOne<Image>` 表示一个多态关系，当前模型拥有一个 `Image`。
 
-### 9. **MorphMany**
+## 9. **MorphMany**
+
 ```php
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
@@ -130,7 +139,8 @@ public function comments(): MorphMany
 ```
 - `MorphMany<Comment>` 表示一个多态关系，当前模型可以有多个 `Comment`。
 
-### 10. **MorphToMany**
+## 10. **MorphToMany**
+
 ```php
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
@@ -144,7 +154,7 @@ public function tags(): MorphToMany
 ```
 - `MorphToMany<Tag>` 表示当前模型与多个 `Tag` 模型通过多态关系进行关联。
 
-### **Factory 工厂类的泛型表示**
+## **Factory 工厂类的泛型表示**
 
 在 Laravel 11 中，工厂类也支持泛型，通常用于生成模型实例。通过引入泛型，可以为工厂类定义更精确的类型。
 

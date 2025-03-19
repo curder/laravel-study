@@ -20,6 +20,7 @@ collect(['product' => 'coconuts', 'price' => 10, 'qty' => 45])
 ```
   
 ## 接收数组参数
+
 ```php
 collect(['product' => 'coconuts', 'price' => 10, 'qty' => 45])
     ->only(['product', 'price']);

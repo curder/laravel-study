@@ -1,4 +1,4 @@
- # sortByDesc
+# sortByDesc
 
 > 以给定的键对集合进行正序排序。
 
@@ -23,8 +23,6 @@ collect([
 如果需要按照数值越大越靠前的倒序排序方式，可以再调用 [reverse](reverse.md) 方法；
 
 或者使用 [sortBy](sortBy.md) 方法。
-
-
 
 传入回调函数以决定如何对集合的值进行排序
 

@@ -1,6 +1,8 @@
 # Sleep
 
+<!-- markdownlint-disable MD013 -->
 Laravel 的 [Sleep 类](https://laravel.com/docs/master/helpers#sleep)是 PHP 原生 [sleep](https://www.php.net/manual/en/function.sleep) 和 [usleep](https://www.php.net/manual/en/function.usleep) 函数的轻量级包装器，提供了更好的可测试性，同时还公开了一个开发人员友好的 API 来处理时间：
+<!-- markdownlint-enable MD013 -->
 
 ## 基本使用
 

@@ -25,6 +25,7 @@ asset('img/photo.jpg');
 ```
 
 ## `route()`
+
 `route()` 函数为给定的[命名路由](https://laravel.com/docs/master/routing#named-routes)生成一个 URL。
 
 ```php

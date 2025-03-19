@@ -108,7 +108,6 @@ class Post extends Model
 Post::query()->published()->orderByMostRecent()->get()->toDropdown();
 ```
 
-
 ## 相关链接
 
 - [GitHub - Custom collection for laravel eloquent model](https://github.com/curder/custom-collection-for-laravel-eloquent-model)

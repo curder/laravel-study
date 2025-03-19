@@ -4,18 +4,21 @@ Laravel 从 4.2 版本开始就有了宏的概念，本文将展示如何创建�
 
 在 Laravel 代码库，会发现无数对名为 `\Illuminate\Support\Traits\Macroable` 宏的引用，这个特性允许实时扩展类的公共接口。
 
-
 ## 什么是宏
 
 简单来说，Laravel Macro 是一种用 Laravel 类中不存在的代码向 Laravel 内部组件添加一些缺失功能的方法。
 
 为了实现 Laravel 宏，Laravel 提供了一个名为 Macroable 的 PHP 特性。
 
+<!-- markdownlint-disable MD013 -->
 可以检查位于 [`Illuminate\Http\Response`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/Response.php) 的 Laravel Response 类，它实现了 Macroable 特征，这意味着可以使用宏扩展 Response 类。
+<!-- markdownlint-enable MD013 -->
 
 ## 可宏化的类
 
+<!-- markdownlint-disable MD013 -->
 以下 Laravel 类允许使用 [`Illuminate\Support\Traits\Macroable`](https://github.com/laravel/framework/blob/master/src/Illuminate/Macroable/Traits/Macroable.php) 特征创建宏。以下是一些最常用的创建宏的类：
+<!-- markdownlint-enable MD013 -->
 
 - [`Illuminate\Auth\RequestGuard`](https://github.com/laravel/framework/blob/master/src/Illuminate/Auth/RequestGuard.php)
 - [`Illuminate\Auth\SessionGuard`](https://github.com/laravel/framework/blob/master/src/Illuminate/Auth/SessionGuard.php)
@@ -110,9 +113,7 @@ Str::isLength('This is a Laravel Macro', 23); // true
 
 > `Macroable` 特征的内部机制允许从静态和实例上下文中调用宏。
 
-
 向 `Str` 类添加另一个宏，它将把给定的字符附加到给定的字符串中。
-
 
 ```php
 Str::macro('appendTo', function ($str, $char) {
@@ -127,7 +128,6 @@ use Illuminate\Support\Str;
 
 dd(Str::appendTo('LaraShout', '@')); // @LaraShout
 ```
-
 
 ## 创建多个宏
 
@@ -169,7 +169,6 @@ class StrMixin
     }
 }
 ```
-
 
 现在在 `AppServiceProvider` 中，可以删除以前的宏声明。
 
@@ -216,7 +215,7 @@ class AppServiceProvider extends ServiceProvider
 
 ### `Model`
 
-::: code-group 
+::: code-group
 ```php [定义]
 <?php
 
@@ -422,7 +421,6 @@ public function store($request)
   // ...
 }
 ```
-
 
 ```php [测试]
 /**

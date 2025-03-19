@@ -136,7 +136,6 @@ $fluent->scope('user')->toJson(); // {"name":"curder","age":32}
 $fluent->scope('posts.*.title')->toJson(); // ["post title 1","post title 2"]
 ```
 
-
 ### `getAttributes()`
 
 使用 `getAttributes()` 方法以数组的形式返回当前 Fluent 实例的所有属性。
@@ -152,7 +151,6 @@ $fluent = new Fluent($data);
 
 $fluent->getAttributes(); // ["name" => "curder"]
 ```
-
 
 ### `toArray()` 和 `toJson()`
 

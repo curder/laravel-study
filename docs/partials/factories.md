@@ -51,7 +51,7 @@ fake()->valid(validator: fn($exp) => $exp < 100, maxRetries: 100)->randomNumber(
 - `validator` 用于指定验证器函数，该函数应该接受一个参数并返回一个布尔值，当表达式的值为真时，返回值并使用它作为生成的最终值。
 - `maxRetries` 用于指定最大重试次数，如果超过这个次数生成的值仍然不满足回调函数，则会抛出 `OverflowException` 的错误。
 
-## 工厂回调 
+## 工厂回调
 
 ### afterCreating
 
@@ -79,7 +79,6 @@ User::factory()->afterMaking(function(User $user) {
 ```
 
 > **注意：** `make` 方法不会实际生成数据量记录。
-
 
 工厂回调不仅可以在调用的时候指定，还可以在工厂类中定义。
 
@@ -144,7 +143,6 @@ public function definition(): array
     ];
 }
 ```
-
 
 或者使用自定义方法 `withAvatar()` 配合工厂回调 `afterCreating()` 精确的创建头像。
 
@@ -218,8 +216,7 @@ User::factory()->count(10)->sequence(
 ```
 :::
 
-
-## 创建模型且不提交事件 
+## 创建模型且不提交事件
 
 ### 使用 `create*Quietly` 方法
 
@@ -268,7 +265,7 @@ User::factory()
 ```
 
 > `has` 方法第二个参数是关联关系的名称，如有必要的话可以明确指定要操作的关系的名称 `posts`。
-> 
+>
 > ```php
 > User::factory()->has(Post::factory()->count(3), 'posts')->create(); 
 > ```
@@ -357,4 +354,6 @@ Post::factory()
     ->create();
 ```
 
+<!-- markdownlint-disable MD013 -->
 更多 [多对多](https://laravel.com/docs/master/eloquent-factories#many-to-many-relationships) 和 [多态关系](https://laravel.com/docs/master/eloquent-factories#polymorphic-relationships) 可以查看 Laravel 官方文档。
+<!-- markdownlint-enable MD013 -->

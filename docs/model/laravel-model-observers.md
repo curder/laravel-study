@@ -21,7 +21,7 @@ touch database/database.sqlite
 
 修改项目本地环境文件 `.env` 文件中的数据库连接
 
-```
+```dotenv
 DB_CONNECTION=sqlite
 ```
 
@@ -143,7 +143,6 @@ class PostObserver
 >**注意:** 如果 `saving` 、 `creating` 、 `updating` 、 `deleting` 、 `restoring` 事件逻辑中返回 `false` ，则相应的创建、更新、删除操作会退出，不再往下执行。
 > 其中 `restoring` 和 `restored` 事件需要模型 `use Illuminate\Database\Eloquent\SoftDeletes;` 才能正常使用。
 
-
 ## 对数据进行增删改操作
 
 ### 增加
@@ -164,7 +163,6 @@ saved event is fired
 
 > 通过执行上面的代码我们可以看到，执行模型 `create()` 方法，会依次触发 `saving` 、 `creating` 、 `created` 和 `saved` 事件。
 
-
 ### 删除
 
 ```php
@@ -179,7 +177,6 @@ deleted event is fired
 ```
 
 > 通过执行上面的删除代码，可以看到会依次触发 `deleting` 和 `deleted` 事件。
-
 
 ```php
 use App\Models\Post;
@@ -198,7 +195,6 @@ restored event is fired
 ```
 
 > 通过执行上面的恢复删除代码，可以依次触发了`restoring`、`saving`、`updating`、`updated`、`saved`和`restored`事件中的代码
-
 
 ### 更新
 

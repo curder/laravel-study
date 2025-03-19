@@ -182,7 +182,7 @@ $users = Book::with('author.country:id,name')->get();
 
 ## 更新父级
 
-如果正在更新记录并想要更新 belongsTo 关系的 `updated_at` 列。
+如果正在更新记录并想要更新 `belongsTo` 关系的 `updated_at` 列。
 
 例如，添加新的帖子评论并希望 `posts.updated_at` 更新，只需要在 `Comment` 模型上定义 `$touches` 属性。
 
@@ -196,6 +196,14 @@ class Comment extends Model
         return $this->belongsTo(Post::class); 
     }
 }
+```
+
+也可以这样更新模型关系数据：
+
+```php
+// Project -> belongsTo(User::class)
+
+$project->user->update(['email' => 'some@gmail.com']);
 ```
 
 ## withCount() 计算子关系记录
@@ -273,16 +281,6 @@ auth()->user()->posts()->create([
     'title' => request('title'),
     'post_text' => request('post_text'),
 ]);
-```
-
-## 更新父级
-
-如果有 `belongsTo()` 关系，则可以这样更新模型关系数据：
-
-```php
-// Project -> belongsTo(User::class)
-
-$project->user->update(['email' => 'some@gmail.com']);
 ```
 
 ## 组合两个 `whereHas`

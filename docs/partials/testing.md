@@ -120,7 +120,9 @@ it('returns the correct amount of records', function() {
 
 ### 响应 Json
 
+<!-- markdownlint-disable MD013 -->
 通常希望从 API 返回 JSON 数据。可以在此处使用 Laravel 的 JSON 帮助器，例如[`assertJson`](https://laravel.com/docs/master/http-tests#assert-json) 、[`assertJsonCount`](https://laravel.com/docs/master/http-tests#assert-json-count)、[`assertExactJsonStructure`](https://github.com/laravel/framework/blob/516bf8d73d678eefce7a7ca3efea6904b83e0036/src/Illuminate/Testing/TestResponse.php#L857) 和 [`assertJsonStructure`](https://laravel.com/docs/master/http-tests#assert-json-structure) 等方法。
+<!-- markdownlint-enable MD013 -->
 
 ```php
 use function Pest\Laravel\postJson;
@@ -233,7 +235,6 @@ it('allowed user can delete task', function() {
 ```
 :::
 
-
 可以在[官网](https://laravel.com/docs/master/database-testing#available-assertions)了解有关测试数据库的更多信息。
 
 ## 资源 Resources
@@ -323,7 +324,6 @@ it('will return true for authorizes method forever', function () {
 });
 ```
 
-
 ```php [自定义请求验证类 SiteStoreRequest]
 <?php
 // app/Http/Requests/SiteStoreRequest.php
@@ -389,6 +389,7 @@ class ValidProtocol implements ValidationRule
 ## 验证 Validation
 
 ### Http请求
+
 验证是许多应用程序的关键部分。在处理请求时候需要确保只能提交满足规则的数据。
 
 默认情况下，Laravel 会将验证错误发送回用户，可以使用 [`assertInvalid`](https://laravel.com/docs/master/http-tests#assert-invalid) 方法进行检查。
@@ -426,12 +427,15 @@ it('requires title and description tested with a dataset', function($data, $erro
 
 可以在[官网](https://laravel.com/docs/master/http-tests#response-assertions)了解更多有关测试页面响应的信息。
 
+<!-- markdownlint-disable MD013 -->
 也可以在此基础上引入 [RequestsFactories](https://github.com/worksome/request-factories) 请求工厂，更加规范的进行测试，详细内容可以[查看这里](https://downing.tech/posts/my-favourite-way-to-test-laravel-validation)。
+<!-- markdownlint-enable MD013 -->
 
 ### 自定义规则
+
 可以安装[spatie/pest-expectations](https://github.com/spatie/pest-expectations)扩展辅助验证。
 
-::: code-group 
+::: code-group
 ```php [test]
 it('has valid phone number for chinesePhoneNumber rule',
     fn ($value) => expect(new ChinesePhoneNumberRule())->toPassWith($value)
@@ -680,9 +684,7 @@ it('contains the product title', function () {
 });
 ```
 
-
 可以在[官网](https://laravel.com/docs/master/mail#testing-mailable-content)了解更多有关测试邮件内容的信息。
-
 
 ## 作业和队列
 
@@ -718,7 +720,6 @@ it('imports products', function() {
 })
 ```
 
-
 ## 通知 Notifications
 
 Notifications 通知适合向用户发送重要事件。
@@ -748,7 +749,6 @@ it('sends notification about new product', function () {
 同样，通知 `Notification::fake()` 伪造它，确保没有发送实际的通知。
 
 可以在[官网](https://laravel.com/docs/master/notifications#testing)了解更多有关测试通知的信息。
-
 
 ## Actions
 
@@ -848,7 +848,6 @@ it('asks for user ids', function() {
 
 可以在[官网](https://laravel.com/docs/master/console-tests#main-content)了解更多有关测试命令的信息。
 
-
 ## 测试视图 Views
 
 Laravel 10.x 支持使用命令创建视图。
@@ -883,7 +882,6 @@ it('can render', function () {
 </div>
 ```
 :::
-
 
 ## 中间件 Middlewares
 
@@ -1101,7 +1099,7 @@ it('uploads CSV file', function () {
     Storage::disk('uploads')->assertExists($file->hashName());
 });
 ```
-Storage 门面的 `fake` 方法确保不会在真实的存储磁盘上存储任何文件。 
+Storage 门面的 `fake` 方法确保不会在真实的存储磁盘上存储任何文件。
 
 `UploadedFile` 类可以创建测试文件。
 
@@ -1122,7 +1120,6 @@ it('stops if at least one account not found', function () {
 ```
 
 可以使用 [Pest](https://pestphp.com/) 的 `throws` 方法确保抛出异常。
-
 
 ## 单元测试 Unit Tests
 
@@ -1174,7 +1171,6 @@ final readonly class UserData
 :::
 
 它包含一个从 Webhook 负载创建新实例的方法，在相应的测试中，也只测试这个方法返回的内容。
-
 
 ## Http请求
 
@@ -1326,7 +1322,6 @@ it('has some schedules', function (string $command, $expression) {
 :::
 
 其他的简单测试示例代码 [curder/laravel-console-command-test-demo](https://github.com/curder/laravel-console-command-test-demo) 。
-
 
 ## 相关阅读
 

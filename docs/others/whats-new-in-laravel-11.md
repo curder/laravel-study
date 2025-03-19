@@ -4,11 +4,11 @@
 
 下面是 Laravel 版本的支持周期表，可以[点击这里查看官方说明](https://laravel.com/docs/master/releases#support-policy)：
 
-| 版本  | 	PHP       | 	发布	              | 错误修复直至           | 	安全修复直至         |
+| 版本  |  PHP       |  发布               | 错误修复直至           |  安全修复直至         |
 |-----|------------|-------------------|------------------|-----------------|
-| 10	 | 8.1 - 8.3	 | 2023 年 2 月 14 日   | 	2024 年 8 月 6 日	 | 2025 年 2 月 4 日  |
-| 11  | 	8.2 - 8.3 | 	2024 年 3 月 12 日	 | 2025 年 9 月 3 日	  | 2026 年 3 月 12 日 |
-| 12  | 	8.2 - 8.3 | 	2025 年第一季度       | 	2026 年第三季度	     | 2027 年第一季度      |
+| 10  | 8.1 - 8.3  | 2023 年 2 月 14 日   |  2024 年 8 月 6 日  | 2025 年 2 月 4 日  |
+| 11  |  8.2 - 8.3 |  2024 年 3 月 12 日  | 2025 年 9 月 3 日   | 2026 年 3 月 12 日 |
+| 12  |  8.2 - 8.3 |  2025 年第一季度       |  2026 年第三季度      | 2027 年第一季度      |
 
 更多发行说明请参考[官方说明](https://laravel.com/docs/11.x/releases)。
 
@@ -19,7 +19,7 @@
 Laravel 项目默认的配置文件在 `config` 目录下，可以看到相比 Laravel 10 的项目配置文件，Laravel 11 移除了部分默认的配置文件。
 
 ::: details 查看 `config` 默认配置差异
-![](images/whats-new-in-laravel-11/laravel10-compare-laravel11-config.jpg)
+![laravel 10 compare laravel 11 config](images/whats-new-in-laravel-11/laravel10-compare-laravel11-config.jpg)
 :::
 
 如果需要随时可以通过 `config:publish` 命令重新发布。
@@ -40,7 +40,7 @@ php artisan config:publish view
 
 > [!TIP] 提示
 > **默认情况下，Laravel 11 中通过 `make:provider` 命令创建的服务提供者文件自动加载，而无需手动进行配置。**
-> 
+>
 > 因为 [Laravel 11](https://github.com/laravel/laravel/blob/11.x/bootstrap/providers.php) 中的服务器提供者的配置文件在 `bootstrap/providers.php` 中以数组的形式返回。
 
 可以通过下面的流程来检验上面的说法：
@@ -62,7 +62,7 @@ php artisan config:publish view
         dd('Hi there');
     }
     ```
-   
+
 3. 运行命令
 
     最后，在命令行中运行命令 `php artisan inspire` 可以看到命令行会输出上面的 `dd` 信息。
@@ -71,8 +71,9 @@ php artisan config:publish view
 
     将 `bootstrap/providers.php` 中自动注册的 `App\Providers\TestingServiceProvider::class,` 注释，然后再次运行 `php artisan inspire` 命令，可以看到命令行不再输出上面的 `dd` 信息。
 
+<!-- markdownlint-disable MD013 -->
 所以，在 Laravel 11 中自定义的服务提供者文件不在 `config/app.php` 中进行配置，而是在 `bootstrap/providers.php` 中进行配置，并且自定义的服务提供者如果是通过 `make:provider` 命令创建的则无需手动配置，Laravel 框架会自动注册。
-
+<!-- markdownlint-enable MD013 -->
 
 ### install:api
 
@@ -109,14 +110,15 @@ php artisan install:broadcasting
 
 更多广播相关使用可以参考 [Broadcasting 文档](https://laravel.com/docs/11.x/broadcasting)。
 
-
 ### 中间件 Middlewares
 
 Laravel 框架自带了很多中间件来处理不同的请求，比如 `TrimStrings` 中间件用来去除请求参数和请求头中的空格。
 
 #### 自定义默认中间件配置
 
+<!-- markdownlint-disable MD013 -->
 相比于 [Laravel 10 的中间件](https://github.com/laravel/laravel/tree/10.x/app/Http/Middleware)，在 Laravel 11 中默认的中间件 `app/Http/Middleware` 已被移除，如果需要修改默认中间件的配置，可以在服务器提供者 `app/Providers/AppServiceProvider.php` 中进行配置。
+<!-- markdownlint-enable MD013 -->
 
 ```php
 public function boot(): void
@@ -175,7 +177,9 @@ Laravel 11 中通过在配置文件 [`bootstrap/app.php`](https://github.com/lar
 
 ### 定时任务 Schedule
 
+<!-- markdownlint-disable MD013 -->
 在 Laravel 10 中，如果需要配置项目的定时任务可以在 [`app/Console/Kernel.php`](https://github.com/laravel/laravel/blob/10.x/app/Console/Kernel.php#L13) 的 `schedule()` 方法中进行配置。
+<!-- markdownlint-enable MD013 -->
 
 Laravel 11 中 `app/Console/Kernel.php` 文件被删除，取而代之的是在 `routes/console.php` 中进行配置。
 
@@ -256,7 +260,6 @@ Str::of('hello ')->append('world')->apa()->dump()->toString();
 - [Http InteractsWithInput](https://github.com/laravel/framework/blob/11.x/src/Illuminate/Http/Concerns/InteractsWithInput.php#L15)
 - [Stringable](https://github.com/laravel/framework/blob/11.x/src/Illuminate/Support/Stringable.php#L17)
 - [TestResponse](https://github.com/laravel/framework/blob/11.x/src/Illuminate/Testing/TestResponse.php#L38)
-
 
 #### 自定义类
 
@@ -570,9 +573,7 @@ class OptionsCollection extends Collection
 ```
 :::
 
-
 也可以通过这个 [PR](https://github.com/laravel/framework/pull/47237) 了解更多详情。
-
 
 ### 每秒速率限制
 
@@ -725,13 +726,14 @@ it('retrying asynchronous requests', function () {
 ```
 
 ### 优雅的轮换加密密钥
+
 由于 Laravel 加密所有 cookie，包括应用程序的会话 cookie，因此基本上对 Laravel 应用程序的每个请求都依赖于加密。但正因为如此，轮换应用程序的加密密钥将使所有用户退出您的应用程序。
 
 此外，解密由先前加密密钥加密的数据变得不可能。
 
 Laravel 11 允许通过环境变量 `APP_PREVIOUS_KEYS` 将应用程序以前的加密密钥定义为逗号分隔的列表。
 
-![](images/whats-new-in-laravel-11/app-previous-keys.png)
+![app previous keys](images/whats-new-in-laravel-11/app-previous-keys.png)
 
 Laravel 将始终使用“当前”加密密钥，该密钥位于 `APP_KEY` 环境变量中。解密值时，Laravel 将首先尝试当前密钥。如果使用当前密钥解密失败，Laravel 将尝试所有先前的密钥，直到其中一个密钥能够解密该值。
 
@@ -750,7 +752,6 @@ php artisan make:test PestTest --pest # Laravel 10
 
 php artisan make:test PestTest # Laravel 11
 ```
-
 
 ### 队列交互测试
 

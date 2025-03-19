@@ -41,11 +41,12 @@ cd laravel-pest-todo-test-demo
 
 composer require --dev pestphp/pest-plugin-laravel
 ```
-
+<!-- markdownlint-disable MD013 -->
 ::: warning 注意
 由于当前版本 `pestphp/pest-plugin-laravel@v1.0.0` 对 phpunit 的版本要求 `"phpunit/phpunit": ">= 9.3.7 <= 9.5.3"`，可以通过 [composer.json](https://github.com/pestphp/pest/blob/master/composer.json#L26) 查看。
 所以需要修改我们项目的 phpunit 版本，修改 `composer.json` 中 `"phpunit/phpunit": "9.5.3"`，指定 phpunit 的版本为：`9.5.3`。
 :::
+<!-- markdownlint-enable MD013 -->
 
 插件安装完成后，运行以下命令：
 
@@ -112,7 +113,7 @@ test('basic')->assertTrue(true);
 
 如下图所示，所有测试均应通过。
 
-![](./images/unit-test-laravel-api-pest-framework/init-run-pest-test-pass.jpg)
+![init run pest test pass](./images/unit-test-laravel-api-pest-framework/init-run-pest-test-pass.jpg)
 
 ## 创建待办事项模型，迁移和控制器
 
@@ -126,7 +127,7 @@ php artisan make:model Todo -mcf
 
 接下来，将以下代码添加到迁移文件中的方法中：`database/migrations[TODAYSDATE]_create_todos_table.php`
 
-```php{4,5}
+```php {4,5}
 Schema::create('todos', function (Blueprint $table) {
     $table->id();
 
@@ -139,7 +140,7 @@ Schema::create('todos', function (Blueprint $table) {
 
 每个待办任务将具有一个 `name` 属性以及一个布尔 `completed` 属性，其默认值为 `false`。接下来，`App/Models/Todo.php` 使用以下代码编辑文件：
 
-```php{12}
+```php {12}
 <?php
 
 namespace App\Models;
@@ -161,7 +162,7 @@ class Todo extends Model
 
 编辑 `database/factories/TodoFactory.php` 文件的 `definition()` 方法以返回类似于以下数组的数组：
 
-```php{24-27}
+```php {24-27}
 <?php
 
 namespace Database\Factories;
@@ -194,7 +195,6 @@ class TodoFactory extends Factory
 ```
 
 该 `definition` 方法返回使用工厂创建模型时应应用的默认属性值集。
-
 
 ## 配置数据库
 
@@ -311,27 +311,29 @@ it('can delete a to-do', function () {
 
 现在，回顾一下每个测试的功能：
 
->  Laravel 提供了多个帮助程序来测试JSON API及其响应。
+Laravel 提供了多个帮助程序来测试JSON API及其响应。
 
-> **it('does not create a to-do without a name field')**
-> 
-> 利用 `postJson` 方法向 `api/todos` 地址发送 POST 请求，并传递一个空数组参数。接下来断言，`assertStatus()` 返回响应中的方法确保应返回 HTTP 状态代码 422 。作用是确保名称字段必须提供。
+- `**it('does not create a to-do without a name field')**`
 
-> **it('can create a to-do')**
-> 
->  使用 `POST` 方式在 `api/todos` 地址发出请求时创建待办事项。断言已返回 HTTP 状态代码 201 ，并且该数据库实际上包含使用该 `assertDatabase()` 方法的待办事项。
+    利用 `postJson` 方法向 `api/todos` 地址发送 POST 请求，并传递一个空数组参数。接下来断言，`assertStatus()` 返回响应中的方法确保应返回 HTTP 状态代码 422 。作用是确保名称字段必须提供。
 
-> **it('can fetch a to-do')**
-> 
->  使用 `TodoFactory` 上的 `create()` 方法，可以创建待办任务并将其存储在数据库中。接下来断言返回的状态码为 200 。该 `assertJson()` 方法将响应转换为数组，并验证给定数组是否存在于应用程序将返回的 JSON 响应中。此测试检查是否可以使用 ID 提取特定的待办事项。
+- `**it('can create a to-do')**`
 
-> **it('can update a to-do')**
-> 
->  此测试确保可以更新待办事项，并且可以在数据库中找到更新后的任务。
+    使用 `POST` 方式在 `api/todos` 地址发出请求时创建待办事项。
+    断言已返回 HTTP 状态代码 201 ，并且该数据库实际上包含使用该 `assertDatabase()` 方法的待办事项。
 
-> **it('can delete a to-do')**
-> 
->  此测试确保可以删除待办事项，并验证数据库中包含的任务总数为零。
+- `**it('can fetch a to-do')**`
+
+    使用 `TodoFactory` 上的 `create()` 方法，可以创建待办任务并将其存储在数据库中。接下来断言返回的状态码为 200 。
+    该 `assertJson()` 方法将响应转换为数组，并验证给定数组是否存在于应用程序将返回的 JSON 响应中。此测试检查是否可以使用 ID 提取特定的待办事项。
+
+- `**it('can update a to-do')**`
+
+    此测试确保可以更新待办事项，并且可以在数据库中找到更新后的任务。
+
+- `**it('can delete a to-do')**`
+
+    此测试确保可以删除待办事项，并验证数据库中包含的任务总数为零。
 
 要运行测试，请运行以下命令：
 
@@ -341,7 +343,7 @@ it('can delete a to-do', function () {
 
 由于当前尚未实现任何功能，因此测试应该会失败。
 
-![](./images/unit-test-laravel-api-pest-framework/run-pest-test-failed.jpg)
+![run pest test failed](./images/unit-test-laravel-api-pest-framework/run-pest-test-failed.jpg)
 
 ## 生成待办事项应用程序
 
@@ -459,8 +461,6 @@ Route::delete('/todos/{todo}', [TodoController::class, 'delete']);
 本教程可以作为 Pest 入门以及对 Laravel 应用程序进行单元测试的理想指南。
 
 包含此项目完整代码 [GitHub 仓库地址](https://github.com/curder/laravel-pest-todo-test-demo) 。
-
-
 
 ## 原文链接
 

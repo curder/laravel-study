@@ -106,7 +106,7 @@ public function cacheKey()
 
 模型的`cachekey()`方法的示例输出可能会返回以下字符串表示形式：
 
-```
+```text
 articles/1-1515650910
 ```
 

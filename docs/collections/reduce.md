@@ -22,7 +22,7 @@ collect([1, 2, 3])->reduce(
 ```
 
 > 它与 [map](map.md) 的区别是 [map](map.md) 传入集合或数组，返回是集合；
-> 
+>
 > 而 `reduce()` 传入数组或集合，返回单一值。
 
 ## 自定义回调
@@ -50,4 +50,3 @@ collect([
 - [map](map.md)
 - [each](each.md)
 - [sum](sum.md)
-

@@ -14,6 +14,6 @@ $collect->all(); // ['product_id' => 1, 'name' => 'Desk', 'price' => 100]
 
 - [merge](merge.md)
 - [push](push.md)
-- [pop](pop.md) 
+- [pop](pop.md)
 - [prepend](prepend.md)
 - [shift](shift.md)

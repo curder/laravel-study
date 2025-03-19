@@ -15,7 +15,7 @@ Arr::accessible(new Collection); // true
 Arr::accessible('abc'); // false
 
 Arr::accessible(new stdClass); // false
-``` 
+```
 
 ## `add()`
 
@@ -44,8 +44,9 @@ use Illuminate\Support\Arr;
 Arr::collapse([[1, 2, 3], [4, 5, 6], [7, 8, 9]]); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
+<!-- markdownlint-disable MD013 -->
 > `Arr` 的 `collapse` 方法的结果跟 [Illuminate\Support\Collection](/collections/index.md) 的 [`collapse`](/collections/collapse.md) 和 [`flatten`](/collections/flatten.md) 方法结果类似。
- 
+<!-- markdownlint-enable MD013 -->
 
 ## `crossJoin()`
 
@@ -157,7 +158,6 @@ Arr::first($array, $callback, $default);
 ```
 
 跟它类似的还有 [`last()`](#last) 方法，它返回通过给定真值测试的数组的最后一个元素。
-
 
 ## `flatten()`
 
@@ -871,14 +871,4 @@ data_forget($data, 'products.*.price');
 $array = [100, 200, 300];
 
 head($array); // 100
-```
-
-## `last()`
-
-`last()` 函数返回给定数组中的最后一个元素：
-
-```php
-$array = [100, 200, 300];
-
-last($array); // 300
 ```

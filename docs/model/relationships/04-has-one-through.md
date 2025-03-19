@@ -4,11 +4,13 @@
 
 "远层一对一"关系定义了与另一个模型的一对一关系。但是，这种关系表明声明模型可以通过第三个模型与另一个模型的一个实例匹配。
 
+<!-- markdownlint-disable MD013 -->
 在车辆修理店应用中，每个 `Mechanic` 模型可以与一个 `Car` 模型相关联，并且每个 `Car` 模型可以与一个 `Owner` 模型相关联。 虽然机械师 `Mechanic` 和所有者 `Owner` 在数据库中没有直接关系，但机械师 `Mechanic` 可以通过 `Car` 模型访问所有者 `Owner` 。
+<!-- markdownlint-enable MD013 -->
 
 下面是对应的表结构：
 
-```
+```text
 mechanics
     id - integer
     name - string
@@ -35,13 +37,13 @@ owners
 
 ## 关键字和数据表
 
-* `hasOneThrough()` 
+* `hasOneThrough()`
 
 * `mechanics`、`cars` 和 `owners` 表
 
 数据操作之前请先配置好，数据库的一些连接信息。例如下面使用 `sqlite` 数据库，修改项目根目录下的 `.env` 文件内容。
 
-```
+```dotenv
 DB_CONNECTION=sqlite
 ```
 
@@ -99,7 +101,7 @@ Schema::create('owners', function (Blueprint $table) {
 
 ### 编辑填充文件
 
-#### 修改 `databases/factories/MechanicFactory.php`，新增关联数据。
+#### 修改 `databases/factories/MechanicFactory.php`，新增关联数据
 
 ```php
 <?php
@@ -124,7 +126,7 @@ class MechanicFactory extends Factory
 }
 ```
 
-#### 修改 `databases/factories/CarFactory.php`，新增关联数据。
+#### 修改 `databases/factories/CarFactory.php`，新增关联数据
 
 ```php
 <?php
@@ -151,7 +153,7 @@ class CarFactory extends Factory
 }
 ```
 
-#### 修改 `databases/factories/OwnerFactory.php`，新增关联数据。
+#### 修改 `databases/factories/OwnerFactory.php`，新增关联数据
 
 ```php
 <?php
@@ -190,7 +192,7 @@ php artisan migrate:refresh --seeder=OwnerSeeder
 
 并定义可填充的数据，即 `$fillable` 数组的值。
 
-- `Mechanic` 模型
+* `Mechanic` 模型
 ```php {12}
 <?php
 
@@ -207,7 +209,7 @@ class Mechanic extends Model
 }
 ```
 
-- `Car` 模型
+* `Car` 模型
 ```php {12}
 <?php
 
@@ -229,7 +231,7 @@ class Car extends Model
 } 
 ```
 
-- `Owner` 模型
+* `Owner` 模型
 ```php {12,14}
 <?php
 
@@ -248,10 +250,9 @@ class Owner extends Model
 } 
 ```
 
-
 ## 定义Eloquent关联关系
 
-- `Mechanic` 模型
+* `Mechanic` 模型
 ```php {15}
 <?php
 
@@ -282,7 +283,7 @@ class Mechanic extends Model
 }
 ```
 
-- `Car` 模型
+* `Car` 模型
 ```php {16}
 <?php
 
@@ -306,7 +307,7 @@ class Car extends Model
  
 ```
 
-- `Owner` 模型
+* `Owner` 模型
 
 ```php {12,14}
 <?php
@@ -332,8 +333,8 @@ class Owner extends Model
 ## 关联操作
 
 ### 查询数据
- 
-- 查询机械师 `Mechanic` 模型所关联的所属者
+
+* 查询机械师 `Mechanic` 模型所关联的所属者
 
 ```php
 use App\Models\Mechanic;
@@ -347,7 +348,7 @@ $mechanic->carOwner;
 
 ### 删除数据
 
-- 删除机械师 `Mechanic` 模型所属关联的所属者数据
+* 删除机械师 `Mechanic` 模型所属关联的所属者数据
 
 ```php
 use App\Models\Mechanic;
@@ -361,7 +362,7 @@ $mechanic->carOwner->delete(); // owners 表记录被删除
 
 ## 测试
 
-### hasOneThrough 
+### hasOneThrough
 
 ```php
 use App\Models\Car;
@@ -386,7 +387,7 @@ public function a_mechanic_has_one_owner_through_car(): void
     $this->assertCount(1, $mechanic->carOwner()->get());
 }
 ```
-                 
+
 ### belongsTo
 
 ```php

@@ -39,7 +39,7 @@
 
 可以在实际加载之前检查视图文件是否存在。
 
-```php{1}
+```php {1}
 if (view()->exists('custom.page')) {
  // Load the view
 }
@@ -134,7 +134,6 @@ class PagesController extends Controller
 
 `@style` 指令可用于有条件地向 HTML 元素添加内联 CSS 样式：
 
-
 ```php
 @php
     $isActive = true;
@@ -147,9 +146,6 @@ class PagesController extends Controller
 ```
 
 <span style="background-color: red; font-weight: bold;"></span>
-
-
-
 
 ## 父级 $loop 变量
 
@@ -186,7 +182,7 @@ public function boot()
 <textarea>@br2nl($post->body)</textarea>
 ```
 
-### 使用 `Blade::if()` 方法创建新的模版指令。
+### 使用 `Blade::if()` 方法创建新的模版指令
 
 例如，验证是否启用了特定的应用程序功能，在项目的 `AppServiceProvider.php` 的 `boot` 方法中注册。
 
@@ -438,8 +434,8 @@ class NavLink extends Component
 ```
 
 ## @checked 指令
-在 Laravel 9 中，可以使用 `@checked` 指令来选择 HTML 元素。
 
+在 Laravel 9 中，可以使用 `@checked` 指令来选择 HTML 元素。
 
 ::: code-group
 ```php [ >= Laravel 9]

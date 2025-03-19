@@ -29,7 +29,7 @@ touch database/database.sqlite
 
 修改项目本地环境文件`.env`文件中的数据库连接
 
-```
+```dotenv
 DB_CONNECTION=sqlite
 ```
 
@@ -127,7 +127,6 @@ class Post extends Model
 
 ## 对数据的增删改操作
 
-
 ### 增加
 
 ```php
@@ -203,9 +202,8 @@ saved event is fired
 
 ## 事件模型的退出
 
-> **注意:** 
+> **注意:**
 如果 `saving` 、 `creating` 、 `updating` 、 `deleting` 、 `restoring` 事件逻辑中返回 `false` ，则相应的创建/更新/删除操作会退出，不再往下执行。
-
 
 ```php
 static::creating(function($post){

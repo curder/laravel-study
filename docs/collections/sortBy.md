@@ -20,8 +20,6 @@ collect([
 
 如果需要按照数值越大越靠前的倒序排序方式，可以再调用 [reverse](reverse.md) 方法，或者使用 [sortByDesc](sortByDesc.md) 方法。
 
-
-
 ## 使用回调
 
 ```php
@@ -41,6 +39,7 @@ collect([
 ```
 
 ### 通过数组进行排序
+
 ```php
 use Illuminate\Support\Collection;
 
@@ -52,6 +51,7 @@ Collection::make([
     fn ($item) => array_search($item, $fields)
 );
 ```
+
 ## 相关方法
 
 - [sort](sort.md)

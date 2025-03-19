@@ -1,7 +1,7 @@
 # duplicatesStrict
 
 > 使用严格模式从集合中检索并返回重复值。
- 
+
 ```php
 collect(['1', '2', 3, 1, 2, 3])->duplicatesStrict(); // [5 => 3] // [!code focus]
 

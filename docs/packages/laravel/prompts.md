@@ -2,15 +2,13 @@
 outline: [2, 3]
 ---
 
-
-
 # laravel/prompts
 
 [Laravel Prompts](https://github.com/laravel/prompts) 是一个 PHP 包，用于向命令行应用程序添加美观且用户友好的表单，具有类似浏览器的功能，包括占位符文本和验证。
 
 下图是来自 [官方文档的 Laravel Prompts](https://laravel.com/docs/master/prompts) 预览图。
 
-![](images/prompts/prompts-example.png)
+![prompts example](images/prompts/prompts-example.png)
 
 ## 安装
 
@@ -34,9 +32,7 @@ Laravel Prompts 当前支持在表单中常见的输入类型，例如：
 - 多搜索 `multisearch()`
 - 暂停 `pause()`
 
-
 ### 文本 Text
-
 
 | 参数名           | 参数类型     | 是否必须 | 默认值    | 说明                         |
 |---------------|:---------|:-----|:-------|----------------------------|
@@ -46,7 +42,6 @@ Laravel Prompts 当前支持在表单中常见的输入类型，例如：
 | `required`    | `bool`   | 否    | `''`   | 是否必须，如果传递的是字符串，则在数据验证失败后展示 |
 | `validate`    | `mixed`  | 否    | `null` | 数据验证规则                     |
 | `hint`        | `string` | 否    | `''`   | 输入框下方的字段提示                 |
-
 
 #### 简单用法 `label`
 
@@ -75,9 +70,7 @@ echo "Hello, {$name}!\n";
 ```
 :::
 
-
 #### 占位符 `placeholder`
-
 
 可以提供 `placeholder` 参数，用于在用户输入之前对用户进行提示。
 
@@ -98,7 +91,6 @@ text(
  └──────────────────────────────────────────────────────────────┘
 ```
 :::
-
 
 #### 默认值 `default`
 
@@ -123,7 +115,6 @@ text(
 ```
 :::
 
-
 #### 信息提示 `hint`
 
 如果需要更加详细的说明，可以通过 `hint` 参数自定义信息提示，它会出现在输入框下方。
@@ -146,7 +137,6 @@ text(
   This will be displayed on your profile. // [!code ++]
 ```
 :::
-
 
 #### 是否必填 `required`
 
@@ -172,7 +162,6 @@ text(
 ```
 :::
 
-
 如果需要自定义验证消息，也还可以传递一个字符串：
 
 ::: code-group
@@ -194,7 +183,6 @@ text(
   ⚠ Your name is required. // [!code ++]
 ```
 :::
-
 
 #### 自定义验证 `validate`
 
@@ -227,8 +215,6 @@ text(
 
 > [!TIP] Laravel 项目提示
 > 如果在 Laravel 项目中使用的话，可以直接传递[强大的验证器](https://laravel.com/docs/11.x/validation) 对用户输入进行验证，可以提供一个包含属性名称和参数所需验证规则的数组。
-
-
 
 ### 密码 Password
 
@@ -290,9 +276,7 @@ password(
 > [!TIP] Laravel 项目提示
 > 如果在 Laravel 项目中使用的话，可以直接传递[强大的验证器](https://laravel.com/docs/11.x/validation) 对用户输入进行验证，可以提供一个包含属性名称和参数所需验证规则的数组。
 
-
 ### 确认 Confirm
-
 
 如果需要询问用户"是/否"的确认，可以使用 `confirm()` 功能。
 
@@ -319,7 +303,6 @@ confirm(
     hint: 'The terms must be accepted to continue.' // 提示信息
 );
 ```
-
 
 ### 选择 Select
 
@@ -462,7 +445,6 @@ suggest(
 
 同时也可以提供占位符 `placeholder`、默认值`default`、超出数量开始滚动 `scroll`、是否必填 `required` 自定义验证 `validate` 和信息提示 `hint`。
 
-
 ```php
 suggest(
     label: 'What is your name?',
@@ -510,8 +492,6 @@ suggest(
 
 `validate` 闭包将接收已输入的值，如果返回字符串则提示错误消息，如果返回 `null` 则表示验证通过。
 
-
-
 ### 搜索 Search
 
 当有很多选项供用户选择时，可以使用 `search()` 功能允许用户在使用箭头键选择选项之前键入搜索查询来过滤结果：
@@ -538,7 +518,6 @@ search(
 
 如果返回关联数组，则将返回所选选项的键，否则将返回其值。
 
-
 同时也可以提供占位符 `placeholder`、超出数量开始滚动 `scroll`、自定义验证 `validate`、信息提示 `hint`和是否必填 `required`。
 
 ```php
@@ -561,9 +540,7 @@ search(
 
 `validate` 闭包将接收已输入的值，如果返回字符串则提示错误消息，如果返回 null 则表示验证通过。
 
-
 ### 多搜索 Multisearch
-
 
 如果有很多可搜索选项并且需要用户能够选择多个项目，可以使用 `multisearch()` 功能允许用户在使用箭头键和空格键选择选项之前键入搜索查询来过滤结果：
 
@@ -634,7 +611,6 @@ function filter(string $value): array
 
 `validate` 闭包将接收已输入的值，如果返回字符串则提示错误消息，如果返回 `null` 则表示验证通过。
 
-
 ### 暂停 Pause
 
 `pause()` 函数可用于向用户显示信息文本，并等待用户通过按 `Enter` / `Return` 键确认其希望继续。
@@ -653,20 +629,18 @@ pause('Press ENTER to continue.');
 ```
 :::
 
-
 ## 输出类型
 
 Laravel Prompts 当前支持在终端输出常见的输出类型，例如：
 
 - 消息 `note(string $message, ?string $type = null)`
-  - 信息 `info(string $message)`
-  - 警告 `warning(string $message)`
-  - 错误 `error(string $message)`
-  - 提示 `alert(string $message)`
+    - 信息 `info(string $message)`
+    - 警告 `warning(string $message)`
+    - 错误 `error(string $message)`
+    - 提示 `alert(string $message)`
 - 表格 `table(array|Collection $headers = [], array|Collection|null $rows = null)`
 - 转动 `spin(Closure $callback, string $message = '')`
 - 进度条 `progress(string $label, iterable|int $steps, ?Closure $callback = null, string $hint = '')`
-
 
 ### 消息 Note
 
@@ -687,7 +661,7 @@ alert(message: 'This is an alert message.');
 ```
 
 ::: details 点击查看运行预览，来自 [wrap](https://app.warp.dev/block/ZxBPjHlT4LflSaWW1DP6lt) 终端的运行结果。
-![](images/prompts/note-example.png)
+![note example](images/prompts/note-example.png)
 :::
 
 ### 表格 Table
@@ -708,9 +682,8 @@ table(
 ```
 
 ::: details 下面是运行预览，来自 [wrap](https://app.warp.dev/block/LSGNitm8Io7v6xdpJvUIX4) 终端的运行结果。
-![](images/prompts/table-example.png)
+![table example](images/prompts/table-example.png)
 :::
-
 
 ### 转动 Spin
 
@@ -728,9 +701,8 @@ spin(callback: function () {
 ```
 
 ::: details 点击预览执行结果
-![](images/prompts/spin-example.gif)
+![spin example](images/prompts/spin-example.gif)
 :::
-
 
 ### 进度条 Progress
 
@@ -811,5 +783,5 @@ info('Update user success');
 ```
 
 :::::: details 点击查看预览结果
-![](images/prompts/progress-example.gif)
+![progress example](images/prompts/progress-example.gif)
 :::

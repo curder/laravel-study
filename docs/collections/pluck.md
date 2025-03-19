@@ -2,7 +2,6 @@
 
 > 获取集合中给定**键**对应的所有值。
 
-
 ## 生成新集合
 
 ```php
@@ -15,7 +14,6 @@ collect([
 
 // ["apples", "banner", "oranges", "coconuts"]
 ```
-
 
 ## 指定新集合的键
 
@@ -60,4 +58,3 @@ $collection->dd();
 
 - [only](only.md)
 - [except](except.md)
- 

@@ -4,10 +4,10 @@
 
 ```php
 collect([
-	['product' => 'apples', 'price' => '50'],
-	['product' => 'pears', 'price' => '60'],
-	['product' => 'banners', 'price' => '70'],
-	['product' => 'coconuts', 'price' => '80'],
+ ['product' => 'apples', 'price' => '50'],
+ ['product' => 'pears', 'price' => '60'],
+ ['product' => 'banners', 'price' => '70'],
+ ['product' => 'coconuts', 'price' => '80'],
 ])->whereInStrict('price', [50, 70, 80]);
 
 // []

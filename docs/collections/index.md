@@ -34,7 +34,7 @@ collect([1, 2, 3]);
 | [avg](avg.md)                           | 返回给定键的**平均值**                                                                     |
 | [before](before.md)                     | 获取给定项目之前的项目                                                                       |
 | [chunk](chunk.md)                       | 将集合拆分为多个指定大小的集合组                                                                  |
-| [chunkWhile](chunkWhile.md)             | 根据给定的回调将集合分成多个较小的集合                                                               | 
+| [chunkWhile](chunkWhile.md)             | 根据给定的回调将集合分成多个较小的集合                                                               |
 | [collapse](collapse.md)                 | 将数组集合折叠成单个集合                                                                      |
 | [collect](collect.md)                   | `collect` 方法返回一个包含当前集合中的项目的**新的 `Collection` 实例**                                 |
 | [combine](combine.md)                   | 将一个集合的值作为**键**，再将另一个数组或者集合的值作为**值**合并成一个集合                                        |
@@ -43,7 +43,7 @@ collect([1, 2, 3]);
 | [containsOneItem](containsOneItem.md)   | 判断集合是否包含单个项目                                                                      |
 | [containsStrict](containsStrict.md)     | 使用「严格模式」来判断集合中是否包含给定的项目                                                           |
 | [count](count.md)                       | 返回该集合内的项目总数                                                                       |
-| [countBy](countBy.md)                   | 计算集合中值的出现次数                                                                       | 
+| [countBy](countBy.md)                   | 计算集合中值的出现次数                                                                       |
 | [crossJoin](crossJoin.md)               | 返回集合中所有可能排列的笛卡尔积                                                                  |
 | [dd](dd.md)                             | 打印集合的元素并终止脚本的执行                                                                   |
 | [diff](diff.md)                         | 基于值求差集                                                                            |

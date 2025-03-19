@@ -1,8 +1,9 @@
 # reverse
 
-倒转集合中项目的顺序。 
+倒转集合中项目的顺序。
 
 ## 简单数组
+
 ```php
 collect([1, 2, 3, 4])->reverse();
 
@@ -10,6 +11,7 @@ collect([1, 2, 3, 4])->reverse();
 ```
 
 ## 键值对数组
+
 ```php
 collect([
   'key1' => 'string1',

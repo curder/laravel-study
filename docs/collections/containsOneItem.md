@@ -2,7 +2,6 @@
 
 > 判断集合是否包含单个项目，返回布尔值。
 
-
 ```php
 collect([])->containsOneItem(); // false
  

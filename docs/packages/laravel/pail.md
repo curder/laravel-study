@@ -4,7 +4,6 @@
 
 与标准的 tail 命令不同，Pail 旨在与任何日志驱动程序一起使用，非常容易记住 ，并提供一组有用的过滤器来帮助快速找到所需的内容。
 
-
 ## 安装 Laravel Pail
 
 使用 Composer 命令安装它：
@@ -21,13 +20,11 @@ composer require laravel/pail
 php artisan pail
 ```
 
-![](images/pail-logs.png)
+![pail logs](images/pail-logs.png)
 
 上面是基本的使用方式，同时 Laravel Pail 有一些标志允许以有用的方式过滤日志消息。
 
-
 ### 按异常类型过滤日志
-
 
 ```bash
 php artisan pail --filter="QueryException"
@@ -52,9 +49,8 @@ php artisan pail --level=error
 - `error` 错误
 - `warning` 警告
 - `notice` 通知
-- `info` 信息 
+- `info` 信息
 - `debug` 调试
-
 
 ### 按用户 ID 过滤
 

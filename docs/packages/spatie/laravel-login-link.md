@@ -1,7 +1,6 @@
 # 快速登录 spatie/laravel-login-link
 
-在开发和测试中经常需要快速切换角色的用户，可以借助 [
-spaite/laravel-login-link](https://github.com/spatie/laravel-login-link) 来实现。
+在开发和测试中经常需要快速切换角色的用户，可以借助 [spaite/laravel-login-link](https://github.com/spatie/laravel-login-link) 来实现。
 
 这个扩展包通过提供一个将呈现登录链接的组件来解决该问题。单击链接后，可以登录指定用户。
 

@@ -10,9 +10,9 @@ collect([1, 2])->each(fn (int $value) => dump("The current value is ${value}"));
 ```
 
 > 不要尝试在回调函数中直接调用 `return` 改变集合，因为 `each` 方法不会改变原集合。
-> 
+>
 > 如果需要执行改变原数组的话可以使用 [map](map.md) 方法。例如：
-> 
+>
 > ```php
 > collect([1, 2])->each(fn ($value) => "The current value is ${value}");
 > ```

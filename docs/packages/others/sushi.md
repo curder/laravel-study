@@ -66,7 +66,7 @@ class Role extends Model
 }
 ```
 
-## 缓存 getRows() 
+## 缓存 getRows()
 
 如果选择使用自己的 `getRows()` 方法，则默认情况下不会在请求之间缓存行。
 
@@ -93,7 +93,9 @@ class Role extends Model
 }
 ```
 
+<!-- markdownlint-disable MD013 -->
 默认情况下，Sushi 会查看模型 PHP 文件的“上次修改”时间戳，并将其与其内部 `.sqlite` 缓存文件进行比较。 如果模型文件的更改时间比 `.sqlite` 缓存文件更新，则 Sushi 将销毁并重建 `.sqlite` 缓存。 此外，可以配置一个外部文件供 Sushi 在确定缓存是否是最新的或需要刷新时参考。
+<!-- markdownlint-enable MD013 -->
 
 例如，如果您使用 Sushi 为外部数据源文件（如 `.csv` 文件）提供 Eloquent 模型，则可以使用 `sushiCacheReferencePath` 强制 Sushi 在确定缓存是否过时时引用 `.csv` 文件。
 
@@ -171,7 +173,7 @@ $user->load('role');
 User::with('role')->first();
 ```
 > **注意：** 处理 `Sushi` 模型关系时有一个警告。
-> 
+>
 > 因为这两个模型分布在两个独立的数据库中，导致 `whereHas` 方法将不起作用。
 
 ## 验证规则
@@ -185,7 +187,6 @@ $data = request()->validate([
 ```
 
 > **注意：** 必须使用模型的完全限定命名空间而不是表名称，用于确保 Laravel 正确解析模型的连接。
-
 
 ## 自定义属性规则
 
@@ -291,6 +292,3 @@ class Role extends Model
 ```php
 public $sushiInsertChunkSize = 50;
 ```
-
-
-

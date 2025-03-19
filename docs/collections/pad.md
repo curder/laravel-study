@@ -1,7 +1,7 @@
 # pad
 
 > 将用给定的值填充数组，直到数组达到指定的大小，类似于 PHP 的 [`array_pad`](https://www.php.net/manual/zh/function.array-pad.php) 函数。
- 
+
 如果需要向左填充，可以通过指定负值。如果给定大小的绝对值小于或等于数组的长度，则不会进行填充。
 
 ```php

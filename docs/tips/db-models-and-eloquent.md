@@ -1,6 +1,5 @@
 # DB 模型和 Eloquent
 
-
 ## orderByRaw 原始查询排序
 
 可以传递原始查询来对结果进行排序。
@@ -75,7 +74,6 @@ Integration::where('name', 'foo')->value('active');
 Integration::where('name', 'foo')->valueOrFail('active')';
 ```
 
-
 ## rawValue
 
 Laravel 9.37 有一个新的 `rawValue()` 方法来从 SQL 表达式中获取值。
@@ -90,7 +88,6 @@ $last = TripModel::orderBy('date_at', 'DESC')
 $fullname = UserModel::where('id', $id)
      ->rawValue('CONCAT(`first_name`, " ", `last_name`)');
 ```
-
 
 ## scope 其他关系的模型范围
 
@@ -149,7 +146,6 @@ DB::transaction(function () {
 });
 ```
 
-
 ## DB::afterCommit 事务处理
 
 使用 `DB::afterCommit()` 方法，可以编写仅在事务提交时执行的代码，以及在事务回滚时丢弃的代码。
@@ -181,7 +177,6 @@ DB::transaction(function () {
 ```
 :::
 
-
 ## `withoutTimestamps` 执行操作时不修改 `updated_at` 字段
 
 从 Laravel 9.31 开始可用，如果想在执行模型操作的情况下让模型的 `Updated_at` 时间戳不被修改，可以在给定的模型方法 `withoutTimestamps` 的闭包内对模型进行操作。
@@ -195,10 +190,9 @@ User::withoutTimestamps(
 );
 ```
 
-
 ## toBase() 合并集合
 
-Eloquent 集合的 `merge` 方法使用 `id` 来避免重复的模型。 
+Eloquent 集合的 `merge` 方法使用 `id` 来避免重复的模型。
 
 但如果合并不同模型的集合，可能会导致意想不到的结果。
 
@@ -216,7 +210,6 @@ $allMedia = $videos->toBase()->merge($images);
 ```
 
 ## 在 MySQL 上使用 Laravel 进行全文搜索
-
 
 ::: code-group
 ```php {6} [迁移文件]
@@ -240,7 +233,6 @@ Comment::whereFulltext(['title', 'description'], 'something', ['expanded' => tru
 Comment::whereFulltext(['title', 'description'], '+something -else', ['mode' => 'boolean'])->get();
 ```
 :::
-
 
 ## 原始查询中使用绑定
 
@@ -278,7 +270,6 @@ $inactive_products = $query->clone()->where('status', 0)->get(); // 所以我们
 
 因此需要在执行任何 `$query` 修改操作之前克隆此 `$query`。
 
-
 ## where 日期方法
 
 在 Eloquent 中，使用函数 `whereDay()`、`whereMonth()`、`whereYear()`、`whereDate()` 和 `whereTime()` 来过滤日期。
@@ -291,7 +282,7 @@ Product::whereDate('created_at', '2018-01-31')->get();
 Product::whereTime('created_at', '=', '14:13:58')->get();
 ```
 
-## whereDate 
+## whereDate
 
 使用 `whereDate()` 获取今天的记录，可以使用 `Carbon` 的 `now()` ，它会自动转换为日期。无需执行 `->toDateString()` 方法进行日期格式的转换。
 
@@ -299,7 +290,6 @@ Product::whereTime('created_at', '=', '14:13:58')->get();
 User::whereDate('created_at', now()->toDateString())->get(); // [!code --]
 User::whereDate('created_at', now())->get(); // [!code ++]
 ```
-
 
 ## increments 和 decrements 增减某个字段
 
@@ -369,7 +359,6 @@ public function getUpdatedAtFormattedAttribute()
 
 可以在需要时使用 `$entry->created_at_formatted`  或者 `$entry->updated_at_formatted`。
 
-
 ## 软删除数据的恢复
 
 在使用模型的软删除时，可以使用 `restore()` 方法恢复多行。
@@ -404,7 +393,6 @@ firstOrFail()方法，如果没有找到查询的记录，它会返回404页面�
 User::where('email', 'example@example.com')->firstOrFail();
 ```
 
-
 ## firstOr 失败时执行任何操作
 
 查找记录时，如果未找到，可能需要执行一些自定义的操作。
@@ -417,7 +405,7 @@ Flight::where('legs', '>', 3)->firstOr(function () {
 })
 ```
 
-## findOrFail 
+## findOrFail
 
 使用 `firstOrFail()` 方法检查记录是否存在。
 
@@ -427,7 +415,7 @@ $product = Product::findOrFail($id); // shows 404 if not found
 $product->update($productDataArray);
 ```
 
-findOrFail 方法还接受 id 列表。如果没有找到这些 id 中的任何一个，则它“失败”。 
+findOrFail 方法还接受 id 列表。如果没有找到这些 id 中的任何一个，则它“失败”。
 
 ```php
 // 当无法找到所有用户时，会抛出错误
@@ -453,7 +441,6 @@ $employees = Employee::select(['name', 'title', 'email'])->get();
 // 从所有数据中选择指定列
 $employees = Employee::get(['name', 'title', 'email']);
 ```
-
 
 ## 修改查询结果
 
@@ -571,7 +558,7 @@ Product::find($this->productIDs); // [!code ++]
 ```
 
 ## 查找多个并返回特定列
- 
+
 `find()` 可以接受多个参数，然后返回指定列找到的所有记录的集合，而不是模型的所有列：
 
 ```php
@@ -590,9 +577,7 @@ User::find([1,2,3], ['first_name', 'email']);
 User::whereKey([1, 2, 3])->get();
 ```
 
-
 ## 使用 UUID 代替自动递增
-
 
 在模型中使用自动递增 ID。
 
@@ -665,11 +650,9 @@ class User extends Model
 ```
 :::
 
-
 ## addSelect 子查询
 
 从 Laravel 6 开始，可以在 Eloquent 语句中使用 `addSelect()`，并对添加的列进行一些计算。
-
 
 ```php
 Destination::addSelect([
@@ -679,7 +662,6 @@ Destination::addSelect([
         ->limit(1)
 ])->get();
 ```
-
 
 ## makeHidden 隐藏列
 
@@ -745,7 +727,6 @@ if ($flight) {
 }
 ```
 :::
-
 
 ## 保存时清空缓存
 
@@ -813,9 +794,7 @@ abort_if ($product->user_id != auth()->user()->id, 403)
 Book::where('name', 'Ruskin Bond')->explain()->dd();
 ```
 
-
 ## `donstExist()` 方法
-
 
 ```php
 // 1. 如果它为真
@@ -827,7 +806,6 @@ if (! $model->whereStatus('pending')->exists()) {}
 // 3. 使用更简洁的方式
 if ($model->whereStatus('pending')->doesntExist()) {}
 ```
-
 
 ## getOriginal 获取原始属性
 
@@ -858,8 +836,6 @@ $user->fill(['name' => 'David']); // Or set via fill
  
 $user->originalIsEquivalent('name'); // false
 ```
-
-
 
 ## 简单的数据库恢复方法
 
@@ -932,7 +908,6 @@ Product::query()->whereRef('#123')->sole();
 
 与 `each()` 方法类似，但更容易使用。自动将结果分割成多个部分。
 
-
 ```php
 User::orderBy('name')->chunkMap(fn ($user) => [
     'id' => $user->id,
@@ -943,7 +918,6 @@ User::orderBy('name')->chunkMap(fn ($user) => [
 ## updateQuietly 更新模型而不分派事件
 
 有时需要更新模型而不发送任何事件。
-
 
 可以使用 `updateQuietly()` 方法来执行此操作，该方法在幕后使用 `saveQuietly()` 方法。
 
@@ -989,7 +963,6 @@ protected function pruning()
 
 可以使用 `withAggregate` 方法根据关联关系添加子查询。
 
-
 ```php
 // Eloquent Model
 class Post extends Model
@@ -1010,11 +983,9 @@ $posts = Post::withAggregate('user', 'name')->get();
 $posts->first()->user_name;
 ```
 
-
 ## upsert() 批量新增或更新
 
 `upsert()` 方法将插入或更新多条记录。
-
 
 ```php
 Flight::upsert([
@@ -1031,7 +1002,6 @@ Flight::upsert([
 - 数组2：select 语句中使用的唯一标识符列
 
 - 数组3：如果记录存在则要更新的列
-
 
 ## 自定义 Cast 类
 
@@ -1064,8 +1034,6 @@ class User extends Model
 
 ## withAvg 根据关联模型的平均值排序
 
-
-
 ```php
 public function bestBooks()
 {
@@ -1075,9 +1043,7 @@ public function bestBooks()
 }
 ```
 
-
 ## 返回事务结果
-
 
 如果有一个数据库事务并希望返回其结果：
 
@@ -1100,11 +1066,9 @@ DB::transaction(function () use (&$invoice) {
 ```
 :::
 
-
 ## 从查询中删除多个全局范围
 
 使用 Eloquent 全局作用域时，不仅可以使用多个作用域，还可以在不需要时通过向 `withoutGlobalScopes()` 提供数组来删除某些作用域。
-
 
 ```php
 // 1. 删除所有全局范围
@@ -1115,7 +1079,6 @@ User::withoutGlobalScopes([
     FirstScope::class, SecondScope::class
 ])->get();
 ```
-
 
 ## 根据 JSON 列属性排序
 
@@ -1158,7 +1121,6 @@ returns [
 */
 ```
 
-
 ## whereColumn 比较两列的值
 
 可以使用 `whereColumn` 方法来比较两列的值。
@@ -1182,4 +1144,3 @@ public function hash(): Attribute
     )->shouldCache();
 }
 ```
-

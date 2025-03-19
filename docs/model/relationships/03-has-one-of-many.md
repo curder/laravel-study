@@ -10,7 +10,7 @@
 
 下面是对应的表结构：
 
-```
+```text
 users
     id - integer
     name - string
@@ -40,7 +40,7 @@ orders
 
 数据操作之前请先配置好，数据库的一些连接信息。例如下面使用 sqlite 数据库，修改项目根目录下的 `.env` 文件内容。
 
-```
+```dotenv
 DB_CONNECTION=sqlite
 ```
 
@@ -131,7 +131,7 @@ class OrderFactory extends Factory
 }
 ```
 
-#### 修改 `databases/seeders/OrderSeeder.php`，执行填充。
+#### 修改 `databases/seeders/OrderSeeder.php`，执行填充
 
 ```php
 <?php

@@ -87,8 +87,6 @@ php artisan vendor:publish --provider="Spatie\Backup\BackupServiceProvider"
 
 或者通过 `config/backup.php` 文件中的 `config('backup.notifications.notifications')` 配置项移除 `mail` 来关闭邮件通知。
 
-
-
 ### 备份到七牛云
 
 默认数据的备份文件放在本地，可以配置一些其他存储方式，比如七牛云存储。
@@ -158,6 +156,7 @@ php artisan vendor:publish --provider="Spatie\Backup\BackupServiceProvider"
     ```
 
 ### [备份定时任务](https://spatie.be/docs/laravel-backup/v8/installation-and-setup#content-scheduling)
+
 ```php
 <?php
 

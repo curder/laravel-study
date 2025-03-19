@@ -15,7 +15,7 @@ collect([
 // ["apples" => [59, 69], "bananas" => [54, 94]]
 ```
 
-### 不改变原集合
+## 不改变原集合
 
 ```php
 $collection = collect([

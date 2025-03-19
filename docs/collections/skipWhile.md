@@ -18,10 +18,9 @@ collect([1, 2, 3, 4])->skipWhile(
 > ```php
 > collect([1, 2, 3, 4])->skipWhile(fn () => true); // []
 > ```
- 
 
 ## 相关方法
+
 - [skip](skip.md)
 - [take](take.md)
 - [skipUntil](skipUntil.md)
-

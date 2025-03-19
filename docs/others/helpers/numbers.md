@@ -1,12 +1,15 @@
 # Numbers
 
+<!-- markdownlint-disable MD013 -->
 从 Laravel 框架 [10.33.0](https://github.com/laravel/framework/releases/tag/v10.33.0) 开始，Laravel 提供了新的 [`Numbers`](https://github.com/laravel/framework/pull/48845) 类，该类提供了一些方便的静态方法，用于处理数字。
+<!-- markdownlint-enable MD013 -->
 
 比如常见的格式化金额、百分比、货币、文件尺寸、人类可读性等。
 
 更多关于 `Number` 的官方文档地址[请点击这里](https://laravel.com/docs/master/helpers#numbers)。
 
 ## `abbreviate()` 人类可读
+
 `Number::abbreviate()` 方法返回所提供数值的人类可读格式，以及单位缩写，它是 `forHumans` 方法的封装：
 
 ```php
@@ -60,7 +63,6 @@ Number::percentage(10.123, maxPrecision: 2); // 10.12%
 Number::percentage(10, precision: 2, locale: 'zh_CN'); // 10.00%
 Number::percentage(10, precision: 2, locale: 'de'); // 10,00%
 ```
-
 
 ## `currency()` 货币
 
@@ -154,6 +156,7 @@ Number::trim(12.30); // 12.3
 Number::trim(12.3456789); // 12.3456789
 Number::trim(12.34567890000); // 12.3456789
 ```
+
 ## 其它方法
 
 ### `useLocale()`

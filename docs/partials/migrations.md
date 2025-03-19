@@ -14,7 +14,6 @@ php artisan make:migration create_transactions_table
 php artisan make:migration "create transactions table"
 ```
 
-
 ## 迁移顺序
 
 使用命令 `php artisan make:migration create_posts_table --table=posts` 可以快速创建迁移文件，创建的迁移文件名有一个特点，就是以时间命名的。
@@ -22,7 +21,6 @@ php artisan make:migration "create transactions table"
 如果想更改数据库迁移的顺序，只需重命名文件的时间戳。
 
 例如从 **`2018_08_04_070443_create_posts_table.php`** 到 **`2018_07_04_070443_create_posts_table.php`**（从 **`2018_08_04`** 更改为 **`2018_07_04`**）
-
 
 ## 指定列的创建顺序
 
@@ -51,11 +49,9 @@ Schema::table('users', function (Blueprint $table) {
 });
 ```
 
-
 ### `before()`
 
 如果要向现有表添加新列，则它不一定必须成为列表中的最后一个。
-
 
 可以指定应在哪一列之前创建它：
 
@@ -74,7 +70,6 @@ Schema::table('users', function (Blueprint $table) {
     $table->string('uuid')->first();
 });
 ```
-
 
 ## 具有时区的迁移字段
 
@@ -114,7 +109,6 @@ $table->point('position');
 
 请参阅[官方文档](https://laravel.com/docs/master/migrations#available-column-types)中的所有列类型。
 
-
 ## 迁移状态
 
 如果想检查哪些迁移已执行或尚未执行，无需查看数据库 `migrations` 表，可以使用 `php artisan migrate:status` 命令。
@@ -127,14 +121,13 @@ Migration name .............................................. Batch / Status
 2019_12_14_000001_create_personal_access_tokens_table .............. [1] Ran
 ```
 
-
 ## 对存在表进行迁移
 
 如果对现有表进行迁移，并且希望生成 `Schema::table()`，请在末尾添加`_in_xxxxx_table` 或 `_to_xxxxx_table`，或指定 `--table`参数。
 
 ### 空迁移文件
 
-::: code-group 
+::: code-group
 ```bash [迁移命令]
 php artisan make:migration change_fields_products_table
 
@@ -238,25 +231,24 @@ return new class extends Migration
     ```
     :::
 
-    ## 运行迁移之前输出 SQL
+  ## 运行迁移之前输出 SQL
 
     当输入 `php artisan migrate --pretend` 命令时，在终端中会列出待执行的 SQL 查询。
-    
+
     如果需要的话，这是一种调试 SQL 的有趣方法。
 
-    ```
+    ```text
     php artisan migrate --pretend
 
     # 2023_11_16_025540_whatever_you_want ....................................
     # ⇂ alter table `products` add `description` varchar(255) null after `name`
     ```
 
-    ## 添加列的描述
+  ## 添加列的描述
 
     可以在迁移中添加有关列的描述并提供有用的信息。
 
     如果数据库由开发人员以外的其他人管理，可以在执行任何操作之前查看表结构中的注释。
-
 
     ```php
     $table->unsignedInteger('interval')
@@ -284,8 +276,7 @@ if (Schema::hasColumn('users', 'email')) {
 }
 ```
 
-
-## 
+##
 
 从 Laravel 9.6.0 开始添加了 `whenTableDoesntHaveColumn` 方法，仅当该列不存在时，才可以在数据库表中添加该列；
 

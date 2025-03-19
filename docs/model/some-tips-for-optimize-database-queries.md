@@ -76,7 +76,6 @@ foreach (DB::table('posts')->cursor() as $post) {
 
 但是，如果数据库实例没有足够的内存，则还是选择 [使用 chunk](#使用-chunk) 的方式。
 
-
 ### 使用 chunkById
 
 ```php
@@ -100,7 +99,7 @@ $posts = DB::table('posts')->chunkById(100, function ($posts) {
 这个 `id` 字段通常是一个整数字段，在大多数情况下，它将是一个自动递增字段。
 
 `chunk` 和 `chunkById` 进行的查询如下。
-                                      
+
 - `chunk`
   ```sql
   select * from posts offset 0 limit 100
@@ -197,7 +196,6 @@ $posts = DB::table('posts')->pluck('title','slug');
 
 执行以上代码后，将在后台执行以下操作。
 
-
 - 在数据库上执行查询 `select title, slug from posts`
 - 用 `title` 数组的值和 `slug` 创建数组的键。
 - 返回数组（数组格式为：`[ slug => title, slug => title ]`）
@@ -266,7 +264,6 @@ select count(*) from posts
 ```
 
 > 在 sql 语句中对行进行计数是一个缓慢的过程，并且当数据库表中的行太多时，其执行效果会很差。最好避免尽可能多地计算行数。
-
 
 ## 使用 eager loading 避免 N+1 查询
 
@@ -399,9 +396,8 @@ $post->author_id; // posts table has a column author_id which stores id of the a
 ```
 
 > **什么时候可以使用上述方法？**
-> 
+>
 > 在 `posts` 表中引用了行，并且可以确信在 `authors` 表中始终存在一行，则可以使用上述方法。
-
 
 ## 避免不必要的查询
 
@@ -508,7 +504,6 @@ select * from posts where status in ( 'published', 'featured', 'scheduled' )
 上面的代码执行一个查询以检索具有任何指定状态的所有帖子，并通过按其状态过滤返回的帖子来为每种状态创建单独的集合。
 
 因此，我们将仍然具有三个不同的变量及其状态，并且只会进行一个查询。
-
 
 ## 给经常查询列添加索引
 

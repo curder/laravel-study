@@ -4,7 +4,7 @@
 
 下面是通过 `saloon:list` 的命令查看已经集成到项目的增、删、改、查资源：
 
-![](images/saloon/saloon-preview.png)
+![saloon preview](images/saloon/saloon-preview.png)
 
 ## 安装
 
@@ -31,7 +31,6 @@ php artisan vendor:publish --tag=saloon-config
 | `php artisan saloon:auth`      | 创建一个自定义的授权插件       |
 | `php artisan saloon:list`      | 查看当前已有 Saloon 集成数据 |
 
-
 ## 连接器 connector
 
 连接器用于定义 API 集成属性（例如 URL 和标头）的类。将关联的每个请求上使用的任何行为（例如身份验证）都在连接器中进行定义。
@@ -41,7 +40,6 @@ php artisan saloon:connector
 ```
 
 分别输入连接器存放的目录和连接器的名称。比如连接器目录输入 `JsonPlaceholder`并将类命名为 `TypiCodeConnector`，则定义的文件被存放到 `App\Http\Integrations\JsonPlaceholder\TypiCodeConnector.php`。
-
 
 ### Api 前缀
 
@@ -157,8 +155,4 @@ $connector = new TypiCodeConnector;
 $connector->config()->add('allow_redirects', true);
 ```
 
-
 ## 请求 request
-
-
-

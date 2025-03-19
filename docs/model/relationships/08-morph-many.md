@@ -1,6 +1,6 @@
 # 多态一对多
 
-多态关联允许一个模型在单个关联下属于多个不同父模型。常见的多态关联就是评论，评论内容可能是属于文章或视频。 
+多态关联允许一个模型在单个关联下属于多个不同父模型。常见的多态关联就是评论，评论内容可能是属于文章或视频。
 
 ## 软件版本
 
@@ -14,24 +14,23 @@
 
 * `morphMany()`
 
-*   `attach()`
+* `attach()`
 
-*   `detach()`
+* `detach()`
 
-*   `sync()`
+* `sync()`
 
-*   `toggle()`
+* `toggle()`
 
 * `posts` 、`videos`、`comments` 和 `users` 表
-
 
 常见的多态关联就是评论，现在我们的内容类型包括文章和视频，用户既可以评论文章 ，也可以评论视频 。文章存在文章表 `posts`，视频存在视频表 `videos` ，评论存在评论表 `comments` ，某一条评论可能归属于某篇文章，也可能归属于某个视频。
 在评论表中添加一个 `commentable_id` 字段表示其归属节点 ID ，同时定义一个 `commentable_type` 字段表示其归属节点类型，比如 `App\Post` 或者 `App\Video` 。
 
 ## 生成模型和迁移文件
 
-```
-php artisan make:model  Post -m
+```bash
+php artisan make:model Post -m
 php artisan make:model Video -m
 php artisan make:model Comment -m
 ```
@@ -40,8 +39,8 @@ php artisan make:model Comment -m
 
 文件 `<project>/database/migrate/*_create_users_table.php` 内容如下
 
-```
-  Schema::create('users' , function(Blueprint $table){
+```php
+Schema::create('users' , function(Blueprint $table){
     $table->increments('id');
     $table->string('name');
     $table->string('email' , 30)->unique();
@@ -53,7 +52,7 @@ php artisan make:model Comment -m
 
 文件 `<project>/database/migrate/*_create_posts_table.php` 内容如下
 
-```
+```php
 Schema::create('posts', function (Blueprint $table) {
     $table->increments('id');
     $table->unsignedInteger('user_id');
@@ -71,7 +70,7 @@ Schema::create('posts', function (Blueprint $table) {
 
 文件 `<project>/database/migrate/*_create_videos_table.php` 内容如下
 
-```
+```php
 Schema::create('videos' , function(Blueprint $table){
     $table->increments('id');
     $table->unsignedInteger('user_id')->comment('用户id');
@@ -91,7 +90,7 @@ Schema::create('videos' , function(Blueprint $table){
 
 文件 `<project>/database/migrate/*_create_comments_table.php` 内容如下
 
-```
+```php
 Schema::create('comments' , function(Blueprint $table){
     $table->increments('id');
     $table->unsignedInteger('user_id');
@@ -112,9 +111,10 @@ Schema::create('comments' , function(Blueprint $table){
 ```
 
 ### 运行 php artisan 命令保存修改到数据库
-~~~
+
+```bash
 php artisan migrate
-~~~
+```
 
 > 执行上面的命令后数据库将生成六张表，如下：
 > * migrations
@@ -128,7 +128,7 @@ php artisan migrate
 
 在 `User` 模型中的对应关系：
 
-```
+```php
 public function comments()
 {
     /**
@@ -142,7 +142,7 @@ public function comments()
 
 在 `Post` 模型中的对应关系：
 
-```
+```php
 protected $fillable = ['user_id' , 'title' , 'body' , 'published_at'];
 
 public function user()
@@ -168,10 +168,9 @@ public function comments()
 }
 ```
 
-
 在 `Video` 模型中的对应关系：
 
-```
+```php
 protected $fillable = ['user_id' , 'title' , 'description' , 'content' , 'status'];
 
 public function user()
@@ -199,7 +198,7 @@ public function comments()
 
 在 `Comment` 模型中的对应关系：
 
-```
+```php
 protected $fillable = ['user_id' , 'body'];
 
 
@@ -244,12 +243,11 @@ public function video()
 }
 ```
 
-
 ## 使用 tinker 填充测试数据
 
-修改 `/databases/factories/ModelFactory.php`，修改关联数据。
+修改 `/databases/factories/ModelFactory.php`，修改关联数据。
 
-```
+```php
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\User::class , function(Faker\Generator $faker){
     static $password;
@@ -287,7 +285,7 @@ $factory->define(App\Video::class , function(Faker\Generator $faker){
 
 使用 tinker 命令
 
-~~~
+```bash
 php artisan tinker
 
 ## 进入到 tinker 界面执行如下命令
@@ -295,7 +293,7 @@ namespace App
 factory(User::class,5)->create(); // 生成5个用户
 factory(Post::class,10)->create() // 生成10条 posts 表的测试数据
 factory(Video::class,10)->create(); // 生成10条 videos 表的测试数据
-~~~
+```
 
 至此，上面的 `users` 、`posts` 和 `videos` 表数据都已填充完毕。
 
@@ -303,16 +301,17 @@ factory(Video::class,10)->create(); // 生成10条 videos 表的测试数据
 
 ### 新增数据
 
-
 #### 添加一个文章评论
-```
+
+```php
 $post = \App\Post::find(1);
 $comment = new \App\Comment(['body' => 'A new comment For Post 1.' , 'user_id' => \Auth::user()->id]);
 $post->comments()->save($comment); // 新增的 `comment` 模型中 `commentable_id` 和 `commentable_type` 字段会被自动设定
 ```
 
 #### 添加多条文章评论
-```
+
+```php
 $user_id = \Auth::user()->id;
 $comments = [
     new \App\Comment(['body' => 'A new comment For Post 2.' , 'user_id' => $user_id]) ,
@@ -324,14 +323,17 @@ $post->comments()->saveMany($comments);
 ```
 
 #### 添加视频评论
-```
+
+```php
 $user_id = \Auth::user()->id;
 $video = \App\Video::find(10);
 $comment = new \App\Comment(['body' => 'A new Comment For Video 10.', 'user_id' => $user_id]);
 $video->comments()->save($comment); //
 ```
+
 #### 添加多条视频评论
-```
+
+```php
 $user_id = \Auth::user()->id;
 $comments = [
     new \App\Comment(['body' => 'A new comment For Video 5.', 'user_id' => $user_id]) ,
@@ -344,7 +346,7 @@ $video->comments()->saveMany($comments);
 
 ### 查询数据
 
-```
+```php
 // 查询一篇文章下的评论和发布评论者
 $comments = \App\Post::find(1)->with(['user' , 'comments'])->first();
 
@@ -352,26 +354,20 @@ $comments = \App\Post::find(1)->with(['user' , 'comments'])->first();
 $commentable = \App\Comment::find(1)->commentable()->with('user')->first();
 ```
 
-
-
 ### 删除数据
 
 #### 删除一篇文章下的所有评论
-```
+
+```php
 $post = \App\Post::find(1);
 $post->comments()->delete();
 ```
 
 #### 删除用户的所有评论
-```
+
+```php
 $user = \App\User::find(1);
 $user->comments()->delete();
 ```
 
-
 ### 更新数据
-
-
-
-
-

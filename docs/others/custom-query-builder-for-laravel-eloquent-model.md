@@ -97,7 +97,6 @@ class Post extends Model
 }
 ```
 
-
 ## 相关链接
 
 - [GitHub - Custom query builderfor laravel eloquent model](https://github.com/curder/custom-query-builder-for-laravel-eloquent-model)

@@ -51,7 +51,6 @@ collect([
 ```
 :::
 
-
 ### 检查接口
 
 使用 `ensure` 方法来验证集合是否仅包含实现特定接口的项目，比如是否只包含实现该 `Illuminate\Auth\Authenticatable` 接口。

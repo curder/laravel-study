@@ -2,7 +2,6 @@
 
 > 静态 `macro` 方法允许在运行时向 Collection 类添加自定义方法。
 
-
 ```php
 use Illuminate\Support\Collection;
 

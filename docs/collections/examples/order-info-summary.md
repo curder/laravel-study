@@ -65,8 +65,6 @@ $orders = [
 ```
 :::
 
-
-
 ::: code-group
 ```php [根据日期汇总订单]
 collect($orders)->groupBy('date');
