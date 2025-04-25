@@ -489,3 +489,68 @@ it('converts carbon date to user timezone', function () {
 });
 ```
 :::
+
+### Blueprint
+
+通过 `Bluepint` 帮助快速将公共列定义添加到每个表中。
+
+::: code-group
+
+```php [定义]
+class AppServiceProvider extends ServiceProvider
+{
+    public function boot(): void
+    {
+        $this->configureMigrations();
+    }
+
+    private function configureMigrations(): void
+    {
+        Blueprint::macro('authors', function(){
+            $this->foreignId('created_by')->nullable()->references('id')->on('users');
+            $this->foreignId('updated_by')->nullable()->references('id')->on('users');
+        });
+
+        Blueprint::macro('tenant', function(){
+            $this->foreignId('tenant_id')->constrained();
+        });
+    }
+}
+```
+
+```php [使用]
+// databases/migrations/2025_04_25_024451_create_posts_table.php
+Schema::create('posts', function (Blueprint $table) {
+    $table->id();
+
+    $table->tenant(); //[!code ++]
+    // ...
+    $table->authors();//[!code ++]
+
+    $table->timestamps();
+});
+```
+
+```php [测试]
+<?php
+
+use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
+
+uses(LazilyRefreshDatabase::class);
+
+it('has columns', function () {
+    $columns = [
+        'id',
+        'tenant_id', //[!code ++]
+        // ...
+        'created_by', //[!code ++]
+        'updated_by', //[!code ++]
+        'created_at',
+        'updated_at',
+    ];
+
+    $this->assertSame(Schema::getColumnListing('posts'), $columns);
+    $this->assertTrue(Schema::hasColumns('posts', $columns));
+});
+```
+:::
