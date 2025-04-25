@@ -1,6 +1,7 @@
 import { defineConfig } from "vitepress";
 import nav from "./nav";
 import sidebar from "./sidebar";
+import { transformerMetaWordHighlight } from "@shikijs/transformers";
 
 export default defineConfig({
   base: "/laravel-study/",
@@ -39,5 +40,8 @@ export default defineConfig({
     // @ts-ignore
     nav,
     sidebar,
+  },
+  markdown: {
+    codeTransformers: [transformerMetaWordHighlight() as any],
   },
 });

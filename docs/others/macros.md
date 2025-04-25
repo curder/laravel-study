@@ -11,13 +11,17 @@ Laravel 从 4.2 版本开始就有了宏的概念，本文将展示如何创建�
 为了实现 Laravel 宏，Laravel 提供了一个名为 Macroable 的 PHP 特性。
 
 <!-- markdownlint-disable MD013 -->
+
 可以检查位于 [`Illuminate\Http\Response`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/Response.php) 的 Laravel Response 类，它实现了 Macroable 特征，这意味着可以使用宏扩展 Response 类。
+
 <!-- markdownlint-enable MD013 -->
 
 ## 可宏化的类
 
 <!-- markdownlint-disable MD013 -->
+
 以下 Laravel 类允许使用 [`Illuminate\Support\Traits\Macroable`](https://github.com/laravel/framework/blob/master/src/Illuminate/Macroable/Traits/Macroable.php) 特征创建宏。以下是一些最常用的创建宏的类：
+
 <!-- markdownlint-enable MD013 -->
 
 - [`Illuminate\Auth\RequestGuard`](https://github.com/laravel/framework/blob/master/src/Illuminate/Auth/RequestGuard.php)
@@ -216,6 +220,7 @@ class AppServiceProvider extends ServiceProvider
 ### `Model`
 
 ::: code-group
+
 ```php [定义]
 <?php
 
@@ -281,6 +286,7 @@ Post::query()
     ->with('user')
     ->get();
 ```
+
 :::
 
 - 原始地址：[@MrPunyapal twitter](https://twitter.com/MrPunyapal/status/1717939956616941926)
@@ -318,7 +324,7 @@ Response::macro('api', function(string|array $data, null|string $message = null,
         'status' => $status,
         'message' => $message ?? 'Data retrieved successfully',
         'data' => $data
-    ]); 
+    ]);
 })
 ```
 
@@ -343,7 +349,7 @@ use Illuminate\Support\Facades\Cache;
 Cache::macro('rememberForeverJson', function($key, $callback) {
     return Cache::rememberForever($key, function() use ($callback) {
         return json_decode($callback());
-    }); 
+    });
 });
 ```
 
@@ -374,6 +380,7 @@ Event::macro('logAndDispatch', function($event) {
 Filament 中的 Form 类允许自定义宏。
 
 ::: code-group
+
 ```php [定义]
 use Filament\Forms\Form;
 
@@ -382,7 +389,7 @@ Form::macro('customInput', fn (string $name, mixed $value): string => "<input ty
 
 ```php [测试]
 it('has customInput method for form', function (string $name, mixed $value) {
-    
+
     $output = \Filament\Forms\Form::customInput($name, $value);
 
     $expect = "<input type='text' name='{$name}' value='{$value}' />";
@@ -394,6 +401,7 @@ it('has customInput method for form', function (string $name, mixed $value) {
     ['name', 'value']
 ]);
 ```
+
 :::
 
 ### `File`
@@ -401,6 +409,7 @@ it('has customInput method for form', function (string $name, mixed $value) {
 通过 `File` 提供的宏，可以方便的自定义文件类型验证规则。
 
 ::: code-group
+
 ```php [定义]
 // AppServiceProvider.php
 use Illuminate\Validation\Rules\File;
@@ -415,9 +424,9 @@ use Illuminate\Validation\Rules\File;
 public function store($request)
 {
   $request->validate([
-    'file' => [File::document()->max(20 * 1024)], 
+    'file' => [File::document()->max(20 * 1024)],
   ]);
-  
+
   // ...
 }
 ```
@@ -436,6 +445,7 @@ it('has custom types when using document macro', function () {
     expect($allowedMimetypes)->toEqual($types);
 });
 ```
+
 :::
 
 ### `Carbon`
@@ -488,6 +498,7 @@ it('converts carbon date to user timezone', function () {
         ->toEqual('America/Los_Angeles');
 });
 ```
+
 :::
 
 ### Blueprint
@@ -553,4 +564,5 @@ it('has columns', function () {
     $this->assertTrue(Schema::hasColumns('posts', $columns));
 });
 ```
+
 :::

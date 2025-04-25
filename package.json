@@ -16,7 +16,8 @@
     "fix": "npx markdownlint-cli2 --config .markdownlint-cli2.yaml --fix"
   },
   "devDependencies": {
+    "@shikijs/transformers": "^3.3.0",
     "markdownlint-cli2": "^0.17.2",
-    "vitepress": "^1.3.1"
+    "vitepress": "^1.6.3"
   }
 }

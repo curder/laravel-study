@@ -1,0 +1,15 @@
+:root {
+  --vp-code-word-hightlight-light-color: #cbfbf1;
+  --vp-code-word-hightlight-dark-color: #0d4e4a;
+}
+
+.highlighted-word {
+  background-color: var(--vp-code-word-hightlight-light-color);
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+/* dark background-color */
+.dark .highlighted-word {
+  background-color: var(--vp-code-word-hightlight-dark-color);
+}
