@@ -1,6 +1,4 @@
-# 通过值获取对应key
-
-## 问题如下
+# 通过值获取对应 key
 
 有如下数据：
 
@@ -12,9 +10,9 @@ $messages = [
 ];
 ```
 
-给定对应的键值对数组，通过指定的值，获取对应的key。
+给定对应的键值对数组，通过指定的值，获取对应的 key。
 
-## 通过 [contains](../contains.md) 和 [search](../search.md) 方法
+## 通过 [contains](../contains.md) 和 [search](../search.md) 方法 {#use-contains-and-search-method}
 
 当知道值 `val2` 时，获取其在给定的数组中的 `key`。
 

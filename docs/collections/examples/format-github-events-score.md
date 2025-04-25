@@ -14,7 +14,7 @@
 
 > GitHub 用户名以 `Curder` 为例。
 
-## 使用 `foreach`
+## 使用 `foreach` {#use-foreach}
 
 ```php
 $events = Http::get('https://api.github.com/users/curder/events')->json();
@@ -46,9 +46,10 @@ foreach ($eventTypes as $eventType) {
 dd($score); // 输出 132
 ```
 
-## 使用 [pluck](../pluck.md)、[map](../map.md) 和 [sum](../sum.md) 方法
+## 使用 [pluck](../pluck.md)、[map](../map.md) 和 [sum](../sum.md) 方法 {#use-pluck-map-and-sum-method}
 
 ::: code-group
+
 ```php [PHP switch]
 $score = Http::get('https://api.github.com/users/curder/events')
   ->collect()
@@ -79,7 +80,7 @@ $score = Http::get('https://api.github.com/users/curder/events')
 $score = Http::get('https://api.github.com/users/curder/events')
   ->collect()
   ->pluck('type')
-  ->map(fn (string $eventType) => match ($eventType) { 
+  ->map(fn (string $eventType) => match ($eventType) {
     'PushEvent' => 5,
     'CreateEvent' => 4,
     'IssueEvent' => 3,
@@ -88,9 +89,10 @@ $score = Http::get('https://api.github.com/users/curder/events')
   })
   ->sum();
 ```
+
 :::
 
-## 使用 [pluck](../pluck.md)、[map](../map.md)、[get](../get.md) 和 [sum](../sum.md) 方法
+## 使用 [pluck](../pluck.md)、[map](../map.md)、[get](../get.md) 和 [sum](../sum.md) 方法 {#use-pluck-map-get-and-sum-method}
 
 ```php
 $score = Http::get('https://api.github.com/users/curder/events')
@@ -105,9 +107,10 @@ $score = Http::get('https://api.github.com/users/curder/events')
         ->sum();
 ```
 
-## 封装 GitHubScore 类
+## 封装 GitHubScore 类 {#wrap-githubscore-class}
 
 ::: code-group
+
 ```php [获取总分]
 $events = Http::get('https://api.github.com/users/curder/events')->collect();
 
@@ -145,4 +148,5 @@ readonly class GithubScore
     }
 }
 ```
+
 :::

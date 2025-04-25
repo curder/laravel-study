@@ -1,6 +1,6 @@
 # sum 求和数组项
 
-## 计算数组元素和
+## 计算数组元素和 {#calculate-the-sum-of-array-elements}
 
 计算数组中 `order_products` 下数组元素 `price` 的和。
 
@@ -33,7 +33,7 @@ $orders = [
 ];
 ```
 
-### 使用 foreach 循环
+### 使用 foreach 循环 {#use-foreach-loop}
 
 ```php
 $price = 0;
@@ -58,7 +58,7 @@ collect($orders)
     ->sum();
 ```
 
-### 使用 [flatMap](../flatMap.md)、[pluck](../pluck.md) 和 [sum](../sum.md)
+### 使用 [flatMap](../flatMap.md)、[pluck](../pluck.md) 和 [sum](../sum.md) {#use-flatMap-pluck-and-sum}
 
 ```php
 collect($orders)
@@ -67,7 +67,7 @@ collect($orders)
     ->sum();
 ```
 
-### 使用 [flatMap](/collections/flatMap.md) 和 [sum](/collections/sum.md)
+### 使用 [flatMap](/collections/flatMap.md) 和 [sum](/collections/sum.md) {#use-flatMap-and-sum}
 
 ```php
 collect($orders)

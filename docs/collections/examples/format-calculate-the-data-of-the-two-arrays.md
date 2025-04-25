@@ -11,7 +11,7 @@ $this_year = [
 ];
 ```
 
-## 使用foreach
+## 使用 foreach {#use-foreach}
 
 ```php
 
@@ -47,7 +47,7 @@ array:12 [
 */
 ```
 
-## 使用 [zip](../zip.md)、[first](../first.md) 和 [last](../last.md) 方法
+## 使用 [zip](../zip.md)、[first](../first.md) 和 [last](../last.md) 方法 {#use-zip-first-and-last-method}
 
 ```php
 $last_year = [

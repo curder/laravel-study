@@ -18,7 +18,7 @@ $messages = [
 - But there should not have blank in the key of config or .env file.
 ```
 
-## 使用 foreach 方法
+## 使用 foreach 方法 {#use-foreach-method}
 
 ```php
 $messages = [
@@ -43,7 +43,7 @@ dd($comment);
  */
 ```
 
-## 使用 [map](../map.md) 和 [implode](../implode.md) 方法
+## 使用 [map](../map.md) 和 [implode](../implode.md) 方法 {#use-map-and-implode-method}
 
 ```php
 $messages = [

@@ -32,7 +32,7 @@ $lookup = [
 ];
 ```
 
-## 一些方法
+## 一些方法 {#some-methods}
 
 ::: code-group
 

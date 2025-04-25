@@ -21,7 +21,7 @@ $boards = ['A17', 'J7', 'K203', 'A157', 'A2', 'B230'];
 
 观察格式化后的数组为原数组元素`_`后的结尾字符。
 
-## 使用 foreach 循环
+## 使用 foreach 循环 {#use-foreach-loop}
 
 ```php
 $gates = [
@@ -56,7 +56,7 @@ array:6 [
  */
 ```
 
-## 使用 [map](../map.md) 方法
+## 使用 [map](../map.md) 方法 {#use-map-method}
 
 ```php
 $gates = [
@@ -87,7 +87,7 @@ collect($gates)->map(function ($gate) {
  */
 ```
 
-## 使用集合的 [map](../map.md) 和 [last](../last.md) 方法
+## 使用集合的 [map](../map.md) 和 [last](../last.md) 方法 {#use-map-and-last-method}
 
 ```php
 $gates = [
