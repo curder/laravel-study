@@ -12,7 +12,9 @@ Laravel 从 4.2 版本开始就有了宏的概念，本文将展示如何创建�
 
 <!-- markdownlint-disable MD013 -->
 
-可以检查位于 [`Illuminate\Http\Response`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/Response.php) 的 Laravel Response 类，它实现了 Macroable 特征，这意味着可以使用宏扩展 Response 类。
+可以检查位于 [
+`Illuminate\Http\Response`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/Response.php) 的
+Laravel Response 类，它实现了 Macroable 特征，这意味着可以使用宏扩展 Response 类。
 
 <!-- markdownlint-enable MD013 -->
 
@@ -20,46 +22,70 @@ Laravel 从 4.2 版本开始就有了宏的概念，本文将展示如何创建�
 
 <!-- markdownlint-disable MD013 -->
 
-以下 Laravel 类允许使用 [`Illuminate\Support\Traits\Macroable`](https://github.com/laravel/framework/blob/master/src/Illuminate/Macroable/Traits/Macroable.php) 特征创建宏。以下是一些最常用的创建宏的类：
+以下 Laravel 类允许使用 [
+`Illuminate\Support\Traits\Macroable`](https://github.com/laravel/framework/blob/master/src/Illuminate/Macroable/Traits/Macroable.php)
+特征创建宏。以下是一些最常用的创建宏的类：
 
 <!-- markdownlint-enable MD013 -->
 
-- [`Illuminate\Auth\RequestGuard`](https://github.com/laravel/framework/blob/master/src/Illuminate/Auth/RequestGuard.php)
-- [`Illuminate\Auth\SessionGuard`](https://github.com/laravel/framework/blob/master/src/Illuminate/Auth/SessionGuard.php)
+- [
+  `Illuminate\Auth\RequestGuard`](https://github.com/laravel/framework/blob/master/src/Illuminate/Auth/RequestGuard.php)
+- [
+  `Illuminate\Auth\SessionGuard`](https://github.com/laravel/framework/blob/master/src/Illuminate/Auth/SessionGuard.php)
 - [`Illuminate\Cache\Repository`](https://github.com/laravel/framework/blob/master/src/Illuminate/Cache/Repository.php)
 - [`Illuminate\Console\Command`](https://github.com/laravel/framework/blob/master/src/Illuminate/Console/Command.php)
-- [`Illuminate\Console\Scheduling\Event`](https://github.com/laravel/framework/blob/master/src/Illuminate/Console/Scheduling/Event.php)
+- [
+  `Illuminate\Console\Scheduling\Event`](https://github.com/laravel/framework/blob/master/src/Illuminate/Console/Scheduling/Event.php)
 - [`Illuminate\Cookie\CookieJar`](https://github.com/laravel/framework/blob/master/src/Illuminate/Cookie/CookieJar.php)
-- [`Illuminate\Database\Eloquent\FactoryBuilder`](https://github.com/laravel/framework/blob/master/src/Illuminate/Database/Eloquent/FactoryBuilder.php)
-- [`Illuminate\Database\Eloquent\Relations\Relation`](https://github.com/laravel/framework/blob/master/src/Illuminate/Database/Eloquent/Relations/Realtion.php)
+- [
+  `Illuminate\Database\Eloquent\FactoryBuilder`](https://github.com/laravel/framework/blob/master/src/Illuminate/Database/Eloquent/FactoryBuilder.php)
+- [
+  `Illuminate\Database\Eloquent\Relations\Relation`](https://github.com/laravel/framework/blob/master/src/Illuminate/Database/Eloquent/Relations/Realtion.php)
 - [`Illuminate\Database\Grammar`](https://github.com/laravel/framework/blob/master/src/Illuminate/Database/Grammar.php)
-- [`Illuminate\Database\Query\Builder`](https://github.com/laravel/framework/blob/master/src/Illuminate/Database/Query/Builder.php)
-- [`Illuminate\Database\Schema\Blueprint`](https://github.com/laravel/framework/blob/master/src/Illuminate/Database/Schema/Blueprint.php)
-- [`Illuminate\Filesystem\Filesystem`](https://github.com/laravel/framework/blob/master/src/Illuminate/Filesystem/Filesystem.php)
-- [`Illuminate\Foundation\Testing\TestResponse`](https://github.com/laravel/framework/blob/master/src/Illuminate/Foundation/Testing/TestResponse.php)
-- [`Illuminate\Http\JsonResponse`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/JsonResponse.php)
-- [`Illuminate\Http\RedirectResponse`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/RedirectResponse.php)
+- [
+  `Illuminate\Database\Query\Builder`](https://github.com/laravel/framework/blob/master/src/Illuminate/Database/Query/Builder.php)
+- [
+  `Illuminate\Database\Schema\Blueprint`](https://github.com/laravel/framework/blob/master/src/Illuminate/Database/Schema/Blueprint.php)
+- [
+  `Illuminate\Filesystem\Filesystem`](https://github.com/laravel/framework/blob/master/src/Illuminate/Filesystem/Filesystem.php)
+- [
+  `Illuminate\Foundation\Testing\TestResponse`](https://github.com/laravel/framework/blob/master/src/Illuminate/Foundation/Testing/TestResponse.php)
+- [
+  `Illuminate\Http\JsonResponse`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/JsonResponse.php)
+- [
+  `Illuminate\Http\RedirectResponse`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/RedirectResponse.php)
 - [`Illuminate\Http\Request`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/Request.php)
 - [`Illuminate\Http\Response`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/Response.php)
-- [`Illuminate\Http\UploadedFile`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/UploadedFile.php)
+- [
+  `Illuminate\Http\UploadedFile`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/UploadedFile.php)
 - [`Illuminate\Mail\Mailer`](https://github.com/laravel/framework/blob/master/src/Illuminate/Mail/Mailer.php)
-- [`Illuminate\Routing\PendingResourceRegistration`](https://github.com/laravel/framework/blob/master/src/Illuminate/Routing/PendingResourceRegistration.php)
-- [`Illuminate\Routing\Redirector`](https://github.com/laravel/framework/blob/master/src/Illuminate/Routing/Redirector.php)
-- [`Illuminate\Routing\ResponseFactory`](https://github.com/laravel/framework/blob/master/src/Illuminate/Routing/ResponseFactory.php)
+- [
+  `Illuminate\Routing\PendingResourceRegistration`](https://github.com/laravel/framework/blob/master/src/Illuminate/Routing/PendingResourceRegistration.php)
+- [
+  `Illuminate\Routing\Redirector`](https://github.com/laravel/framework/blob/master/src/Illuminate/Routing/Redirector.php)
+- [
+  `Illuminate\Routing\ResponseFactory`](https://github.com/laravel/framework/blob/master/src/Illuminate/Routing/ResponseFactory.php)
 - [`Illuminate\Routing\Route`](https://github.com/laravel/framework/blob/master/src/Illuminate/Routing/Route.php)
 - [`Illuminate\Routing\Router`](https://github.com/laravel/framework/blob/master/src/Illuminate/Routing/Router.php)
-- [`Illuminate\Routing\UrlGenerator`](https://github.com/laravel/framework/blob/master/src/Illuminate/Routing/UrlGenerator.php)
+- [
+  `Illuminate\Routing\UrlGenerator`](https://github.com/laravel/framework/blob/master/src/Illuminate/Routing/UrlGenerator.php)
 - [`Illuminate\Support\Arr`](https://github.com/laravel/framework/blob/master/src/Illuminate/Support/Arr.php)
-- [`Illuminate\Support\Collection`](https://github.com/laravel/framework/blob/master/src/Illuminate/Support/Collection.php)
-- [`Illuminate\Support\LazyCollection`](https://github.com/laravel/framework/blob/master/src/Illuminate/Support/LazyCollection.php)
+- [
+  `Illuminate\Support\Collection`](https://github.com/laravel/framework/blob/master/src/Illuminate/Support/Collection.php)
+- [
+  `Illuminate\Support\LazyCollection`](https://github.com/laravel/framework/blob/master/src/Illuminate/Support/LazyCollection.php)
 - [`Illuminate\Support\Str`](https://github.com/laravel/framework/blob/master/src/Illuminate/Support/Str.php)
-- [`Illuminate\Support\Testing\Fakes\NotificationFake`](https://github.com/laravel/framework/blob/master/src/Illuminate/Support/Testing/Fakes/NotificationFake.php)
-- [`Illuminate\Translation\Translator`](https://github.com/laravel/framework/blob/master/src/Illuminate/Translation/Translator.php)
+- [
+  `Illuminate\Support\Testing\Fakes\NotificationFake`](https://github.com/laravel/framework/blob/master/src/Illuminate/Support/Testing/Fakes/NotificationFake.php)
+- [
+  `Illuminate\Translation\Translator`](https://github.com/laravel/framework/blob/master/src/Illuminate/Translation/Translator.php)
 - [`Illuminate\Validation\Rule`](https://github.com/laravel/framework/blob/master/src/Illuminate/Validation/Rule.php)
 - [`Illuminate\View\Factory`](https://github.com/laravel/framework/blob/master/src/Illuminate/View/Factory.php)
 - [`Illuminate\View\View`](https://github.com/laravel/framework/blob/master/src/Illuminate/View/View.php)
-- [`Illuminate\Validation\Rules\File`](https://github.com/laravel/framework/blob/master/src/Illuminate/Validation/Rules/File.php)
+- [
+  `Illuminate\Validation\Rules\File`](https://github.com/laravel/framework/blob/master/src/Illuminate/Validation/Rules/File.php)
 - [`Illuminate\Support\Carbon`](https://github.com/laravel/framework/blob/master/src/Illuminate/Support/Carbon.php)
+- [`Illuminate\Support\Uri`](https://github.com/laravel/framework/blob/master/src/Illuminate/Support/Uri.php)
 
 ## 自定义宏
 
@@ -290,7 +316,8 @@ Post::query()
 :::
 
 - 原始地址：[@MrPunyapal twitter](https://twitter.com/MrPunyapal/status/1717939956616941926)
-- Gist 地址：[mr-punyapal/LaravelWhereLikeMacro.php](https://gist.github.com/mr-punyapal/31433fdd415518f8510385b86178ff1f)
+- Gist
+  地址：[mr-punyapal/LaravelWhereLikeMacro.php](https://gist.github.com/mr-punyapal/31433fdd415518f8510385b86178ff1f)
 
 ### `Http`
 
@@ -450,7 +477,8 @@ it('has custom types when using document macro', function () {
 
 ### `Carbon`
 
-创建了一个名为 `toUserTimezone` 的宏，它将 Carbon 实例格式化为用户的时区或软件默认的时区。`$this` 关键字指的是调用该宏的 Carbon 实例。
+创建了一个名为 `toUserTimezone` 的宏，它将 Carbon 实例格式化为用户的时区或软件默认的时区。`$this` 关键字指的是调用该宏的
+Carbon 实例。
 
 ::: code-group
 
@@ -563,6 +591,61 @@ it('has columns', function () {
     $this->assertSame(Schema::getColumnListing('posts'), $columns);
     $this->assertTrue(Schema::hasColumns('posts', $columns));
 });
+```
+
+:::
+
+### Uri
+
+在实际应用程序中，您可能需要为电子商务平台生成不同类型的 URL：
+
+::: code-group
+
+```php [定义]
+use Illuminate\Support\Uri; 
+
+class AppServiceProvider extends ServiceProvider
+{
+    public function boot(): void
+    {
+        $this->configureUris();
+    }
+
+    private function configureUris(): void
+    {
+        // Add category path to product URL
+        Uri::macro('inCategory', function ($category) {
+            return $this->withPath('shop/' . $category . '/' . trim($this->getPath(), '/'));
+        });
+ 
+        // Convert to mobile version
+        Uri::macro('mobile', function () {
+            $path = trim($this->getPath(), '/');
+            return $this->withHost('m.' . $this->getHost())
+                        ->withPath($path);
+        });
+ 
+        // Create tracking URL
+        Uri::macro('tracking', function ($campaign) {
+            return $this->withQueryParameter('utm_campaign', $campaign)
+                        ->withQueryParameter('utm_source', 'website');
+        });
+    }
+}
+```
+
+```php [使用] /inCategory('clothing')/ /mobile()/ /tracking('winter-sale')/
+// Usage in your application
+$baseUri = new Uri('https://shopexample.com/products/winter-jacket');
+ 
+// https://shopexample.com/shop/clothing/products/winter-jacket
+$categoryUri = $baseUri->inCategory('clothing');
+ 
+// https://m.shopexample.com/products/winter-jacket
+$mobileUri = $baseUri->mobile();
+ 
+// https://shopexample.com/products/winter-jacket?utm_campaign=winter-sale&utm_source=website
+$trackingUri = $baseUri->tracking('winter-sale');
 ```
 
 :::
