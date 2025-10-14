@@ -6,7 +6,7 @@
 
 2. 本地下载
 
-   - `node v20.8.2`
+   - `node v22.19.0`
    - `vitepress 1.6.3`
 
 GitHub 仓库地址：[curder/laravel-study](https://www.github.com/curder/laravel-study)

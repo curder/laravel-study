@@ -7,7 +7,7 @@
   "license": "MIT",
   "type": "module",
   "engines": {
-    "node": ">=18.0"
+    "node": ">=22.0"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
