@@ -56,6 +56,7 @@ Laravel Response 类，它实现了 Macroable 特征，这意味着可以使用�
   `Illuminate\Http\RedirectResponse`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/RedirectResponse.php)
 - [`Illuminate\Http\Request`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/Request.php)
 - [`Illuminate\Http\Response`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/Response.php)
+- [`Illuminate\Http\Client\Response`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/Client/Response.php)
 - [
   `Illuminate\Http\UploadedFile`](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/UploadedFile.php)
 - [`Illuminate\Mail\Mailer`](https://github.com/laravel/framework/blob/master/src/Illuminate/Mail/Mailer.php)
@@ -353,6 +354,22 @@ Response::macro('api', function(string|array $data, null|string $message = null,
         'data' => $data
     ]);
 })
+```
+
+### `Http Client Response`
+
+自 Laravel 12.43 版本起，`Illuminate\Http\Client\Response` 类支持宏，具体查看这个 [PR](https://github.com/laravel/framework/pull/58115)。
+
+```php
+use Illuminate\Http\Client\Response;
+
+Response::macro(
+    'movieFields',
+    fn () => $this->collect()->only('title', 'year', 'runtime', 'director', 'plot')
+);
+
+$response = Http::get(...);
+$response->movieFields();
 ```
 
 ### `Validation`
