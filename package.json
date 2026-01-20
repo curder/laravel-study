@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@shikijs/transformers": "^3.3.0",
-    "markdownlint-cli2": "^0.17.2",
+    "markdownlint-cli2": "^0.20",
     "vitepress": "^2.0.0-alpha.12"
   }
 }

@@ -605,10 +605,10 @@
   resolved "https://registry.npmmirror.com/@shikijs/vscode-textmate/-/vscode-textmate-10.0.2.tgz#a90ab31d0cc1dfb54c66a69e515bf624fa7b2224"
   integrity sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==
 
-"@sindresorhus/merge-streams@^2.1.0":
-  version "2.3.0"
-  resolved "https://registry.npmmirror.com/@sindresorhus/merge-streams/-/merge-streams-2.3.0.tgz#719df7fb41766bc143369eaa0dd56d8dc87c9958"
-  integrity sha512-LtoMMhxAlorcGhmFYI+LhPgbPZCkgP6ra1YL604EeF6U98pLlQ3iWIGMdWSC+vWmPBWBNgmDBAhnAobLROJmwg==
+"@sindresorhus/merge-streams@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.npmmirror.com/@sindresorhus/merge-streams/-/merge-streams-4.0.0.tgz#abb11d99aeb6d27f1b563c38147a72d50058e339"
+  integrity sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==
 
 "@standard-schema/spec@^1.0.0":
   version "1.1.0"
@@ -865,6 +865,11 @@ algoliasearch@^5.28.0:
     "@algolia/requester-fetch" "5.46.3"
     "@algolia/requester-node-http" "5.46.3"
 
+ansi-regex@^6.0.1:
+  version "6.2.2"
+  resolved "https://registry.npmmirror.com/ansi-regex/-/ansi-regex-6.2.2.tgz#60216eea464d864597ce2832000738a0589650c1"
+  integrity sha512-Bq3SmSpyFHaWjPk8If9yc6svM8c56dB5BAtW4Qbw5jHTwwXXcTLoRMkpDJp6VL0XzlWaCHTXrkFURMYmD0sLqg==
+
 argparse@^2.0.1:
   version "2.0.1"
   resolved "https://registry.npmmirror.com/argparse/-/argparse-2.0.1.tgz#246f50f3ca78a3240f6c997e8a9bd1eac49e4b38"
@@ -1007,7 +1012,7 @@ eventsource-parser@^3.0.6:
   resolved "https://registry.npmmirror.com/eventsource-parser/-/eventsource-parser-3.0.6.tgz#292e165e34cacbc936c3c92719ef326d4aeb4e90"
   integrity sha512-Vo1ab+QXPzZ4tCa8SwIHJFaSzy4R6SHf7BY79rFBDf0idraZWAkYrDjDj8uWaSm3S2TK+hJ7/t1CEmZ7jXw+pg==
 
-fast-glob@^3.3.2:
+fast-glob@^3.3.3:
   version "3.3.3"
   resolved "https://registry.npmmirror.com/fast-glob/-/fast-glob-3.3.3.tgz#d06d585ce8dba90a16b0505c543c3ccfb3aeb818"
   integrity sha512-7MptL8U0cqcFdzIzwOTHoilX9x5BrNqye7Z/LuC7kCMRio1EMSyqRK3BEAUD7sXRq4iT4AzTVuZdhgQ2TCvYLg==
@@ -1049,6 +1054,11 @@ fsevents@~2.3.2, fsevents@~2.3.3:
   resolved "https://registry.npmmirror.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
   integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
+get-east-asian-width@^1.3.0:
+  version "1.4.0"
+  resolved "https://registry.npmmirror.com/get-east-asian-width/-/get-east-asian-width-1.4.0.tgz#9bc4caa131702b4b61729cb7e42735bc550c9ee6"
+  integrity sha512-QZjmEOC+IT1uk6Rx0sX22V6uHWVwbdbxf1faPqJ1QhLdGgsRGCZoyaQBm/piRdJy/D2um6hM1UP7ZEeQ4EkP+Q==
+
 glob-parent@^5.1.2:
   version "5.1.2"
   resolved "https://registry.npmmirror.com/glob-parent/-/glob-parent-5.1.2.tgz#869832c58034fe68a4093c17dc15e8340d8401c4"
@@ -1056,17 +1066,17 @@ glob-parent@^5.1.2:
   dependencies:
     is-glob "^4.0.1"
 
-globby@14.0.2:
-  version "14.0.2"
-  resolved "https://registry.npmmirror.com/globby/-/globby-14.0.2.tgz#06554a54ccfe9264e5a9ff8eded46aa1e306482f"
-  integrity sha512-s3Fq41ZVh7vbbe2PN3nrW7yC7U7MFVc5c98/iTl9c2GawNMKx/J648KQRW6WKkuU8GIbbh2IXfIRQjOZnXcTnw==
+globby@15.0.0:
+  version "15.0.0"
+  resolved "https://registry.npmmirror.com/globby/-/globby-15.0.0.tgz#5dece8d6c38b34f21f710056bbc4103acec125f9"
+  integrity sha512-oB4vkQGqlMl682wL1IlWd02tXCbquGWM4voPEI85QmNKCaw8zGTm1f1rubFgkg3Eli2PtKlFgrnmUqasbQWlkw==
   dependencies:
-    "@sindresorhus/merge-streams" "^2.1.0"
-    fast-glob "^3.3.2"
-    ignore "^5.2.4"
-    path-type "^5.0.0"
+    "@sindresorhus/merge-streams" "^4.0.0"
+    fast-glob "^3.3.3"
+    ignore "^7.0.5"
+    path-type "^6.0.0"
     slash "^5.1.0"
-    unicorn-magic "^0.1.0"
+    unicorn-magic "^0.3.0"
 
 hast-util-to-html@^9.0.5:
   version "9.0.5"
@@ -1107,10 +1117,10 @@ html-void-elements@^3.0.0:
   resolved "https://registry.npmmirror.com/html-void-elements/-/html-void-elements-3.0.0.tgz#fc9dbd84af9e747249034d4d62602def6517f1d7"
   integrity sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg==
 
-ignore@^5.2.4:
-  version "5.3.2"
-  resolved "https://registry.npmmirror.com/ignore/-/ignore-5.3.2.tgz#3cd40e729f3643fd87cb04e50bf0eb722bc596f5"
-  integrity sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==
+ignore@^7.0.5:
+  version "7.0.5"
+  resolved "https://registry.npmmirror.com/ignore/-/ignore-7.0.5.tgz#4cb5f6cd7d4c7ab0365738c7aea888baa6d7efd9"
+  integrity sha512-Hs59xBNfUIunMFgWAbGX5cq6893IbWg4KnrjbYwX3tx0ztorVgTDA6B2sxf8ejHJ4wz8BqGUMYlnzNBer5NvGg==
 
 is-alphabetical@^2.0.0:
   version "2.0.1"
@@ -1157,10 +1167,10 @@ is-what@^5.2.0:
   resolved "https://registry.npmmirror.com/is-what/-/is-what-5.5.0.tgz#a3031815757cfe1f03fed990bf6355a2d3f628c4"
   integrity sha512-oG7cgbmg5kLYae2N5IVd3jm2s+vldjxJzK1pcu9LfpGuQ93MQSzo0okvRna+7y5ifrD+20FE8FvjusyGaz14fw==
 
-js-yaml@4.1.0:
-  version "4.1.0"
-  resolved "https://registry.npmmirror.com/js-yaml/-/js-yaml-4.1.0.tgz#c1fb65f8f5017901cdd2c951864ba18458a10602"
-  integrity sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==
+js-yaml@4.1.1:
+  version "4.1.1"
+  resolved "https://registry.npmmirror.com/js-yaml/-/js-yaml-4.1.1.tgz#854c292467705b699476e1a2decc0c8a3458806b"
+  integrity sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==
   dependencies:
     argparse "^2.0.1"
 
@@ -1212,37 +1222,38 @@ markdown-it@14.1.0:
     punycode.js "^2.3.1"
     uc.micro "^2.1.0"
 
-markdownlint-cli2-formatter-default@0.0.5:
-  version "0.0.5"
-  resolved "https://registry.npmmirror.com/markdownlint-cli2-formatter-default/-/markdownlint-cli2-formatter-default-0.0.5.tgz#b8fde4e127f9a9c0596e6d45eed352dd0aa0ff98"
-  integrity sha512-4XKTwQ5m1+Txo2kuQ3Jgpo/KmnG+X90dWt4acufg6HVGadTUG5hzHF/wssp9b5MBYOMCnZ9RMPaU//uHsszF8Q==
+markdownlint-cli2-formatter-default@0.0.6:
+  version "0.0.6"
+  resolved "https://registry.npmmirror.com/markdownlint-cli2-formatter-default/-/markdownlint-cli2-formatter-default-0.0.6.tgz#aa6db33b2fafc0801f4bbddeedafc19a2499a62c"
+  integrity sha512-VVDGKsq9sgzu378swJ0fcHfSicUnMxnL8gnLm/Q4J/xsNJ4e5bA6lvAz7PCzIl0/No0lHyaWdqVD2jotxOSFMQ==
 
-markdownlint-cli2@^0.17.2:
-  version "0.17.2"
-  resolved "https://registry.npmmirror.com/markdownlint-cli2/-/markdownlint-cli2-0.17.2.tgz#8d3dc2637fae42cea01fe3bf218501cbf33a7cd5"
-  integrity sha512-XH06ZOi8wCrtOSSj3p8y3yJzwgzYOSa7lglNyS3fP05JPRzRGyjauBb5UvlLUSCGysMmULS1moxdRHHudV+g/Q==
+markdownlint-cli2@^0.20:
+  version "0.20.0"
+  resolved "https://registry.npmmirror.com/markdownlint-cli2/-/markdownlint-cli2-0.20.0.tgz#22742a65a8d5375a14da8231874600966e20b41a"
+  integrity sha512-esPk+8Qvx/f0bzI7YelUeZp+jCtFOk3KjZ7s9iBQZ6HlymSXoTtWGiIRZP05/9Oy2ehIoIjenVwndxGtxOIJYQ==
   dependencies:
-    globby "14.0.2"
-    js-yaml "4.1.0"
+    globby "15.0.0"
+    js-yaml "4.1.1"
     jsonc-parser "3.3.1"
-    markdownlint "0.37.4"
-    markdownlint-cli2-formatter-default "0.0.5"
+    markdown-it "14.1.0"
+    markdownlint "0.40.0"
+    markdownlint-cli2-formatter-default "0.0.6"
     micromatch "4.0.8"
 
-markdownlint@0.37.4:
-  version "0.37.4"
-  resolved "https://registry.npmmirror.com/markdownlint/-/markdownlint-0.37.4.tgz#dd58c4a13b798d4702438e5f7fd587a219f753f6"
-  integrity sha512-u00joA/syf3VhWh6/ybVFkib5Zpj2e5KB/cfCei8fkSRuums6nyisTWGqjTWIOFoFwuXoTBQQiqlB4qFKp8ncQ==
+markdownlint@0.40.0:
+  version "0.40.0"
+  resolved "https://registry.npmmirror.com/markdownlint/-/markdownlint-0.40.0.tgz#1c6e29385f810f0b860f0af4866208e572bd8c59"
+  integrity sha512-UKybllYNheWac61Ia7T6fzuQNDZimFIpCg2w6hHjgV1Qu0w1TV0LlSgryUGzM0bkKQCBhy2FDhEELB73Kb0kAg==
   dependencies:
-    markdown-it "14.1.0"
-    micromark "4.0.1"
-    micromark-core-commonmark "2.0.2"
-    micromark-extension-directive "3.0.2"
+    micromark "4.0.2"
+    micromark-core-commonmark "2.0.3"
+    micromark-extension-directive "4.0.0"
     micromark-extension-gfm-autolink-literal "2.1.0"
     micromark-extension-gfm-footnote "2.1.0"
-    micromark-extension-gfm-table "2.1.0"
+    micromark-extension-gfm-table "2.1.1"
     micromark-extension-math "3.1.0"
-    micromark-util-types "2.0.1"
+    micromark-util-types "2.0.2"
+    string-width "8.1.0"
 
 marked@^16.3.0:
   version "16.4.2"
@@ -1274,29 +1285,7 @@ merge2@^1.3.0:
   resolved "https://registry.npmmirror.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
-micromark-core-commonmark@2.0.2:
-  version "2.0.2"
-  resolved "https://registry.npmmirror.com/micromark-core-commonmark/-/micromark-core-commonmark-2.0.2.tgz#6a45bbb139e126b3f8b361a10711ccc7c6e15e93"
-  integrity sha512-FKjQKbxd1cibWMM1P9N+H8TwlgGgSkWZMmfuVucLCHaYqeSvJ0hFeHsIa65pA2nYbes0f8LDHPMrd9X7Ujxg9w==
-  dependencies:
-    decode-named-character-reference "^1.0.0"
-    devlop "^1.0.0"
-    micromark-factory-destination "^2.0.0"
-    micromark-factory-label "^2.0.0"
-    micromark-factory-space "^2.0.0"
-    micromark-factory-title "^2.0.0"
-    micromark-factory-whitespace "^2.0.0"
-    micromark-util-character "^2.0.0"
-    micromark-util-chunked "^2.0.0"
-    micromark-util-classify-character "^2.0.0"
-    micromark-util-html-tag-name "^2.0.0"
-    micromark-util-normalize-identifier "^2.0.0"
-    micromark-util-resolve-all "^2.0.0"
-    micromark-util-subtokenize "^2.0.0"
-    micromark-util-symbol "^2.0.0"
-    micromark-util-types "^2.0.0"
-
-micromark-core-commonmark@^2.0.0:
+micromark-core-commonmark@2.0.3, micromark-core-commonmark@^2.0.0:
   version "2.0.3"
   resolved "https://registry.npmmirror.com/micromark-core-commonmark/-/micromark-core-commonmark-2.0.3.tgz#c691630e485021a68cf28dbc2b2ca27ebf678cd4"
   integrity sha512-RDBrHEMSxVFLg6xvnXmb1Ayr2WzLAWjeSATAoxwKYJV94TeNavgoIdA0a9ytzDSVzBy2YKFK+emCPOEibLeCrg==
@@ -1318,10 +1307,10 @@ micromark-core-commonmark@^2.0.0:
     micromark-util-symbol "^2.0.0"
     micromark-util-types "^2.0.0"
 
-micromark-extension-directive@3.0.2:
-  version "3.0.2"
-  resolved "https://registry.npmmirror.com/micromark-extension-directive/-/micromark-extension-directive-3.0.2.tgz#2eb61985d1995a7c1ff7621676a4f32af29409e8"
-  integrity sha512-wjcXHgk+PPdmvR58Le9d7zQYWy+vKEU9Se44p2CrCDPiLr2FMyiT4Fyb5UFKFC66wGB3kPlgD7q3TnoqPS7SZA==
+micromark-extension-directive@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmmirror.com/micromark-extension-directive/-/micromark-extension-directive-4.0.0.tgz#af389e33fe0654c15f8466b73a0f5af598d00368"
+  integrity sha512-/C2nqVmXXmiseSSuCdItCMho7ybwwop6RrrRPk0KbOHW21JKoCldC+8rFOaundDoRBUWBnJJcxeA/Kvi34WQXg==
   dependencies:
     devlop "^1.0.0"
     micromark-factory-space "^2.0.0"
@@ -1355,10 +1344,10 @@ micromark-extension-gfm-footnote@2.1.0:
     micromark-util-symbol "^2.0.0"
     micromark-util-types "^2.0.0"
 
-micromark-extension-gfm-table@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmmirror.com/micromark-extension-gfm-table/-/micromark-extension-gfm-table-2.1.0.tgz#5cadedfbb29fca7abf752447967003dc3b6583c9"
-  integrity sha512-Ub2ncQv+fwD70/l4ou27b4YzfNaCJOvyX4HxXU15m7mpYY+rjuWzsLIPZHJL253Z643RpbcP1oeIJlQ/SKW67g==
+micromark-extension-gfm-table@2.1.1:
+  version "2.1.1"
+  resolved "https://registry.npmmirror.com/micromark-extension-gfm-table/-/micromark-extension-gfm-table-2.1.1.tgz#fac70bcbf51fe65f5f44033118d39be8a9b5940b"
+  integrity sha512-t2OU/dXXioARrC6yWfJ4hqB7rct14e8f7m0cbI5hUmDyyIlwv5vEtooptH8INkbLzOatzKuVbQmAYcbWoyz6Dg==
   dependencies:
     devlop "^1.0.0"
     micromark-factory-space "^2.0.0"
@@ -1513,20 +1502,15 @@ micromark-util-symbol@^2.0.0:
   resolved "https://registry.npmmirror.com/micromark-util-symbol/-/micromark-util-symbol-2.0.1.tgz#e5da494e8eb2b071a0d08fb34f6cefec6c0a19b8"
   integrity sha512-vs5t8Apaud9N28kgCrRUdEed4UJ+wWNvicHLPxCa9ENlYuAY31M0ETy5y1vA33YoNPDFTghEbnh6efaE8h4x0Q==
 
-micromark-util-types@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.npmmirror.com/micromark-util-types/-/micromark-util-types-2.0.1.tgz#a3edfda3022c6c6b55bfb049ef5b75d70af50709"
-  integrity sha512-534m2WhVTddrcKVepwmVEVnUAmtrx9bfIjNoQHRqfnvdaHQiFytEhJoTgpWJvDEXCO5gLTQh3wYC1PgOJA4NSQ==
-
-micromark-util-types@^2.0.0:
+micromark-util-types@2.0.2, micromark-util-types@^2.0.0:
   version "2.0.2"
   resolved "https://registry.npmmirror.com/micromark-util-types/-/micromark-util-types-2.0.2.tgz#f00225f5f5a0ebc3254f96c36b6605c4b393908e"
   integrity sha512-Yw0ECSpJoViF1qTU4DC6NwtC4aWGt1EkzaQB8KPPyCRR8z9TWeV0HbEFGTO+ZY1wB22zmxnJqhPyTpOVCpeHTA==
 
-micromark@4.0.1:
-  version "4.0.1"
-  resolved "https://registry.npmmirror.com/micromark/-/micromark-4.0.1.tgz#294c2f12364759e5f9e925a767ae3dfde72223ff"
-  integrity sha512-eBPdkcoCNvYcxQOAKAlceo5SNdzZWfF+FcSupREAzdAh9rRmE239CEQAiTwIgblwnoM8zzj35sZ5ZwvSEOF6Kw==
+micromark@4.0.2:
+  version "4.0.2"
+  resolved "https://registry.npmmirror.com/micromark/-/micromark-4.0.2.tgz#91395a3e1884a198e62116e33c9c568e39936fdb"
+  integrity sha512-zpe98Q6kvavpCr1NPVSCMebCKfD7CA2NqZ+rykeNhONIJBpc1tFKt9hucLGwha3jNTNI8lHpctWJWoimVF4PfA==
   dependencies:
     "@types/debug" "^4.0.0"
     debug "^4.0.0"
@@ -1601,10 +1585,10 @@ parse-entities@^4.0.0:
     is-decimal "^2.0.0"
     is-hexadecimal "^2.0.0"
 
-path-type@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.npmmirror.com/path-type/-/path-type-5.0.0.tgz#14b01ed7aea7ddf9c7c3f46181d4d04f9c785bb8"
-  integrity sha512-5HviZNaZcfqP95rwpv+1HDgUamezbqdSYTyzjTvwtJSnIH+3vnbmWsItli8OFEndS984VT55M3jduxZbX351gg==
+path-type@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.npmmirror.com/path-type/-/path-type-6.0.0.tgz#2f1bb6791a91ce99194caede5d6c5920ed81eb51"
+  integrity sha512-Vj7sf++t5pBD637NSfkxpHSMfWaeig5+DKWLhcqIYx6mWQz5hdJTGDVMQiJcw1ZYkhs7AazKDGpRVji1LJCZUQ==
 
 perfect-debounce@^2.0.0:
   version "2.0.0"
@@ -1754,6 +1738,14 @@ speakingurl@^14.0.1:
   resolved "https://registry.npmmirror.com/speakingurl/-/speakingurl-14.0.1.tgz#f37ec8ddc4ab98e9600c1c9ec324a8c48d772a53"
   integrity sha512-1POYv7uv2gXoyGFpBCmpDVSNV74IfsWlDW216UPjbWufNf+bSU6GdbDsxdcxtfwb4xlI3yxzOTKClUosxARYrQ==
 
+string-width@8.1.0:
+  version "8.1.0"
+  resolved "https://registry.npmmirror.com/string-width/-/string-width-8.1.0.tgz#9e9fb305174947cf45c30529414b5da916e9e8d1"
+  integrity sha512-Kxl3KJGb/gxkaUMOjRsQ8IrXiGW75O4E3RPjFIINOVH8AMl2SQ/yWdTzWwF3FevIX9LcMAjJW+GRwAlAbTSXdg==
+  dependencies:
+    get-east-asian-width "^1.3.0"
+    strip-ansi "^7.1.0"
+
 stringify-entities@^4.0.0:
   version "4.0.4"
   resolved "https://registry.npmmirror.com/stringify-entities/-/stringify-entities-4.0.4.tgz#b3b79ef5f277cc4ac73caeb0236c5ba939b3a4f3"
@@ -1761,6 +1753,13 @@ stringify-entities@^4.0.0:
   dependencies:
     character-entities-html4 "^2.0.0"
     character-entities-legacy "^3.0.0"
+
+strip-ansi@^7.1.0:
+  version "7.1.2"
+  resolved "https://registry.npmmirror.com/strip-ansi/-/strip-ansi-7.1.2.tgz#132875abde678c7ea8d691533f2e7e22bb744dba"
+  integrity sha512-gmBGslpoQJtgnMAvOVqGZpEz9dyoKTCzy2nfz/n8aIFhN/jCE/rCmcxabB6jOOHV+0WNnylOxaxBQPSvcWklhA==
+  dependencies:
+    ansi-regex "^6.0.1"
 
 superjson@^2.2.2:
   version "2.2.6"
@@ -1812,10 +1811,10 @@ uc.micro@^2.0.0, uc.micro@^2.1.0:
   resolved "https://registry.npmmirror.com/uc.micro/-/uc.micro-2.1.0.tgz#f8d3f7d0ec4c3dea35a7e3c8efa4cb8b45c9e7ee"
   integrity sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==
 
-unicorn-magic@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.npmmirror.com/unicorn-magic/-/unicorn-magic-0.1.0.tgz#1bb9a51c823aaf9d73a8bfcd3d1a23dde94b0ce4"
-  integrity sha512-lRfVq8fE8gz6QMBuDM6a+LO3IAzTi05H6gCVaUpir2E1Rwpo4ZUog45KpNXKC/Mn3Yb9UDuHumeFTo9iV/D9FQ==
+unicorn-magic@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.npmmirror.com/unicorn-magic/-/unicorn-magic-0.3.0.tgz#4efd45c85a69e0dd576d25532fbfa22aa5c8a104"
+  integrity sha512-+QBBXBCvifc56fsbuxZQ6Sic3wqqc3WWaqxs58gvJrcOuN83HGTCwz3oS5phzU9LthRNE9VrJCFCLUgHeeFnfA==
 
 unist-util-is@^6.0.0:
   version "6.0.1"
