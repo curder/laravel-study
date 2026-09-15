@@ -17,7 +17,10 @@
   },
   "devDependencies": {
     "@shikijs/transformers": "^3.3.0",
-    "markdownlint-cli2": "^0.20",
+    "markdownlint-cli2": "^0.23",
     "vitepress": "^2.0.0-alpha.12"
+  },
+  "resolutions": {
+    "smol-toml": "1.7.2"
   }
 }
